@@ -29,6 +29,7 @@
                    
             <th> ID   </th>            
             <th> Title </th>            
+            <th> User </th> 
             <th> Date </th>
             <th> Action </th>
             </tr>
@@ -36,6 +37,9 @@
             @foreach($categories as $c)
             <tr>
             <td>{{ $c->id }}</td>
+            <td> {{ Auth::user()->name }} </td>
+
+
             <td>{{ $c->title }}</td>  
             <td>{{ $c->created_at }}</td>            
             <td> 

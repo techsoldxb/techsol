@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
+
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Category;
+use App\User;
 
 class CategoriesController extends Controller
 {
@@ -40,7 +42,7 @@ class CategoriesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Category $category)
+    public function store(Request $request, Category $category, User $user)
     {
         
         if($request->image->getClientOriginalName())
@@ -54,7 +56,7 @@ class CategoriesController extends Controller
             $file='';
         }
         $category->image = $file;
-        $category->title = $request->title;
+        $category->title = $request->title;        
         $category->save();
         return redirect()->route('admin.categories.index');
     }
