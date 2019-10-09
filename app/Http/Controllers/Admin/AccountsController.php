@@ -43,6 +43,17 @@ class AccountsController extends Controller
     public function store(Request $request, Account $account)
     {
         
+        if($request->attach->getClientOriginalName())
+        {
+        $ext = $request->attach->getClientOriginalExtension();
+        $file = date('YmdHis').rand(1,99999).'.'.$ext;
+        $request->attach->storeAs('public/categories',$file);
+        }    
+        else
+        {
+            $file='';
+        }
+        $account->attach = $file;
         $account->supp_name = $request->supp_name;
         $account->emp_name = $request->emp_name;
         $account->item_type = $request->item_type;
@@ -51,10 +62,7 @@ class AccountsController extends Controller
         $account->bill_no = $request->bill_no;
         $account->pay_mode = $request->pay_mode;
         $account->purpose = $request->purpose;
-
         $account->item_type = $request->item_type;
-
-
         $account->save();
         return redirect('admin/accounts');
     }
@@ -96,7 +104,7 @@ class AccountsController extends Controller
         $account->bill_no = $request->bill_no;
         $account->bill_amt = $request->bill_amt;
         $account->item_type = $request->item_type;
-        $account->purpose = $request->purpose;
+        $account->purpose = $request->purpose;        
         $account->save();
         return redirect()->route('admin.accounts.index');
     }

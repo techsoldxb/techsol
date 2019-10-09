@@ -42,7 +42,7 @@
 
     <section class="content">
       <div class="container-fluid">
-     <form class="needs-validation" novalidate method = "post" action="{{ route('admin.accounts.store') }}">
+     <form class="needs-validation" novalidate method = "post" action="{{ route('admin.accounts.store') }}" enctype="multipart/form-data">
      <input type="hidden" name="_token" value = "{{ csrf_token() }}">
      <div class="form-group">
      <div class = "row">
@@ -114,17 +114,14 @@
         <th class="w-20">Amount</th>
       </tr>
     </thead>
-    <tbody>
-    
-      <tr>
-       
+    <tbody>    
+      <tr>       
         <td class="text-center">1</td>        
         <td ><input type="email" class="form-control" id="email"></td>
         <td ><input type="email" class="form-control text-center" id="email"></td>
         <td ><input type="email" class="form-control text-right" id="email"></td>
         <td ><input type="email" class="form-control text-right" id="email"></td>
-      </tr>
- 
+      </tr> 
        <tr>
         <td class="text-center">2</td>
         <td><input type="email" class="form-control" id="email"></td>
@@ -155,6 +152,16 @@
       </tr>
     </tbody>
   </table>
+
+<div class="form-group">
+     <div class = "row">
+     <label for="">Attach Invoice</label>
+     <div class = "col-md-6">    
+     <input type="file" id="validationCustom01" name="attach">
+     <div class = "clear-fix"></div>
+     </div>     
+     </div>
+     </div>
   
 <div class="form-group">
   <label for="comment">Comment:</label>
@@ -165,9 +172,9 @@
 </div>
     
 
-<div class="form-group">
-     <input type="submit" class = "btn btn-info" Value ="Save">
-     </div>
+    <div class="form-group">
+    <input type="submit" class = "btn btn-info" Value ="Save">
+    </div>
      
 
 

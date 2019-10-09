@@ -30,6 +30,7 @@ class CreateAccountsTable extends Migration
             $table->string('remarks')->nullable();
             $table->string('paid')->nullable();
             $table->string('item_type')->nullable();
+            $table->string('attach')->nullable();
             $table->string('status')->nullable();
             $table->string('flex1')->nullable();
             $table->string('flex2')->nullable();
