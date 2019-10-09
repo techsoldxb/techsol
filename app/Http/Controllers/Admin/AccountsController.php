@@ -1,7 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
 
+namespace App\Http\Controllers\Admin;
+
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Account;
 
@@ -29,7 +31,7 @@ class AccountsController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.accounts.create');
     }
 
     /**
@@ -38,9 +40,23 @@ class AccountsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Account $account)
     {
-        //
+        
+        $account->supp_name = $request->supp_name;
+        $account->emp_name = $request->emp_name;
+        $account->item_type = $request->item_type;
+        $account->bill_date = $request->bill_date;
+        $account->bill_amt = $request->bill_amt;
+        $account->bill_no = $request->bill_no;
+        $account->pay_mode = $request->pay_mode;
+        $account->purpose = $request->purpose;
+
+        $account->item_type = $request->item_type;
+
+
+        $account->save();
+        return redirect('admin/accounts');
     }
 
     /**
@@ -60,9 +76,10 @@ class AccountsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Account $account)
     {
-        //
+        $arr['account'] = $account;
+        return view('admin.accounts.edit')->with($arr);
     }
 
     /**
@@ -72,9 +89,16 @@ class AccountsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Account $account)
     {
-        //
+        $account->supp_name = $request->supp_name;
+        $account->bill_date = $request->bill_date;
+        $account->bill_no = $request->bill_no;
+        $account->bill_amt = $request->bill_amt;
+        $account->item_type = $request->item_type;
+        $account->purpose = $request->purpose;
+        $account->save();
+        return redirect()->route('admin.accounts.index');
     }
 
     /**
@@ -85,6 +109,7 @@ class AccountsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Account::destroy($id);
+        return redirect()->route('admin.accounts.index');
     }
 }

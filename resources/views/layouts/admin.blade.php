@@ -9,6 +9,12 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css')}}">
 
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+
+
   
 
   <!-- Ionicons -->
@@ -74,7 +80,7 @@
             <div class="media">
 
             
-              <img src="{{ asset('dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle')}}">
+               <img src="dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
                   Brad Diesel
@@ -110,6 +116,7 @@
             
 
               <img src="{{ asset('dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3')}}">
+              
               <div class="media-body">
                 <h3 class="dropdown-item-title">
                   Nora Silvester
@@ -165,9 +172,9 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
-      <img src="/dist/img/AdminLTELogo.png" alt="AdminLTE" class="brand-image img-circle elevation-3"
+    <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">AdminLTE 3</span>
+     <span class="brand-text font-weight-light">AdminLTE 3</span>
     </a>
 
     <!-- Sidebar -->
@@ -175,10 +182,10 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-        <img src="/dist/img/user2-160x160.jpg" alt="AdminLTE" class="img-circle elevation-2" alt="User Image">
+        <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Hussain</a>
+        <a href="#" class="d-block">Alexander</a>
         </div>
       </div>
 
@@ -187,8 +194,16 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
+            <?php
+              $segment = Request::segment(2);
+            ?>
+
           <li class="nav-item">
-            <a href="#" class="nav-link active">
+            <a href=" {{ route('home') }}" class="nav-link
+            @if(!$segment)
+            active
+            @endif            
+            ">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -197,7 +212,11 @@
 
           </li>
           <li class="nav-item">
-            <a href="{{route('categories.index')}}" class="nav-link">
+            <a href="{{route('admin.categories.index')}}" class="nav-link
+            @if($segment=='categories')
+            active
+            @endif            
+            ">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Engineering
@@ -206,7 +225,11 @@
             </a>
           </li>
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
+            <a href="#" class="nav-link 
+            @if($segment=='accounts')
+            active
+            @endif
+            ">
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 Accounts
@@ -216,7 +239,8 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('reimbursement')}}" class="nav-link">
+                <a href="{{route('admin.accounts.index')}}" class="nav-link
+                        ">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Reimbursement</p>
                 </a>
@@ -366,6 +390,14 @@
               </li>
             </ul>
           </li>
+
+          <li class="nav-header">MISCELLANEOUS</li>
+          <li class="nav-item">
+            <a href="https://adminlte.io/docs/3.0" class="nav-link">
+              <i class="nav-icon fas fa-file"></i>
+              <p>Purchase Request</p>
+            </a>
+          </li>
          
           <li class="nav-header">Action</li>
           <li class="nav-item">
@@ -397,7 +429,7 @@
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
+    <strong>Copyright &copy; 2014-2019 <a href="http://www.omanaquarium.om">Oman Aquarium</a>.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
       <b>Version</b> 3.0.0-beta.2

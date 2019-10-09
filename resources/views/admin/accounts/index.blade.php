@@ -6,12 +6,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Engineering</h1>
+            <h1 class="m-0 text-dark">Accounts</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{route('home')}}">Dashboard</a></li>
-              <li class="breadcrumb-item active">Engineering</li>
+              <li class="breadcrumb-item active">Accounts</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -22,36 +22,48 @@
     <section class="content">
       <div class="container-fluid">
       <p>
-      <a href="{{ route('admin.categories.create') }}" class="btn btn-primary">Add New</a>
+      <a href="{{ route('admin.accounts.create') }}" class="btn btn-primary">Add New</a>
       </p>
         <table class = "table table-bordered table-striped">
           <tr>
                    
-            <th> ID   </th>            
-            <th> Title </th>            
+            <th> ID   </th>                       
             <th> Date </th>
+            <th> Emp Name </th>
+            <th> Dept </th>
+            <th> Supplier Name </th>
+            <th> Bill Date </th>
+            <th> Bill Amount </th>
+            <th> Payment Mode </th>
+            <th> Purpose </th>
+            <th> Item Type </th>
             <th> Action </th>
             </tr>
-            @if(count($categories))
-            @foreach($categories as $c)
+            @foreach($accounts as $c)
             <tr>
             <td>{{ $c->id }}</td>
-            <td>{{ $c->title }}</td>  
-            <td>{{ $c->created_at }}</td>            
+            <td>{{ date('d-m-Y', strtotime($c->created_at)) }}</td>            
+            <td>{{ $c->emp_name }}</td>
+            <td>{{ $c->dept }}</td>
+            <td>{{ $c->supp_name }}</td>
+            <td>{{ $c->bill_date }}</td>
+            <td class="text-right">{{ number_format($c->bill_amt,3) }}</td>
+            <td>{{ $c->pay_mode }}</td>
+            <td>{{ $c->purpose }}</td>
+            <td>{{ $c->item_type }}</td>    
+
             <td> 
-            <a href="{{ route('admin.categories.edit',$c->id) }}" class="btn btn-info">Edit</a>
+            <a href="{{ route('admin.accounts.edit',$c->id) }}" class="btn btn-info">Edit</a>
             <a href="javascript:void(0)" onclick = "$(this).parent().find('form').submit()" class="btn btn-danger">Delete</a>
-            <form action = "{{ route('admin.categories.destroy', $c->id)}}" method = "POST">
+            <form action = "{{ route('admin.accounts.destroy', $c->id)}}" method = "POST">
             @method('DELETE')
             <input type="hidden" name="_token" value = "{{ csrf_token() }}">
             </form>
             
-            </td>
+            </td>        
+            
             </tr>
             @endforeach
-            @else
-            <tr><td colspan="4">No Record Found</td></tr>
-            @endif
         </table>
       </div>
     </section>

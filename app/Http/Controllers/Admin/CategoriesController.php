@@ -1,16 +1,18 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Account;
+use App\Category;
 
-class AccountsController extends Controller
+class CategoriesController extends Controller
 {
     public function __construct()
     {
         $this->middleware('auth');
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -18,8 +20,8 @@ class AccountsController extends Controller
      */
     public function index()
     {
-        $arr['accounts'] = Account::all();
-        return view('admin.accounts.index')->with($arr);
+        $arr['categories'] = Category::all();
+        return view('admin.categories.index')->with($arr);
     }
 
     /**
@@ -29,7 +31,7 @@ class AccountsController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.categories.create');
     }
 
     /**
@@ -38,9 +40,23 @@ class AccountsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Category $category)
     {
-        //
+        
+        if($request->image->getClientOriginalName())
+        {
+        $ext = $request->image->getClientOriginalExtension();
+        $file = date('YmdHis').rand(1,99999).'.'.$ext;
+        $request->image->storeAs('public/categories',$file);
+        }    
+        else
+        {
+            $file='';
+        }
+        $category->image = $file;
+        $category->title = $request->title;
+        $category->save();
+        return redirect()->route('admin.categories.index');
     }
 
     /**
@@ -60,9 +76,10 @@ class AccountsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Category $category)
     {
-        //
+            $arr['category'] = $category;
+            return view('admin.categories.edit')->with($arr);
     }
 
     /**
@@ -72,9 +89,11 @@ class AccountsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Category $category)
     {
-        //
+        $category->title = $request->title;
+        $category->save();
+        return redirect()->route('admin.categories.index');
     }
 
     /**
@@ -85,6 +104,7 @@ class AccountsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Category::destroy($id);
+        return redirect()->route('admin.categories.index');
     }
 }

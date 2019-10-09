@@ -1,11 +1,18 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Category;
 
-class PhotoController extends Controller
+class CategoriesController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +20,8 @@ class PhotoController extends Controller
      */
     public function index()
     {
-        //
+        $arr['categories'] = Category::all();
+        return view('admin.categories.index')->with($arr);
     }
 
     /**
@@ -23,7 +31,7 @@ class PhotoController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.categories.create');
     }
 
     /**
@@ -32,9 +40,11 @@ class PhotoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Category $category)
     {
-        //
+        $category->title = $request->title;
+        $category->save();
+        return redirect()->route('admin.categories.index');
     }
 
     /**
@@ -54,9 +64,10 @@ class PhotoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Category $category)
     {
-        //
+            $arr['category'] = $category;
+            return view('admin.categories.edit')->with($arr);
     }
 
     /**
@@ -66,9 +77,11 @@ class PhotoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Category $category)
     {
-        //
+        $category->title = $request->title;
+        $category->save();
+        return redirect()->route('admin.categories.index');
     }
 
     /**
@@ -79,6 +92,7 @@ class PhotoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Category::destroy($id);
+        return redirect()->route('admin.categories.index');
     }
 }
