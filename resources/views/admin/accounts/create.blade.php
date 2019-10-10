@@ -19,6 +19,63 @@
 })();
 </script>
 
+<!-- This below code is used to calculate the amount field  -->
+
+<script>
+    function calc1() 
+    {
+    var textValue1 = document.getElementById('qty1').value;
+    var textValue2 = document.getElementById('price1').value;
+    document.getElementById('amount1').value = textValue1 * textValue2;
+    }   
+
+    function calc2() 
+    {
+      var textValue3 = document.getElementById('qty2').value;
+    var textValue4 = document.getElementById('price2').value;
+    document.getElementById('amount2').value = textValue3 * textValue4;
+    }   
+
+    function calc3() 
+    {
+      var textValue5 = document.getElementById('qty3').value;
+    var textValue6 = document.getElementById('price3').value;
+     document.getElementById('amount3').value = textValue5 * textValue6;
+    } 
+    </script>
+    <!-- End -->
+    <!-- This script is used to allow only number in the bill amount field -->
+    <script>    
+			function isNumberKey(evt)
+			{
+				var charCode = (evt.which) ? evt.which : evt.keyCode;
+				if (charCode != 46 && charCode > 31 
+				&& (charCode < 48 || charCode > 57))
+				return false;
+				return true;
+			}  
+    </script>
+    <!-- End -->
+
+    <script>    
+			function bill_total()
+			{
+				var textValue1 = document.getElementById('qty1').value;
+        var textValue2 = document.getElementById('price1').value;
+        var textValue3 = document.getElementById('qty2').value;
+        var textValue4 = document.getElementById('price2').value;
+        var textValue5 = document.getElementById('qty3').value;
+        var textValue6 = document.getElementById('price3').value;
+        
+        var firsttotal = textValue1 * textValue2;  
+        var secondtotal = textValue3 * textValue4;
+        var thirdtotal = textValue5 * textValue6;
+        document.getElementById('total').value = textValue1;
+			}  
+    </script>
+    <!-- End -->
+
+
 @extends('layouts.admin')
 @section('content')
 
@@ -64,8 +121,6 @@
             uiLibrary: 'bootstrap4'
         });
     </script></div>
-
-
      
 
      <label class = "col-lg-1" for="">Bill Number *</label>
@@ -79,7 +134,8 @@
      <div class = "row">
      <label class = "col-lg-1" for="">Bill Amount *</label>
      <div class = "col-lg-2">
-     <input type="text" name = "bill_amt" class = "form-control" placeholder="Enter bill amount" required> </div>
+     
+     <input type="text" name = "bill_amt" onkeypress="return isNumberKey(event)" class = "form-control "  placeholder="Enter bill amount" required> </div>
      
 
      <label class = "col-lg-1" for="">Payment Mode</label>
@@ -117,45 +173,40 @@
     <tbody>    
       <tr>       
         <td class="text-center">1</td>        
-        <td ><input type="email" class="form-control" id="email"></td>
-        <td ><input type="email" class="form-control text-center" id="email"></td>
-        <td ><input type="email" class="form-control text-right" id="email"></td>
-        <td ><input type="email" class="form-control text-right" id="email"></td>
+        <td ><input type="text" class="form-control text-uppercase" name = "item_name" id="row1"></td>
+        <td ><input class="form-control text-center" type="text" onkeypress="return isNumberKey(event)" name="qty1"  id="qty1" onkeyup="calc1()" value=""></td>
+        <td ><input class="form-control text-right" type="text" onkeypress="return isNumberKey(event)" name="price1" id="price1" onkeyup="calc1()" value=""></td>
+        <td > <input class="form-control text-right" type="text" name="amount" id="amount1" value="" disabled></td>
       </tr> 
        <tr>
-        <td class="text-center">2</td>
-        <td><input type="email" class="form-control" id="email"></td>
-        <td><input type="email" class="form-control text-center" id="email"></td>
-        <td><input type="email" class="form-control text-right" id="email"></td>
-        <td><input type="email" class="form-control text-right" id="email"></td>
+        <td class="text-center">2</td>        
+        <td ><input type="text" class="form-control text-uppercase" id="row2"></td>
+        <td ><input class="form-control text-center" type="text" onkeypress="return isNumberKey(event)" name="qty2" id="qty2" onkeyup="calc2()" value=""></td>
+        <td ><input class="form-control text-right" type="text" onkeypress="return isNumberKey(event)" name="price2" id="price2" onkeyup="calc2()" value=""></td>        
+        <td > <input class="form-control text-right" type="text" name="amount" id="amount2" value="" disabled></td>
       </tr>
        <tr>
-        <td class="text-center">3</td>
-        <td><input type="email" class="form-control" id="email"></td>
-        <td><input type="email" class="form-control text-center" id="email"></td>
-        <td><input type="email" class="form-control text-right" id="email"></td>
-        <td><input type="email" class="form-control text-right" id="email"></td>
+       <td class="text-center">3</td>        
+        <td ><input type="text" class="form-control text-uppercase" id="row3"></td>
+        <td ><input class="form-control text-center" type="text" onkeypress="return isNumberKey(event)" name="qty3" id="qty3" onkeyup="calc3()" value=""></td>
+        <td ><input class="form-control text-right" type="text" onkeypress="return isNumberKey(event)" name="price3" id="price3" onkeyup="calc3()" value=""></td>
+        <td > <input class="form-control text-right" type="text" name="amount" id="amount3" value="" disabled></td>
       </tr>
-       <tr>
-        <td class="text-center">4</td>
-        <td><input type="email" class="form-control" id="email"></td>
-        <td><input type="email" class="form-control text-center" id="email"></td>
-        <td><input type="email" class="form-control text-right" id="email"></td>
-        <td><input type="email" class="form-control text-right" id="email"></td>
+        
+
+        <tr>
+        <td class="text-center"></td>
+        <td class="text-right" colspan="3"><label>Total</label></td>
+        <td><input  type="text" class="form-control text-right" onkeyup="bill_total()" name = "total" id="total" disabled></td>        
       </tr>
-          <tr>
-        <td class="text-center">5</td>
-        <td><input type="email" class="form-control" id="email"></td>
-        <td><input type="email" class="form-control text-center" id="email"></td>
-        <td><input type="email" class="form-control text-right" id="email"></td>
-        <td><input type="email" class="form-control text-right" id="email"></td>
-      </tr>
+
     </tbody>
   </table>
 
 <div class="form-group">
      <div class = "row">
-     <label for="">Attach Invoice</label>
+     
+     <label class = "col-lg-1" for="">Attach Bill</label>
      <div class = "col-md-6">    
      <input type="file" id="validationCustom01" name="attach">
      <div class = "clear-fix"></div>
