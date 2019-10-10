@@ -18,7 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Auth::routes(['verify' => true]);
+Route::get('users', 'UserController@index');
+Route::get('changeStatus', 'UserController@changeStatus');
 
 Route::get('/admin', 'HomeController@index')->name('home');
 Route::get('/about', 'TestController@about')->name('about');
