@@ -45,6 +45,7 @@ class CategoriesController extends Controller
     public function store(Request $request, Category $category, User $user)
     {
         
+        
         if($request->image->getClientOriginalName())
         {
         $ext = $request->image->getClientOriginalExtension();
