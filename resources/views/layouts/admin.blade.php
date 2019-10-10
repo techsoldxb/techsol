@@ -172,9 +172,13 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
-    <img src="dist/img/Logo.png" alt="Aquarium Logo" class="brand-image img-circle elevation-3"
+    <img src="dist/img/Logo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
-     <span class="brand-text font-weight-light">Oman Aquarium</span>
+
+           
+
+
+     <span class="brand-text font-weight-light">Oman</span>
     </a>
 
     <!-- Sidebar -->
@@ -398,6 +402,14 @@
               <p>Purchase Request</p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="https://adminlte.io/docs/3.0" class="nav-link">
+              <i class="nav-icon fas fa-file"></i>
+              <p>News</p>
+            </a>
+          </li>
+
+       
          
           <li class="nav-header">Action</li>
           <li class="nav-item">

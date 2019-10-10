@@ -26,8 +26,6 @@ Route::get('/product', 'TestController@product')->name('product');
 Route::get('/testhome', 'HomeController@test')->name('testhome');
 Route::get('/dashboard', 'TestController@dashboard')->name('dashboard');
 
-
-
-
 Route::resource('/admin/categories', 'Admin\CategoriesController', ['as'=>'admin']);
+Route::resource('/admin/news', 'Admin\NewsController', ['as'=>'admin']);
 Route::resource('/admin/accounts', 'Admin\AccountsController', ['as'=>'admin']);

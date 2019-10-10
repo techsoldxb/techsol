@@ -39,6 +39,7 @@
             <th> Item Type </th>
             <th> Action </th>
             </tr>
+            @if(count($accounts))
             @foreach($accounts as $c)
             <tr>
             <td>{{ $c->id }}</td>
@@ -64,6 +65,9 @@
             
             </tr>
             @endforeach
+            @else
+            <tr><td colspan="11">No Record Found</td></tr>
+            @endif
         </table>
       </div>
     </section>
