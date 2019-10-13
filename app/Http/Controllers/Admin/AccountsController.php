@@ -64,7 +64,18 @@ class AccountsController extends Controller
         $account->pay_mode = $request->pay_mode;
         $account->purpose = $request->purpose;
         $account->item_type = $request->item_type;
-        $account->save();             
+        $account->save();       
+        
+        foreach ($request->item_name as $key =>$name) {
+            $item = resolve(Item::class);
+           
+               
+            $item->item_name = trim($name,'"');    
+            $item->qty = $request->qty[$key] ;    
+            $item->unit_price = $request->unit_price[$key] ; 
+            $item->save();
+            
+            } 
         
         return redirect('admin/accounts');
     }
