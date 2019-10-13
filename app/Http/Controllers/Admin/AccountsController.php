@@ -97,6 +97,13 @@ class AccountsController extends Controller
         return view('admin.accounts.edit')->with($arr);
     }
 
+    public function print()
+    {
+        return view('admin.accounts.print');
+    }
+  
+  
+
     /**
      * Update the specified resource in storage.
      *

@@ -25,4 +25,10 @@ class TestController extends Controller
     {
         return view('dashboard');
     }
+
+    public function print()
+    {
+        return view('admin.accounts.print');
+    }
 }
+

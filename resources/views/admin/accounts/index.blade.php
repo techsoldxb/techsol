@@ -54,6 +54,8 @@
             <td>{{ $c->item_type }}</td>    
 
             <td> 
+            
+            <a href="{{ route('admin.accounts.edit',$c->id) }}" class="btn btn-success">Print</a>
             <a href="{{ route('admin.accounts.edit',$c->id) }}" class="btn btn-info">Edit</a>
             <a href="javascript:void(0)" onclick = "$(this).parent().find('form').submit()" class="btn btn-danger">Delete</a>
             <form action = "{{ route('admin.accounts.destroy', $c->id)}}" method = "POST">
