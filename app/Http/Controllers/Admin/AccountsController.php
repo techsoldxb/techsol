@@ -64,13 +64,8 @@ class AccountsController extends Controller
         $account->pay_mode = $request->pay_mode;
         $account->purpose = $request->purpose;
         $account->item_type = $request->item_type;
-        $account->save();     
-
-        $item->item_name = $request->item_name;        
-        $item->qty = $request->qty;    
-        $item->unit_price = $request->unit_price;    
-        $item->save();
-                
+        $account->save();             
+        
         return redirect('admin/accounts');
     }
 
