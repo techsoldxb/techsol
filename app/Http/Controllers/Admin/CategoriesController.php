@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Category;
 use App\User;
+use App\Item;
 
 class CategoriesController extends Controller
 {
@@ -42,7 +43,7 @@ class CategoriesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Category $category, User $user)
+    public function store(Request $request, Category $category, User $user, Item $item)
     {
         
         
@@ -59,6 +60,10 @@ class CategoriesController extends Controller
         $category->image = $file;
         $category->title = $request->title;        
         $category->save();
+
+        $item->item_name = $request->item_name;        
+        $item->save();
+
         return redirect()->route('admin.categories.index');
     }
 

@@ -57,6 +57,16 @@
 
      <div class="form-group">
      <div class = "row">
+     <label class = "col-md-3" for="">Item Table</label>
+     <div class = "col-md-6">    
+     <input type="text" class="form-control" id="validationCustom02" name="item_name" placeholder="Item Name" required>
+     <div class = "clear-fix"></div>
+     </div>     
+     </div>
+     </div>
+
+     <div class="form-group">
+     <div class = "row">
      <label class = "col-md-3" for="">Image</label>
      <div class = "col-md-6">    
      <input type="file" id="validationCustom01" name="image" placeholder="First name" required>
@@ -65,13 +75,7 @@
      </div>
      </div>
      
-     <div class="form-group">        
-     <select class="selectpicker">
-  <option>Mustard</option>
-  <option>Ketchup</option>
-  <option>Relish</option>
-</select>     
-      </div>
+     
 
 
 

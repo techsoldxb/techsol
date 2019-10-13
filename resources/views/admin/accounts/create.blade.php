@@ -174,22 +174,22 @@
       <tr>       
         <td class="text-center">1</td>        
         <td ><input type="text" class="form-control text-uppercase" name = "item_name" id="row1"></td>
-        <td ><input class="form-control text-center" type="text" onkeypress="return isNumberKey(event)" name="qty1"  id="qty1" onkeyup="calc1()" value=""></td>
-        <td ><input class="form-control text-right" type="text" onkeypress="return isNumberKey(event)" name="price1" id="price1" onkeyup="calc1()" value=""></td>
+        <td ><input class="form-control text-center" type="text" onkeypress="return isNumberKey(event)" name="qty"  id="qty1" onkeyup="calc1()" value=""></td>
+        <td ><input class="form-control text-right" type="text" onkeypress="return isNumberKey(event)" name="unit_price" id="price1" onkeyup="calc1()" value=""></td>
         <td > <input class="form-control text-right" type="text" name="amount" id="amount1" value="" disabled></td>
       </tr> 
        <tr>
         <td class="text-center">2</td>        
-        <td ><input type="text" class="form-control text-uppercase" id="row2"></td>
-        <td ><input class="form-control text-center" type="text" onkeypress="return isNumberKey(event)" name="qty2" id="qty2" onkeyup="calc2()" value=""></td>
-        <td ><input class="form-control text-right" type="text" onkeypress="return isNumberKey(event)" name="price2" id="price2" onkeyup="calc2()" value=""></td>        
+        <td ><input type="text" class="form-control text-uppercase" name = "item_name" id="row2"></td>
+        <td ><input class="form-control text-center" type="text" onkeypress="return isNumberKey(event)" name="qty" id="qty2" onkeyup="calc2()" value=""></td>
+        <td ><input class="form-control text-right" type="text" onkeypress="return isNumberKey(event)" name="unit_price" id="price2" onkeyup="calc2()" value=""></td>        
         <td > <input class="form-control text-right" type="text" name="amount" id="amount2" value="" disabled></td>
       </tr>
        <tr>
        <td class="text-center">3</td>        
-        <td ><input type="text" class="form-control text-uppercase" id="row3"></td>
-        <td ><input class="form-control text-center" type="text" onkeypress="return isNumberKey(event)" name="qty3" id="qty3" onkeyup="calc3()" value=""></td>
-        <td ><input class="form-control text-right" type="text" onkeypress="return isNumberKey(event)" name="price3" id="price3" onkeyup="calc3()" value=""></td>
+        <td ><input type="text" class="form-control text-uppercase" name = "item_name" id="row3"></td>
+        <td ><input class="form-control text-center" type="text" onkeypress="return isNumberKey(event)" name="qty" id="qty3" onkeyup="calc3()" value=""></td>
+        <td ><input class="form-control text-right" type="text" onkeypress="return isNumberKey(event)" name="unit_price" id="price3" onkeyup="calc3()" value=""></td>
         <td > <input class="form-control text-right" type="text" name="amount" id="amount3" value="" disabled></td>
       </tr>
         

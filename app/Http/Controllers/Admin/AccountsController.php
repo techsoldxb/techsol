@@ -6,6 +6,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Account;
+use App\Item;
 
 class AccountsController extends Controller
 {
@@ -40,7 +41,7 @@ class AccountsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Account $account)
+    public function store(Request $request, Account $account, Item $item)
     {
         
         if($request->attach->getClientOriginalName())
@@ -63,7 +64,13 @@ class AccountsController extends Controller
         $account->pay_mode = $request->pay_mode;
         $account->purpose = $request->purpose;
         $account->item_type = $request->item_type;
-        $account->save();
+        $account->save();     
+
+        $item->item_name = $request->item_name;        
+        $item->qty = $request->qty;    
+        $item->unit_price = $request->unit_price;    
+        $item->save();
+                
         return redirect('admin/accounts');
     }
 
