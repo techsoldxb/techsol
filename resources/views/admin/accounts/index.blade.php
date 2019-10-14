@@ -24,6 +24,7 @@
       <p>
       <a href="{{ route('admin.accounts.create') }}" class="btn btn-primary btn-sm">Add New</a>
       </p>
+    
         <table class = "table table-bordered table-striped">
           <tr>
                    
@@ -62,7 +63,7 @@
             <tr><td colspan="11">No Record Found</td></tr>
             @endif
         </table>
-
+        {{ $accounts->render() }}
       </div>
     </section>
 @endsection

@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Account;
 use App\Item;
+Use Auth;
 
 class AccountsController extends Controller
 {
@@ -15,13 +16,12 @@ class AccountsController extends Controller
         $this->middleware('auth');
     }
     /**
-     * Display a listing of the resource.
-     *
+     * Display a listing of the resource.     *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $arr['accounts'] = Account::all();
+        $arr['accounts'] = Account::paginate(8);
         return view('admin.accounts.index')->with($arr);
     }
 
@@ -74,6 +74,8 @@ class AccountsController extends Controller
         $account->th_purpose = $request->th_purpose;
         $account->th_item_type = $request->th_item_type;
         $account->th_tran_no = $new_id;
+        $account->th_emp_name = Auth::user()->name;
+        
         $account->save();       
         
         foreach ($request->td_item_desc as $key =>$name) 
