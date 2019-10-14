@@ -15,9 +15,13 @@ class CreateItemsTable extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('item_name');
-            $table->string('qty');
-            $table->string('unit_price');
+            $table->mediumInteger('td_doc_no')->nullable();
+            $table->string('td_item_desc')->nullable();
+            $table->mediumInteger('td_qty')->nullable();
+            $table->float('td_unit_price')->nullable();
+            $table->float('td_unit_amt')->nullable();
+            $table->date('td_bill_dt')->nullable();
+            $table->date('td_supp_name')->nullable();
             $table->timestamps();
         });
     }

@@ -22,48 +22,39 @@
     <section class="content">
       <div class="container-fluid">
       <p>
-      <a href="{{ route('admin.accounts.create') }}" class="btn btn-primary">Add New</a>
+      <a href="{{ route('admin.accounts.create') }}" class="btn btn-primary btn-sm">Add New</a>
       </p>
         <table class = "table table-bordered table-striped">
           <tr>
                    
-            <th> ID   </th>                       
-            <th> Date </th>
-            <th> Emp Name </th>
-            <th> Dept </th>
+            <th> Tran No.   </th>                       
+            <th> Tran Date </th>
             <th> Supplier Name </th>
             <th> Bill Date </th>
+            <th> Bill No. </th>
             <th> Bill Amount </th>
-            <th> Payment Mode </th>
             <th> Purpose </th>
-            <th> Item Type </th>
             <th> Action </th>
             </tr>
             @if(count($accounts))
             @foreach($accounts as $c)
             <tr>
-            <td>{{ $c->id }}</td>
+            <td>{{ $c->th_tran_no }}</td>
             <td>{{ date('d-m-Y', strtotime($c->created_at)) }}</td>            
-            <td>{{ $c->emp_name }}</td>
-            <td>{{ $c->dept }}</td>
-            <td>{{ $c->supp_name }}</td>
-            <td>{{ $c->bill_date }}</td>
-            <td class="text-right">{{ number_format($c->bill_amt,3) }}</td>
-            <td>{{ $c->pay_mode }}</td>
-            <td>{{ $c->purpose }}</td>
-            <td>{{ $c->item_type }}</td>    
-
-            <td> 
-            
-            <a href="{{ route('admin.accounts.edit',$c->id) }}" class="btn btn-success">Print</a>
-            <a href="{{ route('admin.accounts.edit',$c->id) }}" class="btn btn-info">Edit</a>
-            <a href="javascript:void(0)" onclick = "$(this).parent().find('form').submit()" class="btn btn-danger">Delete</a>
+            <td>{{ $c->th_supp_name }}</td>
+            <td>{{ $c->th_bill_dt }}</td>
+            <td>{{ $c->th_bill_no }}</td>
+            <td class="text-right">{{ number_format($c->th_bill_amt,3) }}</td>
+            <td>{{ $c->th_purpose }}</td>
+            <td>             
+            <a href="{{ route('admin.accounts.edit',$c->id) }}" class="btn btn-success btn-sm">Print</a>
+            <a href="{{ route('admin.accounts.edit',$c->id) }}" class="btn btn-info btn-sm">Edit</a>
+            <a href="javascript:void(0)" onclick = "$(this).parent().find('form').submit()" class="btn btn-danger btn-sm">Delete</a>
             <form action = "{{ route('admin.accounts.destroy', $c->id)}}" method = "POST">
             @method('DELETE')
             <input type="hidden" name="_token" value = "{{ csrf_token() }}">
             </form>
-            
-            </td>        
+          </td>                
             
             </tr>
             @endforeach
@@ -71,6 +62,7 @@
             <tr><td colspan="11">No Record Found</td></tr>
             @endif
         </table>
+
       </div>
     </section>
 @endsection

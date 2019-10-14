@@ -49,8 +49,8 @@
      <div class = "row">
      <label class = "col-lg-1" for="">Supplier Name *</label>
      <div class = "col-lg-5">
-     <input class="form-control" data-error="Please enter name field." type="text" name = "supp_name" 
-     value="{{ $account->supp_name}}" class = "form-control" placeholder="Enter Supplier name" required>
+     <input class="form-control" data-error="Please enter name field." type="text" name = "th_supp_name" 
+     value="{{ $account->th_supp_name}}" class = "form-control" placeholder="Enter Supplier name" required>
      <div class = "clear-fix"></div>
     </div>     
      </div>
@@ -60,7 +60,7 @@
      <div class = "row">
      <label class = "col-lg-1" for="">Bill Date *</label>
      <div class = "col-lg-2">
-     <input class = "form-control" id="datepicker"  name = "bill_date" value="{{ $account->bill_date}}" placeholder="Enter bill date" required>
+     <input class = "form-control" id="datepicker"  name = "bill_date" value="{{ $account->th_bill_dt}}" placeholder="Enter bill date" required>
     <script>
         $('#datepicker').datepicker({
             uiLibrary: 'bootstrap4'
@@ -72,7 +72,7 @@
 
      <label class = "col-lg-1" for="">Bill Number *</label>
      <div class = "col-lg-2">
-     <input type="text" name = "bill_no" value="{{ $account->bill_no}}" class = "form-control" placeholder="Enter bill number" required>
+     <input type="text" name = "th_bill_no" value="{{ $account->th_bill_no}}" class = "form-control" placeholder="Enter bill number" required>
      <div class = "clear-fix"></div>
     </div>
 </div>
@@ -81,12 +81,12 @@
      <div class = "row">
      <label class = "col-lg-1" for="">Bill Amount *</label>
      <div class = "col-lg-2">
-     <input type="text" name = "bill_amt" value="{{ $account->bill_amt}}" class = "form-control" placeholder="Enter bill amount" required> </div>
+     <input type="text" name = "th_bill_amt" value="{{ $account->th_bill_amt}}" class = "form-control" placeholder="Enter bill amount" required> </div>
      
 
      <label class = "col-lg-1" for="">Payment Mode</label>
      <div class = "col-lg-2">
-     <input type="text" name = "pay_mode" value="{{ $account->pay_mode}}" class = "form-control" placeholder="Enter Cash / Card">
+     <input type="text" name = "th_pay_mode" value="{{ $account->th_pay_mode}}" class = "form-control" placeholder="Enter Cash / Card">
      <div class = "clear-fix"></div>
     </div>
     </div>
@@ -95,12 +95,12 @@
      <div class = "row">
      <label class = "col-lg-1" for="">Emp Name *</label>
      <div class = "col-lg-2">
-     <input type="text" name = "emp_name" class = "form-control" placeholder="Employe Name" required> </div>
+     <input type="text" name = "th_emp_name" class = "form-control" placeholder="Employe Name" required> </div>
      
 
      <label class = "col-lg-1" for="">Type</label>
      <div class = "col-lg-2">
-     <input type="text" name = "item_type" value="{{ $account->item_type}}" class = "form-control" placeholder="Enter Asset / Others">
+     <input type="text" name = "th_item_type" value="{{ $account->th_item_type}}" class = "form-control" placeholder="Enter Asset / Others">
      <div class = "clear-fix"></div>
     </div>
     </div>
@@ -162,7 +162,7 @@
   <label for="comment">Comment:</label>
 
   <input type="text" name = "purpose" 
-  value="{{ $account->purpose}}" class = "form-control"  required>
+  value="{{ $account->th_purpose}}" class = "form-control"  required>
   
 </div>
 

@@ -42,41 +42,48 @@ class AccountsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request, Account $account, Item $item)
-    {
+    {    
         
-        if($request->attach->getClientOriginalName())
+
+        
+        $id = Account::orderByDesc('th_tran_no')->first()->th_tran_no ?? date('Y') . 00000;
+        $year = date('Y');
+        $id_year = substr($id, 0, 4);
+        $seq = $year <> $id_year ? 0 : +substr($id, -5);
+        $new_id = sprintf("%0+4u%0+6u", $year, $seq+1);      
+
+
+        if($request->th_attach->getClientOriginalName())
         {
-        $ext = $request->attach->getClientOriginalExtension();
-        $file = date('YmdHis').rand(1,99999).'.'.$ext;
-        $request->attach->storeAs('public/categories',$file);
+            $ext = $request->th_attach->getClientOriginalExtension();
+            $file = date('YmdHis').rand(1,99999).'.'.$ext;
+            $request->th_attach->storeAs('public/categories',$file);
         }    
         else
         {
             $file='';
         }
-        $account->attach = $file;
-        $account->supp_name = $request->supp_name;
-        $account->emp_name = $request->emp_name;
-        $account->item_type = $request->item_type;
-        $account->bill_date = $request->bill_date;
-        $account->bill_amt = $request->bill_amt;
-        $account->bill_no = $request->bill_no;
-        $account->pay_mode = $request->pay_mode;
-        $account->purpose = $request->purpose;
-        $account->item_type = $request->item_type;
+        $account->th_attach = $file;
+        $account->th_supp_name = $request->th_supp_name;
+        $account->th_emp_name = $request->th_emp_name;
+        $account->th_item_type = $request->th_item_type;
+        $account->th_bill_dt = $request->th_bill_dt;
+        $account->th_bill_amt = $request->th_bill_amt;
+        $account->th_bill_no = $request->th_bill_no;
+        $account->th_pay_mode = $request->th_pay_mode;
+        $account->th_purpose = $request->th_purpose;
+        $account->th_item_type = $request->th_item_type;
+        $account->th_tran_no = $new_id;
         $account->save();       
         
-        foreach ($request->item_name as $key =>$name) {
-            $item = resolve(Item::class);
-           
-               
-            $item->item_name = trim($name,'"');    
-            $item->qty = $request->qty[$key] ;    
-            $item->unit_price = $request->unit_price[$key] ; 
+        foreach ($request->td_item_desc as $key =>$name) 
+        {
+            $item = resolve(Item::class);     
+            $item->td_item_desc = trim($name,'"');    
+            $item->td_qty = $request->td_qty[$key] ;    
+            $item->td_unit_price = $request->td_unit_price[$key] ; 
             $item->save();
-            
-            } 
-        
+        }         
         return redirect('admin/accounts');
     }
 
@@ -119,12 +126,12 @@ class AccountsController extends Controller
      */
     public function update(Request $request, Account $account)
     {
-        $account->supp_name = $request->supp_name;
-        $account->bill_date = $request->bill_date;
-        $account->bill_no = $request->bill_no;
-        $account->bill_amt = $request->bill_amt;
-        $account->item_type = $request->item_type;
-        $account->purpose = $request->purpose;        
+        $account->th_supp_name = $request->th_supp_name;
+        $account->th_bill_dt = $request->th_bill_dt;
+        $account->th_bill_no = $request->th_bill_no;
+        $account->th_bill_amt = $request->th_bill_amt;
+        $account->th_item_type = $request->th_item_type;
+        $account->th_purpose = $request->th_purpose;        
         $account->save();
         return redirect()->route('admin.accounts.index');
     }
