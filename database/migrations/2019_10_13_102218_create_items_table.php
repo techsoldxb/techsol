@@ -15,9 +15,9 @@ class CreateItemsTable extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->mediumInteger('td_doc_no')->nullable();
+            $table->Integer('td_tran_no')->nullable();
             $table->string('td_item_desc')->nullable();
-            $table->mediumInteger('td_qty')->nullable();
+            $table->Integer('td_qty')->nullable();
             $table->float('td_unit_price')->nullable();
             $table->float('td_unit_amt')->nullable();
             $table->date('td_bill_dt')->nullable();

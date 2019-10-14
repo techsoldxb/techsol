@@ -81,7 +81,8 @@ class AccountsController extends Controller
             $item = resolve(Item::class);     
             $item->td_item_desc = trim($name,'"');    
             $item->td_qty = $request->td_qty[$key] ;    
-            $item->td_unit_price = $request->td_unit_price[$key] ; 
+            $item->td_unit_price = $request->td_unit_price[$key] ;
+            $item->td_tran_no = $new_id; 
             $item->save();
         }         
         return redirect('admin/accounts');
