@@ -32,7 +32,7 @@ class AccountsController extends Controller
      */
     public function create()
     {
-        return view('admin.accounts.create');
+        return view('admin.accounts.create')->with('success','Item created successfully!');
     }
 
     /**
@@ -87,7 +87,7 @@ class AccountsController extends Controller
             $item->td_tran_no = $new_id; 
             $item->save();
         }         
-        return redirect('admin/accounts');
+        return redirect('admin/accounts')->with('success','Item created successfully!');
     }
 
     /**
