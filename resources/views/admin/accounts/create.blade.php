@@ -116,14 +116,16 @@
      <div class = "row">
      <label class = "col-lg-1" for="">Bill Date *</label>
      <div class = "col-lg-2">
-     <input class = "form-control" id="datepicker" data-date-format="dd/mm/yyyy" name = "th_bill_date" placeholder="Enter bill date" required>  
-     
-     
-     
-    <script>
-        $('#datepicker').datepicker({
-            uiLibrary: 'bootstrap4'
+     <input class = "form-control datepicker" id="datepicker" name = "th_bill_dt" placeholder="Enter bill date" required>  
+         
+    <script>   
+        $( ".datepicker" ).datepicker({
+        format: 'dd-mm-yyyy',
+        autoclose: true,
+                todayHighlight: true
         });
+
+
     </script>
     
   </div>
@@ -151,20 +153,7 @@
     </div>
     </div>
 
-    <div class="form-group">
-     <div class = "row">
-     <label class = "col-lg-1" for="">Emp Name *</label>
-     <div class = "col-lg-2">
-     <input type="text" name = "th_emp_name" class = "form-control" placeholder="Employe Name" required> </div>
-     
-
-     <label class = "col-lg-1" for="">Type</label>
-     <div class = "col-lg-2">
-     <input type="text" name = "th_item_type" class = "form-control" placeholder="Enter Asset / Others">
-     <div class = "clear-fix"></div>
-    </div>
-    </div>
-
+    
             
   <table class="table table-bordered">
     <thead>

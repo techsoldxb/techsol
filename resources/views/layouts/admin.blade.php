@@ -158,7 +158,7 @@
               <li class="nav-item">
                 <a href="pages/layout/boxed.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Missing Bills</p>
+                  <p>Unpaid Bills</p>
                 </a>
               </li>
             
@@ -166,7 +166,7 @@
               <li class="nav-item">
                 <a href="pages/layout/fixed-footer.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Pending Payments</p>
+                  <p>Paid Bills</p>
                 </a>
               </li>
               <li class="nav-item">

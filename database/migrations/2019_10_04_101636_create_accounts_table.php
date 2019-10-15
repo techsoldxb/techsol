@@ -18,11 +18,11 @@ class CreateAccountsTable extends Migration
             $table->string('th_comp_code')->nullable();
             $table->string('th_tran_code')->nullable();
             $table->string('th_tran_no')->nullable();
-            $table->date('th_tran_dt')->nullable();
+            $table->string('th_emp_id')->nullable();
             $table->string('th_emp_name')->nullable();
             $table->string('th_dept_code')->nullable();
             $table->string('th_supp_name')->nullable();
-            $table->date('th_bill_dt')->nullable();
+            $table->string('th_bill_dt')->nullable();
             $table->string('th_bill_no')->nullable();
             $table->float('th_bill_amt')->nullable();
             $table->string('th_pay_mode')->nullable();

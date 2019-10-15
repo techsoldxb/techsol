@@ -63,8 +63,20 @@
             }
         </style>
     </head>
+            <style>
+                div {
+                    background-image: url('screen.jpg');
+                    }
+            </style>
     <body>
+            
+
+                        
         <div class="flex-center position-ref full-height">
+
+                
+                       
+                        
             
         @if (Route::has('login'))
                 <div class="top-right links">
@@ -78,21 +90,16 @@
                         @endif
                     @endauth
                 </div>
-            @endif
+        @endif
 
             <div class="content">
                 <div class="title m-b-md">
-                    Oman Aquarium
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Mall Of Muscat</a>
-                    <a href="https://laracasts.com">Snow Village</a>
-                    <a href="https://laracasts.com">Al Jarwani</a>                
-                    
                     
                 </div>
+            
             </div>
-        </div>
+        
+    </div>
+</div>
     </body>
 </html>

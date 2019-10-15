@@ -33,6 +33,7 @@ Route::resource('/admin/categories', 'Admin\CategoriesController', ['as'=>'admin
 Route::resource('/admin/news', 'Admin\NewsController', ['as'=>'admin']);
 Route::resource('/admin/accounts', 'Admin\AccountsController', ['as'=>'admin']);
 
+
 /*
 Route::get('/print', 'AccountsController@print')->name('print');
 */

@@ -6,7 +6,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Accounts</h1>
+            <h1 class="m-0 text-dark">Reimbursement Request</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -35,6 +35,7 @@
             <th> Bill No. </th>
             <th> Bill Amount </th>
             <th> Purpose </th>
+            <th> Employee Name</th>
             <th> Action </th>
             </tr>
             @if(count($accounts))
@@ -47,6 +48,7 @@
             <td>{{ $c->th_bill_no }}</td>
             <td class="text-right">{{ number_format($c->th_bill_amt,3) }}</td>
             <td>{{ $c->th_purpose }}</td>
+            <td>{{ $c->th_emp_name }}</td>
             <td>             
             <a href="{{ route('admin.accounts.edit',$c->id) }}" class="btn btn-success btn-sm">Print</a>
             <a href="{{ route('admin.accounts.edit',$c->id) }}" class="btn btn-info btn-sm">Edit</a>

@@ -3,11 +3,16 @@
 
 namespace App\Http\Controllers\Admin;
 
+
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
+
 use App\Account;
 use App\Item;
 Use Auth;
+
+
 
 class AccountsController extends Controller
 {
@@ -21,8 +26,13 @@ class AccountsController extends Controller
      */
     public function index()
     {
-        $arr['accounts'] = Account::paginate(8);
+        
+
+        
+        $arr['accounts'] = Account::orderBy('th_tran_no','desc')->paginate(10);
         return view('admin.accounts.index')->with($arr);
+
+        
     }
 
     /**
@@ -32,7 +42,7 @@ class AccountsController extends Controller
      */
     public function create()
     {
-        return view('admin.accounts.create')->with('success','Item created successfully!');
+        return view('admin.accounts.create');
     }
 
     /**
@@ -41,10 +51,12 @@ class AccountsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    
+
     public function store(Request $request, Account $account, Item $item)
     {    
         
-
+        
         
         $id = Account::orderByDesc('th_tran_no')->first()->th_tran_no ?? date('Y') . 00000;
         $year = date('Y');
@@ -65,16 +77,17 @@ class AccountsController extends Controller
         }
         $account->th_attach = $file;
         $account->th_supp_name = $request->th_supp_name;
-        $account->th_emp_name = $request->th_emp_name;
-        $account->th_item_type = $request->th_item_type;
-        $account->th_bill_dt = $request->th_bill_dt;
+        $account->th_bill_dt = $request->th_bill_dt;    
         $account->th_bill_amt = $request->th_bill_amt;
         $account->th_bill_no = $request->th_bill_no;
         $account->th_pay_mode = $request->th_pay_mode;
         $account->th_purpose = $request->th_purpose;
-        $account->th_item_type = $request->th_item_type;
         $account->th_tran_no = $new_id;
+        $account->th_emp_id = Auth::user()->id;
         $account->th_emp_name = Auth::user()->name;
+        $account->th_dept_code = Auth::user()->dept;
+        $account->th_pay_status = 0;
+        $account->th_comp_code = '003';
         
         $account->save();       
         
@@ -87,7 +100,7 @@ class AccountsController extends Controller
             $item->td_tran_no = $new_id; 
             $item->save();
         }         
-        return redirect('admin/accounts')->with('success','Item created successfully!');
+        return redirect('admin/accounts')->with('success','Transaction created successfully!');
     }
 
     /**
@@ -148,6 +161,6 @@ class AccountsController extends Controller
     public function destroy($id)
     {
         Account::destroy($id);
-        return redirect()->route('admin.accounts.index');
+        return redirect()->route('admin.accounts.index')->with('success','Transaction deleted successfully!');
     }
 }
