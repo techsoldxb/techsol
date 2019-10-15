@@ -25,14 +25,9 @@ class AccountsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        
-
-        
-        $arr['accounts'] = Account::orderBy('th_tran_no','desc')->paginate(10);
-        return view('admin.accounts.index')->with($arr);
-
-        
+    {        
+    $arr['accounts'] = Account::where('th_emp_id', auth()->user()->id)->orderBy('th_tran_no','desc')->paginate(10);
+    return view('admin.accounts.index')->with($arr);        
     }
 
     /**

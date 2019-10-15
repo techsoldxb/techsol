@@ -105,7 +105,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
             <?php
-              $segment = Request::segment(2);
+              $segment = Request::segment(2);              
             ?>
 
           <li class="nav-item">
@@ -156,15 +156,23 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/layout/boxed.html" class="nav-link">
+                
+                <a href="{{route('admin.unpaidbills.index')}}" class="nav-link 
+                
+                @if($segment=='unpaidbills')                
+                active
+                @endif">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Unpaid Bills</p>
                 </a>
-              </li>
-            
+              </li>          
             
               <li class="nav-item">
-                <a href="pages/layout/fixed-footer.html" class="nav-link">
+                <a href="{{route('admin.paidbills.index')}}" class="nav-link
+                @if($segment=='paidbills')                
+                active
+                @endif                
+                ">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Paid Bills</p>
                 </a>

@@ -32,6 +32,8 @@ Route::get('/dashboard', 'TestController@dashboard')->name('dashboard');
 Route::resource('/admin/categories', 'Admin\CategoriesController', ['as'=>'admin']);
 Route::resource('/admin/news', 'Admin\NewsController', ['as'=>'admin']);
 Route::resource('/admin/accounts', 'Admin\AccountsController', ['as'=>'admin']);
+Route::resource('/admin/unpaidbills', 'Admin\UnpaidController', ['as'=>'admin']);
+Route::resource('/admin/paidbills', 'Admin\PaidController', ['as'=>'admin']);
 
 
 /*
