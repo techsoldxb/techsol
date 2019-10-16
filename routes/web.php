@@ -36,6 +36,10 @@ Route::resource('/admin/unpaidbills', 'Admin\UnpaidController', ['as'=>'admin'])
 Route::resource('/admin/paidbills', 'Admin\PaidController', ['as'=>'admin']);
 
 
+
+
+
+
 /*
 Route::get('/print', 'AccountsController@print')->name('print');
 */
