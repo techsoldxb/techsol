@@ -50,7 +50,7 @@
             <td>{{ $c->th_purpose }}</td>
             <td>{{ $c->th_emp_name }}</td>
             <td>             
-            <a href="{{ route('admin.accounts.edit',$c->id) }}" class="btn btn-success btn-sm">Print</a>
+            <a href="{{ route('admin.accounts.edit',$c->id) }}" class="btn btn-success btn-sm">View</a>
             <a href="{{ route('admin.accounts.edit',$c->id) }}" class="btn btn-info btn-sm">Edit</a>
             <a href="javascript:void(0)" onclick = "$(this).parent().find('form').submit()" class="btn btn-danger btn-sm">Delete</a>
             <form action = "{{ route('admin.accounts.destroy', $c->id)}}" method = "POST">
