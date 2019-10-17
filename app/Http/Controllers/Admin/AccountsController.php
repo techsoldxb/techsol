@@ -115,9 +115,10 @@ class AccountsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Account $account)
+    public function edit(Account $account, Item $item)
     {
         $arr['account'] = $account;
+        $arr['item'] = $item;
         return view('admin.accounts.edit')->with($arr);
     }
 
@@ -134,7 +135,7 @@ class AccountsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Account $account)
+    public function update(Request $request, Account $account, Item $item)
     {
         $account->th_supp_name = $request->th_supp_name;
         $account->th_bill_dt = $request->th_bill_dt;

@@ -121,7 +121,7 @@
       <tr>
        
         <td class="text-center">1</td>        
-        <td ><input type="email" class="form-control" id="email"></td>
+        <td ><input type="email" class="form-control" id="email" value="{{ $item->td_item_desc }}"></td>
         <td ><input type="email" class="form-control text-center" id="email"></td>
         <td ><input type="email" class="form-control text-right" id="email"></td>
         <td ><input type="email" class="form-control text-right" id="email"></td>
