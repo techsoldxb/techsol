@@ -42,7 +42,7 @@
 
     <section class="content">
       <div class="container-fluid">
-     <form class="needs-validation" novalidate method = "post" action="{{ route('admin.accounts.update',  $account->id) }}">
+     <form class="needs-validation" novalidate method = "post" action="{{ route('admin.accounts.update',  $account->th_tran_no) }}">
      @method('PUT')
      <input type="hidden" name="_token" value = "{{ csrf_token() }}">
      <div class="form-group">

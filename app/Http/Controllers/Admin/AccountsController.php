@@ -121,11 +121,10 @@ class AccountsController extends Controller
         return view('admin.accounts.edit')->with($arr);
     }
 
-    public function print()
-    {
-        return view('admin.accounts.print');
+    public function print(Account $account) { 
+        $arr['account'] = $account;     
+        return view('admin.accounts.print')->with('account', $account); 
     }
-  
   
 
     /**

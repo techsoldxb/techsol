@@ -25,6 +25,7 @@ Route::get('changeStatus', 'UserController@changeStatus');
 Route::get('/admin', 'HomeController@index')->name('home');
 Route::get('/about', 'TestController@about')->name('about');
 
+
 Route::get('/product', 'TestController@product')->name('product');
 Route::get('/testhome', 'HomeController@test')->name('testhome');
 Route::get('/dashboard', 'TestController@dashboard')->name('dashboard');
@@ -34,6 +35,13 @@ Route::resource('/admin/news', 'Admin\NewsController', ['as'=>'admin']);
 Route::resource('/admin/accounts', 'Admin\AccountsController', ['as'=>'admin']);
 Route::resource('/admin/unpaidbills', 'Admin\UnpaidController', ['as'=>'admin']);
 Route::resource('/admin/paidbills', 'Admin\PaidController', ['as'=>'admin']);
+
+Route::get('/admin/accounts/{account}/print', 'Admin\AccountsController@print')->name('admin.accounts.print');
+
+
+
+
+
 
 
 
