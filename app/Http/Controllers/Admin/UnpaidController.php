@@ -23,7 +23,7 @@ class UnpaidController extends Controller
      */
     public function index()
     {
-        $arr['accounts'] = Account::orderBy('th_tran_no','desc')->paginate(10);
+        $arr['accounts'] = Account::orderBy('th_tran_no','desc')->paginate(8);
         return view('admin.unpaidbills.index')->with($arr);
     }
 

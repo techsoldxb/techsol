@@ -48,7 +48,7 @@
             <td>{{ $c->th_purpose }}</td>
             <td>{{ $c->th_emp_name }}</td>
             <td>             
-            <a href="{{ route('admin.accounts.edit',$c->id) }}" class="btn btn-success btn-sm">Print</a>
+            <a href="{{ route('admin.accounts.print',$c->th_tran_no) }}" class="btn btn-success btn-sm">View</a>
             <a href="{{ route('admin.accounts.edit',$c->id) }}" class="btn btn-info btn-sm">Edit</a>
             
           </td>                

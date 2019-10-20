@@ -22,7 +22,7 @@ class CreateAccountsTable extends Migration
             $table->string('th_emp_name')->nullable();
             $table->string('th_dept_code')->nullable();
             $table->string('th_supp_name')->nullable();
-            $table->string('th_bill_dt')->nullable();
+            $table->date('th_bill_dt')->nullable();
             $table->string('th_bill_no')->nullable();
             $table->float('th_bill_amt')->nullable();
             $table->string('th_pay_mode')->nullable();

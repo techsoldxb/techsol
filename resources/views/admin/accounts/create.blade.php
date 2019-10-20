@@ -70,7 +70,7 @@
         var firsttotal = textValue1 * textValue2;  
         var secondtotal = textValue3 * textValue4;
         var thirdtotal = textValue5 * textValue6;
-        document.getElementById('total').value = textValue1;
+        document.getElementById('td_total').value = textValue1;
 			}  
     </script>
 
@@ -192,7 +192,7 @@
         <tr>
         <td class="text-center"></td>
         <td class="text-right" colspan="3"><label>Total</label></td>
-        <td><input  type="text" class="form-control text-right" onkeyup="bill_total()" name = "total" id="td_total" disabled></td>        
+        <td><input  type="text" class="form-control text-right" onkeyup="bill_total()" name = "td_total" id="td_total" disabled></td>        
       </tr>
 
     </tbody>

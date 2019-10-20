@@ -60,12 +60,13 @@
      <div class = "row">
      <label class = "col-lg-1" for="">Bill Date *</label>
      <div class = "col-lg-2">
-     <input class = "form-control" id="datepicker"  name = "bill_date" value="{{ $account->th_bill_dt}}" placeholder="Enter bill date" required>
+     <input class = "form-control" id="datepicker"  name = "th_bill_dt" value="{{ $account->th_bill_dt}}" placeholder="Enter bill date" required>
     <script>
         $('#datepicker').datepicker({
             uiLibrary: 'bootstrap4'
         });
     </script></div>
+
 
 
      
@@ -81,7 +82,8 @@
      <div class = "row">
      <label class = "col-lg-1" for="">Bill Amount *</label>
      <div class = "col-lg-2">
-     <input type="text" name = "th_bill_amt" value="{{ $account->th_bill_amt}}" class = "form-control" placeholder="Enter bill amount" required> </div>
+     <input type="text" name = "th_bill_amt" value="{{ number_format($account->th_bill_amt,3)}}" class = "form-control" placeholder="Enter bill amount" required> </div>
+     
      
 
      <label class = "col-lg-1" for="">Payment Mode</label>
@@ -161,7 +163,7 @@
 <div class="form-group">
   <label for="comment">Comment:</label>
 
-  <input type="text" name = "purpose" 
+  <input type="text" name = "th_purpose" 
   value="{{ $account->th_purpose}}" class = "form-control"  required>
   
 </div>

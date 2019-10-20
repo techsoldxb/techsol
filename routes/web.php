@@ -48,6 +48,9 @@ Route::get('/admin/accounts/{account}/print', 'Admin\AccountsController@print')-
 
 
 
+
+
+
 /*
 Route::get('/print', 'AccountsController@print')->name('print');
 */

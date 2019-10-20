@@ -54,7 +54,7 @@
         </div>  
         <div class="container-fluid">
        <form class="needs-validation" novalidate method = "post" >
-       @method('PUT')
+       @method('GET')
        <input type="hidden" name="_token" value = "{{ csrf_token() }}">
        <div class="form-group">
        <div class = "row">
@@ -71,11 +71,10 @@
        <div class = "row">
        <label class = "col-lg-1" for="">Bill Date *</label>
        <div class = "col-lg-2">
-       <input class = "form-control" id="datepicker"  name = "bill_date" value="{{ $account->th_bill_dt}}" readonly>
+       <input class = "form-control" id="datepicker"  name = "bill_date" value="{{ date('d-m-Y', strtotime($account->th_bill_dt))}}" readonly>
       </div>
   
-  
-       
+     
   
        <label class = "col-lg-1" for="">Bill Number *</label>
        <div class = "col-lg-2">
@@ -88,7 +87,8 @@
        <div class = "row">
        <label class = "col-lg-1" for="">Bill Amount *</label>
        <div class = "col-lg-2">
-       <input type="text" name = "th_bill_amt" value="{{ $account->th_bill_amt}}" class = "form-control" readonly> </div>
+       <input type="text" name = "th_bill_amt" value="{{ number_format($account->th_bill_amt,3)}}" class = "form-control" readonly> </div>
+       
        
   
        <label class = "col-lg-1" for="">Payment Mode</label>
@@ -102,7 +102,7 @@
        <div class = "row">
        <label class = "col-lg-1" for="">Emp Name *</label>
        <div class = "col-lg-2">
-       <input type="text" name = "th_emp_name" class = "form-control" placeholder="Employe Name" readonly> </div>
+       <input type="text" name = "th_emp_name" value="{{ $account->th_emp_name}}" class = "form-control" readonly> </div>
        
   
        <label class = "col-lg-1" for="">Type</label>
@@ -116,7 +116,7 @@
           <div class = "row">
           <label class = "col-lg-1" for="">Tran Number</label>
           <div class = "col-lg-2">
-          <input type="text" name = "th_emp_name" class = "form-control" readonly> </div>
+          <input type="text" name = "th_tran_no" value="{{ $account->th_tran_no}}" class = "form-control" readonly> </div>
           
      
           
@@ -141,10 +141,10 @@
         <tr>
          
           <td class="text-center">1</td>        
-          <td ><input type="email" class="form-control" id="email"></td>
-          <td ><input type="email" class="form-control text-center" id="email"></td>
-          <td ><input type="email" class="form-control text-right" id="email"></td>
-          <td ><input type="email" class="form-control text-right" id="email"></td>
+          <td ><input type="text" value="{{ $item->td_item_desc}}" class="form-control"></td>
+          <td ><input type="text" class="form-control text-center" ></td>
+          <td ><input type="text" class="form-control text-right" ></td>
+          <td ><input type="text" class="form-control text-right"></td>
         </tr>
    
          <tr>

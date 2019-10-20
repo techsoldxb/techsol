@@ -60,19 +60,30 @@ class AccountsController extends Controller
         $new_id = sprintf("%0+4u%0+6u", $year, $seq+1);      
 
 
-        if($request->th_attach->getClientOriginalName())
-        {
-            $ext = $request->th_attach->getClientOriginalExtension();
-            $file = date('YmdHis').rand(1,99999).'.'.$ext;
-            $request->th_attach->storeAs('public/categories',$file);
-        }    
-        else
-        {
-            $file='';
-        }
-        $account->th_attach = $file;
+
+            $filename='';
+
+            if( $request->hasFile('th_attach'))
+                {
+                  $file = $request->file('th_attach');
+                  $ext = $file->getClientOriginalExtension();
+                  $filename = date('YmdHis').rand(1,99999).'.'.$ext;
+                  $file->storeAs('public/categories', $filename);
+                }
+     
+
+       
+      
+    
+
+        $account->th_attach = $filename;
         $account->th_supp_name = $request->th_supp_name;
-        $account->th_bill_dt = $request->th_bill_dt;    
+
+       // $date  = Carbon::createFromFormat('Y-m-d', $request->th_bill_dt); 
+       $date  = Carbon::createFromFormat('d-m-Y', $request->th_bill_dt);        
+       $account->th_bill_dt = $date;    
+       // $account->th_bill_dt = $request->th_bill_dt;    
+        
         $account->th_bill_amt = $request->th_bill_amt;
         $account->th_bill_no = $request->th_bill_no;
         $account->th_pay_mode = $request->th_pay_mode;
@@ -86,14 +97,21 @@ class AccountsController extends Controller
         
         $account->save();       
         
+        //dd($request->td_item_desc); 
+
         foreach ($request->td_item_desc as $key =>$name) 
         {
-            $item = resolve(Item::class);     
-            $item->td_item_desc = trim($name,'"');    
-            $item->td_qty = $request->td_qty[$key] ;    
-            $item->td_unit_price = $request->td_unit_price[$key] ;
-            $item->td_tran_no = $new_id; 
-            $item->save();
+
+            if($request->td_qty[$key]) {
+                $item = resolve(Item::class);     
+                $item->td_item_desc = trim($name,'"');    
+                $item->td_qty = $request->td_qty[$key] ;    
+                $item->td_unit_price = $request->td_unit_price[$key] ;
+                $item->td_tran_no = $new_id; 
+                $item->save();
+              }
+
+     
         }         
         return redirect('admin/accounts')->with('success','Transaction created successfully!');
     }
@@ -122,10 +140,15 @@ class AccountsController extends Controller
         return view('admin.accounts.edit')->with($arr);
     }
 
-    public function print(Account $account) { 
+    public function print(Account $account, Item $item) { 
+
+        
         $arr['account'] = $account;     
-        return view('admin.accounts.print')->with('account', $account); 
+        $arr['item'] = $item;     
+        return view('admin.accounts.print')->with('account', $account)->with('item',$item); 
     }
+
+   
   
 
     /**
@@ -138,7 +161,12 @@ class AccountsController extends Controller
     public function update(Request $request, Account $account, Item $item)
     {
         $account->th_supp_name = $request->th_supp_name;
-        $account->th_bill_dt = $request->th_bill_dt;
+
+        //$date  = Carbon::createFromFormat('d-m-Y', $request->th_bill_dt);        
+       //$account->th_bill_dt = $date;  
+
+       
+       // $account->th_bill_dt = $request->th_bill_dt;
         $account->th_bill_no = $request->th_bill_no;
         $account->th_bill_amt = $request->th_bill_amt;
         $account->th_item_type = $request->th_item_type;

@@ -40,10 +40,11 @@
             @if(count($accounts))
             @foreach($accounts as $c)
             <tr>
-            <td>{{ $c->th_tran_no }}</td>
+            <td><a href="{{ url('storage/categories/'.$c->th_attach) }}" target="_blank">{{ $c->th_tran_no }}</a></td>
+            
             <td>{{ date('d-m-Y', strtotime($c->created_at)) }}</td>            
             <td>{{ $c->th_supp_name }}</td>
-            <td>{{ $c->th_bill_dt }}</td>
+            <td>{{ date('d-m-Y', strtotime($c->th_bill_dt)) }}</td>
             <td>{{ $c->th_bill_no }}</td>
             <td class="text-right">{{ number_format($c->th_bill_amt,3) }}</td>
             <td>{{ $c->th_purpose }}</td>
