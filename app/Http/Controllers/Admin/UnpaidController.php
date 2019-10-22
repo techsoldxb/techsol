@@ -9,6 +9,7 @@ use Carbon\Carbon;
 use App\Account;
 use App\Item;
 Use Auth;
+Use Gate;
 
 class UnpaidController extends Controller
 {
@@ -23,6 +24,12 @@ class UnpaidController extends Controller
      */
     public function index()
     {
+
+        if(!Gate::allows('isAdmin'))
+        {
+            abort(404,"Sorry you are not allowed");
+        }
+
         $arr['accounts'] = Account::orderBy('th_tran_no','desc')->paginate(8);
         return view('admin.unpaidbills.index')->with($arr);
     }
