@@ -155,6 +155,7 @@
                   <p>Reimbursement</p>
                 </a>
               </li>
+              @can('isAdmin')
               <li class="nav-item">
                 
                 <a href="{{route('admin.unpaidbills.index')}}" class="nav-link 
@@ -166,7 +167,7 @@
                   <p>Unpaid Bills</p>
                 </a>
               </li>          
-            
+           
               <li class="nav-item">
                 <a href="{{route('admin.paidbills.index')}}" class="nav-link
                 @if($segment=='paidbills')                
@@ -177,6 +178,7 @@
                   <p>Paid Bills</p>
                 </a>
               </li>
+              @endcan
               <li class="nav-item">
                 <a href="pages/layout/collapsed-sidebar.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
