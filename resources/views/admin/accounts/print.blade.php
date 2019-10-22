@@ -151,9 +151,19 @@
           <td ><input type="text" value="{{ $item->td_item_desc}}" class="form-control"></td>
           <td ><input type="text"  value="{{ $item->td_qty[0]}}" class="form-control text-center" ></td>
           <td ><input type="text" value="{{ number_format($item->td_unit_price,3)}}" class="form-control text-right" ></td>
-          <td ><input type="text" class="form-control text-right"></td>
+          <td ><input type="text" class="form-control text-right">
+    <?php
+
+foreach($store as $s)
+{
+    echo $s['td_item_desc'];
+}
+
+?>
+
+        </td>
         </tr>
-   
+  
          <tr>
           <td class="text-center">2</td>
           <td><input type="text" value="{{ $item->td_item_desc}}" class="form-control" id="email"></td>

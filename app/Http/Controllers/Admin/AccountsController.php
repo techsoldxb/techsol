@@ -156,7 +156,9 @@ class AccountsController extends Controller
     
     $arr['account'] = $account;     
     $arr['item'] = $item;     
-    return view('admin.accounts.print')->with('account', $account)->with('item',$item)->with('store',$store)->with($people); 
+    return view('admin.accounts.print')->with('account', $account)->with('item',$item)->with('store',$store)->with($people)->with(['key' => 'td_tran_no']); 
+
+    
 }
    
   
