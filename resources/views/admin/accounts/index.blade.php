@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 @section('content')
 
+
   <!-- Content Header (Page header) -->
   <div class="content-header">
       <div class="container-fluid">
@@ -35,10 +36,13 @@
             <th> Bill No. </th>
             <th> Bill Amount </th>
             <th> Purpose </th>
+            
             <th> Action </th>
             </tr>
             @if(count($accounts))
+            
             @foreach($accounts as $c)
+            
             <tr>
             <td><a href="{{ url('storage/categories/'.$c->th_attach) }}" target="_blank">{{ $c->th_tran_no }}</a></td>
             
@@ -49,8 +53,12 @@
             <td class="text-right">{{ number_format($c->th_bill_amt,3) }}</td>
             <td>{{ $c->th_purpose }}</td>
             
+            
             <td>             
-            <a href="{{ route('admin.accounts.print',$c->th_tran_no) }}" class="btn btn-success btn-sm">View</a>
+              <a href="{{ route('admin.accounts.print', $c) }}" class="btn btn-success btn-sm">View</a>
+           
+
+            
             <a href="{{ route('admin.accounts.edit',$c->th_tran_no) }}" class="btn btn-info btn-sm">Edit</a>
             <a href="javascript:void(0)" onclick = "$(this).parent().find('form').submit()" class="btn btn-danger btn-sm">Delete</a>
             <form action = "{{ route('admin.accounts.destroy', $c->id)}}" method = "POST">
@@ -61,9 +69,11 @@
             
             </tr>
             @endforeach
+            
             @else
             <tr><td colspan="11">No Record Found</td></tr>
             @endif
+            
         </table>
         {{ $accounts->render() }}
       </div>

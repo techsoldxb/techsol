@@ -27,7 +27,8 @@ class AccountsController extends Controller
     public function index()
     {        
     $arr['accounts'] = Account::where('th_emp_id', auth()->user()->id)->where('th_pay_status', 0)->orderBy('th_tran_no','desc')->paginate(10);
-    return view('admin.accounts.index')->with($arr);        
+    return view('admin.accounts.index')->with($arr);    
+    
     }
 
     /**
@@ -140,14 +141,23 @@ class AccountsController extends Controller
         return view('admin.accounts.edit')->with($arr);
     }
 
-    public function print(Account $account, Item $item) { 
 
+    public function print(Account $account) 
+{ 
+  
+
+    $people= ['Ali','Reza','David','Alex'];
+
+    
+
+    $item = Item::where('td_tran_no', $account->th_tran_no)->firstOrFail();
         
-        $arr['account'] = $account;     
-        $arr['item'] = $item;     
-        return view('admin.accounts.print')->with('account', $account)->with('item',$item); 
-    }
-
+    $store = Item::all();
+    
+    $arr['account'] = $account;     
+    $arr['item'] = $item;     
+    return view('admin.accounts.print')->with('account', $account)->with('item',$item)->with('store',$store)->with($people); 
+}
    
   
 

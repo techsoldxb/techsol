@@ -38,6 +38,15 @@ Route::resource('/admin/paidbills', 'Admin\PaidController', ['as'=>'admin']);
 
 Route::get('/admin/accounts/{account}/print', 'Admin\AccountsController@print')->name('admin.accounts.print');
 
+//Route::get('/admin/accounts/{account}/print/{item}', 'Admin\AccountsController@print')->name('admin.accounts.print');
+
+//Route::get('/admin/accounts/{account}/print', 'Admin\AccountsController@print')->name('admin.accounts.print');
+
+
+
+
+
+
 
 
 

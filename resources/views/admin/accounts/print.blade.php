@@ -49,7 +49,7 @@
   
       <section class="content">
         <div>
-          <h1 class="m-0 text-dark text-center">Tamani Enterinment</h1>
+          <h1 class="m-0 text-dark text-center">Tamani Entertainment</h1>
           <h2 class="m-0 text-dark text-center">Oman Aquarium</h2>
         </div>  
         <div class="container-fluid">
@@ -113,15 +113,22 @@
       </div>
 
       <div class="form-group">
-          <div class = "row">
-          <label class = "col-lg-1" for="">Tran Number</label>
-          <div class = "col-lg-2">
-          <input type="text" name = "th_tran_no" value="{{ $account->th_tran_no}}" class = "form-control" readonly> </div>
-          
+        <div class = "row">
+        <label class = "col-lg-1" for="">Tran Date</label>
+        <div class = "col-lg-2">
+        <input type="text" name = "th_emp_name" value="{{ date('d-m-Y', strtotime($account->created_at))}}" class = "form-control" readonly> </div>
+        
+   
+        <label class = "col-lg-1" for="">Tran Number</label>
+        <div class = "col-lg-2">
+        <input type="text" name = "th_tran_no" value="{{ $account->th_tran_no}}" class = "form-control" readonly>
+        <div class = "clear-fix"></div>
+       </div>
+       </div>
+
      
-          
-         </div>
-         </div>
+
+         
 
       
   
@@ -142,38 +149,39 @@
          
           <td class="text-center">1</td>        
           <td ><input type="text" value="{{ $item->td_item_desc}}" class="form-control"></td>
-          <td ><input type="text" class="form-control text-center" ></td>
-          <td ><input type="text" class="form-control text-right" ></td>
+          <td ><input type="text"  value="{{ $item->td_qty[0]}}" class="form-control text-center" ></td>
+          <td ><input type="text" value="{{ number_format($item->td_unit_price,3)}}" class="form-control text-right" ></td>
           <td ><input type="text" class="form-control text-right"></td>
         </tr>
    
          <tr>
           <td class="text-center">2</td>
-          <td><input type="email" class="form-control" id="email"></td>
-          <td><input type="email" class="form-control text-center" id="email"></td>
-          <td><input type="email" class="form-control text-right" id="email"></td>
-          <td><input type="email" class="form-control text-right" id="email"></td>
+          <td><input type="text" value="{{ $item->td_item_desc}}" class="form-control" id="email"></td>
+          <td><input type="text" value="{{ $item->td_qty[1]}}" class="form-control text-center" id="text"></td>  
+          <td><input type="text" value="{{ number_format($item->td_unit_price,3)}}" class="form-control text-right" id="text"></td>
+          <td><input type="text" class="form-control text-right" id="text"></td>
         </tr>
+
          <tr>
           <td class="text-center">3</td>
-          <td><input type="email" class="form-control" id="email"></td>
-          <td><input type="email" class="form-control text-center" id="email"></td>
-          <td><input type="email" class="form-control text-right" id="email"></td>
-          <td><input type="email" class="form-control text-right" id="email"></td>
+          <td><input type="text" class="form-control" id="text"></td>
+          <td><input type="text" class="form-control text-center" id="text"></td>
+          <td><input type="text" class="form-control text-right" id="text"></td>
+          <td><input type="text" class="form-control text-right" id="text"></td>
         </tr>
          <tr>
           <td class="text-center">4</td>
-          <td><input type="email" class="form-control" id="email"></td>
-          <td><input type="email" class="form-control text-center" id="email"></td>
-          <td><input type="email" class="form-control text-right" id="email"></td>
-          <td><input type="email" class="form-control text-right" id="email"></td>
+          <td><input type="text" class="form-control" id="text"></td>
+          <td><input type="text" class="form-control text-center" id="text"></td>
+          <td><input type="text" class="form-control text-right" id="text"></td>
+          <td><input type="text" class="form-control text-right" id="text"></td>
         </tr>
             <tr>
           <td class="text-center">5</td>
-          <td><input type="email" class="form-control" id="email"></td>
-          <td><input type="email" class="form-control text-center" id="email"></td>
-          <td><input type="email" class="form-control text-right" id="email"></td>
-          <td><input type="email" class="form-control text-right" id="email"></td>
+          <td><input type="text" class="form-control" id="text"></td>
+          <td><input type="text" class="form-control text-center" id="text"></td>
+          <td><input type="text" class="form-control text-right" id="text"></td>
+          <td><input type="text" class="form-control text-right" id="email"></td>
         </tr>
       </tbody>
     </table>
@@ -192,7 +200,9 @@
   
   <div class="form-group">
 
-      <button onclick="myFunction()">Print</button>
+    
+
+      <a onclick="myFunction()" class="btn btn-success btn-sm">Print</a>
 
      
 
