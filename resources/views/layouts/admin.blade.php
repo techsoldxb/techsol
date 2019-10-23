@@ -121,6 +121,7 @@
             </a>
 
           </li>
+          @can('isAdmin')
           <li class="nav-item">
             <a href="{{route('admin.categories.index')}}" class="nav-link
             @if($segment=='categories')
@@ -134,6 +135,7 @@
               </p>
             </a>
           </li>
+          @endcan
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link 
             @if($segment=='accounts')
@@ -178,15 +180,17 @@
                   <p>Paid Bills</p>
                 </a>
               </li>
-              @endcan
+              
               <li class="nav-item">
                 <a href="pages/layout/collapsed-sidebar.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Bill History</p>
                 </a>
               </li>
+              @endcan
             </ul>
           </li>
+          @can('isAdmin')
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>
@@ -216,6 +220,7 @@
               </li>
             </ul>
           </li>
+          
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-tree"></i>
@@ -252,6 +257,7 @@
              
             </ul>
           </li>
+          
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-edit"></i>
@@ -281,6 +287,7 @@
               </li>
             </ul>
           </li>
+          
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
@@ -310,6 +317,7 @@
               </li>
             </ul>
           </li>
+          
 
           <li class="nav-header">MISCELLANEOUS</li>
           <li class="nav-item">
@@ -325,7 +333,7 @@
             </a>
           </li>
 
-       
+          @endcan
          
           <li class="nav-header">Action</li>
           <li class="nav-item">
