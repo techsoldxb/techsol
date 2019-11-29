@@ -42,6 +42,8 @@ Route::get('/admin/accounts/{account}/print', 'Admin\AccountsController@print')-
 
 //Route::get('/admin/accounts/{account}/print', 'Admin\AccountsController@print')->name('admin.accounts.print');
 
+Route::resource('/admin/customers', 'Admin\CustomerController', ['as'=>'admin']);
+
 
 
 
