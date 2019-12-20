@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Oman Aquarium | Dashboard</title>
+  <title>Techsol CRM| Dashboard</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
@@ -51,22 +51,26 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="index3.html" class="nav-link">Home</a>
       </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
-      </li>
+     
     </ul>
 
-    <!-- SEARCH FORM -->
-    <form class="form-inline ml-3">
-      <div class="input-group input-group-sm">
-        <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-        <div class="input-group-append">
-          <button class="btn btn-navbar" type="submit">
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
-      </div>
-    </form>
+   <!-- Right navbar links -->
+   <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+
+            <a class="nav-link" href="{{ route('logout') }}"
+                                         onclick="event.preventDefault();
+                                                       document.getElementById('logout-form').submit();">
+                                                       <i class="fas fa-power-off" style="color:red"></i>
+                                          {{ __('Logout') }}
+                                      </a>
+  
+                                      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                          @csrf
+                                      </form>
+  
+            
+            </li>
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
@@ -83,7 +87,7 @@
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
     <img src={{asset('dist/img/logo.png class=brand-image img-circle elevation-3 style=opacity: .8')}}>
-     <span class="brand-text font-weight-light">Oman Aquarium</span>
+     <span class="brand-text font-weight-light">Techsol Computers</span>
     </a>
 
     <!-- Sidebar -->
@@ -138,13 +142,13 @@
           @endcan
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link 
-            @if($segment=='accounts')
+            @if($segment=='CRM')
             active
             @endif
             ">
               <i class="nav-icon fas fa-copy"></i>
               <p>
-                Accounts
+                CRM
                 <i class="fas fa-angle-left right"></i>
                 <span class="badge badge-info right">4</span>
               </p>
@@ -171,13 +175,13 @@
               </li>          
            
               <li class="nav-item">
-                <a href="{{route('admin.paidbills.index')}}" class="nav-link
+                <a href="{{route('admin.customers.index')}}" class="nav-link
                 @if($segment=='paidbills')                
                 active
                 @endif                
                 ">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Paid Bills</p>
+                  <p>Customer List</p>
                 </a>
               </li>
               
@@ -335,22 +339,7 @@
 
           @endcan
          
-          <li class="nav-header">Action</li>
-          <li class="nav-item">
-
-          <a class="nav-link" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                                      <i class="nav-icon far fa-circle text-danger"></i>
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-
-          
-          </li>
+       
           
         </ul>
       </nav>
@@ -366,7 +355,7 @@
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2019 <a href="http://www.omanaquarium.om">Oman Aquarium</a>.</strong>
+    <strong>Copyright &copy; 2014-2019 <a href="http://www.techsolme.com">Techsol Computers</a>.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
       <b>Version</b> 3.0.0-beta.2
