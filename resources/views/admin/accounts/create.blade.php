@@ -19,6 +19,48 @@
 })();
 </script>
 
+<script>
+
+  $(function(){
+              $('#cost_aed, #tax_per,#profit_perc,#profit_perc,#courier').keyup(function()
+              {
+                 var cost_aed = parseFloat($('#cost_aed').val()) || 0;
+                 var tax_per = 5;
+           var tax_amount = (cost_aed*tax_per)/100;
+                 $('#tax_amount').val(tax_amount);
+           var cost_aed_tax = cost_aed + tax_amount;
+           $('#cost_aed_tax').val(cost_aed_tax);
+              
+  
+  var cost_omr = parseFloat(Number(cost_aed_tax / 9.5).toFixed(3));  
+  
+  
+              $('#cost_omr').val(cost_omr);			   
+                  var profit_perc = parseFloat($('#profit_perc').val()) || 0;				
+      
+        
+  var profit_amount = parseFloat(Number((cost_omr * profit_perc)/100).toFixed(3));  
+        
+  
+             $('#profit_amount').val(profit_amount);	
+                   var courier = parseFloat($('#courier').val()) || 0;					 
+            
+  
+  var selling_price = parseFloat(Number(cost_omr + profit_amount + courier).toFixed(3));  
+  
+                
+        var profit_perc_val = $("#profit_perc").val();
+  if(jQuery.trim(profit_perc_val).length > 0)
+  {
+       $('#selling_price').val(selling_price);	
+     
+     
+  }                     
+                  
+              });
+           });
+  </script>
+
 <!-- This below code is used to calculate the amount field  -->
 
 <script>
@@ -42,6 +84,51 @@
     var textValue6 = document.getElementById('price3').value;
      document.getElementById('amount3').value = textValue5 * textValue6;
     } 
+
+    function calc4() 
+    {
+      var textValue7 = document.getElementById('qty4').value;
+    var textValue8 = document.getElementById('price4').value;
+     document.getElementById('amount4').value = textValue7 * textValue8;
+    } 
+
+    function calc5() 
+    {
+      var textValue9 = document.getElementById('qty5').value;
+    var textValue10 = document.getElementById('price5').value;
+     document.getElementById('amount5').value = textValue9 * textValue10;
+    } 
+
+    function calc6() 
+    {
+      var textValue11 = document.getElementById('qty6').value;
+        var textValue12 = document.getElementById('price6').value;
+     document.getElementById('amount6').value = textValue11 * textValue12;
+    } 
+
+    function calc7() 
+    {
+      var textValue13 = document.getElementById('qty7').value;
+        var textValue14 = document.getElementById('price7').value;
+     document.getElementById('amount7').value = textValue13 * textValue14;
+    } 
+
+    function calc8() 
+    {
+    
+      var textValue15 = document.getElementById('qty8').value;
+        var textValue16 = document.getElementById('price8').value;
+     document.getElementById('amount8').value = textValue15 * textValue16;
+    } 
+
+    function calc9() 
+    {
+    
+      var textValue17 = document.getElementById('qty9').value;
+        var textValue18 = document.getElementById('price9').value;
+     document.getElementById('amount9').value = textValue17 * textValue18;
+    } 
+
     </script>
     <!-- End -->
     <!-- This script is used to allow only number in the bill amount field -->
@@ -66,11 +153,40 @@
         var textValue4 = document.getElementById('price2').value;
         var textValue5 = document.getElementById('qty3').value;
         var textValue6 = document.getElementById('price3').value;
+
+        var textValue7 = document.getElementById('qty4').value;
+        var textValue8 = document.getElementById('price4').value;
+
+        var textValue9 = document.getElementById('qty5').value;
+        var textValue10 = document.getElementById('price5').value;
+
+        var textValue11 = document.getElementById('qty6').value;
+        var textValue12 = document.getElementById('price6').value;
+
+        var textValue13 = document.getElementById('qty7').value;
+        var textValue14 = document.getElementById('price7').value;
+
+        var textValue15 = document.getElementById('qty8').value;
+        var textValue16 = document.getElementById('price8').value;
+
+        var textValue17 = document.getElementById('qty9').value;
+        var textValue18 = document.getElementById('price9').value;
+
+        var textValue19 = document.getElementById('qty10').value;
+        var textValue20 = document.getElementById('price10').value;
         
-        var firsttotal = textValue1 * textValue2;  
-        var secondtotal = textValue3 * textValue4;
-        var thirdtotal = textValue5 * textValue6;
-        document.getElementById('td_total').value = textValue1;
+        var one = textValue1 * textValue2;  
+        var two = textValue3 * textValue4;
+        var three = textValue5 * textValue6;
+        var four = textValue7 * textValue8;
+        var five = textValue9 * textValue10;
+        var six = textValue11 * textValue12;
+        var seven = textValue13 * textValue14;
+        var eight = textValue15 * textValue16;
+        var nine = textValue17 * textValue18;
+        var ten = textValue19 * textValue20;
+        var total = one ;
+        document.getElementById('td_total').value = one;
 			}  
     </script>
 
@@ -148,7 +264,11 @@
 
      <label class = "col-lg-1" for="">Payment Mode</label>
      <div class = "col-lg-2">
-     <input type="text" name = "th_pay_mode" class = "form-control" placeholder="Enter Cash / Card">
+      <select class="custom-select" name="th_pay_mode">
+        <option>Cash</option>
+        <option>Card</option>
+        <option>Others</option>        
+      </select>
      <div class = "clear-fix"></div>
     </div>
     </div>
@@ -187,12 +307,52 @@
         <td ><input class="form-control text-right" type="text" onkeypress="return isNumberKey(event)" name="td_unit_price[]" id="price3" onkeyup="calc3()" value=""></td>
         <td > <input class="form-control text-right" type="text" name="amount" id="amount3" value="" disabled></td>
       </tr>
+
+        <tr>
+         <td class="text-center">4</td>        
+          <td ><input type="text" class="form-control" name = "td_item_desc[]" id="row4"></td>
+          <td ><input class="form-control text-center" type="text" onkeypress="return isNumberKey(event)" name="td_qty[]" id="qty4" onkeyup="calc4()" value=""></td>
+          <td ><input class="form-control text-right" type="text" onkeypress="return isNumberKey(event)" name="td_unit_price[]" id="price4" onkeyup="calc4()" value=""></td>
+          <td > <input class="form-control text-right" type="text" name="amount" id="amount4" value="" disabled></td>
+        </tr>
+
+        <tr>
+           <td class="text-center">5</td>        
+            <td ><input type="text" class="form-control" name = "td_item_desc[]" id="row5"></td>
+            <td ><input class="form-control text-center" type="text" onkeypress="return isNumberKey(event)" name="td_qty[]" id="qty5" onkeyup="calc5()" value=""></td>
+            <td ><input class="form-control text-right" type="text" onkeypress="return isNumberKey(event)" name="td_unit_price[]" id="price5" onkeyup="calc5()" value=""></td>
+            <td > <input class="form-control text-right" type="text" name="amount" id="amount5" value="" disabled></td>
+          </tr>
+
+    <tr>
+             <td class="text-center">6</td>        
+              <td ><input type="text" class="form-control" name = "td_item_desc[]" id="row6"></td>
+              <td ><input class="form-control text-center" type="text" onkeypress="return isNumberKey(event)" name="td_qty[]" id="qty6" onkeyup="calc6()" value=""></td>
+              <td ><input class="form-control text-right" type="text" onkeypress="return isNumberKey(event)" name="td_unit_price[]" id="price6" onkeyup="calc6()" value=""></td>
+              <td > <input class="form-control text-right" type="text" name="amount" id="amount6" value="" disabled></td>
+            </tr>
+
+      <tr>
+               <td class="text-center">7</td>        
+                <td ><input type="text" class="form-control" name = "td_item_desc[]" id="row7"></td>
+                <td ><input class="form-control text-center" type="text" onkeypress="return isNumberKey(event)" name="td_qty[]" id="qty7" onkeyup="calc7()" value=""></td>
+                <td ><input class="form-control text-right" type="text" onkeypress="return isNumberKey(event)" name="td_unit_price[]" id="price7" onkeyup="calc7()" value=""></td>
+                <td > <input class="form-control text-right" type="text" name="amount" id="amount7" value="" disabled></td>
+              </tr>
+          
+        <tr>
+                 <td class="text-center">8</td>        
+                  <td ><input type="text" class="form-control" name = "td_item_desc[]" id="row8"></td>
+                  <td ><input class="form-control text-center" type="text" onkeypress="return isNumberKey(event)" name="td_qty[]" id="qty8" onkeyup="calc8()" value=""></td>
+                  <td ><input class="form-control text-right" type="text" onkeypress="return isNumberKey(event)" name="td_unit_price[]" id="price8" onkeyup="calc8()" value=""></td>
+                  <td > <input class="form-control text-right" type="text" name="amount" id="amount8" value="" disabled></td>
+                </tr>
         
 
         <tr>
         <td class="text-center"></td>
         <td class="text-right" colspan="3"><label>Total</label></td>
-        <td><input  type="text" class="form-control text-right" onkeyup="bill_total()" name = "td_total" id="td_total" disabled></td>        
+        <td><input  type="text" class="form-control text-right" onkeypress="return isNumberKey(event)" name = "td_total" onkeyup="bill_total()" id="td_total"></td>        
       </tr>
 
     </tbody>

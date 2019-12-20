@@ -140,31 +140,22 @@ class AccountsController extends Controller
      */
     public function edit(Account $account, Item $item)
     {
-        $arr['account'] = $account;
-        $arr['item'] = $item;
-        return view('admin.accounts.edit')->with($arr);
+        //$arr['account'] = $account;
+        //$arr['item'] = $item;
+        //return view('admin.accounts.edit')->with($arr);
+
+        $items = Item::where('td_tran_no', $account->th_tran_no)->Get();     
+        return view('admin.accounts.edit')->with(['item' => $items, 'account' => $account]); 
     }
 
 
-    public function print(Account $account) 
-{ 
-  
-
-    $people= ['Ali','Reza','David','Alex'];
-
+    public function print(Account $account, Item $item) 
+    { 
+       
+        $items = Item::where('td_tran_no', $account->th_tran_no)->Get();     
+        return view('admin.accounts.print')->with(['item' => $items, 'account' => $account]); 
     
-
-    $item = Item::where('td_tran_no', $account->th_tran_no)->firstOrFail();
-        
-    $store = Item::all();
-    
-    $arr['account'] = $account;     
-    $arr['item'] = $item;     
-    return view('admin.accounts.print')->with('account', $account)->with('item',$item)->with('store',$store)->with($people)->with(['key' => 'td_tran_no']); 
-
-    
-}
-   
+    }
   
 
     /**
@@ -199,7 +190,7 @@ class AccountsController extends Controller
      */
     public function destroy($id)
     {
-        Account::destroy($id);
+        Account::destroy($id);        
         return redirect()->route('admin.accounts.index')->with('success','Transaction deleted successfully!');
     }
 }

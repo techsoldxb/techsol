@@ -1,34 +1,34 @@
 <?php
-
+     
 namespace App\Http\Controllers;
-  
-use Illuminate\Http\Request;
+     
 use App\User;
-  
+use Illuminate\Http\Request;
+use DataTables;
+     
 class UserController extends Controller
 {
     /**
-     * Responds with a welcome message with instructions
+     * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $users = User::get();
-        return view('users',compact('users'));
-    }
-  
-    /**
-     * Responds with a welcome message with instructions
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function changeStatus(Request $request)
-    {
-        $user = User::find($request->user_id);
-        $user->status = $request->status;
-        $user->save();
-  
-        return response()->json(['success'=>'Status change successfully.']);
+        if ($request->ajax()) {
+            $data = User::latest()->get();
+            return Datatables::of($data)
+                    ->addIndexColumn()
+                    ->addColumn('action', function($row){
+   
+                           $btn = '<a href="javascript:void(0)" class="edit btn btn-primary btn-sm">View</a>';
+     
+                            return $btn;
+                    })
+                    ->rawColumns(['action'])
+                    ->make(true);
+        }
+      
+        return view('users');
     }
 }

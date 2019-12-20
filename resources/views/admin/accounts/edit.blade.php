@@ -111,7 +111,7 @@
   <table class="table table-bordered">
     <thead>
       <tr>
-        <th >S.No</th>
+
         <th class="w-50">Item Description</th>
         <th class="w-20">Quantity</th>
         <th class="w-20">Unit Price</th>
@@ -119,46 +119,22 @@
       </tr>
     </thead>
     <tbody>
-    
-      <tr>
-       
-        <td class="text-center">1</td>        
-        <td ><input type="email" class="form-control" id="email" value="{{ $item->td_item_desc }}"></td>
-        <td ><input type="email" class="form-control text-center" id="email"></td>
-        <td ><input type="email" class="form-control text-right" id="email"></td>
-        <td ><input type="email" class="form-control text-right" id="email"></td>
+      @foreach($item as $item)
+        <tr>       
+     
+        <td ><input type="text" class="form-control" value="{{ $item->td_item_desc }}"></td>
+        <td ><input type="text" class="form-control" value="{{ $item->td_qty }}"></td>
+        <td ><input type="text" class="form-control" value="{{ $item->td_unit_price }}"></td>
+        <td ><input type="text" class="form-control" value="{{ $item->td_price }}"></td>
       </tr>
+
  
-       <tr>
-        <td class="text-center">2</td>
-        <td><input type="email" class="form-control" id="email"></td>
-        <td><input type="email" class="form-control text-center" id="email"></td>
-        <td><input type="email" class="form-control text-right" id="email"></td>
-        <td><input type="email" class="form-control text-right" id="email"></td>
-      </tr>
-       <tr>
-        <td class="text-center">3</td>
-        <td><input type="email" class="form-control" id="email"></td>
-        <td><input type="email" class="form-control text-center" id="email"></td>
-        <td><input type="email" class="form-control text-right" id="email"></td>
-        <td><input type="email" class="form-control text-right" id="email"></td>
-      </tr>
-       <tr>
-        <td class="text-center">4</td>
-        <td><input type="email" class="form-control" id="email"></td>
-        <td><input type="email" class="form-control text-center" id="email"></td>
-        <td><input type="email" class="form-control text-right" id="email"></td>
-        <td><input type="email" class="form-control text-right" id="email"></td>
-      </tr>
-          <tr>
-        <td class="text-center">5</td>
-        <td><input type="email" class="form-control" id="email"></td>
-        <td><input type="email" class="form-control text-center" id="email"></td>
-        <td><input type="email" class="form-control text-right" id="email"></td>
-        <td><input type="email" class="form-control text-right" id="email"></td>
-      </tr>
+
+    
+    
     </tbody>
   </table>
+@endforeach  
   
 <div class="form-group">
   <label for="comment">Comment:</label>
