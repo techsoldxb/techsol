@@ -179,7 +179,7 @@ class AccountsController extends Controller
         $account->th_item_type = $request->th_item_type;
         $account->th_purpose = $request->th_purpose;        
         $account->save();
-        return redirect()->route('admin.accounts.index');
+        return redirect()->route('admin.accounts.index')->with('info','Transaction updated successfully!');;
     }
 
     /**
@@ -191,6 +191,8 @@ class AccountsController extends Controller
     public function destroy($id)
     {
         Account::destroy($id);        
-        return redirect()->route('admin.accounts.index')->with('success','Transaction deleted successfully!');
+        return redirect()->route('admin.accounts.index')->with('error','Transaction deleted successfully!');
+
+        
     }
 }

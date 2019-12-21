@@ -41,7 +41,9 @@
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                   <li class="breadcrumb-item"><a href="{{route('home')}}">Dashboard</a></li>
-                  <li class="breadcrumb-item active">View Bill</li>
+                  <li class="breadcrumb-item"><a href="{{route('admin.accounts.index')}}">Unpaid Bills</a></li>
+
+                  
                 </ol>
               </div><!-- /.col -->
             </div><!-- /.row -->

@@ -2,50 +2,48 @@
 @section('content')
 
 
-  <!-- Content Header (Page header) -->
-  <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Reimbursement Request</h1>
-          </div><!-- /.col -->
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="{{route('home')}}">Dashboard</a></li>
-              <li class="breadcrumb-item active">Accounts</li>
-            </ol>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content-header -->
 
-    <section class="content">
-      <div class="container-fluid">
-      <p>
-      <a href="{{ route('admin.accounts.create') }}" class="btn btn-primary btn-sm">Add New</a>
-      </p>
-    
-        <table class = "table table-bordered table-striped">
-          <tr>
-                   
-            <th> Tran No.   </th>                       
+   <!-- Main content -->
+   <section class="content">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+         
+            <!-- /.card-header -->
+        
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Pending Bills
+              <a href="{{ route('admin.accounts.create') }}" class="btn btn-primary btn-sm">Add Bill</a></h3>   
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+              <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                                   
+                <th> Tran No.   </th>                       
             <th> Tran Date </th>
             <th> Supplier Name </th>
             <th> Bill Date </th>
             <th> Bill No. </th>
             <th> Bill Amount </th>
             <th> Purpose </th>
-            
             <th> Action </th>
-            </tr>
-            @if(count($accounts))
+                </tr>
+                </thead>
+                <tbody>
+                
+                @if(count($accounts))
             
             @foreach($accounts as $c)
             
             <tr>
-            <td><a href="{{ url('storage/categories/'.$c->th_attach) }}" target="_blank">{{ $c->th_tran_no }}</a></td>
-            
+            <td><a href="{{ url('storage/categories/'.$c->th_attach) }}" target="_blank">{{ $c->th_tran_no }}</a></td>            
             <td>{{ date('d-m-Y', strtotime($c->created_at)) }}</td>            
             <td>{{ $c->th_supp_name }}</td>
             <td>{{ date('d-m-Y', strtotime($c->th_bill_dt)) }}</td>
@@ -55,12 +53,28 @@
             
             
             <td>             
-              <a href="{{ route('admin.accounts.print', $c) }}" class="btn btn-success btn-sm">View</a>
+              <a href="{{ route('admin.accounts.print', $c) }}" >
+              
+              <i class="fa fa-print text-green" aria-hidden="true"></i>
+              
+              </a>
+              /
            
 
             
-            <a href="{{ route('admin.accounts.edit',$c->th_tran_no) }}" class="btn btn-info btn-sm">Edit</a>
-            <a href="javascript:void(0)" onclick = "$(this).parent().find('form').submit()" class="btn btn-danger btn-sm">Delete</a>
+            <a href="{{ route('admin.accounts.edit',$c->th_tran_no) }}">
+            <i class="fa fa-edit"></i>
+            
+            </a>
+
+            /
+
+            <a href="javascript:void(0)" onclick = "$(this).parent().find('form').submit()" >
+            
+            
+            <i class="fa fa-trash text-red"></i >
+            
+            </a>
             <form action = "{{ route('admin.accounts.destroy', $c->id)}}" method = "POST">
             @method('DELETE')
             <input type="hidden" name="_token" value = "{{ csrf_token() }}">
@@ -73,9 +87,33 @@
             @else
             <tr><td colspan="11">No Record Found</td></tr>
             @endif
-            
-        </table>
-        {{ $accounts->render() }}
+
+                </tbody>
+                <tfoot>
+                <tr>
+                                 
+                <th> Tran No.   </th>                       
+            <th> Tran Date </th>
+            <th> Supplier Name </th>
+            <th> Bill Date </th>
+            <th> Bill No. </th>
+            <th> Bill Amount </th>
+            <th> Purpose </th>
+            <th> Action </th>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+        <!-- /.col -->
       </div>
+      <!-- /.row -->
     </section>
+   
+
 @endsection
+
+    

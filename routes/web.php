@@ -18,6 +18,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/table', function () {
+    return view('table');
+});
+
 Auth::routes(['verify' => true]);
 Route::get('users', 'UserController@index');
 Route::get('changeStatus', 'UserController@changeStatus');
@@ -38,15 +42,12 @@ Route::resource('/admin/paidbills', 'Admin\PaidController', ['as'=>'admin']);
 
 Route::get('/admin/accounts/{account}/print', 'Admin\AccountsController@print')->name('admin.accounts.print');
 
+
+
 //Route::get('/admin/accounts/{account}/print/{item}', 'Admin\AccountsController@print')->name('admin.accounts.print');
 
 //Route::get('/admin/accounts/{account}/print', 'Admin\AccountsController@print')->name('admin.accounts.print');
 
-<<<<<<< HEAD
-Route::get('users', ['uses'=>'UserController@index', 'as'=>'users.index']);
-=======
-Route::resource('/admin/customers', 'Admin\CustomerController', ['as'=>'admin']);
->>>>>>> 02eaf79ac8e3db0e98dfceac2a5aca3c4c5111fe
 
 
 
