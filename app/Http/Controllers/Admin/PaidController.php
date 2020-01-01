@@ -25,7 +25,7 @@ class PaidController extends Controller
     {
         
 
-        $arr['accounts'] = Account::where('th_pay_status', 1)->orderBy('th_tran_no','desc')->paginate(10);
+        $arr['accounts'] = Account::where('th_comp_code', auth()->user()->company)->where('th_pay_status', 1)->orderBy('th_tran_no','desc')->paginate(10);
 
         return view('admin.paidbills.index')->with($arr);
     }

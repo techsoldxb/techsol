@@ -15,21 +15,27 @@ class CreateAccountsTable extends Migration
     {
         Schema::create('accounts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('th_comp_code')->nullable();
-            $table->string('th_tran_code')->nullable();
-            $table->string('th_tran_no')->nullable();
-            $table->string('th_emp_id')->nullable();
-            $table->string('th_emp_name')->nullable();
-            $table->string('th_dept_code')->nullable();
-            $table->string('th_supp_name')->nullable();
-            $table->date('th_bill_dt')->nullable();
-            $table->string('th_bill_no')->nullable();
-            $table->float('th_bill_amt')->nullable();
-            $table->string('th_pay_mode')->nullable();
-            $table->longText('th_purpose')->nullable();
+            $table->string('th_comp_code')->nullable(); //Company Name
+            $table->string('th_comp_name')->nullable(); //Company Name
+            $table->string('th_dept_code')->nullable(); // Department Name
+            $table->string('th_tran_code')->nullable(); // Transaction Code
+            $table->string('th_tran_no')->nullable(); // Transaction Number
+            $table->string('th_emp_id')->nullable(); // Employee ID
+            $table->string('th_emp_name')->nullable(); // Employee Name            
+            $table->string('th_supp_name')->nullable(); //Supplier Name
+            $table->date('th_bill_dt')->nullable(); // Purchase bill date
+            $table->string('th_bill_no')->nullable(); // Purchase bill number
+            $table->double('th_bill_amt')->nullable(); // Purchase bill amount            
+            $table->string('th_pay_mode')->nullable(); // Payment mode - cash or card
+            $table->longText('th_purpose')->nullable(); // Purpose of the purchase
             $table->longText('th_remarks')->nullable();
             $table->string('th_pay_status')->nullable();
-            $table->string('th_item_type')->nullable();
+            $table->date('th_pay_date')->nullable();
+            $table->date('th_pay_tran_date')->nullable();
+            $table->string('th_pay_remarks')->nullable();
+            $table->string('th_pay_id')->nullable();
+            $table->string('th_pay_name')->nullable();
+            $table->date('th_item_type')->nullable();
             $table->string('th_attach')->nullable();
             $table->string('th_status')->nullable();
             $table->string('th_flex1')->nullable();

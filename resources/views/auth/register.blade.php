@@ -1,5 +1,18 @@
 @extends('layouts.app')
 
+   <!-- This script is used to allow only number in the bill amount field -->
+   <script>    
+    function isNumberKey(evt)
+    {
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+        if (charCode != 46 && charCode > 31 
+        && (charCode < 48 || charCode > 57))
+        return false;
+        return true;
+    }  
+</script>
+<!-- End -->
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -27,10 +40,40 @@
 
 
                         <div class="form-group row">
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Company') }}</label>
+
+                            <div class="col-md-6">
+                                
+
+                                <select class="custom-select" name="company">
+                                    <option>Select</option>
+                                    <option value="1">Jarwani</option>
+                                    <option value="2">Muscat Mall</option>
+                                    <option value="3">Oman Aquarium</option>                                        
+                                    <option value="4">Snow Village</option>   
+                                  </select>
+
+                                @error('company')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Department') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="dept" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                
+
+                                <select class="custom-select" name="dept">
+                                    <option>Select</option>
+                                    <option value="1">FOH</option>
+                                    <option value="2">BOH</option>
+                                    <option value="3">Operation</option>
+                                    <option value="4">Management</option>        
+                                  </select>
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -41,13 +84,14 @@
                         </div>
 
 
+
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Mobile') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="mobile" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input id="name" type="text" onkeypress="return isNumberKey(event)" class="form-control @error('name') is-invalid @enderror" name="mobile" value="{{ old('mobile') }}" maxlength="8" required autocomplete="name" autofocus>
 
-                                @error('name')
+                                @error('mobile')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

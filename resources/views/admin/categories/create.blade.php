@@ -27,7 +27,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Add Engineering</h1>
+            <h1 class="m-0 text-dark">Add Expense Group</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -43,13 +43,13 @@
     <section class="content">
       <div class="container-fluid">
      <form  class="needs-validation" novalidate method = "post" action="{{ route('admin.categories.store') }}" 
-     enctype="multipart/form-data">
+     enctype="multipart/form-data" autocomplete="off">
      <input type="hidden" name="_token" value = "{{ csrf_token() }}">
      <div class="form-group">
      <div class = "row">
-     <label class = "col-md-3" for="">Title</label>
+     <label class = "col-md-3" for="">Expense Group Name</label>
      <div class = "col-md-6">    
-     <input type="text" class="form-control" id="validationCustom01" name="title" placeholder="First name" required>
+     <input type="text" class="form-control" id="validationCustom01" name="exp_group_name" placeholder="Enter Expense Group Name" required>
      <div class = "clear-fix"></div>
      </div>     
      </div>
@@ -57,23 +57,15 @@
 
      <div class="form-group">
      <div class = "row">
-     <label class = "col-md-3" for="">Item Table</label>
+     <label class = "col-md-3" for="">Expense Group Desc</label>
      <div class = "col-md-6">    
-     <input type="text" class="form-control" id="validationCustom02" name="item_name" placeholder="Item Name" required>
+     <input type="text" class="form-control" id="validationCustom02" name="exp_group_desc" placeholder="Enter Expense Group Description" required>
      <div class = "clear-fix"></div>
      </div>     
      </div>
      </div>
 
-     <div class="form-group">
-     <div class = "row">
-     <label class = "col-md-3" for="">Image</label>
-     <div class = "col-md-6">    
-     <input type="file" id="validationCustom01" name="image" placeholder="First name" required>
-     <div class = "clear-fix"></div>
-     </div>     
-     </div>
-     </div>
+     
      
      
 

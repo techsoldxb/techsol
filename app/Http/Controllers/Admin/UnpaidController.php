@@ -22,16 +22,25 @@ class UnpaidController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
 
         if(!Gate::allows('isAdmin'))
         {
             abort(404,"Sorry you are not allowed");
         }
+       // $tdate  = Carbon::now();
+        //$fdate  = Carbon::now();
+       // $tdate=$request->updated_at;
+       //$to = Carbon::createFromFormat('d-m-Y', $fdate);
+      // $date  = Carbon::createFromFormat('d-m-Y', $request->th_bill_dt);        
+        //$from = Carbon::createFromFormat('Y-m-d H:s:i', $tdate);
+        //$diff_in_days = $fdate->diffInDays($tdate);
+        //dd($diff_in_days);
 
-        $arr['accounts'] = Account::orderBy('th_tran_no','desc')->paginate(8);
-        return view('admin.unpaidbills.index')->with($arr);
+        //$arr['accounts'] = Account::where('th_pay_status', 0)->orderBy('th_tran_no','desc')->get();
+        $arr['accounts'] = Account::where('th_comp_code', auth()->user()->company)->where('th_pay_status', 0)->orderBy('th_tran_no','desc')->get();
+        return view('admin.unpaidbills.index')->with($arr);    
     }
 
     /**
@@ -72,9 +81,14 @@ class UnpaidController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    
+    public function edit($unpaidbill)
     {
-        //
+        $items = Item::where('td_tran_no', $unpaidbill)->get();     
+        $account = Account::where('th_tran_no', $unpaidbill)->firstOrFail();
+    
+        return view('admin.unpaidbills.edit')
+        ->with(['item' => $items, 'account' => $account, 'unpaidbill' => $unpaidbill]); 
     }
 
     /**
@@ -84,9 +98,48 @@ class UnpaidController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
+
+
+    
+    public function update(Request $request, $unpaidbill)
+    {       
+       $account = Account::where('th_tran_no', $unpaidbill)->firstOrFail();
+    
+        // or this
+        //$account = Account::where('th_tran_no', $request->th_tran_no)->firstOrFail();
+        
+      
+    
+        $account->th_supp_name = $request->th_supp_name;     
+        $date  = Carbon::createFromFormat('d-m-Y', $request->th_bill_dt);        
+        $account->th_bill_dt = $date;                  
+        $account->th_bill_no = $request->th_bill_no;
+        $account->th_bill_amt = $request->th_bill_amt;
+        $account->th_item_type = $request->th_item_type;
+        $account->th_purpose = $request->th_purpose;        
+        $account->th_pay_status = $request->th_pay_status;    
+        $account->th_pay_date = $request->th_pay_date;  
+        //$account->th_pay_tran_date = $request->th_pay_tran_date;  
+        
+        if ( !empty ( $request->th_pay_date ) ) {
+            
+            $pdate  = Carbon::createFromFormat('d-m-Y', $request->th_pay_date);        
+            $account->th_pay_date = $pdate; 
+        }
+
+       
+
+        $tdate  = Carbon::now();
+        $account->th_pay_tran_date = $tdate; 
+
+        
+
+
+        $account->th_pay_remarks = $request->th_pay_remarks;
+        $account->th_pay_id = Auth::user()->id;
+        $account->th_pay_name = Auth::user()->name;
+        $account->save();        
+        return redirect()->route('admin.unpaidbills.index')->with('info','Transaction updated successfully!');
     }
 
     /**
@@ -97,6 +150,7 @@ class UnpaidController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Account::destroy($id);                  
+        return redirect()->route('admin.unpaidbills.index')->with('error','Transaction deleted successfully!');
     }
 }

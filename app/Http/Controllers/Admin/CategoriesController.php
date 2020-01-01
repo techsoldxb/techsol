@@ -6,6 +6,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Category;
+use App\Account;
+Use Auth;
 use App\User;
 use App\Item;
 
@@ -23,8 +25,16 @@ class CategoriesController extends Controller
      */
     public function index()
     {
+
+
         $arr['categories'] = Category::all();
-        return view('admin.categories.index')->with($arr);
+        return view('admin.categories.index')->with($arr);   
+
+
+       //$arr['categories'] = Category::all();
+       //$arr['categories'] = Category::where('th_emp_id', auth()->user()->id)->get();;
+       //return view('admin.categories.index')->with($arr);   
+
     }
 
     /**
@@ -43,26 +53,18 @@ class CategoriesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Category $category, User $user, Item $item)
+    public function store(Request $request, Category $category, User $user)
     {
         
         
-        if($request->image->getClientOriginalName())
-        {
-        $ext = $request->image->getClientOriginalExtension();
-        $file = date('YmdHis').rand(1,99999).'.'.$ext;
-        $request->image->storeAs('public/categories',$file);
-        }    
-        else
-        {
-            $file='';
-        }
-        $category->image = $file;
-        $category->title = $request->title;        
-        $category->save();
-
-        $item->item_name = $request->item_name;        
-        $item->save();
+       
+        $category->exp_group_name = $request->exp_group_name;        
+        $category->exp_group_desc = $request->exp_group_desc;    
+        
+        $category->created_id = Auth::user()->id;
+        $category->created_name = Auth::user()->name;
+        
+        $category->save();       
 
         return redirect()->route('admin.categories.index');
     }
@@ -99,7 +101,8 @@ class CategoriesController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        $category->title = $request->title;
+        $category->exp_group_name = $request->exp_group_name;
+        $category->exp_group_desc = $request->exp_group_desc;
         $category->save();
         return redirect()->route('admin.categories.index');
     }

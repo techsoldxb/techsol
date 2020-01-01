@@ -32,7 +32,8 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{route('home')}}">Dashboard</a></li>
-              <li class="breadcrumb-item active">Edit Bill</li>
+              
+              <li class="breadcrumb-item"><a href="{{route('admin.accounts.index')}}">Unpaid Bills</a></li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -42,7 +43,8 @@
 
     <section class="content">
       <div class="container-fluid">
-     <form class="needs-validation" novalidate method = "post" action="{{ route('admin.accounts.update',  $account->th_tran_no) }}">
+     <form class="needs-validation" novalidate method = "post" 
+     action="{{ route('admin.accounts.update',  $account->th_tran_no) }}">
      @method('PUT')
      <input type="hidden" name="_token" value = "{{ csrf_token() }}">
      <div class="form-group">
@@ -60,12 +62,18 @@
      <div class = "row">
      <label class = "col-lg-1" for="">Bill Date *</label>
      <div class = "col-lg-2">
-     <input class = "form-control" id="datepicker"  name = "th_bill_dt" value="{{ $account->th_bill_dt}}" placeholder="Enter bill date" required>
+     <input class = "form-control" id="datepicker"  name = "th_bill_dt" value="{{ $account->th_bill_dt->format('d-m-Y') }}" placeholder="Enter bill date" required>
     <script>
         $('#datepicker').datepicker({
+          format: 'dd-mm-yyyy',
             uiLibrary: 'bootstrap4'
         });
-    </script></div>
+    </script>
+
+  
+  
+  </div>
+
 
 
 
@@ -82,7 +90,7 @@
      <div class = "row">
      <label class = "col-lg-1" for="">Bill Amount *</label>
      <div class = "col-lg-2">
-     <input type="text" name = "th_bill_amt" value="{{ number_format($account->th_bill_amt,3)}}" class = "form-control" placeholder="Enter bill amount" required> </div>
+     <input type="text" name = "th_bill_amt" value="{{ $account->th_bill_amt}}" class = "form-control" placeholder="Enter bill amount" required> </div>
      
      
 
@@ -93,48 +101,51 @@
     </div>
     </div>
 
-    <div class="form-group">
-     <div class = "row">
-     <label class = "col-lg-1" for="">Emp Name *</label>
-     <div class = "col-lg-2">
-     <input type="text" name = "th_emp_name" class = "form-control" placeholder="Employe Name" required> </div>
-     
-
-     <label class = "col-lg-1" for="">Type</label>
-     <div class = "col-lg-2">
-     <input type="text" name = "th_item_type" value="{{ $account->th_item_type}}" class = "form-control" placeholder="Enter Asset / Others">
-     <div class = "clear-fix"></div>
-    </div>
-    </div>
+    <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th >S.No</th>
+              <th class="w-50">Item Description</th>
+              <th class="w-20">Quantity</th>
+              <th class="w-20">Unit Price</th>
+              <th class="w-20">Amount</th>
+            </tr>
+          </thead>
+          <tbody>        
+            <tr>     
+           @foreach($item as $item)
+            <tr>
+            <td> {{ $loop->iteration }}</td>          
+            <td> {{ $item-> td_item_desc }}</td>
+            <td> {{ $item-> td_qty }}</td>           
+            <td> {{number_format($item->td_unit_price,3)}}</td>           
+            <td> {{ number_format($item->td_unit_price * $item->td_qty,3) }}</td>
+            </tr>      
+          @endforeach  
+           
+            </tr>
+      
+             
+          </tbody>
+        </table>
+      
+    
 
             
-  <table class="table table-bordered">
-    <thead>
-      <tr>
+  
 
-        <th class="w-50">Item Description</th>
-        <th class="w-20">Quantity</th>
-        <th class="w-20">Unit Price</th>
-        <th class="w-20">Amount</th>
-      </tr>
-    </thead>
-    <tbody>
-      @foreach($item as $item)
-        <tr>       
-     
-        <td ><input type="text" class="form-control" value="{{ $item->td_item_desc }}"></td>
-        <td ><input type="text" class="form-control" value="{{ $item->td_qty }}"></td>
-        <td ><input type="text" class="form-control" value="{{ $item->td_unit_price }}"></td>
-        <td ><input type="text" class="form-control" value="{{ $item->td_price }}"></td>
-      </tr>
 
- 
-
-    
-    
-    </tbody>
-  </table>
-@endforeach  
+<div class="form-group">
+  <div class = "row">
+  
+  <label class = "col-lg-1" for="">Attach Bill</label>
+  <div class = "col-md-6">    
+  <input type="file" id="validationCustom01" name="th_attach">
+  <div class = "clear-fix"></div>
+  </div>     
+  </div>
+  </div>
+  
   
 <div class="form-group">
   <label for="comment">Comment:</label>

@@ -23,7 +23,7 @@ Route::get('/table', function () {
 });
 
 Auth::routes(['verify' => true]);
-Route::get('users', 'UserController@index');
+Route::get('users', 'UserController@index')->name('users');
 Route::get('changeStatus', 'UserController@changeStatus');
 
 Route::get('/admin', 'HomeController@index')->name('home');
@@ -35,12 +35,16 @@ Route::get('/testhome', 'HomeController@test')->name('testhome');
 Route::get('/dashboard', 'TestController@dashboard')->name('dashboard');
 
 Route::resource('/admin/categories', 'Admin\CategoriesController', ['as'=>'admin']);
+Route::resource('/admin/cashtopups', 'Admin\CashtopupController', ['as'=>'admin']);
 Route::resource('/admin/news', 'Admin\NewsController', ['as'=>'admin']);
 Route::resource('/admin/accounts', 'Admin\AccountsController', ['as'=>'admin']);
 Route::resource('/admin/unpaidbills', 'Admin\UnpaidController', ['as'=>'admin']);
 Route::resource('/admin/paidbills', 'Admin\PaidController', ['as'=>'admin']);
+Route::resource('/admin/allpaidbills', 'Admin\AllpaidController', ['as'=>'admin']);
 
 Route::get('/admin/accounts/{account}/print', 'Admin\AccountsController@print')->name('admin.accounts.print');
+
+
 
 
 

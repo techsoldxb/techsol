@@ -27,7 +27,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Edit Engineering</h1>
+            <h1 class="m-0 text-dark">Edit Expense Group</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -48,13 +48,23 @@
      <input type="hidden" name="_token" value = "{{ csrf_token() }}">
      <div class="form-group">
      <div class = "row">
-     <label class = "col-md-3" for="">Title</label>
+     <label class = "col-md-3" for="">Expense Group Name</label>
      <div class = "col-md-6">
     
-     <input type="text" class="form-control" id="validationCustom01" name="title" placeholder="First name" value="{{ $category->title}}" required>
+     <input type="text" class="form-control" id="validationCustom01" name="exp_group_name" placeholder="First name" value="{{ $category->exp_group_name}}" required>
      <div class = "clear-fix"></div>
      </div>     
      </div>
+
+     <div class = "row">
+      <label class = "col-md-3" for="">Expense Group Desctiption</label>
+      <div class = "col-md-6">
+     
+      <input type="text" class="form-control" id="validationCustom01" name="exp_group_desc" placeholder="First name" value="{{ $category->exp_group_desc}}" required>
+      <div class = "clear-fix"></div>
+      </div>     
+      </div>
+
     </div>
      <div class="form-group">
      <input type="submit" class = "btn btn-info" Value ="Save">

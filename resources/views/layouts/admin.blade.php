@@ -4,9 +4,34 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 3 | DataTables</title>
+  <title>Aquarium</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
+
+  <!-- daterangepicker -->
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+<!-- daterangepicker -->
+
 
   <!-- Font Awesome -->
   
@@ -66,18 +91,22 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
-    <img src={{asset('dist/img/logo.png class=brand-image img-circle elevation-3 style=opacity: .8')}}>
+    <a href=" {{ route('home') }}" class="brand-link">
+
+      
+    <img src={{asset('dist/img/jarwani.png class=brand-image img-circle elevation-3 style=opacity: .8')}}>
     
-     <span >Oman Aquarium</span>
+     <span >Jarwani Group</span>
     </a>
 
     <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        
         <div class="image">
-        <img src={{asset('dist/img/user2-160x160.jpg class=img-circle elevation-2 alt=User Image')}}>
+          
+        <img src={{asset('dist/img/logo.png class=img-circle elevation-2 alt=User Image')}}>
 
         </div>
         <div class="info">
@@ -123,7 +152,7 @@
           @endcan
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link 
-            @if($segment=='CRM')
+            @if($segment=='Accounts')
             active
             @endif
             ">
@@ -152,7 +181,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="{{route('admin.accounts.index')}}" class="nav-link">
+            <a href="{{route('admin.paidbills.index')}}" class="nav-link">
               <i class="nav-icon far fa-circle text-danger"></i>
               <p class="text">Paid Bills</p>
             </a>
@@ -170,25 +199,40 @@
                 active
                 @endif">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Unpaid Bills</p>
+                  <p>Unpaid Bills - All</p>
                 </a>
               </li>          
            
               <li class="nav-item">
-                <a href="{{route('admin.accounts.index')}}" class="nav-link
+                <a href="{{route('admin.allpaidbills.index')}}" class="nav-link
                 @if($segment=='paidbills')                
                 active
                 @endif                
                 ">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Customer List</p>
+                  
+                  <i class="far fa-dot-circle nav-icon"></i>
+                  <p>Paid Bills - All</p>
                 </a>
               </li>
+
+              <li class="nav-item">
+                <a href="{{route('admin.cashtopups.index')}}" class="nav-link
+                @if($segment=='paidbills')                
+                active
+                @endif                
+                ">
+                  
+                  <i class="far fa-dot-circle nav-icon"></i>
+                  <p>Cash Topup</p>
+                </a>
+              </li>
+
+
               
               <li class="nav-item">
-                <a href="pages/layout/collapsed-sidebar.html" class="nav-link">
+                <a href="{{route('admin.categories.index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Bill History</p>
+                  <p>Category</p>
                 </a>
               </li>
               @endcan
@@ -331,9 +375,9 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="https://adminlte.io/docs/3.0" class="nav-link">
+            <a href=" {{ route('users') }}" class="nav-link">
               <i class="nav-icon fas fa-file"></i>
-              <p>News</p>
+              <p>Users</p>
             </a>
           </li>
 
@@ -373,17 +417,28 @@
 </div>
 <!-- ./wrapper -->
 
+
+
 <!-- jQuery -->
-<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- Daterange picker -->
+<link rel="stylesheet" href="{{ asset('plugins/daterangepicker/daterangepicker.css')}}">
+
+<script src="{{ asset('plugins/jquery/jquery.min.js')}}"></script>
 <!-- Bootstrap 4 -->
 <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- DataTables -->
-<script src="../../plugins/datatables/jquery.dataTables.js"></script>
-<script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+
+<script src="{{ asset('plugins/datatables/jquery.dataTables.js')}}"></script>
+
+<script src="{{ asset('plugins/datatables-bs4/js/dataTables.bootstrap4.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="../../dist/js/adminlte.min.js"></script>
+<script src="{{ asset('dist/js/adminlte.js')}}"></script>
+
+
 <!-- AdminLTE for demo purposes -->
-<script src="../../dist/js/demo.js"></script>
+
+<script src="{{ asset('dist/js/demo.js')}}"></script>
 <!-- page script -->
 <script>
   $(function () {

@@ -10,5 +10,10 @@ class item extends Model
 {
     return 'td_tran_no';
 }
+
+public function account()
+{
+    return $this->belongsTo('App\account');
+}
    
 }

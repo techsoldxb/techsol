@@ -11,6 +11,8 @@ use Carbon\Carbon;
 use App\Account;
 use App\Item;
 Use Auth;
+Use Gate;
+
 
 
 
@@ -27,10 +29,15 @@ class AccountsController extends Controller
     public function index()
     { 
         
+        //$arr['accounts'] = Account::all();
+
+        
+      //  return view('admin.customers.index')->with($arr);   
+
     
 
            
-    $arr['accounts'] = Account::where('th_emp_id', auth()->user()->id)->where('th_pay_status', 0)->orderBy('th_tran_no','desc')->paginate(10);
+    $arr['accounts'] = Account::where('th_comp_code', auth()->user()->company)->where('th_emp_id', auth()->user()->id)->where('th_pay_status', 0)->orderBy('th_tran_no','desc')->get();;
     return view('admin.accounts.index')->with($arr);    
     
     }
@@ -97,8 +104,34 @@ class AccountsController extends Controller
         $account->th_emp_id = Auth::user()->id;
         $account->th_emp_name = Auth::user()->name;
         $account->th_dept_code = Auth::user()->dept;
+        $account->th_comp_code = Auth::user()->company;
+
+        if (  ( Auth::user()->company )  == 1) {
+            
+            $account->th_comp_name = 'Jarwani';
+        }
+        else if (  ( Auth::user()->company )  == 2) {
+
+            $account->th_comp_name = 'Mall Of Muscat';
+
+        }
+
+        else if (  ( Auth::user()->company )  == 3) {
+
+            $account->th_comp_name = 'Oman Aquarium';
+
+        }
+
+        else if (  ( Auth::user()->company )  == 4) {
+
+            $account->th_comp_name = 'Snow Village';
+
+        }
+
+
         $account->th_pay_status = 0;
-        $account->th_comp_code = '003';
+        
+        
         
         $account->save();       
         
@@ -114,6 +147,7 @@ class AccountsController extends Controller
                 $item->td_unit_price = $request->td_unit_price[$key] ;
                 $item->td_tran_no = $new_id; 
                 $item->save();
+                $account->item()->save($item);
               }
 
      
@@ -156,6 +190,8 @@ class AccountsController extends Controller
         return view('admin.accounts.print')->with(['item' => $items, 'account' => $account]); 
     
     }
+
+    
   
 
     /**
@@ -167,19 +203,32 @@ class AccountsController extends Controller
      */
     public function update(Request $request, Account $account, Item $item)
     {
-        $account->th_supp_name = $request->th_supp_name;
 
-        //$date  = Carbon::createFromFormat('d-m-Y', $request->th_bill_dt);        
-       //$account->th_bill_dt = $date;  
+        $filename='test';
 
-       
-       // $account->th_bill_dt = $request->th_bill_dt;
+        if( $request->hasFile('th_attach'))
+            {
+              $file = $request->file('th_attach');
+              $ext = $file->getClientOriginalExtension();
+              $filename = date('YmdHis').rand(1,99999).'.'.$ext;
+              $file->storeAs('public/categories', $filename);
+            }
+
+           
+
+       // $account->th_attach = $filename;
+        $account->th_supp_name = $request->th_supp_name;       
+
+       $date  = Carbon::createFromFormat('d-m-Y', $request->th_bill_dt);        
+       $account->th_bill_dt = $date;          
+        
         $account->th_bill_no = $request->th_bill_no;
         $account->th_bill_amt = $request->th_bill_amt;
         $account->th_item_type = $request->th_item_type;
         $account->th_purpose = $request->th_purpose;        
         $account->save();
-        return redirect()->route('admin.accounts.index')->with('info','Transaction updated successfully!');;
+        
+        return redirect()->route('admin.accounts.index')->with('info','Transaction updated successfully!');
     }
 
     /**
@@ -190,9 +239,9 @@ class AccountsController extends Controller
      */
     public function destroy($id)
     {
-        Account::destroy($id);        
-        return redirect()->route('admin.accounts.index')->with('error','Transaction deleted successfully!');
-
         
+
+        Account::destroy($id);                  
+        return redirect()->route('admin.accounts.index')->with('error','Transaction deleted successfully!');        
     }
 }

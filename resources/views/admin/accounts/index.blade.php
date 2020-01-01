@@ -17,7 +17,7 @@
 
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Pending Bills
+              <h3 class="card-title">Unpaid Bills
               <a href="{{ route('admin.accounts.create') }}" class="btn btn-primary btn-sm">Add Bill</a></h3>   
             </div>
             <!-- /.card-header -->
@@ -103,6 +103,7 @@
                 </tr>
                 </tfoot>
               </table>
+              
             </div>
             <!-- /.card-body -->
           </div>

@@ -2,7 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\UserController;
+
 use Illuminate\Http\Request;
+use App\Account;
+use App\Item;
+Use Auth;
+Use Gate;
+use PDF;
+
 
 class HomeController extends Controller
 {
@@ -21,8 +29,9 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Request $request)
     {
+        //Users::where('id', 1)->count();
         return view('home');
     }
 
@@ -34,6 +43,14 @@ class HomeController extends Controller
     public function test()
     {
         return view('testhome');
+    }
+
+    public function generatePDF()
+    {
+        $data = ['title' => 'Welcome to HDTuto.com'];
+        $pdf = PDF::loadView('myPDF', $data);
+  
+        return $pdf->download('bill.pdf');
     }
  
 }

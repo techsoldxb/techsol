@@ -219,7 +219,8 @@
 
     <section class="content">
       <div class="container-fluid">
-     <form class="needs-validation" novalidate method = "post" action="{{ route('admin.accounts.store') }}" enctype="multipart/form-data">
+     <form class="needs-validation" novalidate method = "post" action="{{ route('admin.accounts.store') }}" enctype="multipart/form-data" autocomplete="off">
+      
      <input type="hidden" name="_token" value = "{{ csrf_token() }}">
      <div class="form-group">
      <div class = "row">
@@ -235,17 +236,14 @@
      <div class = "row">
      <label class = "col-lg-1" for="">Bill Date *</label>
      <div class = "col-lg-2">
-     <input class = "form-control datepicker" id="datepicker" name = "th_bill_dt" placeholder="Enter bill date" required>  
+     <input class = "form-control datepicker" id="datepicker" name = "th_bill_dt" placeholder="dd-mm-yyyy" required>  
          
-    <script>   
-        $( ".datepicker" ).datepicker({
+     <script>
+      $('#datepicker').datepicker({
         format: 'dd-mm-yyyy',
-        autoclose: true,
-                todayHighlight: true
-        });
-
-
-    </script>
+          uiLibrary: 'bootstrap4'
+      });
+  </script>
     
   </div>
      

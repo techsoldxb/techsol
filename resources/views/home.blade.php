@@ -31,7 +31,7 @@
               <div class="inner">
                 <h3>150</h3>
 
-                <p>Unpaid Bills</p>
+                <p>Paid Bills</p>
               </div>
               <div class="icon">
                 <i class="ion ion-bag"></i>
@@ -46,7 +46,7 @@
               <div class="inner">
                 <h3>53<sup style="font-size: 20px">%</sup></h3>
 
-                <p>Paid Bills</p>
+                <p>Unpaid Bills</p>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
@@ -76,7 +76,7 @@
               <div class="inner">
                 <h3>65</h3>
 
-                <p>Unique Visitors</p>
+                <p>Cash On Hand</p>
               </div>
               <div class="icon">
                 <i class="ion ion-pie-graph"></i>
