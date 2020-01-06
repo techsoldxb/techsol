@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 
 use Illuminate\Http\Request;
 use App\Account;
+use App\Cashtopup;
 use App\Item;
 Use Auth;
 Use Gate;
@@ -51,6 +52,12 @@ class HomeController extends Controller
         $pdf = PDF::loadView('myPDF', $data);
   
         return $pdf->download('bill.pdf');
+    }
+
+    public function info()
+    {
+        $arr['cashtopups'] = Cashtopup::all();
+        return view('home')->with($arr);
     }
  
 }

@@ -16,7 +16,12 @@ class account extends Model
 
 public function item()
 {
-    return $this->hasmany('App\item');
+    return $this->hasMany('App\Item');
+}
+
+public function category()
+{
+    $this->belongsTo('App\Category');
 }
 
 }

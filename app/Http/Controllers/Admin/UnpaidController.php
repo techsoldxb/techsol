@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\Account;
 use App\Item;
+use App\Category;
 Use Auth;
 Use Gate;
 
@@ -86,8 +87,9 @@ class UnpaidController extends Controller
     {
         $items = Item::where('td_tran_no', $unpaidbill)->get();     
         $account = Account::where('th_tran_no', $unpaidbill)->firstOrFail();
+        $arr['categories'] = Category::all();
     
-        return view('admin.unpaidbills.edit')
+        return view('admin.unpaidbills.edit')->with($arr)
         ->with(['item' => $items, 'account' => $account, 'unpaidbill' => $unpaidbill]); 
     }
 
@@ -119,6 +121,17 @@ class UnpaidController extends Controller
         $account->th_purpose = $request->th_purpose;        
         $account->th_pay_status = $request->th_pay_status;    
         $account->th_pay_date = $request->th_pay_date;  
+        //$account->th_exp_cat_id = $request->th_exp_cat_id;  
+
+        $record = Category::find(request('th_exp_cat_id'));
+        //dd($record);
+
+        $account->th_exp_cat_id = $record->id;  
+        $account->th_exp_cat_name = $record->exp_group_name;  
+        
+
+      
+
         //$account->th_pay_tran_date = $request->th_pay_tran_date;  
         
         if ( !empty ( $request->th_pay_date ) ) {

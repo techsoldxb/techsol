@@ -46,7 +46,7 @@
                                 
 
                                 <select class="custom-select" name="company">
-                                    <option>Select</option>
+                                    <option value="">Select</option>
                                     <option value="1">Jarwani</option>
                                     <option value="2">Muscat Mall</option>
                                     <option value="3">Oman Aquarium</option>                                        
@@ -68,7 +68,7 @@
                                 
 
                                 <select class="custom-select" name="dept">
-                                    <option>Select</option>
+                                    <option value="">Select</option>
                                     <option value="1">FOH</option>
                                     <option value="2">BOH</option>
                                     <option value="3">Operation</option>

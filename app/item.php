@@ -13,7 +13,7 @@ class item extends Model
 
 public function account()
 {
-    return $this->belongsTo('App\account');
+    return $this->belongsTo('App\Account');
 }
    
 }

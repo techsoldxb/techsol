@@ -27,6 +27,7 @@ Route::get('users', 'UserController@index')->name('users');
 Route::get('changeStatus', 'UserController@changeStatus');
 
 Route::get('/admin', 'HomeController@index')->name('home');
+//Route::resource('/admin', 'HomeController', ['as'=>'admin']);
 Route::get('/about', 'TestController@about')->name('about');
 
 

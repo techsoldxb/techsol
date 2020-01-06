@@ -10,6 +10,7 @@ use Carbon\Carbon;
 
 use App\Account;
 use App\Item;
+use App\Category;
 Use Auth;
 Use Gate;
 
@@ -177,6 +178,8 @@ class AccountsController extends Controller
         //$arr['account'] = $account;
         //$arr['item'] = $item;
         //return view('admin.accounts.edit')->with($arr);
+
+        
 
         $items = Item::where('td_tran_no', $account->th_tran_no)->Get();     
         return view('admin.accounts.edit')->with(['item' => $items, 'account' => $account]); 

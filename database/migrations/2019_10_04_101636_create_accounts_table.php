@@ -35,9 +35,13 @@ class CreateAccountsTable extends Migration
             $table->string('th_pay_remarks')->nullable();
             $table->string('th_pay_id')->nullable();
             $table->string('th_pay_name')->nullable();
-            $table->date('th_item_type')->nullable();
+            $table->string('th_item_type')->nullable();
+            $table->string('th_exp_cat_id')->nullable();
+            $table->string('th_exp_cat_name')->nullable();
             $table->string('th_attach')->nullable();
             $table->string('th_status')->nullable();
+            $table->string('th_acc_year')->nullable();
+            $table->string('th_acc_month')->nullable();
             $table->string('th_flex1')->nullable();
             $table->string('th_flex2')->nullable();
             $table->integer('th_flex3')->nullable();
