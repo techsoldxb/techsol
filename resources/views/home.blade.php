@@ -30,7 +30,7 @@
             <div class="small-box bg-info">
               <div class="inner">
                 <h3>
-                  150
+                {{ $user->name}}
 
                 </h3>
 

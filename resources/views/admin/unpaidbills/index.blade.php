@@ -109,6 +109,18 @@
                 </tr>
                 </tfoot>
               </table>
+
+              <div class="row">
+            <div class="col text-right">            
+            <a href="{{route('admin.accounts.export')}}">             
+            <i class="far fa-file-excel fa-2x text-green"></i>   
+              
+                   
+            </a>      
+            </div>
+            </div>           
+              
+          
               
             </div>
             <!-- /.card-body -->

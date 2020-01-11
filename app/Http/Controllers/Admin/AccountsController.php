@@ -15,10 +15,22 @@ Use Auth;
 Use Gate;
 
 
+use App\Exports\AccountExport; 
+  use Maatwebsite\Excel\Facades\Excel; 
+  
+  
+
+
 
 
 class AccountsController extends Controller
 {
+
+    public function export()
+    {
+    return Excel::download(new AccountExport, 'Unpaid.xls'); 
+    } 
+    
     public function __construct()
     {
         $this->middleware('auth');
@@ -27,19 +39,28 @@ class AccountsController extends Controller
      * Display a listing of the resource.     *
      * @return \Illuminate\Http\Response
      */
+
+  
+
+
     public function index()
     { 
         
-        //$arr['accounts'] = Account::all();
-
-        
-      //  return view('admin.customers.index')->with($arr);   
-
-    
+   
 
            
     $arr['accounts'] = Account::where('th_comp_code', auth()->user()->company)->where('th_emp_id', auth()->user()->id)->where('th_pay_status', 0)->orderBy('th_tran_no','desc')->get();;
     return view('admin.accounts.index')->with($arr);    
+    
+    }
+
+    public function total()
+    {        
+
+              
+    $accountscount = Account::count();
+    $userCount = User::count();
+    return view('admin', compact('productCount', 'userCount'));
     
     }
 

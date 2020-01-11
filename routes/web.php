@@ -45,6 +45,18 @@ Route::resource('/admin/allpaidbills', 'Admin\AllpaidController', ['as'=>'admin'
 
 Route::get('/admin/accounts/{account}/print', 'Admin\AccountsController@print')->name('admin.accounts.print');
 
+View::Composer(
+['*'],function($view)
+{
+    $user = Auth::user();
+    $view->with('user',$user); 
+}
+);
+
+Route::get('/showdata', 'CsvController@showdata');     
+Route::get('/export', 'Admin\AccountsController@export')->name('admin.accounts.export');
+//Route::get('/admin/export', 'AccountsController@export'); 
+
 
 
 

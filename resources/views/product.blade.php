@@ -151,3 +151,5 @@ if(jQuery.trim(profit_perc_val).length > 0)
 
 </body>
 </html>
+
+{{ $user->name}}
