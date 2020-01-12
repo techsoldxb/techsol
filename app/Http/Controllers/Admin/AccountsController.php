@@ -130,7 +130,7 @@ class AccountsController extends Controller
 
         if (  ( Auth::user()->company )  == 1) {
             
-            $account->th_comp_name = 'Jarwani';
+            $account->th_comp_name = 'Al Jarwani';
         }
         else if (  ( Auth::user()->company )  == 2) {
 
