@@ -32,6 +32,9 @@ class AppServiceProvider extends ServiceProvider
                 $view->with('unpaid',\App\Account::where('th_comp_code', auth()->user()->company)->where('th_pay_status', 0)->sum('th_bill_amt'));
     });
 
+
+    
+
     view()->composer('home', function($view)  {
         $view->with('paid',\App\Account::where('th_comp_code', auth()->user()->company)->where('th_pay_status', 1)->sum('th_bill_amt'));
 });
@@ -40,9 +43,22 @@ view()->composer('home', function($view)  {
     $view->with('topup',\App\Cashtopup::where('comp_code', auth()->user()->company)->sum('topup_amt'));
 });
 
+
+
 view()->composer('home', function($view)  {
     $view->with('users',\App\User::where('company', auth()->user()->company)->count('ID'));
 });
+
+view()->composer('home', function($view)  {
+    $view->with('accusers',\App\User::where('company', auth()->user()->company)->where('user_type','admin')->count('ID'));
+});
+
+
+
+view()->composer('home', function($view)  {
+    $view->with('categories',\App\Category::count('ID'));
+});
+
 
 
 

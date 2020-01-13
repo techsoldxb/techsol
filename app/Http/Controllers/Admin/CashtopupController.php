@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\Cashtopup;
 Use Auth;
+Use Gate;
 
 class CashtopupController extends Controller
 {
@@ -17,6 +18,12 @@ class CashtopupController extends Controller
      */
     public function index()
     {
+        if(!Gate::allows('isAdmin'))
+        {
+            abort(404,"Sorry you are not allowed");
+        }
+        
+        
         $arr['cashtopups'] = Cashtopup::all();
         return view('admin.cashtopups.index')->with($arr);
     }

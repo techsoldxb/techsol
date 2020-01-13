@@ -26,6 +26,11 @@ class CategoriesController extends Controller
     public function index()
     {
 
+        if(!Gate::allows('isAdmin'))
+        {
+            abort(404,"Sorry you are not allowed");
+        }
+        
 
         $arr['categories'] = Category::all();
         return view('admin.categories.index')->with($arr);   

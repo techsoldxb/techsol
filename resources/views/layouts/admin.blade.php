@@ -135,6 +135,12 @@
             </a>
 
           </li>
+
+      
+
+          
+
+
           @can('isAdmin')
           <li class="nav-item">
             <a href="{{route('admin.categories.index')}}" class="nav-link
@@ -160,7 +166,7 @@
               <p>
                Acccounts
                 <i class="fas fa-angle-left right"></i>
-                <span class="badge badge-info right">4</span>
+                <span class="badge badge-info right">3</span>
               </p>
             </a>
             <ul class="nav nav-treeview">
@@ -205,7 +211,7 @@
            
               <li class="nav-item">
                 <a href="{{route('admin.allpaidbills.index')}}" class="nav-link
-                @if($segment=='paidbills')                
+                @if($segment=='allpaidbills')                
                 active
                 @endif                
                 ">
@@ -217,7 +223,7 @@
 
               <li class="nav-item">
                 <a href="{{route('admin.cashtopups.index')}}" class="nav-link
-                @if($segment=='paidbills')                
+                @if($segment=='cashtopups')                
                 active
                 @endif                
                 ">

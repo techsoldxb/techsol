@@ -30,8 +30,10 @@
             <th> User Name </th>
             <th> Email </th>
             <th> Company Name </th>
-            <th> Department </th>
+            <th> Type </th>
+            
             <th> Created Date </th>
+            <th> Verified Date</th>
             
          
                 </tr>
@@ -62,8 +64,10 @@
               </td>
 
 
-                <td>{{ $c->dept }}</td>
-                <td>{{ $c->created_at }}</td>
+              <td>{{ $c->user_type}}</td>     
+              <td>{{ date('d-m-Y', strtotime($c->created_at)) }}</td>   
+                
+                <td>{{ date('d-m-Y', strtotime($c->email_verified_at)) }}</td>   
             
             
             
@@ -82,8 +86,10 @@
                     <th> User Name </th>
                     <th> Email </th>
                     <th> Company Name </th>
-                    <th> Department </th>
+                    <th> Type </th>
+                    
                     <th> Created Date </th>
+                    <th> Verified Date</th>
                     
                 </tr>
                 </tfoot>

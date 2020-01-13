@@ -22,6 +22,12 @@ class AllpaidController extends Controller
      */
     public function index()
     {
+
+        if(!Gate::allows('isAdmin'))
+        {
+            abort(404,"Sorry you are not allowed");
+        }
+        
         $arr['accounts'] = Account::where('th_comp_code', auth()->user()->company)->where('th_pay_status', 1)->orderBy('th_tran_no','desc')->get();;
         return view('admin.allpaidbills.index')->with($arr); 
     }
