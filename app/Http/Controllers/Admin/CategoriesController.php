@@ -10,6 +10,7 @@ use App\Account;
 Use Auth;
 use App\User;
 use App\Item;
+Use Gate;
 
 class CategoriesController extends Controller
 {

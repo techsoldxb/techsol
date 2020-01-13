@@ -33,6 +33,8 @@ class AppServiceProvider extends ServiceProvider
     });
 
 
+
+
     
 
     view()->composer('home', function($view)  {

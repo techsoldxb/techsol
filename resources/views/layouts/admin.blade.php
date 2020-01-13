@@ -141,21 +141,7 @@
           
 
 
-          @can('isAdmin')
-          <li class="nav-item">
-            <a href="{{route('admin.categories.index')}}" class="nav-link
-            @if($segment=='categories')
-            active
-            @endif            
-            ">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Engineering
-                <span class="right badge badge-danger">New</span>
-              </p>
-            </a>
-          </li>
-          @endcan
+        
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link 
             @if($segment=='Accounts')
@@ -236,7 +222,10 @@
 
               
               <li class="nav-item">
-                <a href="{{route('admin.categories.index')}}" class="nav-link">
+                <a href="{{route('admin.categories.index')}}" class="nav-link 
+                @if($segment=='categories')                
+                active
+                @endif ">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Category</p>
                 </a>
@@ -244,6 +233,7 @@
               @endcan
             </ul>
           </li>
+
           @can('isAdmin')
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
@@ -371,6 +361,22 @@
               </li>
             </ul>
           </li>
+
+          @can('isAdmin')
+          <li class="nav-item">
+            <a href="#" class="nav-link
+            @if($segment=='engg')
+            active
+            @endif            
+            ">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Engineering
+                <span class="right badge badge-danger">New</span>
+              </p>
+            </a>
+          </li>
+          @endcan
           
 
           <li class="nav-header">MISCELLANEOUS</li>
