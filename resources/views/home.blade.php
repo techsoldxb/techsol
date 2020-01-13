@@ -29,17 +29,19 @@
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-                <h3>
-                {{ $user->name}}
+                
+                
+                <h3>{{ $paid}}</h3>
 
-                </h3>
+
+                
 
                 <p>Paid Bills</p>
               </div>
               <div class="icon">
                 <i class="ion ion-bag"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="{{route('admin.paidbills.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -47,14 +49,14 @@
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>53<sup style="font-size: 20px">%</sup></h3>
+                <h3>{{ $unpaid}}</h3>
 
                 <p>Unpaid Bills</p>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="{{route('admin.unpaidbills.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -62,9 +64,9 @@
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3>44</h3>
+                <h3>{{ $topup - $paid}}</h3>
 
-                <p>User Registrations</p>
+                <p>Cash On Hand</p>
               </div>
               <div class="icon">
                 <i class="ion ion-person-add"></i>
@@ -77,9 +79,9 @@
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3>65</h3>
+                <h3>{{$users}}</h3>
 
-                <p>Cash On Hand</p>
+                <p>User Registrations</p>
               </div>
               <div class="icon">
                 <i class="ion ion-pie-graph"></i>

@@ -27,7 +27,7 @@ class AccountExport implements FromCollection,WithHeadings,ShouldAutoSize,WithEv
        // return Account::all();
        //$arr['accounts'] = Account::where('th_comp_code', auth()->user()->company)->where('th_pay_status', 0)->orderBy('th_tran_no','desc')->get();
        //return view('admin.unpaidbills.index')->with($arr);   
-       return Account::select(['th_tran_no','th_bill_dt','th_supp_name','created_at','th_bill_no','th_bill_amt','th_purpose','th_emp_name'])
+       return Account::select(['th_tran_no','created_at','th_supp_name','th_bill_dt','th_bill_no','th_bill_amt','th_purpose','th_emp_name'])
        ->where('th_comp_code', auth()->user()->company)->where('th_pay_status', 0)
        ->get();
        
