@@ -59,6 +59,9 @@ Route::get('/showdata', 'CsvController@showdata');
 Route::get('/export', 'Admin\AccountsController@export')->name('admin.accounts.export');
 //Route::get('/admin/export', 'AccountsController@export'); 
 
+   
+Route::get('/paidbillexport', 'Admin\AccountsController@paidbillexport')->name('admin.accounts.paidbillexport');
+
 
 
 

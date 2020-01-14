@@ -14,8 +14,9 @@ use App\Category;
 Use Auth;
 Use Gate;
 
-
+//we need to add the below if we create new excel export
 use App\Exports\AccountExport; 
+use App\Exports\PaidbillExport; 
   use Maatwebsite\Excel\Facades\Excel; 
   
   
@@ -31,6 +32,13 @@ class AccountsController extends Controller
     return Excel::download(new AccountExport, 'Unpaid.xls'); 
     } 
     
+
+    public function paidbillexport()
+    {
+    return Excel::download(new PaidbillExport, 'Paid.xls'); 
+    } 
+
+
     public function __construct()
     {
         $this->middleware('auth');
