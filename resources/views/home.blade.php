@@ -31,12 +31,28 @@
               <div class="inner">
                 
                 
-                <h3>{{ $unpaid}}</h3>
+                <h3>
+
+
+                @if($user->user_type =='admin')       
+                
+
+                {{ number_format($unpaid,3) }}
+
+                @else
+                {{ number_format($userunpaid,3) }}
+                @endif
+                
+                
+                
+                
+                
+                </h3>
 
 
                 
 
-                <p>Unpaid Bills</p>
+                <p>Unpaid Bill Amount</p>
               </div>
               <div class="icon">
                 <i class="ion ion-bag"></i>
@@ -49,9 +65,20 @@
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>{{ $paid}}</h3>
+                <h3>
+                
+                
+                @if($user->user_type =='admin')         
+                {{ number_format($paid,3) }}
+                @else
+                {{ number_format($userpaid,3) }}
+                @endif
+                
+                
+                
+                </h3>
 
-                <p>Paid Bills</p>
+                <p>Paid Bill Amount</p>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
@@ -79,7 +106,24 @@
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3>{{ $topup}}</h3>
+                <h3>
+                
+
+                
+                @if($user->user_type =='admin')         
+                
+
+                {{ number_format($topup,3) }}
+
+                
+                @else
+                0
+                @endif
+
+                
+                
+                
+                </h3>
 
                 <p>Cash Topup</p>
               </div>
@@ -113,7 +157,17 @@
               <div class="info-box-content">
                 <span class="info-box-text">Cash On Hand</span>
                 <span class="info-box-number">
-                {{ $topup - $paid}}
+
+                @if($user->user_type =='admin')         
+                
+
+                {{ number_format($topup - $paid,3) }}
+
+                @else
+                0
+                @endif
+
+               
                   
                 </span>
               </div>
@@ -124,7 +178,7 @@
           <!-- /.col -->
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box mb-3">
-              <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-cog"></i></span>
+              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-cog"></i></span>
 
               <div class="info-box-content">
                 <span class="info-box-text">Categories</span>
@@ -141,7 +195,7 @@
 
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box mb-3">
-              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-coins"></i></span>
+              <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-coins"></i></span>
 
               <div class="info-box-content">
                 <span class="info-box-text">Accounts User</span>
@@ -154,7 +208,7 @@
           <!-- /.col -->
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box mb-3">
-              <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
+              <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-users"></i></span>
 
               <div class="info-box-content">
                 <span class="info-box-text">Users</span>

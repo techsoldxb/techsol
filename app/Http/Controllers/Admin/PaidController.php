@@ -10,6 +10,7 @@ use App\Account;
 use App\Item;
 Use Auth;
 
+
 class PaidController extends Controller
 {
     public function __construct()
@@ -25,7 +26,10 @@ class PaidController extends Controller
     {
         
 
-        $arr['accounts'] = Account::where('th_comp_code', auth()->user()->company)->where('th_pay_status', 1)->orderBy('th_tran_no','desc')->paginate(10);
+        $arr['accounts'] = Account::where('th_comp_code', auth()->user()->company)
+        ->where('th_emp_id', auth()->user()->id)
+        ->where('th_pay_status', 1)
+        ->orderBy('th_tran_no','desc')->get();
 
         return view('admin.paidbills.index')->with($arr);
     }
