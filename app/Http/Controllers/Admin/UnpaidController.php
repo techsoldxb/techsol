@@ -126,8 +126,22 @@ class UnpaidController extends Controller
         $record = Category::find(request('th_exp_cat_id'));
         //dd($record);
 
-        $account->th_exp_cat_id = $record->id;  
-        $account->th_exp_cat_name = $record->exp_group_name;  
+        if ( !empty ( $request->th_exp_cat_id) ) {
+            
+            
+            $account->th_exp_cat_id = "0";
+            $account->th_exp_cat_name = "Null";
+            
+        }
+        else{
+            
+            $account->th_exp_cat_id = $record->id;  
+            $account->th_exp_cat_name = $record->exp_group_name;  
+        }
+
+
+        //$account->th_exp_cat_id = $record->id;  
+        
         
 
       
@@ -136,10 +150,16 @@ class UnpaidController extends Controller
         
         if ( !empty ( $request->th_pay_date ) ) {
             
-            $pdate  = Carbon::createFromFormat('d-m-Y', $request->th_pay_date);        
-            $account->th_pay_date = $pdate; 
-        }
+           $pdate  = Carbon::createFromFormat('d-m-Y', $request->th_pay_date);        
+          $account->th_pay_date = $pdate; 
 
+            //$pdate  = Carbon::createFromFormat('d-m-Y', $request->th_pay_date);        
+          //  $account->th_pay_date = $request->th_pay_date; 
+
+        //  $account->th_pay_date = $request->th_pay_date;
+        }
+        
+        
        
 
         $tdate  = Carbon::now();

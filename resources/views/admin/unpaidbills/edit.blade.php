@@ -194,7 +194,7 @@
   <label class = "col-lg-1" for="">Category</label>
   <div class = "col-lg-2">
 <select name="th_exp_cat_id" id="">
-<option value="">Select</option>
+<option value="Null">Select</option>
 @foreach($categories as $c)
 <option value="{{ $c->id}}">{{ $c->exp_group_name}}</option>
 @endforeach   

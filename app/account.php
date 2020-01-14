@@ -8,6 +8,9 @@ class account extends Model
 {
     
     protected $dates = ['th_bill_dt'];
+
+    
+
     public function getRouteKeyName()
 {
     return 'th_tran_no';

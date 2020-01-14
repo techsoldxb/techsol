@@ -56,7 +56,10 @@
             <td>{{ $c->th_emp_name }}</td>
             <td>{{ $c->th_pay_name }}</td>
             
-            <td>{{ date('d-m-Y', strtotime($c->th_pay_date)) }}</td>
+            
+
+            <td>{{ $c->th_pay_date}}</td>
+            
             
             
             <td>             

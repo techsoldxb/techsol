@@ -57,7 +57,18 @@
               <div class="icon">
                 <i class="ion ion-bag"></i>
               </div>
+
+              @if($user->user_type =='admin')        
+                
+
               <a href="{{route('admin.unpaidbills.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+
+                
+                @else
+                <a href="{{route('admin.accounts.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                @endif
+
+              
             </div>
           </div>
           <!-- ./col -->
@@ -83,7 +94,19 @@
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
+
+              @if($user->user_type =='admin')        
+                
+
               <a href="{{route('admin.allpaidbills.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+  
+                  
+                  @else
+                  <a href="{{route('admin.paidbills.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                  @endif
+
+
+              
             </div>
           </div>
           <!-- ./col -->
@@ -164,7 +187,7 @@
                 {{ number_format($topup - $paid,3) }}
 
                 @else
-                0
+                Please check with Accounts Dept
                 @endif
 
                
