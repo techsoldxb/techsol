@@ -126,17 +126,18 @@ class UnpaidController extends Controller
         $record = Category::find(request('th_exp_cat_id'));
         //dd($record);
 
-        if ( !empty ( $request->th_exp_cat_id) ) {
+        if ( $request->th_exp_cat_id == 0) {           
             
-            
+                      
             $account->th_exp_cat_id = "0";
             $account->th_exp_cat_name = "Null";
             
         }
-        else{
+        else{            
             
             $account->th_exp_cat_id = $record->id;  
-            $account->th_exp_cat_name = $record->exp_group_name;  
+            $account->th_exp_cat_name = $record->exp_group_name;    
+            
         }
 
 

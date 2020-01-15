@@ -23,23 +23,27 @@ class PaidbillExport implements FromCollection,WithHeadings,ShouldAutoSize,WithE
     public function collection()
     {
         return Account::select(['th_tran_no','created_at','th_supp_name','th_bill_dt','th_bill_no',
-        'th_bill_amt','th_purpose','th_emp_name'])
+        'th_bill_amt','th_purpose','th_emp_name','th_pay_name','th_pay_remarks','th_exp_cat_name'])
        ->where('th_comp_code', auth()->user()->company)->where('th_pay_status', 1)
        ->get();
     }
 
     public function headings(): array
     {
+       
       return [
-        'Tran No','Tran Date', 'Supplier Name', 'Bill Date', 'Bill No', 'Bill Amount','Purpose','Emp Name'];
+        'Tran No','Tran Date', 'Supplier Name', 'Bill Date', 'Bill No', 'Bill Amount','Purpose','Emp Name','Paid By','Paid Remarks','Category'];
+        
      }
 
      public function registerEvents(): array
   {
       return [
           AfterSheet::class    => function(AfterSheet $event) {
-              $cellRange = 'A1:H1'; // All headers
+              $cellRange = 'A1:K1'; // All headers
               $event->sheet->getDelegate()->getStyle($cellRange)->getFont()->setSize(12);
+              
+              
           },
       ];
   }
@@ -47,8 +51,15 @@ class PaidbillExport implements FromCollection,WithHeadings,ShouldAutoSize,WithE
   public function columnFormats(): array
   {
       return [
-          'B' => NumberFormat::FORMAT_DATE_DDMMYYYY,
+          
+          'B' => 'dd-mm-yyyy',
+          'F' => '0.000',          
           
       ];
   }
+
+
+
+
+
 }

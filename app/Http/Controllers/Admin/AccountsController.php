@@ -137,6 +137,13 @@ class AccountsController extends Controller
         $account->th_dept_code = Auth::user()->dept;
         $account->th_comp_code = Auth::user()->company;
 
+        $today = Carbon::now();
+        $account->th_acc_year = $today->year;
+
+        $todaymnt = Carbon::now();
+        $account->th_acc_month = $todaymnt->month;
+        
+
         if (  ( Auth::user()->company )  == 1) {
             
             $account->th_comp_name = 'Al Jarwani';
