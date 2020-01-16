@@ -65,7 +65,7 @@
 
     <section class="content">
       <div class="container-fluid">
-     <form class="needs-validation" novalidate method = "post" action="{{ route('admin.cashtopups.store') }}" enctype="multipart/form-data" autocomplete="off">
+     <form class="needs-validation" novalidate method = "post" action="{{ route('admin.advances.store') }}" enctype="multipart/form-data" autocomplete="off">
       
      <input type="hidden" name="_token" value = "{{ csrf_token() }}">
      <div class="form-group">

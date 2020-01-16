@@ -144,15 +144,13 @@
         
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link 
-            @if($segment=='Accounts')
-            active
-            @endif
+           
             ">
               <i class="nav-icon fas fa-copy"></i>
               <p>
                Acccounts
                 <i class="fas fa-angle-left right"></i>
-                <span class="badge badge-info right">3</span>
+                <span class="badge badge-info right">4</span>
               </p>
             </a>
             <ul class="nav nav-treeview">
@@ -173,11 +171,29 @@
           </li>
 
           <li class="nav-item">
-            <a href="{{route('admin.paidbills.index')}}" class="nav-link">
+            <a href="{{route('admin.paidbills.index')}}" class="nav-link
+            @if($segment=='paidbills')                
+            active
+            @endif">
               <i class="nav-icon far fa-circle text-danger"></i>
               <p class="text">Paid Bills</p>
             </a>
           </li>
+
+       
+
+          <li class="nav-item">
+                
+            <a href="{{route('admin.advances.index')}}" class="nav-link 
+            
+            @if($segment=='advances')                
+            active
+            @endif">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Advance New</p>
+            </a>
+          </li>          
+       
 
 
               

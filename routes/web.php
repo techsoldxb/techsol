@@ -62,6 +62,7 @@ Route::get('/export', 'Admin\AccountsController@export')->name('admin.accounts.e
 
    
 Route::get('/paidbillexport', 'Admin\AccountsController@paidbillexport')->name('admin.accounts.paidbillexport');
+Route::get('/cashtopupexport', 'Admin\CashtopupController@cashtopupexport')->name('admin.cashtopups.cashtopupexport');
 
 
 

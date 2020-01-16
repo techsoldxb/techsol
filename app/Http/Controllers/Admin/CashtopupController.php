@@ -9,8 +9,19 @@ use App\Cashtopup;
 Use Auth;
 Use Gate;
 
+//we need to add the below if we create new excel export
+use App\Exports\CashtopupExport; 
+use Maatwebsite\Excel\Facades\Excel; 
+
 class CashtopupController extends Controller
 {
+
+    public function cashtopupexport()
+    {
+    return Excel::download(new CashtopupExport, 'Cashtopup.xls'); 
+    } 
+
+
     /**
      * Display a listing of the resource.
      *

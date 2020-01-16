@@ -18,21 +18,18 @@
           <div class="card">
             <div class="card-header">
               <h3 class="card-title">Cash Advance
-              <a href="{{ route('admin.cashtopups.create') }}" class="btn btn-primary btn-sm">Advance Request</a></h3>   
+              <a href="{{ route('admin.advances.create') }}" class="btn btn-primary btn-sm">Advance Request</a></h3>   
             </div>
             <!-- /.card-header -->
             <div class="card-body">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
-                <tr>
-                                   
+                <tr>                                   
                   <th> ID  </th>                       
                   <th> Request Date </th>                  
-                  <th> Amount </th>                
-                  
+                  <th> Amount </th>             
                   <th> User Name </th>
-                  <th> Remarks </th>
-                  
+                  <th> Remarks </th>                  
                 </tr>
                 </thead>
                 <tbody>
