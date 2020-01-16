@@ -15,29 +15,26 @@ class CreateAdvancesTable extends Migration
     {
         Schema::create('advances', function (Blueprint $table) {
             $table->bigIncrements('id');
-
-
-            $table->string('cd_comp_code')->nullable(); //Company Name
-            $table->string('cd_comp_name')->nullable(); //Company Name
-                                   
-            $table->string('cd_emp_id')->nullable(); // Employee ID
-            $table->string('cd_emp_name')->nullable(); // Employee Name                                   
+            $table->string('ca_comp_code')->nullable(); //Company Name
+            $table->string('ca_comp_name')->nullable(); //Company Name                                   
+            $table->string('ca_emp_id')->nullable(); // Employee ID
+            $table->string('ca_emp_name')->nullable(); // Employee Name                                   
+            $table->date('ca_adv_date')->nullable(); // Advance Date
+            $table->double('ca_adv_amt')->nullable(); // Advance amount                        
+            $table->longText('ca_purpose')->nullable(); // Purpose of the advance
+            $table->longText('ca_remarks')->nullable();
+            $table->string('ca_status')->nullable();            
+            $table->date('ca_pay_tran_date')->nullable();
+            $table->string('ca_pay_remarks')->nullable();
+            $table->string('ca_pay_id')->nullable();
+            $table->string('ca_pay_name')->nullable();            
             
-            $table->double('cd_advance_amt')->nullable(); // Advance amount                        
-            $table->longText('cd_purpose')->nullable(); // Purpose of the advance
-            $table->longText('cd_remarks')->nullable();
-            $table->string('cd_status')->nullable();            
-            $table->date('cd_pay_tran_date')->nullable();
-            $table->string('cd_pay_remarks')->nullable();
-            $table->string('cd_pay_id')->nullable();
-            $table->string('cd_pay_name')->nullable();            
-            
-            $table->string('cd_acc_year')->nullable();
-            $table->string('cd_acc_month')->nullable();
-            $table->string('cd_flex1')->nullable();
-            $table->string('cd_flex2')->nullable();
-            $table->integer('cd_flex3')->nullable();
-            $table->integer('cd_flex4')->nullable();
+            $table->string('ca_acc_year')->nullable();
+            $table->string('ca_acc_month')->nullable();
+            $table->string('ca_flex1')->nullable();
+            $table->string('ca_flex2')->nullable();
+            $table->integer('ca_flex3')->nullable();
+            $table->integer('ca_flex4')->nullable();
 
 
 

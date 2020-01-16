@@ -190,7 +190,7 @@
             active
             @endif">
               <i class="far fa-circle nav-icon"></i>
-              <p>Advance New</p>
+              <p>Advance</p>
             </a>
           </li>          
        

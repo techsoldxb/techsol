@@ -26,10 +26,11 @@
                 <thead>
                 <tr>                                   
                   <th> ID  </th>                       
+                  <th> Tran Date </th> 
                   <th> Request Date </th>                  
                   <th> Amount </th>             
-                  <th> User Name </th>
-                  <th> Remarks </th>                  
+                  <th> Reason</th>
+                  
                 </tr>
                 </thead>
                 <tbody>
@@ -40,15 +41,13 @@
             
             <tr>
               <td>{{ $c->id }}</td>            
-            <td>{{ date('d-m-Y', strtotime($c->created_at)) }}</td>            
+            <td>{{ date('d-m-Y', strtotime($c->created_at)) }}</td>                        
+            <td>{{ date('d-m-Y', strtotime($c->ca_adv_date)) }}</td>                   
+         
+            <td class="text-right">{{ number_format($c->ca_adv_amt,3) }}</td>
+         
             
-            <td>{{ date('d-m-Y', strtotime($c->topup_dt)) }}</td>           
-            
-            <td>{{ $c->cheque_no }}</td>
-            <td class="text-right">{{ number_format($c->topup_amt,3) }}</td>
-            <td>{{ $c->bank_name }}</td>
-            <td>{{ $c->emp_name }}</td>
-            <td>{{ $c->remarks }}</td>
+            <td>{{ $c->ca_purpose }}</td>
             
             
                          
@@ -64,12 +63,11 @@
                 <tfoot>
                 <tr>
                                  
-                  <th> ID  </th>                       
+                  <th> ID  </th>    
+                  <th> Tran Date </th>                    
                   <th> Request Date </th>                  
-                  <th> Amount </th>                
-                  
-                  <th> User Name </th>
-                  <th> Remarks </th>
+                  <th> Amount </th>             
+                  <th> Reason</th>
             
                 </tr>
                 </tfoot>

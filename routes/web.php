@@ -48,23 +48,22 @@ Route::resource('/admin/allpaidbills', 'Admin\AllpaidController', ['as'=>'admin'
 
 Route::get('/admin/accounts/{account}/print', 'Admin\AccountsController@print')->name('admin.accounts.print');
 
-View::Composer(
-['*'],function($view)
-{
-    $user = Auth::user();
-    $view->with('user',$user); 
-}
-);
 
+
+//Export Route
 Route::get('/showdata', 'CsvController@showdata');     
-Route::get('/export', 'Admin\AccountsController@export')->name('admin.accounts.export');
-//Route::get('/admin/export', 'AccountsController@export'); 
-
-   
+Route::get('/export', 'Admin\AccountsController@export')->name('admin.accounts.export');   
 Route::get('/paidbillexport', 'Admin\AccountsController@paidbillexport')->name('admin.accounts.paidbillexport');
 Route::get('/cashtopupexport', 'Admin\CashtopupController@cashtopupexport')->name('admin.cashtopups.cashtopupexport');
 
 
+View::Composer(
+    ['*'],function($view)
+    {
+        $user = Auth::user();
+        $view->with('user',$user); 
+    }
+    );
 
 
 

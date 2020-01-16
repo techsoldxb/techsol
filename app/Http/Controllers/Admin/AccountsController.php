@@ -63,15 +63,7 @@ class AccountsController extends Controller
     
     }
 
-    public function total()
-    {        
-
-              
-    $accountscount = Account::count();
-    $userCount = User::count();
-    return view('admin', compact('productCount', 'userCount'));
     
-    }
 
     /**
      * Show the form for creating a new resource.
