@@ -28,6 +28,7 @@ class CreateAdvancesTable extends Migration
             $table->string('ca_pay_remarks')->nullable();
             $table->string('ca_pay_id')->nullable();
             $table->string('ca_pay_name')->nullable();            
+            $table->string('ca_pay_status')->nullable();    
             
             $table->string('ca_acc_year')->nullable();
             $table->string('ca_acc_month')->nullable();

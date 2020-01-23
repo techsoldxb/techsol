@@ -54,7 +54,8 @@ class AccountExport implements FromCollection,WithHeadings,ShouldAutoSize,WithEv
     public function columnFormats(): array
     {
         return [
-            'B' => NumberFormat::FORMAT_DATE_DDMMYYYY,
+            
+            'B' => 'dd-mm-yyyy'
             
         ];
     }

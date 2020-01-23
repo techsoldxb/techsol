@@ -157,7 +157,7 @@
       </table>
       
     <div class="form-group">
-      <label for="comment">Comment:</label>    
+      <label for="comment">Justification:</label>    
       <input type="text" name = "purpose" 
       value="{{ $account->th_purpose}}" class = "form-control" readonly>      
     </div>

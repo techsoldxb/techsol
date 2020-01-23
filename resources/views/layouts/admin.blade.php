@@ -190,7 +190,7 @@
             active
             @endif">
               <i class="far fa-circle nav-icon"></i>
-              <p>Advance</p>
+              <p>Advances</p>
             </a>
           </li>          
        
@@ -220,6 +220,30 @@
                   
                   <i class="far fa-dot-circle nav-icon"></i>
                   <p>Paid Bills - All</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="{{route('admin.advanceall.index')}}" class="nav-link
+                @if($segment=='advanceall')                
+                active
+                @endif                
+                ">
+                  
+                  <i class="far fa-dot-circle nav-icon"></i>
+                  <p>Advance Request</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="{{route('admin.advancesettlement.index')}}" class="nav-link
+                @if($segment=='advancesettlement')                
+                active
+                @endif                
+                ">
+                  
+                  <i class="far fa-dot-circle nav-icon"></i>
+                  <p>Advance Settlement</p>
                 </a>
               </li>
 

@@ -95,7 +95,7 @@
                 <i class="ion ion-stats-bars"></i>
               </div>
 
-              @if($user->user_type =='admin')        
+              @if($user->user_type =='admin')       
                 
 
               <a href="{{route('admin.allpaidbills.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
@@ -114,14 +114,28 @@
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3>0</h3>
+                <h3> 
+                  @if($user->user_type =='admin')         
+                  {{ number_format($advanceall,3) }}
+                  @else
+                  {{ number_format($advance,3) }}
+                  @endif
+                </h3>
 
                 <p>Cash Advance</p>
               </div>
               <div class="icon">
                 <i class="ion ion-person-add"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              @if($user->user_type =='admin')       
+                
+
+              <a href="{{route('admin.advanceall.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+  
+                  
+                  @else
+                  <a href="{{route('admin.advances.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                  @endif
             </div>
           </div>
           <!-- ./col -->

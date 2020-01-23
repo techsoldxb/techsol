@@ -19,8 +19,15 @@ class AdvanceController extends Controller
      */
     public function index()
     {
-        $arr['advances'] = Advance::all();
-        return view('admin.advance.index')->with($arr);
+       
+
+
+        $arr['advances'] = Advance::where('ca_comp_code', auth()->user()->company)->where('ca_emp_id', auth()->user()->id)
+    ->orderBy('ID','desc')->get();
+    return view('admin.advances.index')->with($arr);
+
+
+
     }
 
     /**
@@ -30,7 +37,7 @@ class AdvanceController extends Controller
      */
     public function create()
     {
-        return view('admin.advance.create');
+        return view('admin.advances.create');
     }
 
     /**
@@ -58,6 +65,9 @@ class AdvanceController extends Controller
 
         $todaymnt = Carbon::now();
         $advance->ca_acc_month = $todaymnt->month;
+
+        $advance->ca_status = 0;
+        $advance->ca_pay_status = 0;
 
 
         if (  ( Auth::user()->company )  == 1) {
@@ -106,9 +116,10 @@ class AdvanceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Advance $advance)
     {
-        //
+        $arr['advance'] = $advance;
+        return view('admin.advances.edit')->with($arr);
     }
 
     /**
@@ -118,9 +129,27 @@ class AdvanceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Advance $advance)
     {
-        //
+//        $advance->ca_status = $request->ca_status;
+        $advance->ca_pay_status = $request->ca_pay_status;        
+        $advance->ca_pay_remarks = $request->ca_pay_remarks;
+
+        if ( !empty ( $request->ca_pay_tran_date ) ) {
+
+            $payment_date  = Carbon::createFromFormat('d-m-Y', $request->ca_pay_tran_date);        
+        $advance->ca_pay_tran_date = $payment_date;
+
+        }
+
+        
+        $advance->ca_status = $request->ca_status;  
+
+        $advance->ca_pay_id = Auth::user()->id;
+        $advance->ca_pay_name = Auth::user()->name;
+        
+        $advance->save();
+        return redirect()->route('admin.advanceall.index');
     }
 
     /**
@@ -131,6 +160,7 @@ class AdvanceController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Advance::destroy($id);                  
+        return redirect()->route('admin.advances.index')->with('error','Transaction deleted successfully!');
     }
 }

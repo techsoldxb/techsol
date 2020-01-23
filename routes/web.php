@@ -40,6 +40,9 @@ Route::get('/dashboard', 'TestController@dashboard')->name('dashboard');
 Route::resource('/admin/categories', 'Admin\CategoriesController', ['as'=>'admin']);
 Route::resource('/admin/cashtopups', 'Admin\CashtopupController', ['as'=>'admin']);
 Route::resource('/admin/advances', 'Admin\AdvanceController', ['as'=>'admin']);
+Route::resource('/admin/advanceall', 'Admin\AdvanceallController', ['as'=>'admin']);
+Route::resource('/admin/advancesettlement', 'Admin\AdvancesettlementController', ['as'=>'admin']);
+//Route::resource('/admin/alladvancesnew', 'Admin\AdvanceallnewController', ['as'=>'admin']);
 Route::resource('/admin/news', 'Admin\NewsController', ['as'=>'admin']);
 Route::resource('/admin/accounts', 'Admin\AccountsController', ['as'=>'admin']);
 Route::resource('/admin/unpaidbills', 'Admin\UnpaidController', ['as'=>'admin']);
@@ -64,6 +67,11 @@ View::Composer(
         $view->with('user',$user); 
     }
     );
+
+    Route::get('/clear-cache', function() {
+        Artisan::call('cache:clear');
+        return "Cache is cleared";
+    });
 
 
 
