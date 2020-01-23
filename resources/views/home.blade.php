@@ -198,7 +198,7 @@
                 @if($user->user_type =='admin')         
                 
 
-                {{ number_format($topup - $paid,3) }}
+                {{ number_format($topup - $paid - $advancepaid,3) }}
 
                 @else
                 Please check with Accounts Dept

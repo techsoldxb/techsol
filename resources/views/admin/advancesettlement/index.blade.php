@@ -30,7 +30,10 @@
                   <th> Request Date </th>                  
                   <th> Amount </th>             
                   <th> Reason</th>
-                  <th> Emp Name</th>
+                  <th> Employee</th>
+                  <th> Paid By</th>
+                  <th> Paid Date</th>
+
                   <th> Action</th>
                   
                 </tr>
@@ -51,6 +54,8 @@
             
             <td>{{ $c->ca_purpose }}</td>
             <td>{{ $c->ca_emp_name }}</td>
+            <td>{{ $c->ca_pay_name }}</td>
+            <td>{{ $c->ca_pay_tran_date }}</td>
             
             
             <td>             
@@ -81,7 +86,9 @@
                   <th> Request Date </th>                  
                   <th> Amount </th>             
                   <th> Reason</th>
-                  <th> Emp Name</th>
+                  <th> Employee</th>
+                  <th> Paid By</th>
+                  <th> Paid Date</th>
                   <th> Action</th>
             
                 </tr>
