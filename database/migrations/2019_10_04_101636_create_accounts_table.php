@@ -23,6 +23,7 @@ class CreateAccountsTable extends Migration
             $table->string('th_emp_id')->nullable(); // Employee ID
             $table->string('th_emp_name')->nullable(); // Employee Name            
             $table->string('th_supp_name')->nullable(); //Supplier Name
+            $table->string('th_supp_contact')->nullable(); //Supplier Contact
             $table->date('th_bill_dt')->nullable(); // Purchase bill date
             $table->string('th_bill_no')->nullable(); // Purchase bill number
             $table->double('th_bill_amt')->nullable(); // Purchase bill amount            

@@ -113,6 +113,7 @@ class AccountsController extends Controller
 
         $account->th_attach = $filename;
         $account->th_supp_name = $request->th_supp_name;
+        $account->th_supp_contact = $request->th_supp_contact;   
 
        // $date  = Carbon::createFromFormat('Y-m-d', $request->th_bill_dt); 
        $date  = Carbon::createFromFormat('d-m-Y', $request->th_bill_dt);        
@@ -175,6 +176,7 @@ class AccountsController extends Controller
                 $item->td_item_desc = trim($name,'"');    
                 $item->td_qty = $request->td_qty[$key] ;    
                 $item->td_unit_price = $request->td_unit_price[$key] ;
+                $item->td_unit_amt = $item->td_unit_price * $item->td_qty ;
                 $item->td_tran_no = $new_id; 
                 $item->save();
                 $account->item()->save($item);
@@ -218,7 +220,7 @@ class AccountsController extends Controller
     public function print(Account $account, Item $item) 
     { 
        
-        $items = Item::where('td_tran_no', $account->th_tran_no)->Get();     
+        $items = Item::where('td_tran_no', $account->th_tran_no)->orderBy('id','asc')->Get();     
         return view('admin.accounts.print')->with(['item' => $items, 'account' => $account]); 
     
     }
@@ -249,7 +251,8 @@ class AccountsController extends Controller
            
 
        // $account->th_attach = $filename;
-        $account->th_supp_name = $request->th_supp_name;       
+        $account->th_supp_name = $request->th_supp_name;   
+        $account->th_supp_contact = $request->th_supp_contact;    
 
        $date  = Carbon::createFromFormat('d-m-Y', $request->th_bill_dt);        
        $account->th_bill_dt = $date;          
