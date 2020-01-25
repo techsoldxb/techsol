@@ -52,10 +52,24 @@
         <!-- /.content-header -->
     
         <section class="content">
-          <div>
+          <div class = "row">
+            <div class = "col text-center">
+              <img src={{asset('dist/img/printjarwani.png')}}>
+            </div>
+            <div class = "col">
             <h1 class="m-0 text-dark text-center">Al Jarwani Group</h1>
             <h2 class="m-0 text-dark text-center">{{ $account->th_comp_name}}</h2>
             <h4 class="m-0 text-dark text-center">Claim Form</h4>
+            </div>
+            <div class = "col text-center">
+              @if($account->th_comp_code =='2')   
+              <img src={{asset('dist/img/printmall.png')}}>
+              @elseif($account->th_comp_code =='3')
+              <img src={{asset('dist/img/printaqua.png')}}>
+              @else   
+              <img src={{asset('dist/img/printjarwani.png')}}>
+              @endif
+            </div>
           </div>  
          
           <div class="container-fluid">
