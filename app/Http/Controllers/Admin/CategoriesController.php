@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+use Illuminate\Support\Facades\Validator;
 
 
 use App\Http\Controllers\Controller;
@@ -24,6 +25,10 @@ class CategoriesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+  
+
+
     public function index()
     {
 
@@ -62,9 +67,11 @@ class CategoriesController extends Controller
     public function store(Request $request, Category $category, User $user)
     {
         
-        
+      
+      
+
        
-        $category->exp_group_name = $request->exp_group_name;        
+       $category->exp_group_name = $request->exp_group_name;        
         $category->exp_group_desc = $request->exp_group_desc;    
         $category->exp_group_status = 1;   
         
@@ -110,7 +117,19 @@ class CategoriesController extends Controller
     {
         $category->exp_group_name = $request->exp_group_name;
         $category->exp_group_desc = $request->exp_group_desc;
-        $category->exp_group_status = $request->exp_group_status;
+
+        if ( $request->exp_group_status == '1' or $request->exp_group_status == '0')
+         {
+            
+            $category->exp_group_status = $request->exp_group_status;
+        }
+
+
+        
+
+
+
+        
         $category->save();
         return redirect()->route('admin.categories.index');
     }

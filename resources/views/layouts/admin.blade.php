@@ -105,8 +105,19 @@
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         
         <div class="image">
+
+          @if(auth()->user()->company =='3')   
+          <img src={{asset('dist/img/logo.png class=img-circle elevation-2 alt=Logo')}}>
+          @elseif(auth()->user()->company =='2')
           
-        <img src={{asset('dist/img/logo.png class=img-circle elevation-2 alt=User Image')}}>
+          <img src={{asset('dist/img/malllogonew.png class=img-circle elevation-2 alt=Logo')}}>
+          @else   
+          <img src={{asset('dist/img/jarwani.png class=img-circle elevation-2 alt=Logo')}}>
+          @endif
+
+
+          
+        
 
         </div>
         <div class="info">
@@ -244,6 +255,19 @@
                   
                   <i class="far fa-dot-circle nav-icon"></i>
                   <p>Advance Settlement</p>
+                </a>
+              </li>
+
+              
+              <li class="nav-item">
+                <a href="{{route('admin.advancehistory.index')}}" class="nav-link
+                @if($segment=='advancehistory')                
+                active
+                @endif                
+                ">
+                  
+                  <i class="far fa-dot-circle nav-icon"></i>
+                  <p>Advance History</p>
                 </a>
               </li>
 

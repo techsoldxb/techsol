@@ -34,6 +34,7 @@
             <th> Bill Amount </th>
             <th> Purpose </th>
             <th> Payment Date </th>
+            
             <th> Action </th>
                 </tr>
                 </thead>
@@ -52,6 +53,7 @@
             <td class="text-right">{{ number_format($c->th_bill_amt,3) }}</td>
             <td>{{ $c->th_purpose }}</td>
             <td>{{ $c->th_pay_date }}</td>
+            
 
             
             
@@ -105,6 +107,7 @@
             <th> Bill Amount </th>
             <th> Purpose </th>
             <th> Payment Date </th>
+            
             <th> Action </th>
                 </tr>
                 </tfoot>

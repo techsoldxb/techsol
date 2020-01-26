@@ -36,6 +36,7 @@
             <th> Emp Name </th>
             <th> Paid By </th>
             <th> Payment Date </th>
+            <th> Category</th>
             <th> Action </th>
                 </tr>
                 </thead>
@@ -59,6 +60,7 @@
             
 
             <td>{{ $c->th_pay_date}}</td>
+            <td>{{ $c->th_exp_cat_name }}</td>
             
             
             
@@ -112,6 +114,7 @@
             <th> Emp Name </th>
             <th> Paid By </th>
             <th> Payment Date </th>
+            <th> Category</th>
             <th> Action </th>
                 </tr>
                 </tfoot>

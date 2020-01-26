@@ -169,8 +169,9 @@
     <div class = "col-lg-2">
       
       <input class="form-check-input" type="hidden"  Value = '0' name='th_pay_status'>    
-      <input class="form-check-input" type="checkbox"  Value = '1' name='th_pay_status'>    
-  
+      <input class="form-check-input" type="checkbox"  Value = '1' name='th_pay_status'>
+
+      
   
   </div>
     
@@ -178,16 +179,16 @@
 
     <label class = "col-lg-1" for="">Payment Date</label>
     <div class = "col-lg-2">    
-      <input type="text" name = "th_pay_date"  class = "form-control" placeholder="dd-mm-yyyy">
+      <input type="text" name = "th_pay_date" class = "form-control" placeholder="dd-mm-yyyy">
    </div>
 
-
+   
 
    
 
    <label class = "col-lg-1" for="">Remarks</label>
    <div class = "col-lg-2">
-   <input type="text" name = "th_pay_remarks"  class = "form-control" placeholder="Enter Remarks">
+   <input type="text" name = "th_pay_remarks"  value="{{ $account->th_pay_remarks}}" class = "form-control" placeholder="Enter Remarks">
    <div class = "clear-fix"></div>
   </div>
 

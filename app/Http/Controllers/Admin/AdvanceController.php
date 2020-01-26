@@ -170,6 +170,6 @@ class AdvanceController extends Controller
     public function destroy($id)
     {
         Advance::destroy($id);                  
-        return redirect()->route('admin.advances.index')->with('error','Transaction deleted successfully!');
+        return redirect()->route('admin.advanceall.index')->with('error','Transaction deleted successfully!');
     }
 }

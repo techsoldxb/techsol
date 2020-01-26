@@ -78,7 +78,12 @@
 
     </div>
      <div class="form-group">
-     <input type="submit" class = "btn btn-info" Value ="Save">
+     
+
+     <input type="submit" class = "btn btn-primary" Value ="Save">
+     <a href="{{route('admin.categories.index')}}" class="btn btn-warning" role="button">Cancel</a>
+
+
      </div>
      </form>
       </div>

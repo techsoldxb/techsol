@@ -96,7 +96,7 @@
 
      <label class = "col-lg-1" for="">Cheque # *</label>
      <div class = "col-lg-2">
-     <input type="text" name = "cheque_no" onkeypress="return isNumberKey(event)" class = "form-control" placeholder="Enter cheque number" required>
+     <input type="text" name = "cheque_no" onkeypress="return isNumberKey(event)" class = "form-control" placeholder="Enter cheque number">
      <div class = "clear-fix"></div>
     </div>
 </div>
@@ -106,7 +106,7 @@
      <label class = "col-lg-1" for="">Amount</label>
      <div class = "col-lg-2">
      
-     <input type="text" name = "topup_amt" onkeypress="return isNumberKey(event)" class = "form-control "  placeholder="Enter cheque amount" required> </div>
+     <input type="text" name = "topup_amt" onkeypress="return isNumberKey(event)" class = "form-control "  placeholder="Enter amount" required> </div>
      
 
      <label class = "col-lg-1" for="">Payment Mode</label>
@@ -125,7 +125,7 @@
       <label class = "col-lg-1" for="">Bank Name</label>
       <div class = "col-lg-2">
       
-      <input type="text" name = "bank_name" class = "form-control "  placeholder="Enter bank name" required> </div>
+      <input type="text" name = "bank_name" class = "form-control "  placeholder="Enter bank name"> </div>
       
  
       <label class = "col-lg-1" for="">Delivered By</label>
@@ -144,16 +144,6 @@
             
   
 
-<div class="form-group">
-     <div class = "row">
-     
-     <label class = "col-lg-1" for="">Attach Bill</label>
-     <div class = "col-md-6">    
-     <input type="file" id="validationCustom01" name="th_attach">
-     <div class = "clear-fix"></div>
-     </div>     
-     </div>
-     </div>
   
 <div class="form-group">
   <label for="comment">Comment:</label>

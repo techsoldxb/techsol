@@ -32,7 +32,7 @@ class PaidbillExport implements FromCollection,WithHeadings,ShouldAutoSize,WithE
     {
        
       return [
-        'Tran No','Tran Date', 'Supplier Name', 'Bill Date', 'Bill No', 'Bill Amount','Purpose','Emp Name','Paid By','Paid Remarks','Category'];
+        'Transaction No','Transaction Date', 'Supplier Name', 'Bill Date', 'Bill Number', 'Bill Amount','Justification','Employee Name','Paid By','Payment Remarks','Category'];
         
      }
 

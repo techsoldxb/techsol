@@ -120,9 +120,17 @@ class UnpaidController extends Controller
         $account->th_bill_amt = $request->th_bill_amt;
         $account->th_item_type = $request->th_item_type;
         $account->th_purpose = $request->th_purpose;        
-        $account->th_pay_status = $request->th_pay_status;    
+        
         $account->th_pay_date = $request->th_pay_date;  
-        //$account->th_exp_cat_id = $request->th_exp_cat_id;  
+        //$account->th_exp_cat_id = $request->th_exp_cat_id; 
+
+
+        
+        if ( !empty ( $request->th_pay_status ) )
+         {
+        $account->th_pay_status = $request->th_pay_status; 
+         } 
+        
 
         $record = Category::find(request('th_exp_cat_id'));
         //dd($record);

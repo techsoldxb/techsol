@@ -100,7 +100,7 @@
           
        <label class = "col-lg-1" for="">Remarks</label>
        <div class = "col-lg-2">
-       <input type="text" name = "ca_pay_remarks"  class = "form-control" placeholder="Enter Remarks">
+       <input type="text" name = "ca_pay_remarks"  class = "form-control" value="{{ $advance->ca_pay_remarks}}" placeholder="Enter Remarks">
        <div class = "clear-fix"></div>
 
       </div>     

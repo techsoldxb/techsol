@@ -48,8 +48,10 @@
               <td>{{ $c->exp_group_desc }}</td>  
               <td> 
                 
-                @if($c->exp_group_status =='0')   
-                Inactive                             
+                @if($c->exp_group_status =='0') 
+                <div class="text-danger">
+                Inactive    
+              </div>                         
                 @elseif($c->exp_group_status =='1')   
                 Active
                 @else   

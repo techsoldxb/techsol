@@ -53,14 +53,20 @@
 
 
             <td>  
-              @if($c->ca_status =='0' && $c->ca_pay_status =='0')   
+              @if($c->ca_status =='0' && $c->ca_pay_status =='0')  
+              <div class="text-primary">   
               Waiting for approval
-              @elseif($c->ca_status =='0' && $c->ca_pay_status =='1')   
+              </div>
+              @elseif($c->ca_status =='0' && $c->ca_pay_status =='1')  
+              <div class="text-success">   
               Request approved
+              </div>
               @elseif($c->ca_status =='1' && $c->ca_pay_status =='1')   
               Transaction Completed
-              @elseif($c->ca_status =='0' && $c->ca_pay_status =='2')   
+              @elseif($c->ca_status =='0' && $c->ca_pay_status =='2')  
+              <div class="text-danger">  
               Request rejected
+              </div>
               @else   
               Status Error
 

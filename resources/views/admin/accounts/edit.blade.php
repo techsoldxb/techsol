@@ -148,7 +148,7 @@
   
   
 <div class="form-group">
-  <label for="comment">Comment:</label>
+  <label for="comment">Justification:</label>
 
   <input type="text" name = "th_purpose" 
   value="{{ $account->th_purpose}}" class = "form-control"  required>
