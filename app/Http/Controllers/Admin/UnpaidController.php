@@ -87,7 +87,8 @@ class UnpaidController extends Controller
     {
         $items = Item::where('td_tran_no', $unpaidbill)->get();     
         $account = Account::where('th_tran_no', $unpaidbill)->firstOrFail();
-        $arr['categories'] = Category::all();
+//        $arr['categories'] = Category::all();
+            $arr['categories'] = Category::where('exp_group_status',1)->orderBy('exp_group_name','asc')->get();
     
         return view('admin.unpaidbills.edit')->with($arr)
         ->with(['item' => $items, 'account' => $account, 'unpaidbill' => $unpaidbill]); 

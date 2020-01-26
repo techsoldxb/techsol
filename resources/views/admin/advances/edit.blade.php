@@ -32,7 +32,9 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{route('home')}}">Dashboard</a></li>
-              <li class="breadcrumb-item active">Advance</li>
+              
+              
+                  <li class="breadcrumb-item"><a href="{{route('admin.advances.index')}}">Advance</a></li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -51,7 +53,7 @@
      <label class = "col-md-3" for="">Advance Date</label>
      <div class = "col-md-6">
     
-     <input type="text" class="form-control" id="validationCustom01" name="exp_group_name" placeholder="First name" value="{{ date('d-m-Y', strtotime($advance->ca_adv_date))}}"  disabled required>
+     <input type="text" class="form-control" id="validationCustom01" name="ca_adv_date" placeholder="First name" value="{{ date('d-m-Y', strtotime($advance->ca_adv_date))}}"  disabled required>
      <div class = "clear-fix"></div>
      </div>     
      </div>
@@ -60,7 +62,7 @@
       <label class = "col-md-3" for="">Advance Amount</label>
       <div class = "col-md-6">
      
-      <input type="text" class="form-control" id="validationCustom01" name="exp_group_desc" placeholder="First name" value="{{ $advance->ca_adv_amt}}" disabled required>
+      <input type="text" class="form-control" id="validationCustom01" name="ca_adv_amt" placeholder="First name" value="{{ $advance->ca_adv_amt}}" required>
       <div class = "clear-fix"></div>
       </div>     
       </div>
@@ -69,7 +71,7 @@
         <label class = "col-md-3" for="">Purpose</label>
         <div class = "col-md-6">
        
-        <input type="text" class="form-control" id="validationCustom01" name="exp_group_desc" placeholder="First name" value="{{ $advance->ca_purpose}}" disabled required>
+        <input type="text" class="form-control" id="validationCustom01" name="ca_purpose" placeholder="First name" value="{{ $advance->ca_purpose}}" required>
         <div class = "clear-fix"></div>
         </div>     
         </div>
@@ -85,7 +87,7 @@
         <div class = "col-lg-2">                                           
          
 
-          <label><input type="radio" Value = '1' name='ca_pay_status' checked>Paid</label>
+          <label><input type="radio" Value = '1' name='ca_pay_status' >Paid</label>
           <label><input type="radio" Value = '2' name='ca_pay_status'>Rejected</label>
         
         </div>             
@@ -132,8 +134,9 @@
 
     
      <div class="form-group">
-     <input type="submit" class = "btn btn-info" Value ="Save">
-     <a><label class="breadcrumb-item"><a href="{{route('admin.advanceall.index')}}">No Save</a>
+     <input type="submit" class = "btn btn-primary" Value ="Save">
+     <a href="{{route('admin.advanceall.index')}}" class="btn btn-warning" role="button">Cancel</a>
+     
      </div>
      </form>
       </div>

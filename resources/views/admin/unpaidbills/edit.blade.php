@@ -208,8 +208,10 @@
       
   
   <div class="form-group">
-       <input type="submit" class = "btn btn-info" Value ="Save">
-       <label class="breadcrumb-item"><a href="{{route('admin.unpaidbills.index')}}">No Save</a>
+       <input type="submit" class = "btn btn-primary" Value ="Save">
+       
+       <a href="{{route('admin.unpaidbills.index')}}" class="btn btn-warning" role="button">Cancel</a>
+       
        </div>
        
   

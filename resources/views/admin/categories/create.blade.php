@@ -31,8 +31,11 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="{{route('home')}}">Dashboard</a></li>
-              <li class="breadcrumb-item active">Add Engineering</li>
+              <li class="breadcrumb-item"><a href="{{route('home')}}">Dashboard</a></li>              
+              
+                  <li class="breadcrumb-item"><a href="{{route('admin.categories.index')}}">Categories</a></li>
+
+
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -72,7 +75,8 @@
 
 
      <div class="form-group">
-     <input type="submit" class = "btn btn-info" Value ="Save">
+     <input type="submit" class = "btn btn-primary" Value ="Save">
+     <a href="{{route('admin.categories.index')}}" class="btn btn-warning" role="button">Cancel</a>
      </div>
      </form>
       </div>

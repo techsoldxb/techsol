@@ -66,6 +66,7 @@ class CategoriesController extends Controller
        
         $category->exp_group_name = $request->exp_group_name;        
         $category->exp_group_desc = $request->exp_group_desc;    
+        $category->exp_group_status = 1;   
         
         $category->created_id = Auth::user()->id;
         $category->created_name = Auth::user()->name;
@@ -109,6 +110,7 @@ class CategoriesController extends Controller
     {
         $category->exp_group_name = $request->exp_group_name;
         $category->exp_group_desc = $request->exp_group_desc;
+        $category->exp_group_status = $request->exp_group_status;
         $category->save();
         return redirect()->route('admin.categories.index');
     }

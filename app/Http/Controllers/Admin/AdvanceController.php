@@ -132,7 +132,9 @@ class AdvanceController extends Controller
     public function update(Request $request, Advance $advance)
     {
 //        $advance->ca_status = $request->ca_status;
-        $advance->ca_pay_status = $request->ca_pay_status;        
+
+
+             
         $advance->ca_pay_remarks = $request->ca_pay_remarks;
 
         if ( !empty ( $request->ca_pay_tran_date ) ) {
@@ -142,8 +144,15 @@ class AdvanceController extends Controller
 
         }
 
+        if ( !empty ( $request->ca_pay_status) ) {
+
+            $advance->ca_pay_status = $request->ca_pay_status;   
+
+        }
+
         
         $advance->ca_status = $request->ca_status;  
+        $advance->ca_adv_amt = $request->ca_adv_amt;  
 
         $advance->ca_pay_id = Auth::user()->id;
         $advance->ca_pay_name = Auth::user()->name;

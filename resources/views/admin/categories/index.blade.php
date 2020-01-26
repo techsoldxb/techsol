@@ -29,6 +29,7 @@
                   <th> ID   </th>            
                   <th> Group Name </th>            
                   <th> Group Desctiption </th> 
+                  <th> Status </th> 
                   <th> Created User </th>
                   <th> Created Date </th>
                   <th> Updated Date </th>
@@ -45,6 +46,17 @@
               <td>{{ $c->id }}</td>
               <td>{{ $c->exp_group_name }}</td>  
               <td>{{ $c->exp_group_desc }}</td>  
+              <td> 
+                
+                @if($c->exp_group_status =='0')   
+                Inactive                             
+                @elseif($c->exp_group_status =='1')   
+                Active
+                @else   
+                Status Error  
+                @endif
+              
+              </td>
               <td> {{ $c->created_name }} </td>
               
               <td>{{ date('d-m-Y', strtotime($c->created_at)) }}</td>  
@@ -90,6 +102,7 @@
                   <th> ID   </th>            
                   <th> Group Name </th>            
                   <th> Group Desctiption </th> 
+                  <th> Status </th> 
                   <th> Created User </th>
                   <th> Created Date </th>
                   <th> Updated Date </th>

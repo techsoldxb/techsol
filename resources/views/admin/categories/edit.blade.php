@@ -65,6 +65,17 @@
       </div>     
       </div>
 
+      <div class = "row">
+        <label class = "col-md-3" for="">Expense Group Status</label>
+        <div class = "col-md-6">
+       
+          <label><input type="radio" Value = '1' name='exp_group_status' >Active</label>
+          <label><input type="radio" Value = '0' name='exp_group_status'>Inactive</label>
+          
+        <div class = "clear-fix"></div>
+        </div>     
+        </div>
+
     </div>
      <div class="form-group">
      <input type="submit" class = "btn btn-info" Value ="Save">

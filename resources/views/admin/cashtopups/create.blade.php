@@ -52,7 +52,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{route('home')}}">Dashboard</a></li>
-              <li class="breadcrumb-item"><a href="{{route('admin.accounts.index')}}">Unpaid Bills</a></li>
+              <li class="breadcrumb-item"><a href="{{route('admin.cashtopups.index')}}">Topup</a></li>
               
 
               
@@ -165,7 +165,8 @@
     
 
     <div class="form-group">
-    <input type="submit" class = "btn btn-info" Value ="Save">
+    <input type="submit" class = "btn btn-primary" Value ="Save">
+    <a href="{{route('admin.cashtopups.index')}}" class="btn btn-warning" role="button">Cancel</a>
     </div>
      
 
