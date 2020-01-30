@@ -1,6 +1,14 @@
 @extends('layouts.admin')
 @section('content')
 
+<script>
+  function myFunction() {
+    window.print();
+
+    
+  }
+  </script>
+
 
 
    <!-- Main content -->
@@ -111,7 +119,17 @@
               </table>
 
               <div class="row">
-            <div class="col text-right">            
+            <div class="col text-right">   
+              
+              <a onclick="myFunction()" >
+
+                
+              
+                <i class="fa fa-print fa-2x text-green" aria-hidden="true"></i>
+                
+                </a>
+
+
             <a href="{{route('admin.accounts.export')}}">             
             <i class="far fa-file-excel fa-2x text-green"></i>   
               
