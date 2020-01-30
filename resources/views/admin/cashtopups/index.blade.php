@@ -28,9 +28,10 @@
                                    
                   <th> ID  </th>                       
                   <th> Tran Date </th>
+                  <th> Amount </th>
                   <th> Cheque Date </th>
                   <th> Cheque No </th>
-                  <th> Amount </th>
+                  
                   <th> Bank Name </th>          
                   
                   <th> User Name </th>
@@ -47,11 +48,12 @@
             <tr>
               <td>{{ $c->id }}</td>            
             <td>{{ date('d-m-Y', strtotime($c->created_at)) }}</td>            
-            
-            <td>{{ date('d-m-Y', strtotime($c->topup_dt)) }}</td>           
+            <td class="text-right">{{ number_format($c->topup_amt,3) }}</td>
+            <td>{{ date('d-m-Y', strtotime($c->topup_dt)) }}</td> 
+                      
             
             <td>{{ $c->cheque_no }}</td>
-            <td class="text-right">{{ number_format($c->topup_amt,3) }}</td>
+            
             <td>{{ $c->bank_name }}</td>
             <td>{{ $c->emp_name }}</td>
             <td>{{ $c->remarks }}</td>
@@ -72,9 +74,10 @@
                                  
                   <th> ID  </th>                       
             <th> Tran Date </th>
+            <th> Amount </th>
             <th> Cheque Date </th>
             <th> Cheque No </th>
-            <th> Amount </th>
+            
             <th> Bank Name </th>          
             
             <th> User Name </th>
