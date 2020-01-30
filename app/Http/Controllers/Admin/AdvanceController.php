@@ -72,7 +72,7 @@ class AdvanceController extends Controller
 
         if (  ( Auth::user()->company )  == 1) {
             
-            $advance->th_comp_name = 'Al Jarwani';
+            $advance->ca_comp_name = 'Al Jarwani';
         }
         else if (  ( Auth::user()->company )  == 2) {
 
