@@ -58,6 +58,9 @@
             <td>{{ $c->ca_pay_tran_date }}</td>
             
             
+            
+            
+            
             <td>             
               
            
