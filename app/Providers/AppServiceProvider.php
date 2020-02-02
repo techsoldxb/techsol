@@ -44,7 +44,7 @@ class AppServiceProvider extends ServiceProvider
 
     
 
-    view()->composer('home', function($view)  {
+    view()->composer(['home','cash'], function($view)  {
         $view->with('paid',\App\Account::where('th_comp_code', auth()->user()->company)->where('th_pay_status', 1)->sum('th_bill_amt'));
 });
 
@@ -55,7 +55,7 @@ view()->composer('home', function($view)  {
     ->sum('th_bill_amt'));
 });
 
-view()->composer('home', function($view)  {
+view()->composer(['home','cash'], function($view)  {
     $view->with('topup',\App\Cashtopup::where('comp_code', auth()->user()->company)->sum('topup_amt'));
 });
 
@@ -74,12 +74,14 @@ view()->composer('home', function($view)  {
     ->sum('ca_adv_amt'));
 });
 
-view()->composer('home', function($view)  {
+view()->composer(['home', 'cash'], function($view)  {
     $view->with('advancepaid',\App\Advance::where('ca_comp_code', auth()->user()->company)
     ->where('ca_status',0)
     ->where('ca_pay_status',1)
     ->sum('ca_adv_amt'));
 });
+
+
 
 
 

@@ -284,6 +284,21 @@
                 </a>
               </li>
 
+              
+              <li class="nav-item">
+                <a href="{{route('cash')}}" class="nav-link
+                @if($segment=='cashtopups')                
+                active
+                @endif                
+                ">
+                  
+                  <i class="far fa-dot-circle nav-icon"></i>
+                  <p>Cash On Hand</p>
+                </a>
+              </li>
+
+              
+              
 
               
               <li class="nav-item">

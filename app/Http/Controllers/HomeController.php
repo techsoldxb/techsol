@@ -36,6 +36,12 @@ class HomeController extends Controller
         return view('home');
     }
 
+    public function coh(Request $request)
+    {
+        //Users::where('id', 1)->count();
+        return view('cash');
+    }
+
     
 
     public function about()
