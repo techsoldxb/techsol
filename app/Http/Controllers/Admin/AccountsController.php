@@ -121,6 +121,7 @@ class AccountsController extends Controller
        // $account->th_bill_dt = $request->th_bill_dt;    
         
         $account->th_bill_amt = $request->th_bill_amt;
+        $account->th_bill_total = $request->th_bill_total;
         $account->th_bill_no = $request->th_bill_no;
         $account->th_pay_mode = $request->th_pay_mode;
         $account->th_purpose = $request->th_purpose;
@@ -221,7 +222,10 @@ class AccountsController extends Controller
     { 
        
         $items = Item::where('td_tran_no', $account->th_tran_no)->orderBy('id','asc')->Get();     
-        return view('admin.accounts.print')->with(['item' => $items, 'account' => $account]); 
+        $items_total = $items->sum('td_unit_amt'); 
+            
+        return view('admin.accounts.print')
+        ->with(['item' => $items,'items_total' => $items_total,'account' => $account]); 
     
     }
 
@@ -259,6 +263,7 @@ class AccountsController extends Controller
         
         $account->th_bill_no = $request->th_bill_no;
         $account->th_bill_amt = $request->th_bill_amt;
+       
         $account->th_item_type = $request->th_item_type;
         $account->th_purpose = $request->th_purpose;        
         $account->save();

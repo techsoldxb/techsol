@@ -27,6 +27,7 @@ class CreateAccountsTable extends Migration
             $table->date('th_bill_dt')->nullable(); // Purchase bill date
             $table->string('th_bill_no')->nullable(); // Purchase bill number
             $table->double('th_bill_amt')->nullable(); // Purchase bill amount            
+            $table->double('th_bill_total')->nullable(); // Total calculated from the item details
             $table->string('th_pay_mode')->nullable(); // Payment mode - cash or card
             $table->longText('th_purpose')->nullable(); // Purpose of the purchase
             $table->longText('th_remarks')->nullable();

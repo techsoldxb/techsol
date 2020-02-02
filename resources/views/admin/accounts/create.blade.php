@@ -619,7 +619,7 @@
             <tr>
             <td class="text-center"></td>
             <td class="text-right" colspan="3"><label>Total</label></td>
-            <td><input  type="text" class="form-control text-right" onkeypress="return isNumberKey(event)" name = "total" onkeyup="bill_total()" id="total" disabled></td>        
+            <td><input  type="text" class="form-control text-right" onkeypress="return isNumberKey(event)" name = "th_bill_total" onkeyup="bill_total()" id="total" disabled></td>        
           </tr>
     
         </tbody>

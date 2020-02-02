@@ -179,7 +179,7 @@
           <td></td>
           <td></td>
           <td class="font-weight-bold text-right">Total</td>
-          <td  class="font-weight-bold text-right">{{ number_format($account->th_bill_amt,3) }}</td>
+          <td  class="font-weight-bold text-right">{{ number_format($items_total,3) }}</td>
           </tr>
           
         
