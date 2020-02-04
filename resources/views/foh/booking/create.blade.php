@@ -1,6 +1,17 @@
 @extends('layouts.admin')
 @section('content')
 
+   <!-- This script is used to allow only number in the bill amount field -->
+   <script>    
+    function isNumberKey(evt)
+    {
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+        if (charCode != 46 && charCode > 31 
+        && (charCode < 48 || charCode > 57))
+        return false;
+        return true;
+    }  
+</script>
 
 
 
@@ -23,6 +34,75 @@
     });
   }, false);
 })();
+</script>
+
+    
+<script>
+  function calc1() 
+  {
+
+
+  var textValue1 = document.getElementById('tb_student_qty').value;
+  var textValue2 = document.getElementById('tb_student_price').value;
+  document.getElementById('student_amount').value = textValue1 * textValue2;   
+
+  var textValue3 = document.getElementById('tb_teacher_qty').value;
+  var textValue4 = document.getElementById('tb_teacher_price').value;
+
+
+    var textValue5 = document.getElementById('tb_adult_qty').value;
+  var textValue6 = document.getElementById('tb_adult_price').value;
+
+      document.getElementById('tb_total').value = textValue1 * textValue2 + textValue3 * textValue4 
+      + textValue5 * textValue6;
+ 
+  }
+
+   function calc2() 
+  {
+
+
+  var textValue1 = document.getElementById('tb_student_qty').value;
+  var textValue2 = document.getElementById('tb_student_price').value;
+   
+
+  var textValue3 = document.getElementById('tb_teacher_qty').value;
+  var textValue4 = document.getElementById('tb_teacher_price').value;
+
+  document.getElementById('teacher_amount').value = textValue3 * textValue4; 
+
+
+    var textValue5 = document.getElementById('qty3').value;
+  var textValue6 = document.getElementById('price3').value;
+
+      document.getElementById('tb_total').value = textValue1 * textValue2 
+  + textValue3 * textValue4 + textValue5 * textValue6 
+ 
+  }   
+
+  function calc3() 
+  {
+
+
+  var textValue1 = document.getElementById('tb_student_qty').value;
+  var textValue2 = document.getElementById('tb_student_price').value;
+   
+
+  var textValue3 = document.getElementById('tb_teacher_qty').value;
+  var textValue4 = document.getElementById('tb_teacher_price').value;
+
+  
+
+
+    var textValue5 = document.getElementById('tb_adult_qty').value;
+  var textValue6 = document.getElementById('tb_adult_price').value;
+
+  document.getElementById('adult_amount').value = textValue5 * textValue6; 
+
+      document.getElementById('tb_total').value = textValue1 * textValue2 
+  + textValue3 * textValue4 + textValue5 * textValue6 
+ 
+  }  
 </script>
 
   <!-- Content Header (Page header) -->
@@ -222,13 +302,15 @@
                                             Students
                                         </td>
                                         <td>
-                                          <input type="text" class="form-control text-center" id="validationCustom02" name="tb_student_qty" placeholder="" >
+                                          <input type="text" class="form-control text-center"  id="tb_student_qty" name="tb_student_qty" 
+                                          onkeypress="return isNumberKey(event)" onkeyup="calc1()" placeholder="" >
                                         </td>
                                         <td>
-                                          <input type="text" class="form-control text-center" id="validationCustom02" name="tb_student_price" placeholder="" >
+                                          <input type="text" class="form-control text-center" id="tb_student_price" name="tb_student_price"
+                                          onkeypress="return isNumberKey(event)" onkeyup="calc1()" placeholder="" >
                                         </td>
                                         <td>
-                                          <input type="text" class="form-control" id="validationCustom02" name="exp_group_desc" placeholder="" disabled>
+                                          <input type="text" class="form-control text-right" id="student_amount" name="student_amount" placeholder="" disabled>
                                         </td>
                                     </tr>
                 
@@ -237,13 +319,16 @@
                                             Teachers
                                         </td>
                                         <td>
-                                          <input type="text" class="form-control text-center" id="validationCustom02" name="tb_teacher_qty" placeholder="" >
+                                          <input type="text" class="form-control text-center" id="tb_teacher_qty" name="tb_teacher_qty" 
+                                          onkeypress="return isNumberKey(event)" onkeyup="calc2()" placeholder="" >
                                         </td>
                                         <td>
-                                          <input type="text" class="form-control text-center" id="validationCustom02" name="tb_teacher_price" placeholder="" >
+                                          <input type="text" class="form-control text-center" id="tb_teacher_price" name="tb_teacher_price"
+                                          onkeypress="return isNumberKey(event)" onkeyup="calc2()" placeholder="" >
                                         </td>
                                         <td>
-                                          <input type="text" class="form-control" id="validationCustom02" name="exp_group_desc" placeholder="" disabled>
+                                          <input type="text" class="form-control text-right" id="teacher_amount" name="teacher_amount" 
+                                          onkeypress="return isNumberKey(event)" onkeyup="calc2()" placeholder="" disabled>
                                         </td>
                                     </tr>
                 
@@ -252,13 +337,16 @@
                                             Adult
                                         </td>
                                         <td>
-                                          <input type="text" class="form-control text-center" id="validationCustom02" name="tb_adult_qty" placeholder="" >
+                                          <input type="text" class="form-control text-center" id="tb_adult_qty" name="tb_adult_qty" 
+                                          onkeypress="return isNumberKey(event)" onkeyup="calc3()" placeholder="" >
                                         </td>
                                         <td>
-                                          <input type="text" class="form-control text-center" id="validationCustom02" name="tb_adult_price" placeholder="" >
+                                          <input type="text" class="form-control text-center" id="tb_adult_price" name="tb_adult_price" 
+                                          onkeypress="return isNumberKey(event)" onkeyup="calc3()" placeholder="" >
                                         </td>
                                         <td>
-                                          <input type="text" class="form-control" id="validationCustom02" name="exp_group_desc" placeholder="" disabled>
+                                          <input type="text" class="form-control text-right" id="adult_amount" name="adult_amount" 
+                                          onkeypress="return isNumberKey(event)" onkeyup="calc3()" placeholder="" disabled>
                                         </td>
                                     </tr>
 
@@ -271,7 +359,8 @@
                                         Total 
                                       </td>
                                       <td>
-                                        <input type="text" class="form-control" id="validationCustom02" name="tb_total" placeholder="" disabled>
+                                        <input type="text" class="form-control font-weight-bold  text-right" id="tb_total" 
+                                        name="tb_total" placeholder="" disabled>
                                       </td>
                                   </tr>
                 
