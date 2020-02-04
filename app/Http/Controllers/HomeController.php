@@ -42,6 +42,13 @@ class HomeController extends Controller
         return view('cash');
     }
 
+    public function icc(Request $request)
+    {
+        //Users::where('id', 1)->count();
+        return view('homeicc');
+    }
+
+
     
 
     public function about()

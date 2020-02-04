@@ -132,7 +132,7 @@
             <?php
               $segment = Request::segment(2);              
             ?>
-          @can('isAdmin')
+
           <li class="nav-item">
             <a href=" {{ route('home') }}" class="nav-link
             @if(!$segment)
@@ -146,40 +146,6 @@
             </a>
 
           </li>
-          @endcan
-
-          @can('isUser')
-          <li class="nav-item">
-            <a href=" {{ route('home') }}" class="nav-link
-            @if(!$segment)
-            active
-            @endif            
-            ">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Dashboard
-              </p>
-            </a>
-
-          </li>
-          @endcan
-
-          @can('isGuest')
-          <li class="nav-item">
-            <a href=" {{ route('homeicc') }}" class="nav-link
-            @if(!$segment)
-            active
-            @endif            
-            ">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Dashboard - Guest
-              </p>
-            </a>
-
-          </li>
-          @endcan
-
 
       
 
@@ -388,12 +354,15 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
+              
+
               <li class="nav-item">
                 <a href="pages/UI/general.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Schedule</p>
                 </a>
               </li>
+              
               <li class="nav-item">
                 <a href="pages/UI/icons.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
@@ -473,13 +442,6 @@
                   <p>Policy</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href=" {{ route('users') }}" class="nav-link">
-                  <i class="nav-icon fas fa-file"></i>
-                  <p>Users</p>
-                </a>
-              </li>
-              
             </ul>
           </li>
 
@@ -498,32 +460,21 @@
             </a>
           </li>
           @endcan
-          @endcan
-
           
-          @can('isGuest')
 
-          <li class="nav-header">BOOKING - GUEST</li>
+          <li class="nav-header">MISCELLANEOUS</li>
           <li class="nav-item">
-            <a href="{{route('foh.booking.create')}}"  class="nav-link">
+            <a href="https://adminlte.io/docs/3.0" class="nav-link">
               <i class="nav-icon fas fa-file"></i>
-              <p>New Booking</p>
+              <p>Purchase Request</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{route('foh.booking.index')}}"  class="nav-link">
+            <a href=" {{ route('users') }}" class="nav-link">
               <i class="nav-icon fas fa-file"></i>
-              <p>Booking Details</p>
+              <p>Users</p>
             </a>
           </li>
-
-          <li class="nav-item">
-            <a href="{{route('foh.booking.index')}}"  class="nav-link">
-              <i class="nav-icon fas fa-file"></i>
-              <p>Booking History</p>
-            </a>
-          </li>
-       
 
           @endcan
          

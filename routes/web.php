@@ -27,6 +27,7 @@ Route::get('users', 'UserController@index')->name('users');
 Route::get('changeStatus', 'UserController@changeStatus');
 
 Route::get('/admin', 'HomeController@index')->name('home');
+Route::get('/foh', 'HomeController@icc')->name('homeicc');
 Route::get('/coh', 'HomeController@coh')->name('cash');
 //Route::get('/admin1', 'HomestaffController@index')->name('homestaff');
 
@@ -52,6 +53,9 @@ Route::resource('/admin/paidbills', 'Admin\PaidController', ['as'=>'admin']);
 Route::resource('/admin/allpaidbills', 'Admin\AllpaidController', ['as'=>'admin']);
 
 Route::get('/admin/accounts/{account}/print', 'Admin\AccountsController@print')->name('admin.accounts.print');
+
+
+Route::resource('/foh/booking', 'Foh\BookingController', ['as'=>'foh']);
 
 
 
