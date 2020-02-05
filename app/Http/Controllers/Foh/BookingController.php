@@ -33,6 +33,7 @@ class BookingController extends Controller
      */
     public function create()
     {
+
         return view('foh.booking.create');
     }
 
@@ -104,9 +105,13 @@ class BookingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Booking $booking)
     {
+        
         $this->authorize('isAdmin');
+
+        $arr['booking'] = $booking;
+        return view('foh.booking.edit')->with($arr);
     }
 
     /**
@@ -116,9 +121,31 @@ class BookingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Booking $booking)
     {
-        //
+        
+        
+        $booking->tb_appr_user_id = Auth::user()->id;
+        $booking->tb_appr_user_name = Auth::user()->name;
+
+        
+        $tdate  = Carbon::now();
+        $booking->tb_appr_date = $tdate; 
+
+        $booking->tb_status = $request->tb_status;
+
+
+
+        
+
+
+        
+
+
+
+        
+        $booking->save();
+        return redirect()->route('foh.booking.index')->with('info','Transaction updated successfully!');
     }
 
     /**

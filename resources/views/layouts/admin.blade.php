@@ -508,13 +508,19 @@
 
           <li class="nav-header">BOOKING - GUEST</li>
           <li class="nav-item">
-            <a href="{{route('foh.booking.create')}}"  class="nav-link">
+            <a href="{{route('foh.booking.create')}}"  class="nav-link
+            @if($segment=='booking')
+            active
+            @endif">
               <i class="nav-icon fas fa-file"></i>
               <p>New Booking</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{route('foh.booking.index')}}"  class="nav-link">
+            <a href="{{route('foh.booking.index')}}"  class="nav-link
+            @if($segment=='booking.create')
+            active
+            @endif">
               <i class="nav-icon fas fa-file"></i>
               <p>Booking Details</p>
             </a>

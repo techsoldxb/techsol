@@ -27,15 +27,17 @@
                                  
                 <th> ID   </th>            
                 <th> Name </th>            
-                <th> Contact Person </th> 
+                
                 <th> Mobile </th> 
-                <th> Email </th>
+                
                 <th> Visit Date </th>
                 <th> Visit Time </th>
-                <th> Payment Mode</th>
+                
                 <th> Reference</th>
                 <th> User</th>
                 <th> Booking Date</th>
+                <th> Status</th>
+                <th>Approved By</th>
                 <th> Action </th>
               </tr>
               </thead>
@@ -48,18 +50,32 @@
           <tr>
             <td>{{ $c->id }}</td>
             <td>{{ $c->tb_cust_name }}</td>  
-            <td>{{ $c->tb_cust_contact }}</td>  
+            
             <td>{{ $c->tb_cust_mobile }}</td>  
-            <td>{{ $c->tb_cust_email }}</td>  
+            
             
             <td>{{ date('d-m-Y', strtotime($c->tb_date)) }}</td>  
             <td>{{ $c->tb_time}}</td>  
-            <td>{{ $c->tb_pay_mode}}</td>  
+            
             <td>{{ $c->tb_reference}}</td>  
           
             <td> {{ $c->tb_user_name }} </td>
             
             <td>{{ date('d-m-Y', strtotime($c->created_at)) }}</td>  
+
+            <td>  
+              @if($c->tb_status =='0')  
+              <div class="text-primary">   
+              Waiting for approval
+              </div>
+              @elseif($c->tb_status =='1')  
+              <div class="text-success">   
+              Request approved
+              </div>             
+
+              @endif            
+            </td>
+            <td> {{ $c->tb_appr_user_name }} </td>
              
             
           
@@ -106,15 +122,17 @@
                                
                 <th> ID   </th>            
                 <th> Name </th>            
-                <th> Contact Person </th> 
+                
                 <th> Mobile </th> 
-                <th> Email </th>
+                
                 <th> Visit Date </th>
                 <th> Visit Time </th>
-                <th> Payment Mode</th>
+                
                 <th> Reference</th>
                 <th> User</th>
                 <th> Booking Date</th>
+                <th> Status</th>
+                <th>Approved By</th>
                 <th> Action </th>
                 
               </tr>
