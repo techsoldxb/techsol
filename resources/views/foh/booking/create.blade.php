@@ -169,7 +169,7 @@
             </div>
             <label class = "col-lg-2" for="">Email</label>
             <div class = "col-lg-3">    
-            <input type="text" class="form-control" id="validationCustom02" name="tb_cust_email" placeholder="Enter Email" required>           
+            <input type="email" class="form-control" id="validationCustom02" name="tb_cust_email" placeholder="Enter Email" required>           
             </div>     
             </div>
             </div>
@@ -289,7 +289,7 @@
                               <tr>
                                                  
                                          
-                                <th class="text-center"> Name</th>            
+                                <th class="text-center"> Ticket Type</th>            
                                 <th class="text-center"> Quantity</th> 
                                 <th class="text-center"> Unit Price </th> 
                                 <th class="text-center"> Amount</th>
@@ -356,7 +356,7 @@
                                       </td>
                                       <td></td>
                                       <td class="font-weight-bold text-right">
-                                        Total 
+                                        Total OMR 
                                       </td>
                                       <td>
                                         <input type="text" class="form-control font-weight-bold  text-right" id="tb_total" 

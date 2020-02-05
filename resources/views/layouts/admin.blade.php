@@ -527,7 +527,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="{{route('foh.booking.index')}}"  class="nav-link">
+            <a href="{{route('foh.bookinghistory.index')}}"  class="nav-link">
               <i class="nav-icon fas fa-file"></i>
               <p>Booking History</p>
             </a>

@@ -56,6 +56,7 @@ Route::get('/admin/accounts/{account}/print', 'Admin\AccountsController@print')-
 
 
 Route::resource('/foh/booking', 'Foh\BookingController', ['as'=>'foh']);
+Route::resource('/foh/bookinghistory', 'Foh\BookinghistoryController', ['as'=>'foh']);
 
 
 

@@ -10,7 +10,7 @@ use Carbon\Carbon;
 use App\Booking;
 Use Auth;
 use App\User;
-use App\Item;
+
 Use Gate;
 
 class BookingController extends Controller
@@ -22,9 +22,12 @@ class BookingController extends Controller
      */
     public function index()
     {
-        $arr['booking'] = Booking::all();
-        return view('foh.booking.index')->with($arr);  
-    }
+        //$arr['booking'] = Booking::all();
+        $arr['booking'] = Booking::where('tb_date', '>=', date('Y-m-d'))->get();
+        return view('foh.booking.index')->with($arr);      
+      
+   
+   }
 
     /**
      * Show the form for creating a new resource.

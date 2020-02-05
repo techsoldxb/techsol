@@ -80,8 +80,15 @@
 
     <section class="content">
       <div class="container-fluid">
-     <form  class="needs-validation" novalidate method = "post" action="{{ route('foh.booking.store') }}" 
-     enctype="multipart/form-data" autocomplete="off">
+
+    
+
+     <form  class="needs-validation" novalidate method = "POST" 
+     action="{{ route('foh.booking.update', $booking->id) }}">
+     @method('PUT')
+
+
+     
      <input type="hidden" name="_token" value = "{{ csrf_token() }}">
      <div class="form-group">
 
@@ -282,36 +289,48 @@
                                   </tr>
                 
                              
-                              </tbody>
-                
+                              </tbody>               
                               
                  
                             </table>
 
-     
+                            <div class="form-group">
+                                <div class = "row">
+                                <label class = "col-lg-1" for="">Approve</label>
+                                <div class = "col-lg-2">
+                                  
+                                  <input class="form-check-input" type="hidden"  Value = '0' name='tb_status'>    
+                                  <input class="form-check-input" type="checkbox"  Value = '1' name='tb_status'>
+                            
+                                  
+                              
+                              </div>
+                                
+                                
+                            
+                                <label class = "col-lg-1" for="">Remarks</label>
+                                <div class = "col-lg">    
+                                  <input type="text" name = "tb_appr_remarks" class = "form-control" placeholder="Enter remarks">
+                               </div>
+                            
+                               
+                            
+                               
+                            
+ 
+                            
+                               </div>
 
      
 
-
-
-
-     <div class="form-group">
-      <div class = "row">
-      <label class = "col" for="">Prepared by: _____________________________</label>
      
-      <label class = "col" for="">Approved by: _____________________________</label>
-       
-      </div>
-      </div>
 
-      <div class="form-group">
-     
-        <a onclick="myFunction()" class="btn btn-success btn-sm">Print</a>
-        
-        </div>
+                               <div class="form-group">
+                                <input type="submit" class = "btn btn-info" Value ="Save">
+                                <a href="{{route('foh.booking.index')}}" class="btn btn-warning" role="button">Cancel</a>
+                                </div>
+
    
-
-
      </form>
       </div>
     </section>
