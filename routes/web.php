@@ -80,6 +80,9 @@ View::Composer(
         return "Cache is cleared";
     });
 
+    Route::resource('calendar', 'CalendarController');
+
+
 
 
 //Route::get('/admin/accounts/{account}/print/{item}', 'Admin\AccountsController@print')->name('admin.accounts.print');

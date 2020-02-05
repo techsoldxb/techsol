@@ -527,9 +527,19 @@
           </li>
 
           <li class="nav-item">
-            <a href="{{route('foh.bookinghistory.index')}}"  class="nav-link">
+            <a href="{{route('foh.bookinghistory.index')}}"  class="nav-link
+            @if($segment=='bookinghistory')
+            active
+            @endif">
               <i class="nav-icon fas fa-file"></i>
               <p>Booking History</p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#"  class="nav-link">
+              <i class="nav-icon fas fa-file"></i>
+              <p>Booking Calander</p>
             </a>
           </li>
        
