@@ -184,7 +184,7 @@
       
 
           
-
+          
 
         
           <li class="nav-item has-treeview">
@@ -197,6 +197,8 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
+
+              @if(Gate::check('isUser') || Gate::check('isAdmin'))
            
 
               <li class="nav-item">
@@ -239,7 +241,7 @@
               <p>Advances</p>
             </a>
           </li>          
-       
+          @endif
 
 
               
@@ -501,7 +503,8 @@
           @endcan
 
           
-          @can('isGuest')
+        
+         
 
           <li class="nav-header">BOOKING - GUEST</li>
           <li class="nav-item">
@@ -525,12 +528,14 @@
           </li>
        
 
-          @endcan
-         
-       
           
-        </ul>
-      </nav>
+          
+         
+          </ul>
+        </nav>
+            
+       
+         
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->

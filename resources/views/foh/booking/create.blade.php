@@ -129,7 +129,7 @@
     <section class="content">
       <div class="container-fluid">
      <form  class="needs-validation" novalidate method = "post" action="{{ route('foh.booking.store') }}" 
-     enctype="multipart/form-data" autocomplete="off">
+     enctype="multipart/form-data" autocomplete="off" autofill="off">
      <input type="hidden" name="_token" value = "{{ csrf_token() }}">
      <div class="form-group">
      <div class = "row">

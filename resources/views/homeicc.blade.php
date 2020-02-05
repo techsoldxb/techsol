@@ -77,7 +77,7 @@
                 
                 </h3>
 
-                <p>Paid Bill Amount</p>
+                <p>Pending Approval</p>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
@@ -106,7 +106,7 @@
                  0
                 </h3>
 
-                <p>Cash Advance</p>
+                <p>Target</p>
               </div>
               <div class="icon">
                 <i class="ion ion-person-add"></i>
@@ -138,7 +138,7 @@
                 
                 </h3>
 
-                <p>Cash Topup</p>
+                <p>Target Achieved</p>
               </div>
               <div class="icon">
                 <i class="ion ion-pie-graph"></i>
@@ -168,7 +168,7 @@
               <span class="info-box-icon bg-info elevation-1"><i class="fas fa-dollar-sign"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Cash On Hand</span>
+                <span class="info-box-text">Total Count</span>
                 <span class="info-box-number">
 
                 @if($user->user_type =='admin')         
@@ -177,7 +177,7 @@
                 0
 
                 @else
-                Please check with Accounts Dept
+                0
                 @endif
 
                

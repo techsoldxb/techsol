@@ -106,7 +106,7 @@ class BookingController extends Controller
      */
     public function edit($id)
     {
-        //
+        $this->authorize('isAdmin');
     }
 
     /**

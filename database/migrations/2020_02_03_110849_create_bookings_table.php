@@ -38,7 +38,13 @@ class CreateBookingsTable extends Migration
             $table->string('tb_status')->nullable();
 
             $table->string('tb_user_id')->nullable(); // Employee Name    
-            $table->string('tb_user_name')->nullable(); // Employee Name   
+            $table->string('tb_user_name')->nullable(); // Employee Name  
+            
+            
+            $table->string('tb_appr_user_id')->nullable(); // Employee Name    
+            $table->string('tb_appr_user_name')->nullable(); // Employee Name  
+            $table->date('tb_appr_date')->nullable(); // Employee ID
+            $table->string('tb_appr_remarks')->nullable(); // Employee Name  
                 
       
             $table->timestamps();

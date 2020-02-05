@@ -280,6 +280,7 @@ class AccountsController extends Controller
     public function destroy($id)
     {
         
+        
 
         Account::destroy($id);                  
         return redirect()->route('admin.accounts.index')->with('error','Transaction deleted successfully!');        
