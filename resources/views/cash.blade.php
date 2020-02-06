@@ -1,3 +1,58 @@
+     <!-- This script is used to allow only number in the bill amount field -->
+     <script>    
+      function isNumberKey(evt)
+      {
+          var charCode = (evt.which) ? evt.which : evt.keyCode;
+          if (charCode != 46 && charCode > 31 
+          && (charCode < 48 || charCode > 57))
+          return false;
+          return true;
+      }  
+</script>
+
+<script>
+  function myFunction() {
+    window.print();
+
+    
+  }
+  </script>
+
+<script>
+  function calc1() 
+  {
+  var fifty_qty = document.getElementById('fifty_qty').value;
+  document.getElementById('fifty_amount').value = fifty_qty * 50;   
+
+  var twenty_qty = document.getElementById('twenty_qty').value;
+  document.getElementById('twenty_amount').value = twenty_qty * 20;   
+
+  var ten_qty = document.getElementById('ten_qty').value;
+  document.getElementById('ten_amount').value = ten_qty * 10;   
+
+  var five_qty = document.getElementById('five_qty').value;
+  document.getElementById('five_amount').value = five_qty * 5;   
+
+  var one_qty = document.getElementById('one_qty').value;
+  document.getElementById('one_amount').value = one_qty * 1;  
+
+  var baisa_qty = document.getElementById('baisa_qty').value;
+  document.getElementById('baisa_amount').value = baisa_qty * .100;  
+
+  document.getElementById('total').value = fifty_qty * 50 + twenty_qty * 20 + ten_qty * 10 + five_qty * 5 + one_qty * 1;
+ 
+
+
+ 
+  }
+
+  
+
+  
+</script>
+
+<!-- End -->
+
 @extends('layouts.admin')
 
 @section('content')
@@ -88,10 +143,146 @@
                 </tfoot>
  
             </table>
+
+            
             
           </div>
           <!-- /.card-body -->
         </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Cash Denomination </h3>   
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <table class="table table-bordered">
+              <thead>
+              <tr>
+                                 
+                         
+                <th class="text-center">Currency</th>            
+                <th class="text-center"> Quantity </th> 
+                <th class="text-center"> Amount </th> 
+                
+              
+              </tr>
+              </thead>
+              <tbody>
+                    <tr>
+                        <td class="font-weight-bold text-center">
+                            50.000 
+                        </td>
+                        <td>
+                          <input class="form-control text-center" type="text" name = "fifty_qty" id="fifty_qty" onkeypress="return isNumberKey(event)" onkeyup="calc1()" >
+                        </td>
+                        <td class="font-weight-bold text-right">
+                          <input class="form-control font-weight-bold text-center" type="text" name = "fifty_amount" id="fifty_amount" disabled>
+                      </td>
+                        
+                    </tr>
+
+                    <tr>
+                      <td class="font-weight-bold text-center">
+                        20.000 
+                    </td>
+                    <td>
+                      <input class="form-control text-center" type="text" name = "twenty_qty" id="twenty_qty" onkeypress="return isNumberKey(event)" onkeyup="calc1()" >
+                    </td>
+                    <td class="font-weight-bold text-right">
+                      <input class="form-control font-weight-bold text-center" type="text" name = "twenty_amount" id="twenty_amount" disabled>
+                  </td>
+                        
+                    </tr>
+
+                    <tr>
+                      <td class="font-weight-bold text-center">
+                        10.000 
+                    </td>
+                    <td>
+                      <input class="form-control text-center" type="text" name = "ten_qty" id="ten_qty" onkeypress="return isNumberKey(event)" onkeyup="calc1()" >
+                    </td>
+                    <td class="font-weight-bold text-right">
+                      <input class="form-control font-weight-bold text-center" type="text" name = "ten_amount" id="ten_amount" disabled>
+                  </td>
+                        
+                    </tr>
+
+                    <tr>
+                      <td class="font-weight-bold text-center">
+                        5.000 
+                    </td>
+                    <td>
+                      <input class="form-control text-center" type="text" name = "five_qty" id="five_qty" onkeypress="return isNumberKey(event)" onkeyup="calc1()" >
+                    </td>
+                    <td class="font-weight-bold text-right">
+                      <input class="form-control font-weight-bold text-center" type="text" name = "five_amount" id="five_amount" disabled>
+                  </td>
+                      
+                  </tr>
+
+                  <tr>
+                    <td class="font-weight-bold text-center">
+                      1.000 
+                  </td>
+                  <td>
+                    <input class="form-control text-center" type="text" name = "one_qty" id="one_qty" onkeypress="return isNumberKey(event)" onkeyup="calc1()" >
+                  </td>
+                  <td class="font-weight-bold text-right">
+                    <input class="form-control font-weight-bold text-center" type="text" name = "one_amount" id="one_amount" disabled>
+                </td>
+                    
+                </tr>
+
+                
+                <tr>
+                  <td class="font-weight-bold text-center">
+                    0.100 
+                </td>
+                <td>
+                  <input class="form-control text-center" type="text" name = "baisa_qty" id="baisa_qty" onkeypress="return isNumberKey(event)" onkeyup="calc1()" >
+                </td>
+                <td class="font-weight-bold text-right">
+                  <input class="form-control font-weight-bold text-center" type="text" name = "baisa_amount" id="baisa_amount" disabled>
+              </td>
+                  
+              </tr>
+
+             
+              </tbody>
+
+              <tfoot>
+                <tr>
+                    <th></th>            
+                    <th class="text-right">Total</th>   
+                  <th class="font-weight-bold text-right">
+                    <input class="form-control font-weight-bold text-center" type="text" name = "total" id="total" disabled>
+                 </th>            
+                             
+                  
+                  
+                  
+                </tr>
+                </tfoot>
+ 
+            </table>
+
+            
+            
+          </div>
+          <!-- /.card-body -->
+        </div>
+        <div class="form-group">
+  
+      
+  
+          <a onclick="myFunction()" class="btn btn-success btn-sm">Print</a>
+  
+            User Name: {{ Auth::user()->name }}
+         
+    
+           </div>
+
         <!-- /.card -->
       </div>
       <!-- /.col -->
