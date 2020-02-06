@@ -3,10 +3,19 @@
 
 <link rel="stylesheet" href="{{asset('css/app.css')}}">
 
+<div  style="text-align:right">
+
+    <a class="btn btn-primary btn-sm" href="{{ URL::previous() }}"> Back    </a>
+
+</div>
+
+<div style="text-align:center">
+    <img src={{asset('dist/img/printaqua.png')}}>
+</div>
 
 
 
-<h3 style="text-align:center">Oman Aquarium Booking Calendar</h3>
+<h3 style="text-align:center">Booking Calendar</h3>
 
 <div id='calendar'></div>
 

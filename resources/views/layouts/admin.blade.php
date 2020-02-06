@@ -391,27 +391,40 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/UI/general.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Schedule</p>
+                <a href="{{route('foh.booking.create')}}"  class="nav-link
+                ">
+                  <i class="nav-icon fas fa-file"></i>
+                  <p>New Booking</p>
+                </a>
+              </li>
+
+           
+
+
+              <li class="nav-item">
+                <a href="{{route('foh.booking.index')}}"  class="nav-link
+                ">
+                <i class="nav-icon far fa-circle text-warning"></i>
+                  <p>Booking Details</p>
+                </a>
+              </li>
+
+            
+
+
+              <li class="nav-item">
+                <a href="{{route('foh.bookinghistory.index')}}" class="nav-link
+                @if($segment=='bookinghistory')
+                active
+                @endif">
+                <i class="nav-icon far fa-circle text-danger"></i>
+                  <p>Booking History</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/UI/icons.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Events</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/UI/buttons.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Booking</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/UI/sliders.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Others</p>
+                <a href='{!! url('/calendar') !!}' class="nav-link">
+                  <i class="far fa fa-calendar-alt nav-icon"></i>
+                  <p>Calendar</p>
                 </a>
               </li>
              
@@ -504,7 +517,7 @@
 
           
         
-         
+          
 
           <li class="nav-header">BOOKING - GUEST</li>
           <li class="nav-item">
@@ -521,7 +534,7 @@
             @if($segment=='booking.create')
             active
             @endif">
-              <i class="nav-icon fas fa-file"></i>
+            <i class="nav-icon far fa-circle text-warning"></i>
               <p>Booking Details</p>
             </a>
           </li>
@@ -531,7 +544,7 @@
             @if($segment=='bookinghistory')
             active
             @endif">
-              <i class="nav-icon fas fa-file"></i>
+            <i class="nav-icon far fa-circle text-danger"></i>
               <p>Booking History</p>
             </a>
           </li>
@@ -539,10 +552,12 @@
           <li class="nav-item">
             <a href='{!! url('/calendar') !!}'  class="nav-link">
               
-              <i class="nav-icon fas fa-file"></i>
-              <p>Booking Calander</p>
+              <i class="far fa fa-calendar-alt nav-icon"></i>
+              <p>Calander</p>
             </a>
           </li>
+
+          
        
 
           

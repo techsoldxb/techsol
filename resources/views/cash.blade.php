@@ -76,15 +76,27 @@
 
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title">Cash On Hand </h3>
+            <h3 class="card-title">
+
+              <div style="text-align:center" class="font-weight-bold">
+
+                @if(auth()->user()->company =='1')   
+                Al Jarwani
+              @elseif(auth()->user()->company =='2')
+                Muscat Mall
+              @elseif(auth()->user()->company =='3')
+                Oman Aquarium
+              @endif
+               
+                
+              </div>
+
+              <div style="text-align:center">
+                Cash On Hand Report
+              </div>
             
-            @if(auth()->user()->company =='1')   
-              Al Jarwani
-            @elseif(auth()->user()->company =='2')
-              Muscat Mall
-            @elseif(auth()->user()->company =='3')
-              Oman Aquarium
-            @endif
+           
+          </h3>
               
 
 
@@ -164,7 +176,12 @@
 
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title">Cash Denomination </h3>  
+            
+            <h3 class="card-title">
+            <div style="text-align:center">
+              Cash Denomination  
+            </div>  
+            </h3>  
             
             
           </div>
