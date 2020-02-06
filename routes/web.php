@@ -65,6 +65,7 @@ Route::get('/showdata', 'CsvController@showdata');
 Route::get('/export', 'Admin\AccountsController@export')->name('admin.accounts.export');   
 Route::get('/paidbillexport', 'Admin\AccountsController@paidbillexport')->name('admin.accounts.paidbillexport');
 Route::get('/cashtopupexport', 'Admin\CashtopupController@cashtopupexport')->name('admin.cashtopups.cashtopupexport');
+Route::get('/bookingexport', 'Foh\BookinghistoryController@bookingexport')->name('foh.booking.bookingexport');
 
 
 View::Composer(

@@ -13,8 +13,20 @@ use App\User;
 
 Use Gate;
 
+//we need to add the below if we create new excel export
+use App\Exports\BookingExport; 
+use Maatwebsite\Excel\Facades\Excel; 
+
+
 class BookingController extends Controller
 {
+
+    public function bookingexport()
+    {
+    return Excel::download(new BookingExport, 'Booking.xls'); 
+    } 
+
+
     /**
      * Display a listing of the resource.
      *
