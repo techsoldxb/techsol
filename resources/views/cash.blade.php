@@ -76,7 +76,19 @@
 
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title">Cash On Hand </h3>   
+            <h3 class="card-title">Cash On Hand </h3>
+            
+            @if(auth()->user()->company =='1')   
+              Al Jarwani
+            @elseif(auth()->user()->company =='2')
+              Muscat Mall
+            @elseif(auth()->user()->company =='3')
+              Oman Aquarium
+            @endif
+              
+
+
+            
           </div>
           <!-- /.card-header -->
           <div class="card-body">
@@ -152,7 +164,9 @@
 
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title">Cash Denomination </h3>   
+            <h3 class="card-title">Cash Denomination </h3>  
+            
+            
           </div>
           <!-- /.card-header -->
           <div class="card-body">

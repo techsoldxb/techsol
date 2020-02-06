@@ -80,7 +80,7 @@ View::Composer(
         return "Cache is cleared";
     });
 
-    Route::resource('calendar', 'CalendarController');
+    Route::resource('calendar', 'CalendarController')->middleware('auth');;
 
 
 

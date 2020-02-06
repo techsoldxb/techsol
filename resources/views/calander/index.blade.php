@@ -23,7 +23,7 @@
             events : [
                 @foreach($booking as $booking)
                 {
-                    title : '{{ $booking->tb_cust_name}}',
+                    title : '{{ $booking->tb_cust_name }} - {{ $booking->tb_reference }}',
                     start : '{{ $booking->tb_date }}',
                     url : '{{ route('foh.booking.show', $booking->id) }}'
                     
