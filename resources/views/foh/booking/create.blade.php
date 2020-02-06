@@ -239,7 +239,9 @@
                           <select class="custom-select" name="tb_reference">
                             <option value="Null">Select</option>
                             <option value="ICC">ICC</option>
-                            <option value="Aquarium">Aquarium</option>
+                            <option value="Manal">Manal</option>
+                            <option value="Gelan">Gelan</option>                                        
+                            <option value="FOH">FOH</option>                                        
                             <option value="Others">Others</option>                                        
                             
                           </select>
