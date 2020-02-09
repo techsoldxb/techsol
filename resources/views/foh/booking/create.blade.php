@@ -69,8 +69,13 @@ $(function()
     var textValue5 = document.getElementById('tb_adult_qty').value;
   var textValue6 = document.getElementById('tb_adult_price').value;
 
+  var textValue7 = document.getElementById('tb_addon1_qty').value;
+  var textValue8 = document.getElementById('tb_addon1_price').value;
+
+ 
+
       document.getElementById('tb_total').value = textValue1 * textValue2 + textValue3 * textValue4 
-      + textValue5 * textValue6;
+      + textValue5 * textValue6 + textValue7 * textValue8;
  
   }
 
@@ -85,14 +90,20 @@ $(function()
   var textValue3 = document.getElementById('tb_teacher_qty').value;
   var textValue4 = document.getElementById('tb_teacher_price').value;
 
+  
+  var textValue5 = document.getElementById('tb_adult_qty').value;
+  var textValue6 = document.getElementById('tb_adult_price').value;
+
+    
+  var textValue7 = document.getElementById('tb_addon1_qty').value;
+  var textValue8 = document.getElementById('tb_addon1_price').value;
+
   document.getElementById('teacher_amount').value = textValue3 * textValue4; 
 
-
-    var textValue5 = document.getElementById('qty3').value;
-  var textValue6 = document.getElementById('price3').value;
+  
 
       document.getElementById('tb_total').value = textValue1 * textValue2 
-  + textValue3 * textValue4 + textValue5 * textValue6 
+  + textValue3 * textValue4 + textValue5 * textValue6 + textValue7 * textValue8;
  
   }   
 
@@ -113,10 +124,41 @@ $(function()
     var textValue5 = document.getElementById('tb_adult_qty').value;
   var textValue6 = document.getElementById('tb_adult_price').value;
 
+  var textValue7 = document.getElementById('tb_addon1_qty').value;
+  var textValue8 = document.getElementById('tb_addon1_price').value;
+
+
   document.getElementById('adult_amount').value = textValue5 * textValue6; 
 
       document.getElementById('tb_total').value = textValue1 * textValue2 
-  + textValue3 * textValue4 + textValue5 * textValue6 
+  + textValue3 * textValue4 + textValue5 * textValue6 + textValue7 * textValue8;
+ 
+  }
+
+  function calc4() 
+  {
+    var textValue1 = document.getElementById('tb_student_qty').value;
+  var textValue2 = document.getElementById('tb_student_price').value;
+   
+
+  var textValue3 = document.getElementById('tb_teacher_qty').value;
+  var textValue4 = document.getElementById('tb_teacher_price').value;
+
+  
+
+
+    var textValue5 = document.getElementById('tb_adult_qty').value;
+  var textValue6 = document.getElementById('tb_adult_price').value;
+
+
+
+    var textValue7 = document.getElementById('tb_addon1_qty').value;
+  var textValue8 = document.getElementById('tb_addon1_price').value;
+
+  document.getElementById('addon1_amount').value = textValue7 * textValue8; 
+
+      document.getElementById('tb_total').value = textValue1 * textValue2 
+  + textValue3 * textValue4 + textValue5 * textValue6 + textValue7 * textValue8;
  
   }  
 </script>
@@ -429,7 +471,8 @@ $(function()
                                       </td>
                                       <td>
 
-                                        <select class="custom-select" name="tb_addon1_price" id="tb_addon1_price">
+                                        <select class="custom-select" name="tb_addon1_price" id="tb_addon1_price"
+                                        onchange="calc4()">
                                           <option value="" selected disabled hidden>Please select</option>
                                           @foreach($addon as $c)
                                           <option value="{{ $c->addon_price}}">{{ $c->addon_name}}</option>
@@ -443,30 +486,10 @@ $(function()
                                      
                                       </td>
                                       <td>
-                                        <input type="text" class="form-control text-right" id="food_amount" name="food_amount" 
-                                        onkeypress="return isNumberKey(event)" onkeyup="calc4()" placeholder="" disabled>
+                                        <input type="text" class="form-control text-right" id="addon1_amount" name="addon1_amount" 
+                                        placeholder="" disabled>
                                       </td>
                                   </tr>
-
-                                  
-                                  <tr>
-                                    <td>
-                                      Add On 2
-                                    </td>
-                                    <td>
-                                      <input type="text" class="form-control text-center" id="tb_gb_qty" name="tb_gb_qty" 
-                                      onkeypress="return isNumberKey(event)" onkeyup="calc5()" placeholder="" >
-                                    </td>
-                                    <td>
-                                      <input type="text" class="form-control text-center" id="tb_gb_price" name="tb_gb_price" 
-                                      onkeypress="return isNumberKey(event)" onkeyup="calc5()" placeholder="" >
-                                    </td>
-                                    <td>
-                                      <input type="text" class="form-control text-right" id="gb_amount" name="gb_amount" 
-                                      onkeypress="return isNumberKey(event)" onkeyup="calc5()" placeholder="" disabled>
-                                    </td>
-                                </tr>
-
                                     
 
                                     <tr>

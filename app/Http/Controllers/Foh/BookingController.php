@@ -126,7 +126,8 @@ class BookingController extends Controller
         $booking->tb_total = 
         $request->tb_student_qty * $request->tb_student_price + 
         $request->tb_teacher_qty * $request->tb_teacher_price + 
-        $request->tb_adult_qty * $request->tb_adult_price ;     
+        $request->tb_adult_qty * $request->tb_adult_price +
+        $request->tb_addon1_qty * $request->tb_addon1_price;     
         $booking->tb_status = 0;   
         
         $booking->tb_user_id = Auth::user()->id;

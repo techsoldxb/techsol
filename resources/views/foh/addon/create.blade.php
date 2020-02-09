@@ -1,6 +1,19 @@
 @extends('layouts.admin')
 @section('content')
 
+  <!-- This script is used to allow only number in the bill amount field -->
+  <script>    
+    function isNumberKey(evt)
+    {
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+        if (charCode != 46 && charCode > 31 
+        && (charCode < 48 || charCode > 57))
+        return false;
+        return true;
+    }  
+</script>
+<!-- End -->
+
 <script>
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function() {
@@ -74,7 +87,7 @@
      <div class = "row">
      <label class = "col-md-3" for="">Addon Price</label>
      <div class = "col-md-6">    
-     <input type="text" class="form-control" id="validationCustom02" name="addon_price" placeholder="Enter Addon Price" required>
+     <input type="text" class="form-control" onkeypress="return isNumberKey(event)" id="validationCustom02" name="addon_price" placeholder="Enter Addon Price" required>
      <div class = "clear-fix"></div>
      </div>     
      </div>
