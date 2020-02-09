@@ -584,6 +584,17 @@
           </li>
 
           <li class="nav-item">
+            <a href="{{route('foh.addon.index')}}"  class="nav-link
+            @if($segment=='addon')
+            active
+            @endif">
+            <i class="nav-icon far fa-circle text-danger"></i>
+              <p>Addons</p>
+            </a>
+          </li>
+
+
+          <li class="nav-item">
             <a href=" {{ route('users') }}" class="nav-link">
               <i class="nav-icon fas fa-user"></i>
               

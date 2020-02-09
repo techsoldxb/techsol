@@ -13,6 +13,22 @@
     }  
 </script>
 
+<script>
+$(function()
+{
+    $("#myform").validate(
+      {
+        rules: 
+        {
+          item: 
+          {
+            required: true
+          }
+        }
+      });	
+});
+</script>
+
 
 
 <script>
@@ -128,7 +144,7 @@
 
     <section class="content">
       <div class="container-fluid">
-     <form  class="needs-validation" novalidate method = "post" action="{{ route('foh.booking.store') }}" 
+     <form  class="needs-validation" name="myform" id="myform" novalidate method = "post" action="{{ route('foh.booking.store') }}" 
      enctype="multipart/form-data" autocomplete="off" autofill="off">
      <input type="hidden" name="_token" value = "{{ csrf_token() }}">
      <div class="form-group">
@@ -229,8 +245,8 @@
                         <label class = "col-lg-2" for="">Mode of Payment</label>
                         <div class = "col-lg-3">    
                         
-                          <select class="custom-select" name="tb_pay_mode">
-                            <option value="Null">Select</option>
+                          <select class="custom-select" name="tb_pay_mode" required>
+                            <option value="" selected disabled hidden>Please select</option>
                             <option value="Cash">Cash</option>
                             <option value="Card">Card</option>
                             <option value="Cheque">Cheque</option>                                        
@@ -243,8 +259,8 @@
                         <div class = "col-lg-3">    
 
                           
-                          <select class="custom-select" name="tb_reference">
-                            <option value="Null">Select</option>
+                          <select class="custom-select" name="tb_reference" required>
+                            <option value="" selected disabled hidden>Please select</option>
                             <option value="ICC">ICC</option>
                             <option value="Manal">Manal</option>
                             <option value="Gelan">Gelan</option>                                        
@@ -257,31 +273,74 @@
                         </div>    
                         </div>
                         </div>
-   
+
                         <div class="form-group">
+                          <div class = "row">
+                          <label class = "col-lg-2" for="">Age</label>
+                          <div class = "col-lg-3">    
+                          
+                            <select class="custom-select" name="tb_age" required>
+                              <option value="" selected disabled hidden>Please select</option>
+                              <option value="3-6">Kids 3-6 year</option>
+                              <option value="7-12">Child 7-12 years</option>
+                              <option value="13">Adult 13 and above</option>                                        
+                                                                  
+                              
+                            </select>
+  
+                          </div>
+                          <label class = "col-lg-2" for="">Tour Language</label>
+                          <div class = "col-lg-3">    
+  
+                            
+                            <select class="custom-select" name="tb_language" required>
+                              <option value="" selected disabled hidden>Please select</option>
+                              <option value="English">English</option>
+                              <option value="Arabic">Arabic</option>
+                              <option value="No Tour">No Tour</option>                                        
+                                                                  
+                              
+                            </select>
+  
+                          
+                          </div>    
+                          </div>
+                          </div>
+
+                          <div class="form-group">
                             <div class = "row">
                             <label class = "col-lg-2" for="">Category</label>
-                            <div class = "col-lg-9">    
+                            <div class = "col-lg-3">    
                             
-                            <div class="form-check-inline">
-                            <label class="form-check-label" for="radio1">
-                              <input type="radio" class="form-check-input" id="radio1" name="tb_category" value="Goverment" checked>Goverment
-                                    </label>
-                                  </div>
-                                  <div class="form-check-inline">
-                                    <label class="form-check-label" for="radio2">
-                                      <input type="radio" class="form-check-input" id="radio2" name="tb_category" value="Private">Private
-                                    </label>
-                                  </div>
-                                  <div class="form-check-inline">
-                                    <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" id="radio2" name="tb_category" value="Others">Others
-                                    </label>
-                            </div>                       
-                            <div class = "clear-fix"></div>
-                            </div>     
+                              <select class="custom-select" name="tb_category" required>
+                                <option value="" selected disabled hidden>Please select</option>
+                                <option value="Goverment">Goverment</option>
+                                <option value="Private">Private</option>
+                                <option value="Others">Others</option>                                        
+                                                                    
+                                
+                              </select>
+    
+                            </div>
+                            <label class = "col-lg-2" for="">Type</label>
+                            <div class = "col-lg-3">    
+    
+                              
+                              <select class="custom-select" name="tb_type" required>
+                                <option value="" selected disabled hidden>Please select</option>
+                                <option value="School Trip">School Trip</option>
+                                <option value="Corporate Booking">Corporate Booking</option>
+                                <option value="Events">Events</option>                                        
+                                                                    
+                                
+                              </select>
+    
+                            
+                            </div>    
                             </div>
                             </div>
+   
+                   
 
                             <div class="form-group">
                               <div class = "row">
@@ -316,7 +375,7 @@
                                         </td>
                                         <td>
                                           <input type="text" class="form-control text-center" id="tb_student_price" name="tb_student_price"
-                                          onkeypress="return isNumberKey(event)" onkeyup="calc1()" placeholder="" >
+                                          onkeypress="return isNumberKey(event)" onkeyup="calc1()" value = "4" placeholder="4" >
                                         </td>
                                         <td>
                                           <input type="text" class="form-control text-right" id="student_amount" name="student_amount" placeholder="" disabled>
@@ -333,7 +392,7 @@
                                         </td>
                                         <td>
                                           <input type="text" class="form-control text-center" id="tb_teacher_price" name="tb_teacher_price"
-                                          onkeypress="return isNumberKey(event)" onkeyup="calc2()" placeholder="" >
+                                          onkeypress="return isNumberKey(event)" onkeyup="calc2()" value = "7.5" placeholder="7.5" >
                                         </td>
                                         <td>
                                           <input type="text" class="form-control text-right" id="teacher_amount" name="teacher_amount" 
@@ -351,13 +410,64 @@
                                         </td>
                                         <td>
                                           <input type="text" class="form-control text-center" id="tb_adult_price" name="tb_adult_price" 
-                                          onkeypress="return isNumberKey(event)" onkeyup="calc3()" placeholder="" >
+                                          onkeypress="return isNumberKey(event)" onkeyup="calc3()" value = "7.5" placeholder="" >
                                         </td>
                                         <td>
                                           <input type="text" class="form-control text-right" id="adult_amount" name="adult_amount" 
                                           onkeypress="return isNumberKey(event)" onkeyup="calc3()" placeholder="" disabled>
                                         </td>
                                     </tr>
+
+                                    
+                                    <tr>
+                                      <td>
+                                          Add On 1
+                                      </td>
+                                      <td>
+                                        <input type="text" class="form-control text-center" id="tb_addon1_qty" name="tb_addon1_qty" 
+                                        onkeypress="return isNumberKey(event)" onkeyup="calc4()" placeholder="" >
+                                      </td>
+                                      <td>
+
+                                        <select class="custom-select" name="tb_addon1_price" id="tb_addon1_price">
+                                          <option value="" selected disabled hidden>Please select</option>
+                                          @foreach($addon as $c)
+                                          <option value="{{ $c->addon_price}}">{{ $c->addon_name}}</option>
+                                          @endforeach   
+                                          
+                                          </select>
+
+                                      
+
+                                          
+                                     
+                                      </td>
+                                      <td>
+                                        <input type="text" class="form-control text-right" id="food_amount" name="food_amount" 
+                                        onkeypress="return isNumberKey(event)" onkeyup="calc4()" placeholder="" disabled>
+                                      </td>
+                                  </tr>
+
+                                  
+                                  <tr>
+                                    <td>
+                                      Add On 2
+                                    </td>
+                                    <td>
+                                      <input type="text" class="form-control text-center" id="tb_gb_qty" name="tb_gb_qty" 
+                                      onkeypress="return isNumberKey(event)" onkeyup="calc5()" placeholder="" >
+                                    </td>
+                                    <td>
+                                      <input type="text" class="form-control text-center" id="tb_gb_price" name="tb_gb_price" 
+                                      onkeypress="return isNumberKey(event)" onkeyup="calc5()" placeholder="" >
+                                    </td>
+                                    <td>
+                                      <input type="text" class="form-control text-right" id="gb_amount" name="gb_amount" 
+                                      onkeypress="return isNumberKey(event)" onkeyup="calc5()" placeholder="" disabled>
+                                    </td>
+                                </tr>
+
+                                    
 
                                     <tr>
                                       <td>

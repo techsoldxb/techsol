@@ -8,6 +8,7 @@ use Carbon\Carbon;
 
 
 use App\Booking;
+use App\Addon;
 Use Auth;
 use App\User;
 
@@ -35,10 +36,14 @@ class BookingController extends Controller
     public function index()
     {
         //$arr['booking'] = Booking::all();
-        $arr['booking'] = Booking::where('tb_date', '>=', date('Y-m-d'))
-        ->where('tb_user_id', auth()->user()->id)
-        ->get();
-        return view('foh.booking.index')->with($arr);      
+        
+        $arr['booking'] = Booking::where('tb_date', '>=', date('Y-m-d'))->where('tb_user_id', auth()->user()->id)->get();
+        return view('foh.booking.index')->with($arr); 
+        
+        
+        
+    
+
       
    
    }
@@ -50,8 +55,9 @@ class BookingController extends Controller
      */
     public function create()
     {
-
-        return view('foh.booking.create');
+        $arr['addon'] = Addon::all();
+        
+        return view('foh.booking.create')->with($arr);
     }
 
     /**
@@ -81,14 +87,41 @@ class BookingController extends Controller
         $booking->tb_pay_mode = $request->tb_pay_mode;
         $booking->tb_reference = $request->tb_reference;
         $booking->tb_category = $request->tb_category;
+        $booking->tb_type = $request->tb_type;
 
         $booking->tb_comment = $request->tb_comment;
-        $booking->tb_student_qty = $request->tb_student_qty;
-        $booking->tb_teacher_qty = $request->tb_teacher_qty;
-        $booking->tb_adult_qty = $request->tb_adult_qty;
-        $booking->tb_student_price = $request->tb_student_price;
-        $booking->tb_teacher_price = $request->tb_teacher_price;
-        $booking->tb_adult_price = $request->tb_adult_price;
+
+        $booking->tb_age = $request->tb_age;
+        $booking->tb_language = $request->tb_language;
+        
+        
+
+        if ( !empty ( $request->tb_adult_qty ) )
+        {
+            $booking->tb_adult_qty = $request->tb_adult_qty;
+            $booking->tb_adult_price = $request->tb_adult_price;           
+            
+        } 
+
+        if ( !empty ( $request->tb_student_qty ) )
+        {
+            $booking->tb_student_qty = $request->tb_student_qty;
+            $booking->tb_student_price = $request->tb_student_price;          
+            
+        } 
+
+        if ( !empty ( $request->tb_teacher_qty ) )
+        {
+            $booking->tb_teacher_qty = $request->tb_teacher_qty;
+            $booking->tb_teacher_price = $request->tb_teacher_price;                     
+        } 
+
+        if ( !empty ( $request->tb_addon1_qty ) )
+        {
+            $booking->tb_addon1_qty = $request->tb_addon1_qty;
+            $booking->tb_addon1_price = $request->tb_addon1_price;                   
+        } 
+       
 
         $booking->tb_total = 
         $request->tb_student_qty * $request->tb_student_price + 

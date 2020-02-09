@@ -17,8 +17,8 @@
 
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Expenditure Group Master
-              <a href="{{ route('admin.categories.create') }}" class="btn btn-primary btn-sm">Add New</a></h3>   
+              <h3 class="card-title">Addon Master
+              <a href="{{ route('foh.addon.create') }}" class="btn btn-primary btn-sm">Add New</a></h3>   
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -27,8 +27,9 @@
                 <tr>
                                    
                   <th> ID   </th>            
-                  <th> Group Name </th>            
-                  <th> Group Desctiption </th> 
+                  <th> Addon Name </th>            
+                  <th> Addon Desctiption </th> 
+                  <th> Price </th> 
                   <th> Status </th> 
                   <th> Created User </th>
                   <th> Created Date </th>
@@ -38,28 +39,30 @@
                 </thead>
                 <tbody>
                 
-                @if(count($categories))
+                @if(count($addons))
             
-            @foreach($categories as $c)
+            @foreach($addons as $c)
             
             <tr>
               <td>{{ $c->id }}</td>
-              <td>{{ $c->exp_group_name }}</td>  
-              <td>{{ $c->exp_group_desc }}</td>  
+              <td>{{ $c->addon_name }}</td>  
+              <td>{{ $c->addon_desc }}</td>  
+              
+              <td class="text-right">{{ number_format($c->addon_price,3) }}</td>
               <td> 
                 
-                @if($c->exp_group_status =='0') 
+                @if($c->addon_status =='0') 
                 <div class="text-danger">
                 Inactive    
               </div>                         
-                @elseif($c->exp_group_status =='1')   
+                @elseif($c->addon_status =='1')   
                 Active
                 @else   
                 Status Error  
                 @endif
               
               </td>
-              <td> {{ $c->created_name }} </td>
+              <td> {{ $c->created_user_name }} </td>
               
               <td>{{ date('d-m-Y', strtotime($c->created_at)) }}</td>  
               <td>{{ date('d-m-Y', strtotime($c->updated_at)) }}</td>  
@@ -102,8 +105,9 @@
                 <tr>
                                  
                   <th> ID   </th>            
-                  <th> Group Name </th>            
-                  <th> Group Desctiption </th> 
+                  <th> Addon Name </th>            
+                  <th> Addon Desctiption </th> 
+                  <th> Price </th>  
                   <th> Status </th> 
                   <th> Created User </th>
                   <th> Created Date </th>

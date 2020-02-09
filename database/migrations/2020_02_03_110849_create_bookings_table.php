@@ -27,13 +27,27 @@ class CreateBookingsTable extends Migration
             $table->string('tb_pay_mode')->nullable(); // Purchase bill date
             $table->string('tb_reference')->nullable(); // Purchase bill number
             $table->string('tb_category')->nullable(); // Purchase bill amount   
+
+            $table->string('tb_type')->nullable(); // Purchase bill amount   
+            $table->string('tb_age')->nullable(); // Purchase bill amount   
+            $table->string('tb_language')->nullable(); // Purchase bill amount   
+
+
             $table->string('tb_comment')->nullable();            
             $table->integer('tb_student_qty')->nullable(); // Total calculated from the item details
             $table->integer('tb_teacher_qty')->nullable(); // Payment mode - cash or card
             $table->integer('tb_adult_qty')->nullable(); // Purpose of the purchase
+
+            $table->integer('tb_addon1_qty')->nullable(); // Payment mode - cash or card
+            $table->integer('tb_addon2_qty')->nullable(); // Payment mode - cash or card
+            
+            
             $table->double('tb_student_price')->nullable();
             $table->double('tb_teacher_price')->nullable();
             $table->double('tb_adult_price')->nullable();
+            $table->double('tb_addon1_price')->nullable();
+            $table->double('tb_addon2_price')->nullable();
+
             $table->double('tb_total')->nullable();
             $table->string('tb_status')->nullable();
 
@@ -45,6 +59,11 @@ class CreateBookingsTable extends Migration
             $table->string('tb_appr_user_name')->nullable(); // Employee Name  
             $table->date('tb_appr_date')->nullable(); // Employee ID
             $table->string('tb_appr_remarks')->nullable(); // Employee Name  
+
+            $table->string('tb_flex1')->nullable(); // Employee Name  
+            $table->string('tb_flex2')->nullable(); // Employee Name  
+            $table->string('tb_flex3')->nullable(); // Employee Name  
+            $table->string('tb_flex4')->nullable(); // Employee Name  
                 
       
             $table->timestamps();

@@ -95,7 +95,7 @@
         </div>
         <label class = "col" for="">School / Company Address</label>
         <div class = "col">    
-        <input type="text" class="form-control" id="validationCustom02" name="tb_cust_email" value="{{ $booking->tb_cust_addr }}" disabled>           
+        <input type="text" class="form-control" id="validationCustom02" name="tb_cust_addr" value="{{ $booking->tb_cust_addr }}" disabled>           
         </div>     
         </div>
         </div>
@@ -105,7 +105,7 @@
             <div class = "row">
                 <label class = "col" for="">Mobile Number</label>
             <div class = "col">    
-                <input type="text" class="form-control" id="validationCustom01" name="tb_cust_name" value="{{ $booking->tb_cust_mobile}}" disabled  >
+                <input type="text" class="form-control" id="validationCustom01" name="tb_cust_mobile" value="{{ $booking->tb_cust_mobile}}" disabled  >
             </div>
             <label class = "col" for="">Email</label>
             <div class = "col">    
@@ -121,9 +121,9 @@
             <div class = "col">    
             <input type="text" class="form-control" id="validationCustom02" name="tb_cust_mobile" value="{{ $booking->tb_cust_contact }}" disabled>
             </div>
-            <label class = "col" for="">Category</label>
+            <label class = "col" for="">Booking Date</label>
             <div class = "col">    
-            <input type="text" class="form-control" id="validationCustom02" name="tb_cust_email" value="{{ $booking->tb_category}}" disabled>           
+            <input type="text" class="form-control" id="validationCustom02" name="tb_cust_email" value="{{ date('d-m-Y', strtotime($booking->created_at)) }}" disabled>           
             </div>     
             </div>
             </div>
@@ -166,6 +166,23 @@
                     </div>
 
                     <div class="form-group">
+                      <div class = "row">
+                      <label class = "col" for="">Age</label>
+                      <div class = "col">                              
+                          <input type="text" class="form-control" id="validationCustom02" name="tb_pay_mode"  value="{{ $booking->tb_age }}" disabled>                              
+                     
+
+                      </div>
+                      <label class = "col" for="">Tour Language</label>
+                      <div class = "col">    
+                          <input type="text" class="form-control" id="validationCustom02" name="tb_reference" value="{{ $booking->tb_language }}" disabled>                                                    
+                     
+                      </div>    
+                      </div>
+                      </div>
+
+
+                    <div class="form-group">
                         <div class = "row">
                         <label class = "col" for="">Mode of Payment</label>
                         <div class = "col">                              
@@ -181,21 +198,24 @@
                         </div>
                         </div>
 
-                        <div class="form-group">
+                       
+                          <div class="form-group">
                             <div class = "row">
-                            <label class = "col" for="">Booking Date</label>
+                            <label class = "col" for="">Category</label>
                             <div class = "col">                              
-                                <input type="text" class="form-control" id="validationCustom02" name="tb_pay_mode"  value="{{ date('d-m-Y', strtotime($booking->created_at)) }}" disabled>                              
+                                <input type="text" class="form-control" id="validationCustom02" name="tb_pay_mode"  value="{{ $booking->tb_category }}" disabled>                              
                            
     
                             </div>
-                            <label class = "col" for="">User</label>
+                            <label class = "col" for="">Type</label>
                             <div class = "col">    
-                                <input type="text" class="form-control" id="validationCustom02" name="tb_reference" value="{{ $booking->tb_user_name }}" disabled>                                                    
+                                <input type="text" class="form-control" id="validationCustom02" name="tb_reference" value="{{ $booking->tb_type }}" disabled>                                                    
                            
                             </div>    
                             </div>
                             </div>
+
+                    
    
                       
 
@@ -297,7 +317,7 @@
 
      <div class="form-group">
       <div class = "row">
-      <label class = "col" for="">Prepared by: _____________________________</label>
+      <label class = "col" for="">Prepared by: {{ $booking->tb_user_name }}</label>
      
       <label class = "col" for="">Approved by: _____________________________</label>
        
