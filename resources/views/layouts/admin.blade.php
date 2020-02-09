@@ -132,21 +132,34 @@
             <?php
               $segment = Request::segment(2);              
             ?>
-          @can('isAdmin')
-          <li class="nav-item">
-            <a href=" {{ route('home') }}" class="nav-link
-            @if(!$segment)
-            active
-            @endif            
-            ">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Dashboard
-              </p>
-            </a>
+             @can('isAdmin')
+              <li class="nav-item">
+                <a href=" {{ route('home') }}" class="nav-link
+                @if(!$segment)
+                active
+                @endif            
+                ">
+                  <i class="nav-icon fas fa-tachometer-alt"></i>
+                  <p>
+                    Dashboard
+                  </p>
+                </a>
 
-          </li>
-          @endcan
+              </li>
+              <li class="nav-item">
+                <a href=" {{ route('homeicc') }}" class="nav-link
+                @if(!$segment)
+                active
+                @endif            
+                ">
+                <i class="nav-icon fas fa-th"></i>
+                  <p>
+                    Dashboard - Booking
+                  </p>
+                </a>
+
+              </li>
+              @endcan
 
           @can('isUser')
           <li class="nav-item">
@@ -162,6 +175,19 @@
             </a>
 
           </li>
+          <li class="nav-item">
+            <a href=" {{ route('homeicc') }}" class="nav-link
+            @if(!$segment)
+            active
+            @endif            
+            ">
+            <i class="nav-icon fas fa-th"></i>
+              <p>
+                Dashboard - Booking
+              </p>
+            </a>
+
+          </li>
           @endcan
 
           @can('isGuest')
@@ -173,7 +199,7 @@
             ">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Dashboard - Guest
+                Dashboard - Booking
               </p>
             </a>
 
