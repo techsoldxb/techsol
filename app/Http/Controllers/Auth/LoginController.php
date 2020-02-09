@@ -32,7 +32,10 @@ class LoginController extends Controller
             return redirect()->route('homeicc') ;
         }elseif($user->user_type=='admin'){
             return redirect()->route('home') ;
+        }elseif($user->user_type=='user'){
+            return redirect()->route('home') ;
         }
+        
     }
 
     /**

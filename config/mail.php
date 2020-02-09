@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
+    'host' => env('MAIL_HOST', 'smtp.office365.com'),
 
     /*
     |--------------------------------------------------------------------------
@@ -56,7 +56,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'noreply@aljarwani.com'),
+        'address' => env('MAIL_FROM_ADDRESS', 'info@omanaquarium.om'),
         'name' => env('MAIL_FROM_NAME', 'Jarwani'),
     ],
 
