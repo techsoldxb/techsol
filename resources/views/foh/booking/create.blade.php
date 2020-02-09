@@ -195,7 +195,14 @@
                 </div>
                 <label class = "col-lg-2" for="">Arrival Time</label>
                 <div class = "col-lg-3">    
-                <input type="text" class="form-control" id="validationCustom02" name="tb_time" placeholder="Enter arrival time" required>     
+                <input type="time" class="form-control" id="validationCustom02" name="tb_time" placeholder="Enter arrival time" required> 
+           <script>
+              $('.datetimepicker').datetimepicker({
+                  autoclose: true,
+                  showMeridian:false
+              }); 
+           </script>
+                
                 
                 
              

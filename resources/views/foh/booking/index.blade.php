@@ -96,10 +96,11 @@
           </a>
 
          
-
+          /
+          
           <a href="javascript:void(0)" onclick = "$(this).parent().find('form').submit()" >
           
-          <!-- /.Delete <i class="fa fa-trash text-red"></i > -->
+            <i class="fa fa-trash text-red"></i >
           
           
           </a>
