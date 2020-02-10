@@ -34,7 +34,7 @@
                 <h3>
 
 
-                0
+                  {{$booking_count}}
                 
                 
                 

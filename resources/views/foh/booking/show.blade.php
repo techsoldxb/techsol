@@ -289,6 +289,21 @@
 
                                     <tr>
                                       <td>
+                                        {{ $booking->tb_addon1_name}}
+                                      </td>
+                                      <td>
+                                        <input type="text" class="form-control text-center" id="validationCustom02" name="tb_addon1_qty" value="{{ $booking->tb_addon1_qty}}" disabled>
+                                      </td>
+                                      <td>
+                                        <input type="text" class="form-control text-right" id="validationCustom02" name="tb_addon1_price" value="{{ number_format($booking->tb_addon1_price,3)}}" disabled>
+                                      </td>
+                                      <td>
+                                        <input type="text" class="form-control text-right" id="validationCustom02" name="exp_group_desc" value="{{ number_format($booking->tb_addon1_qty * $booking->tb_addon1_price,3)}}" disabled>
+                                      </td>
+                                  </tr>
+
+                                    <tr>
+                                      <td>
                                           
                                       </td>
                                       <td></td>

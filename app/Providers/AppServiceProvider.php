@@ -101,6 +101,10 @@ view()->composer('home', function($view)  {
     $view->with('categories',\App\Category::count('ID'));
 });
 
+view()->composer('homeicc', function($view)  {
+    $view->with('booking_count',\App\Booking::count('ID'));
+});
+
 
 
 
