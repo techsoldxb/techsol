@@ -48,6 +48,10 @@ class CreateBookingsTable extends Migration
             $table->double('tb_addon1_price')->nullable();
             $table->double('tb_addon2_price')->nullable();
 
+            $table->string('tb_addon1_name')->nullable();   
+            $table->string('tb_addon2_name')->nullable();   
+            $table->string('tb_addon3_name')->nullable();   
+
             $table->double('tb_total')->nullable();
             $table->string('tb_status')->nullable();
 
