@@ -122,6 +122,7 @@ class BookingController extends Controller
             $booking->tb_addon1_price = $request->tb_addon1_price;                   
         } 
        
+        $booking->tb_addon1_name = $request->tb_addon1_name; 
 
         $booking->tb_total = 
         $request->tb_student_qty * $request->tb_student_price + 
@@ -132,6 +133,8 @@ class BookingController extends Controller
         
         $booking->tb_user_id = Auth::user()->id;
         $booking->tb_user_name = Auth::user()->name;
+
+       
         
         $booking->save();       
 

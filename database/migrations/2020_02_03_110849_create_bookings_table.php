@@ -40,6 +40,7 @@ class CreateBookingsTable extends Migration
 
             $table->integer('tb_addon1_qty')->nullable(); // Payment mode - cash or card
             $table->integer('tb_addon2_qty')->nullable(); // Payment mode - cash or card
+            $table->integer('tb_addon3_qty')->nullable(); // Payment mode - cash or card
             
             
             $table->double('tb_student_price')->nullable();
@@ -47,7 +48,9 @@ class CreateBookingsTable extends Migration
             $table->double('tb_adult_price')->nullable();
             $table->double('tb_addon1_price')->nullable();
             $table->double('tb_addon2_price')->nullable();
+            $table->double('tb_addon3_price')->nullable();
 
+            
             $table->string('tb_addon1_name')->nullable();   
             $table->string('tb_addon2_name')->nullable();   
             $table->string('tb_addon3_name')->nullable();   

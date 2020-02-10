@@ -470,6 +470,7 @@ $(function()
                                         onkeypress="return isNumberKey(event)" onkeyup="calc4()" placeholder="" >
                                       </td>
                                       <td>
+                                    
 
                                         <select class="custom-select" name="tb_addon1_price" id="tb_addon1_price"
                                         onchange="calc4()">
@@ -479,6 +480,17 @@ $(function()
                                           @endforeach   
                                           
                                           </select>
+
+                                          <input type="hidden" id="tb_addon1_name" name="tb_addon1_name">
+
+                                          <script>
+                                            $('#tb_addon1_price').on('change', function() 
+                                          {
+                                             var selectedName = $('#tb_addon1_price option:selected').text();
+                                            $('#tb_addon1_name').val(selectedName);
+                                                      }
+                                            )
+                                          </script>
 
                                       
 
