@@ -55,7 +55,7 @@ Route::resource('/admin/allpaidbills', 'Admin\AllpaidController', ['as'=>'admin'
 Route::get('/admin/accounts/{account}/print', 'Admin\AccountsController@print')->name('admin.accounts.print');
 
 
-Route::resource('/foh/booking', 'Foh\BookingController', ['as'=>'foh']);
+Route::resource('/foh/booking', 'Foh\BookingController', ['as'=>'foh'])->middleware('auth');
 Route::resource('/foh/bookinghistory', 'Foh\BookinghistoryController', ['as'=>'foh']);
 Route::resource('/foh/addon', 'Foh\AddonController', ['as'=>'foh']);
 
@@ -81,7 +81,7 @@ View::Composer(
         return "Cache is cleared";
     });
 
-    Route::resource('calendar', 'CalendarController')->middleware('auth');;
+    Route::resource('calendar', 'CalendarController');
 
 
 
