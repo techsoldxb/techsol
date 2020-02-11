@@ -141,6 +141,11 @@ view()->composer('homeicc', function($view)  {
     $view->with('booking_student_count',\App\Booking::sum('tb_student_qty'));
 });
 
+view()->composer('homeicc', function($view)  {
+    $view->with('booking_total_amount',\App\Booking::sum('tb_total'));
+});
+
+
 
 
 
