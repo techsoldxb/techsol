@@ -36,8 +36,8 @@
                 <th> Reference</th>
                 <th> User</th>
                 <th> Booking Date</th>
-                <th> Status</th>
-                <th>Approved By</th>
+                
+                
                 <th> Action </th>
               </tr>
               </thead>
@@ -63,19 +63,8 @@
             
             <td>{{ date('d-m-Y', strtotime($c->created_at)) }}</td>  
 
-            <td>  
-              @if($c->tb_status =='0')  
-              <div class="text-primary">   
-              Waiting for approval
-              </div>
-              @elseif($c->tb_status =='1')  
-              <div class="text-success">   
-              Request approved
-              </div>             
-
-              @endif            
-            </td>
-            <td> {{ $c->tb_appr_user_name }} </td>
+            
+            
              
             
           
@@ -176,8 +165,7 @@
                 <th> Reference</th>
                 <th> User</th>
                 <th> Booking Date</th>
-                <th> Status</th>
-                <th>Approved By</th>
+              
                 <th> Action </th>
                 
               </tr>

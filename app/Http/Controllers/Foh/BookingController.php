@@ -239,7 +239,7 @@ class BookingController extends Controller
 
         
         $booking->save();
-        return redirect()->route('foh.booking.index')->with('info','Transaction updated successfully!');
+        return redirect()->route('foh.pending.index')->with('info','Transaction updated successfully!');
     }
 
     /**

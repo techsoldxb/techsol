@@ -15,7 +15,7 @@ class PendingController extends Controller
      */
     public function index()
     {
-        $arr['booking'] = Booking::where('tb_date', '>=', date('Y-m-d'))->get();
+        $arr['booking'] = Booking::where('tb_date', '>=', date('Y-m-d'))->where('tb_status', 0)->get();
         return view('foh.pending.index')->with($arr); 
         
     }

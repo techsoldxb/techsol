@@ -38,6 +38,7 @@
                 <th> Booking Date</th>
                 <th> Status</th>
                 <th>Approved By</th>
+                <th>Approved Date</th>
                 <th> Action </th>
               </tr>
               </thead>
@@ -76,6 +77,8 @@
               @endif            
             </td>
             <td> {{ $c->tb_appr_user_name }} </td>
+            <td> {{ $c->tb_appr_date }} </td>
+            
              
             
           
@@ -133,6 +136,7 @@
                 <th> Booking Date</th>
                 <th> Status</th>
                 <th>Approved By</th>
+                <th>Approved Date</th>
                 <th> Action </th>
                 
               </tr>
