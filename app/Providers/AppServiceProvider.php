@@ -142,7 +142,7 @@ view()->composer('homeicc', function($view)  {
 });
 
 view()->composer('homeicc', function($view)  {
-    $view->with('booking_teacher_count',\App\Booking::sum('tb_adult_qty'));
+    $view->with('booking_teacher_count',\App\Booking::sum('tb_adult'));
 });
 
 view()->composer('homeicc', function($view)  {
