@@ -45,8 +45,8 @@
                             <div class="col-md-6">
                                 
 
-                                <select class="custom-select" name="company">
-                                    <option value="">Select</option>
+                                <select class="custom-select" name="company" required>
+                                    <option value="" selected disabled hidden>Please select</option>
                                     <option value="1">Jarwani</option>
                                     <option value="2">Muscat Mall</option>
                                     <option value="3">Oman Aquarium</option>                                        
@@ -67,8 +67,8 @@
                             <div class="col-md-6">
                                 
 
-                                <select class="custom-select" name="dept">
-                                    <option value="">Select</option>
+                                <select class="custom-select" name="dept" required>
+                                    <option value="" selected disabled hidden>Please select</option>
                                     <option value="1">FOH</option>
                                     <option value="2">BOH</option>
                                     <option value="3">Operation</option>
