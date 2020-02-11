@@ -261,21 +261,21 @@
             <div class="card">
               <div class="card-header border-0">
                 <div class="d-flex justify-content-between">
-                  <h3 class="card-title">Online Store Visitors</h3>
+                  <h3 class="card-title">Aquarium Visitors</h3>
                   <a href="javascript:void(0);">View Report</a>
                 </div>
               </div>
               <div class="card-body">
                 <div class="d-flex">
                   <p class="d-flex flex-column">
-                    <span class="text-bold text-lg">820</span>
-                    <span>Visitors Over Time</span>
+                    <span class="text-bold text-lg">{{$booking_student_count}}</span>
+                    <span>Students Visited</span>
                   </p>
                   <p class="ml-auto d-flex flex-column text-right">
                     <span class="text-success">
-                      <i class="fas fa-arrow-up"></i> 12.5%
+                      <i class="fas fa-arrow-up"></i> 
                     </span>
-                    <span class="text-muted">Since last week</span>
+                    <span class="text-muted">Since begining</span>
                   </p>
                 </div>
                 <!-- /.d-flex -->
@@ -329,7 +329,7 @@
                     <td>
                       <small class="text-success mr-1">
                         <i class="fas fa-arrow-up"></i>
-                        12%
+                        
                       </small>
                       {{$booking_icc_amount}}
                     </td>
@@ -347,8 +347,8 @@
                     <td>{{$booking_manal_count}}</td>
                     <td>
                       <small class="text-warning mr-1">
-                        <i class="fas fa-arrow-down"></i>
-                        0.5%
+                        <i class="fas fa-arrow-up"></i>
+                        
                       </small>
                       {{$booking_manal_amount}}
                     </td>
@@ -366,8 +366,8 @@
                     <td>{{$booking_gelan_count}}</td>
                     <td>
                       <small class="text-danger mr-1">
-                        <i class="fas fa-arrow-down"></i>
-                        3%
+                        <i class="fas fa-arrow-up"></i>
+                        
                       </small>
                       {{$booking_gelan_amount}}
                     </td>
@@ -387,7 +387,7 @@
                     <td>
                       <small class="text-success mr-1">
                         <i class="fas fa-arrow-up"></i>
-                        63%
+                        
                       </small>
                       {{$booking_foh_amount}}
                     </td>
