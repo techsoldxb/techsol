@@ -275,7 +275,7 @@
                     <span class="text-success">
                       <i class="fas fa-arrow-up"></i> 
                     </span>
-                    <span class="text-muted">Since begining</span>
+                    <span class="text-muted">Since beginning</span>
                   </p>
 
                   
@@ -290,7 +290,7 @@
                     <span class="text-success">
                       <i class="fas fa-arrow-up"></i> 
                     </span>
-                    <span class="text-muted">Since begining</span>
+                    <span class="text-muted">Since beginning</span>
                   </p>
 
                   
@@ -311,11 +311,11 @@
 
                 <div class="d-flex flex-row justify-content-end">
                   <span class="mr-2">
-                    <i class="fas fa-square text-primary"></i> This Week
+                    <i class="fas fa-square text-primary"></i> This Year
                   </span>
 
                   <span>
-                    <i class="fas fa-square text-gray"></i> Last Week
+                    <i class="fas fa-square text-gray"></i> Last Year
                   </span>
                 </div>
               </div>
@@ -451,7 +451,7 @@
                     <span class="text-success">
                       <i class="fas fa-arrow-up"></i> 
                     </span>
-                    <span class="text-muted">Since begining</span>
+                    <span class="text-muted">Since beginning</span>
                   </p>
                 </div>
                 <!-- /.d-flex -->
@@ -488,37 +488,40 @@
               <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
                   <p class="text-success text-xl">
-                    <i class="ion ion-ios-refresh-empty"></i>
+                    <i class="fas fa-school"></i>
                   </p>
                   <p class="d-flex flex-column text-right">
                     <span class="font-weight-bold">
-                      <i class="ion ion-android-arrow-up text-success"></i> 12%
+                      <i class="ion ion-android-arrow-up text-success"></i> 
+                      {{$booking_school_count}}
                     </span>
-                    <span class="text-muted">CONVERSION RATE</span>
+                    <span class="text-muted">School Trips</span>
                   </p>
                 </div>
                 <!-- /.d-flex -->
                 <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
                   <p class="text-warning text-xl">
-                    <i class="ion ion-ios-cart-outline"></i>
+                    <i class="fas fa-building"></i>
                   </p>
                   <p class="d-flex flex-column text-right">
                     <span class="font-weight-bold">
-                      <i class="ion ion-android-arrow-up text-warning"></i> 0.8%
+                      <i class="ion ion-android-arrow-up text-warning"></i> 
+                      {{$booking_corporate_count}}
                     </span>
-                    <span class="text-muted">SALES RATE</span>
+                    <span class="text-muted">Corporate Booking</span>
                   </p>
                 </div>
                 <!-- /.d-flex -->
                 <div class="d-flex justify-content-between align-items-center mb-0">
                   <p class="text-danger text-xl">
-                    <i class="ion ion-ios-people-outline"></i>
+                    <i class="fas fa-handshake"></i>
                   </p>
                   <p class="d-flex flex-column text-right">
                     <span class="font-weight-bold">
-                      <i class="ion ion-android-arrow-down text-danger"></i> 1%
+                      <i class="ion ion-android-arrow-down text-danger"></i> 
+                      {{$booking_events_count}}
                     </span>
-                    <span class="text-muted">REGISTRATION RATE</span>
+                    <span class="text-muted">Events</span>
                   </p>
                 </div>
                 <!-- /.d-flex -->

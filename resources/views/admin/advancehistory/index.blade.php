@@ -17,7 +17,7 @@
 
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Cash Advance
+              <h3 class="card-title">Cash Advance History
               <a href="{{ route('admin.advances.create') }}" class="btn btn-primary btn-sm">Advance Request</a></h3>   
             </div>
             <!-- /.card-header -->

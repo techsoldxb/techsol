@@ -149,6 +149,20 @@ view()->composer('homeicc', function($view)  {
     $view->with('booking_total_amount',\App\Booking::sum('tb_total'));
 });
 
+view()->composer('homeicc', function($view)  {
+    $view->with('booking_school_count',\App\Booking::where('tb_type','School Trip')->count('ID'));
+});
+
+view()->composer('homeicc', function($view)  {
+    $view->with('booking_corporate_count',\App\Booking::where('tb_type','Corporate Booking')->count('ID'));
+});
+
+view()->composer('homeicc', function($view)  {
+    $view->with('booking_events_count',\App\Booking::where('tb_type','Events')->count('ID'));
+});
+
+
+
 
 
 
