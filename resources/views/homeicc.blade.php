@@ -277,11 +277,36 @@
                     </span>
                     <span class="text-muted">Since begining</span>
                   </p>
+
+                  
                 </div>
+
+                <div class="d-flex">
+                  <p class="d-flex flex-column">
+                    <span class="text-bold text-lg">{{$booking_teacher_count}}</span>
+                    <span>Teachers Visited</span>
+                  </p>
+                  <p class="ml-auto d-flex flex-column text-right">
+                    <span class="text-success">
+                      <i class="fas fa-arrow-up"></i> 
+                    </span>
+                    <span class="text-muted">Since begining</span>
+                  </p>
+
+                  
+
+                  
+                </div>
+
+                
+              
+
+
+                
                 <!-- /.d-flex -->
 
                 <div class="position-relative mb-4">
-                  <canvas id="visitors-chart" height="200"></canvas>
+                  <canvas id="visitors-chart" height="128"></canvas>
                 </div>
 
                 <div class="d-flex flex-row justify-content-end">
@@ -450,7 +475,7 @@
 
             <div class="card">
               <div class="card-header border-0">
-                <h3 class="card-title">Online Store Overview</h3>
+                <h3 class="card-title">Overview</h3>
                 <div class="card-tools">
                   <a href="#" class="btn btn-sm btn-tool">
                     <i class="fas fa-download"></i>
