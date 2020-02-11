@@ -118,7 +118,7 @@ view()->composer('homeicc', function($view)  {
 });
 
 view()->composer('homeicc', function($view)  {
-    $view->with('booking_foh_count',\App\Booking::where('tb_reference','foh')->count('ID'));
+    $view->with('booking_foh_count',\App\Booking::where('tb_reference','foh')->orwhere('tb_reference','others')->count('ID'));
 });
 
 view()->composer('homeicc', function($view)  {
@@ -134,7 +134,7 @@ view()->composer('homeicc', function($view)  {
 });
 
 view()->composer('homeicc', function($view)  {
-    $view->with('booking_foh_amount',\App\Booking::where('tb_reference','foh')->sum('tb_total'));
+    $view->with('booking_foh_amount',\App\Booking::where('tb_reference','foh')->orwhere('tb_reference','others')->sum('tb_total'));
 });
 
 view()->composer('homeicc', function($view)  {
