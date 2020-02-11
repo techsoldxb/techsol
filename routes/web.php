@@ -58,6 +58,7 @@ Route::get('/admin/accounts/{account}/print', 'Admin\AccountsController@print')-
 Route::resource('/foh/booking', 'Foh\BookingController', ['as'=>'foh'])->middleware('auth');
 Route::resource('/foh/bookinghistory', 'Foh\BookinghistoryController', ['as'=>'foh']);
 Route::resource('/foh/addon', 'Foh\AddonController', ['as'=>'foh']);
+Route::resource('/foh/pending', 'Foh\PendingController', ['as'=>'foh']);
 
 
 //Export Route

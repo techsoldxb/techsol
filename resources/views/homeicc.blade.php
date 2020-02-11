@@ -58,11 +58,13 @@
               @if($user->user_type =='admin')        
                 
 
-              <a href="{{route('admin.unpaidbills.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="{{route('foh.bookinghistory.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
 
                 
+                @elseif($user->user_type =='user')
+                <a href="{{route('foh.booking.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 @else
-                <a href="{{route('admin.accounts.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="{{route('foh.booking.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 @endif
 
               
@@ -76,7 +78,7 @@
                 <h3>
                 
                 
-                0
+                {{$booking_pending_approval}}
                 
                 
                 
@@ -91,11 +93,11 @@
               @if($user->user_type =='admin')       
                 
 
-              <a href="{{route('admin.allpaidbills.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="{{route('foh.pending.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
   
                   
                   @else
-                  <a href="{{route('admin.paidbills.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                  <a href="{{route('foh.pending.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                   @endif
 
 
@@ -518,7 +520,7 @@
                   </p>
                   <p class="d-flex flex-column text-right">
                     <span class="font-weight-bold">
-                      <i class="ion ion-android-arrow-down text-danger"></i> 
+                      <i class="ion ion-android-arrow-up text-danger"></i> 
                       {{$booking_events_count}}
                     </span>
                     <span class="text-muted">Events</span>

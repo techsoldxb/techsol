@@ -161,6 +161,11 @@ view()->composer('homeicc', function($view)  {
     $view->with('booking_events_count',\App\Booking::where('tb_type','Events')->count('ID'));
 });
 
+view()->composer('homeicc', function($view)  {
+    $view->with('booking_pending_approval',\App\Booking::where('tb_status','0')->count('ID'));
+});
+
+
 
 
 

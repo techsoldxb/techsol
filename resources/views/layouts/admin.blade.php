@@ -443,7 +443,8 @@
                 @if($segment=='bookinghistory')
                 active
                 @endif">
-                <i class="nav-icon far fa-circle text-danger"></i>
+                <i class="nav-icon far fa-circle "></i>
+                
                   <p>Booking History</p>
                 </a>
               </li>
@@ -566,11 +567,22 @@
           </li>
 
           <li class="nav-item">
+            <a href="{{route('foh.pending.index')}}"  class="nav-link
+            @if($segment=='pending')
+            active
+            @endif">
+            <i class="nav-icon fas fa-plus text-info"></i>
+              <p>Pending Approval</p>
+            </a>
+          </li>
+
+          
+          <li class="nav-item">
             <a href="{{route('foh.bookinghistory.index')}}"  class="nav-link
             @if($segment=='bookinghistory')
             active
             @endif">
-            <i class="nav-icon far fa-circle text-danger"></i>
+            <i class="nav-icon far fa-circle"></i>
               <p>Booking History</p>
             </a>
           </li>
@@ -588,7 +600,7 @@
             @if($segment=='addon')
             active
             @endif">
-            <i class="nav-icon far fa-circle text-danger"></i>
+            <i class="nav-icon fas fa-plus text-danger"></i>
               <p>Addons</p>
             </a>
           </li>
