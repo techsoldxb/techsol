@@ -415,14 +415,18 @@
               <div class="card-body">
                 <div class="d-flex">
                   <p class="d-flex flex-column">
-                    <span class="text-bold text-lg">{{$booking_total_amount}}</span>
+                    <span class="text-bold text-lg"> OMR. {{ number_format($booking_total_amount,3) }}</span>
+
+                    
+
+
                     <span>Total Sales</span>
                   </p>
                   <p class="ml-auto d-flex flex-column text-right">
                     <span class="text-success">
-                      <i class="fas fa-arrow-up"></i> 33.1%
+                      <i class="fas fa-arrow-up"></i> 
                     </span>
-                    <span class="text-muted">Since last month</span>
+                    <span class="text-muted">Since begining</span>
                   </p>
                 </div>
                 <!-- /.d-flex -->
