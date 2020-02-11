@@ -271,7 +271,7 @@
                 <div class="d-flex">
                   <p class="d-flex flex-column">
                     <span class="text-bold text-lg">{{$booking_student_count}}</span>
-                    <span>Students Visited</span>
+                    <span>Students Booked</span>
                   </p>
                   <p class="ml-auto d-flex flex-column text-right">
                     <span class="text-success">
@@ -286,7 +286,7 @@
                 <div class="d-flex">
                   <p class="d-flex flex-column">
                     <span class="text-bold text-lg">{{$booking_teacher_count}}</span>
-                    <span>Teachers Visited</span>
+                    <span>Teachers Booked</span>
                   </p>
                   <p class="ml-auto d-flex flex-column text-right">
                     <span class="text-success">
