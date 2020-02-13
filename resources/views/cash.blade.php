@@ -310,13 +310,19 @@
           </div>
           <!-- /.card-body -->
         </div>
-        <div class="form-group">
+        <div class="row form-group">
   
       
+            <div>
+              <a onclick="myFunction()" class="btn btn-success btn-sm">Print</a>
+            </div>
+          
+
+          <div class = "col"style="text-align:right">
+            Printed By: {{ Auth::user()->name }}
+          </div>
   
-          <a onclick="myFunction()" class="btn btn-success btn-sm">Print</a>
-  
-            User Name: {{ Auth::user()->name }}
+            
          
     
            </div>
