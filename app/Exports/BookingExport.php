@@ -46,9 +46,11 @@ class BookingExport implements  FromCollection,WithHeadings,ShouldAutoSize,WithE
        public function columnFormats(): array
        {
            return [
-               'E' => NumberFormat::FORMAT_DATE_DDMMYYYY,               
-               'K' => NumberFormat::FORMAT_NUMBER_COMMA_SEPARATED1,
-               'M' => NumberFormat::FORMAT_DATE_DDMMYYYY,                
+               
+               'M' => NumberFormat::FORMAT_DATE_DDMMYYYY,                    
+               'E' => 'dd-mm-yyyy',
+               'K' => '0.000'
+            
                
            ];
        }

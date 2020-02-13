@@ -8,7 +8,7 @@ class Booking extends Model
 {
    //protected $dates = ['tb_date'];
 
-   // protected $fillable = ['tb_cust_name', 'tb_date'];
+  //protected $fillable = ['tb_cust_name', 'tb_date'];
 
     
 
