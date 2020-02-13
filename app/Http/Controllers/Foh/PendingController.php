@@ -71,7 +71,7 @@ class PendingController extends Controller
     public function edit($id)
     {
         
-            
+        $this->authorize('isAdmin');
 
         $booking = Booking::find($id);
         return view('foh.pending.edit')->with('booking',$booking);
