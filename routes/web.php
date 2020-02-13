@@ -61,6 +61,7 @@ Route::resource('/foh/addon', 'Foh\AddonController', ['as'=>'foh']);
 Route::resource('/foh/pending', 'Foh\PendingController', ['as'=>'foh']);
 
 
+
 //Export Route
 Route::get('/showdata', 'CsvController@showdata');     
 Route::get('/export', 'Admin\AccountsController@export')->name('admin.accounts.export');   

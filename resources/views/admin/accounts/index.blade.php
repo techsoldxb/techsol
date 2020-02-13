@@ -70,56 +70,17 @@
 
             /
 
+          
+            <form onsubmit="return confirm('Do you really want to delete?');" action="{{ route('admin.accounts.destroy',$c->id) }}" method="POST" >
+              {{ csrf_field() }}
+              <input type="hidden" name="_method" value="DELETE" />
+            
+              <button type="submit"><i class="fa fa-trash text-red" /></i></button>
+              </form>
+                     
             
 
-            <a href="javascript:;" data-toggle="modal" onclick="deleteData({{$c->id}})" 
-              data-target="#DeleteModal">
-              
-              <i class="fa fa-trash text-red"></i >
-              
-            </a>
-  
-              <div id="DeleteModal" class="modal fade text-danger" role="dialog">
-                <div class="modal-dialog ">
-                  <!-- Modal content-->
-                  <form action="" id="deleteForm" method="post">
-                      <div class="modal-content">
-                          <div class="modal-header bg-danger">                            
-                              <h5 class="modal-title text-center">Delete Confirmation</h5>
-                          </div>
-                          <div class="modal-body">
-                              {{ csrf_field() }}
-                              {{ method_field('DELETE') }}
-                              <p class="text-center">Are You Sure Want To Delete ?</p>
-                          </div>
-                          <div class="modal-footer">
-                              
-                                <button type="submit" name="" class="btn btn-danger" data-dismiss="modal" onclick="formSubmit()">Yes, Delete</button>  
-                                <button type="button" class="btn btn-success" data-dismiss="modal">Cancel</button>
-                                  
-                              
-                          </div>
-                      </div>
-                  </form>
-                </div>
-               </div>
-  
-               <script type="text/javascript">
-                function deleteData(id)
-                {
-                    var id = id;
-                    var url = '{{ route('admin.accounts.destroy', $c->id) }}';
-                    url = url.replace(':id', id);
-                    $("#deleteForm").attr('action', url);
-                }
-           
-                function formSubmit()
-                {
-                    $("#deleteForm").submit();
-                }
-             </script>
-
-
+          
 
 
 

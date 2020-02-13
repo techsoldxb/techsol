@@ -79,7 +79,7 @@
               /
 
           
-          <a href="{{ route('foh.booking.edit',$c->id) }}">
+          <a href="{{ route('foh.pending.edit',$c->id) }}">
           <i class="fa fa-edit"></i>
           
           </a>

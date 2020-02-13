@@ -572,6 +572,8 @@
             active
             @endif">
             <i class="nav-icon fas fa-plus text-info"></i>
+
+            
               <p>Pending Approval</p>
             </a>
           </li>

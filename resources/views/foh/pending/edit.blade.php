@@ -152,7 +152,7 @@
     
 
      <form  class="needs-validation" novalidate method = "POST" 
-     action="{{ route('foh.booking.update', $booking->id) }}">
+     action="{{ route('foh.pending.update', $booking->id) }}">
      @method('PUT')
 
 
@@ -377,14 +377,40 @@
                  
                             </table>
 
-                           
+                            <div class="form-group">
+                                <div class = "row">
+                                <label class = "col-lg-1" for="">Approve</label>
+                                <div class = "col-lg-2">
+                                  
+                                  <input class="form-check-input" type="hidden"  Value = '0' name='tb_status'>    
+                                  <input class="form-check-input" type="checkbox"  Value = '1' name='tb_status'>
+                            
+                                  
+                              
+                              </div>
+                                
+                                
+                            
+                                <label class = "col-lg-1" for="">Remarks</label>
+                                <div class = "col-lg">    
+                                  <input type="text" name = "tb_appr_remarks" class = "form-control" placeholder="Enter remarks">
+                               </div>
+                            
+                               
+                            
+                               
+                            
+ 
+                            
+                               </div>
+
      
 
      
 
                                <div class="form-group">
                                 <input type="submit" class = "btn btn-info" Value ="Save">
-                                <a href="{{route('foh.booking.index')}}" class="btn btn-warning" role="button">Cancel</a>
+                                <a href="{{route('foh.pending.index')}}" class="btn btn-warning" role="button">Cancel</a>
                                 </div>
 
    

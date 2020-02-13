@@ -282,7 +282,14 @@ class AccountsController extends Controller
         
         
 
-        Account::destroy($id);                  
-        return redirect()->route('admin.accounts.index')->with('error','Transaction deleted successfully!');        
+       // Account::destroy($id);                  
+       // return redirect()->route('admin.accounts.index')->with('error','Transaction deleted successfully!');  
+        
+        Account::find($id)->delete();
+    
+
+    //Account::find($request->id)->delete();
+    return redirect()->route('admin.accounts.index')->with('success','User deleted successfully');
+
     }
 }

@@ -162,7 +162,7 @@ class BookingController extends Controller
     public function edit(Booking $booking)
     {
         
-        $this->authorize('isAdmin');
+//        $this->authorize('isAdmin');
 
         $arr['booking'] = $booking;
         return view('foh.booking.edit')->with($arr);
@@ -239,7 +239,7 @@ class BookingController extends Controller
 
         
         $booking->save();
-        return redirect()->route('foh.pending.index')->with('info','Transaction updated successfully!');
+        return redirect()->route('foh.booking.index')->with('info','Transaction updated successfully!');
     }
 
     /**
@@ -251,6 +251,6 @@ class BookingController extends Controller
     public function destroy($id)
     {
         Booking::destroy($id);                  
-        return redirect()->route('foh.booking.index')->with('error','Transaction deleted successfully!');    
+        return redirect()->route('foh.booking.index')->with('error','Transaction deleted successfully!');  
     }
 }
