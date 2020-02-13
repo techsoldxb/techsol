@@ -571,7 +571,7 @@
             @if($segment=='pending')
             active
             @endif">
-            <i class="nav-icon fas fa-plus text-info"></i>
+            <i class="nav-icon fas fa-circle text-info"></i>
 
             
               <p>Pending Approval</p>
