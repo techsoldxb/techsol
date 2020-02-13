@@ -289,7 +289,7 @@ class AccountsController extends Controller
     
 
     //Account::find($request->id)->delete();
-    return redirect()->route('admin.accounts.index')->with('success','User deleted successfully');
+    return redirect()->route('admin.accounts.index')->with('success','Transaction deleted successfully');
 
     }
 }

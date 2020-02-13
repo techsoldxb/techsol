@@ -18,6 +18,8 @@
   }
   </script>
 
+
+
 <script>
   function calc1() 
   {
@@ -93,6 +95,11 @@
 
               <div style="text-align:center">
                 Cash On Hand Report
+              </div>
+
+              <div style="text-align:center">
+                {{$ldate = date('d-m-Y')}}
+                
               </div>
             
            
