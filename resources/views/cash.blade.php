@@ -41,7 +41,7 @@
   var baisa_qty = document.getElementById('baisa_qty').value;
   document.getElementById('baisa_amount').value = baisa_qty * .100;  
 
-  document.getElementById('total').value = fifty_qty * 50 + twenty_qty * 20 + ten_qty * 10 + five_qty * 5 + one_qty * 1;
+  document.getElementById('total').value = fifty_qty * 50 + twenty_qty * 20 + ten_qty * 10 + five_qty * 5 + one_qty * 1 + baisa_qty * .100;
  
 
 
