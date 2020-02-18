@@ -23,25 +23,26 @@
 <script>
   function calc1() 
   {
-  var fifty_qty = document.getElementById('fifty_qty').value;
-  document.getElementById('fifty_amount').value = fifty_qty * 50;   
+  var fifty_qty = document.getElementById('fifty_qty').value * 50;
+  document.getElementById('fifty_amount').value = fifty_qty.toFixed(3) ;   
 
-  var twenty_qty = document.getElementById('twenty_qty').value;
-  document.getElementById('twenty_amount').value = twenty_qty * 20;   
+  var twenty_qty = document.getElementById('twenty_qty').value * 20;
+  document.getElementById('twenty_amount').value = twenty_qty.toFixed(3) ;   
 
-  var ten_qty = document.getElementById('ten_qty').value;
-  document.getElementById('ten_amount').value = ten_qty * 10;   
+  var ten_qty = document.getElementById('ten_qty').value * 10;
+  document.getElementById('ten_amount').value = ten_qty.toFixed(3) ;   
 
-  var five_qty = document.getElementById('five_qty').value;
-  document.getElementById('five_amount').value = five_qty * 5;   
+  var five_qty = document.getElementById('five_qty').value * 5;
+  document.getElementById('five_amount').value = five_qty.toFixed(3) ;   
 
-  var one_qty = document.getElementById('one_qty').value;
-  document.getElementById('one_amount').value = one_qty * 1;  
+  var one_qty = document.getElementById('one_qty').value * 1;
+  document.getElementById('one_amount').value = one_qty.toFixed(3) ;  
 
-  var baisa_qty = document.getElementById('baisa_qty').value;
-  document.getElementById('baisa_amount').value = baisa_qty * .100;  
+  var baisa_qty = document.getElementById('baisa_qty').value * .100;  
+  document.getElementById('baisa_amount').value = baisa_qty.toFixed(3);  
 
-  document.getElementById('total').value = fifty_qty * 50 + twenty_qty * 20 + ten_qty * 10 + five_qty * 5 + one_qty * 1 + baisa_qty * .100;
+  var cash_total = fifty_qty  + twenty_qty  + ten_qty  + five_qty + one_qty + baisa_qty;  
+  document.getElementById('total').value = cash_total.toFixed(3);
  
 
 

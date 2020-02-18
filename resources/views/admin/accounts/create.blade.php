@@ -70,7 +70,8 @@
     
         var textValue1 = document.getElementById('qty1').value;
         var textValue2 = document.getElementById('price1').value;
-        document.getElementById('amount1').value = textValue1 * textValue2;   
+        var line1 = textValue1 * textValue2;
+        document.getElementById('amount1').value = line1.toFixed(3);   
     
         var textValue3 = document.getElementById('qty2').value;
         var textValue4 = document.getElementById('price2').value;
@@ -93,13 +94,13 @@
     
             var textValue15 = document.getElementById('qty8').value;
             var textValue16 = document.getElementById('price8').value;
-    
-    
-    
-            document.getElementById('total').value = textValue1 * textValue2 
+          
+            var total1 = textValue1 * textValue2 
         + textValue3 * textValue4 + textValue5 * textValue6 
         + textValue7 * textValue8 + textValue9 * textValue10 
         + textValue11 * textValue12 + textValue13 * textValue14  + textValue15 * textValue16;
+    
+            document.getElementById('total').value = total1.toFixed(3);   
         }   
     
         function calc2() 
@@ -130,16 +131,16 @@
             var textValue15 = document.getElementById('qty8').value;
             var textValue16 = document.getElementById('price8').value;
     
-    
-        document.getElementById('amount2').value = textValue3 * textValue4; 
+          var line2 = textValue3 * textValue4;
+        document.getElementById('amount2').value = line2.toFixed(3);
         
-    
-     
-     
-        document.getElementById('total').value = textValue1 * textValue2 
+        var total2 = textValue1 * textValue2 
         + textValue3 * textValue4 + textValue5 * textValue6 
         + textValue7 * textValue8 + textValue9 * textValue10 
         + textValue11 * textValue12 + textValue13 * textValue14  + textValue15 * textValue16;
+     
+     
+        document.getElementById('total').value = total2.toFixed(3);
     
     
         }   
@@ -173,13 +174,15 @@
             var textValue15 = document.getElementById('qty8').value;
             var textValue16 = document.getElementById('price8').value;
     
-    
-         document.getElementById('amount3').value = textValue5 * textValue6;
-    
-         document.getElementById('total').value = textValue1 * textValue2 
+          var line3 = textValue5 * textValue6;
+         document.getElementById('amount3').value = line3.toFixed(3);
+
+         var total3 = textValue1 * textValue2 
         + textValue3 * textValue4 + textValue5 * textValue6 
         + textValue7 * textValue8 + textValue9 * textValue10 
         + textValue11 * textValue12 + textValue13 * textValue14  + textValue15 * textValue16;
+    
+         document.getElementById('total').value = total3.toFixed(3);
         } 
     
         function calc4() 
@@ -211,12 +214,15 @@
             var textValue15 = document.getElementById('qty8').value;
             var textValue16 = document.getElementById('price8').value;
     
-         document.getElementById('amount4').value = textValue7 * textValue8;
-         
-         document.getElementById('total').value = textValue1 * textValue2 
+          var line4 = textValue7 * textValue8;
+         document.getElementById('amount4').value = line4.toFixed(3);
+
+         var total4 = textValue1 * textValue2 
         + textValue3 * textValue4 + textValue5 * textValue6 
         + textValue7 * textValue8 + textValue9 * textValue10 
         + textValue11 * textValue12 + textValue13 * textValue14  + textValue15 * textValue16;
+         
+         document.getElementById('total').value = total4.toFixed(3);
         } 
     
         function calc5() 
@@ -248,12 +254,15 @@
             var textValue15 = document.getElementById('qty8').value;
             var textValue16 = document.getElementById('price8').value;
     
-         document.getElementById('amount5').value = textValue9 * textValue10;
-    
-         document.getElementById('total').value = textValue1 * textValue2 
+          var line5 = textValue9 * textValue10;
+         document.getElementById('amount5').value = line5.toFixed(3);
+
+         var total5 = textValue1 * textValue2 
         + textValue3 * textValue4 + textValue5 * textValue6 
         + textValue7 * textValue8 + textValue9 * textValue10 
         + textValue11 * textValue12 + textValue13 * textValue14  + textValue15 * textValue16;
+    
+         document.getElementById('total').value = total5.toFixed(3);
         } 
     
         function calc6() 
@@ -286,12 +295,15 @@
             var textValue16 = document.getElementById('price8').value;
     
     
-         document.getElementById('amount6').value = textValue11 * textValue12;
-    
-         document.getElementById('total').value = textValue1 * textValue2 
+          var line6 = textValue11 * textValue12;
+         document.getElementById('amount6').value = line6.toFixed(3);
+
+         var total6 = textValue1 * textValue2 
         + textValue3 * textValue4 + textValue5 * textValue6 
         + textValue7 * textValue8 + textValue9 * textValue10 
         + textValue11 * textValue12 + textValue13 * textValue14  + textValue15 * textValue16;
+    
+         document.getElementById('total').value = total6.toFixed(3);
     
         } 
     
@@ -324,12 +336,15 @@
             var textValue15 = document.getElementById('qty8').value;
             var textValue16 = document.getElementById('price8').value;
     
-         document.getElementById('amount7').value = textValue13 * textValue14;
-    
-         document.getElementById('total').value = textValue1 * textValue2 
+          var line7 = textValue13 * textValue14;
+         document.getElementById('amount7').value = line7.toFixed(3);
+
+         var total7 = textValue1 * textValue2 
         + textValue3 * textValue4 + textValue5 * textValue6 
         + textValue7 * textValue8 + textValue9 * textValue10 
         + textValue11 * textValue12 + textValue13 * textValue14  + textValue15 * textValue16;
+    
+         document.getElementById('total').value = total7.toFixed(3);
     
     
         } 
@@ -362,12 +377,16 @@
         
           var textValue15 = document.getElementById('qty8').value;
             var textValue16 = document.getElementById('price8').value;
-         document.getElementById('amount8').value = textValue15 * textValue16;
-    
-         document.getElementById('total').value = textValue1 * textValue2 
+
+          var line8 = textValue15 * textValue16;
+         document.getElementById('amount8').value = line8.toFixed(3);
+
+         var total8 = textValue1 * textValue2 
         + textValue3 * textValue4 + textValue5 * textValue6 
         + textValue7 * textValue8 + textValue9 * textValue10 
         + textValue11 * textValue12 + textValue13 * textValue14  + textValue15 * textValue16;
+    
+         document.getElementById('total').value = total8.toFixed(3);
     
     
         } 
