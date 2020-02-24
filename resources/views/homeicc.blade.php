@@ -358,7 +358,8 @@
                         <i class="fas fa-arrow-up"></i>
                         
                       </small>
-                      {{$booking_icc_amount}}
+                      
+                      {{ number_format($booking_icc_amount,3) }}
                     </td>
                     <td>
                       <a href="#" class="text-muted">
@@ -377,7 +378,8 @@
                         <i class="fas fa-arrow-up"></i>
                         
                       </small>
-                      {{$booking_manal_amount}}
+                      
+                      {{ number_format($booking_manal_amount,3) }}
                     </td>
                     <td>
                       <a href="#" class="text-muted">
@@ -396,7 +398,8 @@
                         <i class="fas fa-arrow-up"></i>
                         
                       </small>
-                      {{$booking_gelan_amount}}
+                      
+                      {{ number_format($booking_gelan_amount,3) }}
                     </td>
                     <td>
                       <a href="#" class="text-muted">
@@ -416,7 +419,10 @@
                         <i class="fas fa-arrow-up"></i>
                         
                       </small>
-                      {{$booking_foh_amount}}
+                      
+
+                      {{ number_format($booking_foh_amount,3) }}
+
                     </td>
                     <td>
                       <a href="#" class="text-muted">
