@@ -127,10 +127,10 @@
               <tbody>
                     <tr>
                         <td>
-                            Cash Topup
+                            Cash Topup - Opening Balance
                         </td>
-                        <td>
-                            {{ number_format($topup,3) }}
+                        <td class="font-weight-bold text-right">
+                            {{ number_format($topup_ob,3) }}
                         </td>
                         <td>
                            
@@ -139,23 +139,59 @@
                     </tr>
 
                     <tr>
+                      <td>
+                          Cash Topup - Current Month
+                      </td>
+                      <td class="font-weight-bold text-right">
+                          {{ number_format($topup_cm,3) }}
+                      </td>
+                      <td>
+                         
+                      </td>
+                      <td></td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                        Paid Bills - Opening Balance
+                    </td>
+                    <td></td>
+                    <td class="font-weight-bold text-right">
+                        {{ number_format($paid_ob,3) }}
+                    </td>
+                    <td></td>
+                </tr>
+
+
+                    <tr>
                         <td>
-                            Paid Bills
+                            Paid Bills - Current Month
                         </td>
                         <td></td>
-                        <td>
-                            {{ number_format($paid,3) }}
+                        <td class="font-weight-bold text-right">
+                            {{ number_format($paid_cm,3) }}
                         </td>
                         <td></td>
                     </tr>
 
                     <tr>
+                      <td>
+                          Advance Paid - Opening Balance
+                      </td>
+                      <td></td>
+                      <td class="font-weight-bold text-right">
+                          {{ number_format($advancepaid_ob,3) }}
+                      </td>
+                      <td></td>
+                  </tr>
+
+                    <tr>
                         <td>
-                            Advance Paid
+                            Advance Paid - Current Month
                         </td>
                         <td></td>
-                        <td>
-                            {{ number_format($advancepaid,3) }}
+                        <td class="font-weight-bold text-right">
+                            {{ number_format($advancepaid_cm,3) }}
                         </td>
                         <td></td>
                     </tr>
@@ -166,9 +202,9 @@
               <tfoot>
                 <tr>
                     <th>Total</th>            
-                  <th> {{ number_format($topup,3) }}   </th>            
-                  <th> {{ number_format($paid + $advancepaid,3) }}</th>            
-                  <th> {{ number_format($topup -$paid - $advancepaid,3) }} </th> 
+                  <th class="font-weight-bold text-right"> {{ number_format($topup_ob + $topup_cm,3) }}   </th>            
+                  <th class="font-weight-bold text-right"> {{ number_format($paid + $advancepaid,3) }}</th>            
+                  <th class="font-weight-bold text-right"> {{ number_format($topup - $paid - $advancepaid,3) }} </th> 
                   
                   
                 </tr>
