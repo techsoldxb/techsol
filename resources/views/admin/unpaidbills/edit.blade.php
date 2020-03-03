@@ -179,7 +179,7 @@
 
     <label class = "col-lg-1" for="">Payment Date</label>
     <div class = "col-lg-2">    
-      <input id="datepicker1" type="text" name = "th_pay_date" class = "form-control datepicker"  placeholder="dd-mm-yyyy">
+      <input id="datepicker1" type="text" name = "th_pay_date" class = "form-control datepicker"  placeholder="dd-mm-yyyy" required>
    </div>
 
    
