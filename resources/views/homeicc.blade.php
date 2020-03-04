@@ -201,8 +201,12 @@
               <span class="info-box-icon bg-success elevation-1"><i class="fas fa-cog"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Categories</span>
-                <span class="info-box-number">0</span>
+                <span class="info-box-text">Cancel</span>
+                <span class="info-box-number">
+
+                  {{$booking_cancel}}
+
+                </span>
               </div>
               <!-- /.info-box-content -->
             </div>

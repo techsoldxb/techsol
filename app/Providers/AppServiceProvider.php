@@ -139,6 +139,10 @@ view()->composer('homeicc', function($view)  {
 });
 
 view()->composer('homeicc', function($view)  {
+    $view->with('booking_cancel',\App\Booking::where('tb_flex1','1')->count('ID'));
+});
+
+view()->composer('homeicc', function($view)  {
     $view->with('booking_manal_count',\App\Booking::where('tb_reference','manal')->whereNull('tb_flex1')->count('ID'));
 });
 
