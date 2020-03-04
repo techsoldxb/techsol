@@ -163,23 +163,23 @@ view()->composer('homeicc', function($view)  {
 });
 
 view()->composer('homeicc', function($view)  {
-    $view->with('booking_manal_amount',\App\Booking::where('tb_reference','manal')->sum('tb_total'));
+    $view->with('booking_manal_amount',\App\Booking::where('tb_reference','manal')->whereNull('tb_flex1')->sum('tb_total'));
 });
 
 view()->composer('homeicc', function($view)  {
-    $view->with('booking_gelan_amount',\App\Booking::where('tb_reference','gelan')->sum('tb_total'));
+    $view->with('booking_gelan_amount',\App\Booking::where('tb_reference','gelan')->whereNull('tb_flex1')->sum('tb_total'));
 });
 
 view()->composer('homeicc', function($view)  {
-    $view->with('booking_foh_amount',\App\Booking::where('tb_reference','foh')->orwhere('tb_reference','others')->sum('tb_total'));
+    $view->with('booking_foh_amount',\App\Booking::where('tb_reference','foh')->orwhere('tb_reference','others')->whereNull('tb_flex1')->sum('tb_total'));
 });
 
 view()->composer('homeicc', function($view)  {
-    $view->with('booking_student_count',\App\Booking::sum('tb_student_qty'));
+    $view->with('booking_student_count',\App\Booking::whereNull('tb_flex1')->sum('tb_student_qty'));
 });
 
 view()->composer('homeicc', function($view)  {
-    $view->with('booking_teacher_count',\App\Booking::sum('tb_adult'));
+    $view->with('booking_teacher_count',\App\Booking::whereNull('tb_flex1')->sum('tb_adult'));
 });
 
 view()->composer('homeicc', function($view)  {
@@ -191,7 +191,7 @@ view()->composer('homeicc', function($view)  {
 });
 
 view()->composer('homeicc', function($view)  {
-    $view->with('booking_corporate_count',\App\Booking::where('tb_type','Corporate Booking')->count('ID'));
+    $view->with('booking_corporate_count',\App\Booking::where('tb_type','Corporate Booking')->whereNull('tb_flex1')->count('ID'));
 });
 
 view()->composer('homeicc', function($view)  {
@@ -199,7 +199,7 @@ view()->composer('homeicc', function($view)  {
 });
 
 view()->composer('homeicc', function($view)  {
-    $view->with('booking_pending_approval',\App\Booking::where('tb_status','0')->count('ID'));
+    $view->with('booking_pending_approval',\App\Booking::where('tb_status','0')->whereNull('tb_flex1')->count('ID'));
 });
 
 
