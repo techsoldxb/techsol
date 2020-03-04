@@ -59,6 +59,7 @@ Route::resource('/foh/booking', 'Foh\BookingController', ['as'=>'foh'])->middlew
 Route::resource('/foh/bookinghistory', 'Foh\BookinghistoryController', ['as'=>'foh']);
 Route::resource('/foh/addon', 'Foh\AddonController', ['as'=>'foh']);
 Route::resource('/foh/pending', 'Foh\PendingController', ['as'=>'foh']);
+Route::resource('/foh/cancel', 'Foh\CancelController', ['as'=>'foh']);
 
 
 

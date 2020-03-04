@@ -120,7 +120,7 @@ class PendingController extends Controller
         $request->tb_student_qty * $request->tb_student_price + 
         $request->tb_teacher_qty * $request->tb_teacher_price + 
         $request->tb_adult_qty * $request->tb_adult_price ;     
-        $booking->tb_status = 0;   
+        //$booking->tb_status = 0;   
         
 
         if ( !empty ( $request->tb_status ) )

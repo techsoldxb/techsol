@@ -1,11 +1,21 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Foh;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Booking;
 
-class CalendarController extends Controller
+use Carbon\Carbon;
+
+
+use App\Booking;
+use App\Addon;
+Use Auth;
+use App\User;
+
+Use Gate;
+
+class CancelController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +24,8 @@ class CalendarController extends Controller
      */
     public function index()
     {
-        //$booking = Booking::all();
-        $booking = Booking::whereNull('tb_flex1')->get();
-    return view('calander.index', compact('booking'));
+        $arr['booking'] = Booking::whereNull('tb_flex1')->get();
+        return view('foh.cancel.index')->with($arr); 
     }
 
     /**
@@ -46,9 +55,9 @@ class CalendarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Booking $booking)
+    public function show($id)
     {
-        return view('foh.booking.show',compact('booking'));
+        //
     }
 
     /**
@@ -59,7 +68,8 @@ class CalendarController extends Controller
      */
     public function edit($id)
     {
-        //
+        $booking = Booking::find($id);
+        return view('foh.cancel.edit')->with('booking',$booking);
     }
 
     /**
@@ -71,7 +81,21 @@ class CalendarController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $booking = Booking::find($id);
+
+       
+        //$booking->tb_flex1 = 0;   
+        
+
+        if ( !empty ( $request->tb_flex1 ) )
+        {
+            $booking->tb_flex1 = $request->tb_flex1;
+            $booking->tb_flex2 = $request->tb_flex2;
+        }
+               
+               
+        $booking->save();
+        return redirect()->route('foh.cancel.index')->with('info','Transaction cancelled successfully!');
     }
 
     /**

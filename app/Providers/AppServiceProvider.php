@@ -139,23 +139,23 @@ view()->composer('homeicc', function($view)  {
 });
 
 view()->composer('homeicc', function($view)  {
-    $view->with('booking_manal_count',\App\Booking::where('tb_reference','manal')->count('ID'));
+    $view->with('booking_manal_count',\App\Booking::where('tb_reference','manal')->whereNull('tb_flex1')->count('ID'));
 });
 
 view()->composer('homeicc', function($view)  {
-    $view->with('booking_gelan_count',\App\Booking::where('tb_reference','gelan')->count('ID'));
+    $view->with('booking_gelan_count',\App\Booking::where('tb_reference','gelan')->whereNull('tb_flex1')->count('ID'));
 });
 
 view()->composer('homeicc', function($view)  {
-    $view->with('booking_icc_count',\App\Booking::where('tb_reference','ICC')->count('ID'));
+    $view->with('booking_icc_count',\App\Booking::where('tb_reference','ICC')->whereNull('tb_flex1')->count('ID'));
 });
 
 view()->composer('homeicc', function($view)  {
-    $view->with('booking_foh_count',\App\Booking::where('tb_reference','foh')->orwhere('tb_reference','others')->count('ID'));
+    $view->with('booking_foh_count',\App\Booking::where('tb_reference','foh')->orwhere('tb_reference','others')->whereNull('tb_flex1')->count('ID'));
 });
 
 view()->composer('homeicc', function($view)  {
-    $view->with('booking_icc_amount',\App\Booking::where('tb_reference','ICC')->sum('tb_total'));
+    $view->with('booking_icc_amount',\App\Booking::where('tb_reference','ICC')->whereNull('tb_flex1')->sum('tb_total'));
 });
 
 view()->composer('homeicc', function($view)  {
@@ -179,11 +179,11 @@ view()->composer('homeicc', function($view)  {
 });
 
 view()->composer('homeicc', function($view)  {
-    $view->with('booking_total_amount',\App\Booking::sum('tb_total'));
+    $view->with('booking_total_amount',\App\Booking::whereNull('tb_flex1')->sum('tb_total'));
 });
 
 view()->composer('homeicc', function($view)  {
-    $view->with('booking_school_count',\App\Booking::where('tb_type','School Trip')->count('ID'));
+    $view->with('booking_school_count',\App\Booking::where('tb_type','School Trip')->whereNull('tb_flex1')->count('ID'));
 });
 
 view()->composer('homeicc', function($view)  {
