@@ -155,7 +155,7 @@ view()->composer('homeicc', function($view)  {
 });
 
 view()->composer('homeicc', function($view)  {
-    $view->with('booking_foh_count',\App\Booking::where('tb_reference','foh')->orwhere('tb_reference','others')->whereNull('tb_flex1')->count('ID'));
+    $view->with('booking_foh_count',\App\Booking::where('tb_reference','FOH')->whereNull('tb_flex1')->count('ID'));
 });
 
 view()->composer('homeicc', function($view)  {

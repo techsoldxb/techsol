@@ -414,7 +414,7 @@
                   <tr>
                     <td>
                       <img src="dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
-                      FOH & Others
+                      FOH
                       <span class="badge bg-danger">NEW</span>
                     </td>
                     <td>{{$booking_foh_count}}</td>

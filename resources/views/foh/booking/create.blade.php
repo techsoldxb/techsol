@@ -307,7 +307,7 @@ $(function()
                             <option value="Manal">Manal</option>
                             <option value="Gelan">Gelan</option>                                        
                             <option value="FOH">FOH</option>                                        
-                            <option value="Others">Others</option>                                        
+                                                                
                             
                           </select>
 
