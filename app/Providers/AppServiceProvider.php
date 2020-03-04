@@ -171,7 +171,7 @@ view()->composer('homeicc', function($view)  {
 });
 
 view()->composer('homeicc', function($view)  {
-    $view->with('booking_foh_amount',\App\Booking::where('tb_reference','foh')->orwhere('tb_reference','others')->whereNull('tb_flex1')->sum('tb_total'));
+    $view->with('booking_foh_amount',\App\Booking::where('tb_reference','foh')->whereNull('tb_flex1')->sum('tb_total'));
 });
 
 view()->composer('homeicc', function($view)  {
