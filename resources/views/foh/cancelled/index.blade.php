@@ -36,6 +36,7 @@
                 <th> Reference</th>
                 <th> User</th>
                 <th> Booking Date</th>
+                <th> Cancelled Date</th>
                 
                 
                 
@@ -64,7 +65,7 @@
             
             <td>{{ date('d-m-Y', strtotime($c->created_at)) }}</td>  
 
-            
+            <td>{{ date('d-m-Y', strtotime($c->updated_at)) }}</td>  
             
             
             <td> {{ $c->tb_flex2 }} </td>
@@ -97,6 +98,7 @@
                 <th> Reference</th>
                 <th> User</th>
                 <th> Booking Date</th>
+                <th> Cancelled Date</th>
                 
                 
                 
