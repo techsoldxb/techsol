@@ -54,12 +54,15 @@ Route::resource('/admin/allpaidbills', 'Admin\AllpaidController', ['as'=>'admin'
 
 Route::get('/admin/accounts/{account}/print', 'Admin\AccountsController@print')->name('admin.accounts.print');
 
-
+//Booking
 Route::resource('/foh/booking', 'Foh\BookingController', ['as'=>'foh'])->middleware('auth');
 Route::resource('/foh/bookinghistory', 'Foh\BookinghistoryController', ['as'=>'foh']);
 Route::resource('/foh/addon', 'Foh\AddonController', ['as'=>'foh']);
 Route::resource('/foh/pending', 'Foh\PendingController', ['as'=>'foh']);
 Route::resource('/foh/cancel', 'Foh\CancelController', ['as'=>'foh']);
+
+//HRMS
+Route::resource('/hrms/employee', 'Hrms\EmployeeController', ['as'=>'hrms']);
 
 
 

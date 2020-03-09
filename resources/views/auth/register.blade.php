@@ -51,6 +51,7 @@
                                     <option value="2">Muscat Mall</option>
                                     <option value="3">Oman Aquarium</option>                                        
                                     <option value="4">Snow Village</option>   
+                                    <option value="5">Sohar Mall</option>
                                   </select>
 
                                 @error('company')
