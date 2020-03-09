@@ -600,6 +600,16 @@
           </li>
 
           <li class="nav-item">
+            <a href="{{route('foh.cancelled.index')}}"  class="nav-link
+            @if($segment=='cancelled')
+            active
+            @endif">
+            <i class="nav-icon far fa-circle"></i>
+              <p>Booking Cancelled</p>
+            </a>
+          </li>
+
+          <li class="nav-item">
             <a href='{!! url('/calendar') !!}'  class="nav-link">
               
               <i class="far fa fa-calendar-alt nav-icon"></i>

@@ -60,6 +60,7 @@ Route::resource('/foh/bookinghistory', 'Foh\BookinghistoryController', ['as'=>'f
 Route::resource('/foh/addon', 'Foh\AddonController', ['as'=>'foh']);
 Route::resource('/foh/pending', 'Foh\PendingController', ['as'=>'foh']);
 Route::resource('/foh/cancel', 'Foh\CancelController', ['as'=>'foh']);
+Route::resource('/foh/cancelled', 'Foh\CancelledController', ['as'=>'foh']);
 
 //HRMS
 Route::resource('/hrms/employee', 'Hrms\EmployeeController', ['as'=>'hrms']);

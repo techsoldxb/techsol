@@ -16,7 +16,7 @@
 
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title">Booking Cancel
+            <h3 class="card-title">Booking Cancelled
             <a href="{{ route('foh.booking.create') }}" class="btn btn-primary btn-sm">Add New</a></h3>   
           </div>
           <!-- /.card-header -->
@@ -39,7 +39,7 @@
                 <th> Status</th>
                 <th>Approved By</th>
                 <th>Approved Date</th>
-                <th> Action </th>
+                <th> Reason for Cancel </th>
               </tr>
               </thead>
               <tbody>
@@ -78,39 +78,13 @@
             </td>
             <td> {{ $c->tb_appr_user_name }} </td>
             <td> {{ $c->tb_appr_date }} </td>
+            <td> {{ $c->tb_flex2 }} </td>
             
              
             
           
           
-          <td>             
-            
-            <a href="{{ route('foh.booking.show',$c->id) }}">
-              <i class="fa fa-print text-green"></i>
-              
-              </a>
-
-              /
-
-          
-          <a href="{{ route('foh.cancel.edit',$c->id) }}">
-          <i class="fa fa-edit"></i>
-          
-          </a>
-
-         
-
-          <a href="javascript:void(0)" onclick = "$(this).parent().find('form').submit()" >
-          
-          <!-- /.Delete <i class="fa fa-trash text-red"></i > -->
-          
-          
-          </a>
-          <form action = "{{ route('foh.booking.destroy', $c->id)}}" method = "POST">
-          @method('DELETE')
-          <input type="hidden" name="_token" value = "{{ csrf_token() }}">
-          </form>
-        </td>                
+                        
           
           </tr>
           @endforeach
@@ -137,7 +111,7 @@
                 <th> Status</th>
                 <th>Approved By</th>
                 <th>Approved Date</th>
-                <th> Action </th>
+                <th> Reason for Cancel </th>
                 
               </tr>
               </tfoot>
