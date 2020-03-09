@@ -23,20 +23,20 @@ class BookingExport implements  FromCollection,WithHeadings,ShouldAutoSize,WithE
     public function collection()
     {
         return Booking::select(['tb_cust_name','tb_cust_addr','tb_cust_mobile','tb_cust_email','tb_date','tb_time','tb_kids','tb_adult',
-        'tb_reference','tb_category','tb_total','tb_user_name','created_at','tb_flex2'])->get();
+        'tb_reference','tb_category','tb_total','tb_user_name','created_at','tb_flex2','tb_flex3'])->get();
     }
 
     public function headings(): array
       {
         return [ 'Name','Address', 'Mobile', 'Email', 'Visit Date','Visit Time', 'Kids','Adults',
-          'Reference','Category','Total Amount','User','Booking Date','Cancel Reason' ];
+          'Reference','Category','Total Amount','User','Booking Date','Cancel Reason','Cancel By' ];
        }
 
        public function registerEvents(): array
        {
            return [
                AfterSheet::class    => function(AfterSheet $event) {
-                   $cellRange = 'A1:N1'; // All headers
+                   $cellRange = 'A1:O1'; // All headers
                    $event->sheet->getDelegate()->getStyle($cellRange)->getFont()->setSize(12);
                },
            ];

@@ -91,6 +91,7 @@ class CancelController extends Controller
         {
             $booking->tb_flex1 = $request->tb_flex1;
             $booking->tb_flex2 = $request->tb_flex2;
+            $booking->tb_flex3 = Auth::user()->name;
         }
                
                
