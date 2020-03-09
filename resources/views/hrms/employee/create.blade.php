@@ -168,7 +168,7 @@ $(function()
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Booking Form</h1>
+            <h1 class="m-0 text-dark">Employee Details</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -186,12 +186,16 @@ $(function()
 
     <section class="content">
       <div class="container-fluid">
+        
      <form  class="needs-validation" name="myform" id="myform" novalidate method = "post" action="{{ route('foh.booking.store') }}" 
      enctype="multipart/form-data" autocomplete="off" autofill="off">
      <input type="hidden" name="_token" value = "{{ csrf_token() }}">
+     <div class="card bg-light text-dark">
+      <p class="bg-primary text-white">Personal Details</p>
      <div class="form-group">
+      
      <div class = "row">
-     <label class = "col-lg-2" for="">School / Company Name</label>
+     <label class = "col-lg-2" for=""> Employee Name</label>
      <div class = "col-lg-8">    
      <input type="text" class="form-control" id="validationCustom01" name="tb_cust_name" placeholder="Enter School / Company Name" required>
      <div class = "clear-fix"></div>
@@ -201,7 +205,7 @@ $(function()
 
      <div class="form-group">
      <div class = "row">
-     <label class = "col-lg-2" for="">School / Company Address</label>
+     <label class = "col-lg-2" for="">Current Address</label>
      <div class = "col-lg-8">    
      <input type="text" class="form-control" id="validationCustom02" name="tb_cust_addr" placeholder="Enter School / Company Address" required>
      <div class = "clear-fix"></div>
@@ -210,35 +214,47 @@ $(function()
      </div>
 
      <div class="form-group">
-        <div class = "row">
-        <label class = "col-lg-2" for="">Contact Person</label>
-        <div class = "col-lg-8">    
-        <input type="text" class="form-control" id="validationCustom02" name="tb_cust_contact" placeholder="Enter Contact Person Name" required>
-        <div class = "clear-fix"></div>
-        </div>     
-        </div>
-        </div>
+      <div class = "row">
+      <label class = "col-lg-2" for="">Permenent Address</label>
+      <div class = "col-lg-8">    
+      <input type="text" class="form-control" id="validationCustom02" name="tb_cust_addr" placeholder="Enter School / Company Address" required>
+      <div class = "clear-fix"></div>
+      </div>     
+      </div>
+      </div>
+      
+
+    
 
             <div class="form-group">
+
             <div class = "row">
-            <label class = "col-lg-2" for="">Mobile Number</label>
-            <div class = "col-lg-3">    
+
+            <label class = "col-lg-2" for="">Gender</label>            
+            <div class = "col-lg-2 align-self-start">    
             <input type="text" class="form-control" id="validationCustom02" name="tb_cust_mobile" placeholder="Enter Mobile Number" required>
             </div>
-            <label class = "col-lg-2" for="">Email</label>
-            <div class = "col-lg-3">    
+
+            <label class = "col-lg-1" for="">Mobile Number</label>
+            <div class = "col-lg-2">    
+            <input type="text" class="form-control" id="validationCustom02" name="tb_cust_mobile" placeholder="Enter Mobile Number" required>
+            </div>
+
+
+            <label class = "col-lg-1" for="">Email</label>
+            <div class = "col-lg-2">    
             <input type="email" class="form-control" id="validationCustom02" name="tb_cust_email" placeholder="Enter Email" required>           
             </div>     
             </div>
             </div>
 
              
-
+          
                 
                 <div class="form-group">
                 <div class = "row">
-                <label class = "col-lg-2" for="">Date of Visit</label>
-                <div class = "col-lg-3">    
+                <label class = "col-lg-2" for="">Date of Birth</label>
+                <div class = "col-lg-2">    
                 
                     <input class = "form-control datepicker" id="datepicker" name = "tb_date" placeholder="dd-mm-yyyy" required>  
              
@@ -251,31 +267,95 @@ $(function()
 
 
                 </div>
-                <label class = "col-lg-2" for="">Arrival Time</label>
-                <div class = "col-lg-3">    
-                <input type="time" class="form-control" id="validationCustom02" name="tb_time" placeholder="Enter arrival time" required> 
-           <script>
-              $('.datetimepicker').datetimepicker({
-                  autoclose: true,
-                  showMeridian:false
-              }); 
-           </script>
-                
-                
-                
-             
-                  
+                <label class = "col-lg-1" for="">Religion</label>
+                <div class = "col-lg-2">    
+                <input type="text" class="form-control" id="validationCustom02" name="tb_time" placeholder="Enter arrival time" required>     
                 </div>     
+
+                <label class = "col-lg-1" for="">Nationality</label>
+                <div class = "col-lg-2">    
+                <input type="text" class="form-control" id="validationCustom02" name="tb_time" placeholder="Enter arrival time" required>     
+                </div>   
+
+                
                 </div>
                 </div>
 
+                      
+                <div class="form-group">
+                  <div class = "row">
+                  <label class = "col-lg-2" for="">Civil ID #</label>
+                  <div class = "col-lg-2">    
+                  
+                      <input class = "form-control datepicker" id="datepicker" name = "tb_date" placeholder="dd-mm-yyyy" required>  
+               
+                      <script>
+                       $('#datepicker').datepicker({
+                         format: 'dd-mm-yyyy',
+                           uiLibrary: 'bootstrap4'
+                       });
+                   </script>
+  
+  
+                  </div>
+                  <label class = "col-lg-1" for="">Civil ID Expiry</label>
+                  <div class = "col-lg-2">    
+                  <input type="text" class="form-control" id="validationCustom02" name="tb_time" placeholder="Enter arrival time" required>     
+                  </div>     
+  
+                  <label class = "col-lg-1" for=""></label>
+                  <div class = "col-lg-2">    
+                  
+                  </div>   
+  
+                  
+                  </div>
+                  </div>
+
+                  <div class="form-group">
+                    <div class = "row">
+                    <label class = "col-lg-2" for="">Passport #</label>
+                    <div class = "col-lg-2">    
+                    
+                        <input class = "form-control datepicker" id="datepicker" name = "tb_date" placeholder="dd-mm-yyyy" required>  
+                 
+                        <script>
+                         $('#datepicker').datepicker({
+                           format: 'dd-mm-yyyy',
+                             uiLibrary: 'bootstrap4'
+                         });
+                     </script>
+    
+    
+                    </div>
+                    <label class = "col-lg-1" for="">Passport Expiry</label>
+                    <div class = "col-lg-2">    
+                    <input type="text" class="form-control" id="validationCustom02" name="tb_time" placeholder="Enter arrival time" required>     
+                    </div>     
+    
+                    <label class = "col-lg-1" for=""></label>
+                    <div class = "col-lg-2">    
+                    
+                    </div>   
+    
+                    
+                    </div>
+                    </div>
+
+                  
+
+              </div>
+
+              <div class="card bg-light text-dark">
+                <p class="bg-primary text-white">Job Profile</p>
+
                     <div class="form-group">
                     <div class = "row">
-                    <label class = "col-lg-2" for="">Kids</label>
+                    <label class = "col-lg-2" for="">From Date</label>
                     <div class = "col-lg-3">    
                     <input type="text" class="form-control" id="validationCustom02" name="tb_kids" placeholder="Enter number of kids">
                     </div>
-                    <label class = "col-lg-2" for="">Adult</label>
+                    <label class = "col-lg-2" for="">Location</label>
                     <div class = "col-lg-3">    
                     <input type="text" class="form-control" id="validationCustom02" name="tb_adult" placeholder="Enter number of adults">           
                     </div>    
@@ -284,7 +364,7 @@ $(function()
 
                     <div class="form-group">
                         <div class = "row">
-                        <label class = "col-lg-2" for="">Mode of Payment</label>
+                        <label class = "col-lg-2" for="">Department</label>
                         <div class = "col-lg-3">    
                         
                           <select class="custom-select" name="tb_pay_mode" required>
@@ -297,7 +377,7 @@ $(function()
                           </select>
 
                         </div>
-                        <label class = "col-lg-2" for="">Reference</label>
+                        <label class = "col-lg-2" for="">Designation</label>
                         <div class = "col-lg-3">    
 
                           
@@ -318,7 +398,7 @@ $(function()
 
                         <div class="form-group">
                           <div class = "row">
-                          <label class = "col-lg-2" for="">Age</label>
+                          <label class = "col-lg-2" for="">Grade</label>
                           <div class = "col-lg-3">    
                           
                             <select class="custom-select" name="tb_age" required>
@@ -394,137 +474,9 @@ $(function()
                               </div>
                               </div>
 
-                            <table class="table table-bordered">
-                              <thead>
-                              <tr>
-                                                 
-                                         
-                                <th class="text-center"> Ticket Type</th>            
-                                <th class="text-center"> Quantity</th> 
-                                <th class="text-center"> Unit Price </th> 
-                                <th class="text-center"> Amount</th>
-                              
-                              </tr>
-                              </thead>
-                              <tbody>
-                                    <tr>
-                                        <td>
-                                            Students
-                                        </td>
-                                        <td>
-                                          <input type="text" class="form-control text-center"  id="tb_student_qty" name="tb_student_qty" 
-                                          onkeypress="return isNumberKey(event)" onkeyup="calc1()" placeholder="" >
-                                        </td>
-                                        <td>
-                                          <input type="text" class="form-control text-center" id="tb_student_price" name="tb_student_price"
-                                          onkeypress="return isNumberKey(event)" onkeyup="calc1()" value = "4" placeholder="4" >
-                                        </td>
-                                        <td>
-                                          <input type="text" class="form-control text-right" id="student_amount" name="student_amount" placeholder="" disabled>
-                                        </td>
-                                    </tr>
-                
-                                    <tr>
-                                        <td>
-                                            Teachers
-                                        </td>
-                                        <td>
-                                          <input type="text" class="form-control text-center" id="tb_teacher_qty" name="tb_teacher_qty" 
-                                          onkeypress="return isNumberKey(event)" onkeyup="calc2()" placeholder="" >
-                                        </td>
-                                        <td>
-                                          <input type="text" class="form-control text-center" id="tb_teacher_price" name="tb_teacher_price"
-                                          onkeypress="return isNumberKey(event)" onkeyup="calc2()" value = "7.5" placeholder="7.5" >
-                                        </td>
-                                        <td>
-                                          <input type="text" class="form-control text-right" id="teacher_amount" name="teacher_amount" 
-                                          onkeypress="return isNumberKey(event)" onkeyup="calc2()" placeholder="" disabled>
-                                        </td>
-                                    </tr>
-                
-                                    <tr>
-                                        <td>
-                                            Adult
-                                        </td>
-                                        <td>
-                                          <input type="text" class="form-control text-center" id="tb_adult_qty" name="tb_adult_qty" 
-                                          onkeypress="return isNumberKey(event)" onkeyup="calc3()" placeholder="" >
-                                        </td>
-                                        <td>
-                                          <input type="text" class="form-control text-center" id="tb_adult_price" name="tb_adult_price" 
-                                          onkeypress="return isNumberKey(event)" onkeyup="calc3()" value = "7.5" placeholder="" >
-                                        </td>
-                                        <td>
-                                          <input type="text" class="form-control text-right" id="adult_amount" name="adult_amount" 
-                                          onkeypress="return isNumberKey(event)" onkeyup="calc3()" placeholder="" disabled>
-                                        </td>
-                                    </tr>
+                            </div>
 
-                                    
-                                    <tr>
-                                      <td>
-                                          Add On 1
-                                      </td>
-                                      <td>
-                                        <input type="text" class="form-control text-center" id="tb_addon1_qty" name="tb_addon1_qty" 
-                                        onkeypress="return isNumberKey(event)" onkeyup="calc4()" placeholder="" >
-                                      </td>
-                                      <td>
-                                    
-
-                                        <select class="custom-select" name="tb_addon1_price" id="tb_addon1_price"
-                                        onchange="calc4()">
-                                          <option value="" selected disabled hidden>Please select</option>
-                                          @foreach($addon as $c)
-                                          <option value="{{ $c->addon_price}}">{{ $c->addon_name}}</option>
-                                          @endforeach   
-                                          
-                                          </select>
-
-                                          <input type="hidden" id="tb_addon1_name" name="tb_addon1_name">
-
-                                          <script>
-                                            $('#tb_addon1_price').on('change', function() 
-                                          {
-                                             var selectedName = $('#tb_addon1_price option:selected').text();
-                                            $('#tb_addon1_name').val(selectedName);
-                                                      }
-                                            )
-                                          </script>
-
-                                      
-
-                                          
-                                     
-                                      </td>
-                                      <td>
-                                        <input type="text" class="form-control text-right" id="addon1_amount" name="addon1_amount" 
-                                        placeholder="" disabled>
-                                      </td>
-                                  </tr>
-                                    
-
-                                    <tr>
-                                      <td>
-                                          
-                                      </td>
-                                      <td></td>
-                                      <td class="font-weight-bold text-right">
-                                        Total OMR 
-                                      </td>
-                                      <td>
-                                        <input type="text" class="form-control font-weight-bold  text-right" id="tb_total" 
-                                        name="tb_total" placeholder="" disabled>
-                                      </td>
-                                  </tr>
-                
-                             
-                              </tbody>
-                
-                              
-                 
-                            </table>
-
+                            
      
 
      
@@ -538,4 +490,5 @@ $(function()
      </form>
       </div>
     </section>
+    
 @endsection
