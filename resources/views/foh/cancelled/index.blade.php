@@ -31,14 +31,14 @@
                 <th> Mobile </th> 
                 
                 <th> Visit Date </th>
-                <th> Visit Time </th>
+                
                 
                 <th> Reference</th>
                 <th> User</th>
                 <th> Booking Date</th>
-                <th> Status</th>
-                <th>Approved By</th>
-                <th>Approved Date</th>
+                
+                
+                
                 <th> Reason for Cancel </th>
               </tr>
               </thead>
@@ -56,7 +56,7 @@
             
             
             <td>{{ date('d-m-Y', strtotime($c->tb_date)) }}</td>  
-            <td>{{ $c->tb_time}}</td>  
+            
             
             <td>{{ $c->tb_reference}}</td>  
           
@@ -64,20 +64,9 @@
             
             <td>{{ date('d-m-Y', strtotime($c->created_at)) }}</td>  
 
-            <td>  
-              @if($c->tb_status =='0')  
-              <div class="text-primary">   
-              Waiting for approval
-              </div>
-              @elseif($c->tb_status =='1')  
-              <div class="text-success">   
-              Request approved
-              </div>             
-
-              @endif            
-            </td>
-            <td> {{ $c->tb_appr_user_name }} </td>
-            <td> {{ $c->tb_appr_date }} </td>
+            
+            
+            
             <td> {{ $c->tb_flex2 }} </td>
             
              
@@ -103,14 +92,14 @@
                 <th> Mobile </th> 
                 
                 <th> Visit Date </th>
-                <th> Visit Time </th>
+                
                 
                 <th> Reference</th>
                 <th> User</th>
                 <th> Booking Date</th>
-                <th> Status</th>
-                <th>Approved By</th>
-                <th>Approved Date</th>
+                
+                
+                
                 <th> Reason for Cancel </th>
                 
               </tr>
