@@ -198,7 +198,7 @@ $(function()
       
      <div class = "row">
      <label class = "col-lg-2" for=""> Employee Name</label>
-     <div class = "col-lg-10">    
+     <div class = "col-lg-8">    
      <input type="text" class="form-control" id="validationCustom01" name="tb_cust_name" placeholder="Enter School / Company Name" required>
      <div class = "clear-fix"></div>
      </div>     
@@ -208,7 +208,7 @@ $(function()
      <div class="form-group">
      <div class = "row">
      <label class = "col-lg-2" for="">Current Address</label>
-     <div class = "col-lg-10">    
+     <div class = "col-lg-8">    
      <input type="text" class="form-control" id="validationCustom02" name="tb_cust_addr" placeholder="Enter School / Company Address" required>
      <div class = "clear-fix"></div>
      </div>     
@@ -218,7 +218,7 @@ $(function()
      <div class="form-group">
       <div class = "row">
       <label class = "col-lg-2" for="">Permenent Address</label>
-      <div class = "col-lg-10">    
+      <div class = "col-lg-8">    
       <input type="text" class="form-control" id="validationCustom02" name="tb_cust_addr" placeholder="Enter School / Company Address" required>
       <div class = "clear-fix"></div>
       </div>     
@@ -351,10 +351,11 @@ $(function()
 
               <div class="card bg-light text-dark">
                 <p class="bg-primary text-white">Job Profile</p>
+                <div class="card-body">
 
                     <div class="form-group">
                     <div class = "row">
-                    <label class = "col-lg-2" for="">From Date</label>
+                    <label class = "col-lg-2" for="">Date Of Join</label>
                     <div class = "col-lg-3">    
                     <input type="text" class="form-control" id="validationCustom02" name="tb_kids" placeholder="Enter number of kids">
                     </div>
@@ -464,6 +465,7 @@ $(function()
                             </div>    
                             </div>
                             </div>
+                            
    
                    
 
@@ -478,6 +480,7 @@ $(function()
                               </div>
 
                             </div>
+                          </div>
 
                             
      
