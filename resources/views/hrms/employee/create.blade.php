@@ -196,7 +196,7 @@ $(function()
       
      <div class = "row">
      <label class = "col-lg-2" for=""> Employee Name</label>
-     <div class = "col-lg-8">    
+     <div class = "col-lg-10">    
      <input type="text" class="form-control" id="validationCustom01" name="tb_cust_name" placeholder="Enter School / Company Name" required>
      <div class = "clear-fix"></div>
      </div>     
@@ -206,7 +206,7 @@ $(function()
      <div class="form-group">
      <div class = "row">
      <label class = "col-lg-2" for="">Current Address</label>
-     <div class = "col-lg-8">    
+     <div class = "col-lg-10">    
      <input type="text" class="form-control" id="validationCustom02" name="tb_cust_addr" placeholder="Enter School / Company Address" required>
      <div class = "clear-fix"></div>
      </div>     
@@ -216,7 +216,7 @@ $(function()
      <div class="form-group">
       <div class = "row">
       <label class = "col-lg-2" for="">Permenent Address</label>
-      <div class = "col-lg-8">    
+      <div class = "col-lg-10">    
       <input type="text" class="form-control" id="validationCustom02" name="tb_cust_addr" placeholder="Enter School / Company Address" required>
       <div class = "clear-fix"></div>
       </div>     
@@ -235,13 +235,13 @@ $(function()
             <input type="text" class="form-control" id="validationCustom02" name="tb_cust_mobile" placeholder="Enter Mobile Number" required>
             </div>
 
-            <label class = "col-lg-1" for="">Mobile Number</label>
+            <label class = "col-lg-2" for="">Mobile Number</label>
             <div class = "col-lg-2">    
             <input type="text" class="form-control" id="validationCustom02" name="tb_cust_mobile" placeholder="Enter Mobile Number" required>
             </div>
 
 
-            <label class = "col-lg-1" for="">Email</label>
+            <label class = "col-lg-2" for="">Email</label>
             <div class = "col-lg-2">    
             <input type="email" class="form-control" id="validationCustom02" name="tb_cust_email" placeholder="Enter Email" required>           
             </div>     
@@ -267,12 +267,12 @@ $(function()
 
 
                 </div>
-                <label class = "col-lg-1" for="">Religion</label>
+                <label class = "col-lg-2" for="">Religion</label>
                 <div class = "col-lg-2">    
                 <input type="text" class="form-control" id="validationCustom02" name="tb_time" placeholder="Enter arrival time" required>     
                 </div>     
 
-                <label class = "col-lg-1" for="">Nationality</label>
+                <label class = "col-lg-2" for="">Nationality</label>
                 <div class = "col-lg-2">    
                 <input type="text" class="form-control" id="validationCustom02" name="tb_time" placeholder="Enter arrival time" required>     
                 </div>   
@@ -298,12 +298,12 @@ $(function()
   
   
                   </div>
-                  <label class = "col-lg-1" for="">Civil ID Expiry</label>
+                  <label class = "col-lg-2" for="">Civil ID Expiry</label>
                   <div class = "col-lg-2">    
                   <input type="text" class="form-control" id="validationCustom02" name="tb_time" placeholder="Enter arrival time" required>     
                   </div>     
   
-                  <label class = "col-lg-1" for=""></label>
+                  <label class = "col-lg-2" for=""></label>
                   <div class = "col-lg-2">    
                   
                   </div>   
@@ -328,12 +328,12 @@ $(function()
     
     
                     </div>
-                    <label class = "col-lg-1" for="">Passport Expiry</label>
+                    <label class = "col-lg-2" for="">Passport Expiry</label>
                     <div class = "col-lg-2">    
                     <input type="text" class="form-control" id="validationCustom02" name="tb_time" placeholder="Enter arrival time" required>     
                     </div>     
     
-                    <label class = "col-lg-1" for=""></label>
+                    <label class = "col-lg-2" for=""></label>
                     <div class = "col-lg-2">    
                     
                     </div>   
