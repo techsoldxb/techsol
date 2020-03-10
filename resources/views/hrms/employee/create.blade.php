@@ -192,6 +192,8 @@ $(function()
      <input type="hidden" name="_token" value = "{{ csrf_token() }}">
      <div class="card bg-light text-dark">
       <p class="bg-primary text-white">Personal Details</p>
+      <div class="card-body">
+      
      <div class="form-group">
       
      <div class = "row">
@@ -339,6 +341,7 @@ $(function()
                     </div>   
     
                     
+                    </div>
                     </div>
                     </div>
 
