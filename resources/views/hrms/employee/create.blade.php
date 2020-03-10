@@ -237,14 +237,14 @@ $(function()
             <input type="email" class="form-control" id="validationCustom02" name="tb_cust_mobile" placeholder="Enter Mobile Number" required>
             </div>
 
-            <label class = "col-lg-1" for="">Personal GSM</label>
+            <label class = "col-lg-2" for="">Personal GSM</label>
             <div class = "col-lg-2">    
             <input type="text" class="form-control" id="validationCustom02" name="tb_cust_mobile" placeholder="Enter Mobile Number" required>
             </div>
 
 
             <label class = "col-lg-2" for="">Official GSM</label>
-            <div class = "col-lg-2">    
+            <div class = "col-lg-1">    
             <input type="text" class="form-control" id="validationCustom02" name="tb_cust_email" placeholder="Enter Email" required>           
             </div>     
             </div>
@@ -269,13 +269,13 @@ $(function()
 
 
                 </div>
-                <label class = "col-lg-1" for="">Gender</label>
+                <label class = "col-lg-2" for="">Gender</label>
                 <div class = "col-lg-2">    
                 <input type="text" class="form-control" id="validationCustom02" name="tb_time" placeholder="Enter arrival time" required>     
                 </div>     
 
                 <label class = "col-lg-2" for="">Nationality</label>
-                <div class = "col-lg-2">    
+                <div class = "col-lg-1">    
                 <input type="text" class="form-control" id="validationCustom02" name="tb_time" placeholder="Enter arrival time" required>     
                 </div>   
 
@@ -300,13 +300,13 @@ $(function()
   
   
                   </div>
-                  <label class = "col-lg-1" for="">Civil ID Expiry</label>
+                  <label class = "col-lg-2" for="">Civil ID Expiry</label>
                   <div class = "col-lg-2">    
                   <input type="text" class="form-control" id="validationCustom02" name="tb_time" placeholder="Enter arrival time" required>     
                   </div>     
   
                   <label class = "col-lg-2" for="">Local / Expat</label>
-                  <div class = "col-lg-2">   
+                  <div class = "col-lg-1">   
                     <input type="text" class="form-control" id="validationCustom02" name="tb_time" placeholder="Enter arrival time" required>     
                   
                   </div>   
@@ -331,13 +331,13 @@ $(function()
     
     
                     </div>
-                    <label class = "col-lg-1" for="">Passport Expiry</label>
+                    <label class = "col-lg-2" for="">Passport Expiry</label>
                     <div class = "col-lg-2">    
                     <input type="text" class="form-control" id="validationCustom02" name="tb_time" placeholder="Enter arrival time" required>     
                     </div>     
     
                     <label class = "col-lg-2" for="">Religion</label>
-                    <div class = "col-lg-2">    
+                    <div class = "col-lg-1">    
                       <input type="text" class="form-control" id="validationCustom02" name="tb_time" placeholder="Enter arrival time" required>       
                     </div>   
     
