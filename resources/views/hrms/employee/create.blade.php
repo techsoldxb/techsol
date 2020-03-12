@@ -232,19 +232,19 @@ $(function()
 
             <div class = "row">
 
-            <label class = "col-lg-2" for="">Email</label>            
-            <div class = "col-lg-3 align-self-start">    
+            <label class = "col-lg-2" for="">Personal GSM</label>            
+            <div class = "col-lg-2 align-self-start">    
             <input type="email" class="form-control" id="validationCustom02" name="tb_cust_mobile" placeholder="Enter Mobile Number" required>
             </div>
 
-            <label class = "col-lg-2" for="">Personal GSM</label>
+            <label class = "col-lg-2" for="">Official GSM</label>
             <div class = "col-lg-2">    
             <input type="text" class="form-control" id="validationCustom02" name="tb_cust_mobile" placeholder="Enter Mobile Number" required>
             </div>
 
 
-            <label class = "col-lg-2" for="">Official GSM</label>
-            <div class = "col-lg-1">    
+            <label class = "col-lg-1" for="">Email</label>
+            <div class = "col-lg-3">    
             <input type="text" class="form-control" id="validationCustom02" name="tb_cust_email" placeholder="Enter Email" required>           
             </div>     
             </div>
@@ -256,7 +256,7 @@ $(function()
                 <div class="form-group">
                 <div class = "row">
                 <label class = "col-lg-2" for="">Date of Birth</label>
-                <div class = "col-lg-3">    
+                <div class = "col-lg-2">    
                 
                     <input class = "form-control datepicker" id="datepicker" name = "tb_date" placeholder="dd-mm-yyyy" required>  
              
@@ -269,13 +269,13 @@ $(function()
 
 
                 </div>
-                <label class = "col-lg-2" for="">Gender</label>
+                <label class = "col-lg-2" for="">Nationality</label>
                 <div class = "col-lg-2">    
                 <input type="text" class="form-control" id="validationCustom02" name="tb_time" placeholder="Enter arrival time" required>     
                 </div>     
 
-                <label class = "col-lg-2" for="">Nationality</label>
-                <div class = "col-lg-1">    
+                <label class = "col-lg-1" for="">Gender</label>
+                <div class = "col-lg-3">    
                 <input type="text" class="form-control" id="validationCustom02" name="tb_time" placeholder="Enter arrival time" required>     
                 </div>   
 
@@ -287,7 +287,7 @@ $(function()
                 <div class="form-group">
                   <div class = "row">
                   <label class = "col-lg-2" for="">Civil ID #</label>
-                  <div class = "col-lg-3">    
+                  <div class = "col-lg-2">    
                   
                       <input class = "form-control datepicker" id="datepicker" name = "tb_date" placeholder="dd-mm-yyyy" required>  
                
@@ -305,8 +305,8 @@ $(function()
                   <input type="text" class="form-control" id="validationCustom02" name="tb_time" placeholder="Enter arrival time" required>     
                   </div>     
   
-                  <label class = "col-lg-2" for="">Local / Expat</label>
-                  <div class = "col-lg-1">   
+                  <label class = "col-lg-1" for="">Type</label>
+                  <div class = "col-lg-3">   
                     <input type="text" class="form-control" id="validationCustom02" name="tb_time" placeholder="Enter arrival time" required>     
                   
                   </div>   
@@ -318,7 +318,7 @@ $(function()
                   <div class="form-group">
                     <div class = "row">
                     <label class = "col-lg-2" for="">Passport #</label>
-                    <div class = "col-lg-3">    
+                    <div class = "col-lg-2">    
                     
                         <input class = "form-control datepicker" id="datepicker" name = "tb_date" placeholder="dd-mm-yyyy" required>  
                  
@@ -336,8 +336,8 @@ $(function()
                     <input type="text" class="form-control" id="validationCustom02" name="tb_time" placeholder="Enter arrival time" required>     
                     </div>     
     
-                    <label class = "col-lg-2" for="">Religion</label>
-                    <div class = "col-lg-1">    
+                    <label class = "col-lg-1" for="">Religion</label>
+                    <div class = "col-lg-3">    
                       <input type="text" class="form-control" id="validationCustom02" name="tb_time" placeholder="Enter arrival time" required>       
                     </div>   
     
@@ -434,6 +434,91 @@ $(function()
                             
                             </div>
                           </div>
+
+                          <div class="card bg-light text-dark">
+                            <p class="bg-primary text-white">Payroll Details</p>
+                            <div class="card-body">
+            
+                                <div class="form-group">
+                                <div class = "row">
+                                <label class = "col-lg-2" for="">Payment Period</label>
+                                <div class = "col-lg-3">    
+                                <input type="text" class="form-control" id="validationCustom02" name="tb_kids" placeholder="Enter number of kids">
+                                </div>
+                                <label class = "col-lg-2" for="">Payment Type</label>
+                                <div class = "col-lg-3">    
+                                <input type="text" class="form-control" id="validationCustom02" name="tb_adult" placeholder="Enter number of adults">           
+                                </div>    
+                                </div>
+                                </div>
+            
+                                <div class="form-group">
+                                    <div class = "row">
+                                    <label class = "col-lg-2" for="">Bank Name</label>
+                                    <div class = "col-lg-3">    
+                                    
+                                      <select class="custom-select" name="tb_pay_mode" required>
+                                        <option value="" selected disabled hidden>Please select</option>
+                                        <option value="Cash">Cash</option>
+                                        <option value="Card">Card</option>
+                                        <option value="Cheque">Cheque</option>                                        
+                                        <option value="Others">Others</option>                                        
+                                        
+                                      </select>
+            
+                                    </div>
+                                    <label class = "col-lg-2" for="">Bank Account</label>
+                                    <div class = "col-lg-3">    
+            
+                                      
+                                      <select class="custom-select" name="tb_reference" required>
+                                        <option value="" selected disabled hidden>Please select</option>
+                                        <option value="ICC">ICC</option>
+                                        <option value="Manal">Manal</option>
+                                        <option value="Gelan">Gelan</option>                                        
+                                        <option value="FOH">FOH</option>                                        
+                                                                            
+                                        
+                                      </select>
+            
+                                    
+                                    </div>    
+                                    </div>
+                                    </div>
+            
+                                    <div class="form-group">
+                                      <div class = "row">
+                                      <label class = "col-lg-2" for="">Bank Account</label>
+                                      <div class = "col-lg-3">    
+                                      
+                                        <select class="custom-select" name="tb_age" required>
+                                          <option value="" selected disabled hidden>Please select</option>
+                                          <option value="3-6">Kids 3-6 year</option>
+                                          <option value="7-12">Child 7-12 years</option>
+                                          <option value="13">Adult 13 and above</option>                                        
+                                                                              
+                                          
+                                        </select>
+              
+                                      </div>
+                                      <label class = "col-lg-2" for="">Probation Period</label>
+                                      <div class = "col-lg-3">   
+                                        <input type="text" class="form-control" id="validationCustom02" name="tb_adult" placeholder="Enter number of adults">                                   
+                                        
+              
+                                      
+                                      </div>    
+                                      </div>
+                                      </div>
+            
+                                      
+                                        
+               
+                               
+            
+                                        
+                                        </div>
+                                      </div>
 
                             
      

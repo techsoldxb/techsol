@@ -67,11 +67,7 @@ class CategoriesController extends Controller
     public function store(Request $request, Category $category, User $user)
     {
         
-      
-      
-
-       
-       $category->exp_group_name = $request->exp_group_name;        
+         $category->exp_group_name = $request->exp_group_name;        
         $category->exp_group_desc = $request->exp_group_desc;    
         $category->exp_group_status = 1;   
         

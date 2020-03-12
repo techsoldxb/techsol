@@ -64,6 +64,7 @@ Route::resource('/foh/cancelled', 'Foh\CancelledController', ['as'=>'foh']);
 
 //HRMS
 Route::resource('/hrms/employee', 'Hrms\EmployeeController', ['as'=>'hrms']);
+Route::resource('/hrms/survey', 'Hrms\SurveyController', ['as'=>'hrms']);
 
 
 

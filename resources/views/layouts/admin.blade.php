@@ -110,7 +110,7 @@
           <img src={{asset('dist/img/logo.png class=img-circle elevation-2 alt=Logo')}}>
           @elseif(auth()->user()->company =='2')
           
-          <img src={{asset('dist/img/malllogonew.png class=img-circle elevation-2 alt=Logo')}}>
+          <img src={{asset('dist/img/malllogonew.PNG class=img-circle elevation-2 alt=MallLogo')}}>
           @else   
           <img src={{asset('dist/img/jarwani.png class=img-circle elevation-2 alt=Logo')}}>
           @endif
