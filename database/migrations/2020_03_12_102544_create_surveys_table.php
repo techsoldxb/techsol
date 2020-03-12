@@ -54,6 +54,7 @@ class CreateSurveysTable extends Migration
             $table->string('f4')->nullable();
             $table->string('f5')->nullable();
             $table->string('f6')->nullable();
+            $table->string('comments')->nullable();
 
             $table->timestamps();
         });
