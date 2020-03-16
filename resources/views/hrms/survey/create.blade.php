@@ -203,13 +203,14 @@
               </label>
               <div class="col-lg-3">
                 <select class="custom-select" name="a1" required>
-                  <option value="" selected disabled hidden>Please select</option>
+                  <option value="" selected disabled hidden>Please select - يرجى التحديد</option>
                   <option value="Strongly agree">Strongly agree - موافق بشدة
                   </option>
-                  <option value="Agree">Agree</option>
-                  <option value="Neither agree nor disagree">Neither agree nor disagree</option>
-                  <option value="Disagree">Disagree</option>
-                  <option value="Strongly disagree">Strongly disagree</option>
+                  <option value="Agree">Agree - يوافق </option>
+                  <option value="Neither agree nor disagree">Neither agree nor disagree - محايد</option>
+                  <option value="Disagree">Disagree - لا يوافق </option>
+                  <option value="Strongly disagree">Strongly disagree - لا أوافق بشدة
+                  </option>
 
                 </select>
                 <div class="clear-fix"></div>
@@ -225,12 +226,14 @@
               </label>
               <div class="col-lg-3">
                 <select class="custom-select" name="a2" required>
-                  <option value="" selected disabled hidden>Please select</option>
-                  <option value="Strongly agree">Strongly agree</option>
-                  <option value="Agree">Agree</option>
-                  <option value="Neither agree nor disagree">Neither agree nor disagree</option>
-                  <option value="Disagree">Disagree</option>
-                  <option value="Strongly disagree">Strongly disagree</option>
+                  <option value="" selected disabled hidden>Please select - يرجى التحديد</option>
+                  <option value="Strongly agree">Strongly agree - موافق بشدة
+                  </option>
+                  <option value="Agree">Agree - يوافق </option>
+                  <option value="Neither agree nor disagree">Neither agree nor disagree - محايد</option>
+                  <option value="Disagree">Disagree - لا يوافق </option>
+                  <option value="Strongly disagree">Strongly disagree - لا أوافق بشدة
+                  </option>
 
                 </select>
                 <div class="clear-fix"></div>
@@ -246,12 +249,13 @@
               </label>
               <div class="col-lg-3">
                 <select class="custom-select" name="a3" required>
-                  <option value="" selected disabled hidden>Please select</option>
-                  <option value="Strongly agree">Strongly agree</option>
-                  <option value="Agree">Agree</option>
-                  <option value="Neither agree nor disagree">Neither agree nor disagree</option>
-                  <option value="Disagree">Disagree</option>
-                  <option value="Strongly disagree">Strongly disagree</option>
+                  
+                  <option value="" selected disabled hidden>Please select - يرجى التحديد</option>
+                  <option value="Strongly agree">Strongly agree - موافق بشدة</option>
+                  <option value="Agree">Agree - يوافق </option>
+                  <option value="Neither agree nor disagree">Neither agree nor disagree - محايد</option>
+                  <option value="Disagree">Disagree - لا يوافق </option>
+                  <option value="Strongly disagree">Strongly disagree - لا أوافق بشدة</option>
 
                 </select>
                 <div class="clear-fix"></div>
@@ -284,12 +288,12 @@
               </label>
               <div class="col-lg-3">
                 <select class="custom-select" name="b1" required>
-                  <option value="" selected disabled hidden>Please select</option>
-                  <option value="Strongly agree">Strongly agree</option>
-                  <option value="Agree">Agree</option>
-                  <option value="Neither agree nor disagree">Neither agree nor disagree</option>
-                  <option value="Disagree">Disagree</option>
-                  <option value="Strongly disagree">Strongly disagree</option>
+                  <option value="" selected disabled hidden>Please select - يرجى التحديد</option>
+                  <option value="Strongly agree">Strongly agree - موافق بشدة</option>
+                  <option value="Agree">Agree - يوافق </option>
+                  <option value="Neither agree nor disagree">Neither agree nor disagree - محايد</option>
+                  <option value="Disagree">Disagree - لا يوافق </option>
+                  <option value="Strongly disagree">Strongly disagree - لا أوافق بشدة</option>
 
                 </select>
               </div>
@@ -305,12 +309,12 @@
               </label>
               <div class="col-lg-3">
                 <select class="custom-select" name="b2" required>
-                  <option value="" selected disabled hidden>Please select</option>
-                  <option value="Strongly agree">Strongly agree</option>
-                  <option value="Agree">Agree</option>
-                  <option value="Neither agree nor disagree">Neither agree nor disagree</option>
-                  <option value="Disagree">Disagree</option>
-                  <option value="Strongly disagree">Strongly disagree</option>
+                  <option value="" selected disabled hidden>Please select - يرجى التحديد</option>
+                  <option value="Strongly agree">Strongly agree - موافق بشدة</option>
+                  <option value="Agree">Agree - يوافق </option>
+                  <option value="Neither agree nor disagree">Neither agree nor disagree - محايد</option>
+                  <option value="Disagree">Disagree - لا يوافق </option>
+                  <option value="Strongly disagree">Strongly disagree - لا أوافق بشدة</option>
 
                 </select>
               </div>
@@ -326,12 +330,12 @@
               </label>
               <div class="col-lg-3">
                 <select class="custom-select" name="b3" required>
-                  <option value="" selected disabled hidden>Please select</option>
-                  <option value="Strongly agree">Strongly agree</option>
-                  <option value="Agree">Agree</option>
-                  <option value="Neither agree nor disagree">Neither agree nor disagree</option>
-                  <option value="Disagree">Disagree</option>
-                  <option value="Strongly disagree">Strongly disagree</option>
+                  <option value="" selected disabled hidden>Please select - يرجى التحديد</option>
+                  <option value="Strongly agree">Strongly agree - موافق بشدة</option>
+                  <option value="Agree">Agree - يوافق </option>
+                  <option value="Neither agree nor disagree">Neither agree nor disagree - محايد</option>
+                  <option value="Disagree">Disagree - لا يوافق </option>
+                  <option value="Strongly disagree">Strongly disagree - لا أوافق بشدة</option>
 
                 </select>
               </div>
@@ -357,15 +361,17 @@
 
           <div class="form-group">
             <div class="row">
-              <label class="col-lg-7" for="">1. My manager/supervisor provides me with clear direction.</label>
+              <label class="col-lg-7" for="">1. My manager/supervisor provides me with clear direction. <br>
+                مديري / المشرف يقدم لي توجيهات واضحة
+              </label>
               <div class="col-lg-3">
                 <select class="custom-select" name="c1" required>
-                  <option value="" selected disabled hidden>Please select</option>
-                  <option value="Strongly agree">Strongly agree</option>
-                  <option value="Agree">Agree</option>
-                  <option value="Neither agree nor disagree">Neither agree nor disagree</option>
-                  <option value="Disagree">Disagree</option>
-                  <option value="Strongly disagree">Strongly disagree</option>
+                  <option value="" selected disabled hidden>Please select - يرجى التحديد</option>
+                  <option value="Strongly agree">Strongly agree - موافق بشدة</option>
+                  <option value="Agree">Agree - يوافق </option>
+                  <option value="Neither agree nor disagree">Neither agree nor disagree - محايد</option>
+                  <option value="Disagree">Disagree - لا يوافق </option>
+                  <option value="Strongly disagree">Strongly disagree - لا أوافق بشدة</option>
 
                 </select>
               </div>
@@ -375,15 +381,17 @@
 
           <div class="form-group">
             <div class="row">
-              <label class="col-lg-7" for="">2. My manager/supervisor provides me with constructive feedback</label>
+              <label class="col-lg-7" for="">2. My manager/supervisor provides me with constructive feedback <br> 
+                يقدم لي مديري / المشرف تعليقات واضحة
+              </label>
               <div class="col-lg-3">
                 <select class="custom-select" name="c2" required>
-                  <option value="" selected disabled hidden>Please select</option>
-                  <option value="Strongly agree">Strongly agree</option>
-                  <option value="Agree">Agree</option>
-                  <option value="Neither agree nor disagree">Neither agree nor disagree</option>
-                  <option value="Disagree">Disagree</option>
-                  <option value="Strongly disagree">Strongly disagree</option>
+                  <option value="" selected disabled hidden>Please select - يرجى التحديد</option>
+                  <option value="Strongly agree">Strongly agree - موافق بشدة</option>
+                  <option value="Agree">Agree - يوافق </option>
+                  <option value="Neither agree nor disagree">Neither agree nor disagree - محايد</option>
+                  <option value="Disagree">Disagree - لا يوافق </option>
+                  <option value="Strongly disagree">Strongly disagree - لا أوافق بشدة</option>
 
                 </select>
               </div>
@@ -394,15 +402,17 @@
           <div class="form-group">
             <div class="row">
               <label class="col-lg-7" for="">3. My manager/supervisor holds regular performance reviews with
-                me.</label>
+                me. <br>
+                يقوم مديري / المشرف بإجراء مراجعات منتظمة معي
+              </label>
               <div class="col-lg-3">
                 <select class="custom-select" name="c3" required>
-                  <option value="" selected disabled hidden>Please select</option>
-                  <option value="Strongly agree">Strongly agree</option>
-                  <option value="Agree">Agree</option>
-                  <option value="Neither agree nor disagree">Neither agree nor disagree</option>
-                  <option value="Disagree">Disagree</option>
-                  <option value="Strongly disagree">Strongly disagree</option>
+                  <option value="" selected disabled hidden>Please select - يرجى التحديد</option>
+                  <option value="Strongly agree">Strongly agree - موافق بشدة</option>
+                  <option value="Agree">Agree - يوافق </option>
+                  <option value="Neither agree nor disagree">Neither agree nor disagree - محايد</option>
+                  <option value="Disagree">Disagree - لا يوافق </option>
+                  <option value="Strongly disagree">Strongly disagree - لا أوافق بشدة</option>
 
                 </select>
               </div>
@@ -429,15 +439,17 @@
           <div class="form-group">
             <div class="row">
               <label class="col-lg-7" for="">1. My organization communicates directly with me (i.e. they have
-                commented on my work; they have asked what motivates me, etc.).</label>
+                commented on my work; they have asked what motivates me, etc.). <br>
+                تتواصل منظمتي معي مباشرةً (أي أنهم علقوا على عملي ؛ وسألوا عما يحفزني ، وما إلى ذلك).
+              </label>
               <div class="col-lg-3">
                 <select class="custom-select" name="d1" required>
-                  <option value="" selected disabled hidden>Please select</option>
-                  <option value="Strongly agree">Strongly agree</option>
-                  <option value="Agree">Agree</option>
-                  <option value="Neither agree nor disagree">Neither agree nor disagree</option>
-                  <option value="Disagree">Disagree</option>
-                  <option value="Strongly disagree">Strongly disagree</option>
+                  <option value="" selected disabled hidden>Please select - يرجى التحديد</option>
+                  <option value="Strongly agree">Strongly agree - موافق بشدة</option>
+                  <option value="Agree">Agree - يوافق </option>
+                  <option value="Neither agree nor disagree">Neither agree nor disagree - محايد</option>
+                  <option value="Disagree">Disagree - لا يوافق </option>
+                  <option value="Strongly disagree">Strongly disagree - لا أوافق بشدة</option>
 
                 </select>
               </div>
@@ -449,15 +461,17 @@
             <div class="row">
               <label class="col-lg-7" for="">2. I feel part of the organization (i.e. someone regularly
                 communicates the company's "big picture" and my role in achieving
-                it).</label>
+                it). <br>
+                أشعر بأنني جزء من المؤسسة (أي أن شخصًا ما ينقل بانتظام "الصورة الكبيرة" للشركة ودوري في تحقيقها)
+              </label>
               <div class="col-lg-3">
                 <select class="custom-select" name="d2" required>
-                  <option value="" selected disabled hidden>Please select</option>
-                  <option value="Strongly agree">Strongly agree</option>
-                  <option value="Agree">Agree</option>
-                  <option value="Neither agree nor disagree">Neither agree nor disagree</option>
-                  <option value="Disagree">Disagree</option>
-                  <option value="Strongly disagree">Strongly disagree</option>
+                  <option value="" selected disabled hidden>Please select - يرجى التحديد</option>
+                  <option value="Strongly agree">Strongly agree - موافق بشدة</option>
+                  <option value="Agree">Agree - يوافق </option>
+                  <option value="Neither agree nor disagree">Neither agree nor disagree - محايد</option>
+                  <option value="Disagree">Disagree - لا يوافق </option>
+                  <option value="Strongly disagree">Strongly disagree - لا أوافق بشدة</option>
 
                 </select>
               </div>
@@ -468,15 +482,17 @@
           <div class="form-group">
             <div class="row">
               <label class="col-lg-7" for="">3. The goals, values, and objectives of the organization have been
-                clearly identified for me.</label>
+                clearly identified for me. <br>
+                لقد تم تحديد أهداف المنظمة وقيمها وغاياتها بوضوح لي
+              </label>
               <div class="col-lg-3">
                 <select class="custom-select" name="d3" required>
-                  <option value="" selected disabled hidden>Please select</option>
-                  <option value="Strongly agree">Strongly agree</option>
-                  <option value="Agree">Agree</option>
-                  <option value="Neither agree nor disagree">Neither agree nor disagree</option>
-                  <option value="Disagree">Disagree</option>
-                  <option value="Strongly disagree">Strongly disagree</option>
+                  <option value="" selected disabled hidden>Please select - يرجى التحديد</option>
+                  <option value="Strongly agree">Strongly agree - موافق بشدة</option>
+                  <option value="Agree">Agree - يوافق </option>
+                  <option value="Neither agree nor disagree">Neither agree nor disagree - محايد</option>
+                  <option value="Disagree">Disagree - لا يوافق </option>
+                  <option value="Strongly disagree">Strongly disagree - لا أوافق بشدة</option>
 
                 </select>
               </div>
@@ -503,15 +519,17 @@
           <div class="form-group">
             <div class="row">
               <label class="col-lg-7" for="">1. I believe that salaries are fair and there are no anomalies or
-                favouritism.</label>
+                favouritism. <br>
+                أعتقد أن الرواتب عادلة وليس هناك شذوذ أو محاباة
+              </label>
               <div class="col-lg-3">
                 <select class="custom-select" name="e1" required>
-                  <option value="" selected disabled hidden>Please select</option>
-                  <option value="Strongly agree">Strongly agree</option>
-                  <option value="Agree">Agree</option>
-                  <option value="Neither agree nor disagree">Neither agree nor disagree</option>
-                  <option value="Disagree">Disagree</option>
-                  <option value="Strongly disagree">Strongly disagree</option>
+                  <option value="" selected disabled hidden>Please select - يرجى التحديد</option>
+                  <option value="Strongly agree">Strongly agree - موافق بشدة</option>
+                  <option value="Agree">Agree - يوافق </option>
+                  <option value="Neither agree nor disagree">Neither agree nor disagree - محايد</option>
+                  <option value="Disagree">Disagree - لا يوافق </option>
+                  <option value="Strongly disagree">Strongly disagree - لا أوافق بشدة</option>
 
                 </select>
               </div>
@@ -522,16 +540,17 @@
           <div class="form-group">
             <div class="row">
               <label class="col-lg-7" for="">2. Salaries are competitive compared to other similar
-                organizations.</label>
+                organizations. <br>
+                الرواتب تنافسية مقارنة بالمنظمات الأخرى المماثلة
+              </label>
               <div class="col-lg-3">
                 <select class="custom-select" name="e2" required>
-                  <option value="" selected disabled hidden>Please select</option>
-                  <option value="Strongly agree">Strongly agree</option>
-                  <option value="Agree">Agree</option>
-                  <option value="Neither agree nor disagree">Neither agree nor disagree</option>
-                  <option value="Disagree">Disagree</option>
-                  <option value="Strongly disagree">Strongly disagree</option>
-
+                  <option value="" selected disabled hidden>Please select - يرجى التحديد</option>
+                  <option value="Strongly agree">Strongly agree - موافق بشدة</option>
+                  <option value="Agree">Agree - يوافق </option>
+                  <option value="Neither agree nor disagree">Neither agree nor disagree - محايد</option>
+                  <option value="Disagree">Disagree - لا يوافق </option>
+                  <option value="Strongly disagree">Strongly disagree - لا أوافق بشدة</option>
                 </select>
               </div>
 
@@ -540,16 +559,17 @@
 
           <div class="form-group">
             <div class="row">
-              <label class="col-lg-7" for="">3. We have many different benefits in addition to salary.</label>
+              <label class="col-lg-7" for="">3. We have many different benefits in addition to salary. <br>
+                لدينا العديد من المزايا المختلفة بالإضافة إلى الراتب
+              </label>
               <div class="col-lg-3">
                 <select class="custom-select" name="e3" required>
-                  <option value="" selected disabled hidden>Please select</option>
-                  <option value="Strongly agree">Strongly agree</option>
-                  <option value="Agree">Agree</option>
-                  <option value="Neither agree nor disagree">Neither agree nor disagree</option>
-                  <option value="Disagree">Disagree</option>
-                  <option value="Strongly disagree">Strongly disagree</option>
-
+                <option value="" selected disabled hidden>Please select - يرجى التحديد</option>
+                <option value="Strongly agree">Strongly agree - موافق بشدة</option>
+                <option value="Agree">Agree - يوافق </option>
+                <option value="Neither agree nor disagree">Neither agree nor disagree - محايد</option>
+                <option value="Disagree">Disagree - لا يوافق </option>
+                <option value="Strongly disagree">Strongly disagree - لا أوافق بشدة</option>
                 </select>
               </div>
 
@@ -575,16 +595,16 @@
           <div class="form-group">
             <div class="row">
               <label class="col-lg-7" for="">1. I feel that management cares about employees and take an
-                interest in them.</label>
+                interest in them. <br>
+                أشعر أن الإدارة تهتم بالموظفين </label>
               <div class="col-lg-3">
                 <select class="custom-select" name="f1" required>
-                  <option value="" selected disabled hidden>Please select</option>
-                  <option value="Strongly agree">Strongly agree</option>
-                  <option value="Agree">Agree</option>
-                  <option value="Neither agree nor disagree">Neither agree nor disagree</option>
-                  <option value="Disagree">Disagree</option>
-                  <option value="Strongly disagree">Strongly disagree</option>
-
+                <option value="" selected disabled hidden>Please select - يرجى التحديد</option>
+                <option value="Strongly agree">Strongly agree - موافق بشدة</option>
+                <option value="Agree">Agree - يوافق </option>
+                <option value="Neither agree nor disagree">Neither agree nor disagree - محايد</option>
+                <option value="Disagree">Disagree - لا يوافق </option>
+                <option value="Strongly disagree">Strongly disagree - لا أوافق بشدة</option>
 
                 </select>
               </div>
@@ -594,15 +614,17 @@
 
           <div class="form-group">
             <div class="row">
-              <label class="col-lg-7" for="">2. I observe that employees trust and respect management.</label>
+              <label class="col-lg-7" for="">2. I observe that employees trust and respect management. <br>
+                ألاحظ أن الموظفين يثقون ويحترمون الإدارة
+              </label>
               <div class="col-lg-3">
                 <select class="custom-select" name="f2" required>
-                  <option value="" selected disabled hidden>Please select</option>
-                  <option value="Strongly agree">Strongly agree</option>
-                  <option value="Agree">Agree</option>
-                  <option value="Neither agree nor disagree">Neither agree nor disagree</option>
-                  <option value="Disagree">Disagree</option>
-                  <option value="Strongly disagree">Strongly disagree</option>
+                  <option value="" selected disabled hidden>Please select - يرجى التحديد</option>
+                  <option value="Strongly agree">Strongly agree - موافق بشدة</option>
+                  <option value="Agree">Agree - يوافق </option>
+                  <option value="Neither agree nor disagree">Neither agree nor disagree - محايد</option>
+                  <option value="Disagree">Disagree - لا يوافق </option>
+                  <option value="Strongly disagree">Strongly disagree - لا أوافق بشدة</option>
                 </select>
               </div>
             </div>
@@ -611,15 +633,17 @@
           <div class="form-group">
             <div class="row">
               <label class="col-lg-7" for="">3. I observe that there are good working relations and teamwork at
-                most levels in most departments.</label>
+                most levels in most departments. <br>
+                ألاحظ أن هناك علاقات عمل جيدة وعمل جماعي على معظم المستويات في معظم الإدارات
+              </label>
               <div class="col-lg-3">
                 <select class="custom-select" name="f3" required>
-                  <option value="" selected disabled hidden>Please select</option>
-                  <option value="Strongly agree">Strongly agree</option>
-                  <option value="Agree">Agree</option>
-                  <option value="Neither agree nor disagree">Neither agree nor disagree</option>
-                  <option value="Disagree">Disagree</option>
-                  <option value="Strongly disagree">Strongly disagree</option>
+                  <option value="" selected disabled hidden>Please select - يرجى التحديد</option>
+                  <option value="Strongly agree">Strongly agree - موافق بشدة</option>
+                  <option value="Agree">Agree - يوافق </option>
+                  <option value="Neither agree nor disagree">Neither agree nor disagree - محايد</option>
+                  <option value="Disagree">Disagree - لا يوافق </option>
+                  <option value="Strongly disagree">Strongly disagree - لا أوافق بشدة</option>
                 </select>
               </div>
             </div>
@@ -635,7 +659,8 @@
           <div class="form-group">
             <div class="row">
               <div class="col">
-                <textarea class="form-control" placeholder="Enter your other comments" name="comments" rows="4" id="comment"></textarea>
+                <textarea class="form-control" placeholder="Enter your other comments - اكتب تعليقاتك الأخرى
+                " name="comments" rows="4" id="comment"></textarea>
               </div>
             </div>
           </div>

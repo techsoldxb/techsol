@@ -23,12 +23,12 @@ Route::get('/table', function () {
 });
 
 Auth::routes(['verify' => true]);
-Route::get('users', 'UserController@index')->name('users');
+Route::get('users', 'UserController@index')->name('users')->middleware('auth');
 Route::get('changeStatus', 'UserController@changeStatus');
 
-Route::get('/admin', 'HomeController@index')->name('home');
-Route::get('/foh', 'HomeController@icc')->name('homeicc');
-Route::get('/coh', 'HomeController@coh')->name('cash');
+Route::get('/admin', 'HomeController@index')->name('home')->middleware('auth');
+Route::get('/foh', 'HomeController@icc')->name('homeicc')->middleware('auth');
+Route::get('/coh', 'HomeController@coh')->name('cash')->middleware('auth');
 //Route::get('/admin1', 'HomestaffController@index')->name('homestaff');
 
 //Route::resource('/admin', 'HomeController', ['as'=>'admin']);
@@ -39,32 +39,33 @@ Route::get('/product', 'TestController@product')->name('product');
 Route::get('/testhome', 'HomeController@test')->name('testhome');
 Route::get('/dashboard', 'TestController@dashboard')->name('dashboard');
 
-Route::resource('/admin/categories', 'Admin\CategoriesController', ['as'=>'admin']);
-Route::resource('/admin/cashtopups', 'Admin\CashtopupController', ['as'=>'admin']);
-Route::resource('/admin/advances', 'Admin\AdvanceController', ['as'=>'admin']);
-Route::resource('/admin/advanceall', 'Admin\AdvanceallController', ['as'=>'admin']);
-Route::resource('/admin/advancesettlement', 'Admin\AdvancesettlementController', ['as'=>'admin']);
-Route::resource('/admin/advancehistory', 'Admin\AdvancehistoryController', ['as'=>'admin']);
+Route::resource('/admin/categories', 'Admin\CategoriesController', ['as'=>'admin'])->middleware('auth');
+Route::resource('/admin/cashtopups', 'Admin\CashtopupController', ['as'=>'admin'])->middleware('auth');
+Route::resource('/admin/advances', 'Admin\AdvanceController', ['as'=>'admin'])->middleware('auth');
+Route::resource('/admin/advanceall', 'Admin\AdvanceallController', ['as'=>'admin'])->middleware('auth');
+Route::resource('/admin/advancesettlement', 'Admin\AdvancesettlementController', ['as'=>'admin'])->middleware('auth');
+Route::resource('/admin/advancehistory', 'Admin\AdvancehistoryController', ['as'=>'admin'])->middleware('auth');
 //Route::resource('/admin/alladvancesnew', 'Admin\AdvanceallnewController', ['as'=>'admin']);
-Route::resource('/admin/news', 'Admin\NewsController', ['as'=>'admin']);
-Route::resource('/admin/accounts', 'Admin\AccountsController', ['as'=>'admin']);
-Route::resource('/admin/unpaidbills', 'Admin\UnpaidController', ['as'=>'admin']);
-Route::resource('/admin/paidbills', 'Admin\PaidController', ['as'=>'admin']);
-Route::resource('/admin/allpaidbills', 'Admin\AllpaidController', ['as'=>'admin']);
+Route::resource('/admin/news', 'Admin\NewsController', ['as'=>'admin'])->middleware('auth');
+Route::resource('/admin/accounts', 'Admin\AccountsController', ['as'=>'admin'])->middleware('auth');
+Route::resource('/admin/unpaidbills', 'Admin\UnpaidController', ['as'=>'admin'])->middleware('auth');
+Route::resource('/admin/paidbills', 'Admin\PaidController', ['as'=>'admin'])->middleware('auth');
+Route::resource('/admin/allpaidbills', 'Admin\AllpaidController', ['as'=>'admin'])->middleware('auth');
+Route::resource('/admin/expense', 'Admin\ExpenseController', ['as'=>'admin'])->middleware('auth');
 
 Route::get('/admin/accounts/{account}/print', 'Admin\AccountsController@print')->name('admin.accounts.print');
 
 //Booking
 Route::resource('/foh/booking', 'Foh\BookingController', ['as'=>'foh'])->middleware('auth');
-Route::resource('/foh/bookinghistory', 'Foh\BookinghistoryController', ['as'=>'foh']);
-Route::resource('/foh/addon', 'Foh\AddonController', ['as'=>'foh']);
-Route::resource('/foh/pending', 'Foh\PendingController', ['as'=>'foh']);
-Route::resource('/foh/cancel', 'Foh\CancelController', ['as'=>'foh']);
-Route::resource('/foh/cancelled', 'Foh\CancelledController', ['as'=>'foh']);
+Route::resource('/foh/bookinghistory', 'Foh\BookinghistoryController', ['as'=>'foh'])->middleware('auth');
+Route::resource('/foh/addon', 'Foh\AddonController', ['as'=>'foh'])->middleware('auth');
+Route::resource('/foh/pending', 'Foh\PendingController', ['as'=>'foh'])->middleware('auth');
+Route::resource('/foh/cancel', 'Foh\CancelController', ['as'=>'foh'])->middleware('auth');
+Route::resource('/foh/cancelled', 'Foh\CancelledController', ['as'=>'foh'])->middleware('auth');
 
 //HRMS
-Route::resource('/hrms/employee', 'Hrms\EmployeeController', ['as'=>'hrms']);
-Route::resource('/hrms/survey', 'Hrms\SurveyController', ['as'=>'hrms']);
+Route::resource('/hrms/employee', 'Hrms\EmployeeController', ['as'=>'hrms'])->middleware('auth');
+Route::resource('/hrms/survey', 'Hrms\SurveyController', ['as'=>'hrms'])->middleware('auth');
 
 
 

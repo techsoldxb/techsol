@@ -22,26 +22,34 @@
             <a href="{{ route('hrms.survey.create') }}" class="btn btn-primary btn-sm">Add New</a></h3>
 
 
-
+          <div class = "row"> 
+            <div class="col-lg">
           <ul class="list-group">
             <li class="list-group-item list-group-item-success">A. HUMAN RESOURCE FUNCTION AND POLICIES <br>
               1. Staff issues are handled confidentially, fairly, and in a timely manner. <br>
               2. There are clear human resource policies that are understood by all staff. <br>
               3. The human resource systems in this organization are fair and work well.
             </li>
-
+          </div>
+          <div class="col-lg">
             <li class="list-group-item list-group-item-secondary">B. PROFESSIONAL DEVELOPMENT <br>
               1. I believe that the training policy here is fair. <br>
               2. I am satisfied that this organization provides all staff with training opportunities. <br>
               3. I am satisfied that this organization provides me with meaningful opportunities for career development.
             </li>
+          </div>
+          </div>
+
+          <div class = "row"> 
+            <div class="col-lg">
 
             <li class="list-group-item list-group-item-info">C. PERFORMANCE MANAGEMENT <br>
               1. My manager/supervisor provides me with clear direction. <br>
               2. My manager/supervisor provides me with constructive feedback. <br>
               3. My manager/supervisor holds regular performance reviews with me.
             </li>
-
+          </div>
+          <div class="col-lg">
             <li class="list-group-item list-group-item-warning">D. COMMUNICATIONS <br>
               1. My organization communicates directly with me (i.e. they have commented on my work; they have asked
               what motivates me, etc.). <br>
@@ -49,18 +57,27 @@
               role in achieving it). <br>
               3. The goals, values, and objectives of the organization have been clearly identified for me.
             </li>
+          </div>
+        </div>
+
+        <div class = "row"> 
+          <div class="col-lg">
 
             <li class="list-group-item list-group-item-danger">E. EMPLOYEE BENEFITS AND COMPENSATION <br>
               1. I believe that salaries are fair and there are no anomalies or favouritism. <br>
               2. Salaries are competitive compared to other similar organizations. <br>
               3. We have many different benefits in addition to salary.
             </li>
+          </div>
+          <div class="col-lg">
 
             <li class="list-group-item list-group-item-primary">F. EMPLOYEE RELATIONS, WELFARE, AND FULFILLMENT <br>
               1. I feel that management cares about employees and take an interest in them. <br>
               2. I observe that employees trust and respect management. <br>
               3. I observe that there are good working relations and teamwork at most levels in most departments.
             </li>
+          </div>
+        </div>
 
           </ul>
 
