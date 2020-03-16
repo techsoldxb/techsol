@@ -18,6 +18,23 @@
     }, false);
   })();
   </script>
+
+<script>
+  $(function()
+  {
+      $("#myform").validate(
+        {
+          rules: 
+          {
+            item: 
+            {
+              required: true
+            }
+          }
+        });	
+  });
+  </script>
+  
   
   @extends('layouts.admin')
   @section('content')
@@ -203,8 +220,10 @@
 
   <label class = "col-lg-1" for="">Category</label>
   <div class = "col-lg-2">
-<select name="th_exp_cat_id" id="">
-<option value="0">Select</option>
+<select class="custom-select" name="th_exp_cat_id" id="" required>
+
+<option value="0" selected disabled hidden>Please select</option>
+
 @foreach($categories as $c)
 <option value="{{ $c->id}}">{{ $c->exp_group_name}}</option>
 @endforeach   
