@@ -214,21 +214,25 @@
 
    <label class = "col-lg-1" for="">Remarks</label>
    <div class = "col-lg-2">
-   <input type="text" name = "th_pay_remarks"  value="{{ $account->th_pay_remarks}}" class = "form-control" placeholder="Enter Remarks">
+   <input type="text" name = "th_pay_remarks"  value="{{ $account->th_pay_remarks}}" class = "form-control" placeholder="Enter Remarks" required>
    <div class = "clear-fix"></div>
   </div>
 
   <label class = "col-lg-1" for="">Category</label>
   <div class = "col-lg-2">
-<select class="custom-select" name="th_exp_cat_id" id="" required>
-
-<option value="0" selected disabled hidden>Please select</option>
+<select class="custom-select" name="th_exp_cat_id" required>
+<option value="" selected disabled hidden>Please select</option>
 
 @foreach($categories as $c)
 <option value="{{ $c->id}}">{{ $c->exp_group_name}}</option>
 @endforeach   
 
 </select>
+
+
+
+
+
 <a href="{{route('admin.categories.create')}}">New Category</a></li>
   <div class = "clear-fix"></div>
  </div>
