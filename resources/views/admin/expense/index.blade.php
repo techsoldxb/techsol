@@ -46,7 +46,9 @@
             <td>{{ $c->th_exp_cat_id }}</td>
             
             <td>{{ $c->th_exp_cat_name }}</td>
-            <td>{{ $c->total }}</td>
+            <td>{{ number_format($c->total,3) }}</td>
+
+            
             
             
             
