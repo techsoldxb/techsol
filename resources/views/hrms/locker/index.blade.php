@@ -66,7 +66,7 @@
             
             <td>{{ $c->updated_userid }}</td>
 
-            @if($c->update_at =='') 
+            @if($c->updated_at =='') 
             <td></td>    
               @else
               <td>{{ date('d-m-Y', strtotime($c->updated_at)) }}</td>  
