@@ -55,7 +55,7 @@
               <td>{{ $c->lockerno }}</td>   
             
             
-              @if($c->name =='Vacant') 
+              @if($c->name =='') 
             <td></td>    
               @else
               <td>{{ date('d-m-Y', strtotime($c->issued_date)) }}</td>    

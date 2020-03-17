@@ -62,7 +62,7 @@
       <label class = "col-md-3" for="">Name</label>
       <div class = "col-md-3">
      
-      <input type="text" class="form-control" id="validationCustom01" name="name" placeholder="Full Name" value="{{ $locker->name}}" required>
+      <input type="text" class="form-control" id="validationCustom01" name="name" placeholder="Full Name" value="{{ $locker->name}}">
       <div class = "clear-fix"></div>
       </div>     
       </div>
