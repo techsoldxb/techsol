@@ -273,7 +273,8 @@
             @if($segment=='locker')                
             active
             @endif">
-              <i class="nav-icon far fa-circle text-danger"></i>
+              <i class="nav-icon fas fa-lock text-danger"></i>
+              
               <p class="text">Locker</p>
             </a>
           </li>
@@ -558,7 +559,7 @@
             active
             @endif            
             ">
-              <i class="nav-icon fas fa-th"></i>
+              <i class="nav-icon fas fa-lock"></i>
               <p>
                 Locker
                 <span class="right badge badge-danger">New</span>
