@@ -66,6 +66,7 @@ Route::resource('/foh/cancelled', 'Foh\CancelledController', ['as'=>'foh'])->mid
 //HRMS
 Route::resource('/hrms/employee', 'Hrms\EmployeeController', ['as'=>'hrms'])->middleware('auth');
 Route::resource('/hrms/survey', 'Hrms\SurveyController', ['as'=>'hrms'])->middleware('auth');
+Route::resource('/hrms/locker', 'Hrms\LockerController', ['as'=>'hrms'])->middleware('auth');
 
 
 
@@ -75,6 +76,7 @@ Route::get('/export', 'Admin\AccountsController@export')->name('admin.accounts.e
 Route::get('/paidbillexport', 'Admin\AccountsController@paidbillexport')->name('admin.accounts.paidbillexport');
 Route::get('/cashtopupexport', 'Admin\CashtopupController@cashtopupexport')->name('admin.cashtopups.cashtopupexport');
 Route::get('/bookingexport', 'Foh\BookinghistoryController@bookingexport')->name('foh.booking.bookingexport');
+Route::get('/lockerexport', 'Hrms\LockerController@lockerexport')->name('hrms.locker.lockerexport');
 
 
 View::Composer(
