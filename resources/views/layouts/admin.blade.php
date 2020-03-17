@@ -266,7 +266,18 @@
               <i class="far fa-circle nav-icon"></i>
               <p>Advances</p>
             </a>
-          </li>          
+          </li>  
+          
+          <li class="nav-item">
+            <a href="{{route('hrms.locker.index')}}" class="nav-link
+            @if($segment=='locker')                
+            active
+            @endif">
+              <i class="nav-icon far fa-circle text-danger"></i>
+              <p class="text">Locker</p>
+            </a>
+          </li>
+
           @endif
 
 
@@ -537,21 +548,23 @@
             </ul>
           </li>
 
-          @can('isAdmin')
+        
+          @endcan
+
+          @can('isAccess')
           <li class="nav-item">
-            <a href="#" class="nav-link
-            @if($segment=='engg')
+            <a href="{{route('hrms.locker.index')}}" class="nav-link
+            @if($segment=='locker')
             active
             @endif            
             ">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Engineering
+                Locker
                 <span class="right badge badge-danger">New</span>
               </p>
             </a>
           </li>
-          @endcan
           @endcan
 
           

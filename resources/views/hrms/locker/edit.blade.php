@@ -89,7 +89,7 @@
             <option value="BOH">BOH</option>
             <option value="Security">Security</option>                                        
             <option value="Management">Management</option>                                        
-            <option value="Vacant">Vacant</option>     
+            
             
           </select>
 

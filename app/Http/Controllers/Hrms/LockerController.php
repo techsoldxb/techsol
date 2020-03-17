@@ -76,7 +76,11 @@ class LockerController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Locker $locker)
+
+
     {
+
+        $this->authorize('isAccess');
         $arr['locker'] = $locker;
         return view('hrms.locker.edit')->with($arr);
     }
