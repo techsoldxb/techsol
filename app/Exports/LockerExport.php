@@ -1,5 +1,8 @@
 <?php
 
+use Maatwebsite\Excel\Facades\Excel;
+
+
 namespace App\Exports;
 use App\Locker;
 use Maatwebsite\Excel\Concerns\FromCollection;
@@ -13,6 +16,11 @@ use Maatwebsite\Excel\Events\AfterSheet;
 use PhpOffice\PhpSpreadsheet\Shared\Date;
 use PhpOffice\PhpSpreadsheet\Style\NumberFormat;
 use Maatwebsite\Excel\Concerns\WithColumnFormatting;
+
+use RegistersEventListeners;
+use PHPExcel_Style_Border;
+
+
 
 class LockerExport implements FromCollection,WithHeadings,ShouldAutoSize,WithEvents,WithColumnFormatting
 {
@@ -33,13 +41,24 @@ class LockerExport implements FromCollection,WithHeadings,ShouldAutoSize,WithEve
 
        public function registerEvents(): array
        {
-           return [
-               AfterSheet::class    => function(AfterSheet $event) {
-                   $cellRange = 'A1:I1'; // All headers
-                   $event->sheet->getDelegate()->getStyle($cellRange)->getFont()->setSize(12);
-               },
-           ];
+        
+
+        return [
+            AfterSheet::class    => function(AfterSheet $event) {
+                // All headers - set font size to 14
+                $cellRange = 'A1:I1'; 
+                $event->sheet->getDelegate()->getStyle($cellRange)->getFont()->setSize(14);
+    
+                
+            },
+        ];
        }
+
+       public static function afterSheet(AfterSheet $event)
+    {
+        
+        
+    }
 
 
        public function columnFormats(): array
@@ -48,7 +67,7 @@ class LockerExport implements FromCollection,WithHeadings,ShouldAutoSize,WithEve
                
                
                'F' => 'dd-mm-yyyy',
-               'H' => 'dd-mm-yyyy'
+               'I' => 'dd-mm-yyyy'
                
             
                

@@ -48,7 +48,7 @@
             @foreach($locker as $c)
             
             <tr>
-              <td>{{ $c->lockerid }}</td>            
+              <td class="font-weight-bold text-center text-primary">{{ $c->lockerid }}</td>            
               <td>{{ $c->name }}</td>   
               <td>{{ $c->title }}</td>   
               <td>{{ $c->department }}</td>   
