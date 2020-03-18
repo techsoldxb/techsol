@@ -350,90 +350,7 @@ $(function()
 
               </div>
 
-              <div class="card bg-light text-dark">
-                <p class="bg-primary text-white">Job Profile</p>
-                <div class="card-body">
-
-                    <div class="form-group">
-                    <div class = "row">
-                    <label class = "col-lg-2" for="">Date Of Join</label>
-                    <div class = "col-lg-3">    
-                    <input type="text" class="form-control" id="validationCustom02" name="tb_kids" placeholder="Enter number of kids">
-                    </div>
-                    <label class = "col-lg-2" for="">Location</label>
-                    <div class = "col-lg-3">    
-                    <input type="text" class="form-control" id="validationCustom02" name="tb_adult" placeholder="Enter number of adults">           
-                    </div>    
-                    </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class = "row">
-                        <label class = "col-lg-2" for="">Department</label>
-                        <div class = "col-lg-3">    
-                        
-                          <select class="custom-select" name="tb_pay_mode" required>
-                            <option value="" selected disabled hidden>Please select</option>
-                            <option value="Cash">Cash</option>
-                            <option value="Card">Card</option>
-                            <option value="Cheque">Cheque</option>                                        
-                            <option value="Others">Others</option>                                        
-                            
-                          </select>
-
-                        </div>
-                        <label class = "col-lg-2" for="">Designation</label>
-                        <div class = "col-lg-3">    
-
-                          
-                          <select class="custom-select" name="tb_reference" required>
-                            <option value="" selected disabled hidden>Please select</option>
-                            <option value="ICC">ICC</option>
-                            <option value="Manal">Manal</option>
-                            <option value="Gelan">Gelan</option>                                        
-                            <option value="FOH">FOH</option>                                        
-                                                                
-                            
-                          </select>
-
-                        
-                        </div>    
-                        </div>
-                        </div>
-
-                        <div class="form-group">
-                          <div class = "row">
-                          <label class = "col-lg-2" for="">Grade</label>
-                          <div class = "col-lg-3">    
-                          
-                            <select class="custom-select" name="tb_age" required>
-                              <option value="" selected disabled hidden>Please select</option>
-                              <option value="3-6">Kids 3-6 year</option>
-                              <option value="7-12">Child 7-12 years</option>
-                              <option value="13">Adult 13 and above</option>                                        
-                                                                  
-                              
-                            </select>
-  
-                          </div>
-                          <label class = "col-lg-2" for="">Probation Period</label>
-                          <div class = "col-lg-3">   
-                            <input type="text" class="form-control" id="validationCustom02" name="tb_adult" placeholder="Enter number of adults">                                   
-                            
-  
-                          
-                          </div>    
-                          </div>
-                          </div>
-
-                          
-                            
-   
-                   
-
-                            
-                            </div>
-                          </div>
+              
 
                           <div class="card bg-light text-dark">
                             <p class="bg-primary text-white">Payroll Details</p>
@@ -534,5 +451,213 @@ $(function()
      </form>
       </div>
     </section>
+
+    
+    <div class="container mt-3">
+      <h2>Toggleable Tabs</h2>
+      <br>
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#menu1">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#menu2">Payroll</a>
+        </li>
+      </ul>
+    
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div id="home" class="container tab-pane active"><br>
+          <h3>HOME</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <div id="menu1" class="container tab-pane fade"><br>
+          
+          
+
+
+          <div class="card bg-light text-dark">
+            <p class="bg-primary text-white">Job Profile</p>
+            <div class="card-body">
+
+                <div class="form-group">
+                <div class = "row">
+                <label class = "col-lg-2" for="">Date Of Join</label>
+                <div class = "col-lg-3">    
+                <input type="text" class="form-control" id="validationCustom02" name="tb_kids" placeholder="Enter number of kids">
+                </div>
+                <label class = "col-lg-2" for="">Location</label>
+                <div class = "col-lg-3">    
+                <input type="text" class="form-control" id="validationCustom02" name="tb_adult" placeholder="Enter number of adults">           
+                </div>    
+                </div>
+                </div>
+
+                <div class="form-group">
+                    <div class = "row">
+                    <label class = "col-lg-2" for="">Department</label>
+                    <div class = "col-lg-3">    
+                    
+                      <select class="custom-select" name="tb_pay_mode" required>
+                        <option value="" selected disabled hidden>Please select</option>
+                        <option value="Cash">Cash</option>
+                        <option value="Card">Card</option>
+                        <option value="Cheque">Cheque</option>                                        
+                        <option value="Others">Others</option>                                        
+                        
+                      </select>
+
+                    </div>
+                    <label class = "col-lg-2" for="">Designation</label>
+                    <div class = "col-lg-3">    
+
+                      
+                      <select class="custom-select" name="tb_reference" required>
+                        <option value="" selected disabled hidden>Please select</option>
+                        <option value="ICC">ICC</option>
+                        <option value="Manal">Manal</option>
+                        <option value="Gelan">Gelan</option>                                        
+                        <option value="FOH">FOH</option>                                        
+                                                            
+                        
+                      </select>
+
+                    
+                    </div>    
+                    </div>
+                    </div>
+
+                    <div class="form-group">
+                      <div class = "row">
+                      <label class = "col-lg-2" for="">Grade</label>
+                      <div class = "col-lg-3">    
+                      
+                        <select class="custom-select" name="tb_age" required>
+                          <option value="" selected disabled hidden>Please select</option>
+                          <option value="3-6">Kids 3-6 year</option>
+                          <option value="7-12">Child 7-12 years</option>
+                          <option value="13">Adult 13 and above</option>                                        
+                                                              
+                          
+                        </select>
+
+                      </div>
+                      <label class = "col-lg-2" for="">Probation Period</label>
+                      <div class = "col-lg-3">   
+                        <input type="text" class="form-control" id="validationCustom02" name="tb_adult" placeholder="Enter number of adults">                                   
+                        
+
+                      
+                      </div>    
+                      </div>
+                      </div>
+
+                      
+                        
+
+               
+
+                        
+                        </div>
+                      </div>
+
+
+        </div>
+        <div id="menu2" class="container tab-pane fade"><br>
+          
+          
+          <div class="card bg-light text-dark">
+            <p class="bg-primary text-white">Job Profile</p>
+            <div class="card-body">
+
+                <div class="form-group">
+                <div class = "row">
+                <label class = "col-lg-2" for="">Date Of Join</label>
+                <div class = "col-lg-3">    
+                <input type="text" class="form-control" id="validationCustom02" name="tb_kids" placeholder="Enter number of kids">
+                </div>
+                <label class = "col-lg-2" for="">Location</label>
+                <div class = "col-lg-3">    
+                <input type="text" class="form-control" id="validationCustom02" name="tb_adult" placeholder="Enter number of adults">           
+                </div>    
+                </div>
+                </div>
+
+                <div class="form-group">
+                    <div class = "row">
+                    <label class = "col-lg-2" for="">Department</label>
+                    <div class = "col-lg-3">    
+                    
+                      <select class="custom-select" name="tb_pay_mode" required>
+                        <option value="" selected disabled hidden>Please select</option>
+                        <option value="Cash">Cash</option>
+                        <option value="Card">Card</option>
+                        <option value="Cheque">Cheque</option>                                        
+                        <option value="Others">Others</option>                                        
+                        
+                      </select>
+
+                    </div>
+                    <label class = "col-lg-2" for="">Designation</label>
+                    <div class = "col-lg-3">    
+
+                      
+                      <select class="custom-select" name="tb_reference" required>
+                        <option value="" selected disabled hidden>Please select</option>
+                        <option value="ICC">ICC</option>
+                        <option value="Manal">Manal</option>
+                        <option value="Gelan">Gelan</option>                                        
+                        <option value="FOH">FOH</option>                                        
+                                                            
+                        
+                      </select>
+
+                    
+                    </div>    
+                    </div>
+                    </div>
+
+                    <div class="form-group">
+                      <div class = "row">
+                      <label class = "col-lg-2" for="">Grade</label>
+                      <div class = "col-lg-3">    
+                      
+                        <select class="custom-select" name="tb_age" required>
+                          <option value="" selected disabled hidden>Please select</option>
+                          <option value="3-6">Kids 3-6 year</option>
+                          <option value="7-12">Child 7-12 years</option>
+                          <option value="13">Adult 13 and above</option>                                        
+                                                              
+                          
+                        </select>
+
+                      </div>
+                      <label class = "col-lg-2" for="">Probation Period</label>
+                      <div class = "col-lg-3">   
+                        <input type="text" class="form-control" id="validationCustom02" name="tb_adult" placeholder="Enter number of adults">                                   
+                        
+
+                      
+                      </div>    
+                      </div>
+                      </div>
+
+                      
+                        
+
+               
+
+                        
+                        </div>
+                      </div>
+
+
+        </div>
+      </div>
+    </div>
     
 @endsection
