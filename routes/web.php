@@ -53,6 +53,9 @@ Route::resource('/admin/paidbills', 'Admin\PaidController', ['as'=>'admin'])->mi
 Route::resource('/admin/allpaidbills', 'Admin\AllpaidController', ['as'=>'admin'])->middleware('auth');
 Route::resource('/admin/expense', 'Admin\ExpenseController', ['as'=>'admin'])->middleware('auth');
 
+//Cheque
+Route::resource('/admin/cheque', 'Admin\ChequeController', ['as'=>'admin'])->middleware('auth');
+
 Route::get('/admin/accounts/{account}/print', 'Admin\AccountsController@print')->name('admin.accounts.print');
 
 //Booking
