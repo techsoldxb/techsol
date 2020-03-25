@@ -53,6 +53,12 @@ class BeneficiaryController extends Controller
     public function store(Request $request,Admin_Beneficiary $admin_beneficiary)
     {
         $admin_beneficiary->ben_name = $request->ben_name;        
+        $admin_beneficiary->ben_contact = $request->ben_contact; 
+        $admin_beneficiary->ben_email = $request->ben_email; 
+        $admin_beneficiary->ben_mobile = $request->ben_mobile; 
+        $admin_beneficiary->ben_relation = $request->ben_relation; 
+        $admin_beneficiary->ben_type = $request->ben_type; 
+        $admin_beneficiary->ben_limit = $request->ben_limit; 
         
         $admin_beneficiary->ben_status = 1;   
         

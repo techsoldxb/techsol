@@ -51,23 +51,55 @@ class ChequeController extends Controller
      */
     public function store(Request $request,Cheque $cheque)
     {
-        $cheque->comp_code = Auth::user()->company;
+        
+
+            
+        $id = Cheque::orderByDesc('tran_number')->first()->tran_number ?? date('Y') . 00000;
+        $year = date('Y');
+        $id_year = substr($id, 0, 4);
+        $seq = $year <> $id_year ? 0 : +substr($id, -5);
+        $new_id = sprintf("%0+4u%0+6u", $year, $seq+1);      
+
+
+       
+
+      
+        
+
+
+       
+
+        
+
+         
+        
+        foreach ($request->chq_number as $key =>$name) 
+        {
+
+            if($request->chq_number[$key]) {
+                $cheque = resolve(Cheque::class);     
+
+                $cheque->name = $request->name;  
+                $cheque->bank_name = $request->bank_name;  
+        
+                $cheque->narration = $request->narration;
+
+                $cheque->tran_number = $new_id;
+                
+              
+
+                $cheque->chq_number = $request->chq_number[$key] ;
+                $cheque->chq_amount = $request->chq_amount[$key] ;
+                
+                $cheque->reference = $request->reference[$key] ; 
+                $cheque->status = '0';
+
+                $date  = Carbon::createFromFormat('d-m-Y', $request->chq_date[$key]);        
+        $cheque->chq_date = $date;    
+
+                $cheque->comp_code = Auth::user()->company;
         $cheque->user_id = Auth::user()->id;
         $cheque->user_name= Auth::user()->name;
-
-        $cheque->name = $request->name;  
-        $cheque->bank_name = $request->bank_name;  
-
-        $date  = Carbon::createFromFormat('d-m-Y', $request->chq_date);        
-        $cheque->chq_date = $date;   
-
-
-        //$cheque->chq_date = $request->chq_date;  
-        $cheque->chq_amount = $request->chq_amount;  
-        $cheque->chq_number = $request->chq_number; 
-        $cheque->narration = $request->narration; 
-        $cheque->reference = $request->reference;  
-        $cheque->status = '0'; 
 
         $today = Carbon::now();
         $cheque->account_year = $today->year;
@@ -75,7 +107,18 @@ class ChequeController extends Controller
         $todaymnt = Carbon::now();
         $cheque->account_month = $todaymnt->month;
 
-        $cheque->save();       
+                
+                
+                $cheque->save();
+                
+              }
+
+     
+        }      
+
+        
+
+
 
         return redirect()->route('admin.cheque.index');
     }

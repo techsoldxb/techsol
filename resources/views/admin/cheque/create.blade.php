@@ -276,13 +276,13 @@ $(function()
                                     <tr>
                                         <td>
                                             
-                                            <input type="text" class="form-control text-center"  id="chq_number" name="chq_number" 
-                                          onkeypress="return isNumberKey(event)" onkeyup="calc1()" placeholder="" >
+                                            <input type="text" class="form-control text-center"  id="chq_number" name="chq_number[]" 
+                                          onkeypress="return isNumberKey(event)" onkeyup="calc1()" placeholder="" required>
 
                                         </td>
                                         <td>
 
-                                            <input class = "form-control datepicker" id="datepicker" name = "chq_date" placeholder="dd-mm-yyyy" required>  
+                                            <input class = "form-control datepicker" id="datepicker" name = "chq_date[]" placeholder="dd-mm-yyyy" required>  
              
                                             <script>
                                              $('#datepicker').datepicker({
@@ -296,23 +296,23 @@ $(function()
                                         </td>
                                         <td>
                                           
-                                            <input type="text" class="form-control text-center"  id="chq_amount" name="chq_amount" 
-                                          onkeypress="return isNumberKey(event)" onkeyup="calc1()" placeholder="" >
+                                            <input type="text" class="form-control text-center" id="chq_amount"  name = "chq_amount[]"
+                                          onkeypress="return isNumberKey(event)" onkeyup="calc1()" placeholder="" required>
                                             
                                          
                                         </td>
                                         <td>
-                                          <input type="text" class="form-control text-right" id="reference" name="reference" placeholder="" >
+                                          <input type="text" class="form-control text-left" id="reference" name="reference[]" placeholder="" >
                                         </td>
                                     </tr>
                 
                                     <tr>
                                         <td>
-                                            <input type="text" class="form-control text-center"  id="tb_student_qty" name="tb_student_qty" 
+                                            <input type="text" class="form-control text-center"  id="chq_number" name="chq_number[]" 
                                           onkeypress="return isNumberKey(event)" onkeyup="calc1()" placeholder="" >
                                         </td>
                                         <td>
-                                            <input class = "form-control datepicker" id="datepicker1" name = "tb_date" placeholder="dd-mm-yyyy" required>  
+                                            <input class = "form-control datepicker" id="datepicker1" name = "chq_date[]" placeholder="dd-mm-yyyy" >  
              
                                             <script>
                                              $('#datepicker1').datepicker({
@@ -322,24 +322,24 @@ $(function()
                                          </script>
                                         </td>
                                         <td>
-                                          <input type="text" class="form-control text-center" id="tb_teacher_price" name="tb_teacher_price"
+                                          <input type="text" class="form-control text-center" id="tb_teacher_price" name="chq_amount[]"
                                           onkeypress="return isNumberKey(event)" onkeyup="calc2()">
                                         </td>
                                         <td>
                                            
-                                            <input type="text" class="form-control text-center"  id="tb_student_qty" name="tb_student_qty" 
-                                            onkeypress="return isNumberKey(event)" onkeyup="calc1()" placeholder="" >
+                                            <input type="text" class="form-control text-left"  id="tb_student_qty" name="reference[]"  >
+                                            
 
                                         </td>
                                     </tr>
 
                                     <tr>
                                         <td>
-                                            <input type="text" class="form-control text-center"  id="tb_student_qty" name="tb_student_qty" 
+                                            <input type="text" class="form-control text-center"  id="tb_student_qty" name="chq_number[]" 
                                           onkeypress="return isNumberKey(event)" onkeyup="calc1()" placeholder="" >
                                         </td>
                                         <td>
-                                            <input class = "form-control datepicker" id="datepicker2" name = "tb_date" placeholder="dd-mm-yyyy" required>  
+                                            <input class = "form-control datepicker" id="datepicker2" name = "chq_date[]" placeholder="dd-mm-yyyy" >  
              
                                             <script>
                                              $('#datepicker2').datepicker({
@@ -349,24 +349,24 @@ $(function()
                                          </script>
                                         </td>
                                         <td>
-                                          <input type="text" class="form-control text-center" id="tb_teacher_price" name="tb_teacher_price"
+                                          <input type="text" class="form-control text-center" id="tb_teacher_price" name="chq_amount[]"
                                           onkeypress="return isNumberKey(event)" onkeyup="calc2()">
                                         </td>
                                         <td>
                                            
-                                            <input type="text" class="form-control text-center"  id="tb_student_qty" name="tb_student_qty" 
-                                            onkeypress="return isNumberKey(event)" onkeyup="calc1()" placeholder="" >
+                                            <input type="text" class="form-control text-left"  id="tb_student_qty" name="reference[]"  >
+                                            
 
                                         </td>
                                     </tr>
                 
                                     <tr>
                                         <td>
-                                            <input type="text" class="form-control text-center"  id="tb_student_qty" name="tb_student_qty" 
+                                            <input type="text" class="form-control text-center"  id="tb_student_qty" name="chq_number[]" 
                                             onkeypress="return isNumberKey(event)" onkeyup="calc1()" placeholder="" >
                                         </td>
                                         <td>
-                                            <input class = "form-control datepicker" id="datepicker3" name = "tb_date" placeholder="dd-mm-yyyy" required>  
+                                            <input class = "form-control datepicker" id="datepicker3" name = "chq_date[]" placeholder="dd-mm-yyyy" >  
              
                                             <script>
                                              $('#datepicker3').datepicker({
@@ -376,41 +376,15 @@ $(function()
                                          </script>
                                         </td>
                                         <td>
-                                          <input type="text" class="form-control text-center" id="tb_adult_price" name="tb_adult_price" 
+                                          <input type="text" class="form-control text-center" id="tb_adult_price" name="chq_amount[]" 
                                           onkeypress="return isNumberKey(event)" onkeyup="calc3()" placeholder="" >
                                         </td>
                                         <td>
-                                          <input type="text" class="form-control text-right" id="adult_amount" name="adult_amount" 
-                                          onkeypress="return isNumberKey(event)" onkeyup="calc3()" placeholder="" >
+                                          <input type="text" class="form-control text-left" id="adult_amount" name="reference[]" >
+                                          
                                         </td>
                                     </tr>
 
-                                    <tr>
-                                        <td>
-                                            <input type="text" class="form-control text-center"  id="tb_student_qty" name="tb_student_qty" 
-                                          onkeypress="return isNumberKey(event)" onkeyup="calc1()" placeholder="" >
-                                        </td>
-                                        <td>
-                                            <input class = "form-control datepicker" id="datepicker5" name = "tb_date" placeholder="dd-mm-yyyy" required>  
-             
-                                            <script>
-                                             $('#datepicker5').datepicker({
-                                               format: 'dd-mm-yyyy',
-                                                 uiLibrary: 'bootstrap4'
-                                             });
-                                         </script>
-                                        </td>
-                                        <td>
-                                          <input type="text" class="form-control text-center" id="tb_teacher_price" name="tb_teacher_price"
-                                          onkeypress="return isNumberKey(event)" onkeyup="calc2()">
-                                        </td>
-                                        <td>
-                                           
-                                            <input type="text" class="form-control text-center"  id="tb_student_qty" name="tb_student_qty" 
-                                            onkeypress="return isNumberKey(event)" onkeyup="calc1()" placeholder="" >
-
-                                        </td>
-                                    </tr>
 
                                 
 

@@ -235,9 +235,9 @@ $(function()
                     <div class = "col-lg-3">    
                       <select class="custom-select" name="ben_relation" required>
                         <option value="" selected disabled hidden>Please select</option>
-                        <option value="Cash">Cash</option>
-                        <option value="Card">Card</option>
-                        <option value="Cheque">Cheque</option>                                        
+                        <option value="Trade">Trade</option>
+                        <option value="Non Trade">Non Trade</option>                                        
+                        <option value="Self">Self</option>                        
                         <option value="Others">Others</option>                                        
                         
                       </select>
@@ -264,7 +264,7 @@ $(function()
                         <label class = "col-lg-2" for="">Limit</label>
                         <div class = "col-lg-3">    
                         
-                          <input type="email" class="form-control" id="validationCustom02" name="tb_cust_email" placeholder="Enter Email" required>           
+                          <input type="text" class="form-control" id="validationCustom02" name="ben_limit" placeholder="Enter Cheque Limit" required>           
 
                         </div>
                         

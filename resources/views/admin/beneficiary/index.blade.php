@@ -27,11 +27,11 @@
                                  
                 <th> ID   </th>            
                 <th> Name </th>            
-                
+                <th> Contact </th>
                 <th> Mobile </th> 
                 
                 <th> Email</th>
-                <th> Contact </th>
+                
                 
                 <th> Relation</th>
                 <th> Type</th>
@@ -49,33 +49,35 @@
           
           <tr>
             <td>{{ $c->id }}</td>
-            <td>{{ $c->tb_cust_name }}</td>  
+            <td>{{ $c->ben_name }}</td>  
+            <td>{{ $c->ben_contact }}</td>  
             
-            <td>{{ $c->tb_cust_mobile }}</td>  
+            <td>{{ $c->ben_mobile }}</td>  
             
             
-            <td>{{ date('d-m-Y', strtotime($c->tb_date)) }}</td>  
-            <td>{{ $c->tb_time}}</td>  
             
-            <td>{{ $c->tb_reference}}</td>  
+            <td>{{ $c->ben_email}}</td>  
+            
+            <td>{{ $c->ben_relation}}</td>  
           
-            <td> {{ $c->tb_user_name }} </td>
+            <td> {{ $c->ben_type }} </td>
+            <td> {{ $c->ben_user_name }} </td>
             
             <td>{{ date('d-m-Y', strtotime($c->created_at)) }}</td>  
 
             <td>  
-              @if($c->tb_status =='0')  
+              @if($c->ben_status =='0')  
               <div class="text-primary">   
-              Waiting for approval
+              Inactive
               </div>
-              @elseif($c->tb_status =='1')  
+              @elseif($c->ben_status =='1')  
               <div class="text-success">   
-              Request approved
+              Active
               </div>             
 
               @endif            
             </td>
-            <td> {{ $c->tb_appr_user_name }} </td>
+            
              
             
           

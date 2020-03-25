@@ -397,7 +397,7 @@
 
               <li class="nav-item">
                 <a href="{{route('admin.beneficiary.index')}}" class="nav-link
-                @if($segment=='expense')                
+                @if($segment=='beneficiary')                
                 active
                 @endif                
                 ">
