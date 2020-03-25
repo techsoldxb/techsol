@@ -1,6 +1,16 @@
 @extends('layouts.admin')
 @section('content')
 
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+
+
+<style>
+  
+</style>
+
+  
+
    <!-- This script is used to allow only number in the bill amount field -->
    <script>    
     function isNumberKey(evt)
@@ -186,14 +196,33 @@ $(function()
 
     <section class="content">
       <div class="container-fluid">
-     <form  class="needs-validation" name="myform" id="myform" novalidate method = "post" action="{{ route('foh.booking.store') }}" 
+     <form  class="needs-validation" name="myform" id="myform" novalidate method = "post" action="{{ route('admin.cheque.store') }}" 
      enctype="multipart/form-data" autocomplete="off" autofill="off">
      <input type="hidden" name="_token" value = "{{ csrf_token() }}">
      <div class="form-group">
      <div class = "row">
      <label class = "col-lg-2" for="">Beneficiary Name</label>
      <div class = "col-lg-8">    
-     <input type="text" class="form-control" id="validationCustom01" name="tb_cust_name" placeholder="Enter Beneficiary Name" required>
+     
+      
+     <select class="form-control select2"  name="name" required>
+      <option value="" selected disabled hidden>Please select</option>
+      
+      @foreach($admin_beneficiary as $c)
+      <option value="{{ $c->ben_name}}">{{ $c->ben_name}}</option>
+      @endforeach   
+      
+      </select>
+
+      <script>
+        $('.select2').select2();
+    </script>
+
+      
+
+
+
+
      <div class = "clear-fix"></div>
      </div>     
      </div>
@@ -203,7 +232,7 @@ $(function()
      <div class = "row">
      <label class = "col-lg-2" for="">Bank</label>
      <div class = "col-lg-8">    
-     <input type="text" class="form-control" id="validationCustom02" name="tb_cust_addr" placeholder="Select Bank" required>
+     <input type="text" class="form-control" id="validationCustom02" name="bank_name" placeholder="Select Bank" required>
      <div class = "clear-fix"></div>
      </div>     
      </div>
@@ -223,9 +252,9 @@ $(function()
 
                             <div class="form-group">
                               <div class = "row">
-                              <label class = "col-lg-2" for="">Comments</label>
+                              <label class = "col-lg-2" for="">Narration</label>
                               <div class = "col-lg-8">    
-                              <input type="text" class="form-control" id="validationCustom02"  name="tb_comment" placeholder="Enter comments">
+                              <input type="text" class="form-control" id="validationCustom02"  name="narration" placeholder="Enter comments">
                               <div class = "clear-fix"></div>
                               </div>     
                               </div>
@@ -247,13 +276,13 @@ $(function()
                                     <tr>
                                         <td>
                                             
-                                            <input type="text" class="form-control text-center"  id="tb_student_qty" name="tb_student_qty" 
+                                            <input type="text" class="form-control text-center"  id="chq_number" name="chq_number" 
                                           onkeypress="return isNumberKey(event)" onkeyup="calc1()" placeholder="" >
 
                                         </td>
                                         <td>
 
-                                            <input class = "form-control datepicker" id="datepicker" name = "tb_date" placeholder="dd-mm-yyyy" required>  
+                                            <input class = "form-control datepicker" id="datepicker" name = "chq_date" placeholder="dd-mm-yyyy" required>  
              
                                             <script>
                                              $('#datepicker').datepicker({
@@ -267,13 +296,13 @@ $(function()
                                         </td>
                                         <td>
                                           
-                                            <input type="text" class="form-control text-center"  id="tb_student_qty" name="tb_student_qty" 
+                                            <input type="text" class="form-control text-center"  id="chq_amount" name="chq_amount" 
                                           onkeypress="return isNumberKey(event)" onkeyup="calc1()" placeholder="" >
                                             
                                          
                                         </td>
                                         <td>
-                                          <input type="text" class="form-control text-right" id="student_amount" name="student_amount" placeholder="" >
+                                          <input type="text" class="form-control text-right" id="reference" name="reference" placeholder="" >
                                         </td>
                                     </tr>
                 
@@ -389,13 +418,16 @@ $(function()
                                       <td>
                                           
                                       </td>
-                                      <td></td>
-                                      <td class="font-weight-bold text-right">
+                                      <td>
                                         Total OMR 
                                       </td>
-                                      <td>
+                                      <td class="font-weight-bold text-right">
+                                        
                                         <input type="text" class="form-control font-weight-bold  text-right" id="tb_total" 
                                         name="tb_total" placeholder="" disabled>
+                                      </td>
+                                      <td>
+                                        
                                       </td>
                                   </tr>
                 
@@ -414,7 +446,7 @@ $(function()
 
      <div class="form-group">
      <input type="submit" class = "btn btn-primary" Value ="Save">
-     <a href="{{route('foh.booking.index')}}" class="btn btn-warning" role="button">Cancel</a>
+     <a href="{{route('admin.cheque.index')}}" class="btn btn-warning" role="button">Cancel</a>
      </div>
      </form>
       </div>

@@ -56,6 +56,9 @@ Route::resource('/admin/expense', 'Admin\ExpenseController', ['as'=>'admin'])->m
 //Cheque
 Route::resource('/admin/cheque', 'Admin\ChequeController', ['as'=>'admin'])->middleware('auth');
 
+//Beneficary
+Route::resource('/admin/beneficiary', 'Admin\BeneficiaryController', ['as'=>'admin'])->middleware('auth');
+
 Route::get('/admin/accounts/{account}/print', 'Admin\AccountsController@print')->name('admin.accounts.print');
 
 //Booking

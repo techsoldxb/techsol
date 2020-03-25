@@ -16,26 +16,32 @@ class CreateChequesTable extends Migration
         Schema::create('cheques', function (Blueprint $table) {
             
             $table->bigIncrements('id');
-            $table->string('comp_code');
-            $table->string('comp_name');
-            $table->string('bank_code');
-            $table->string('bank_name');
-            $table->string('tran_date');
-            $table->string('name');
-            $table->date('chq_date');
-            $table->integer('amount');
-            $table->string('chq_number');
-            $table->string('reference');
-            $table->string('narration');
-            $table->string('tran_total');
-            $table->string('status');
-            $table->date('status_date');            
-            $table->string('currency');
-            $table->string('flex1');
-            $table->string('flex2');
-            $table->string('flex3');
-            $table->date('flex4');
-            $table->date('flex5');
+            $table->string('comp_code')->nullable();
+            $table->string('comp_name')->nullable();
+            $table->string('bank_code')->nullable();
+            $table->string('bank_name')->nullable();
+            $table->string('tran_date')->nullable();
+            $table->string('name')->nullable();
+            $table->date('chq_date')->nullable();
+            $table->integer('chq_amount')->nullable();
+            $table->string('chq_number')->nullable();
+            $table->string('reference')->nullable();
+            $table->string('narration')->nullable();
+            $table->string('tran_total')->nullable();
+            $table->string('status')->nullable();
+            $table->date('status_date')->nullable(); 
+            $table->string('currency')->nullable();
+            $table->string('account_year')->nullable();
+            $table->string('account_month')->nullable();
+            
+            $table->string('user_id')->nullable();
+            $table->string('user_name')->nullable();
+            
+            $table->string('flex1')->nullable();
+            $table->string('flex2')->nullable();
+            $table->string('flex3')->nullable();
+            $table->date('flex4')->nullable();
+            $table->date('flex5')->nullable();
             $table->timestamps();
 
             // Status 0 - Not cleared

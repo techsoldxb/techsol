@@ -5,16 +5,22 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-use Carbon\Carbon;
-use App\Cheque;
 use App\Admin_Beneficiary;
+
+
+
 Use Auth;
-
-
 use App\User;
+use App\Item;
+Use Gate;
 
-class ChequeController extends Controller
+class BeneficiaryController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -22,9 +28,9 @@ class ChequeController extends Controller
      */
     public function index()
     {
-        $arr['cheque'] = Cheque::where('comp_code', auth()->user()->company)
-        ->orderBy('ID','desc')->get();
-        return view('admin.cheque.index')->with($arr);
+        
+        $arr['admin_beneficiary'] = Admin_Beneficiary::all();
+        return view('admin.beneficiary.index')->with($arr); 
     }
 
     /**
@@ -34,13 +40,8 @@ class ChequeController extends Controller
      */
     public function create()
     {
+        return view('admin.beneficiary.create');
 
-        $arr['admin_beneficiary'] = Admin_Beneficiary::all();        
-        
-
-
-        return view('admin.cheque.create')->with($arr);
-        
     }
 
     /**
@@ -49,35 +50,19 @@ class ChequeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request,Cheque $cheque)
+    public function store(Request $request,Admin_Beneficiary $admin_beneficiary)
     {
-        $cheque->comp_code = Auth::user()->company;
-        $cheque->user_id = Auth::user()->id;
-        $cheque->user_name= Auth::user()->name;
+        $admin_beneficiary->ben_name = $request->ben_name;        
+        
+        $admin_beneficiary->ben_status = 1;   
+        
+        $admin_beneficiary->ben_user_id= Auth::user()->id;
+        $admin_beneficiary->ben_user_name = Auth::user()->name;
+        
+        $admin_beneficiary->save();       
 
-        $cheque->name = $request->name;  
-        $cheque->bank_name = $request->bank_name;  
+        return redirect()->route('admin.beneficiary.index');
 
-        $date  = Carbon::createFromFormat('d-m-Y', $request->chq_date);        
-        $cheque->chq_date = $date;   
-
-
-        //$cheque->chq_date = $request->chq_date;  
-        $cheque->chq_amount = $request->chq_amount;  
-        $cheque->chq_number = $request->chq_number; 
-        $cheque->narration = $request->narration; 
-        $cheque->reference = $request->reference;  
-        $cheque->status = '0'; 
-
-        $today = Carbon::now();
-        $cheque->account_year = $today->year;
-
-        $todaymnt = Carbon::now();
-        $cheque->account_month = $todaymnt->month;
-
-        $cheque->save();       
-
-        return redirect()->route('admin.cheque.index');
     }
 
     /**

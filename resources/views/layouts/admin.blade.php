@@ -383,17 +383,41 @@
                 </a>
               </li>
 
+              <li class="nav-item">
+                <a href="{{route('admin.categories.index')}}" class="nav-link
+                @if($segment=='categories')                
+                active
+                @endif                
+                ">
+                  
+                  <i class="far fa-dot-circle nav-icon"></i>
+                  <p>Category</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="{{route('admin.beneficiary.index')}}" class="nav-link
+                @if($segment=='expense')                
+                active
+                @endif                
+                ">
+                  
+                  <i class="far fa-dot-circle nav-icon"></i>
+                  <p>Beneficiary</p>
+                </a>
+              </li>
+
               
               
 
               
               <li class="nav-item">
-                <a href="{{route('admin.categories.index')}}" class="nav-link 
-                @if($segment=='categories')                
+                <a href="{{route('admin.cheque.index')}}" class="nav-link 
+                @if($segment=='cheque')                
                 active
                 @endif ">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Category</p>
+                  <p>Cheque</p>
                 </a>
               </li>
               @endcan

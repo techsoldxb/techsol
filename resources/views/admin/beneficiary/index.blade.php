@@ -16,8 +16,8 @@
 
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title">Cheque Details
-            <a href="{{ route('admin.cheque.create') }}" class="btn btn-primary btn-sm">Add New</a></h3>   
+            <h3 class="card-title">Booking Details
+            <a href="{{ route('admin.beneficiary.create') }}" class="btn btn-primary btn-sm">Add New</a></h3>   
           </div>
           <!-- /.card-header -->
           <div class="card-body">
@@ -28,77 +28,61 @@
                 <th> ID   </th>            
                 <th> Name </th>            
                 
-                <th> Cheque Number </th> 
+                <th> Mobile </th> 
                 
-                <th> Cheque Date </th>
-                <th> Cheque Amount </th>
+                <th> Email</th>
+                <th> Contact </th>
                 
-                <th> Reference</th>
-                
-                
-                <th> Bank Name</th>
-                <th> Status</th>
-                
-                <th> Created By</th>
+                <th> Relation</th>
+                <th> Type</th>
+                <th> Creaed By</th>
                 <th> Created Date</th>
-                
+                <th>Status</th>
                 <th> Action </th>
               </tr>
               </thead>
               <tbody>
               
-              @if(count($cheque))
+              @if(count($admin_beneficiary))
           
-          @foreach($cheque as $c)
+          @foreach($admin_beneficiary as $c)
           
           <tr>
             <td>{{ $c->id }}</td>
-            <td>{{ $c->name }}</td>  
+            <td>{{ $c->tb_cust_name }}</td>  
             
-            <td>{{ $c->chq_number}}</td>  
-            
-            
-            <td>{{ date('d-m-Y', strtotime($c->chq_date)) }}</td>  
-            <td>{{ number_format($c->chq_amount,3) }} </td> 
+            <td>{{ $c->tb_cust_mobile }}</td>  
             
             
+            <td>{{ date('d-m-Y', strtotime($c->tb_date)) }}</td>  
+            <td>{{ $c->tb_time}}</td>  
             
-            
-            <td>{{ $c->reference}}</td>  
+            <td>{{ $c->tb_reference}}</td>  
           
-            <td> {{ $c->bank_name }} </td>
+            <td> {{ $c->tb_user_name }} </td>
             
-            
+            <td>{{ date('d-m-Y', strtotime($c->created_at)) }}</td>  
 
             <td>  
-              @if($c->status =='0')  
+              @if($c->tb_status =='0')  
               <div class="text-primary">   
-              Not Cleared
+              Waiting for approval
               </div>
-              @elseif($c->status =='1')  
+              @elseif($c->tb_status =='1')  
               <div class="text-success">   
-              Cleared
-              </div>    
-              @elseif($c->status =='2')  
-              <div class="text-warning">   
-              Canceled
-              </div>    
-              @elseif($c->status =='3')  
-              <div class="text-danger">   
-              Bounced
-              </div>         
+              Request approved
+              </div>             
 
               @endif            
             </td>
-            
-            <td> {{ $c->user_name }} </td>
+            <td> {{ $c->tb_appr_user_name }} </td>
              
-            <td>{{ date('d-m-Y', strtotime($c->created_at)) }}</td>  
+            
           
           
           <td>             
             
-            <a href="{{ route('admin.cheque.show',$c->id) }}">
+            <a href="{{ route('admin.beneficiary.show',$c->id) }}">
               <i class="fa fa-print text-green"></i>
               
               </a>
@@ -106,7 +90,7 @@
               /
 
           
-          <a href="{{ route('admin.cheque.edit',$c->id) }}">
+          <a href="{{ route('admin.beneficiary.edit',$c->id) }}">
           <i class="fa fa-edit"></i>
           
           </a>
@@ -117,7 +101,7 @@
           
  
 
-<form onsubmit="return confirm('Do you really want to delete?');" action="{{ route('admin.cheque.destroy',$c->id) }}" method="POST" >
+<form onsubmit="return confirm('Do you really want to delete?');" action="{{ route('admin.beneficiary.destroy',$c->id) }}" method="POST" >
   {{ csrf_field() }}
   <input type="hidden" name="_method" value="DELETE" />  
   <button type="submit"><i class="fa fa-trash text-red" /></i></button>
@@ -142,22 +126,19 @@
               <tfoot>
               <tr>
                                
-                                   
                 <th> ID   </th>            
                 <th> Name </th>            
                 
-                <th> Cheque Number </th> 
+                <th> Mobile </th> 
                 
-                <th> Cheque Date </th>
-                <th> Cheque Amount </th>
-                <th> Reference</th>
+                <th> Email</th>
+                <th> Contact </th>
                 
-                <th> Bank Name</th>
-                <th> Status</th>
-                
-                <th> Created By</th>
+                <th> Relation</th>
+                <th> Type</th>
+                <th> Creaed By</th>
                 <th> Created Date</th>
-                
+                <th>Status</th>
                 <th> Action </th>
                 
               </tr>
