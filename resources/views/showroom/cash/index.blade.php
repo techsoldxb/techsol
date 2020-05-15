@@ -51,9 +51,10 @@
             <td>{{ $c->td_tran_code }}</td>  
             
             <td>{{ $c->td_doc_no }}</td>  
+            <td>{{ $c->td_doc_dt }}</td>  
             
             
-            <td>{{ date('d-m-Y', strtotime($c->td_doc_dt)) }}</td>  
+            
             <td>{{ $c->td_doc_ref}}</td>  
             
             <td>{{ $c->td_doc_amt}}</td>  

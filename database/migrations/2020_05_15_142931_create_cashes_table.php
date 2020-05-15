@@ -19,12 +19,12 @@ class CreateCashesTable extends Migration
             $table->string('td_comp_code')->nullable(); 
             $table->string('td_tran_code')->nullable(); 
             $table->string('td_doc_no')->nullable(); 
-            $table->string('td_doc_dt')->nullable(); 
+            $table->date('td_doc_dt')->nullable(); 
             $table->string('td_doc_ref')->nullable(); 
             $table->integer('td_doc_amt')->nullable(); 
             $table->string('td_desc')->nullable(); 
             $table->string('td_cr_uid')->nullable(); 
-            $table->string('td_cr_dt')->nullable(); 
+            $table->date('td_cr_dt')->nullable(); 
 
             $table->timestamps();
         });
