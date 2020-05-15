@@ -596,14 +596,14 @@
         
           
 
-          <li class="nav-header">BOOKING - GUEST</li>
+          <li class="nav-header">SHOWROOM</li>
           <li class="nav-item">
-            <a href="{{route('foh.booking.create')}}"  class="nav-link
+            <a href="{{route('showroom.enquiry.create')}}"  class="nav-link
             @if($segment=='booking')
             active
             @endif">
               <i class="nav-icon fas fa-file"></i>
-              <p>New Booking</p>
+              <p>Enquiry</p>
             </a>
           </li>
           <li class="nav-item">
