@@ -78,11 +78,8 @@ Route::resource('/hrms/locker', 'Hrms\LockerController', ['as'=>'hrms'])->middle
 
 //Showroom - Enquiry
 Route::resource('/showroom/enquiry', 'Showroom\EnquiryController', ['as'=>'showroom'])->middleware('auth');
-//Route::resource('/foh/bookinghistory', 'Foh\BookinghistoryController', ['as'=>'foh'])->middleware('auth');
-//Route::resource('/foh/addon', 'Foh\AddonController', ['as'=>'foh'])->middleware('auth');
-//Route::resource('/foh/pending', 'Foh\PendingController', ['as'=>'foh'])->middleware('auth');
-//Route::resource('/foh/cancel', 'Foh\CancelController', ['as'=>'foh'])->middleware('auth');
-//Route::resource('/foh/cancelled', 'Foh\CancelledController', ['as'=>'foh'])->middleware('auth');
+Route::resource('/showroom/cash', 'Showroom\CashController', ['as'=>'showroom'])->middleware('auth');
+
 
 
 //Export Route
