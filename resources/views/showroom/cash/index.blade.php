@@ -63,7 +63,9 @@
             <td> {{ $c->td_desc }} </td>
             <td> {{ $c->td_cr_uid }} </td>
             
-            <td>{{ date('d-m-Y', strtotime($c->td_cr_dt)) }}</td>  
+            
+
+            <td>{{ $c->td_cr_dt }}</td>
 
                  
             
