@@ -26,16 +26,16 @@
               <tr>
                                  
                 
-                <th> Document Number </th> 
+                <th> Number </th> 
                 
-                <th> Document Date </th>
+                <th> Date </th>
                 <th> Amount</th>
                 <th> Reference </th>
                 
             
                 <th> Description</th>
                
-                <th> Created Date</th>
+               
 
               </tr>
               </thead>
@@ -63,7 +63,7 @@
             
             
 
-            <td>{{ $c->td_cr_dt }}</td>
+           
 
                  
             
@@ -83,16 +83,14 @@
                                
                    
                 
-                <th> Document Number </th> 
+              <th> Number </th> 
                 
-                <th> Document Date </th>
+                <th> Date </th>
                 <th> Amount</th>
                 <th> Reference </th>
                 
-               
+            
                 <th> Description</th>
-               
-                <th> Created Date</th>
                 
               </tr>
               </tfoot>
