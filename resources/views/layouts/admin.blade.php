@@ -94,9 +94,9 @@
     <a href=" {{ route('home') }}" class="brand-link">
 
       
-    <img src={{asset('dist/img/tclogo.png class=brand-image img-circle elevation-3 style=opacity: .8')}}>
+    <img src={{asset('dist/img/tclogo.PNG class=brand-image img-circle elevation-3 style=opacity: .8')}}>
     
-     <span >Jarwani Group</span>
+     <span >Techsol Group</span>
     </a>
 
     <!-- Sidebar -->
@@ -112,7 +112,7 @@
           
           <img src={{asset('dist/img/malllogonew.PNG class=img-circle elevation-2 alt=MallLogo')}}>
           @else   
-          <img src={{asset('dist/img/bash1.png class=img-circle elevation-2 alt=Logo')}}>
+          <img src={{asset('dist/img/tclogo.png class=img-circle elevation-2 alt=Logo')}}>
           @endif
 
 
