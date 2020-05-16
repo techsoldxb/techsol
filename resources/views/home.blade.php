@@ -49,7 +49,8 @@
             <p>WOB Amount</p>
           </div>
           <div class="icon">
-            <i class="ion ion-bag"></i>
+            
+            <i class="fas fa-rupee-sign"></i>
           </div>
 
           @if($user->user_type =='admin')
@@ -83,7 +84,8 @@
             <p>Expense Amount</p>
           </div>
           <div class="icon">
-            <i class="ion ion-stats-bars"></i>
+            
+            <i class="ion ion-bag"></i>
           </div>
 
           @if($user->user_type =='admin')
@@ -118,7 +120,8 @@
             <p>Cash Balance</p>
           </div>
           <div class="icon">
-            <i class="ion ion-person-add"></i>
+            
+            <i class="ion ion-stats-bars"></i>
           </div>
           @if($user->user_type =='admin')
 

@@ -107,12 +107,12 @@
         <div class="image">
 
           @if(auth()->user()->company =='3')   
-          <img src={{asset('dist/img/tclogo.png class=img-circle elevation-2 alt=Logo')}}>
+          <img src={{asset('dist/img/tclogo.PNG class=img-circle elevation-2 alt=Logo')}}>
           @elseif(auth()->user()->company =='2')
           
           <img src={{asset('dist/img/malllogonew.PNG class=img-circle elevation-2 alt=MallLogo')}}>
           @else   
-          <img src={{asset('dist/img/tclogo.png class=img-circle elevation-2 alt=Logo')}}>
+          <img src={{asset('dist/img/tclogo.PNG class=img-circle elevation-2 alt=Logo')}}>
           @endif
 
 
