@@ -52,13 +52,13 @@
                 <td>
                   
                   @if($c->company =='1')
-                    {{ "Al Jarwani"}}
-                  @elseif($c->company =='2')
-                  {{"Mall Of Muscat"}}
-                  @elseif($c->company =='3')
-                  {{"Oman Aquarium"}}
-                  @elseif($c->company =='4')
-                  {{"Snow Village"}}
+                    {{ "Techsol Group"}}
+                  @elseif($c->company =='002')
+                  {{"Techsol India"}}
+                  @elseif($c->company =='003')
+                  {{"Bash Computers"}}
+                  @elseif($c->company =='004')
+                  {{"Techsol KKD"}}
                   @endif
               
               </td>

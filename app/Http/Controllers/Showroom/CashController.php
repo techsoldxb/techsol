@@ -26,8 +26,11 @@ class CashController extends Controller
      */
     public function index()
     {
-        $arr['cash'] = Cash::All();
+        $arr['cash'] = Cash::where('td_comp_code', auth()->user()->company)->get();
         return view('showroom.cash.index')->with($arr);
+
+
+       
     }
 
     /**
