@@ -26,7 +26,7 @@
               <tr>
                                  
                 <th> Company  </th>            
-                <th> Tran Code </th>        
+                <th> Tran Code </th>     
                 
                 <th> Document Number </th> 
                 

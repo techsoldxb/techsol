@@ -572,7 +572,7 @@
           <li class="nav-header">SHOWROOM</li>
           <li class="nav-item">
             <a href="{{route('admin.accounts.create')}}"  class="nav-link
-            @if($segment=='accounts')
+            @if($segment=='accounts1')
             active
             @endif">
             <i class="nav-icon far fa-circle text-info"></i>
@@ -580,8 +580,8 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{route('foh.booking.index')}}"  class="nav-link
-            @if($segment=='booking.create')
+            <a href="{{route('admin.accounts.index')}}"  class="nav-link
+            @if($segment=='accounts')
             active
             @endif">
             <i class="nav-icon far fa-circle text-danger"></i>

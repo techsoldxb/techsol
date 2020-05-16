@@ -34,14 +34,8 @@
             <h3>
 
 
-              @if($user->user_type =='admin')
-
-
-              {{ number_format($unpaid,3) }}
-
-              @else
-              {{ number_format($userunpaid,3) }}
-              @endif
+              {{ number_format($wob) }}
+              
 
 
 
@@ -52,7 +46,7 @@
 
 
 
-            <p>Paid Bill Amount</p>
+            <p>WOB Amount</p>
           </div>
           <div class="icon">
             <i class="ion ion-bag"></i>
@@ -81,17 +75,12 @@
             <h3>
 
 
-              @if($user->user_type =='admin')
-              {{ number_format($paid,3) }}
-              @else
-              {{ number_format($userpaid,3) }}
-              @endif
-
+            {{ number_format($expense) }}
 
 
             </h3>
 
-            <p>Without Bill Amount</p>
+            <p>Expense Amount</p>
           </div>
           <div class="icon">
             <i class="ion ion-stats-bars"></i>
@@ -119,11 +108,11 @@
         <div class="small-box bg-warning">
           <div class="inner">
             <h3>
-              @if($user->user_type =='admin')
-              {{ number_format($advanceall,3) }}
-              @else
-              {{ number_format($advance,3) }}
-              @endif
+            {{ number_format($wob-$expense) }}
+
+            
+
+
             </h3>
 
             <p>Cash Balance</p>
@@ -153,16 +142,10 @@
 
 
 
-              @if($user->user_type =='admin')
 
 
-              {{ number_format($topup,3) }}
-
-
-              @else
-              0
-              @endif
-
+           0
+           
 
 
 

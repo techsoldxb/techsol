@@ -29,7 +29,7 @@ class AppServiceProvider extends ServiceProvider
        
 
             view()->composer('home', function($view)  {
-                $view->with('unpaid',\App\Account::where('th_comp_code', auth()->user()->company)->where('th_pay_status', 0)->sum('th_bill_amt'));
+                $view->with('expense',\App\Account::where('th_comp_code', auth()->user()->company)->where('th_pay_status', 0)->sum('th_bill_amt'));
     });
 
     view()->composer('home', function($view)  {
@@ -73,6 +73,10 @@ view()->composer(['home','cash'], function($view)  {
 
 view()->composer(['home','cash'], function($view)  {
     $view->with('topup',\App\Cashtopup::where('comp_code', auth()->user()->company)->sum('topup_amt'));
+});
+
+view()->composer(['home','cash'], function($view)  {
+    $view->with('wob',\App\Cash::where('td_comp_code', auth()->user()->company)->sum('td_doc_amt'));
 });
 
 
