@@ -47,11 +47,10 @@
 
                                 <select class="custom-select" name="company" required>
                                     <option value="" selected disabled hidden>Please select</option>
-                                    <option value="1">Jarwani</option>
-                                    <option value="2">Muscat Mall</option>
-                                    <option value="3">Oman Aquarium</option>                                        
-                                    <option value="4">Snow Village</option>   
-                                    <option value="5">Sohar Mall</option>
+                                    <option value="002">Techsol India</option>
+                                    <option value="003">Bash Computer</option>
+                                    <option value="004">Techsol KKD</option>                                        
+                                   
                                   </select>
 
                                 @error('company')
@@ -62,27 +61,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Department') }}</label>
-
-                            <div class="col-md-6">
-                                
-
-                                <select class="custom-select" name="dept" required>
-                                    <option value="" selected disabled hidden>Please select</option>
-                                    <option value="1">FOH</option>
-                                    <option value="2">BOH</option>
-                                    <option value="3">Operation</option>
-                                    <option value="4">Management</option>        
-                                  </select>
-
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
+         
 
 
 

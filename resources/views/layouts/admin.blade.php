@@ -94,7 +94,7 @@
     <a href=" {{ route('home') }}" class="brand-link">
 
       
-    <img src={{asset('dist/img/jarwani.png class=brand-image img-circle elevation-3 style=opacity: .8')}}>
+    <img src={{asset('dist/img/tclogo.png class=brand-image img-circle elevation-3 style=opacity: .8')}}>
     
      <span >Jarwani Group</span>
     </a>
@@ -107,12 +107,12 @@
         <div class="image">
 
           @if(auth()->user()->company =='3')   
-          <img src={{asset('dist/img/logo.png class=img-circle elevation-2 alt=Logo')}}>
+          <img src={{asset('dist/img/tclogo.png class=img-circle elevation-2 alt=Logo')}}>
           @elseif(auth()->user()->company =='2')
           
           <img src={{asset('dist/img/malllogonew.PNG class=img-circle elevation-2 alt=MallLogo')}}>
           @else   
-          <img src={{asset('dist/img/jarwani.png class=img-circle elevation-2 alt=Logo')}}>
+          <img src={{asset('dist/img/bash1.png class=img-circle elevation-2 alt=Logo')}}>
           @endif
 
 
@@ -170,41 +170,14 @@
             ">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Dashboard Techsol
+                Dashboard
               </p>
             </a>
 
           </li>
-          <li class="nav-item">
-            <a href=" {{ route('homeicc') }}" class="nav-link
-            @if(!$segment)
-            active
-            @endif            
-            ">
-            <i class="nav-icon fas fa-th"></i>
-              <p>
-                Dashboard - Booking
-              </p>
-            </a>
-
-          </li>
+          
           @endcan
 
-          @can('isGuest')
-          <li class="nav-item">
-            <a href=" {{ route('homeicc') }}" class="nav-link
-            @if(!$segment)
-            active
-            @endif            
-            ">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Dashboard - Booking
-              </p>
-            </a>
-
-          </li>
-          @endcan
 
 
       
@@ -598,12 +571,12 @@
 
           <li class="nav-header">SHOWROOM</li>
           <li class="nav-item">
-            <a href="{{route('showroom.enquiry.create')}}"  class="nav-link
-            @if($segment=='booking')
+            <a href="{{route('admin.accounts.create')}}"  class="nav-link
+            @if($segment=='accounts')
             active
             @endif">
-              <i class="nav-icon fas fa-file"></i>
-              <p>Enquiry</p>
+            <i class="nav-icon far fa-circle text-info"></i>
+              <p>Add Expenses</p>
             </a>
           </li>
           <li class="nav-item">
@@ -611,76 +584,54 @@
             @if($segment=='booking.create')
             active
             @endif">
-            <i class="nav-icon far fa-circle text-warning"></i>
-              <p>Booking Details</p>
+            <i class="nav-icon far fa-circle text-danger"></i>
+              <p>Expense Details</p>
             </a>
           </li>
 
           <li class="nav-item">
-            <a href="{{route('foh.pending.index')}}"  class="nav-link
-            @if($segment=='pending')
+            <a href="{{route('admin.categories.index')}}"  class="nav-link
+            @if($segment=='categories')
+            active
+            @endif">
+            <i class="nav-icon far fa-circle text-warning"></i>
+              <p>Expense Category</p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="{{route('showroom.cash.index')}}"  class="nav-link
+            @if($segment=='cash')
             active
             @endif">
             <i class="nav-icon fas fa-circle text-info"></i>
 
             
-              <p>Pending Approval</p>
+              <p>WOB Details</p>
             </a>
           </li>
 
-          
-          <li class="nav-item">
-            <a href="{{route('foh.bookinghistory.index')}}"  class="nav-link
-            @if($segment=='bookinghistory')
-            active
-            @endif">
-            <i class="nav-icon far fa-circle"></i>
-              <p>Booking History</p>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="{{route('foh.cancel.index')}}"  class="nav-link
-            @if($segment=='cancel')
-            active
-            @endif">
-            <i class="nav-icon far fa-circle"></i>
-              <p>Booking Cancel</p>
-            </a>
-          </li>
+         
 
           <li class="nav-item">
             <a href="{{route('foh.cancelled.index')}}"  class="nav-link
             @if($segment=='cancelled')
             active
             @endif">
-            <i class="nav-icon far fa-circle"></i>
-              <p>Booking Cancelled</p>
+            <i class="nav-icon fas fa-users"></i>
+            
+
+              <p>Customer Enquiry</p>
             </a>
           </li>
 
-          <li class="nav-item">
-            <a href='{!! url('/calendar') !!}'  class="nav-link">
-              
-              <i class="far fa fa-calendar-alt nav-icon"></i>
-              <p>Calander</p>
-            </a>
-          </li>
 
-          <li class="nav-item">
-            <a href="{{route('foh.addon.index')}}"  class="nav-link
-            @if($segment=='addon')
-            active
-            @endif">
-            <i class="nav-icon fas fa-plus text-danger"></i>
-              <p>Addons</p>
-            </a>
-          </li>
 
 
           <li class="nav-item">
             <a href=" {{ route('users') }}" class="nav-link">
               <i class="nav-icon fas fa-user"></i>
+              
               
               <p>Users</p>
             </a>
@@ -715,7 +666,7 @@
     <div class="float-right d-none d-sm-block">
       <b>Version</b> 3.0.0
     </div>
-    <strong>Copyright &copy; 2019-2020 <a href="http://omanaquarium.om">Oman Aquarium</a>.</strong> All rights
+    <strong>Copyright &copy; 2019-2020 <a href="http://techsolme.com">Techsol Group</a>.</strong> All rights
     reserved.
   </footer>
 

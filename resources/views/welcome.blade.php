@@ -65,7 +65,7 @@
     </head>
             <style>
                 div {
-                    background-image: url('screen.jpg');
+                    background-image: url('crm.jpg');
                     }
             </style>
     <body>

@@ -57,7 +57,8 @@
             
             <td>{{ $c->td_doc_ref}}</td>  
             
-            <td>{{ $c->td_doc_amt}}</td>  
+            
+            <td class="text-right">{{ number_format($c->td_doc_amt) }}</td>
           
             <td> {{ $c->td_desc }} </td>
             <td> {{ $c->td_cr_uid }} </td>

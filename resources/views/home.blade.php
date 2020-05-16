@@ -52,7 +52,7 @@
 
 
 
-            <p>Unpaid Bill Amount</p>
+            <p>Paid Bill Amount</p>
           </div>
           <div class="icon">
             <i class="ion ion-bag"></i>
@@ -91,7 +91,7 @@
 
             </h3>
 
-            <p>Paid Bill Amount</p>
+            <p>Without Bill Amount</p>
           </div>
           <div class="icon">
             <i class="ion ion-stats-bars"></i>
@@ -126,7 +126,7 @@
               @endif
             </h3>
 
-            <p>Cash Advance</p>
+            <p>Cash Balance</p>
           </div>
           <div class="icon">
             <i class="ion ion-person-add"></i>
