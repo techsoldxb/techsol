@@ -138,25 +138,25 @@ class AccountsController extends Controller
         $account->th_acc_month = $todaymnt->month;
         
 
-        if (  ( Auth::user()->company )  == 1) {
+        if (  ( Auth::user()->company )  == 001) {
             
-            $account->th_comp_name = 'Al Jarwani';
+            $account->th_comp_name = 'Techsol Group';
         }
-        else if (  ( Auth::user()->company )  == 2) {
+        else if (  ( Auth::user()->company )  == 002) {
 
-            $account->th_comp_name = 'Mall Of Muscat';
-
-        }
-
-        else if (  ( Auth::user()->company )  == 3) {
-
-            $account->th_comp_name = 'Oman Aquarium';
+            $account->th_comp_name = 'Techsol India';
 
         }
 
-        else if (  ( Auth::user()->company )  == 4) {
+        else if (  ( Auth::user()->company )  == 003) {
 
-            $account->th_comp_name = 'Snow Village';
+            $account->th_comp_name = 'Bash Computers';
+
+        }
+
+        else if (  ( Auth::user()->company )  == 004) {
+
+            $account->th_comp_name = 'Techsol KKD';
 
         }
 

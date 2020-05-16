@@ -84,11 +84,11 @@
               <div style="text-align:center" class="font-weight-bold">
 
                 @if(auth()->user()->company =='1')   
-                Al Jarwani
-              @elseif(auth()->user()->company =='2')
-                Muscat Mall
-              @elseif(auth()->user()->company =='3')
-                Oman Aquarium
+                Techsol Group
+              @elseif(auth()->user()->company =='004')
+                Techsol KKD
+              @elseif(auth()->user()->company =='003')
+                Bash Computers
               @endif
                
                 

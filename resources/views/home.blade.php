@@ -53,17 +53,13 @@
             <i class="fas fa-rupee-sign"></i>
           </div>
 
-          @if($user->user_type =='admin')
+          
 
 
-          <a href="{{route('admin.unpaidbills.index')}}" class="small-box-footer">More info <i
+          <a href="{{route('showroom.cash.index')}}" class="small-box-footer">More info <i
               class="fas fa-arrow-circle-right"></i></a>
 
 
-          @else
-          <a href="{{route('admin.accounts.index')}}" class="small-box-footer">More info <i
-              class="fas fa-arrow-circle-right"></i></a>
-          @endif
 
 
         </div>
@@ -88,17 +84,13 @@
             <i class="ion ion-bag"></i>
           </div>
 
-          @if($user->user_type =='admin')
+          
 
 
-          <a href="{{route('admin.allpaidbills.index')}}" class="small-box-footer">More info <i
+          <a href="{{route('admin.accounts.index')}}" class="small-box-footer">More info <i
               class="fas fa-arrow-circle-right"></i></a>
 
 
-          @else
-          <a href="{{route('admin.paidbills.index')}}" class="small-box-footer">More info <i
-              class="fas fa-arrow-circle-right"></i></a>
-          @endif
 
 
 
@@ -123,17 +115,13 @@
             
             <i class="ion ion-stats-bars"></i>
           </div>
-          @if($user->user_type =='admin')
+          
 
 
-          <a href="{{route('admin.advanceall.index')}}" class="small-box-footer">More info <i
+          <a href="#" class="small-box-footer">More info <i
               class="fas fa-arrow-circle-right"></i></a>
 
 
-          @else
-          <a href="{{route('admin.advances.index')}}" class="small-box-footer">More info <i
-              class="fas fa-arrow-circle-right"></i></a>
-          @endif
         </div>
       </div>
       <!-- ./col -->
@@ -159,7 +147,7 @@
           <div class="icon">
             <i class="ion ion-pie-graph"></i>
           </div>
-          <a href="{{route('admin.cashtopups.index')}}" class="small-box-footer">More info <i
+          <a href="#" class="small-box-footer">More info <i
               class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>

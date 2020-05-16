@@ -187,71 +187,18 @@
 
         
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
-              <p>
-               Acccounts
-                <i class="fas fa-angle-left right"></i>
-                <span class="badge badge-info right">4</span>
-              </p>
-            </a>
+           
             <ul class="nav nav-treeview">
 
               @if(Gate::check('isUser') || Gate::check('isAdmin'))
            
 
-              <li class="nav-item">
-            <a href="{{route('admin.accounts.create')}}" class="nav-link">
-              <i class="nav-icon far fa-circle text-warning"></i>
-              <p>Add Bill</p>
-            </a>
-          </li>
+              
 
-          <li class="nav-item">
-            <a href="{{route('admin.accounts.index')}}" class="nav-link
-            @if($segment=='accounts')                
-            active
-            @endif">
-              <i class="nav-icon far fa-circle text-info"></i>
-              <p>Unpaid Bills</p>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="{{route('admin.paidbills.index')}}" class="nav-link
-            @if($segment=='paidbills')                
-            active
-            @endif">
-              <i class="nav-icon far fa-circle text-danger"></i>
-              <p class="text">Paid Bills</p>
-            </a>
-          </li>
 
        
 
-          <li class="nav-item">
-                
-            <a href="{{route('admin.advances.index')}}" class="nav-link 
-            
-            @if($segment=='advances')                
-            active
-            @endif">
-              <i class="far fa-circle nav-icon"></i>
-              <p>Advances</p>
-            </a>
-          </li>  
-          
-          <li class="nav-item">
-            <a href="{{route('hrms.locker.index')}}" class="nav-link
-            @if($segment=='locker')                
-            active
-            @endif">
-              <i class="nav-icon fas fa-lock text-danger"></i>
-              
-              <p class="text">Locker</p>
-            </a>
-          </li>
-
+        
           @endif
 
 
@@ -590,7 +537,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="{{route('admin.categories.index')}}"  class="nav-link
+            <a href="#"  class="nav-link
             @if($segment=='categories')
             active
             @endif">
@@ -604,17 +551,33 @@
             @if($segment=='cash')
             active
             @endif">
-            <i class="nav-icon fas fa-circle text-info"></i>
+            
+            <i class="far fa-circle nav-icon"></i>
 
             
               <p>WOB Details</p>
             </a>
           </li>
 
+          
+          <li class="nav-item">
+            <a href="{{route('cash')}}"  class="nav-link
+            
+            @if($segment=='cash')
+            active
+            @endif">
+            
+            <i class="nav-icon fas fa-circle text-info"></i>
+
+            
+              <p>Cash On Hand</p>
+            </a>
+          </li>
+
          
 
           <li class="nav-item">
-            <a href="{{route('foh.cancelled.index')}}"  class="nav-link
+            <a href="#"  class="nav-link
             @if($segment=='cancelled')
             active
             @endif">

@@ -57,9 +57,9 @@
               <img src={{asset('dist/img/printjarwani.png')}}>
             </div>
             <div class = "col">
-            <h1 class="m-0 text-dark text-center">Al Jarwani Group</h1>
+            <h1 class="m-0 text-dark text-center">Techsol Group</h1>
             <h2 class="m-0 text-dark text-center">{{ $account->th_comp_name}}</h2>
-            <h4 class="m-0 text-dark text-center">Claim Form</h4>
+            <h4 class="m-0 text-dark text-center">Expense Voucher</h4>
             </div>
             <div class = "col text-center">
               @if($account->th_comp_code =='2')   
