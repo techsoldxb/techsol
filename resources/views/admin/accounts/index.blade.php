@@ -49,7 +49,7 @@
             <td>{{ $c->th_supp_name }}</td>
             <td>{{ date('d-m-Y', strtotime($c->th_bill_dt)) }}</td>
             <td>{{ $c->th_bill_no }}</td>
-            <td class="text-right">{{ number_format($c->th_bill_amt,3) }}</td>
+            <td class="text-right">{{ number_format($c->th_bill_amt) }}</td>
             <td>{{ $c->th_purpose }}</td>
             
             

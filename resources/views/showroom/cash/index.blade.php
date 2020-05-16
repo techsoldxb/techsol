@@ -35,7 +35,7 @@
                 
                 <th> Amount</th>
                 <th> Description</th>
-                <th> Created User</th>
+               
                 <th> Created Date</th>
 
               </tr>
@@ -61,7 +61,7 @@
             <td class="text-right">{{ number_format($c->td_doc_amt) }}</td>
           
             <td> {{ $c->td_desc }} </td>
-            <td> {{ $c->td_cr_uid }} </td>
+           
             
             
 
@@ -94,7 +94,7 @@
                 
                 <th> Amount</th>
                 <th> Description</th>
-                <th> Created User</th>
+               
                 <th> Created Date</th>
                 
               </tr>
