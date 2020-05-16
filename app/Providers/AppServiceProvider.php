@@ -76,7 +76,7 @@ view()->composer(['home','cash'], function($view)  {
 });
 
 view()->composer(['home','cash'], function($view)  {
-    $view->with('wob',\App\Cash::where('th_comp_code', auth()->user()->company)->sum('td_doc_amt'));
+    $view->with('wob',\App\Cash::where('td_comp_code', auth()->user()->company)->sum('td_doc_amt'));
 });
 
 
