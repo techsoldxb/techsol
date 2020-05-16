@@ -25,8 +25,6 @@
               <thead>
               <tr>
                                  
-                <th> Company  </th>            
-                <th> Tran Code </th>     
                 
                 <th> Document Number </th> 
                 
@@ -47,8 +45,7 @@
           @foreach($cash as $c)
           
           <tr>
-            <td>{{ $c->td_comp_code }}</td>
-            <td>{{ $c->td_tran_code }}</td>  
+      
             
             <td>{{ $c->td_doc_no }}</td>  
             <td>{{ $c->td_doc_dt }}</td>  
@@ -83,9 +80,7 @@
               <tfoot>
               <tr>
                                
-               
-              <th> Company  </th>            
-                <th> Tran Code </th>        
+                   
                 
                 <th> Document Number </th> 
                 
