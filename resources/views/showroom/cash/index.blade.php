@@ -29,9 +29,10 @@
                 <th> Document Number </th> 
                 
                 <th> Document Date </th>
+                <th> Amount</th>
                 <th> Reference </th>
                 
-                <th> Amount</th>
+            
                 <th> Description</th>
                
                 <th> Created Date</th>
@@ -50,12 +51,12 @@
             <td>{{ $c->td_doc_no }}</td>  
             <td>{{ $c->td_doc_dt }}</td>  
             
-            
+            <td class="text-right">{{ number_format($c->td_doc_amt) }}</td> 
             
             <td>{{ $c->td_doc_ref}}</td>  
             
             
-            <td class="text-right">{{ number_format($c->td_doc_amt) }}</td>
+           
           
             <td> {{ $c->td_desc }} </td>
            
@@ -85,9 +86,10 @@
                 <th> Document Number </th> 
                 
                 <th> Document Date </th>
+                <th> Amount</th>
                 <th> Reference </th>
                 
-                <th> Amount</th>
+               
                 <th> Description</th>
                
                 <th> Created Date</th>
