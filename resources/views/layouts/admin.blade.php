@@ -563,7 +563,7 @@
           <li class="nav-item">
             <a href="{{route('cash')}}"  class="nav-link
             
-            @if($segment=='cash')
+            @if($segment=='coh')
             active
             @endif">
             
