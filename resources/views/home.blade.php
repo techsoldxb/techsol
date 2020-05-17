@@ -170,24 +170,28 @@
     <div class="row">
       <div class="col-12 col-sm-6 col-md-3">
         <div class="info-box">
-          <span class="info-box-icon bg-info elevation-1"><i class="fas fa-dollar-sign"></i></span>
+          <span class="info-box-icon bg-info elevation-1">
+         
+          <i class="fas fa-rupee-sign"></i>
+          </span>
 
           <div class="info-box-content">
-            <span class="info-box-text">Cash On Hand</span>
+            <span class="info-box-text">WOB Amount - KKD</span>
             <span class="info-box-number">
 
               @if($user->user_type =='admin')
 
 
-              {{ number_format($topup - $paid - $advancepaid,3) }}
+              {{ number_format($wobkkd) }}
 
-              @else
-              Please check with Accounts Dept
-              @endif
 
 
 
             </span>
+            
+            <a href="{{route('showroom.cashkkd.index')}}" class="small-box-footer">More info <i
+              class="fas fa-arrow-circle-right"></i></a>
+              @endif
           </div>
           <!-- /.info-box-content -->
         </div>
@@ -196,11 +200,27 @@
       <!-- /.col -->
       <div class="col-12 col-sm-6 col-md-3">
         <div class="info-box mb-3">
-          <span class="info-box-icon bg-success elevation-1"><i class="fas fa-cog"></i></span>
+          <span class="info-box-icon bg-success elevation-1">
+          
+          <i class="ion ion-bag"></i>
+          </span>
 
           <div class="info-box-content">
-            <span class="info-box-text">Categories</span>
-            <span class="info-box-number">{{ $categories}}</span>
+            <span class="info-box-text">Expense Amount - KKD</span>
+            <span class="info-box-number">
+            
+            
+            @if($user->user_type =='admin')
+
+
+{{ number_format($expenseskkd) }}
+
+
+            
+            </span>
+            <a href="#" class="small-box-footer">More info <i
+              class="fas fa-arrow-circle-right"></i></a>
+              @endif
           </div>
           <!-- /.info-box-content -->
         </div>
@@ -216,8 +236,19 @@
           <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-coins"></i></span>
 
           <div class="info-box-content">
-            <span class="info-box-text">Accounts User</span>
-            <span class="info-box-number">{{$accusers}}</span>
+            <span class="info-box-text">Cash Balance - KKD</span>
+            <span class="info-box-number">
+            
+            @if($user->user_type =='admin')
+
+
+{{ number_format($wobkkd - $expenseskkd) }}
+
+
+            </span>
+            <a href="#" class="small-box-footer">More info <i
+              class="fas fa-arrow-circle-right"></i></a>
+              @endif
           </div>
           <!-- /.info-box-content -->
         </div>

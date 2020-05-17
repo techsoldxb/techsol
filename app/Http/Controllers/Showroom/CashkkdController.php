@@ -16,8 +16,7 @@ use App\User;
 
 Use Gate;
 
-
-class CashController extends Controller
+class CashkkdController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -26,11 +25,10 @@ class CashController extends Controller
      */
     public function index()
     {
-        $arr['cash'] = Cash::where('td_comp_code', auth()->user()->company)->get();
-        return view('showroom.cash.index')->with($arr);       
+        $arr['cash'] = Cash::where('td_comp_code', '004')->get();
+        return view('showroom.cash.index')->with($arr); 
     }
 
-    
     /**
      * Show the form for creating a new resource.
      *

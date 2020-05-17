@@ -22,6 +22,10 @@ Route::get('/table', function () {
     return view('table');
 });
 
+
+
+
+
 Auth::routes(['verify' => true]);
 Route::get('users', 'UserController@index')->name('users')->middleware('auth');
 Route::get('changeStatus', 'UserController@changeStatus');
@@ -79,6 +83,8 @@ Route::resource('/hrms/locker', 'Hrms\LockerController', ['as'=>'hrms'])->middle
 //Showroom - Enquiry
 Route::resource('/showroom/enquiry', 'Showroom\EnquiryController', ['as'=>'showroom'])->middleware('auth');
 Route::resource('/showroom/cash', 'Showroom\CashController', ['as'=>'showroom'])->middleware('auth');
+Route::resource('/showroom/cashkkd', 'Showroom\CashkkdController', ['as'=>'showroom'])->middleware('auth');
+
 
 
 

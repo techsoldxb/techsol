@@ -24,8 +24,7 @@ class AppServiceProvider extends ServiceProvider
      * @return void
      */
     public function boot()
-    {
-     
+    {    
        
 
             view()->composer('home', function($view)  {
@@ -33,10 +32,19 @@ class AppServiceProvider extends ServiceProvider
     });
 
     view()->composer('home', function($view)  {
+        $view->with('expenseskkd',\App\Account::where('th_comp_code', '004')->where('th_pay_status', 0)->sum('th_bill_amt'));
+});
+
+
+
+
+    view()->composer('home', function($view)  {
         $view->with('userunpaid',\App\Account::where('th_comp_code', auth()->user()->company)
         ->where('th_emp_id', auth()->user()->id)
         ->where('th_pay_status', 0)->sum('th_bill_amt'));
             });
+
+
 
 
 
@@ -78,6 +86,12 @@ view()->composer(['home','cash'], function($view)  {
 view()->composer(['home','cash'], function($view)  {
     $view->with('wob',\App\Cash::where('td_comp_code', auth()->user()->company)->sum('td_doc_amt'));
 });
+
+
+view()->composer(['home','cash'], function($view)  {
+    $view->with('wobkkd',\App\Cash::where('td_comp_code','004')->sum('td_doc_amt'));
+});
+
 
 
 

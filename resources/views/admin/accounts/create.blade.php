@@ -475,7 +475,7 @@
               </div><!-- /.col -->
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                  <li class="breadcrumb-item"><a href="{{route('admin.paidbills.index')}}">Paid Bills</a></li>
+                  <li class="breadcrumb-item"><a href="{{route('showroom.cash.index')}}">Expense</a></li>
                   <li class="breadcrumb-item"><a href="{{route('admin.accounts.index')}}">Unpaid Bills</a></li>
                   
     
