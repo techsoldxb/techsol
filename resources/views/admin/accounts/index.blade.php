@@ -31,7 +31,7 @@
             <th> Tran Date </th>
             <th> Name </th>
             <th> Date </th>
-            <th> Bill No. </th>
+            
             <th> Amount </th>
             <th> Narration </th>
             <th> Action </th>
@@ -49,7 +49,7 @@
             <td>{{ date('d-m-Y', strtotime($c->created_at)) }}</td>            
             <td>{{ $c->th_supp_name }}</td>
             <td>{{ date('d-m-Y', strtotime($c->th_bill_dt)) }}</td>
-            <td>{{ $c->th_bill_no }}</td>
+           
             <td class="text-right">{{ number_format($c->th_bill_amt) }}</td>
             <td>{{ $c->th_purpose }}</td>
             
@@ -107,7 +107,7 @@
             <th> Tran Date </th>
             <th> Name </th>
             <th> Date </th>
-            <th> Bill No. </th>
+       
             <th> Amount </th>
             <th> Narration </th>
             <th> Action </th>
