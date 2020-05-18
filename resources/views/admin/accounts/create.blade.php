@@ -497,7 +497,7 @@
     
          <div class="form-group">
          <div class = "row">
-         <label class = "col-lg-1" for="">Supplier Name *</label>
+         <label class = "col-lg-1" for="">Name *</label>
          <div class = "col-lg-2">
          <input class="form-control" data-error="Please enter name field." type="text" name = "th_supp_name" class = "form-control" placeholder="Enter Supplier name" required>
              
@@ -535,7 +535,7 @@
     
          <label class = "col-lg-1" for="">Bill Number *</label>
          <div class = "col-lg-2">
-         <input type="text" name = "th_bill_no" class = "form-control" placeholder="Enter bill number" required>
+         <input type="text" name = "th_bill_no" class = "form-control" placeholder="Enter bill number">
          <div class = "clear-fix"></div>
         </div>
     </div>

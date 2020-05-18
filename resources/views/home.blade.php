@@ -34,7 +34,7 @@
             <h3>
 
 
-              {{ number_format($wob) }}
+              {{ number_format($wob-$expense) }}
               
 
 
@@ -46,7 +46,7 @@
 
 
 
-            <p>WOB Amount</p>
+            <p>Cash On Hand</p>
           </div>
           <div class="icon">
             
@@ -102,14 +102,14 @@
         <div class="small-box bg-warning">
           <div class="inner">
             <h3>
-            {{ number_format($wob-$expense) }}
+            {{ number_format($wob) }}
 
             
 
 
             </h3>
 
-            <p>Cash Balance</p>
+            <p>WOB Amount</p>
           </div>
           <div class="icon">
             
@@ -176,13 +176,13 @@
           </span>
 
           <div class="info-box-content">
-            <span class="info-box-text">WOB Amount - KKD</span>
+            <span class="info-box-text">Cash On Hand - KKD</span>
             <span class="info-box-number">
 
               @if($user->user_type =='admin')
 
 
-              {{ number_format($wobkkd) }}
+              {{ number_format($wobkkd-$expenseskkd) }}
 
 
 
@@ -236,13 +236,13 @@
           <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-coins"></i></span>
 
           <div class="info-box-content">
-            <span class="info-box-text">Cash Balance - KKD</span>
+            <span class="info-box-text">WOB Amount - KKD</span>
             <span class="info-box-number">
             
             @if($user->user_type =='admin')
 
 
-{{ number_format($wobkkd - $expenseskkd) }}
+{{ number_format($wobkkd) }}
 
 
             </span>
