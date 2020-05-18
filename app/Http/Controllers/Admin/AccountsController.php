@@ -73,9 +73,11 @@ class AccountsController extends Controller
     public function create()
     {
 
-        $arr['category'] = Category::all();
+        $arr['category'] = Category::where('exp_group_status',1)->orderBy('exp_group_name','asc')->get();
         
         return view('admin.accounts.create')->with($arr);
+
+        
 
         
     }
