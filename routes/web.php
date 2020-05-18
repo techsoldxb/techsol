@@ -84,6 +84,7 @@ Route::resource('/hrms/locker', 'Hrms\LockerController', ['as'=>'hrms'])->middle
 Route::resource('/showroom/enquiry', 'Showroom\EnquiryController', ['as'=>'showroom'])->middleware('auth');
 Route::resource('/showroom/cash', 'Showroom\CashController', ['as'=>'showroom'])->middleware('auth');
 Route::resource('/showroom/cashkkd', 'Showroom\CashkkdController', ['as'=>'showroom'])->middleware('auth');
+Route::resource('/showroom/accountskkd', 'Admin\AccountskkdController', ['as'=>'showroom'])->middleware('auth');
 
 
 

@@ -218,7 +218,7 @@
 
             
             </span>
-            <a href="#" class="small-box-footer">More info <i
+            <a href="{{route('showroom.accountskkd.index')}}" class="small-box-footer">More info <i
               class="fas fa-arrow-circle-right"></i></a>
               @endif
           </div>
