@@ -56,7 +56,7 @@
           
 
 
-          <a href="{{route('showroom.cash.index')}}" class="small-box-footer">More info <i
+          <a href="#" class="small-box-footer">More info <i
               class="fas fa-arrow-circle-right"></i></a>
 
 
@@ -118,7 +118,7 @@
           
 
 
-          <a href="#" class="small-box-footer">More info <i
+          <a href="{{route('showroom.cash.index')}}" class="small-box-footer">More info <i
               class="fas fa-arrow-circle-right"></i></a>
 
 
@@ -189,7 +189,7 @@
 
             </span>
             
-            <a href="{{route('showroom.cashkkd.index')}}" class="small-box-footer">More info <i
+            <a href="#" class="small-box-footer">More info <i
               class="fas fa-arrow-circle-right"></i></a>
               @endif
           </div>
@@ -246,7 +246,7 @@
 
 
             </span>
-            <a href="#" class="small-box-footer">More info <i
+            <a href="{{route('showroom.cashkkd.index')}}" class="small-box-footer">More info <i
               class="fas fa-arrow-circle-right"></i></a>
               @endif
           </div>
