@@ -27,7 +27,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Edit Bill</h1>
+            <h1 class="m-0 text-dark">Edit Expense</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -49,7 +49,7 @@
      <input type="hidden" name="_token" value = "{{ csrf_token() }}">
      <div class="form-group">
      <div class = "row">
-     <label class = "col-lg-1" for="">Supplier Name *</label>
+     <label class = "col-lg-1" for="">Name *</label>
      <div class = "col-lg-5">
      <input class="form-control" data-error="Please enter name field." type="text" name = "th_supp_name" 
      value="{{ $account->th_supp_name}}" class = "form-control" placeholder="Enter Supplier name" required>
@@ -60,7 +60,7 @@
 
      <div class="form-group">
      <div class = "row">
-     <label class = "col-lg-1" for="">Bill Date *</label>
+     <label class = "col-lg-1" for="">Date *</label>
      <div class = "col-lg-2">
      <input class = "form-control" id="datepicker"  name = "th_bill_dt" value="{{ $account->th_bill_dt->format('d-m-Y') }}" placeholder="Enter bill date" required>
     <script>
@@ -88,15 +88,15 @@
     
     <div class="form-group">
      <div class = "row">
-     <label class = "col-lg-1" for="">Bill Amount *</label>
+     <label class = "col-lg-1" for="">Amount *</label>
      <div class = "col-lg-2">
      <input type="text" name = "th_bill_amt" value="{{ $account->th_bill_amt}}" class = "form-control" placeholder="Enter bill amount" required> </div>
      
      
 
-     <label class = "col-lg-1" for="">Payment Mode</label>
+     <label class = "col-lg-1" for="">Category</label>
      <div class = "col-lg-2">
-     <input type="text" name = "th_pay_mode" value="{{ $account->th_pay_mode}}" class = "form-control" placeholder="Enter Cash / Card">
+     <input type="text" name = "th_pay_mode" value="{{ $account->th_exp_cat_name}}" class = "form-control">
      <div class = "clear-fix"></div>
     </div>
     </div>
@@ -148,7 +148,7 @@
   
   
 <div class="form-group">
-  <label for="comment">Justification:</label>
+  <label for="comment">Narration:</label>
 
   <input type="text" name = "th_purpose" 
   value="{{ $account->th_purpose}}" class = "form-control"  required>
