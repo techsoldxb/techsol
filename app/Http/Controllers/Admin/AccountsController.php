@@ -72,7 +72,12 @@ class AccountsController extends Controller
      */
     public function create()
     {
-        return view('admin.accounts.create');
+
+        $arr['category'] = Category::all();
+        
+        return view('admin.accounts.create')->with($arr);
+
+        
     }
 
     /**

@@ -71,7 +71,7 @@
             /
 
           
-            <form onsubmit="return confirm('Do you really want to delete?');" action="{{ route('admin.accounts.destroy',$c->id) }}" method="POST" >
+            <form onsubmit="return confirm('Do you really want to delete?');" action="{{ route('admin.accountskkd.destroy',$c->id) }}" method="POST" >
               {{ csrf_field() }}
               <input type="hidden" name="_method" value="DELETE" />
             

@@ -97,6 +97,14 @@ class AccountskkdController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
+       // Account::destroy($id);                  
+       // return redirect()->route('admin.accounts.index')->with('error','Transaction deleted successfully!');  
+        
+       Account::find($id)->delete();
+    
+
+       //Account::find($request->id)->delete();
+       return redirect()->route('showroom.accountskkd.index')->with('success','Transaction deleted successfully');
     }
 }

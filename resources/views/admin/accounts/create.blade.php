@@ -471,12 +471,12 @@
           <div class="container-fluid">
             <div class="row mb-2">
               <div class="col-sm-6">
-                <h1 class="m-0 text-dark">Add Bill</h1>
+                <h1 class="m-0 text-dark">Add Expense</h1>
               </div><!-- /.col -->
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                  <li class="breadcrumb-item"><a href="{{route('showroom.cash.index')}}">Expense</a></li>
-                  <li class="breadcrumb-item"><a href="{{route('admin.accounts.index')}}">Unpaid Bills</a></li>
+                  <li class="breadcrumb-item"><a href="{{route('showroom.cash.index')}}">WOB</a></li>
+                  <li class="breadcrumb-item"><a href="{{route('admin.accounts.index')}}">Expense</a></li>
                   
     
                   
@@ -499,7 +499,7 @@
          <div class = "row">
          <label class = "col-lg-1" for="">Name *</label>
          <div class = "col-lg-2">
-         <input class="form-control" data-error="Please enter name field." type="text" name = "th_supp_name" class = "form-control" placeholder="Enter Supplier name" required>
+         <input class="form-control" data-error="Please enter name field." type="text" name = "th_supp_name" class = "form-control" placeholder="Enter name" required>
              
       
         
@@ -508,7 +508,7 @@
     
          <label class = "col-lg-1" for="">Contact Number</label>
          <div class = "col-lg-2">
-         <input type="text" name = "th_supp_contact" class = "form-control" placeholder="Enter supplier contact number">
+         <input type="text" name = "th_supp_contact" class = "form-control" placeholder="Enter contact number">
          <div class = "clear-fix"></div>
         </div>
     </div>
@@ -519,7 +519,7 @@
     
          <div class="form-group">
          <div class = "row">
-         <label class = "col-lg-1" for="">Bill Date *</label>
+         <label class = "col-lg-1" for="">Date *</label>
          <div class = "col-lg-2">
          <input class = "form-control datepicker" id="datepicker" name = "th_bill_dt" placeholder="dd-mm-yyyy" required>  
              
@@ -533,7 +533,7 @@
       </div>
          
     
-         <label class = "col-lg-1" for="">Bill Number *</label>
+         <label class = "col-lg-1" for="">Bill Number</label>
          <div class = "col-lg-2">
          <input type="text" name = "th_bill_no" class = "form-control" placeholder="Enter bill number">
          <div class = "clear-fix"></div>
@@ -542,20 +542,34 @@
         
         <div class="form-group">
          <div class = "row">
-         <label class = "col-lg-1" for="">Bill Amount *</label>
+         <label class = "col-lg-1" for="">Amount *</label>
          <div class = "col-lg-2">
          
          <input type="text" name = "th_bill_amt" onkeypress="return isNumberKey(event)" class = "form-control "  placeholder="Enter bill amount" required> </div>
          
     
-         <label class = "col-lg-1" for="">Payment Mode</label>
+         <label class = "col-lg-1" for="">Category</label>
          <div class = "col-lg-2">
-          <select class="custom-select" name="th_pay_mode">
-            <option>Cash</option>
-            <option>Card</option>
-            <option>Others</option>        
-          </select>
-         <div class = "clear-fix"></div>
+         
+         <select class="custom-select" name="th_exp_cat_id" required>
+<option value="" selected disabled hidden>Please select</option>
+
+@foreach($category as $c)
+<option value="{{ $c->id}}">{{ $c->exp_group_name}}</option>
+@endforeach   
+</select>
+
+
+
+
+
+
+
+
+
+<a href="{{route('admin.categories.create')}}">New Category</a></li>
+         
+                  <div class = "clear-fix"></div>
         </div>
         </div>
     
@@ -574,9 +588,9 @@
         <tbody>    
           <tr>       
             <td class="text-center">1</td>        
-            <td ><input type="text" class="form-control" name = "td_item_desc[]" id="row1" required></td>
-            <td ><input class="form-control text-center" type="text" onkeypress="return isNumberKey(event)" name="td_qty[]"  id="qty1" onkeyup="calc1()" value="" required></td>
-            <td ><input class="form-control text-right" type="text" onkeypress="return isNumberKey(event)" name="td_unit_price[]" id="price1" onkeyup="calc1()" value="" required></td>
+            <td ><input type="text" class="form-control" name = "td_item_desc[]" id="row1" ></td>
+            <td ><input class="form-control text-center" type="text" onkeypress="return isNumberKey(event)" name="td_qty[]"  id="qty1" onkeyup="calc1()" value="" ></td>
+            <td ><input class="form-control text-right" type="text" onkeypress="return isNumberKey(event)" name="td_unit_price[]" id="price1" onkeyup="calc1()" value="" ></td>
             <td > <input class="form-control text-right" type="text" name="amount" id="amount1"   disabled></td>
           </tr> 
            <tr>
@@ -656,8 +670,8 @@
          </div>
       
     <div class="form-group">
-      <label for="comment">Justification:</label>
-      <textarea name = "th_purpose" class="form-control" rows="2" id="comment" placeholder="Enter the purpose of the purchase" required></textarea>
+      <label for="comment">Narration:</label>
+      <textarea name = "th_purpose" class="form-control" rows="2" id="comment" placeholder="Enter the narration in detail" required></textarea>
     </div>
     
     

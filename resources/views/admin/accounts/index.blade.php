@@ -29,12 +29,13 @@
                                    
                 <th> Tran No.   </th>                       
             <th> Tran Date </th>
-            <th> Supplier Name </th>
-            <th> Bill Date </th>
+            <th> Name </th>
+            <th> Date </th>
             <th> Bill No. </th>
-            <th> Bill Amount </th>
-            <th> Purpose </th>
+            <th> Amount </th>
+            <th> Narration </th>
             <th> Action </th>
+
                 </tr>
                 </thead>
                 <tbody>
@@ -104,11 +105,11 @@
                                  
                 <th> Tran No.   </th>                       
             <th> Tran Date </th>
-            <th> Supplier Name </th>
-            <th> Bill Date </th>
+            <th> Name </th>
+            <th> Date </th>
             <th> Bill No. </th>
-            <th> Bill Amount </th>
-            <th> Purpose </th>
+            <th> Amount </th>
+            <th> Narration </th>
             <th> Action </th>
                 </tr>
                 </tfoot>
