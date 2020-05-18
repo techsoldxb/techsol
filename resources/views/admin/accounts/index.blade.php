@@ -55,12 +55,7 @@
             
             
             <td>             
-              <a href="{{ route('admin.accounts.print', $c) }}" >
-              
-              <i class="fa fa-print text-green" aria-hidden="true"></i>
-              
-              </a>
-              /
+             
            
 
             

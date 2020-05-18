@@ -537,7 +537,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="#"  class="nav-link
+            <a href="{{route('admin.categories.index')}}"  class="nav-link
             @if($segment=='categories')
             active
             @endif">
