@@ -551,11 +551,11 @@
          <label class = "col-lg-1" for="">Category</label>
          <div class = "col-lg-2">
          
-         <select class="custom-select" name="th_exp_cat_id" required>
+         <select class="custom-select" name="th_exp_cat_name" required>
 <option value="" selected disabled hidden>Please select</option>
 
 @foreach($category as $c)
-<option value="{{ $c->id}}">{{ $c->exp_group_name}}</option>
+<option value="{{ $c->exp_group_name}}">{{ $c->exp_group_name}}</option>
 @endforeach   
 </select>
 

@@ -136,6 +136,8 @@ class AccountsController extends Controller
         $account->th_dept_code = Auth::user()->dept;
         $account->th_comp_code = Auth::user()->company;
 
+        $account->th_exp_cat_name = $request->th_exp_cat_name;
+
         $today = Carbon::now();
         $account->th_acc_year = $today->year;
 
