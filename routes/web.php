@@ -86,6 +86,8 @@ Route::resource('/showroom/cash', 'Showroom\CashController', ['as'=>'showroom'])
 Route::resource('/showroom/cashkkd', 'Showroom\CashkkdController', ['as'=>'showroom'])->middleware('auth');
 Route::resource('/showroom/accountskkd', 'Admin\AccountskkdController', ['as'=>'showroom'])->middleware('auth');
 
+Route::resource('/jobcard/jobenquiry', 'Job\JobcardController', ['as'=>'jobcard'])->middleware('auth');
+
 
 
 

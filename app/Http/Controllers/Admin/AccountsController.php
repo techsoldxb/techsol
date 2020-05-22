@@ -220,10 +220,15 @@ class AccountsController extends Controller
         //$arr['item'] = $item;
         //return view('admin.accounts.edit')->with($arr);
 
-        
+        $arr['category'] = Category::where('exp_group_status',1)->orderBy('exp_group_name','asc')->get();
 
         $items = Item::where('td_tran_no', $account->th_tran_no)->Get();     
-        return view('admin.accounts.edit')->with(['item' => $items, 'account' => $account]); 
+        return view('admin.accounts.edit')->with(['item' => $items, 'account' => $account])->with($arr); 
+
+        
+    
+
+
     }
 
 
@@ -274,6 +279,7 @@ class AccountsController extends Controller
         $account->th_bill_amt = $request->th_bill_amt;
        
         $account->th_item_type = $request->th_item_type;
+        $account->th_exp_cat_name = $request->th_exp_cat_name;    
         $account->th_purpose = $request->th_purpose;        
         $account->save();
         

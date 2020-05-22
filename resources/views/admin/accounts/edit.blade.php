@@ -79,9 +79,9 @@
 
      
 
-     <label class = "col-lg-1" for="">Bill Number *</label>
+     <label class = "col-lg-1" for="">Bill Number</label>
      <div class = "col-lg-2">
-     <input type="text" name = "th_bill_no" value="{{ $account->th_bill_no}}" class = "form-control" placeholder="Enter bill number" required>
+     <input type="text" name = "th_bill_no" value="{{ $account->th_bill_no}}" class = "form-control" placeholder="Enter bill number">
      <div class = "clear-fix"></div>
     </div>
 </div>
@@ -96,7 +96,17 @@
 
      <label class = "col-lg-1" for="">Category</label>
      <div class = "col-lg-2">
-     <input type="text" name = "th_pay_mode" value="{{ $account->th_exp_cat_name}}" class = "form-control">
+    
+
+     <select class="custom-select" name="th_exp_cat_name" value="{{ $account->th_exp_cat_name}}" required>
+<option value="" selected disabled hidden>{{ $account->th_exp_cat_name}}</option>
+
+@foreach($category as $c)
+<option value="{{ $c->exp_group_name}}">{{ $c->exp_group_name}}</option>
+@endforeach   
+</select>
+
+
      <div class = "clear-fix"></div>
     </div>
     </div>

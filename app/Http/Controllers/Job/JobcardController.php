@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Showroom;
+namespace App\Http\Controllers\Job;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -8,21 +8,18 @@ use Illuminate\Http\Request;
 use Carbon\Carbon;
 
 
-use App\Enquiry;
-use App\Addon;
+use App\Jobcard;
+
 Use Auth;
 use App\User;
 
 Use Gate;
 
-//we need to add the below if we create new excel export
-use App\Exports\BookingExport; 
-use Maatwebsite\Excel\Facades\Excel; 
 
-class EnquiryController extends Controller
+
+
+class JobcardController extends Controller
 {
-
-
     /**
      * Display a listing of the resource.
      *
@@ -31,8 +28,12 @@ class EnquiryController extends Controller
     public function index()
     {
         
-        $arr['enquiry'] = Enquiry::All();
-        return view('showroom.enquiry.index')->with($arr); 
+        $arr['jobcard'] = Jobcard::where('job_comp_code', auth()->user()->company)
+        ->where('job_status_id','0')
+        ->get();
+    
+        return view('jobcard.jobenquiry.index')->with($arr); 
+        
     }
 
     /**
@@ -42,7 +43,7 @@ class EnquiryController extends Controller
      */
     public function create()
     {
-        return view('showroom.enquiry.create');
+        return view('jobcard.jobenquiry.create');
     }
 
     /**

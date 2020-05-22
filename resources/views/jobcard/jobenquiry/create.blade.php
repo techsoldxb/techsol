@@ -168,7 +168,7 @@ $(function()
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Customer Enquiry Form</h1>
+            <h1 class="m-0 text-dark">Job Card</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -189,121 +189,57 @@ $(function()
      <form  class="needs-validation" name="myform" id="myform" novalidate method = "post" action="{{ route('foh.booking.store') }}" 
      enctype="multipart/form-data" autocomplete="off" autofill="off">
      <input type="hidden" name="_token" value = "{{ csrf_token() }}">
-     
-    
-
-     
      <div class="form-group">
-            <div class = "row">
-            <label class = "col-lg-2" for="">Customer Name</label>
-            <div class = "col-lg-3">    
-            <input type="text" class="form-control" id="validationCustom02" name="tb_cust_mobile" placeholder="Enter customer name" required>
-            </div>
-            <label class = "col-lg-2" for="">Gender</label>
-            <div class = "col-lg-3">    
-           
-     
-            <select class="custom-select" name="tb_type" required>
-                                <option value="" selected disabled hidden>Please select</option>
-                                <option value="School Trip">Male</option>
-                                <option value="Corporate Booking">Female</option>
-                                <option value="Events">Events</option>                                        
-                                                                    
-                                
-                              </select>
-
-            </div>     
-            </div>
-            </div>
+     <div class = "row">
+     <label class = "col-lg-2" for="">Customer Name</label>
+     <div class = "col-lg-8">    
+     <input type="text" class="form-control" id="validationCustom01" name="job_cust_name" placeholder="Enter customer name" required>
+     <div class = "clear-fix"></div>
+     </div>     
+     </div>
+     </div>
 
 
             <div class="form-group">
             <div class = "row">
             <label class = "col-lg-2" for="">Mobile Number</label>
             <div class = "col-lg-3">    
-
-           
-
-            
-                  <input type="email" class="form-control" placeholder="Enter mobile number">
-                
-
-
-
-          
+            <input type="text" class="form-control" id="validationCustom02" name="job_cust_mobile" placeholder="Enter mobile number" required>
             </div>
             <label class = "col-lg-2" for="">Email</label>
             <div class = "col-lg-3">    
-            
-           
-                  <input type="email" class="form-control" placeholder="Email">
-                
-
+            <input type="email" class="form-control" id="validationCustom02" name="job_cust_email" placeholder="Enter Email" required>           
             </div>     
             </div>
             </div>
 
              
 
-                
-                <div class="form-group">
-                <div class = "row">
-                <label class = "col-lg-2" for="">Date of Visit</label>
-                <div class = "col-lg-3">    
-                
-                    <input class = "form-control datepicker" id="datepicker" name = "tb_date" placeholder="dd-mm-yyyy" required>  
-             
-                    <script>
-                     $('#datepicker').datepicker({
-                       format: 'dd-mm-yyyy',
-                         uiLibrary: 'bootstrap4'
-                     });
-                 </script>
 
-
-                </div>
-                <label class = "col-lg-2" for="">Time</label>
-                <div class = "col-lg-3">    
-                <input type="time" class="form-control" id="validationCustom02" name="tb_time" placeholder="Enter arrival time" required> 
-           <script>
-              $('.datetimepicker').datetimepicker({
-                  autoclose: true,
-                  showMeridian:false
-              }); 
-           </script>
-                
-                
-                
-             
-                  
-                </div>     
-                </div>
-                </div>
-
+                    <div class="form-group">
+                    <div class = "row">
+                    <label class = "col-lg-2" for="">Brand</label>
+                    <div class = "col-lg-3">    
+                    <input type="text" class="form-control" id="validationCustom02" name="job_item_brand" placeholder="Enter brand name">
+                    </div>
+                    <label class = "col-lg-2" for="">Model</label>
+                    <div class = "col-lg-3">    
+                    <input type="text" class="form-control" id="validationCustom02" name="job_item_model" placeholder="Enter model number">           
+                    </div>    
+                    </div>
+                    </div>
 
                     <div class="form-group">
                         <div class = "row">
-                        <label class = "col-lg-2" for="">Purpose Of Visit</label>
+                        <label class = "col-lg-2" for="">Item Detail</label>
                         <div class = "col-lg-3">    
-
-                        
-        
-                        
-                        <div class="checkbox">
-      <label><input type="checkbox" value="">Purchase</label>
-    </div>
-    <div class="checkbox">
-      <label><input type="checkbox" value="">Service</label>
-    </div>
-    <div class="checkbox disabled">
-      <label><input type="checkbox" value="">Others</label>
-    </div>
+                        <input type="text" class="form-control" id="validationCustom02" name="job_item_details" placeholder="Enter item details">
 
                         </div>
-                        <label class = "col-lg-2" for="">Reference</label>
+                        <label class = "col-lg-2" for="">Serial Number</label>
                         <div class = "col-lg-3">    
 
-                        <input type="text" class="form-control" id="validationCustom02" name="tb_cust_mobile" placeholder="Enter reference" required>
+                        <input type="text" class="form-control" id="validationCustom02" name="job_item_serial" placeholder="Enter serial number">
 
                         
                         </div>    
@@ -312,78 +248,56 @@ $(function()
 
                         <div class="form-group">
                           <div class = "row">
-                          <label class = "col-lg-2" for="">Purchase</label>
+                          <label class = "col-lg-2" for="">Item Type</label>
                           <div class = "col-lg-3">    
                           
-                          <div class="checkbox">
-      <label><input type="checkbox" value="">Laptop</label>
-    </div>
-    <div class="checkbox">
-      <label><input type="checkbox" value="">Desktop</label>
-    </div>
-    <div class="checkbox disabled">
-      <label><input type="checkbox" value="">Mobile</label>
-    </div>
+                            <select class="custom-select" name="tb_age" required>
+                              <option value="" selected disabled hidden>Please select</option>
+                              <option value="3-6">Kids 3-6 year</option>
+                              <option value="7-12">Child 7-12 years</option>
+                              <option value="13">Adult 13 and above</option>                                        
+                                                                  
+                              
+                            </select>
   
                           </div>
-                          <label class = "col-lg-2" for="">Service</label>
+                          <label class = "col-lg-2" for="">Job Type</label>
                           <div class = "col-lg-3">    
   
-                          <div class="checkbox">
-      <label><input type="checkbox" value="">Laptop</label>
-    </div>
-    <div class="checkbox">
-      <label><input type="checkbox" value="">Desktop</label>
-    </div>
-    <div class="checkbox disabled">
-      <label><input type="checkbox" value="">Mobile</label>
-    </div>
+                            
+                            <select class="custom-select" name="tb_language" required>
+                              <option value="" selected disabled hidden>Please select</option>
+                              <option value="English">English</option>
+                              <option value="Arabic">Arabic</option>
+                              <option value="No Tour">No Tour</option>                                        
+                                                                  
+                              
+                            </select>
   
                           
                           </div>    
                           </div>
                           </div>
 
-                          <div class="form-group">
-                            <div class = "row">
-                            <label class = "col-lg-2" for="">Category</label>
-                            <div class = "col-lg-3">    
-                            
-                              <select class="custom-select" name="tb_category" required>
-                                <option value="" selected disabled hidden>Please select</option>
-                                <option value="Goverment">Goverment</option>
-                                <option value="Private">Private</option>
-                                <option value="Others">Others</option>                                        
-                                                                    
-                                
-                              </select>
-    
-                            </div>
-                            <label class = "col-lg-2" for="">Type</label>
-                            <div class = "col-lg-3">    
-    
-                              
-                              <select class="custom-select" name="tb_type" required>
-                                <option value="" selected disabled hidden>Please select</option>
-                                <option value="School Trip">School Trip</option>
-                                <option value="Corporate Booking">Corporate Booking</option>
-                                <option value="Events">Events</option>                                        
-                                                                    
-                                
-                              </select>
-    
-                            
-                            </div>    
-                            </div>
-                            </div>
-   
+                         
                    
 
                             <div class="form-group">
                               <div class = "row">
-                              <label class = "col-lg-2" for="">Comments</label>
+                              <label class = "col-lg-2" for="">Fault Details</label>
                               <div class = "col-lg-8">    
-                              <input type="text" class="form-control" id="validationCustom02"  name="tb_comment" placeholder="Enter comments">
+                              <input type="text" class="form-control" id="validationCustom02"  name="job_fault" placeholder="Enter fault details">
+                              <div class = "clear-fix"></div>
+                              </div>     
+                              </div>
+                              </div>
+
+                              
+                            <div class="form-group">
+                              <div class = "row">
+                              <label class = "col-lg-2" for="">Remarks</label>
+                              <div class = "col-lg-8">    
+                              <input type="text" class="form-control" id="validationCustom02"  name="tb_comment" placeholder="Enter remarks">
                               <div class = "clear-fix"></div>
                               </div>     
                               </div>
