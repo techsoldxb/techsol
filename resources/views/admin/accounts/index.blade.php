@@ -75,11 +75,14 @@
 
             /
 
+            <a data-catid={{$c->id}} data-toggle="modal" data-target="#delete">
+            <i class="fa fa-trash text-red"></i>
+            
+            </a>
+            
+
           
 
-            <button class="btn" data-catid={{$c->id}} data-toggle="modal" data-target="#delete">
-            <i class="fa fa-trash text-red"></i>
-            </button>
 
           
 
