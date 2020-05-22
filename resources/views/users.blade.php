@@ -26,49 +26,31 @@
                 <thead>
                 <tr>
                                    
-                <th> User ID   </th>                       
+                               
             <th> User Name </th>
             <th> Email </th>
-            <th> Company Name </th>
+            <th> Company Code </th>
             <th> Type </th>
             <th> Status </th>
             <th> Last Seen </th>
             
             <th> Created Date </th>
-            <th> Verified Date</th>
+         
             
          
                 </tr>
                 </thead>
                 <tbody>
                 
-                @if(count($users))
-            
-            @foreach($users as $c)
-            
-            <tr>
-            
-                <td>{{ $c->id }}</td>
-                <td>{{ $c->name }}</td>
-                <td>{{ $c->email }}</td>
-                <td>
-                  
-                  @if($c->company =='1')
-                    {{ "Techsol Group"}}
-                  @elseif($c->company =='002')
-                  {{"Techsol India"}}
-                  @elseif($c->company =='003')
-                  {{"Bash Computers"}}
-                  @elseif($c->company =='004')
-                  {{"Techsol KKD"}}
-                  @endif
-              
-              </td>
+                @foreach($users as $user)
+                                    <tr>
+                                        <td>{{$user->name}}</td>
+                                        <td>{{$user->email}}</td>
+                                        <td>{{$user->company}}</td>
+                                        <td>{{$user->user_type}}</td>
 
-
-              <td>{{ $c->user_type}}</td>    
-
-               <td>
+                                        
+                                        <td>
                                             @if(Cache::has('user-is-online-' . $user->id))
                                                 <span class="text-success">Online</span>
                                             @else
@@ -76,35 +58,26 @@
                                             @endif
                                         </td>
                                         <td>{{ \Carbon\Carbon::parse($user->last_seen)->diffForHumans() }}</td>
-                                        
-                                         
-              <td>{{ date('d-m-Y', strtotime($c->created_at)) }}</td>   
+                                        <td>{{ date('d-m-Y', strtotime($user->created_at)) }}</td>   
+                                    </tr>
+                                @endforeach
+
                 
-                <td>{{ date('d-m-Y', strtotime($c->email_verified_at)) }}</td>   
-            
-            
-            
-            </tr>
-            @endforeach
-            
-            @else
-            <tr><td colspan="11">No Record Found</td></tr>
-            @endif
 
                 </tbody>
                 <tfoot>
                 <tr>
                                  
-                    <th> User ID   </th>                       
+                                          
                     <th> User Name </th>
                     <th> Email </th>
-                    <th> Company Name </th>
+                    <th> Company Code </th>
                     <th> Type </th>
                     <th> Status </th>
             <th> Last Seen </th>
                     
                     <th> Created Date </th>
-                    <th> Verified Date</th>
+                  
                     
                 </tr>
                 </tfoot>

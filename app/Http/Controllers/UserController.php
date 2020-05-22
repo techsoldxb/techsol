@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
      
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use DataTables;
 
 //This below  lines to find the online users and last seen details
-use Carbon\Carbon;
+
 use Cache;
      
 class UserController extends Controller
