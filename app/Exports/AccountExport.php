@@ -56,6 +56,7 @@ class AccountExport implements FromCollection,WithHeadings,ShouldAutoSize,WithEv
         return [
             
             'B' => 'dd-mm-yyyy',
+            'D' => 'dd-mm-yyyy',
             
             
         ];
