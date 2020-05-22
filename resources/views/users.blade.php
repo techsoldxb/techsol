@@ -46,7 +46,24 @@
                                     <tr>
                                         <td>{{$user->name}}</td>
                                         <td>{{$user->email}}</td>
-                                        <td>{{$user->company}}</td>
+
+                                        <td>
+                                        
+                                        @if($user->company =='001')
+                                        {{ "MCC"}}
+                                        @elseif($user->company =='002')
+                                        {{"Techsol India"}}
+                                        @elseif($user->company =='003')
+                                        {{"Bash Computers"}}
+                                        @elseif($user->company =='004')
+                                        {{"Techsol KKD"}}
+                                        @endif
+
+                                        </td>
+
+
+
+
                                         <td>{{$user->user_type}}</td>
 
                                         
