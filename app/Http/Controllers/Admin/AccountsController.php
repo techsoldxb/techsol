@@ -293,19 +293,27 @@ class AccountsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+   // public function destroy($id)
+   public function destroy(Request $request)
     {
         
-        
+        //echo "Delete Data";
+        //dd($request->category_id);
+        $account = Account::findOrFail($request->category_id);
+        $account->delete();
+
+        return redirect()->route('admin.accounts.index')->with('success','Transaction deleted successfully');
 
        // Account::destroy($id);                  
        // return redirect()->route('admin.accounts.index')->with('error','Transaction deleted successfully!');  
         
-        Account::find($id)->delete();
+      //  
+      
     
 
     //Account::find($request->id)->delete();
-    return redirect()->route('admin.accounts.index')->with('success','Transaction deleted successfully');
+    //Account::find($id)->delete();
+    //return redirect()->route('admin.accounts.index')->with('success','Transaction deleted successfully');
 
     }
 }
