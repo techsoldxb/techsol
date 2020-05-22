@@ -38,7 +38,7 @@ class AccountExport implements FromCollection,WithHeadings,ShouldAutoSize,WithEv
     public function headings(): array
       {
         return [
-          'Transaction No.','Transaction Date', 'Supplier Name', 'Bill Date', 'Bill No', 'Bill Amount','Purpose','Employee Name'];
+          'Transaction No.','Transaction Date', 'Name', 'Date', 'Bill No', 'Amount','Narration','Employee Name'];
        }
 
        public function registerEvents(): array
@@ -56,7 +56,7 @@ class AccountExport implements FromCollection,WithHeadings,ShouldAutoSize,WithEv
         return [
             
             'B' => 'dd-mm-yyyy',
-            'F' => '0.000'
+            
             
         ];
     }

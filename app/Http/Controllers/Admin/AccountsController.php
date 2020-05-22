@@ -29,7 +29,7 @@ class AccountsController extends Controller
 
     public function export()
     {
-    return Excel::download(new AccountExport, 'Unpaid.xls'); 
+    return Excel::download(new AccountExport, 'Expense.xls'); 
     } 
     
 
