@@ -95,7 +95,8 @@ class AccountsController extends Controller
         
         
         
-        $id = Account::orderByDesc('th_tran_no')->first()->th_tran_no ?? date('Y') . 00000;
+        $id = Account::where('th_comp_code', auth()->user()->company)
+        ->orderByDesc('th_tran_no')->first()->th_tran_no ?? date('Y') . 00000;
         $year = date('Y');
         $id_year = substr($id, 0, 4);
         $seq = $year <> $id_year ? 0 : +substr($id, -5);

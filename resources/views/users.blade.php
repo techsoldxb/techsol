@@ -32,7 +32,7 @@
             <th> Company Code </th>
             <th> Type </th>
             <th> Status </th>
-            <th> Last Seen </th>
+            <th> Last Visit </th>
             
             <th> Created Date </th>
          
@@ -91,7 +91,7 @@
                     <th> Company Code </th>
                     <th> Type </th>
                     <th> Status </th>
-            <th> Last Seen </th>
+            <th> Last Visit </th>
                     
                     <th> Created Date </th>
                   
