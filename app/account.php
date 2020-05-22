@@ -8,6 +8,7 @@ class account extends Model
 {
     
     protected $dates = ['th_bill_dt'];
+    
 
     
 

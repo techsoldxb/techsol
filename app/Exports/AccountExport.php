@@ -27,7 +27,7 @@ class AccountExport implements FromCollection,WithHeadings,ShouldAutoSize,WithEv
        // return Account::all();
        //$arr['accounts'] = Account::where('th_comp_code', auth()->user()->company)->where('th_pay_status', 0)->orderBy('th_tran_no','desc')->get();
        //return view('admin.unpaidbills.index')->with($arr);   
-       return Account::select(['th_tran_no','created_at','th_supp_name','th_bill_dt','th_bill_no','th_bill_amt','th_purpose','th_emp_name'])
+       return Account::select(['th_tran_no','created_at','th_supp_name','th_bill_dt','th_bill_no','th_bill_amt','th_purpose','th_exp_cat_name','th_emp_name'])
        ->where('th_comp_code', auth()->user()->company)->where('th_pay_status', 0)
        ->get();
        
@@ -38,25 +38,28 @@ class AccountExport implements FromCollection,WithHeadings,ShouldAutoSize,WithEv
     public function headings(): array
       {
         return [
-          'Transaction No.','Transaction Date', 'Name', 'Date', 'Bill No', 'Amount','Narration','Employee Name'];
+          'Transaction No.','Transaction Date', 'Name', 'Date', 'Bill No', 'Amount','Narration','Expense Category','Employee Name'];
        }
 
        public function registerEvents(): array
     {
         return [
             AfterSheet::class    => function(AfterSheet $event) {
-                $cellRange = 'A1:H1'; // All headers
+                $cellRange = 'A1:I1'; // All headers
                 $event->sheet->getDelegate()->getStyle($cellRange)->getFont()->setSize(12);
             },
         ];
     }
 
+   
+
     public function columnFormats(): array
     {
         return [
             
-            'B' => 'dd-mm-yyyy',
-            'D' => 'dd-mm-yyyy',
+            
+            'B' => NumberFormat::FORMAT_DATE_DDMMYYYY,
+            'D' => NumberFormat::FORMAT_DATE_DDMMYYYY,
             
             
         ];
