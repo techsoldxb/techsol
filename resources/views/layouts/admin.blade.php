@@ -146,19 +146,7 @@
                 </a>
 
               </li>
-              <li class="nav-item">
-                <a href=" {{ route('homeicc') }}" class="nav-link
-                @if(!$segment)
-                active
-                @endif            
-                ">
-                <i class="nav-icon fas fa-th"></i>
-                  <p>
-                    Dashboard - Booking
-                  </p>
-                </a>
-
-              </li>
+             
               @endcan
 
           @can('isUser')
