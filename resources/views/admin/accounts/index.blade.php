@@ -45,7 +45,16 @@
             @foreach($accounts as $c)
             
             <tr>
-            <td><a href="{{ url('storage/categories/'.$c->th_attach) }}" target="_blank">{{ $c->th_tran_no }}</a></td>            
+            <td>
+            
+           
+            @if( !empty($c->th_attach))
+            
+            <a href="{{ url('storage/categories/'.$c->th_attach) }}" target="_blank">{{ $c->th_tran_no }}</a>
+            @else 
+            {{ $c->th_tran_no }}
+            @endif
+            </td>            
             <td>{{ date('d-m-Y', strtotime($c->created_at)) }}</td>            
             <td>{{ $c->th_supp_name }}</td>
             <td>{{ date('d-m-Y', strtotime($c->th_bill_dt)) }}</td>

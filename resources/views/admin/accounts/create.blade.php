@@ -521,7 +521,7 @@
          <div class = "row">
          <label class = "col-lg-1" for="">Date *</label>
          <div class = "col-lg-2">
-         <input class = "form-control datepicker" id="datepicker" name = "th_bill_dt" placeholder="dd-mm-yyyy" required>  
+         <input class = "form-control datepicker" id="datepicker" name = "th_bill_dt" value = "{{ date('d-m-Y') }}" required>  
              
          <script>
           $('#datepicker').datepicker({
