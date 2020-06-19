@@ -325,7 +325,7 @@
           </span>
 
           <div class="info-box-content">
-            <span class="info-box-text">Expense Amount - Bash</span>
+            <span class="info-box-text">Expense Amount - RMD</span>
             <span class="info-box-number">
             
             
@@ -355,7 +355,7 @@
           <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-coins"></i></span>
 
           <div class="info-box-content">
-            <span class="info-box-text">WOB Amount - Bash</span>
+            <span class="info-box-text">WOB Amount - RMD</span>
             <span class="info-box-number">
             
             @if($user->user_type =='admin')
