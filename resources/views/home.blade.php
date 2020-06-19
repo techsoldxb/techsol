@@ -295,7 +295,7 @@
           </span>
 
           <div class="info-box-content">
-            <span class="info-box-text">Cash On Hand - Bash</span>
+            <span class="info-box-text">Cash On Hand - RMD</span>
             <span class="info-box-number">
 
               @if($user->user_type =='admin')
