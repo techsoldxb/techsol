@@ -35,6 +35,16 @@ class AppServiceProvider extends ServiceProvider
         $view->with('expenseskkd',\App\Account::where('th_comp_code', '004')->where('th_pay_status', 0)->sum('th_bill_amt'));
 });
 
+view()->composer('home', function($view)  {
+    $view->with('expensesbash',\App\Account::where('th_comp_code', '003')->where('th_pay_status', 0)->sum('th_bill_amt'));
+});
+
+view()->composer('home', function($view)  {
+    $view->with('expensesche',\App\Account::where('th_comp_code', '002')->where('th_pay_status', 0)->sum('th_bill_amt'));
+});
+
+
+
 
 
 
@@ -90,6 +100,16 @@ view()->composer(['home','cash'], function($view)  {
 
 view()->composer(['home','cash'], function($view)  {
     $view->with('wobkkd',\App\Cash::where('td_comp_code','004')->sum('td_doc_amt'));
+});
+
+
+view()->composer(['home','cash'], function($view)  {
+    $view->with('wobbash',\App\Cash::where('td_comp_code','003')->sum('td_doc_amt'));
+});
+
+
+view()->composer(['home','cash'], function($view)  {
+    $view->with('wobche',\App\Cash::where('td_comp_code','002')->sum('td_doc_amt'));
 });
 
 

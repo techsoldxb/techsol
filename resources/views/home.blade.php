@@ -248,7 +248,7 @@
             @if($user->user_type =='admin')
 
 
-{{ number_format($wobkkd) }}
+{{ number_format($wob) }}
 
 
             </span>
@@ -301,7 +301,7 @@
               @if($user->user_type =='admin')
 
 
-              {{ number_format($wobkkd-$expenseskkd) }}
+              {{ number_format($wobbash-$expensesbash) }}
 
 
 
@@ -332,7 +332,7 @@
             @if($user->user_type =='admin')
 
 
-{{ number_format($expenseskkd) }}
+{{ number_format($expensesbash) }}
 
 
             
@@ -415,7 +415,7 @@
               @if($user->user_type =='admin')
 
 
-              {{ number_format($wobkkd-$expenseskkd) }}
+              {{ number_format($wobche-$expensesche) }}
 
 
 
@@ -446,7 +446,7 @@
             @if($user->user_type =='admin')
 
 
-{{ number_format($expenseskkd) }}
+{{ number_format($expensesche) }}
 
 
             
@@ -475,7 +475,7 @@
             @if($user->user_type =='admin')
 
 
-{{ number_format($wobkkd) }}
+{{ number_format($wobche) }}
 
 
             </span>
