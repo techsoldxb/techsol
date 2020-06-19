@@ -361,7 +361,7 @@
             @if($user->user_type =='admin')
 
 
-{{ number_format($wobkkd) }}
+{{ number_format($wobbash) }}
 
 
             </span>
