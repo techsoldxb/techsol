@@ -337,7 +337,7 @@
 
             
             </span>
-            <a href="{{route('showroom.accountskkd.index')}}" class="small-box-footer">More info <i
+            <a href="{{route('admin.accounts.index')}}" class="small-box-footer">More info <i
               class="fas fa-arrow-circle-right"></i></a>
               @endif
           </div>
@@ -365,7 +365,7 @@
 
 
             </span>
-            <a href="{{route('showroom.cashkkd.index')}}" class="small-box-footer">More info <i
+            <a href="{{route('showroom.cash.index')}}" class="small-box-footer">More info <i
               class="fas fa-arrow-circle-right"></i></a>
               @endif
           </div>
