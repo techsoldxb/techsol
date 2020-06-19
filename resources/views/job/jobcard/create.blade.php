@@ -53,115 +53,6 @@ $(function()
 </script>
 
     
-<script>
-  function calc1() 
-  {
-
-
-  var textValue1 = document.getElementById('tb_student_qty').value;
-  var textValue2 = document.getElementById('tb_student_price').value;
-  document.getElementById('student_amount').value = textValue1 * textValue2;   
-
-  var textValue3 = document.getElementById('tb_teacher_qty').value;
-  var textValue4 = document.getElementById('tb_teacher_price').value;
-
-
-    var textValue5 = document.getElementById('tb_adult_qty').value;
-  var textValue6 = document.getElementById('tb_adult_price').value;
-
-  var textValue7 = document.getElementById('tb_addon1_qty').value;
-  var textValue8 = document.getElementById('tb_addon1_price').value;
-
- 
-
-      document.getElementById('tb_total').value = textValue1 * textValue2 + textValue3 * textValue4 
-      + textValue5 * textValue6 + textValue7 * textValue8;
- 
-  }
-
-   function calc2() 
-  {
-
-
-  var textValue1 = document.getElementById('tb_student_qty').value;
-  var textValue2 = document.getElementById('tb_student_price').value;
-   
-
-  var textValue3 = document.getElementById('tb_teacher_qty').value;
-  var textValue4 = document.getElementById('tb_teacher_price').value;
-
-  
-  var textValue5 = document.getElementById('tb_adult_qty').value;
-  var textValue6 = document.getElementById('tb_adult_price').value;
-
-    
-  var textValue7 = document.getElementById('tb_addon1_qty').value;
-  var textValue8 = document.getElementById('tb_addon1_price').value;
-
-  document.getElementById('teacher_amount').value = textValue3 * textValue4; 
-
-  
-
-      document.getElementById('tb_total').value = textValue1 * textValue2 
-  + textValue3 * textValue4 + textValue5 * textValue6 + textValue7 * textValue8;
- 
-  }   
-
-  function calc3() 
-  {
-
-
-  var textValue1 = document.getElementById('tb_student_qty').value;
-  var textValue2 = document.getElementById('tb_student_price').value;
-   
-
-  var textValue3 = document.getElementById('tb_teacher_qty').value;
-  var textValue4 = document.getElementById('tb_teacher_price').value;
-
-  
-
-
-    var textValue5 = document.getElementById('tb_adult_qty').value;
-  var textValue6 = document.getElementById('tb_adult_price').value;
-
-  var textValue7 = document.getElementById('tb_addon1_qty').value;
-  var textValue8 = document.getElementById('tb_addon1_price').value;
-
-
-  document.getElementById('adult_amount').value = textValue5 * textValue6; 
-
-      document.getElementById('tb_total').value = textValue1 * textValue2 
-  + textValue3 * textValue4 + textValue5 * textValue6 + textValue7 * textValue8;
- 
-  }
-
-  function calc4() 
-  {
-    var textValue1 = document.getElementById('tb_student_qty').value;
-  var textValue2 = document.getElementById('tb_student_price').value;
-   
-
-  var textValue3 = document.getElementById('tb_teacher_qty').value;
-  var textValue4 = document.getElementById('tb_teacher_price').value;
-
-  
-
-
-    var textValue5 = document.getElementById('tb_adult_qty').value;
-  var textValue6 = document.getElementById('tb_adult_price').value;
-
-
-
-    var textValue7 = document.getElementById('tb_addon1_qty').value;
-  var textValue8 = document.getElementById('tb_addon1_price').value;
-
-  document.getElementById('addon1_amount').value = textValue7 * textValue8; 
-
-      document.getElementById('tb_total').value = textValue1 * textValue2 
-  + textValue3 * textValue4 + textValue5 * textValue6 + textValue7 * textValue8;
- 
-  }  
-</script>
 
   <!-- Content Header (Page header) -->
   <div class="content-header">
@@ -174,7 +65,7 @@ $(function()
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{route('home')}}">Dashboard</a></li>              
               
-                  <li class="breadcrumb-item"><a href="{{route('foh.booking.index')}}">Booking</a></li>
+                  <li class="breadcrumb-item"><a href="{{ route('job.jobcard.index') }}">Job Card List</a></li>
 
 
             </ol>
@@ -186,7 +77,8 @@ $(function()
 
     <section class="content">
       <div class="container-fluid">
-     <form  class="needs-validation" name="myform" id="myform" novalidate method = "post" action="{{ route('foh.booking.store') }}" 
+     <form  class="needs-validation" name="myform" id="myform" novalidate method = "post" 
+     action="{{ route('job.jobcard.store') }}" 
      enctype="multipart/form-data" autocomplete="off" autofill="off">
      <input type="hidden" name="_token" value = "{{ csrf_token() }}">
      <div class="form-group">
@@ -208,7 +100,7 @@ $(function()
             </div>
             <label class = "col-lg-2" for="">Email</label>
             <div class = "col-lg-3">    
-            <input type="email" class="form-control" id="validationCustom02" name="job_cust_email" placeholder="Enter Email" required>           
+            <input type="email" class="form-control" id="validationCustom02" name="job_cust_email" placeholder="Enter Email">           
             </div>     
             </div>
             </div>
@@ -251,11 +143,13 @@ $(function()
                           <label class = "col-lg-2" for="">Item Type</label>
                           <div class = "col-lg-3">    
                           
-                            <select class="custom-select" name="tb_age" required>
+                            <select class="custom-select" name="job_item_type" >
                               <option value="" selected disabled hidden>Please select</option>
-                              <option value="3-6">Kids 3-6 year</option>
-                              <option value="7-12">Child 7-12 years</option>
-                              <option value="13">Adult 13 and above</option>                                        
+                              <option value="Laptop">Laptop</option>
+                              <option value="Desktop">Desktop</option>
+                              <option value="Printer">Printer</option>
+                              <option value="Toner">Toner</option>   
+                              <option value="Other">Other</option>                                     
                                                                   
                               
                             </select>
@@ -265,11 +159,13 @@ $(function()
                           <div class = "col-lg-3">    
   
                             
-                            <select class="custom-select" name="tb_language" required>
+                            <select class="custom-select" name="job_type" >
                               <option value="" selected disabled hidden>Please select</option>
-                              <option value="English">English</option>
-                              <option value="Arabic">Arabic</option>
-                              <option value="No Tour">No Tour</option>                                        
+                              
+                              <option value="Hardware">Hardware</option>                                        
+                              <option value="Software">Software</option>
+                              <option value="Toner_Refill">Toner Refill</option>
+                              
                                                                   
                               
                             </select>
@@ -297,7 +193,7 @@ $(function()
                               <div class = "row">
                               <label class = "col-lg-2" for="">Remarks</label>
                               <div class = "col-lg-8">    
-                              <input type="text" class="form-control" id="validationCustom02"  name="tb_comment" placeholder="Enter remarks">
+                              <input type="text" class="form-control" id="validationCustom02"  name="job_remarks" placeholder="Enter remarks">
                               <div class = "clear-fix"></div>
                               </div>     
                               </div>
@@ -312,7 +208,7 @@ $(function()
 
      <div class="form-group">
      <input type="submit" class = "btn btn-primary" Value ="Save">
-     <a href="{{route('foh.booking.index')}}" class="btn btn-warning" role="button">Cancel</a>
+     <a href="{{route('job.jobcard.index')}}" class="btn btn-warning" role="button">Cancel</a>
      </div>
      </form>
       </div>

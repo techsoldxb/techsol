@@ -17,7 +17,7 @@
         <div class="card">
           <div class="card-header">
             <h3 class="card-title">Booking Details
-            <a href="{{ route('jobcard.jobenquiry.create') }}" class="btn btn-primary btn-sm">Add New</a></h3>   
+            <a href="{{ route('job.jobcard.create') }}" class="btn btn-primary btn-sm">Add New</a></h3>   
           </div>
           <!-- /.card-header -->
           <div class="card-body">
@@ -25,16 +25,17 @@
               <thead>
               <tr>
                                  
-                <th> Job ID   </th>            
+                <th> Job ID   </th>  
+                <th> Date </th>          
                 <th> Name </th>            
                 
                 <th> Mobile </th> 
                 
-                <th> Date </th>
+              
                 
                 
                 <th>Item Details</th>
-                <th>Job Desc</th>
+                <th>Fault</th>
                 <th>Remarks</th>
                 <th>Created User</th>
                 
@@ -49,17 +50,18 @@
           
           <tr>
             <td>{{ $c->job_enq_number }}</td>
+            <td>{{ date('d-m-Y', strtotime($c->created_at)) }}</td>  
             <td>{{ $c->job_cust_name }}</td>  
             
             <td>{{ $c->job_cust_mobile }}</td>  
             
             
-            <td>{{ date('d-m-Y', strtotime($c->created_at)) }}</td>  
+            
 
             <td>{{ $c->job_item_details }}</td>  
             
             
-            <td>{{ $c->job_desc}}</td>  
+            <td>{{ $c->job_fault}}</td>  
           
             <td> {{ $c->job_remarks }} </td>
 
@@ -72,7 +74,7 @@
           
           <td>             
             
-            <a href="{{ route('foh.booking.show',$c->id) }}">
+            <a href="{{ route('job.jobcard.show',$c->id) }}">
               <i class="fa fa-print text-green"></i>
               
               </a>
@@ -80,7 +82,7 @@
               /
 
           
-          <a href="{{ route('foh.booking.edit',$c->id) }}">
+          <a href="{{ route('job.jobcard.edit',$c->id) }}">
           <i class="fa fa-edit"></i>
           
           </a>
@@ -91,14 +93,10 @@
           
  
 
-<form onsubmit="return confirm('Do you really want to delete?');" action="{{ route('foh.booking.destroy',$c->id) }}" method="POST" >
-  {{ csrf_field() }}
-  <input type="hidden" name="_method" value="DELETE" />  
-  <button type="submit"><i class="fa fa-trash text-red" /></i></button>
-
-  
-
-  </form>
+          <a data-catid={{$c->id}} data-toggle="modal" data-target="#delete">
+            <i class="fa fa-trash text-red"></i>
+            
+            </a>
          
 
 
@@ -116,16 +114,17 @@
               <tfoot>
               <tr>
                                                                
-                <th> Job ID   </th>            
+                <th> Job ID   </th>  
+                <th> Date </th>          
                 <th> Name </th>            
                 
                 <th> Mobile </th> 
                 
-                <th> Date </th>
+               
                 
                 
                 <th>Item Details</th>
-                <th>Job Desc</th>
+                <th>Fault</th>
                 <th>Remarks</th>
                 <th>Created User</th>
                 
@@ -145,6 +144,33 @@
     <!-- /.row -->
   </section>
    
+<!-- Modal -->
+<div class="modal modal-danger fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+
+        <h4 class="modal-title text-left" id="myModalLabel">Delete Confirmation</h4>
+      </div>
+      <form action="{{route('job.jobcard.destroy','test')}}" method="post">
+      		{{method_field('delete')}}
+      		{{csrf_field()}}
+	      <div class="modal-body">
+				<p class="text-left">
+					Are you sure you want to delete this transaction?
+				</p>
+	      		<input type="hidden" name="category_id" id="cat_id" value="">
+
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-success" data-dismiss="modal">Cancel</button>
+	        <button type="submit" class="btn btn-warning">Delete</button>
+	      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
 
 @endsection
 

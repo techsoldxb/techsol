@@ -337,21 +337,21 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>
               <p>
-                HR
+                Job Contract
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/charts/chartjs.html" class="nav-link">
+                <a href="{{route('job.jobcard.create')}}"  class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Biodata</p>
+                  <p>Job Enquiry</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/charts/flot.html" class="nav-link">
+                <a href="{{route('admin.cheque.index')}}"  class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Leave Form</p>
+                  <p>Job Invoice</p>
                 </a>
               </li>
               <li class="nav-item">
