@@ -248,7 +248,7 @@
             @if($user->user_type =='admin')
 
 
-{{ number_format($wob) }}
+{{ number_format($wobkkd) }}
 
 
             </span>
