@@ -1,6 +1,41 @@
 @extends('layouts.admin')
 @section('content')
 
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+  <script>
+var _data = {};
+        var _data = {"Acc":{"dev":"Laptop Accessories","test":"Other Accessories"},
+        "Cab":{"dev":"Power Cables","test":"UTP Cables"},
+        "Per":{"cpu":"CPU","hdd":"HDD","mon":"Monitor","ram":"RAM","mbr":"Motherboard"},
+        "Lac":{"adp":"Adapter","scr":"Screen","kbr":"Keyboard","tab":"Table","bod":"Body"},
+        "Pri":{"print":"Printer","car":"Cartridge","ton":"Toner","pow":"Powder","rib":"Ribbon"},
+        "Lap":{"dev":"Desktop","test":"Laptop"}};
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#env-select').on('change', function(e){
+        var source = $(this),
+            val = $.trim(source.val()),
+            target = $('#env_ddl');
+			$(target).empty();
+        if(typeof(_data[val]) != "undefined"){
+            var options = (typeof(_data[val]) != "undefined") ? _data[val] : {};
+			 $('<option>-- Select --</option>').appendTo(target);
+            $.each( options , function(value, index) {
+                    $('<option value="' + value + '">' + index + '</option>').appendTo(target);
+            });
+        }
+
+    });
+  });
+</script>
+
+
    <!-- This script is used to allow only number in the bill amount field -->
    <script>    
     function isNumberKey(evt)
@@ -207,7 +242,7 @@ $(function()
                                 <option value="" selected disabled hidden>Please select</option>
                                 <option value="School Trip">Male</option>
                                 <option value="Corporate Booking">Female</option>
-                                <option value="Events">Events</option>                                        
+                                                                  
                                                                     
                                 
                               </select>
@@ -251,7 +286,7 @@ $(function()
                 <label class = "col-lg-2" for="">Date of Visit</label>
                 <div class = "col-lg-3">    
                 
-                    <input class = "form-control datepicker" id="datepicker" name = "tb_date" placeholder="dd-mm-yyyy" required>  
+                    <input class = "form-control datepicker" id="datepicker" name = "tb_date" value = "{{ date('d-m-Y') }}" required>  
              
                     <script>
                      $('#datepicker').datepicker({
@@ -289,18 +324,19 @@ $(function()
                         
         
                         
-                        <div class="checkbox">
-      <label><input type="checkbox" value="">Purchase</label>
-    </div>
-    <div class="checkbox">
-      <label><input type="checkbox" value="">Service</label>
-    </div>
-    <div class="checkbox disabled">
-      <label><input type="checkbox" value="">Others</label>
-    </div>
+          
+                        <select class="custom-select" name="tb_type" required>
+                                <option value="" selected disabled hidden>Please select</option>
+                                <option value="School Trip">New Purchase / Follow Up</option>
+                                <option value="Corporate Booking">New Service / Follow Up</option>
+                                <option value="Corporate Booking">Others</option>
+                                                                  
+                                                                    
+                                
+                              </select>
 
                         </div>
-                        <label class = "col-lg-2" for="">Reference</label>
+                        <label class = "col-lg-2" for="">Item Details</label>
                         <div class = "col-lg-3">    
 
                         <input type="text" class="form-control" id="validationCustom02" name="tb_cust_mobile" placeholder="Enter reference" required>
@@ -312,70 +348,37 @@ $(function()
 
                         <div class="form-group">
                           <div class = "row">
-                          <label class = "col-lg-2" for="">Purchase</label>
+                          <label class = "col-lg-2" for="">Group</label>
                           <div class = "col-lg-3">    
                           
-                          <div class="checkbox">
-      <label><input type="checkbox" value="">Laptop</label>
-    </div>
-    <div class="checkbox">
-      <label><input type="checkbox" value="">Desktop</label>
-    </div>
-    <div class="checkbox disabled">
-      <label><input type="checkbox" value="">Mobile</label>
-    </div>
+          
+                          <select class="custom-select" id="env-select" name="tb_type" required>
+                                <option value="" selected disabled hidden>Please select</option>
+                                <option value="Acc">Accessories</option>
+                                <option value="Lac">Laptop Accessories</option>                               
+                                <option value="Lap">Laptop & Desktop</option>
+                                <option value="Cab">Cable</option>                                
+                                <option value="Per">Peripherals</option>
+                                <option value="Pri">Printers & Consumables</option>
+                                                                  
+                                                                    
+                                
+                              </select>
   
                           </div>
-                          <label class = "col-lg-2" for="">Service</label>
+                          <label class = "col-lg-2" for="">Category</label>
                           <div class = "col-lg-3">    
   
-                          <div class="checkbox">
-      <label><input type="checkbox" value="">Laptop</label>
-    </div>
-    <div class="checkbox">
-      <label><input type="checkbox" value="">Desktop</label>
-    </div>
-    <div class="checkbox disabled">
-      <label><input type="checkbox" value="">Mobile</label>
-    </div>
+                          <select class="form-control"  id="env_ddl">
+                          <option value="">-- Select --</option>
+                          </select>
   
                           
                           </div>    
                           </div>
                           </div>
 
-                          <div class="form-group">
-                            <div class = "row">
-                            <label class = "col-lg-2" for="">Category</label>
-                            <div class = "col-lg-3">    
-                            
-                              <select class="custom-select" name="tb_category" required>
-                                <option value="" selected disabled hidden>Please select</option>
-                                <option value="Goverment">Goverment</option>
-                                <option value="Private">Private</option>
-                                <option value="Others">Others</option>                                        
-                                                                    
-                                
-                              </select>
-    
-                            </div>
-                            <label class = "col-lg-2" for="">Type</label>
-                            <div class = "col-lg-3">    
-    
-                              
-                              <select class="custom-select" name="tb_type" required>
-                                <option value="" selected disabled hidden>Please select</option>
-                                <option value="School Trip">School Trip</option>
-                                <option value="Corporate Booking">Corporate Booking</option>
-                                <option value="Events">Events</option>                                        
-                                                                    
-                                
-                              </select>
-    
-                            
-                            </div>    
-                            </div>
-                            </div>
+                       
    
                    
 
@@ -403,4 +406,7 @@ $(function()
      </form>
       </div>
     </section>
+
+ 
+
 @endsection
