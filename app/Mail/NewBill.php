@@ -32,8 +32,8 @@ class NewBill extends Mailable
      */
     public function build()
     {
-        return $this->from('hussain@techsolme.com','Hussain')
-                    ->to('bhhussain@gmail.com','Hameed')
+        return $this->from('hussain@techsolme.com','ERP Alert')
+                    ->to('anasmca06@gmail.com','Anas')
                     ->subject($this->account->th_comp_name)
                     ->view('email.newbill.added');
     }
