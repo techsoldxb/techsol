@@ -261,10 +261,10 @@
 													
 													Company Name: {{$account->th_comp_name}}<br>
 													Doc Number &nbsp;&nbsp;&nbsp; : {{$account->th_tran_no}}<br>
-													Name  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  : {{$account->th_supp_name}}<br>
-													Amount &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {{$account->th_bill_amt}}<br>
-													Narration &nbsp;&nbsp;&nbsp;  : {{$account->th_purpose}}<br>
-													Category  &nbsp;&nbsp;&nbsp;&nbsp;  : {{$account->th_exp_cat_name}}<br>
+													Name  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  : {{$account->th_supp_name}}<br>
+													Amount &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {{$account->th_bill_amt}}<br>
+													Narration &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  : {{$account->th_purpose}}<br>
+													Category  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  : {{$account->th_exp_cat_name}}<br>
 													
 													 </span></p>
 													
