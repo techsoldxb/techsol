@@ -22,7 +22,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-  <img src={{asset('dist/img/tclogo1.PNG class=img-circle elevation-2 alt=Logo')}}>
+  <img src={{asset('dist/img/tclogo1.png class=img-circle elevation-2 alt=Logo')}}>
   </div>
   <!-- /.login-logo -->
   <div class="card">
