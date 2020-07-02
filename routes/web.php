@@ -1,5 +1,8 @@
 <?php
 
+use RealRashid\SweetAlert\Facades\Alert;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,6 +18,8 @@ Route::resource('/admin/accounts', 'AccountsController');
 */
 
 Route::get('/', function () {
+    Alert::success('Success Title', 'Success Message');
+
     return view('welcome');
 });
 
@@ -23,6 +28,11 @@ Route::get('/table', function () {
 });
 
 
+
+//All unknows request will go to test.blade.php
+//Route::any('{abcd}', function () {
+  //  return view('test');
+//});
 
 
 

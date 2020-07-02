@@ -1,11 +1,14 @@
 <?php
 
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 namespace App\Http\Controllers\Admin;
 
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Carbon\Carbon;
 
 use App\Account;
@@ -13,6 +16,7 @@ use App\Item;
 use App\Category;
 Use Auth;
 Use Gate;
+use App\Mail\NewBill;
 
 //we need to add the below if we create new excel export
 use App\Exports\AccountExport; 
@@ -194,7 +198,15 @@ class AccountsController extends Controller
               }
 
      
-        }         
+        }  
+
+       // return $account;
+        
+        Mail::send(new NewBill($account));
+
+       // Alert::success('Success Title', 'Success Message');
+        
+
         return redirect('admin/accounts')->with('success','Transaction created successfully!');
     }
 

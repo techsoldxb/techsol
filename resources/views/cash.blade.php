@@ -67,9 +67,15 @@
 
    <!-- Main content -->
    <section class="content">
+
+  
+
+
     <div class="row">
       <div class="col-12">
         <div class="card">
+
+        
        
           <!-- /.card-header -->
       
@@ -369,8 +375,11 @@
       <!-- /.col -->
     </div>
     <!-- /.row -->
+
+
   </section>
 
 
   
 @endsection
+
