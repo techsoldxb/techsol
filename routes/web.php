@@ -18,7 +18,7 @@ Route::resource('/admin/accounts', 'AccountsController');
 */
 
 Route::get('/', function () {
-    Alert::success('Success Title', 'Success Message');
+    Alert::success('Welcome', 'Welcome');
 
     return view('welcome');
 });
