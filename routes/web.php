@@ -36,7 +36,11 @@ Route::get('/table', function () {
 
 
 
-Auth::routes(['verify' => true]);
+Auth::routes([
+    'verify' => true,
+    'register' => false
+    ]);
+    
 Route::get('users', 'UserController@index')->name('users')->middleware('auth');
 Route::get('changeStatus', 'UserController@changeStatus');
 
