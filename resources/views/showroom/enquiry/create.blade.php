@@ -221,7 +221,7 @@ $(function()
 
     <section class="content">
       <div class="container-fluid">
-     <form  class="needs-validation" name="myform" id="myform" novalidate method = "post" action="{{ route('foh.booking.store') }}" 
+     <form  class="needs-validation" name="myform" id="myform" novalidate method = "post" action="{{ route('showroom.enquiry.store') }}" 
      enctype="multipart/form-data" autocomplete="off" autofill="off">
      <input type="hidden" name="_token" value = "{{ csrf_token() }}">
      
@@ -232,16 +232,16 @@ $(function()
             <div class = "row">
             <label class = "col-lg-2" for="">Customer Name</label>
             <div class = "col-lg-3">    
-            <input type="text" class="form-control" id="validationCustom02" name="tb_cust_mobile" placeholder="Enter customer name" required>
+            <input type="text" class="form-control" id="validationCustom02" name="enq_cust_name" placeholder="Enter customer name" required>
             </div>
             <label class = "col-lg-2" for="">Gender</label>
             <div class = "col-lg-3">    
            
      
-            <select class="custom-select" name="tb_type" required>
+            <select class="custom-select" name="enq_gender" required>
                                 <option value="" selected disabled hidden>Please select</option>
-                                <option value="School Trip">Male</option>
-                                <option value="Corporate Booking">Female</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
                                                                   
                                                                     
                                 
@@ -260,7 +260,7 @@ $(function()
            
 
             
-                  <input type="email" class="form-control" placeholder="Enter mobile number">
+                  <input type="text" class="form-control" name="enq_mobile" placeholder="Enter mobile number">
                 
 
 
@@ -271,7 +271,7 @@ $(function()
             <div class = "col-lg-3">    
             
            
-                  <input type="email" class="form-control" placeholder="Email">
+                  <input type="email" class="form-control" name="enq_email" placeholder="Email">
                 
 
             </div>     
@@ -286,7 +286,7 @@ $(function()
                 <label class = "col-lg-2" for="">Date of Visit</label>
                 <div class = "col-lg-3">    
                 
-                    <input class = "form-control datepicker" id="datepicker" name = "tb_date" value = "{{ date('d-m-Y') }}" required>  
+                    <input class = "form-control datepicker" id="datepicker" name = "enq_date" value = "{{ date('d-m-Y') }}" required>  
              
                     <script>
                      $('#datepicker').datepicker({
@@ -299,7 +299,7 @@ $(function()
                 </div>
                 <label class = "col-lg-2" for="">Time</label>
                 <div class = "col-lg-3">    
-                <input type="time" class="form-control" id="validationCustom02" name="tb_time" placeholder="Enter arrival time" required> 
+                <input type="time" class="form-control" id="validationCustom02" name="enq_time" placeholder="Enter arrival time" required> 
            <script>
               $('.datetimepicker').datetimepicker({
                   autoclose: true,
@@ -325,11 +325,11 @@ $(function()
         
                         
           
-                        <select class="custom-select" name="tb_type" required>
+                        <select class="custom-select" name="enq_purpose" required>
                                 <option value="" selected disabled hidden>Please select</option>
-                                <option value="School Trip">New Purchase / Follow Up</option>
-                                <option value="Corporate Booking">New Service / Follow Up</option>
-                                <option value="Corporate Booking">Others</option>
+                                <option value="New Purchase / Follow Up">New Purchase / Follow Up</option>
+                                <option value="New Service / Follow Up">New Service / Follow Up</option>
+                                <option value="Others">Others</option>
                                                                   
                                                                     
                                 
@@ -339,7 +339,7 @@ $(function()
                         <label class = "col-lg-2" for="">Item Details</label>
                         <div class = "col-lg-3">    
 
-                        <input type="text" class="form-control" id="validationCustom02" name="tb_cust_mobile" placeholder="Enter reference" required>
+                        <input type="text" class="form-control" id="validationCustom02" name="enq_item_details" placeholder="Enter reference" required>
 
                         
                         </div>    
@@ -352,14 +352,14 @@ $(function()
                           <div class = "col-lg-3">    
                           
           
-                          <select class="custom-select" id="env-select" name="tb_type" required>
+                          <select class="custom-select" id="env-select" name="enq_group" required>
                                 <option value="" selected disabled hidden>Please select</option>
-                                <option value="Acc">Accessories</option>
-                                <option value="Lac">Laptop Accessories</option>                               
-                                <option value="Lap">Laptop & Desktop</option>
-                                <option value="Cab">Cable</option>                                
-                                <option value="Per">Peripherals</option>
-                                <option value="Pri">Printers & Consumables</option>
+                                <option value="Accessories">Accessories</option>
+                                <option value="Laptop Accessories">Laptop Accessories</option>                               
+                                <option value="Laptop Desktop">Laptop & Desktop</option>
+                                <option value="Cable">Cable</option>                                
+                                <option value="Peripherals">Peripherals</option>
+                                <option value="Printers & Consumables">Printers & Consumables</option>
                                                                   
                                                                     
                                 
@@ -386,7 +386,7 @@ $(function()
                               <div class = "row">
                               <label class = "col-lg-2" for="">Comments</label>
                               <div class = "col-lg-8">    
-                              <input type="text" class="form-control" id="validationCustom02"  name="tb_comment" placeholder="Enter comments">
+                              <input type="text" class="form-control" id="validationCustom02"  name="enq_comments" placeholder="Enter comments">
                               <div class = "clear-fix"></div>
                               </div>     
                               </div>
@@ -401,7 +401,7 @@ $(function()
 
      <div class="form-group">
      <input type="submit" class = "btn btn-primary" Value ="Save">
-     <a href="{{route('foh.booking.index')}}" class="btn btn-warning" role="button">Cancel</a>
+     <a href="{{route('showroom.enquiry.index')}}" class="btn btn-warning" role="button">Cancel</a>
      </div>
      </form>
       </div>

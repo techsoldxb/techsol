@@ -16,7 +16,7 @@
 
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title">Booking Details
+            <h3 class="card-title">Enquiry
             <a href="{{ route('showroom.enquiry.create') }}" class="btn btn-primary btn-sm">Add New</a></h3>   
           </div>
           <!-- /.card-header -->
@@ -33,11 +33,11 @@
                 <th> Visit Date </th>
                 <th> Visit Time </th>
                 
-                <th> Reference</th>
-                <th> User</th>
-                <th> Booking Date</th>
-                <th> Status</th>
-                <th>Approved By</th>
+                <th> Purpose</th>
+                <th> Item Details</th>
+                <th> Group</th>
+                <th> Comments</th>
+                
                 <th> Action </th>
               </tr>
               </thead>
@@ -49,45 +49,28 @@
           
           <tr>
             <td>{{ $c->id }}</td>
-            <td>{{ $c->tb_cust_name }}</td>  
+            <td>{{ $c->enq_cust_name }}</td>  
             
-            <td>{{ $c->tb_cust_mobile }}</td>  
+            <td>{{ $c->enq_mobile }}</td>  
             
             
-            <td>{{ date('d-m-Y', strtotime($c->tb_date)) }}</td>  
-            <td>{{ $c->tb_time}}</td>  
+            <td>{{ date('d-m-Y', strtotime($c->enq_date)) }}</td>  
+            <td>{{ $c->enq_time}}</td>  
             
-            <td>{{ $c->tb_reference}}</td>  
+            <td>{{ $c->enq_purpose}}</td>  
           
-            <td> {{ $c->tb_user_name }} </td>
+            <td> {{ $c->enq_item_details }} </td>
+            <td> {{ $c->enq_group }} </td>
             
-            <td>{{ date('d-m-Y', strtotime($c->created_at)) }}</td>  
+            
 
-            <td>  
-              @if($c->tb_status =='0')  
-              <div class="text-primary">   
-              Waiting for approval
-              </div>
-              @elseif($c->tb_status =='1')  
-              <div class="text-success">   
-              Request approved
-              </div>             
-
-              @endif            
-            </td>
-            <td> {{ $c->tb_appr_user_name }} </td>
+            <td> {{ $c->enq_comments}} </td>
              
             
           
           
           <td>             
             
-            <a href="{{ route('foh.booking.show',$c->id) }}">
-              <i class="fa fa-print text-green"></i>
-              
-              </a>
-
-              /
 
           
           <a href="{{ route('foh.booking.edit',$c->id) }}">
@@ -101,15 +84,8 @@
           
  
 
-<form onsubmit="return confirm('Do you really want to delete?');" action="{{ route('foh.booking.destroy',$c->id) }}" method="POST" >
-  {{ csrf_field() }}
-  <input type="hidden" name="_method" value="DELETE" />  
-  <button type="submit"><i class="fa fa-trash text-red" /></i></button>
-
-  
-
-  </form>
-         
+          <a data-catid={{$c->id}} data-toggle="modal" data-target="#delete">
+            <i class="fa fa-trash text-red"></i>
 
 
 
@@ -125,8 +101,7 @@
               </tbody>
               <tfoot>
               <tr>
-                               
-                <th> ID   </th>            
+              <th> ID   </th>            
                 <th> Name </th>            
                 
                 <th> Mobile </th> 
@@ -134,11 +109,11 @@
                 <th> Visit Date </th>
                 <th> Visit Time </th>
                 
-                <th> Reference</th>
-                <th> User</th>
-                <th> Booking Date</th>
-                <th> Status</th>
-                <th>Approved By</th>
+                <th> Purpose</th>
+                <th> Item Details</th>
+                <th> Group</th>
+                <th> Comments</th>
+                
                 <th> Action </th>
                 
               </tr>
@@ -154,6 +129,34 @@
     </div>
     <!-- /.row -->
   </section>
+
+  <!-- Modal -->
+<div class="modal modal-danger fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+
+        <h4 class="modal-title text-left" id="myModalLabel">Delete Confirmation</h4>
+      </div>
+      <form action="{{route('showroom.enquiry.destroy','test')}}" method="post">
+      		{{method_field('delete')}}
+      		{{csrf_field()}}
+	      <div class="modal-body">
+				<p class="text-left">
+					Are you sure you want to delete this transaction?
+				</p>
+	      		<input type="hidden" name="category_id" id="cat_id" value="">
+
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-success" data-dismiss="modal">Cancel</button>
+	        <button type="submit" class="btn btn-warning">Delete</button>
+	      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
    
 
 @endsection
