@@ -301,7 +301,7 @@ $(function()
                 <div class = "col-lg-3">    
 
 
-                <input type="text" class="form-control" id="validationCustom02"  value = "{{ date('h:i A') }}" name="enq_time" placeholder="Enter arrival time" required> 
+                <input type="text" class="form-control" id="validationCustom02"  value = "{{ date('h:i A') }}" name="enq_time" placeholder="Enter arrival time" required disable> 
            
 
                 
