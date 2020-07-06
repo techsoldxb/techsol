@@ -570,7 +570,7 @@
          
 
           <li class="nav-item">
-            <a href="{{route('showroom.enquiry.create')}}"  class="nav-link
+            <a href="{{route('showroom.enquiry.index')}}"  class="nav-link
             @if($segment=='cancelled')
             active
             @endif">

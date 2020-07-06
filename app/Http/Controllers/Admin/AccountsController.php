@@ -201,8 +201,8 @@ class AccountsController extends Controller
         }  
 
        // return $account;
-        
-        Mail::send(new NewBill($account));
+        // Commented due to email hacked
+      //  Mail::send(new NewBill($account));
 
        // Alert::success('Success Title', 'Success Message');
         

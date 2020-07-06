@@ -299,16 +299,12 @@ $(function()
                 </div>
                 <label class = "col-lg-2" for="">Time</label>
                 <div class = "col-lg-3">    
-                <input type="time" class="form-control" id="validationCustom02" name="enq_time" placeholder="Enter arrival time" required> 
-           <script>
-              $('.datetimepicker').datetimepicker({
-                  autoclose: true,
-                  showMeridian:false
-              }); 
-           </script>
+
+                <input type="time" class="form-control" id="validationCustom02"  name="enq_time" Vplaceholder="Enter arrival time" required> 
+           
+
                 
-                
-                
+              
              
                   
                 </div>     
