@@ -300,7 +300,8 @@ $(function()
                 <label class = "col-lg-2" for="">Time</label>
                 <div class = "col-lg-3">    
 
-                <input type="time" class="form-control" id="validationCustom02"  name="enq_time" Vplaceholder="Enter arrival time" required> 
+
+                <input type="text" class="form-control" id="validationCustom02"  value = "{{ date('h:i A') }}" name="enq_time" placeholder="Enter arrival time" required> 
            
 
                 
@@ -356,6 +357,7 @@ $(function()
                                 <option value="Cable">Cable</option>                                
                                 <option value="Peripherals">Peripherals</option>
                                 <option value="Printers & Consumables">Printers & Consumables</option>
+                                <option value="Others">Others</option>
                                                                   
                                                                     
                                 
