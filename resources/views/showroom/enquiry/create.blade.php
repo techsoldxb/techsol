@@ -262,7 +262,7 @@ $(function()
            
 
             
-                  <input type="text" class="form-control" name="enq_mobile" placeholder="Enter mobile number">
+                  <input type="text" class="form-control" name="enq_mobile" placeholder="Enter mobile number" required>
                 
 
 
