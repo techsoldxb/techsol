@@ -260,7 +260,7 @@ $(function()
             <div class = "col-lg-3">    
 
            
-
+          
             
                   <input type="text" class="form-control" name="enq_mobile" placeholder="Enter mobile number" required>
                 
@@ -303,15 +303,25 @@ $(function()
                 <div class = "col-lg-3">    
 
 
-               
+                @if($user->company =='003')
 
                 <input type="time" class="form-control" id="validationCustom02" 
                  value = "{{date_format(now("Asia/Calcutta"),'H:i')}}" 
                 name="enq_time" placeholder="Enter arrival time" readonly> 
            
                 
+                @elseif($user->company =='004')
+                <input type="time" class="form-control" id="validationCustom02" 
+                 value = "{{date_format(now("Asia/Calcutta"),'H:i')}}" 
+                name="enq_time" placeholder="Enter arrival time" readonly> 
+           
+                 @else    
+                
+                <input type="time" class="form-control" id="validationCustom02" 
+                 value = "{{date_format(now("Asia/Muscat"),'H:i')}}" 
+                name="enq_time" placeholder="Enter arrival time" readonly> 
               
-                      
+                @endif      
              
                   
                 </div>     

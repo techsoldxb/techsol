@@ -38,6 +38,7 @@ Route::get('/table', function () {
 
 Auth::routes([
     'verify' => true,
+    'register' => false,
     
     ]);
     
