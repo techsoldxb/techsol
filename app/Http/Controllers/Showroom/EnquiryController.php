@@ -65,6 +65,10 @@ class EnquiryController extends Controller
         $enquiry->enq_date = $date;    
 
         
+       //$time  = Carbon::createFromFormat('H:i', $request->enq_time);        
+       // $enquiry->enq_time = $time;    
+
+        
         //$enquiry->enq_date = $request->enq_date;    
         $enquiry->enq_time = $request->enq_time;    
 

@@ -1,3 +1,5 @@
+
+
 @extends('layouts.admin')
 @section('content')
 
@@ -271,7 +273,7 @@ $(function()
             <div class = "col-lg-3">    
             
            
-                  <input type="email" class="form-control" name="enq_email" placeholder="Email">
+                  <input type="email" class="form-control" name="enq_email" placeholder="Enter email address">
                 
 
             </div>     
@@ -286,7 +288,7 @@ $(function()
                 <label class = "col-lg-2" for="">Date of Visit</label>
                 <div class = "col-lg-3">    
                 
-                    <input class = "form-control datepicker" id="datepicker" name = "enq_date" value = "{{ date('d-m-Y') }}" required>  
+                    <input class = "form-control datepicker" id="datepicker" name = "enq_date" value = "{{ date('d-m-Y') }}" readonly>  
              
                     <script>
                      $('#datepicker').datepicker({
@@ -301,11 +303,15 @@ $(function()
                 <div class = "col-lg-3">    
 
 
-                <input type="text" class="form-control" id="validationCustom02"  value = "{{ date('h:i A') }}" name="enq_time" placeholder="Enter arrival time" required disable> 
-           
+               
 
+                <input type="time" class="form-control" id="validationCustom02" 
+                 value = "{{date_format(now("Asia/Calcutta"),'H:i')}}" 
+                name="enq_time" placeholder="Enter arrival time" readonly> 
+           
                 
               
+                      
              
                   
                 </div>     
@@ -336,7 +342,7 @@ $(function()
                         <label class = "col-lg-2" for="">Item Details</label>
                         <div class = "col-lg-3">    
 
-                        <input type="text" class="form-control" id="validationCustom02" name="enq_item_details" placeholder="Enter reference" required>
+                        <input type="text" class="form-control" id="validationCustom02" name="enq_item_details" placeholder="Enter item details" required>
 
                         
                         </div>    
@@ -349,7 +355,7 @@ $(function()
                           <div class = "col-lg-3">    
                           
           
-                          <select class="custom-select" id="env-select" name="enq_group" required>
+                          <select class="custom-select" id="env-select" name="enq_group" >
                                 <option value="" selected disabled hidden>Please select</option>
                                 <option value="Accessories">Accessories</option>
                                 <option value="Laptop Accessories">Laptop Accessories</option>                               
