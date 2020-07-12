@@ -12,7 +12,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Dashboard - Booking</h1>
+            <h1 class="m-0 text-dark">Dashboard - Customer Enquiry</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -39,7 +39,7 @@
                 <h3>
 
 
-                  {{$booking_count}}
+                  {{$enqkkdtotal}}
                 
                 
                 
@@ -49,23 +49,18 @@
 
                 
 
-                <p>Number Of Booking</p>
+                <p>Total Enquiry - KKD</p>
               </div>
               <div class="icon">
                 <i class="ion ion-bag"></i>
               </div>
 
-              @if($user->user_type =='admin')        
+                   
                 
 
-              <a href="{{route('foh.bookinghistory.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="{{route('showroom.enqkkdtotal')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
 
                 
-                @elseif($user->user_type =='user')
-                <a href="{{route('foh.booking.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                @else
-                <a href="{{route('foh.booking.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                @endif
 
               
             </div>
@@ -78,22 +73,23 @@
                 <h3>
                 
                 
-                {{$booking_pending_approval}}
+                {{$enqkkdtoday}}
                 
                 
                 
                 </h3>
 
-                <p>Pending Approval</p>
+                <p>Today Enquiry - KKD</p>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
+                
               </div>
 
               @if($user->user_type =='admin')       
                 
 
-              <a href="{{route('foh.pending.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="{{route('showroom.enqkkdtoday')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
   
                   
                   @else
@@ -110,10 +106,10 @@
             <div class="small-box bg-warning">
               <div class="inner">
                 <h3> 
-                 0
+                {{$enqrmdtotal}}
                 </h3>
 
-                <p>Target</p>
+                <p>Total Enquiry - RMD</p>
               </div>
               <div class="icon">
                 <i class="ion ion-person-add"></i>
@@ -121,7 +117,7 @@
               @if($user->user_type =='admin')       
                 
 
-              <a href="{{route('admin.advanceall.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="{{route('showroom.enqrmdtotal')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
   
                   
                   @else
@@ -138,19 +134,19 @@
                 
 
                 
-               0
+                {{$enqrmdtoday}}
 
                 
                 
                 
                 </h3>
 
-                <p>Target Achieved</p>
+                <p>Today Enquiry - RMD</p>
               </div>
               <div class="icon">
                 <i class="ion ion-pie-graph"></i>
               </div>
-              <a href="{{route('admin.cashtopups.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="{{route('showroom.enqrmdtoday')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -267,7 +263,7 @@
             <div class="card">
               <div class="card-header border-0">
                 <div class="d-flex justify-content-between">
-                  <h3 class="card-title">Aquarium Visitors</h3>
+                  <h3 class="card-title">Showroom Visitors</h3>
                   <a href="javascript:void(0);">View Report</a>
                 </div>
               </div>
@@ -275,7 +271,7 @@
                 <div class="d-flex">
                   <p class="d-flex flex-column">
                     <span class="text-bold text-lg">{{$booking_student_count}}</span>
-                    <span>Students Booked</span>
+                    <span>Techsol Computers - KKD</span>
                   </p>
                   <p class="ml-auto d-flex flex-column text-right">
                     <span class="text-success">
@@ -290,7 +286,7 @@
                 <div class="d-flex">
                   <p class="d-flex flex-column">
                     <span class="text-bold text-lg">{{$booking_teacher_count}}</span>
-                    <span>Teachers Booked</span>
+                    <span>Bash Computers - RMD</span>
                   </p>
                   <p class="ml-auto d-flex flex-column text-right">
                     <span class="text-success">

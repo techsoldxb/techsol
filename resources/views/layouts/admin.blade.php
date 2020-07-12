@@ -151,6 +151,21 @@
                 </a>
 
               </li>
+
+              <li class="nav-item">
+                <a href=" {{ route('homeicc') }}" class="nav-link
+                @if(!$segment)
+                active
+                @endif            
+                ">
+                  <i class="nav-icon fas fa-tachometer-alt"></i>
+                  <p>
+                    Dashboard Cust Enquiry
+                  </p>
+                </a>
+
+              </li>
+             
              
               @endcan
 

@@ -288,7 +288,8 @@ $(function()
                 <label class = "col-lg-2" for="">Date of Visit</label>
                 <div class = "col-lg-3">    
                 
-                    <input class = "form-control datepicker" id="datepicker" name = "enq_date" value = "{{ date('d-m-Y') }}" readonly>  
+                    <input class = "form-control datepicker" id="datepicker" name = "enq_date" 
+                    value = "{{ date('d-m-Y') }}" readonly>  
              
                     <script>
                      $('#datepicker').datepicker({

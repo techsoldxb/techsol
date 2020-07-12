@@ -240,8 +240,21 @@ view()->composer('homeicc', function($view)  {
 });
 
 view()->composer('homeicc', function($view)  {
-    $view->with('booking_pending_approval',\App\Booking::where('tb_status','0')->whereNull('tb_flex1')->count('ID'));
+    $view->with('enqkkdtotal',\App\Enquiry::where('enq_comp_code','004')->count('ID'));
 });
+
+view()->composer('homeicc', function($view)  {
+    $view->with('enqkkdtoday',\App\Enquiry::where('enq_comp_code','004')->where('enq_date',date('Y-m-d'))->count('ID'));
+});
+
+view()->composer('homeicc', function($view)  {
+    $view->with('enqrmdtotal',\App\Enquiry::where('enq_comp_code','003')->count('ID'));
+});
+
+view()->composer('homeicc', function($view)  {
+    $view->with('enqrmdtoday',\App\Enquiry::where('enq_comp_code','003')->where('enq_date',date('Y-m-d'))->count('ID'));
+});
+
 
 
 

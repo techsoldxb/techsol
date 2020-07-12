@@ -96,7 +96,15 @@ $(function()
             <div class = "row">
             <label class = "col-lg-2" for="">Mobile Number</label>
             <div class = "col-lg-3">    
+            
+
+            
+                    
+                  
+
+
             <input type="text" class="form-control" id="validationCustom02" name="job_cust_mobile" placeholder="Enter mobile number" required>
+            
             </div>
             <label class = "col-lg-2" for="">Email</label>
             <div class = "col-lg-3">    

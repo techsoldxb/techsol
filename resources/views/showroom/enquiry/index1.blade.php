@@ -25,7 +25,7 @@
               <thead>
               <tr>
                                  
-                <th> Company </th>            
+                <th> ID   </th>            
                 <th> Name </th>            
                 
                 <th> Mobile </th> 
@@ -48,7 +48,7 @@
           @foreach($enquiry as $c)
           
           <tr>
-            <td>{{ $c->enq_comp_code }}</td>
+            <td>{{ $c->id }}</td>
             <td>{{ $c->enq_cust_name }}</td>  
             
             <td>{{ $c->enq_mobile }}</td>  
@@ -104,7 +104,7 @@
               </tbody>
               <tfoot>
               <tr>
-              <th> Company  </th>            
+              <th> ID   </th>            
                 <th> Name </th>            
                 
                 <th> Mobile </th> 

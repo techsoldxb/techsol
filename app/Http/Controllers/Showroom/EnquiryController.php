@@ -30,10 +30,47 @@ class EnquiryController extends Controller
      */
     public function index()
     {
+                
+    $arr['enquiry'] = Enquiry::where('enq_comp_code', 'auth()->user()->company')->get();    
+    return view('showroom.enquiry.index')->with($arr); 
+    }
+
+    public function enqkkdtotal()
+    {      
+        
+        $arr['enquiry'] = Enquiry::where('enq_comp_code', '004')                                    
+                                    ->get();   
+      
+    
+    return view('showroom.enquiry.index')->with($arr); 
+    }
+
+    public function enqkkdtoday()
+    {      
         
 
+    $arr['enquiry'] = Enquiry::where('enq_comp_code', '004')                                    
+    ->where('enq_date', date('Y-m-d'))
+    ->get();    
+    
+    return view('showroom.enquiry.index')->with($arr); 
+    }
+
+    public function enqrmdtotal()
+    {      
         
-    $arr['enquiry'] = Enquiry::where('enq_comp_code', auth()->user()->company)->get();
+        $arr['enquiry'] = Enquiry::where('enq_comp_code', '003')->get();   
+    
+    return view('showroom.enquiry.index')->with($arr); 
+    }
+
+    public function enqrmdtoday()
+    {      
+        
+    
+        $arr['enquiry'] = Enquiry::where('enq_comp_code', '003')                                    
+        ->where('enq_date', date('Y-m-d'))
+        ->get();   
     
     return view('showroom.enquiry.index')->with($arr); 
     }

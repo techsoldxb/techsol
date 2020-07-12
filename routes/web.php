@@ -97,6 +97,13 @@ Route::resource('/hrms/locker', 'Hrms\LockerController', ['as'=>'hrms'])->middle
 
 //Showroom - Enquiry
 Route::resource('/showroom/enquiry', 'Showroom\EnquiryController', ['as'=>'showroom'])->middleware('auth');
+//Route::get('/showroom/enquiry/index1', 'Showroom\EnquiryController@index1', ['as'=>'showroom'])->middleware('auth');
+Route::get('/showroom/enqkkdtotal', 'Showroom\EnquiryController@enqkkdtotal')->name('showroom.enqkkdtotal');   
+Route::get('/showroom/enqkkdtoday', 'Showroom\EnquiryController@enqkkdtoday')->name('showroom.enqkkdtoday');  
+
+Route::get('/showroom/enqrmdtotal', 'Showroom\EnquiryController@enqrmdtotal')->name('showroom.enqrmdtotal');   
+Route::get('/showroom/enqrmdtoday', 'Showroom\EnquiryController@enqrmdtoday')->name('showroom.enqrmdtoday');  
+
 Route::resource('/showroom/cash', 'Showroom\CashController', ['as'=>'showroom'])->middleware('auth');
 Route::resource('/showroom/cashkkd', 'Showroom\CashkkdController', ['as'=>'showroom'])->middleware('auth');
 Route::resource('/showroom/accountskkd', 'Admin\AccountskkdController', ['as'=>'showroom'])->middleware('auth');
