@@ -46,7 +46,7 @@ Route::get('users', 'UserController@index')->name('users')->middleware('auth');
 Route::get('changeStatus', 'UserController@changeStatus');
 
 Route::get('/admin', 'HomeController@index')->name('home')->middleware('auth');
-Route::get('/foh', 'HomeController@icc')->name('homeicc')->middleware('auth');
+Route::get('/foh/homeicc', 'HomeController@icc')->name('homeicc')->middleware('auth');
 Route::get('/coh', 'HomeController@coh')->name('cash')->middleware('auth');
 //Route::get('/admin1', 'HomestaffController@index')->name('homestaff');
 

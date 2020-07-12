@@ -135,11 +135,12 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
             <?php
-              $segment = Request::segment(2);              
+              $segment = Request::segment(2);     
+                   
             ?>
              @can('isAdmin')
               <li class="nav-item">
-                <a href=" {{ route('home') }}" class="nav-link
+                <a href=" {{ route('home') }}" class="nav-link 
                 @if(!$segment)
                 active
                 @endif            
@@ -154,11 +155,12 @@
 
               <li class="nav-item">
                 <a href=" {{ route('homeicc') }}" class="nav-link
-                @if(!$segment)
+                @if($segment =='homeicc')
+                
                 active
                 @endif            
                 ">
-                  <i class="nav-icon fas fa-tachometer-alt"></i>
+                  <i class="nav-icon fas fa-th"></i>
                   <p>
                     Dashboard Cust Enquiry
                   </p>
@@ -355,7 +357,9 @@
           @can('isAdmin')
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-chart-pie"></i>
+              <i class="nav-icon fas fa-wrench"></i>
+              
+
               <p>
                 Job Contract
                 <i class="right fas fa-angle-left"></i>
@@ -363,23 +367,79 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('job.jobcard.create')}}"  class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                <a href="{{route('job.jobcard.create')}}"  class="nav-link
+                @if($segment=='jobcard')                
+                active
+                @endif">
+                <i class="nav-icon far fa-circle text-info"></i>
                   <p>Job Enquiry</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{route('admin.cheque.index')}}"  class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Job Invoice</p>
+                <i class="nav-icon far fa-circle text-danger"></i>
+                  <p>Received</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('admin.cheque.index')}}"  class="nav-link">
+                <i class="nav-icon far fa-circle text-warning"></i>
+                  <p>Inspected</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('admin.cheque.index')}}"  class="nav-link">
+                <i class="nav-icon far fa-circle text-primary"></i>
+                  <p>Waiting for Approval</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('admin.cheque.index')}}"  class="nav-link">
+                <i class="nav-icon far fa-circle text-sucess"></i>
+                  <p>Approved</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('admin.cheque.index')}}"  class="nav-link">
+                <i class="nav-icon far fa-circle text-secondary"></i>
+                  <p>Completed</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="pages/charts/inline.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Public Holidays</p>
+                <i class="nav-icon fas fa-circle text-primary"></i>
+                  <p>Invoiced</p>
                 </a>
               </li>
+
+              <li class="nav-item">
+                <a href="pages/charts/inline.html" class="nav-link">
+                <i class="nav-icon fas fa-circle text-info"></i>
+                  <p>Returned</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="pages/charts/inline.html" class="nav-link">
+                <i class="nav-icon fas fa-circle text-success"></i>
+                  <p>Not Repaired</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="pages/charts/inline.html" class="nav-link">
+                <i class="nav-icon fas fa-circle text-warning"></i>
+                  <p>Not Approved</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="pages/charts/inline.html" class="nav-link">
+                <i class="nav-icon fas fa-circle text-danger"></i>
+                  <p>Quit Job</p>
+                </a>
+              </li>
+
             </ul>
           </li>
           
