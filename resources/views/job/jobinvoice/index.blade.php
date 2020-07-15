@@ -72,31 +72,13 @@
             
           
           
-          <td>             
+          <td align='center'>             
             
             <a href="{{ route('job.jobinvoice.print',$c) }}">
               <i class="fa fa-print text-green"></i>
               
               </a>
 
-              /
-
-          
-          <a href="{{ route('job.jobcard.edit',$c->id) }}">
-          <i class="fa fa-edit"></i>
-          
-          </a>
-
-         
-          /
-
-          
- 
-
-          <a data-catid={{$c->id}} data-toggle="modal" data-target="#delete">
-            <i class="fa fa-trash text-red"></i>
-            
-            </a>
          
 
 
