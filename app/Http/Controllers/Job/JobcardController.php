@@ -29,10 +29,21 @@ class JobcardController extends Controller
     {
         
         $arr['jobcard'] = Jobcard::where('job_comp_code', auth()->user()->company)
-        ->where('job_status_id','0')
+        ->where('job_status_name','Item Received')
         ->get();
     
         return view('job.jobcard.index')->with($arr); 
+        
+    }
+
+    public function invoice()
+    {
+        
+        $arr['jobcard'] = Jobcard::where('job_comp_code', auth()->user()->company)
+        ->where('job_status_name','Invoiced')
+        ->get();
+    
+        return view('job.jobcard.invoice')->with($arr); 
         
     }
 
@@ -111,6 +122,8 @@ class JobcardController extends Controller
         return view('job.jobcard.show',compact('jobcard'));
      }
 
+
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -150,6 +163,10 @@ class JobcardController extends Controller
         $id_year = substr($id, 0, 4);
         $seq = $year <> $id_year ? 0 : +substr($id, -5);
         $new_id = sprintf("%0+4u%0+6u", $year, $seq+1);  
+
+        $todaymnt = Carbon::now();
+        $jobcard->job_invoice_date = $todaymnt;
+        
         
             
             $jobcard->job_status_name = $request->job_status_name; 

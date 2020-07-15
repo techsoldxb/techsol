@@ -120,7 +120,7 @@ if(select_status == 'Estimated')
      <div class = "row">
      <label class = "col-lg-2" for="">Customer Name</label>
      <div class = "col-lg-8">    
-     <input type="text" class="form-control" value="{{ $jobcard->job_cust_name}}" id="validationCustom01" name="job_cust_name" placeholder="Enter customer name">
+     <input type="text" class="form-control" value="{{ $jobcard->job_cust_name}}" id="validationCustom01" name="job_cust_name" placeholder="Enter customer name" readonly>
      <div class = "clear-fix"></div>
      </div>     
      </div>

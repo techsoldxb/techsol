@@ -109,6 +109,10 @@ Route::resource('/showroom/cashkkd', 'Showroom\CashkkdController', ['as'=>'showr
 Route::resource('/showroom/accountskkd', 'Admin\AccountskkdController', ['as'=>'showroom'])->middleware('auth');
 
 Route::resource('/job/jobcard', 'Job\JobcardController', ['as'=>'job'])->middleware('auth');
+Route::resource('/job/jobinvoice', 'Job\JobinvoiceController', ['as'=>'job'])->middleware('auth');
+//Route::get('/jobcard/invoice', 'Job\JobcardController@invoice')->name('jobcard.invoice'); 
+//Route::get('/jobcard/print', 'Job\JobcardController@print')->name('jobcard.print');  
+Route::get('/job/jobinvoice/{jobcard}/print', 'Job\JobinvoiceController@print')->name('job.jobinvoice.print');
 
 
 

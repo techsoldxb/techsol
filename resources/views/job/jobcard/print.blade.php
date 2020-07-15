@@ -56,23 +56,18 @@
 
     <div class = "row">
         <div class = "col text-center">
-
-          
+          <img src={{asset('dist/img/printjarwani.png')}}>
         </div>
         <div class = "col">
         <h1 class="m-0 text-dark text-center">Techsol Group</h1>
-        @if($jobcard->job_comp_code =='3')   
-        <h2 class="m-0 text-dark text-center">Bash Computers</h2>
-        @else
-        <h2 class="m-0 text-dark text-center">Techsol Computers</h2>
-        @endif
+        <h2 class="m-0 text-dark text-center">Service Invoice</h2>
         
         </div>
         <div class = "col text-center">
           
           
           
-
+          <img src={{asset('dist/img/printaqua.png')}}>
           
         </div>
       </div>  
@@ -108,8 +103,7 @@
         </div>
         <label class = "col" for="">Date</label>
         <div class = "col">    
-        <input type="text" class="form-control" id="validationCustom02" name="tb_cust_addr" 
-        value="{{ date('d-m-Y', strtotime($jobcard->created_at))}}"  disabled>           
+        <input type="text" class="form-control" id="validationCustom02" name="tb_cust_addr" value="{{ $jobcard->job_enq_date }}" disabled>           
         </div>     
         </div>
         </div>

@@ -56,8 +56,11 @@
 
     <div class = "row">
         <div class = "col text-center">
-
           
+          <!-- /.content-header           
+          <img src={{asset('dist/img/printaqua.png')}}>
+          -->
+
         </div>
         <div class = "col">
         <h1 class="m-0 text-dark text-center">Techsol Group</h1>
@@ -70,8 +73,9 @@
         </div>
         <div class = "col text-center">
           
-          
-          
+           <!-- /.content-header           
+          <img src={{asset('dist/img/printaqua.png')}}>
+          -->
 
           
         </div>
@@ -79,7 +83,7 @@
 
       <div class="p-1 bg-secondary text-center"> 
 
-        <h4 class="m-0  text-center">Job Card</h4>
+        <h4 class="m-0  text-center">Job Invoice</h4>
      
     </div> 
 
@@ -101,7 +105,7 @@
 
         <div class="form-group">
         <div class = "row">
-            <label class = "col" for="">Job Card Number</label>
+            <label class = "col" for="">Invoice Number</label>
         <div class = "col">    
             <input type="text" class="form-control" id="validationCustom01" name="job_enq_number" 
             value="{{ $jobcard->job_enq_number }}" disabled  >
@@ -109,7 +113,7 @@
         <label class = "col" for="">Date</label>
         <div class = "col">    
         <input type="text" class="form-control" id="validationCustom02" name="tb_cust_addr" 
-        value="{{ date('d-m-Y', strtotime($jobcard->created_at))}}"  disabled>           
+        value="{{ date('d-m-Y', strtotime($jobcard->job_invoice_date))}}"  disabled>           
         </div>     
         </div>
         </div>
@@ -204,6 +208,16 @@
                             <label class = "col-lg-3" for="">Remarks</label>
                             <div class = "col">                              
                             <input type="text" class="form-control" id="validationCustom02" name="tb_pay_mode"  value="{{ $jobcard->job_remarks }}" disabled>                                                           
+                            </div>                               
+                            </div>
+                            </div>
+
+                            
+                            <div class="form-group">
+                            <div class = "row">
+                            <label class = "col-lg-3" for="">Amount</label>
+                            <div class = "col">                              
+                            <input type="text" class="form-control" id="validationCustom02" name="tb_pay_mode"  value="{{ $jobcard->job_invoice_amount }}" disabled>                                                           
                             </div>                               
                             </div>
                             </div>

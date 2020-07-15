@@ -56,30 +56,25 @@
 
     <div class = "row">
         <div class = "col text-center">
-
-          
+          <img src={{asset('dist/img/printjarwani.png')}}>
         </div>
         <div class = "col">
         <h1 class="m-0 text-dark text-center">Techsol Group</h1>
-        @if($jobcard->job_comp_code =='3')   
         <h2 class="m-0 text-dark text-center">Bash Computers</h2>
-        @else
-        <h2 class="m-0 text-dark text-center">Techsol Computers</h2>
-        @endif
         
         </div>
         <div class = "col text-center">
           
           
           
-
+          <img src={{asset('dist/img/printaqua.png')}}>
           
         </div>
       </div>  
 
       <div class="p-1 bg-secondary text-center"> 
 
-        <h4 class="m-0  text-center">Job Card</h4>
+        <h4 class="m-0  text-center">Job Invoice</h4>
      
     </div> 
 
@@ -101,15 +96,14 @@
 
         <div class="form-group">
         <div class = "row">
-            <label class = "col" for="">Job Card Number</label>
+            <label class = "col" for="">Invoice Number</label>
         <div class = "col">    
             <input type="text" class="form-control" id="validationCustom01" name="job_enq_number" 
             value="{{ $jobcard->job_enq_number }}" disabled  >
         </div>
         <label class = "col" for="">Date</label>
         <div class = "col">    
-        <input type="text" class="form-control" id="validationCustom02" name="tb_cust_addr" 
-        value="{{ date('d-m-Y', strtotime($jobcard->created_at))}}"  disabled>           
+        <input type="text" class="form-control" id="validationCustom02" name="tb_cust_addr" value="{{ $jobcard->job_enq_date }}" disabled>           
         </div>     
         </div>
         </div>

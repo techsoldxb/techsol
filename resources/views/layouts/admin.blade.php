@@ -406,7 +406,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/charts/inline.html" class="nav-link">
+                <a href="{{route('job.jobinvoice.index')}}" class="nav-link">
                 <i class="nav-icon fas fa-circle text-primary"></i>
                   <p>Invoiced</p>
                 </a>
