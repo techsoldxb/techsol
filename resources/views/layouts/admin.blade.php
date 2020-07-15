@@ -354,7 +354,7 @@
             </ul>
           </li>
 
-          @can('isAdmin')
+
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-wrench"></i>
@@ -443,126 +443,7 @@
             </ul>
           </li>
           
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tree"></i>
-              <p>
-                FOH
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{route('foh.booking.create')}}"  class="nav-link
-                ">
-                  <i class="nav-icon fas fa-file"></i>
-                  <p>New Booking</p>
-                </a>
-              </li>
-
-           
-
-
-              <li class="nav-item">
-                <a href="{{route('foh.booking.index')}}"  class="nav-link
-                ">
-                <i class="nav-icon far fa-circle text-warning"></i>
-                  <p>Booking Details</p>
-                </a>
-              </li>
-
-            
-
-
-              <li class="nav-item">
-                <a href="{{route('foh.bookinghistory.index')}}" class="nav-link
-                @if($segment=='bookinghistory')
-                active
-                @endif">
-                <i class="nav-icon far fa-circle "></i>
-                
-                  <p>Booking History</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href='{!! url('/calendar') !!}' class="nav-link">
-                  <i class="far fa fa-calendar-alt nav-icon"></i>
-                  <p>Calendar</p>
-                </a>
-              </li>
-             
-            </ul>
-          </li>
           
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-edit"></i>
-              <p>
-                BOH
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="pages/forms/general.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Schedule</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/forms/advanced.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Fish Movement</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/forms/editors.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Fish Collection</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-          
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-table"></i>
-              <p>
-                IT
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="pages/tables/simple.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Support</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/tables/data.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Access Request</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/tables/jsgrid.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Policy</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href=" {{ route('users') }}" class="nav-link">
-                  <i class="nav-icon fas fa-file"></i>
-                  <p>Users</p>
-                </a>
-              </li>
-              
-            </ul>
-          </li>
-
-        
-          @endcan
 
           @can('isAccess')
           <li class="nav-item">
