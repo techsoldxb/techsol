@@ -53,9 +53,9 @@
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
-
+    <div class="form-group">
     <div class = "row">
-        <div class = "col text-center">
+        <div class = "col text-left">
         <img src={{asset('dist/img/bashlogo12.png')}}>
           
         </div>
@@ -64,7 +64,7 @@
         <P></P>
         
         </div>
-        <div class = "col text-center">
+        <div class = "col text-right">
           
         @if($jobcard->job_comp_code =='3')   
               <img src={{asset('dist/img/bashlogotamil12.png')}}>
@@ -84,6 +84,7 @@
         <h4 class="m-0  text-center">Job Card</h4>
      
     </div> 
+    </div>
 
     <div class="p-1 bg-transparent text-center"> 
 
