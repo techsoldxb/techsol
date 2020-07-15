@@ -376,7 +376,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('admin.cheque.index')}}"  class="nav-link">
+                <a href="{{route('job.jobcard.index')}}"  class="nav-link">
                 <i class="nav-icon far fa-circle text-danger"></i>
                   <p>Received</p>
                 </a>

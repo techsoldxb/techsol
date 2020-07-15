@@ -16,7 +16,7 @@
 
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title">Jobcard Details
+            <h3 class="card-title">Job Details
             <a href="{{ route('job.jobcard.create') }}" class="btn btn-primary btn-sm">Add New</a></h3>   
           </div>
           <!-- /.card-header -->
