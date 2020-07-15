@@ -14,8 +14,7 @@ class CreateJobcardsTable extends Migration
     public function up()
     {
         Schema::create('jobcards', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            
+            $table->bigIncrements('id');           
             
             $table->string('job_comp_code')->nullable();
             $table->string('job_comp_name')->nullable();
@@ -47,6 +46,8 @@ class CreateJobcardsTable extends Migration
 
             $table->date('job_est_date')->nullable();
             $table->integer('job_est_amount')->nullable();
+            
+            $table->integer('job_est_remark')->nullable();
             $table->string('job_item_used')->nullable();
             $table->string('job_item_cost')->nullable();
 
@@ -54,14 +55,18 @@ class CreateJobcardsTable extends Migration
 
             $table->date('job_completed_date')->nullable();
             $table->string('job_completed_by')->nullable();
+            $table->string('job_completed_remark')->nullable();
 
             $table->string('job_invoice_number')->nullable();
             $table->date('job_invoice_date')->nullable();
             $table->integer('job_invoice_amount')->nullable();
             $table->integer('job_invoice_discount')->nullable();
+            
+            $table->string('job_invoice_remark')->nullable();
             $table->date('job_quit_date')->nullable();
             $table->string('job_quit_remarks')->nullable();
             $table->string('job_delivery')->nullable();
+            $table->string('job_delivery_remark')->nullable();
             $table->date('job_delivery_date')->nullable();
             $table->string('job_warranty')->nullable();
 
@@ -80,13 +85,6 @@ class CreateJobcardsTable extends Migration
             $table->date('job_flex8')->nullable();
             $table->date('job_flex9')->nullable();
             $table->string('job_flex10')->nullable();
-
-
-
-
-
-
-
             $table->timestamps();
         });
     }

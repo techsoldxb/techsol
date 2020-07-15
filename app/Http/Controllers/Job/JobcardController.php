@@ -117,9 +117,11 @@ class JobcardController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Jobcard $jobcard)
     {
-        //
+        
+        $arr['jobcard'] = $jobcard;
+        return view('job.jobcard.edit')->with($arr);
     }
 
     /**
@@ -129,9 +131,43 @@ class JobcardController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,Jobcard $jobcard)
+    
     {
-        //
+
+        
+        
+
+
+
+        $jobcard->job_cust_name = $request->job_cust_name;   
+
+        if (( $request->job_status_name )  == 'Invoiced') {
+
+            $id = Jobcard::where('job_comp_code', auth()->user()->company)
+        ->orderByDesc('job_invoice_number')->first()->job_invoice_number ?? date('Y') . 00000;
+        $year = date('Y');
+        $id_year = substr($id, 0, 4);
+        $seq = $year <> $id_year ? 0 : +substr($id, -5);
+        $new_id = sprintf("%0+4u%0+6u", $year, $seq+1);  
+        
+            
+            $jobcard->job_status_name = $request->job_status_name; 
+            $jobcard->job_invoice_number = $new_id;
+            $jobcard->job_invoice_amount = $request->job_invoice_amount;
+        }
+        else if (( $request->job_status_name )  == 'Estimated') 
+        {
+            $jobcard->job_status_name = $request->job_status_name; 
+            $jobcard->job_est_amount = $request->job_est_amount;
+        }
+
+       // $jobcard->job_est_amount = $request->est_amount; 
+        
+          
+        
+        $jobcard->save();
+        return redirect()->route('job.jobcard.index')->with('info','Transaction updated successfully!');
     }
 
     /**
