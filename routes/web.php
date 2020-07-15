@@ -18,7 +18,7 @@ Route::resource('/admin/accounts', 'AccountsController');
 */
 
 Route::get('/', function () {
-    Alert::success('Welcome', 'Welcome');
+   // Alert::success('Welcome', 'Welcome');
 
     return view('welcome');
 });
@@ -109,6 +109,8 @@ Route::resource('/showroom/cashkkd', 'Showroom\CashkkdController', ['as'=>'showr
 Route::resource('/showroom/accountskkd', 'Admin\AccountskkdController', ['as'=>'showroom'])->middleware('auth');
 
 Route::resource('/job/jobcard', 'Job\JobcardController', ['as'=>'job'])->middleware('auth');
+Route::resource('/job/jobinspect', 'Job\JobinspectController', ['as'=>'job'])->middleware('auth');
+Route::resource('/job/jobcomplete', 'Job\JobcompleteController', ['as'=>'job'])->middleware('auth');
 Route::resource('/job/jobinvoice', 'Job\JobinvoiceController', ['as'=>'job'])->middleware('auth');
 //Route::get('/jobcard/invoice', 'Job\JobcardController@invoice')->name('jobcard.invoice'); 
 //Route::get('/jobcard/print', 'Job\JobcardController@print')->name('jobcard.print');  

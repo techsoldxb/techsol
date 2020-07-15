@@ -238,7 +238,7 @@ $(function()
                               <div class = "row">
                               <label class = "col-lg-2" for="">Remarks</label>
                               <div class = "col-lg-8">    
-                              <input type="text" class="form-control" id="validationCustom02"  name="job_remarks" placeholder="Enter remarks">
+                              <input type="text" class="form-control" id="validationCustom02"  name="job_remark" placeholder="Enter remarks">
                               <div class = "clear-fix"></div>
                               </div>     
                               </div>

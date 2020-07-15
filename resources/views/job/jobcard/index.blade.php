@@ -16,7 +16,7 @@
 
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title">Job Details
+            <h3 class="card-title">Items Received
             <a href="{{ route('job.jobcard.create') }}" class="btn btn-primary btn-sm">Add New</a></h3>   
           </div>
           <!-- /.card-header -->
@@ -63,7 +63,7 @@
             
             <td>{{ $c->job_fault}}</td>  
           
-            <td> {{ $c->job_remarks }} </td>
+            <td> {{ $c->job_remark }} </td>
 
             <td> {{ $c->job_enq_created_user }} </td>
             

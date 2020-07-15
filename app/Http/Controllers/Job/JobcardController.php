@@ -29,7 +29,7 @@ class JobcardController extends Controller
     {
         
         $arr['jobcard'] = Jobcard::where('job_comp_code', auth()->user()->company)
-        ->where('job_status_name','Item Received')
+        ->where('job_status_name','Received')
         ->get();
     
         return view('job.jobcard.index')->with($arr); 
@@ -77,6 +77,10 @@ class JobcardController extends Controller
         $jobcard->job_comp_code = Auth::user()->company;
         $jobcard->job_enq_number = $new_id;
 
+        $todaymnt = Carbon::now();
+        $jobcard->job_enq_date = $todaymnt;
+        
+
         $jobcard->job_cust_name = $request->job_cust_name;
         $jobcard->job_cust_mobile = $request->job_cust_mobile;
         $jobcard->job_cust_email = $request->job_cust_email;
@@ -89,7 +93,7 @@ class JobcardController extends Controller
         $jobcard->job_type = $request->job_type;
         $jobcard->job_fault = $request->job_fault;
         $jobcard->job_desc = $request->job_desc;
-        $jobcard->job_remarks = $request->job_remarks;
+        $jobcard->job_remark = $request->job_remark;
 
       
 
@@ -100,7 +104,7 @@ class JobcardController extends Controller
         $jobcard->job_month = $todaymnt->month;
         
         $jobcard->job_status_id = '0';
-        $jobcard->job_status_name = 'Item Received';
+        $jobcard->job_status_name = 'Received';
 
         
         $jobcard->job_enq_created_user = Auth::user()->name;
@@ -177,6 +181,27 @@ class JobcardController extends Controller
         {
             $jobcard->job_status_name = $request->job_status_name; 
             $jobcard->job_est_amount = $request->job_est_amount;
+        }
+        else if (( $request->job_status_name )  == 'Inspected') 
+        {
+            $jobcard->job_status_name = $request->job_status_name; 
+            $jobcard->job_ins_remark = $request->job_ins_remark; 
+
+            $today = Carbon::now();
+            $jobcard->job_ins_date = $today;
+
+            $jobcard->job_ins_created_user = Auth::user()->name;
+            
+            
+        }
+        else if (( $request->job_status_name )  == 'Quit') 
+        {
+            $jobcard->job_status_name = $request->job_status_name; 
+            $jobcard->job_quit_remark = $request->job_quit_remark; 
+            $jobcard->job_quit_created_user = Auth::user()->name;
+            $today = Carbon::now();
+            $jobcard->job_quit_date = $today;
+            
         }
 
        // $jobcard->job_est_amount = $request->est_amount; 

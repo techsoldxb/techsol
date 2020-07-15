@@ -147,7 +147,7 @@
                 ">
                   <i class="nav-icon fas fa-tachometer-alt"></i>
                   <p>
-                    Dashboard
+                    Dashboard WOB
                   </p>
                 </a>
 
@@ -382,11 +382,25 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('admin.cheque.index')}}"  class="nav-link">
+                <a href="{{route('job.jobinspect.index')}}"  class="nav-link">
                 <i class="nav-icon far fa-circle text-warning"></i>
                   <p>Inspected</p>
                 </a>
               </li>
+           
+              <li class="nav-item">
+                <a href="{{route('job.jobcomplete.index')}}"  class="nav-link">
+                <i class="nav-icon far fa-circle text-secondary"></i>
+                  <p>Completed</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('job.jobinvoice.index')}}" class="nav-link">
+                <i class="nav-icon fas fa-circle text-primary"></i>
+                  <p>Invoiced</p>
+                </a>
+              </li>
+
               <li class="nav-item">
                 <a href="{{route('admin.cheque.index')}}"  class="nav-link">
                 <i class="nav-icon far fa-circle text-primary"></i>
@@ -397,18 +411,6 @@
                 <a href="{{route('admin.cheque.index')}}"  class="nav-link">
                 <i class="nav-icon far fa-circle text-sucess"></i>
                   <p>Approved</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{route('admin.cheque.index')}}"  class="nav-link">
-                <i class="nav-icon far fa-circle text-secondary"></i>
-                  <p>Completed</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{route('job.jobinvoice.index')}}" class="nav-link">
-                <i class="nav-icon fas fa-circle text-primary"></i>
-                  <p>Invoiced</p>
                 </a>
               </li>
 

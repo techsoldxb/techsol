@@ -16,7 +16,7 @@
 
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title">Invoiced
+            <h3 class="card-title">Inspected
             <a href="{{ route('job.jobcard.create') }}" class="btn btn-primary btn-sm">Add New</a></h3>   
           </div>
           <!-- /.card-header -->
@@ -72,12 +72,20 @@
             
           
           
-          <td align='center'>             
+          <td>             
             
-            <a href="{{ route('job.jobinvoice.print',$c) }}">
+            <a href="{{ route('job.jobcard.show',$c->id) }}">
               <i class="fa fa-print text-green"></i>
               
               </a>
+
+              /
+
+          
+          <a href="{{ route('job.jobinspect.edit',$c->id) }}">
+          <i class="fa fa-edit"></i>
+          
+          </a>
 
          
 

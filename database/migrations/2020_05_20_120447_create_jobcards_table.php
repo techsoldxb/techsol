@@ -39,42 +39,56 @@ class CreateJobcardsTable extends Migration
             
             $table->string('job_desc')->nullable();
             $table->string('job_type')->nullable();
-            $table->string('job_remarks')->nullable();
+            $table->string('job_remark')->nullable();
             $table->string('job_tech_remark')->nullable();
             $table->string('job_status_id')->nullable();
             $table->string('job_status_name')->nullable();
+            $table->string('job_enq_created_user')->nullable();
+
+            $table->date('job_ins_date')->nullable();            
+            $table->string('job_ins_remark')->nullable();
+            $table->string('job_ins_created_user')->nullable();
 
             $table->date('job_est_date')->nullable();
-            $table->integer('job_est_amount')->nullable();
-            
+            $table->integer('job_est_amount')->nullable();            
             $table->integer('job_est_remark')->nullable();
             $table->string('job_item_used')->nullable();
             $table->string('job_item_cost')->nullable();
+            $table->string('job_est_created_user')->nullable();
 
             $table->string('job_out_source')->nullable();
+            $table->string('job_parts')->nullable(); //waiting for spare parts
 
             $table->date('job_completed_date')->nullable();
             $table->string('job_completed_by')->nullable();
             $table->string('job_completed_remark')->nullable();
+            $table->string('job_comp_created_user')->nullable();
 
             $table->string('job_invoice_number')->nullable();
             $table->date('job_invoice_date')->nullable();
             $table->integer('job_invoice_amount')->nullable();
             $table->integer('job_invoice_discount')->nullable();
+            $table->string('job_inv_created_user')->nullable();
             
             $table->string('job_invoice_remark')->nullable();
             $table->date('job_quit_date')->nullable();
-            $table->string('job_quit_remarks')->nullable();
+            $table->string('job_quit_remark')->nullable();
+            $table->string('job_quit_created_user')->nullable();
+
             $table->string('job_delivery')->nullable();
             $table->string('job_delivery_remark')->nullable();
             $table->date('job_delivery_date')->nullable();
-            $table->string('job_warranty')->nullable();
+            $table->string('job_warranty')->nullable();   //warranty days     
 
-          
-            $table->string('job_enq_created_user')->nullable();
-            $table->string('job_est_created_user')->nullable();
-            $table->string('job_comp_created_user')->nullable();
-            $table->string('job_inv_created_user')->nullable();
+            $table->string('job_notification')->nullable();   //notification
+
+            $table->string('job_inv_amt_rec')->nullable(); 
+            $table->date('job_inv_amt_rec_date')->nullable(); 
+            $table->string('job_inv_amt_rec_by')->nullable(); 
+            
+            
+            
+            
             $table->string('job_flex1')->nullable();
             $table->string('job_flex2')->nullable();
             $table->string('job_flex3')->nullable();

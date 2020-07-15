@@ -53,19 +53,24 @@ $(function()
     var select_status=$('#messagetype').val();
     /* if select personal from select box then show my text box */
     
-if(select_status == 'Quit')
+if(select_status == 'Estimated')
     {
-        $('#quit_textbox').show();// By using this id you can show your content   
-        $('#inspect_textbox').hide();// By using this id you can show your content   
-      
+        $('#estimation_textbox').show();// By using this id you can show your content   
+        $('#invoice_textbox').hide();// By using this id you can show your content   
+        $('#remarks_textbox').hide(); 
     }
-    else if(select_status == 'Inspected')
+    else if(select_status == 'Invoiced')
     {
-        $('#quit_textbox').hide();// otherwise hide   
-        $('#inspect_textbox').show();// otherwise hide  
-        
+        $('#invoice_textbox').show();// otherwise hide   
+        $('#estimation_textbox').hide();// otherwise hide  
+        $('#remarks_textbox').hide(); 
     }
-   
+    else
+    {
+      $('#invoice_textbox').hide();// otherwise hide   
+        $('#estimation_textbox').hide();// otherwise hide  
+        $('#remarks_textbox').show();// otherwise hide    
+    }
     
 }
 </script>
@@ -122,7 +127,7 @@ if(select_status == 'Quit')
  
      
      <form  class="needs-validation" novalidate method = "POST" 
-     action="{{ route('job.jobcard.update', $jobcard->id) }}">
+     action="{{ route('job.jobinspect.update', $jobcard->id) }}">
      @method('PUT')
      
      
@@ -244,8 +249,10 @@ if(select_status == 'Quit')
 
                             <select class="custom-select" name="job_status_name" id="messagetype" onchange="fun_showtextbox()">
                             <option value="" selected disabled hidden>Please select</option>
-                            <option value="Inspected">Inspect</option>                                   
-                            <option value="Quit">Quit Job</option>
+                                                                 
+                              
+                              <option value="Invoiced">Invoice</option>                              
+                              <option value="Quit">Quit Job</option>
                            </select>
                               
 
@@ -255,25 +262,65 @@ if(select_status == 'Quit')
                               </div>
 
 
+                              <div class="form-group">
+                          <div id="estimation_textbox" style="display: none" class = "row">
+                          <label class = "col-lg-2" for="">Estimation Amount</label>
+                          <div class = "col-lg-3">    
+                          
+                          <input type="text" class="form-control" id="validationCustom02" name="job_est_amount" placeholder="Enter estimation amount">
+
+  
+                          </div>
+                          <label class = "col-lg-2" for="">Estimation Remarks</label>
+                          <div class = "col-lg-3">    
+  
+                          <input type="text" class="form-control" id="validationCustom02" name="job_est_remark" placeholder="Enter estimation remarks" >
+                          
+                          </div>    
+                          </div>
+                          </div>
+
+                          <div class="form-group">
+                          <div id="invoice_textbox" style="display: none" class = "row">
+                          <label class = "col-lg-2" for="">Invoice Amount</label>
+                          <div class = "col-lg-3">    
+
+                          <div class="input-group">
+                  <div class="input-group-prepend">
+                    
+                    <span class="input-group-text"><i class="fa fa-inr" aria-hidden="true"></i>
+</span>
+                    
+                  </div>
+                  <input type="text" class="form-control" onkeypress="return isNumberKey(event)" 
+                  id="validationCustom02" name="job_invoice_amount" placeholder="Enter invoice amount">
+                </div>
+
+                          
+                          
+
+  
+                          </div>
+                          <label class = "col-lg-2" for="">Invoice Remarks</label>
+                          <div class = "col-lg-3">    
+  
+                          <input type="text" class="form-control" id="validationCustom02" name="job_invoice_remark" placeholder="Enter invoice remarks" >
+                          
+                          </div>    
+                          </div>
+                          </div>
 
                         
                           <div class="form-group">
-                          <div id="inspect_textbox" style="display: none" class = "row">
-                          <label class = "col-lg-2" for="">Inspection Remarks</label>
-                          <div class = "col-lg-8">                              
-                          <input type="text" class="form-control" id="validationCustom02" 
-                          name="job_ins_remark" placeholder="Enter the action remarks in detail">  
-                          </div>                              
-                          </div>
-                          </div>
+                          <div id="remarks_textbox" style="display: none" class = "row">
+                          <label class = "col-lg-2" for="">Action Remarks</label>
+                          <div class = "col-lg-8">    
+                          
+                          <input type="text" class="form-control" id="validationCustom02" name="job_inv_remark" placeholder="Enter the action remarks in detail">
 
-                          <div class="form-group">
-                          <div id="quit_textbox" style="display: none" class = "row">
-                          <label class = "col-lg-2" for="">Quit Remarks</label>
-                          <div class = "col-lg-8">                              
-                          <input type="text" class="form-control" id="validationCustom02" 
-                          name="job_quit_remark" placeholder="Enter the action remarks in detail">  
-                          </div>                              
+  
+                          </div>
+                              
                           </div>
                           </div>
                           
