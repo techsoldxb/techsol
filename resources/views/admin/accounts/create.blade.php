@@ -545,7 +545,8 @@
          <label class = "col-lg-1" for="">Amount *</label>
          <div class = "col-lg-2">
          
-         <input type="text" name = "th_bill_amt" onkeypress="return isNumberKey(event)" class = "form-control "  placeholder="Enter bill amount" required> </div>
+         <input type="text" name = "th_bill_amt" onkeypress="return isNumberKey(event)" class = "form-control "  
+         placeholder="Enter bill amount" required> </div>
          
     
          <label class = "col-lg-1" for="">Category</label>

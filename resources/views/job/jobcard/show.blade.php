@@ -221,7 +221,7 @@
      
 
       
-<div class="container">
+<div class="form-group">
 <strong>
   Terms & Conditions:
   </strong> 

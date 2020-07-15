@@ -15,6 +15,20 @@
     }  
 </script>
 
+ <!-- This script is used to allow only number in the bill amount field -->
+ <script>    
+                function isNumberKey(evt)
+                {
+                    var charCode = (evt.which) ? evt.which : evt.keyCode;
+                    if (charCode != 46 && charCode > 31 
+                    && (charCode < 48 || charCode > 57))
+                    return false;
+                    return true;
+                }  
+        </script>
+        <!-- End -->
+    
+
 <script>
 $(function()
 {
@@ -108,7 +122,7 @@ $(function()
 </span>
                     
                   </div>
-                  <input type="text" class="form-control" id="validationCustom02" name="job_cust_mobile" placeholder="Enter mobile number" required>
+                  <input type="text" class="form-control" onkeypress="return isNumberKey(event)" id="validationCustom02" name="job_cust_mobile" placeholder="Enter mobile number" required>
                 </div>
 
            
@@ -156,7 +170,7 @@ $(function()
                         <div class = "row">
                         <label class = "col-lg-2" for="">Item Detail</label>
                         <div class = "col-lg-3">    
-                        <input type="text" class="form-control" id="validationCustom02" name="job_item_details" placeholder="Enter item details">
+                        <input type="text" class="form-control" id="validationCustom02" name="job_item_details" placeholder="Enter item details" required>
 
                         </div>
                         <label class = "col-lg-2" for="">Serial Number</label>
@@ -213,7 +227,7 @@ $(function()
                               <div class = "row">
                               <label class = "col-lg-2" for="">Fault Details</label>
                               <div class = "col-lg-8">    
-                              <input type="text" class="form-control" id="validationCustom02"  name="job_fault" placeholder="Enter fault details">
+                              <input type="text" class="form-control" id="validationCustom02"  name="job_fault" placeholder="Enter fault details" required>
                               <div class = "clear-fix"></div>
                               </div>     
                               </div>
