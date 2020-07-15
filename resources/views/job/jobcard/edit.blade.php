@@ -1,6 +1,8 @@
 @extends('layouts.admin')
 @section('content')
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
    <!-- This script is used to allow only number in the bill amount field -->
    <script>    
     function isNumberKey(evt)
@@ -269,8 +271,19 @@ if(select_status == 'Estimated')
                           <div id="invoice_textbox" style="display: none" class = "row">
                           <label class = "col-lg-2" for="">Invoice Amount</label>
                           <div class = "col-lg-3">    
+
+                          <div class="input-group">
+                  <div class="input-group-prepend">
+                    
+                    <span class="input-group-text"><i class="fa fa-inr" aria-hidden="true"></i>
+</span>
+                    
+                  </div>
+                  <input type="text" class="form-control" id="validationCustom02" name="job_invoice_amount" placeholder="Enter invoice amount">
+                </div>
+
                           
-                          <input type="text" class="form-control" id="validationCustom02" name="job_invoice_amount" placeholder="Enter invoice amount">
+                          
 
   
                           </div>

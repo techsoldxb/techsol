@@ -1,6 +1,8 @@
 @extends('layouts.admin')
 @section('content')
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
    <!-- This script is used to allow only number in the bill amount field -->
    <script>    
     function isNumberKey(evt)
@@ -92,26 +94,47 @@ $(function()
      </div>
 
 
-            <div class="form-group">
+
+            <div class="form-group" class="input-group">
             <div class = "row">
+            
             <label class = "col-lg-2" for="">Mobile Number</label>
-            <div class = "col-lg-3">    
-            
+            <div class = "col-lg-3">         
 
-            
+                        <div class="input-group">
+                  <div class="input-group-prepend">
                     
-                  
+                  <span class="input-group-text"><i class="fa fa-whatsapp"></i></i>
+</span>
+                    
+                  </div>
+                  <input type="text" class="form-control" id="validationCustom02" name="job_cust_mobile" placeholder="Enter mobile number" required>
+                </div>
 
+           
 
-            <input type="text" class="form-control" id="validationCustom02" name="job_cust_mobile" placeholder="Enter mobile number" required>
+            
+           
             
             </div>
             <label class = "col-lg-2" for="">Email</label>
-            <div class = "col-lg-3">    
-            <input type="email" class="form-control" id="validationCustom02" name="job_cust_email" placeholder="Enter Email">           
+            <div class = "col-lg-3">  
+
+             <div class="input-group">
+                  <div class="input-group-prepend">
+                    
+                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                    
+                  </div>
+                  <input type="email" class="form-control" id="validationCustom02" name="job_cust_email" placeholder="Enter email">           
+                </div>
+
+
+            
             </div>     
             </div>
             </div>
+
 
              
 
