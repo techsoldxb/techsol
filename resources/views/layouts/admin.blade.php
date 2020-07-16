@@ -538,6 +538,43 @@
               <p>Customer Enquiry</p>
             </a>
           </li>
+          <li class="nav-header">JOB CONTRACT</li>
+
+          <li class="nav-item">
+                <a href="{{route('job.jobcard.create')}}"  class="nav-link
+                @if($segment=='jobcard')                
+                active
+                @endif">
+                <i class="nav-icon far fa-circle text-info"></i>
+                  <p>Job Enquiry</p>
+                </a>
+              </li>
+
+          <li class="nav-item">
+                <a href="{{route('job.jobcard.index')}}"  class="nav-link">
+                <i class="nav-icon far fa-circle text-danger"></i>
+                  <p>Received</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('job.jobinspect.index')}}"  class="nav-link">
+                <i class="nav-icon far fa-circle text-warning"></i>
+                  <p>Inspected</p>
+                </a>
+              </li>
+           
+              <li class="nav-item">
+                <a href="{{route('job.jobcomplete.index')}}"  class="nav-link">
+                <i class="nav-icon far fa-circle text-secondary"></i>
+                  <p>Completed</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('job.jobinvoice.index')}}" class="nav-link">
+                <i class="nav-icon fas fa-circle text-primary"></i>
+                  <p>Invoiced</p>
+                </a>
+              </li>
 
 
 
