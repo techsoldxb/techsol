@@ -447,25 +447,8 @@
           
           
 
-          @can('isAccess')
-          <li class="nav-item">
-            <a href="{{route('hrms.locker.index')}}" class="nav-link
-            @if($segment=='locker')
-            active
-            @endif            
-            ">
-              <i class="nav-icon fas fa-lock"></i>
-              <p>
-                Locker
-                <span class="right badge badge-danger">New</span>
-              </p>
-            </a>
-          </li>
-          @endcan
-
-          
         
-          
+          @can('isUser')
 
           <li class="nav-header">SHOWROOM</li>
           <li class="nav-item">
@@ -603,6 +586,66 @@
               <p>Users</p>
             </a>
           </li>
+        @endcan
+          
+          @can('isService')
+          <li class="nav-header">JOB CONTRACT</li>
+
+<li class="nav-item">
+      <a href="{{route('job.jobcard.create')}}"  class="nav-link">
+      <i class="nav-icon far fa-circle text-info"></i>
+        <p>Job Enquiry</p>
+      </a>
+    </li>
+
+<li class="nav-item">
+      <a href="{{route('job.jobcard.index')}}"  class="nav-link
+      @if($segment=='jobcard')                
+      active
+      @endif">
+      <i class="nav-icon far fa-circle text-danger"></i>
+        <p>Received</p>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="{{route('job.jobinspect.index')}}"  class="nav-link
+      @if($segment=='jobinspect')                
+      active
+      @endif">
+      <i class="nav-icon far fa-circle text-warning"></i>
+        <p>Inspected</p>
+      </a>
+    </li>
+ 
+    <li class="nav-item">
+      <a href="{{route('job.jobcomplete.index')}}"  class="nav-link
+      @if($segment=='jobcomplete')                
+      active
+      @endif">
+      <i class="nav-icon far fa-circle text-secondary"></i>
+        <p>Completed</p>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="{{route('job.jobinvoice.index')}}" class="nav-link
+      @if($segment=='jobinvoice')                
+      active
+      @endif">
+      <i class="nav-icon fas fa-circle text-primary"></i>
+        <p>Invoiced</p>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a href="#" class="nav-link">
+      <i class="nav-icon fas fa-circle text-danger"></i>
+        <p>Quit</p>
+      </a>
+    </li>
+
+          @endcan
+
+          
 
           
        

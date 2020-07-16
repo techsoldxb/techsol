@@ -31,9 +31,11 @@ class EnquiryController extends Controller
     public function index()
     {
                 
-    $arr['enquiry'] = Enquiry::where('enq_comp_code', 'auth()->user()->company')->get();    
+    $arr['enquiry'] = Enquiry::where('enq_comp_code', 'auth->user()->company')->get();    
     return view('showroom.enquiry.index')->with($arr); 
     }
+
+    
 
     public function enqkkdtotal()
     {      

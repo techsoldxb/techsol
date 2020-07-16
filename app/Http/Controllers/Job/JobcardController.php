@@ -74,8 +74,13 @@ class JobcardController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+
+
     public function store(Request $request, Jobcard $jobcard, User $user)
     {
+
+        $this->validate($request,['job_cust_mobile'=>'required|digits:10']);
 
         $id = Jobcard::where('job_comp_code', auth()->user()->company)
         ->orderByDesc('job_enq_number')->first()->job_enq_number ?? date('Y') . 00000;

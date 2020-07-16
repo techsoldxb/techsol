@@ -118,12 +118,16 @@ $(function()
                         <div class="input-group">
                   <div class="input-group-prepend">
                     
-                  <span class="input-group-text"><i class="fa fa-whatsapp"></i></i>
-</span>
+                  <span class="input-group-text"><i class="fa fa-whatsapp"></i></i></span>
+
+                  
                     
                   </div>
-                  <input type="text" class="form-control" onkeypress="return isNumberKey(event)" id="validationCustom02" name="job_cust_mobile" placeholder="Enter mobile number" required>
+                  <input type="text" class="form-control" onkeypress="return isNumberKey(event)" 
+                  id="validationCustom02" name="job_cust_mobile" placeholder="Enter mobile number" required>
+                  <span class="text-danger"> {{$errors->first('job_cust_mobile')}} </span>
                 </div>
+
 
            
 
