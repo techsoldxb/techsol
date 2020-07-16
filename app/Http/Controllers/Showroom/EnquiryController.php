@@ -22,6 +22,10 @@ use Maatwebsite\Excel\Facades\Excel;
 class EnquiryController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     /**
      * Display a listing of the resource.
@@ -31,8 +35,13 @@ class EnquiryController extends Controller
     public function index()
     {
                 
-    $arr['enquiry'] = Enquiry::where('enq_comp_code', 'auth->user()->company')->get();    
-    return view('showroom.enquiry.index')->with($arr); 
+
+    $arr['enquiry'] = Enquiry::where('enq_comp_code', auth()->user()->company)
+    ->orderBy('id','desc')->get();
+    return view('showroom.enquiry.index')->with($arr);    
+    
+
+
     }
 
     
