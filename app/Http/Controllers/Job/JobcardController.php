@@ -47,6 +47,17 @@ class JobcardController extends Controller
         
     }
 
+    public function quit()
+    {
+        
+        $arr['jobcard'] = Jobcard::where('job_comp_code', auth()->user()->company)
+        ->where('job_status_name','Quit')
+        ->get();
+    
+        return view('job.jobcard.quit')->with($arr); 
+        
+    }
+
     /**
      * Show the form for creating a new resource.
      *

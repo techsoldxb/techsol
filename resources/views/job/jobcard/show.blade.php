@@ -265,7 +265,7 @@ be entertained.</li>
 notify us of any issue there itself. Should the customer take delivery of the device, it is confirmed
 that he/she is satisfied with the work and no subsequent claims will be entertained/accepted.</li>
 </ol>
-<p align ="center">Above said terms and condeform agreed and signed.</p>
+<p align ="center">Above said terms and conditions agreed and signed.</p>
 
 </div>
 
