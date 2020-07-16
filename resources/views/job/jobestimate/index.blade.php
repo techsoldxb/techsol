@@ -16,7 +16,7 @@
 
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title">Invoiced
+            <h3 class="card-title">Estimated
             <a href="{{ route('job.jobcard.create') }}" class="btn btn-primary btn-sm">Add New</a></h3>   
           </div>
           <!-- /.card-header -->
@@ -25,15 +25,21 @@
               <thead>
               <tr>
                                  
-                <th> Invoice No.  </th>  
+                <th> Job ID   </th>  
                 <th> Date </th>          
-                <th> Name </th>          
-                 <th> Mobile </th>              
-                  <th>Item Details</th>
+                <th> Name </th>            
+                
+                <th> Mobile </th> 
+                
+              
+                
+                
+                <th>Item Details</th>
                 <th>Fault</th>
-                 <th>Created User</th>
-                <th>Amount</th>
-                 <th> Action </th>
+                <th>Remarks</th>
+                <th>Created User</th>
+                
+                <th> Action </th>
               </tr>
               </thead>
               <tbody>
@@ -44,7 +50,7 @@
           
           <tr>
             <td>{{ $c->job_enq_number }}</td>
-            <td>{{ date('d-m-Y', strtotime($c->job_invoice_date)) }}</td>  
+            <td>{{ date('d-m-Y', strtotime($c->created_at)) }}</td>  
             <td>{{ $c->job_cust_name }}</td>  
             
             <td>{{ $c->job_cust_mobile }}</td>  
@@ -57,23 +63,29 @@
             
             <td>{{ $c->job_fault}}</td>  
           
-            
+            <td> {{ $c->job_remark }} </td>
 
-            <td> {{ $c->job_inv_created_user }} </td>
-
-            <td> {{ $c->job_invoice_amount }} </td>
+            <td> {{ $c->job_enq_created_user }} </td>
             
         
 
             
           
           
-          <td align='center'>             
+          <td>             
             
-            <a href="{{ route('job.jobinvoice.print',$c) }}">
+            <a href="{{ route('job.jobcard.show',$c->id) }}">
               <i class="fa fa-print text-green"></i>
               
               </a>
+
+              /
+
+          
+          <a href="{{ route('job.jobestimate.edit',$c->id) }}">
+          <i class="fa fa-edit"></i>
+          
+          </a>
 
          
 
@@ -91,15 +103,22 @@
               </tbody>
               <tfoot>
               <tr>
-              <th> Invoice No.  </th>  
+                                                               
+                <th> Job ID   </th>  
                 <th> Date </th>          
-                <th> Name </th>          
-                 <th> Mobile </th>              
-                  <th>Item Details</th>
+                <th> Name </th>            
+                
+                <th> Mobile </th> 
+                
+               
+                
+                
+                <th>Item Details</th>
                 <th>Fault</th>
-                 <th>Created User</th>
-                <th>Amount</th>
-                 <th> Action </th>
+                <th>Remarks</th>
+                <th>Created User</th>
+                
+                <th> Action </th>
                 
               </tr>
               </tfoot>

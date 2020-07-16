@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
 
 <script>
@@ -44,7 +44,7 @@
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{route('home')}}">Dashboard</a></li>              
               
-                  <li class="breadcrumb-item"><a href="{{route('job.jobinvoice.index')}}">Invoice List</a></li>
+                  <li class="breadcrumb-item"><a href="{{route('job.jobcard.index')}}">Job Enquiry List</a></li>
 
 
             </ol>
@@ -53,31 +53,27 @@
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
-
+    <div class="form-group">
     <div class = "row">
         <div class = "col text-left">
         <img src={{asset('dist/img/bashlogo12.png')}}>
           
-          </div>
-          <div class = "col text-center">
-          <img src={{asset('dist/img/tclogo12.png')}}>
-          <P></P>
-          
-          </div>
-       
+        </div>
+        <div class = "col text-center">
+        <img src={{asset('dist/img/tclogo12.png')}}>
+        <P></P>
+        
+        </div>
         <div class = "col text-right">
           
-           <!-- /.content-header           
-          <img src={{asset('dist/img/printaqua.png')}}>
-          -->
-
-          @if($jobcard->job_comp_code =='3')   
+        @if($jobcard->job_comp_code =='3')   
               <img src={{asset('dist/img/bashlogotamil12.png')}}>
-              @elseif($jobcard->job_comp_code =='4')
-              <img src={{asset('dist/img/bashlogotamil12.png')}}>
+              @elseif($jobcard->job_comp_code =='3')
+              <img src={{asset('dist/img/printaqua.png')}}>
               @else   
               <img src={{asset('dist/img/printjarwani.png')}}>
               @endif
+          
 
           
         </div>
@@ -85,9 +81,10 @@
 
       <div class="p-1 bg-secondary text-center"> 
 
-        <h4 class="m-0  text-center">Service Invoice</h4>
+        <h4 class="m-0  text-center">Job Card</h4>
      
     </div> 
+    </div>
 
     <div class="p-1 bg-transparent text-center"> 
 
@@ -107,15 +104,15 @@
 
         <div class="form-group">
         <div class = "row">
-            <label class = "col" for="">Invoice Number</label>
+            <label class = "col" for="">Job Number</label>
         <div class = "col">    
             <input type="text" class="form-control" id="validationCustom01" name="job_enq_number" 
             value="{{ $jobcard->job_enq_number }}" disabled  >
         </div>
-        <label class = "col" for="">Invoice Date</label>
+        <label class = "col" for="">Date</label>
         <div class = "col">    
         <input type="text" class="form-control" id="validationCustom02" name="tb_cust_addr" 
-        value="{{ date('d-m-Y', strtotime($jobcard->job_invoice_date))}}"  disabled>           
+        value="{{ date('d-m-Y', strtotime($jobcard->created_at))}}"  disabled>           
         </div>     
         </div>
         </div>
@@ -194,63 +191,25 @@
                             </div>
                             </div>
 
-                            
-                          <div class="form-group">
-                            <div class = "row">
-                            <label class = "col" for="">Fault Details</label>
-                            <div class = "col">                              
-                                <input type="text" class="form-control" id="validationCustom02" name="tb_pay_mode"  value="{{ $jobcard->job_fault }}" disabled>                              
-                           
-    
-                            </div>
-                            <label class = "col" for="">Remarks</label>
-                            <div class = "col">    
-                                <input type="text" class="form-control" id="validationCustom02" name="tb_reference" value="{{ $jobcard->job_remark }}" disabled>                                                    
-                           
-                            </div>    
-                            </div>
-                            </div>
-
-                            
-
-                            <div class="form-group">
-                          <div id="invoice_textbox" class = "row">
-                          <label class = "col" for="">Invoice Amount</label>
-                          <div class = "col">    
-
-                          <div class="input-group">
-                  <div class="input-group-prepend">
-                    
-                    <span class="input-group-text"><i class="fa fa-inr" aria-hidden="true"></i>
-</span>
-                    
-                  </div>
-                  
-                  <input type="text" class="form-control" style="font-weight: bold;" onkeypress="return isNumberKey(event)" 
-                  id="validationCustom02" name="job_invoice_amount" value="{{ $jobcard->job_invoice_amount }}" disabled>
-                  
-                </div>
-
-                          
-                          
-
-  
-                          </div>
-                          <label class = "col" for="">Warranty</label>
-                          <div class = "col">    
-  
-                          <input type="text" class="form-control" id="validationCustom02" name="job_invoice_remark" placeholder="" disabled>
-                          
-                          </div>    
-                          </div>
-                          </div>
-
-
 
                        
+                            <div class="form-group">
+                            <div class = "row">
+                            <label class = "col-lg-3" for="">Fault Details</label>
+                            <div class = "col">                              
+                            <input type="text" class="form-control" id="validationCustom02" name="tb_pay_mode"  value="{{ $jobcard->job_fault }}" disabled>                                                            
+                            </div>                               
+                            </div>
+                            </div>
 
-
-                            
+                            <div class="form-group">
+                            <div class = "row">
+                            <label class = "col-lg-3" for="">Remarks</label>
+                            <div class = "col">                              
+                            <input type="text" class="form-control" id="validationCustom02" name="tb_pay_mode"  value="{{ $jobcard->job_remarks }}" disabled>                                                           
+                            </div>                               
+                            </div>
+                            </div>
 
 
                     
@@ -262,7 +221,8 @@
 
      
 
-                            <div class="form-group">
+      
+<div class="form-group">
 <strong>
   Terms & Conditions:
   </strong> 
@@ -305,7 +265,7 @@ be entertained.</li>
 notify us of any issue there itself. Should the customer take delivery of the device, it is confirmed
 that he/she is satisfied with the work and no subsequent claims will be entertained/accepted.</li>
 </ol>
-<p align ="center">Above said terms and conditions agreed and signed.</p>
+<p align ="center">Above said terms and condeform agreed and signed.</p>
 
 </div>
 
@@ -314,13 +274,11 @@ that he/she is satisfied with the work and no subsequent claims will be entertai
 
 
 
-
-
 <div class="form-group">
       <div class = "row">
-      <label class = "col" for="">Prepared by: {{ $jobcard->job_inv_created_user }}</label>
+      <label class = "col" for="">Prepared by: {{ $jobcard->job_enq_created_user }}</label>
      
-      <label class = "col" for="">Signature: _____________________________</label>
+      <label class = "col" for="">Signature of customer: _____________________________</label>
        
       </div>
       </div>

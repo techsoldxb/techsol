@@ -161,7 +161,23 @@ $(function()
                     <div class = "row">
                     <label class = "col-lg-2" for="">Brand</label>
                     <div class = "col-lg-3">    
-                    <input type="text" class="form-control" id="validationCustom02" name="job_item_brand" placeholder="Enter brand name">
+
+                    <select class="custom-select" name="job_item_brand" >
+                              <option value="" selected disabled hidden>Please select</option>
+                              <option value="HP">HP</option>
+                              <option value="Dell">Dell</option>
+                              <option value="Acer">Acer</option>
+                              <option value="Lenovo">Lenovo</option>   
+                              <option value="Toshiba">Toshiba</option>
+                              <option value="Assembled">Assembled</option>   
+                              <option value="Others">Others</option>                                  
+                                                                  
+                              
+                            </select>
+
+
+
+                   
                     </div>
                     <label class = "col-lg-2" for="">Model</label>
                     <div class = "col-lg-3">    

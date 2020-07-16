@@ -247,7 +247,7 @@ if(select_status == 'Estimated')
                               
                             
 
-                            <select class="custom-select" name="job_status_name" id="messagetype" onchange="fun_showtextbox()">
+                            <select class="custom-select" name="job_status_name" id="messagetype" onchange="fun_showtextbox()" required>
                             <option value="" selected disabled hidden>Please select</option>
                                                                  
                               <option value="Estimated">Estimate</option>
@@ -262,19 +262,38 @@ if(select_status == 'Estimated')
                               </div>
 
 
-                              <div class="form-group">
+                          <div class="form-group">
                           <div id="estimation_textbox" style="display: none" class = "row">
                           <label class = "col-lg-2" for="">Estimation Amount</label>
                           <div class = "col-lg-3">    
+
+                          <div class="input-group">
+                  <div class="input-group-prepend">
+                    
+                    <span class="input-group-text"><i class="fa fa-inr" aria-hidden="true"></i>
+</span>
+                    
+                  </div>
+                  <input type="text" class="form-control" onkeypress="return isNumberKey(event)" 
+                  id="validationCustom02" name="job_est_amount" placeholder="Enter estimation amount" required>
+                </div>
+
                           
-                          <input type="text" class="form-control" id="validationCustom02" name="job_est_amount" placeholder="Enter estimation amount">
+                          
 
   
                           </div>
-                          <label class = "col-lg-2" for="">Estimation Remarks</label>
-                          <div class = "col-lg-3">    
+                          <label class = "col-lg-2" for="">Outside Service Cost</label>
+                          <div class = "col-lg-3">  
+                          <div class="input-group">
+                  <div class="input-group-prepend">
+                    
+                    <span class="input-group-text"><i class="fa fa-inr" aria-hidden="true"></i>
+</span>
+                    
+                  </div>  
   
-                          <input type="text" class="form-control" id="validationCustom02" name="job_est_remark" placeholder="Enter estimation remarks" >
+                          <input type="text" class="form-control" onkeypress="return isNumberKey(event)" id="validationCustom02" name="job_item_cost" placeholder="Enter the outside service amount" >
                           
                           </div>    
                           </div>

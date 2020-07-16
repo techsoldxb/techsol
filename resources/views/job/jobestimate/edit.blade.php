@@ -56,20 +56,20 @@ $(function()
 if(select_status == 'Estimated')
     {
         $('#estimation_textbox').show();// By using this id you can show your content   
-        $('#invoice_textbox').hide();// By using this id you can show your content   
-        $('#remarks_textbox').hide(); 
+        $('#complete_textbox').hide();// By using this id you can show your content   
+        $('#quit_textbox').hide(); 
     }
-    else if(select_status == 'Invoiced')
+    else if(select_status == 'Completed')
     {
-        $('#invoice_textbox').show();// otherwise hide   
+        $('#complete_textbox').show();// otherwise hide   
         $('#estimation_textbox').hide();// otherwise hide  
-        $('#remarks_textbox').hide(); 
+        $('#quit_textbox').hide(); 
     }
     else
     {
-      $('#invoice_textbox').hide();// otherwise hide   
+      $('#complete_textbox').hide();// otherwise hide   
         $('#estimation_textbox').hide();// otherwise hide  
-        $('#remarks_textbox').show();// otherwise hide    
+        $('#quit_textbox').show();// otherwise hide    
     }
     
 }
@@ -127,7 +127,7 @@ if(select_status == 'Estimated')
  
      
      <form  class="needs-validation" novalidate method = "POST" 
-     action="{{ route('job.jobcomplete.update', $jobcard->id) }}">
+     action="{{ route('job.jobestimate.update', $jobcard->id) }}">
      @method('PUT')
      
      
@@ -251,7 +251,7 @@ if(select_status == 'Estimated')
                             <option value="" selected disabled hidden>Please select</option>
                                                                  
                               
-                              <option value="Invoiced">Invoice</option>                              
+                              <option value="Completed">Complete</option>                              
                               <option value="Quit">Quit Job</option>
                            </select>
                               
@@ -280,47 +280,25 @@ if(select_status == 'Estimated')
                           </div>
                           </div>
 
-                          <div class="form-group">
-                          <div id="invoice_textbox" style="display: none" class = "row">
-                          <label class = "col-lg-2" for="">Invoice Amount</label>
-                          <div class = "col-lg-3">    
-
-                          <div class="input-group">
-                  <div class="input-group-prepend">
-                    
-                    <span class="input-group-text"><i class="fa fa-inr" aria-hidden="true"></i>
-</span>
-                    
-                  </div>
-                  <input type="text" class="form-control" onkeypress="return isNumberKey(event)" 
-                  id="validationCustom02" name="job_invoice_amount" placeholder="Enter invoice amount" required>
-                </div>
-
-                          
-                          
-
-  
-                          </div>
-                          <label class = "col-lg-2" for="">Invoice Remarks</label>
-                          <div class = "col-lg-3">    
-  
-                          <input type="text" class="form-control" id="validationCustom02" name="job_invoice_remark" placeholder="Enter invoice remarks" >
-                          
-                          </div>    
-                          </div>
-                          </div>
-
+                        
                         
                           <div class="form-group">
-                          <div id="remarks_textbox" style="display: none" class = "row">
-                          <label class = "col-lg-2" for="">Action Remarks</label>
-                          <div class = "col-lg-8">    
-                          
-                          <input type="text" class="form-control" id="validationCustom02" name="job_inv_remark" placeholder="Enter the action remarks in detail">
-
-  
+                          <div id="complete_textbox" style="display: none" class = "row">
+                          <label class = "col-lg-2" for="">Complete Remarks</label>
+                          <div class = "col-lg-8">                              
+                          <input type="text" class="form-control" id="validationCustom02" 
+                          name="job_completed_remark" placeholder="Enter the action remarks in detail">  
+                          </div>                              
                           </div>
-                              
+                          </div>
+
+                          <div class="form-group">
+                          <div id="quit_textbox" style="display: none" class = "row">
+                          <label class = "col-lg-2" for="">Quit Remarks</label>
+                          <div class = "col-lg-8">                              
+                          <input type="text" class="form-control" id="validationCustom02" 
+                          name="job_quit_remark" placeholder="Enter the action remarks in detail">  
+                          </div>                              
                           </div>
                           </div>
                           
@@ -337,7 +315,7 @@ if(select_status == 'Estimated')
 
      <div class="form-group">
      <input type="submit" class = "btn btn-primary" Value ="Save">
-     <a href="{{route('job.jobcomplete.index')}}" class="btn btn-warning" role="button">Cancel</a>
+     <a href="{{route('job.jobestimate.index')}}" class="btn btn-warning" role="button">Cancel</a>
      </div>
      </form>
       </div>

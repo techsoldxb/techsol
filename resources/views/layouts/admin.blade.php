@@ -625,6 +625,14 @@
         <p>Inspected</p>
       </a>
     </li>
+
+    
+<li class="nav-item">
+      <a href="{{route('job.jobestimate.index')}}"  class="nav-link">
+      <i class="nav-icon far fa-circle text-info"></i>
+        <p>Estimation</p>
+      </a>
+    </li>
  
     <li class="nav-item">
       <a href="{{route('job.jobcomplete.index')}}"  class="nav-link
@@ -649,6 +657,15 @@
       <a href="#" class="nav-link">
       <i class="nav-icon fas fa-circle text-danger"></i>
         <p>Quit</p>
+      </a>
+    </li>
+
+    <li class="nav-header">JOB - OTHERS</li>
+
+<li class="nav-item">
+      <a href="{{route('job.jobestimate.index')}}"  class="nav-link">
+      <i class="nav-icon far fa-circle text-info"></i>
+        <p>Outside Service</p>
       </a>
     </li>
 

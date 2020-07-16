@@ -56,14 +56,22 @@ $(function()
 if(select_status == 'Quit')
     {
         $('#quit_textbox').show();// By using this id you can show your content   
-        $('#inspect_textbox').hide();// By using this id you can show your content   
+        $('#inspect_textbox').hide();// By using this id you can show your content  
+        $('#outside_textbox').hide();// By using this id you can show your content   
       
     }
     else if(select_status == 'Inspected')
     {
         $('#quit_textbox').hide();// otherwise hide   
         $('#inspect_textbox').show();// otherwise hide  
+        $('#outside_textbox').hide();// By using this id you can show your content  
         
+    }
+    else
+    {
+      $('#quit_textbox').hide();// otherwise hide   
+        $('#inspect_textbox').hide();// otherwise hide  
+        $('#outside_textbox').show();// By using this id you can show your content  
     }
    
     
@@ -242,12 +250,12 @@ if(select_status == 'Quit')
                               
                             
 
-                            <select class="custom-select" name="job_status_name" id="messagetype" onchange="fun_showtextbox()">
-                            <option value="" selected disabled hidden>Please select</option>
-                            <option value="Inspected">Inspect</option>                                   
-                            <option value="Quit">Quit Job</option>
-                           </select>
-                              
+                            <select class="custom-select" name="job_status_name" id="messagetype" onchange="fun_showtextbox()" required>
+                            <option value="" selected disabled hidden> Please select</option>
+                            <option value="Inspected">Inspect</option>     
+                             <option value="Quit">Quit Job</option>
+                            <option value="Outside">Outside Service</option>                                   
+                           </select>                             
 
                               <div class = "clear-fix"></div>
                               </div>     
@@ -273,6 +281,16 @@ if(select_status == 'Quit')
                           <div class = "col-lg-8">                              
                           <input type="text" class="form-control" id="validationCustom02" 
                           name="job_quit_remark" placeholder="Enter the action remarks in detail">  
+                          </div>                              
+                          </div>
+                          </div>
+
+                          <div class="form-group">
+                          <div id="outside_textbox" style="display: none" class = "row">
+                          <label class = "col-lg-2" for="">Outside Service Person</label>
+                          <div class = "col-lg-8">                              
+                          <input type="text" class="form-control" id="validationCustom02" 
+                          name="job_out_source" placeholder="Enter the outside service person name in detail">  
                           </div>                              
                           </div>
                           </div>

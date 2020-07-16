@@ -219,6 +219,14 @@ class JobcardController extends Controller
             $jobcard->job_quit_date = $today;
             
         }
+        else if (( $request->job_status_name )  == 'Outside') 
+        {
+            $jobcard->job_status_name = $request->job_status_name; 
+            $jobcard->job_out_source = $request->job_out_source;             
+            $today = Carbon::now();
+            $jobcard->job_flex8 = $today; //Outside service date
+            
+        }
 
        // $jobcard->job_est_amount = $request->est_amount; 
         

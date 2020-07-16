@@ -110,6 +110,7 @@ Route::resource('/showroom/accountskkd', 'Admin\AccountskkdController', ['as'=>'
 
 Route::resource('/job/jobcard', 'Job\JobcardController', ['as'=>'job'])->middleware('auth');
 Route::resource('/job/jobinspect', 'Job\JobinspectController', ['as'=>'job'])->middleware('auth');
+Route::resource('/job/jobestimate', 'Job\JobestimateController', ['as'=>'job'])->middleware('auth');
 Route::resource('/job/jobcomplete', 'Job\JobcompleteController', ['as'=>'job'])->middleware('auth');
 Route::resource('/job/jobinvoice', 'Job\JobinvoiceController', ['as'=>'job'])->middleware('auth');
 //Route::get('/jobcard/invoice', 'Job\JobcardController@invoice')->name('jobcard.invoice'); 

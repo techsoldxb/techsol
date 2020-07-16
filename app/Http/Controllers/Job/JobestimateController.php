@@ -12,7 +12,8 @@ Use Auth;
 use App\User;
 Use Gate;
 
-class JobinspectController extends Controller
+
+class JobestimateController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,10 +24,10 @@ class JobinspectController extends Controller
     {
         
         $arr['jobcard'] = Jobcard::where('job_comp_code', auth()->user()->company)
-        ->where('job_status_name','Inspected')
+        ->where('job_status_name','Estimated')
         ->get();
     
-        return view('job.jobinspect.index')->with($arr); 
+        return view('job.jobestimate.index')->with($arr); 
     }
 
     /**
@@ -67,16 +68,12 @@ class JobinspectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($inspected)
+    public function edit($estimated)
     {
-        $jobcard = Jobcard::where('id', $inspected)->firstOrFail();
+        $jobcard = Jobcard::where('id', $estimated)->firstOrFail();
 
         
-        return view('job.jobinspect.edit')->with(['jobcard' => $jobcard,'inspected' => $inspected]); 
-
-        
-       // $arr['jobcard'] = $jobcard;
-      //  return view('job.jobinspect.edit')->with($arr);
+        return view('job.jobestimate.edit')->with(['jobcard' => $jobcard,'estimated' => $estimated]); 
     }
 
     /**
@@ -86,10 +83,9 @@ class JobinspectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,$inspected)
+    public function update(Request $request, $estimated)
     {
-        
-        $jobcard = Jobcard::where('id', $inspected)->firstOrFail();
+        $jobcard = Jobcard::where('id', $estimated)->firstOrFail();
 
         $jobcard->job_cust_name = $request->job_cust_name;   
 
@@ -115,11 +111,6 @@ class JobinspectController extends Controller
         {
             $jobcard->job_status_name = $request->job_status_name; 
             $jobcard->job_est_amount = $request->job_est_amount;
-            $jobcard->job_item_cost = $request->job_item_cost;
-
-            
-        $todaymnt = Carbon::now();
-        $jobcard->job_est_date = $todaymnt;
         }
         else if (( $request->job_status_name )  == 'Completed') 
         {
@@ -142,7 +133,7 @@ class JobinspectController extends Controller
 
         
         $jobcard->save();
-        return redirect()->route('job.jobinspect.index')->with('info','Transaction updated successfully!');
+        return redirect()->route('job.jobestimate.index')->with('info','Transaction updated successfully!');
 
     }
 
