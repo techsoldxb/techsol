@@ -207,7 +207,7 @@
                             <div class = "row">
                             <label class = "col-lg-3" for="">Remarks</label>
                             <div class = "col">                              
-                            <input type="text" class="form-control" id="validationCustom02" name="tb_pay_mode"  value="{{ $jobcard->job_remarks }}" disabled>                                                           
+                            <input type="text" class="form-control" id="validationCustom02" name="tb_pay_mode"  value="{{ $jobcard->job_remark }}" disabled>                                                           
                             </div>                               
                             </div>
                             </div>

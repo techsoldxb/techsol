@@ -63,7 +63,7 @@
             
             <td>{{ $c->job_fault}}</td>  
           
-            <td> {{ $c->job_remarks }} </td>
+            <td> {{ $c->job_remark }} </td>
 
             <td> {{ $c->job_enq_created_user }} </td>
             
