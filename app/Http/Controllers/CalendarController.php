@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Booking;
+use App\Jobcard;
 
 class CalendarController extends Controller
 {
@@ -15,8 +15,8 @@ class CalendarController extends Controller
     public function index()
     {
         //$booking = Booking::all();
-        $booking = Booking::whereNull('tb_flex1')->get();
-    return view('calander.index', compact('booking'));
+        $jobcard = Jobcard::All();
+    return view('calander.index', compact('jobcard'));
     }
 
     /**

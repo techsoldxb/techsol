@@ -10,12 +10,12 @@
 </div>
 
 <div style="text-align:center">
-    <img src={{asset('dist/img/tclogo1.png')}}>
+    <img src={{asset('dist/img/printaqua.png')}}>
 </div>
 
 
 
-<h3 style="text-align:center">Service Center Calendar</h3>
+<h3 style="text-align:center">Booking Calendar</h3>
 
 <div id='calendar'></div>
 
@@ -30,11 +30,11 @@
         $('#calendar').fullCalendar({
             // put your options and callbacks here
             events : [
-                @foreach($jobcard as $jobcard)
+                @foreach($booking as $booking)
                 {
-                    title : '{{ $jobcard->job_cust_name }} - {{ $jobcard->job_item_type }}',
-                    start : '{{ $jobcard->job_enq_date }}',
-                    url : '{{ route('job.jobcard.show', $jobcard->id) }}'
+                    title : '{{ $booking->tb_reference }} - {{ $booking->tb_cust_name }}',
+                    start : '{{ $booking->tb_date }}',
+                    url : '{{ route('foh.booking.show', $booking->id) }}'
                     
                     
                 },
