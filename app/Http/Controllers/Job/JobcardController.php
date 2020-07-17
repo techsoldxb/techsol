@@ -244,7 +244,7 @@ class JobcardController extends Controller
      */
     public function destroy(Request $request)
     {
-        
+        $this->authorize('isAdmin');
         $jobcard = Jobcard::findOrFail($request->category_id);
         $jobcard->delete();
 

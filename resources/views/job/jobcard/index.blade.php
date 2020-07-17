@@ -50,7 +50,9 @@
           
           <tr>
             <td>{{ $c->job_enq_number }}</td>
-            <td>{{ date('d-m-Y', strtotime($c->created_at)) }}</td>  
+
+
+            <td>{{ date('d-m-Y h:i A', strtotime($c->created_at)) }}</td>  
             <td>{{ $c->job_cust_name }}</td>  
             
             <td>{{ $c->job_cust_mobile }}</td>  
