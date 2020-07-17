@@ -46,6 +46,11 @@ view()->composer('home', function($view)  {
     $view->with('expensesche',\App\Account::where('th_comp_code', '002')->where('th_pay_status', 0)->sum('th_bill_amt'));
 });
 
+view()->composer('job.jobinvoice.index', function($view)  {
+    $view->with('sc_inv_today',\App\Jobcard::where('job_comp_code', auth()->user()->company)
+    ->where('job_status_name','Invoiced')->sum('job_invoice_amount'));
+});
+
 
 
 
@@ -254,6 +259,8 @@ view()->composer('homeicc', function($view)  {
 view()->composer('homeicc', function($view)  {
     $view->with('enqrmdtoday',\App\Enquiry::where('enq_comp_code','003')->where('enq_date',date('Y-m-d'))->count('ID'));
 });
+
+
 
 
 

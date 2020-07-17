@@ -17,7 +17,11 @@
         <div class="card">
           <div class="card-header">
             <h3 class="card-title">Invoiced
-            <a href="{{ route('job.jobcard.create') }}" class="btn btn-primary btn-sm">Add New</a></h3>   
+            <a href="{{ route('job.jobcard.create') }}" class="btn btn-primary btn-sm">Add New</a>
+             
+            Today Invoice: {{ number_format($sc_inv_today) }}
+           
+            
           </div>
           <!-- /.card-header -->
           <div class="card-body">
@@ -143,6 +147,7 @@
     </div>
   </div>
 </div>
+
 
 
 @endsection
