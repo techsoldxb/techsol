@@ -16,14 +16,24 @@
         <!-- /.card -->
 
         <div class="card">
-          <div class="card-header font-weight-bold text-left text-danger" >
+          <div class="card-header" >
             
-          
-
+            <div class="row">
+            <div class = "font-weight-bold text-left text-primary">
             Today Invoice: 
+            </div>
             
-            {{ number_format($sc_inv_today) }}
+            <div class = "font-weight-bold text-left" style="font-size:18px;color:red">
+            {{ number_format($sc_inv_today) }} 
             <i class="fa fa-rupee" style="font-size:18px;color:red"></i>
+            </div>
+            
+            </div>
+            
+            
+            
+            
+            
             
           </div>
           <!-- /.card-header -->
