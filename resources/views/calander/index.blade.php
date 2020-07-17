@@ -32,7 +32,7 @@
             events : [
                 @foreach($jobcard as $jobcard)
                 {
-                    title : '{{ $jobcard->job_cust_name }} - {{ $jobcard->job_item_type }}',
+                    title : '{{ $jobcard->job_cust_name }} - {{ $jobcard->job_item_type }}- {{ $jobcard->job_status_name }}',
                     start : '{{ $jobcard->job_enq_date }}',
                     url : '{{ route('job.jobcard.show', $jobcard->id) }}'
                     

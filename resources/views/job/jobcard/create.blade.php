@@ -169,6 +169,13 @@ $(function()
                               <option value="Acer">Acer</option>
                               <option value="Lenovo">Lenovo</option>   
                               <option value="Toshiba">Toshiba</option>
+                              <option value="Epson">Epson</option>
+                              <option value="Canon">Canon</option>
+                              <option value="Brother">Brother</option>
+                              <option value="Samsung">Samsung</option>
+                              <option value="Numeric">Numeric</option>
+                              <option value="Zebronic">Zebronic</option>
+                              <option value="Microtek">Microtek</option>
                               <option value="Assembled">Assembled</option>   
                               <option value="Others">Others</option>                                  
                                                                   

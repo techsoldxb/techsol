@@ -236,7 +236,7 @@ if(select_status == 'Quit')
                               <div class = "row">
                               <label class = "col-lg-2" for="">Remarks</label>
                               <div class = "col-lg-8">    
-                              <input type="text" class="form-control" value="{{ $jobcard->job_remarks}}" id="validationCustom02"  name="job_remarks" placeholder="Enter remarks" readonly>
+                              <input type="text" class="form-control" value="{{ $jobcard->job_remarks}}" id="validationCustom02"  name="job_remarks" placeholder="Enter remarks">
                               <div class = "clear-fix"></div>
                               </div>     
                               </div>
