@@ -215,7 +215,7 @@ $(function()
                           <label class = "col-lg-2" for="">Item Type</label>
                           <div class = "col-lg-3">    
                           
-                            <select class="custom-select" name="job_item_type" >
+                            <select class="custom-select" name="job_item_type" required >
                               <option value="" selected disabled hidden>Please select</option>
                               <option value="Laptop">Laptop</option>
                               <option value="Desktop">Desktop</option>
