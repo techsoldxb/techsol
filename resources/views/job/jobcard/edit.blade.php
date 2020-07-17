@@ -135,16 +135,21 @@ if(select_status == 'Quit')
      
      
      <input type="hidden" name="_token" value = "{{ csrf_token() }}">
-     <div class="form-group">
-     <div class = "row">
-     <label class = "col-lg-2" for="">Customer Name</label>
-     <div class = "col-lg-8">    
-     <input type="text" class="form-control" value="{{ $jobcard->job_cust_name}}" id="validationCustom01" name="job_cust_name" placeholder="Enter customer name" readonly>
-     <div class = "clear-fix"></div>
-     </div>     
-     </div>
-     </div>
 
+
+
+                   <div class="form-group">
+                    <div class = "row">
+                    <label class = "col-lg-2" for="">Customer Name</label>
+                    <div class = "col-lg-3">    
+                    <input type="text" class="form-control" value="{{ $jobcard->job_cust_name}}" id="validationCustom02" name="job_cust_name" readonly>
+                    </div>
+                    <label class = "col-lg-2" for="">Job ID</label>
+                    <div class = "col-lg-3">    
+                    <input type="text" class="form-control" value="{{ $jobcard->job_enq_number}}" id="validationCustom02" name="job_enq_number" readonly>           
+                    </div>    
+                    </div>
+                    </div>
 
             <div class="form-group">
             <div class = "row">

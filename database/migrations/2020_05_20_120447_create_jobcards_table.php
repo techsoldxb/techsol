@@ -23,7 +23,7 @@ class CreateJobcardsTable extends Migration
             $table->string('job_engr')->nullable();
 
             $table->string('job_enq_number')->nullable();
-            $table->date('job_enq_date')->nullable();
+            $table->dateTime('job_enq_date')->nullable();
 
             $table->string('job_cust_name')->nullable();
             $table->string('job_cust_mobile')->nullable();
@@ -45,13 +45,13 @@ class CreateJobcardsTable extends Migration
             $table->string('job_status_name')->nullable();
             $table->string('job_enq_created_user')->nullable();
 
-            $table->date('job_ins_date')->nullable();            
+            $table->dateTime('job_ins_date')->nullable();            
             $table->string('job_ins_remark')->nullable();
             $table->string('job_ins_created_user')->nullable();
 
-            $table->date('job_est_date')->nullable();
+            $table->dateTime('job_est_date')->nullable();
             $table->integer('job_est_amount')->nullable();            
-            $table->integer('job_est_remark')->nullable();
+            $table->string('job_est_remark')->nullable();
             $table->string('job_item_used')->nullable();
             $table->string('job_item_cost')->nullable();
             $table->string('job_est_created_user')->nullable();
@@ -59,32 +59,42 @@ class CreateJobcardsTable extends Migration
             $table->string('job_out_source')->nullable();
             $table->string('job_parts')->nullable(); //waiting for spare parts
 
-            $table->date('job_completed_date')->nullable();
+            $table->dateTime('job_completed_date')->nullable();
             $table->string('job_completed_by')->nullable();
             $table->string('job_completed_remark')->nullable();
             $table->string('job_comp_created_user')->nullable();
 
             $table->string('job_invoice_number')->nullable();
-            $table->date('job_invoice_date')->nullable();
+            $table->dateTime('job_invoice_date')->nullable();
             $table->integer('job_invoice_amount')->nullable();
+            $table->integer('job_service_cost')->nullable();
             $table->integer('job_invoice_discount')->nullable();
             $table->string('job_inv_created_user')->nullable();
             
             $table->string('job_invoice_remark')->nullable();
-            $table->date('job_quit_date')->nullable();
+            $table->dateTime('job_quit_date')->nullable();
             $table->string('job_quit_remark')->nullable();
             $table->string('job_quit_created_user')->nullable();
 
             $table->string('job_delivery')->nullable();
             $table->string('job_delivery_remark')->nullable();
-            $table->date('job_delivery_date')->nullable();
+            $table->dateTime('job_delivery_date')->nullable();
             $table->string('job_warranty')->nullable();   //warranty days     
 
             $table->string('job_notification')->nullable();   //notification
 
             $table->string('job_inv_amt_rec')->nullable(); 
-            $table->date('job_inv_amt_rec_date')->nullable(); 
+            $table->string('job_ft_flag')->nullable(); // Fund transfer flag
+            $table->dateTime('job_inv_amt_rec_date')->nullable(); 
             $table->string('job_inv_amt_rec_by')->nullable(); 
+
+            $table->dateTime('job_os_wq_date')->nullable(); 
+            $table->string('job_os_wq_remark')->nullable(); 
+            $table->dateTime('job_os_est_date')->nullable(); 
+            $table->string('job_os_est_remark')->nullable(); 
+            $table->dateTime('job_os_rec_date')->nullable(); 
+            $table->string('job_os_rec_remark')->nullable(); 
+            $table->string('job_os_flag')->nullable(); 
             
             
             
@@ -96,8 +106,8 @@ class CreateJobcardsTable extends Migration
             $table->string('job_flex5')->nullable();
             $table->string('job_flex6')->nullable();
             $table->string('job_flex7')->nullable();
-            $table->date('job_flex8')->nullable();
-            $table->date('job_flex9')->nullable();
+            $table->dateTime('job_flex8')->nullable();
+            $table->dateTime('job_flex9')->nullable();
             $table->string('job_flex10')->nullable();
             $table->timestamps();
         });

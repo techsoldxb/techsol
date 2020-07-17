@@ -43,7 +43,7 @@
               <tr>
                                  
                 <th> Invoice No.  </th>  
-                <th> Date </th>          
+                <th> Invoice Date </th>          
                 <th> Name </th>          
                  <th> Mobile </th>              
                   <th>Item Details</th>
@@ -61,7 +61,7 @@
           
           <tr>
             <td>{{ $c->job_invoice_number }}</td>
-            <td>{{ date('d-m-Y', strtotime($c->job_invoice_date)) }}</td>  
+            <td>{{ date('d-m-Y h:i A', strtotime($c->job_invoice_date)) }}</td>  
             <td>{{ $c->job_cust_name }}</td>  
             
             <td>{{ $c->job_cust_mobile }}</td>  
@@ -111,7 +111,7 @@
               <tfoot>
               <tr>
               <th> Invoice No.  </th>  
-                <th> Date </th>          
+              <th> Invoice Date </th>   
                 <th> Name </th>          
                  <th> Mobile </th>              
                   <th>Item Details</th>

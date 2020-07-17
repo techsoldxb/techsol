@@ -26,7 +26,7 @@
               <tr>
                                  
                 <th> Job ID   </th>  
-                <th> Date </th>          
+                <th> Completed Date </th>          
                 <th> Name </th>            
                 
                 <th> Mobile </th> 
@@ -50,7 +50,8 @@
           
           <tr>
             <td>{{ $c->job_enq_number }}</td>
-            <td>{{ date('d-m-Y', strtotime($c->created_at)) }}</td>  
+            
+            <td>{{ date('d-m-Y h:i A', strtotime($c->job_completed_date)) }}</td>  
             <td>{{ $c->job_cust_name }}</td>  
             
             <td>{{ $c->job_cust_mobile }}</td>  
@@ -63,7 +64,7 @@
             
             <td>{{ $c->job_fault}}</td>  
           
-            <td> {{ $c->job_remark }} </td>
+            <td> {{ $c->job_completed_remark }} </td>
 
             <td> {{ $c->job_enq_created_user }} </td>
             
@@ -105,7 +106,7 @@
               <tr>
                                                                
                 <th> Job ID   </th>  
-                <th> Date </th>          
+                <th> Completed Date </th>          
                 <th> Name </th>            
                 
                 <th> Mobile </th> 

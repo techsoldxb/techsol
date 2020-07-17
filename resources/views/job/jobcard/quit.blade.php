@@ -16,7 +16,7 @@
 
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title">Invoice Details
+            <h3 class="card-title">Quit Details
             <a href="{{ route('job.jobcard.create') }}" class="btn btn-primary btn-sm">Add New</a></h3>   
           </div>
           <!-- /.card-header -->
@@ -26,7 +26,7 @@
               <tr>
                                  
                 <th> Job ID   </th>  
-                <th> Date </th>          
+                <th> Quit Date </th>         
                 <th> Name </th>            
                 
                 
@@ -36,10 +36,11 @@
                 
                 <th>Item Details</th>
                 <th>Fault</th>
-                <th>Remarks</th>
-                <th>Amount</th>
+                <th>Reason</th>
+                <th>Quit By</th>
                 
-                <th> Action </th>
+                
+                
               </tr>
               </thead>
               <tbody>
@@ -50,7 +51,7 @@
           
           <tr>
             <td>{{ $c->job_enq_number }}</td>
-            <td>{{ date('d-m-Y', strtotime($c->created_at)) }}</td>  
+            <td>{{ date('d-m-Y h:i A', strtotime($c->job_quit_date)) }}</td>  
             <td>{{ $c->job_cust_name }}</td>  
             
             
@@ -63,28 +64,15 @@
             
             <td>{{ $c->job_fault}}</td>  
           
-            <td> {{ $c->job_remarks }} </td>
+            <td> {{ $c->job_quit_remark }} </td>
+            <td> {{ $c->job_quit_created_user }} </td>
 
-            <td>{{ $c->job_invoice_amount }}</td>  
+            
             
         
 
             
           
-          
-          <td>             
-            
-            <a href="{{ route('job.jobinvoice.show',$c->id) }}">
-              <i class="fa fa-print text-green"></i>
-              
-              </a>
-
-       
-         
-
-
-
-        </td>                
           
           </tr>
           @endforeach
@@ -97,7 +85,7 @@
               <tfoot>
               <tr>
               <th> Job ID   </th>  
-                <th> Date </th>          
+                <th> Quit Date </th>          
                 <th> Name </th>            
                 
                 
@@ -107,10 +95,10 @@
                 
                 <th>Item Details</th>
                 <th>Fault</th>
-                <th>Remarks</th>
-                <th>Amount</th>
+                <th>Reason</th>
+                <th>Quit By</th>
                 
-                <th> Action </th>
+                
                 
               </tr>
               </tfoot>

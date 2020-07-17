@@ -47,7 +47,7 @@ class JobcardController extends Controller
         
     }
 
-    public function quit()
+    public function jobquit()
     {
         
         $arr['jobcard'] = Jobcard::where('job_comp_code', auth()->user()->company)
@@ -93,8 +93,8 @@ class JobcardController extends Controller
         $jobcard->job_comp_code = Auth::user()->company;
         $jobcard->job_enq_number = $new_id;
 
-        $todaymnt = Carbon::now();
-        $jobcard->job_enq_date = $todaymnt;
+        $today = Carbon::now()->toDate('Y-m-d h:i');
+        $jobcard->job_enq_date = $today;
         
 
         $jobcard->job_cust_name = $request->job_cust_name;
@@ -203,7 +203,7 @@ class JobcardController extends Controller
             $jobcard->job_status_name = $request->job_status_name; 
             $jobcard->job_ins_remark = $request->job_ins_remark; 
 
-            $today = Carbon::now();
+            $today = Carbon::now()->toDate('Y-m-d h:i');
             $jobcard->job_ins_date = $today;
 
             $jobcard->job_ins_created_user = Auth::user()->name;
@@ -215,7 +215,7 @@ class JobcardController extends Controller
             $jobcard->job_status_name = $request->job_status_name; 
             $jobcard->job_quit_remark = $request->job_quit_remark; 
             $jobcard->job_quit_created_user = Auth::user()->name;
-            $today = Carbon::now();
+            $today = Carbon::now()->toDate('Y-m-d h:i');
             $jobcard->job_quit_date = $today;
             
         }

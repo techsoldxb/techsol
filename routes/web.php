@@ -108,13 +108,14 @@ Route::resource('/showroom/cash', 'Showroom\CashController', ['as'=>'showroom'])
 Route::resource('/showroom/cashkkd', 'Showroom\CashkkdController', ['as'=>'showroom'])->middleware('auth');
 Route::resource('/showroom/accountskkd', 'Admin\AccountskkdController', ['as'=>'showroom'])->middleware('auth');
 
+//Job - Service Center
 Route::resource('/job/jobcard', 'Job\JobcardController', ['as'=>'job'])->middleware('auth');
 Route::resource('/job/jobinspect', 'Job\JobinspectController', ['as'=>'job'])->middleware('auth');
 Route::resource('/job/jobestimate', 'Job\JobestimateController', ['as'=>'job'])->middleware('auth');
 Route::resource('/job/jobcomplete', 'Job\JobcompleteController', ['as'=>'job'])->middleware('auth');
 Route::resource('/job/jobinvoice', 'Job\JobinvoiceController', ['as'=>'job'])->middleware('auth');
 //Route::get('/jobcard/invoice', 'Job\JobcardController@invoice')->name('jobcard.invoice'); 
-Route::get('/jobcard/quit', 'Job\JobcardController@quit')->name('jobcard.quit'); 
+Route::get('/jobcard/jobquit', 'Job\JobcardController@jobquit')->name('jobcard.quit'); 
 //Route::get('/jobcard/print', 'Job\JobcardController@print')->name('jobcard.print');  
 Route::get('/job/jobinvoice/{jobcard}/print', 'Job\JobinvoiceController@print')->name('job.jobinvoice.print');
 

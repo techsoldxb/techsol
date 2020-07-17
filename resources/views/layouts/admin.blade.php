@@ -654,7 +654,7 @@
     </li>
 
     <li class="nav-item">
-      <a href="#" class="nav-link">
+      <a href="{{route('jobcard.quit')}}" class="nav-link">
       <i class="nav-icon fas fa-circle text-danger"></i>
         <p>Quit</p>
       </a>

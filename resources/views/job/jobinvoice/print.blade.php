@@ -81,9 +81,13 @@
 
           
         </div>
-      </div>  
+      </div> 
 
-      <div class="p-1 bg-secondary text-center"> 
+      
+      <p align ="center">Tel: 221003, Mobile: 9944 942308, Email: bashcomputers@gmail.com, Opp. State Bank Of India, 103 Salai Street,
+      Ramanathapuram</p> 
+
+      <div class="p-1  text-center"> 
 
         <h4 class="m-0  text-center">Service Invoice</h4>
      

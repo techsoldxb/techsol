@@ -79,9 +79,12 @@
         </div>
       </div>  
 
-      <div class="p-1 bg-secondary text-center"> 
+      <p align ="center">Tel: 221003, Mobile: 9944 942308, Email: bashcomputers@gmail.com, Opp. State Bank Of India, 103 Salai Street,
+      Ramanathapuram</p>
 
-        <h4 class="m-0  text-center">Job Card</h4>
+      <div class="p-1 text-center"> 
+
+        <h4 class="m-0  text-center"> <u>Job Card</u></h4>
      
     </div> 
     </div>
@@ -104,7 +107,7 @@
 
         <div class="form-group">
         <div class = "row">
-            <label class = "col" for="">Job Number</label>
+            <label class = "col" for="">Job ID</label>
         <div class = "col">    
             <input type="text" class="form-control" id="validationCustom01" name="job_enq_number" 
             value="{{ $jobcard->job_enq_number }}" disabled  >
@@ -191,25 +194,25 @@
                             </div>
                             </div>
 
+                            
+                          <div class="form-group">
+                            <div class = "row">
+                            <label class = "col" for="">Fault Details</label>
+                            <div class = "col">                              
+                                <input type="text" class="form-control" id="validationCustom02" name="tb_pay_mode"  value="{{ $jobcard->job_fault }}" disabled>                              
+                           
+    
+                            </div>
+                            <label class = "col" for="">Remarks</label>
+                            <div class = "col">    
+                                <input type="text" class="form-control" id="validationCustom02" name="tb_reference" value="{{ $jobcard->job_remark }}" disabled>                                                    
+                           
+                            </div>    
+                            </div>
+                            </div>
+
 
                        
-                            <div class="form-group">
-                            <div class = "row">
-                            <label class = "col-lg-3" for="">Fault Details</label>
-                            <div class = "col">                              
-                            <input type="text" class="form-control" id="validationCustom02" name="tb_pay_mode"  value="{{ $jobcard->job_fault }}" disabled>                                                            
-                            </div>                               
-                            </div>
-                            </div>
-
-                            <div class="form-group">
-                            <div class = "row">
-                            <label class = "col-lg-3" for="">Remarks</label>
-                            <div class = "col">                              
-                            <input type="text" class="form-control" id="validationCustom02" name="tb_pay_mode"  value="{{ $jobcard->job_remark }}" disabled>                                                           
-                            </div>                               
-                            </div>
-                            </div>
 
 
                     
