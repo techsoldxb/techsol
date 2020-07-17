@@ -275,7 +275,7 @@ if(select_status == 'Estimated')
                     
                   </div>
                   <input type="text" class="form-control" onkeypress="return isNumberKey(event)" 
-                  id="validationCustom02" name="job_est_amount" placeholder="Enter estimation amount" required>
+                  id="validationCustom02" name="job_est_amount" placeholder="Enter estimation amount">
                 </div>
 
                           

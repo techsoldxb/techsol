@@ -213,7 +213,8 @@ $(function()
                               <option value="Laptop">Laptop</option>
                               <option value="Desktop">Desktop</option>
                               <option value="Printer">Printer</option>
-                              <option value="Toner">Toner</option>   
+                              <option value="Toner">Monitor</option>  
+                              <option value="Toner">UPS</option>   
                               <option value="Other">Other</option>                                     
                                                                   
                               
