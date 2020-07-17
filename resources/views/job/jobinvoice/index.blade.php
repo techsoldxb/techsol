@@ -63,7 +63,7 @@
 
             
 
-            <td class="font-weight-bold text-center text-primary">{{ $c->job_invoice_amount }}</td>    
+            <td class="font-weight-bold text-right text-primary">{{ $c->job_invoice_amount }}</td>    
             
         
 
