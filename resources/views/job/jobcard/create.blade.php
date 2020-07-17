@@ -215,6 +215,7 @@ $(function()
                               <option value="Printer">Printer</option>
                               <option value="Toner">Monitor</option>  
                               <option value="Toner">UPS</option>   
+                              <option value="Toner">HDD</option>   
                               <option value="Other">Other</option>                                     
                                                                   
                               

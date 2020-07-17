@@ -110,7 +110,7 @@
             <label class = "col" for="">Invoice Number</label>
         <div class = "col">    
             <input type="text" class="form-control" id="validationCustom01" name="job_enq_number" 
-            value="{{ $jobcard->job_enq_number }}" disabled  >
+            value="{{ $jobcard->job_invoice_number }}" disabled  >
         </div>
         <label class = "col" for="">Invoice Date</label>
         <div class = "col">    

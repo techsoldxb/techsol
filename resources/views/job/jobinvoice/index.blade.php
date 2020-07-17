@@ -43,7 +43,7 @@
           @foreach($jobcard as $c)
           
           <tr>
-            <td>{{ $c->job_enq_number }}</td>
+            <td>{{ $c->job_invoice_number }}</td>
             <td>{{ date('d-m-Y', strtotime($c->job_invoice_date)) }}</td>  
             <td>{{ $c->job_cust_name }}</td>  
             
