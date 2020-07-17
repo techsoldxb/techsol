@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 @section('content')
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
    <!-- Main content -->
    <section class="content">
@@ -15,12 +16,14 @@
         <!-- /.card -->
 
         <div class="card">
-          <div class="card-header">
-            <h3 class="card-title">Invoiced
-            <a href="{{ route('job.jobcard.create') }}" class="btn btn-primary btn-sm">Add New</a>
-             
-            Today Invoice: {{ number_format($sc_inv_today) }}
-           
+          <div class="card-header font-weight-bold text-left text-primary" >
+            
+          
+
+            Today Invoice: 
+            
+            {{ number_format($sc_inv_today) }}
+            <i class="fa fa-rupee" style="font-size:18px;color:red"></i>
             
           </div>
           <!-- /.card-header -->
