@@ -126,8 +126,8 @@ class JobinspectController extends Controller
         {
             $jobcard->job_status_name = $request->job_status_name; 
 
-            $todaymnt = Carbon::now()->toDate('Y-m-d h:i');
-        $jobcard->job_completed_date = $todaymnt;
+            $today = Carbon::now()->toDate('Y-m-d h:i');
+        $jobcard->job_completed_date = $today;
         
             $jobcard->job_completed_remark = $request->job_completed_remark; 
             $jobcard->job_comp_created_user = Auth::user()->name;
@@ -140,6 +140,11 @@ class JobinspectController extends Controller
             $jobcard->job_quit_date = $todaymnt;
             $jobcard->job_quit_created_user =  Auth::user()->name;
             
+        }
+        else if (( $request->job_status_name )  == 'Return') 
+        {
+            $jobcard->job_status_name = $request->job_status_name;    
+            $jobcard->job_tech_remark = $request->job_tech_remark;             
         }
 
         

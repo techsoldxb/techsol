@@ -58,13 +58,13 @@ if(select_status == 'Estimated')
         $('#estimation_textbox').show();// By using this id you can show your content   
         $('#complete_textbox').hide();// By using this id you can show your content   
         $('#quit_textbox').hide(); 
-        $('#return_textbox').hide();// otherwise hide
+        $('#delivery_textbox').hide();// otherwise hide
     }
     else if(select_status == 'Completed')
     {
         $('#complete_textbox').show();// otherwise hide   
         $('#estimation_textbox').hide();// otherwise hide  
-        $('#return_textbox').hide();// otherwise hide  
+        $('#delivery_textbox').hide();// otherwise hide  
         $('#quit_textbox').hide(); 
     }
     else if(select_status == 'Return')
@@ -72,7 +72,14 @@ if(select_status == 'Estimated')
         $('#complete_textbox').hide();// otherwise hide   
         $('#estimation_textbox').hide();// otherwise hide  
         $('#quit_textbox').hide(); 
-        $('#return_textbox').show();// otherwise hide
+        $('#delivery_textbox').show();// otherwise hide
+    }
+    else if(select_status == 'Delivered')
+    {
+        $('#complete_textbox').hide();// otherwise hide   
+        $('#estimation_textbox').hide();// otherwise hide  
+        $('#quit_textbox').hide(); 
+        $('#delivery_textbox').show();// otherwise hide
     }
     else 
     {
@@ -137,7 +144,7 @@ if(select_status == 'Estimated')
  
      
      <form  class="needs-validation" novalidate method = "POST" 
-     action="{{ route('job.jobinspect.update', $jobcard->id) }}">
+     action="{{ route('job.jobreturn.update', $jobcard->id) }}">
      @method('PUT')
      
      
@@ -265,10 +272,10 @@ if(select_status == 'Estimated')
                             <select class="custom-select" name="job_status_name" id="messagetype" onchange="fun_showtextbox()" required>
                             <option value="" selected disabled hidden>Please select</option>
                                                                  
-                              <option value="Estimated">Estimate</option>
-                              <option value="Completed">Complete</option>                              
-                              <option value="Quit">Quit Job</option>
-                              <option value="Return">To be return</option>
+                              
+                              
+                              
+                              <option value="Delivered">Delivered</option>
                            </select>
                               
 
@@ -278,71 +285,16 @@ if(select_status == 'Estimated')
                               </div>
 
 
-                          <div class="form-group">
-                          <div id="estimation_textbox" style="display: none" class = "row">
-                          <label class = "col-lg-2" for="">Estimation Amount</label>
-                          <div class = "col-lg-3">    
-
-                          <div class="input-group">
-                  <div class="input-group-prepend">
-                    
-                    <span class="input-group-text"><i class="fa fa-inr" aria-hidden="true"></i>
-</span>
-                    
-                  </div>
-                  <input type="text" class="form-control" onkeypress="return isNumberKey(event)" 
-                  id="validationCustom02" name="job_est_amount" placeholder="Enter estimation amount">
-                </div>
-
-                          
-                          
-
-  
-                          </div>
-                          <label class = "col-lg-2" for="">Outside Service Cost</label>
-                          <div class = "col-lg-3">  
-                          <div class="input-group">
-                  <div class="input-group-prepend">
-                    
-                    <span class="input-group-text"><i class="fa fa-inr" aria-hidden="true"></i>
-</span>
-                    
-                  </div>  
-  
-                          <input type="text" class="form-control" onkeypress="return isNumberKey(event)" id="validationCustom02" name="job_item_cost" placeholder="Enter the outside service amount" >
-                          
-                          </div>    
-                          </div>
-                          </div>
-
                         
                         
-                          <div class="form-group">
-                          <div id="complete_textbox" style="display: none" class = "row">
-                          <label class = "col-lg-2" for="">Complete Remarks</label>
-                          <div class = "col-lg-8">                              
-                          <input type="text" class="form-control" id="validationCustom02" 
-                          name="job_completed_remark" placeholder="Enter the action remarks in detail">  
-                          </div>                              
-                          </div>
-                          </div>
+                         
 
                           <div class="form-group">
-                          <div id="quit_textbox" style="display: none" class = "row">
-                          <label class = "col-lg-2" for="">Quit Remarks</label>
+                          <div id="delivery_textbox" style="display: none" class = "row">
+                          <label class = "col-lg-2" for="">Delivered Remarks</label>
                           <div class = "col-lg-8">                              
                           <input type="text" class="form-control" id="validationCustom02" 
-                          name="job_quit_remark" placeholder="Enter the action remarks in detail">  
-                          </div>                              
-                          </div>
-                          </div>
-
-                          <div class="form-group">
-                          <div id="return_textbox" style="display: none" class = "row">
-                          <label class = "col-lg-2" for="">Return Remarks</label>
-                          <div class = "col-lg-8">                              
-                          <input type="text" class="form-control" id="validationCustom02" 
-                          name="job_tech_remark" placeholder="Enter the action remarks in detail">  
+                          name="job_delivery_remark" placeholder="Enter the action remarks in detail">  
                           </div>                              
                           </div>
                           </div>                
@@ -359,7 +311,7 @@ if(select_status == 'Estimated')
 
      <div class="form-group">
      <input type="submit" class = "btn btn-primary" Value ="Save">
-     <a href="{{route('job.jobinspect.index')}}" class="btn btn-warning" role="button">Cancel</a>
+     <a href="{{route('job.jobreturn.index')}}" class="btn btn-warning" role="button">Cancel</a>
      </div>
      </form>
       </div>

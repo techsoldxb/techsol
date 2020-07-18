@@ -268,8 +268,8 @@ if(select_status == 'Quit')
                             <select class="custom-select" name="job_status_name" id="messagetype" onchange="fun_showtextbox()" required>
                             <option value="" selected disabled hidden> Please select</option>
                             <option value="Update">Update</option>   
-                            <option value="Inspected">Inspect</option>     
-                             <option value="Quit">Quit Job</option>
+                            <option value="Inspected">Inspect</option>   
+                             
                             <option value="Outside">Outside Service</option>                                   
                            </select>                             
 

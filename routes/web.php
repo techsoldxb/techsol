@@ -117,6 +117,7 @@ Route::resource('/job/jobestimate', 'Job\JobestimateController', ['as'=>'job'])-
 Route::resource('/job/jobcomplete', 'Job\JobcompleteController', ['as'=>'job'])->middleware('auth');
 Route::resource('/job/jobinvoice', 'Job\JobinvoiceController', ['as'=>'job'])->middleware('auth');
 Route::resource('/job/jobinvtotal', 'Job\JobinvtotalController', ['as'=>'job'])->middleware('auth');
+Route::resource('/job/jobreturn', 'Job\JobreturnController', ['as'=>'job'])->middleware('auth');
 //Route::get('/jobcard/invoice', 'Job\JobcardController@invoice')->name('jobcard.invoice'); 
 Route::get('/jobcard/jobquit', 'Job\JobcardController@jobquit')->name('jobcard.quit'); 
 Route::get('/jobcard/joboutside', 'Job\JobcardController@joboutside')->name('jobcard.outside'); 
