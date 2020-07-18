@@ -41,7 +41,7 @@
             
 
 
-            <td>{{ ($c->job_invoice_date }}</td>  
+            <td>{{ $c->job_invoice_date }}</td>  
             <td>{{ number_format($c->total,3) }}</td>
             
 
