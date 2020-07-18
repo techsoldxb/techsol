@@ -51,7 +51,7 @@
           
           <tr>
             <td>{{ $c->job_enq_number }}</td>
-            <td>{{ date('d-m-Y h:i A', strtotime($c->job_quit_date)) }}</td>  
+            <td>{{ date('d-m-Y h:i A', strtotime($c->job_os_wq_date)) }}</td>  
             <td>{{ $c->job_cust_name }}</td>  
             
             
