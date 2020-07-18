@@ -35,6 +35,9 @@ class LoginController extends Controller
         }elseif($user->user_type=='user'){
             return redirect()->route('home') ;
         }
+        elseif($user->user_type=='service'){
+            return redirect()->route('home') ;
+        }
         
     }
 
