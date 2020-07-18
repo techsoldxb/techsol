@@ -150,7 +150,7 @@
 
             </h3>
 
-            <p>Service</p>
+            <p>Job Amount</p>
           </div>
           <div class="icon">
             <i class="ion ion-pie-graph"></i>
@@ -272,7 +272,7 @@
           
 
           <div class="info-box-content">
-            <span class="info-box-text">Job Amount</span>
+            <span class="info-box-text">Job Amount - KKD</span>
             <span class="info-box-number">{{ number_format($jobinvamount) }}</span>
             <a href="{{route('job.jobinvtotal.index')}}" class="small-box-footer">More info <i
               class="fas fa-arrow-circle-right"></i></a>
@@ -387,8 +387,8 @@
           <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-users"></i></span>
 
           <div class="info-box-content">
-            <span class="info-box-text">Users</span>
-            <span class="info-box-number">{{$users}}</span>
+            <span class="info-box-text">Job Amount - RMD</span>
+            <span class="info-box-number">{{ number_format($jobinvamount) }}</span>
           </div>
           <!-- /.info-box-content -->
         </div>
