@@ -116,12 +116,12 @@
         <div class = "row">
             <label class = "col-2" for="">Invoice Number</label>
         <div class = "col-4">    
-        <label for=""> :{{ $jobcard->job_invoice_number }} </label>
+        <label for=""> : &nbsp; {{ $jobcard->job_invoice_number }} </label>
            
         </div>
         <label class = "col-2" for="">Invoice Date</label>
         <div class = "col-4">    
-        <label for=""> : {{ date('d-m-Y', strtotime($jobcard->job_invoice_date))}}   </label>
+        <label for=""> : &nbsp;{{ date('d-m-Y', strtotime($jobcard->job_invoice_date))}}   </label>
         
         </div>     
         </div>
@@ -133,12 +133,12 @@
         <div class = "row">
             <label class = "col-2" for="">Customer Name</label>
         <div class = "col-4">   
-        <label for=""> : {{ $jobcard->job_cust_name }} </label> 
+        <label for=""> : &nbsp; {{ $jobcard->job_cust_name }} </label> 
             
         </div>
         <label class = "col-2" for="">Mobile Number</label>
         <div class = "col-4">    
-        <label for=""> :{{ $jobcard->job_cust_mobile }} </label>
+        <label for=""> : &nbsp; {{ $jobcard->job_cust_mobile }} </label>
                  
         </div>     
         </div>
@@ -155,7 +155,7 @@
                 <div class = "row">
                 <label class = "col-2" for="">Brand</label>
                 <div class = "col-4"> 
-                <label for=""> :{{ $jobcard->job_item_brand }} </label>   
+                <label for=""> : &nbsp; {{ $jobcard->job_item_brand }} </label>   
                 
                     
              
@@ -164,7 +164,7 @@
                 </div>
                 <label class = "col-2" for="">Model</label>
                 <div class = "col-4">  
-                <label for=""> : {{ $jobcard->job_item_model }} </label>  
+                <label for=""> : &nbsp; {{ $jobcard->job_item_model }} </label>  
                   
                 
                 
@@ -178,12 +178,12 @@
                     <div class = "row">
                     <label class = "col-2" for="">Item Details</label>
                     <div class = "col-4">    
-                    <label for=""> :{{ $jobcard->job_item_details }} </label>
+                    <label for=""> : &nbsp; {{ $jobcard->job_item_details }} </label>
                     
                     </div>
                     <label class = "col-2" for="">Serial Number</label>
                     <div class = "col-4">    
-                    <label for=""> :{{ $jobcard->job_item_serial }} </label>
+                    <label for=""> : &nbsp; {{ $jobcard->job_item_serial }} </label>
                              
                     </div>    
                     </div>
@@ -195,14 +195,14 @@
                             <div class = "row">
                             <label class = "col-2" for="">Item Type</label>
                             <div class = "col-4">         
-                            <label for="">  :{{ $jobcard->job_item_type }} </label>                     
+                            <label for="">  : &nbsp; {{ $jobcard->job_item_type }} </label>                     
                                                           
                            
     
                             </div>
                             <label class = "col-2" for="">Job Type</label>
                             <div class = "col-4">    
-                            <label for=""> :{{ $jobcard->job_type }} </label>
+                            <label for=""> : &nbsp; {{ $jobcard->job_type }} </label>
                                                                           
                            
                             </div>    
@@ -214,14 +214,14 @@
                             <div class = "row">
                             <label class = "col-2" for="">Fault Details</label>
                             <div class = "col-4">       
-                            <label for=""> :{{ $jobcard->job_fault }} </label>                       
+                            <label for=""> : &nbsp; {{ $jobcard->job_fault }} </label>                       
                                                               
                            
     
                             </div>
                             <label class = "col-2" for="">Remarks</label>
                             <div class = "col-4">  
-                            <label for=""> :{{ $jobcard->job_remark }} </label>  
+                            <label for=""> : &nbsp; {{ $jobcard->job_remark }} </label>  
                                 
                            
                             </div>    
@@ -237,7 +237,7 @@
 
                           <div class="input-group">
                   <div class="input-group-prepend">
-                    
+                    :&nbsp;
                     <span ><i class="fa fa-inr"></i>
 </span>
 
@@ -255,7 +255,7 @@
                           </div>
                           <label class = "col-2" for="">Warranty</label>
                           <div class = "col-4">    
-                          <label for="">: </label>
+                          <label for="">: &nbsp; </label>
   
                           
                           </div>    
