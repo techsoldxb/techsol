@@ -41,7 +41,7 @@
             
 
 
-            <td>{{ $c->job_invoice_date }}</td>  
+          <td>{{ date('Y-m-d', strtotime($c->job_invoice_date)) }}</td>  
             <td>{{ number_format($c->total,3) }}</td>
             
 

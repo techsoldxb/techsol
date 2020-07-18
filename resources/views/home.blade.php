@@ -273,7 +273,7 @@
 
           <div class="info-box-content">
             <span class="info-box-text">Job Amount - KKD</span>
-            <span class="info-box-number">{{ number_format($jobinvamount) }}</span>
+            <span class="info-box-number">{{ number_format($jobinvamountkkd) }}</span>
             <a href="{{route('job.jobinvtotal.index')}}" class="small-box-footer">More info <i
               class="fas fa-arrow-circle-right"></i></a>
           </div>
@@ -388,7 +388,7 @@
 
           <div class="info-box-content">
             <span class="info-box-text">Job Amount - RMD</span>
-            <span class="info-box-number">{{ number_format($jobinvamount) }}</span>
+            <span class="info-box-number">{{ number_format($jobinvamountrmd) }}</span>
           </div>
           <!-- /.info-box-content -->
         </div>
