@@ -119,6 +119,7 @@ Route::resource('/job/jobinvoice', 'Job\JobinvoiceController', ['as'=>'job'])->m
 Route::resource('/job/jobinvtotal', 'Job\JobinvtotalController', ['as'=>'job'])->middleware('auth');
 //Route::get('/jobcard/invoice', 'Job\JobcardController@invoice')->name('jobcard.invoice'); 
 Route::get('/jobcard/jobquit', 'Job\JobcardController@jobquit')->name('jobcard.quit'); 
+Route::get('/jobcard/joboutside', 'Job\JobcardController@joboutside')->name('jobcard.outside'); 
 //Route::get('/jobcard/print', 'Job\JobcardController@print')->name('jobcard.print');  
 Route::get('/job/jobinvoice/{jobcard}/print', 'Job\JobinvoiceController@print')->name('job.jobinvoice.print');
 

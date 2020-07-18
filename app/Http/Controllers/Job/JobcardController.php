@@ -58,6 +58,19 @@ class JobcardController extends Controller
         
     }
 
+    public function joboutside()
+    {
+        
+        $arr['jobcard'] = Jobcard::where('job_comp_code', auth()->user()->company)
+        ->where('job_status_name','Outside')
+        ->get();
+    
+        return view('job.jobcard.outside')->with($arr); 
+        
+    }
+
+
+
     /**
      * Show the form for creating a new resource.
      *

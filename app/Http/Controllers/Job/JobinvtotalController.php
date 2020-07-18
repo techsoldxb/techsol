@@ -26,6 +26,7 @@ class JobinvtotalController extends Controller
         ->where('job_comp_code', auth()->user()->company)
         ->where('job_status_name', 'Invoiced')
         ->groupBy('date')
+        ->orderBy('date','desc')
         ->get();
    
    return view('job.jobinvtotal.index', compact('jobcard')); 

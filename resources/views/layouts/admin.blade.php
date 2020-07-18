@@ -663,7 +663,7 @@
     <li class="nav-header">JOB - OTHERS</li>
 
 <li class="nav-item">
-      <a href="{{route('job.jobestimate.index')}}"  class="nav-link">
+      <a href="{{route('jobcard.outside')}}"  class="nav-link">
       <i class="nav-icon far fa-circle text-info"></i>
         <p>Outside Service</p>
       </a>
