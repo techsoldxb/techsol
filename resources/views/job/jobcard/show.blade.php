@@ -79,8 +79,12 @@
         </div>
       </div>  
 
-      <p align ="center">Tel: 221003, Mobile: 9944 942308, Email: bashcomputers@gmail.com, Opp. State Bank Of India, 103 Salai Street,
-      Ramanathapuram</p>
+      <p class="text-center">
+      <strong>
+      Mobile: 9944 942308, Email: bashcomputers@gmail.com, Opp. State Bank Of India, 103 Salai Street,
+      Ramanathapuram
+      </strong>
+      </p>
 
       <div class="p-1 text-center"> 
 
@@ -107,13 +111,13 @@
 
         <div class="form-group">
         <div class = "row">
-            <label class = "col" for="">Job ID</label>
-        <div class = "col"> 
+            <label class = "col-2" for="">Job ID</label>
+        <div class = "col-4"> 
         <label for=""> : {{ $jobcard->job_enq_number }} </label>   
        
         </div>
-        <label class = "col" for="">Date</label>
-        <div class = "col">    
+        <label class = "col-2" for="">Date</label>
+        <div class = "col-4">    
         <label for=""> :{{ date('d-m-Y', strtotime($jobcard->created_at))}}    </label>
                 
         </div>     
@@ -124,15 +128,15 @@
         
         <div class="form-group">
         <div class = "row">
-            <label class = "col" for="">Customer Name</label>
-        <div class = "col">    
+            <label class = "col-2" for="">Customer Name</label>
+        <div class = "col-4">    
         <label for="">
         : {{ $jobcard->job_cust_name }} 
         </label>
        
         </div>
-        <label class = "col" for="">Mobile Number</label>
-        <div class = "col">   
+        <label class = "col-2" for="">Mobile Number</label>
+        <div class = "col-4">   
           <label for="">:{{ $jobcard->job_cust_mobile }}           </label> 
         </div>     
         </div>
@@ -147,8 +151,8 @@
                 
                 <div class="form-group">
                 <div class = "row">
-                <label class = "col" for="">Brand</label>
-                <div class = "col">    
+                <label class = "col-2" for="">Brand</label>
+                <div class = "col-4">    
                 <label for=""> : {{ $jobcard->job_item_brand }}</label>
                 
                     
@@ -156,8 +160,8 @@
 
 
                 </div>
-                <label class = "col" for="">Model</label>
-                <div class = "col">    
+                <label class = "col-2" for="">Model</label>
+                <div class = "col-4">    
                 <label for=""> : {{ $jobcard->job_item_model }} </label>
                 
                 
@@ -170,13 +174,13 @@
 
                     <div class="form-group">
                     <div class = "row">
-                    <label class = "col" for="">Item Details</label>
-                    <div class = "col">    
+                    <label class = "col-2" for="">Item Details</label>
+                    <div class = "col-4">    
                     <label for=""> : {{ $jobcard->job_item_details }} </label>
                     
                     </div>
-                    <label class = "col" for="">Serial Number</label>
-                    <div class = "col">    
+                    <label class = "col-2" for="">Serial Number</label>
+                    <div class = "col-4">    
                     <label for=""> : {{ $jobcard->job_item_serial }}     </label>
                         
                     </div>    
@@ -187,15 +191,15 @@
                        
                           <div class="form-group">
                             <div class = "row">
-                            <label class = "col" for="">Item Type</label>
-                            <div class = "col">         
+                            <label class = "col-2" for="">Item Type</label>
+                            <div class = "col-4">         
                             <label for="">:{{ $jobcard->job_item_type }}     </label>                     
                                             
                            
     
                             </div>
-                            <label class = "col" for="">Job Type</label>
-                            <div class = "col">    
+                            <label class = "col-2" for="">Job Type</label>
+                            <div class = "col-4">    
                             <label for="">  : {{ $jobcard->job_type }}   </label>
                                                                               
                            
@@ -206,16 +210,16 @@
                             
                           <div class="form-group">
                             <div class = "row">
-                            <label class = "col" for="">Fault Details</label>
-                            <div class = "col">    
+                            <label class = "col-2" for="">Fault Details</label>
+                            <div class = "col-4">    
 
                             <label for=""> :{{ $jobcard->job_fault }}        </label>                          
                                                  
                            
     
                             </div>
-                            <label class = "col" for="">Remarks</label>
-                            <div class = "col">  
+                            <label class = "col-2" for="">Remarks</label>
+                            <div class = "col-4">  
                             <label for="">: {{ $jobcard->job_remark }}   </label>  
                                                              
                            
@@ -260,7 +264,7 @@ found during dismantling, a supplementary estimate will be issued for those repa
 customer’s approval of the estimate by written or SMS to the cell phone mentioned in the job
 enquiry form authorization.</li>
 <li>Displaced/replaced parts shall be disposed of immediately unless we are instructed by the
-customer ar the time of work authorization and must be collected along with te device. No
+customer at the time of work authorization and must be collected along with te device. No
 later claim will be considered/entertained</li>
 <li>If we or our subcontractor inadvertently damage the device while carrying out the authorized
 job/agreed work, we will repair the damage in the device at our cost. We DO NOT undertake
@@ -270,13 +274,13 @@ email. The customer needs tobring the original job card slip. Failing to produce
 card slip at the time of collection will result in denial to deliver the device. If the person collecting
 the device in not the registered owner, he or she must provide the original job card slip or
 other suitable written authorization.</li>
-<li>Unless agreed in advance, the customer in required to fully settle the invoice amount before
+<li>Unless agreed in advance, the customer is required to fully settle the invoice amount before
 we return the device.</li>
 <li>In the event of late or non-payment of any amount owed by the customer or failure to collect
 the device within 15 days from the date fo job completion notification, the device will be
 scrapped without any further notice to the customer and any later claim for the device will not
 be entertained.</li>
-<li> On receipt of the device, the customer/person collects the device in required to inspect and
+<li> On receipt of the device, the customer/person collects the device is required to inspect and
 notify us of any issue there itself. Should the customer take delivery of the device, it is confirmed
 that he/she is satisfied with the work and no subsequent claims will be entertained/accepted.</li>
 </ol>
