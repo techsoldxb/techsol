@@ -17,7 +17,7 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-        'name', 'mobile','company','dept','email', 'password',
+        'name', 'phone_number','company','dept','email', 'password',
     ];
 
     /**
@@ -28,6 +28,11 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function routeNotificationForWhatsApp()
+{
+  return $this->phone_number;
+}
 
     /**
      * The attributes that should be cast to native types.

@@ -84,7 +84,7 @@
 
       <div class="p-1 text-center"> 
 
-        <h3 class="m-0  text-center"> <strong><u>Job Card</u></strong></h3>
+        <h4 class="m-0  text-center"> <u>Job Card</u></h4>
      
     </div> 
     </div>
@@ -108,14 +108,14 @@
         <div class="form-group">
         <div class = "row">
             <label class = "col" for="">Job ID</label>
-        <div class = "col"> 
-        <label for=""> : {{ $jobcard->job_enq_number }} </label>   
-       
+        <div class = "col">    
+            <input type="text" class="form-control" id="validationCustom01" name="job_enq_number" 
+            value="{{ $jobcard->job_enq_number }}" disabled  >
         </div>
         <label class = "col" for="">Date</label>
         <div class = "col">    
-        <label for=""> :{{ date('d-m-Y', strtotime($jobcard->created_at))}}    </label>
-                
+        <input type="text" class="form-control" id="validationCustom02" name="tb_cust_addr" 
+        value="{{ date('d-m-Y', strtotime($jobcard->created_at))}}"  disabled>           
         </div>     
         </div>
         </div>
@@ -126,14 +126,11 @@
         <div class = "row">
             <label class = "col" for="">Customer Name</label>
         <div class = "col">    
-        <label for="">
-        : {{ $jobcard->job_cust_name }} 
-        </label>
-       
+            <input type="text" class="form-control" id="validationCustom01" name="tb_cust_name" value="{{ $jobcard->job_cust_name }}" disabled  >
         </div>
         <label class = "col" for="">Mobile Number</label>
-        <div class = "col">   
-          <label for="">:{{ $jobcard->job_cust_mobile }}           </label> 
+        <div class = "col">    
+        <input type="text" class="form-control" id="validationCustom02" name="tb_cust_addr" value="{{ $jobcard->job_cust_mobile }}" disabled>           
         </div>     
         </div>
         </div>
@@ -149,17 +146,15 @@
                 <div class = "row">
                 <label class = "col" for="">Brand</label>
                 <div class = "col">    
-                <label for=""> : {{ $jobcard->job_item_brand }}</label>
                 
-                    
+                    <input class = "form-control datepicker" id="datepicker" name = "tb_date" value="{{ $jobcard->job_item_brand }}"  disabled>  
              
 
 
                 </div>
                 <label class = "col" for="">Model</label>
                 <div class = "col">    
-                <label for=""> : {{ $jobcard->job_item_model }} </label>
-                
+                <input type="text" class="form-control" id="validationCustom02" name="tb_time" value="{{ $jobcard->job_item_model }}" disabled>     
                 
                 
              
@@ -172,13 +167,11 @@
                     <div class = "row">
                     <label class = "col" for="">Item Details</label>
                     <div class = "col">    
-                    <label for=""> : {{ $jobcard->job_item_details }} </label>
-                    
+                    <input type="text" class="form-control" id="validationCustom02" name="tb_kids" value="{{ $jobcard->job_item_details }}" disabled>
                     </div>
                     <label class = "col" for="">Serial Number</label>
                     <div class = "col">    
-                    <label for=""> : {{ $jobcard->job_item_serial }}     </label>
-                        
+                    <input type="text" class="form-control" id="validationCustom02" name="tb_adult" value="{{ $jobcard->job_item_serial }}" disabled>           
                     </div>    
                     </div>
                     </div>
@@ -188,16 +181,14 @@
                           <div class="form-group">
                             <div class = "row">
                             <label class = "col" for="">Item Type</label>
-                            <div class = "col">         
-                            <label for="">:{{ $jobcard->job_item_type }}     </label>                     
-                                            
+                            <div class = "col">                              
+                                <input type="text" class="form-control" id="validationCustom02" name="tb_pay_mode"  value="{{ $jobcard->job_item_type }}" disabled>                              
                            
     
                             </div>
                             <label class = "col" for="">Job Type</label>
                             <div class = "col">    
-                            <label for="">  : {{ $jobcard->job_type }}   </label>
-                                                                              
+                                <input type="text" class="form-control" id="validationCustom02" name="tb_reference" value="{{ $jobcard->job_type }}" disabled>                                                    
                            
                             </div>    
                             </div>
@@ -207,17 +198,14 @@
                           <div class="form-group">
                             <div class = "row">
                             <label class = "col" for="">Fault Details</label>
-                            <div class = "col">    
-
-                            <label for=""> :{{ $jobcard->job_fault }}        </label>                          
-                                                 
+                            <div class = "col">                              
+                                <input type="text" class="form-control" id="validationCustom02" name="tb_pay_mode"  value="{{ $jobcard->job_fault }}" disabled>                              
                            
     
                             </div>
                             <label class = "col" for="">Remarks</label>
-                            <div class = "col">  
-                            <label for="">: {{ $jobcard->job_remark }}   </label>  
-                                                             
+                            <div class = "col">    
+                                <input type="text" class="form-control" id="validationCustom02" name="tb_reference" value="{{ $jobcard->job_remark }}" disabled>                                                    
                            
                             </div>    
                             </div>

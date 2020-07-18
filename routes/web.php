@@ -27,6 +27,8 @@ Route::get('/table', function () {
     return view('table');
 });
 
+Route::post('/order', 'OrderController@store')->name('order')->middleware('auth');
+
 
 
 //All unknows request will go to test.blade.php

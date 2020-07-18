@@ -2,6 +2,11 @@
 
 @section('content')
 
+<form action="{{ route('order') }}" method="post">
+    @csrf
+    <button type="submit" class="btn btn-primary">Place Order</button>
+</form>
+
 <!-- Content Header (Page header) -->
 <div class="content-header">
   <div class="container-fluid">
