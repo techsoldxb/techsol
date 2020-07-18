@@ -197,8 +197,8 @@ class JobcardController extends Controller
         $seq = $year <> $id_year ? 0 : +substr($id, -5);
         $new_id = sprintf("%0+4u%0+6u", $year, $seq+1);  
 
-        $todaymnt = Carbon::now();
-        $jobcard->job_invoice_date = $todaymnt;
+        $today = Carbon::now()->toDate('Y-m-d h:i');
+        $jobcard->job_invoice_date = $today;
         
         
             
@@ -236,8 +236,8 @@ class JobcardController extends Controller
         {
             $jobcard->job_status_name = $request->job_status_name; 
             $jobcard->job_out_source = $request->job_out_source;             
-            $today = Carbon::now();
-            $jobcard->job_flex8 = $today; //Outside service date
+            $today = Carbon::now()->toDate('Y-m-d h:i');
+            $jobcard->job_os_wq_date = $today; //Outside service date
             
         }
         else if (( $request->job_status_name )  == 'Update') 
