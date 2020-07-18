@@ -41,6 +41,7 @@
 
               {{ number_format($wob-$expense) }}
               
+              
 
 
 
@@ -140,7 +141,9 @@
 
 
 
-           0
+           
+            {{ number_format($jobinvamount) }}
+              
            
 
 

@@ -52,6 +52,11 @@ view()->composer('job.jobinvoice.index', function($view)  {
     ->where('job_status_name','Invoiced')->sum('job_invoice_amount'));
 });
 
+view()->composer('home', function($view)  {
+    $view->with('jobinvamount',\App\Jobcard::where('job_comp_code', auth()->user()->company)->where('job_status_name', 'Invoiced')
+    ->sum('job_invoice_amount'));
+});
+
 
 
 
