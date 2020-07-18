@@ -173,7 +173,7 @@ class JobcardController extends Controller
 
 
 
-        $jobcard->job_cust_name = $request->job_cust_name;   
+        
 
         if (( $request->job_status_name )  == 'Invoiced') {
 
@@ -225,6 +225,18 @@ class JobcardController extends Controller
             $jobcard->job_out_source = $request->job_out_source;             
             $today = Carbon::now();
             $jobcard->job_flex8 = $today; //Outside service date
+            
+        }
+        else if (( $request->job_status_name )  == 'Update') 
+        {
+          
+            $jobcard->job_cust_name = $request->job_cust_name;   
+            $jobcard->job_cust_mobile = $request->job_cust_mobile;   
+            $jobcard->job_cust_email = $request->job_cust_email;   
+            $jobcard->job_item_model = $request->job_item_model;   
+            $jobcard->job_item_serial = $request->job_item_serial; 
+            $jobcard->job_item_details = $request->job_item_details;   
+            $jobcard->job_remark = $request->job_remark;     
             
         }
 

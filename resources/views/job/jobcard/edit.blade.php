@@ -67,6 +67,13 @@ if(select_status == 'Quit')
         $('#outside_textbox').hide();// By using this id you can show your content  
         
     }
+    else if(select_status == 'Update')
+    {
+        $('#quit_textbox').hide();// otherwise hide   
+        $('#inspect_textbox').hide();// otherwise hide  
+        $('#outside_textbox').hide();// By using this id you can show your content  
+        
+    }
     else
     {
       $('#quit_textbox').hide();// otherwise hide   
@@ -142,7 +149,7 @@ if(select_status == 'Quit')
                     <div class = "row">
                     <label class = "col-lg-2" for="">Customer Name</label>
                     <div class = "col-lg-3">    
-                    <input type="text" class="form-control" value="{{ $jobcard->job_cust_name}}" id="validationCustom02" name="job_cust_name" readonly>
+                    <input type="text" class="form-control" value="{{ $jobcard->job_cust_name}}" id="validationCustom02" name="job_cust_name">
                     </div>
                     <label class = "col-lg-2" for="">Job ID</label>
                     <div class = "col-lg-3">    
@@ -162,12 +169,12 @@ if(select_status == 'Quit')
                   
 
 
-            <input type="text" class="form-control" value="{{ $jobcard->job_cust_mobile}}"id="validationCustom02" name="job_cust_mobile" placeholder="Enter mobile number" readonly>
+            <input type="text" class="form-control" value="{{ $jobcard->job_cust_mobile}}"id="validationCustom02" name="job_cust_mobile" placeholder="Enter mobile number">
             
             </div>
             <label class = "col-lg-2" for="">Email</label>
             <div class = "col-lg-3">    
-            <input type="email" class="form-control" value="{{ $jobcard->job_cust_email}}" id="validationCustom02" name="job_cust_email" placeholder="Enter Email" readonly>           
+            <input type="email" class="form-control" value="{{ $jobcard->job_cust_email}}" id="validationCustom02" name="job_cust_email" placeholder="Enter Email">           
             </div>     
             </div>
             </div>
@@ -179,11 +186,11 @@ if(select_status == 'Quit')
                     <div class = "row">
                     <label class = "col-lg-2" for="">Brand</label>
                     <div class = "col-lg-3">    
-                    <input type="text" class="form-control" value="{{ $jobcard->job_item_brand}}" id="validationCustom02" name="job_item_brand" placeholder="Enter brand name" readonly>
+                    <input type="text" class="form-control" value="{{ $jobcard->job_item_brand}}" id="validationCustom02" name="job_item_brand" placeholder="Enter brand name">
                     </div>
                     <label class = "col-lg-2" for="">Model</label>
                     <div class = "col-lg-3">    
-                    <input type="text" class="form-control" value="{{ $jobcard->job_item_model}}" id="validationCustom02" name="job_item_model" placeholder="Enter model number" readonly>           
+                    <input type="text" class="form-control" value="{{ $jobcard->job_item_model}}" id="validationCustom02" name="job_item_model" placeholder="Enter model number">           
                     </div>    
                     </div>
                     </div>
@@ -192,13 +199,13 @@ if(select_status == 'Quit')
                         <div class = "row">
                         <label class = "col-lg-2" for="">Item Detail</label>
                         <div class = "col-lg-3">    
-                        <input type="text" class="form-control" value="{{ $jobcard->job_item_details}}" id="validationCustom02" name="job_item_details" placeholder="Enter item details" readonly>
+                        <input type="text" class="form-control" value="{{ $jobcard->job_item_details}}" id="validationCustom02" name="job_item_details" placeholder="Enter item details">
 
                         </div>
                         <label class = "col-lg-2" for="">Serial Number</label>
                         <div class = "col-lg-3">    
 
-                        <input type="text" class="form-control" value="{{ $jobcard->job_item_serial}}" id="validationCustom02" name="job_item_serial" placeholder="Enter serial number" readonly> 
+                        <input type="text" class="form-control" value="{{ $jobcard->job_item_serial}}" id="validationCustom02" name="job_item_serial" placeholder="Enter serial number"> 
 
                         
                         </div>    
@@ -230,7 +237,7 @@ if(select_status == 'Quit')
                               <div class = "row">
                               <label class = "col-lg-2" for="">Fault Details</label>
                               <div class = "col-lg-8">    
-                              <input type="text" class="form-control" value="{{ $jobcard->job_fault}}" id="validationCustom02"  name="job_fault" placeholder="Enter fault details" readonly>
+                              <input type="text" class="form-control" value="{{ $jobcard->job_fault}}" id="validationCustom02"  name="job_fault" placeholder="Enter fault details">
                               <div class = "clear-fix"></div>
                               </div>     
                               </div>
@@ -241,7 +248,7 @@ if(select_status == 'Quit')
                               <div class = "row">
                               <label class = "col-lg-2" for="">Remarks</label>
                               <div class = "col-lg-8">    
-                              <input type="text" class="form-control" value="{{ $jobcard->job_remarks}}" id="validationCustom02"  name="job_remarks" placeholder="Enter remarks">
+                              <input type="text" class="form-control" value="{{ $jobcard->job_remark}}" id="validationCustom02"  name="job_remark" placeholder="Enter remarks">
                               <div class = "clear-fix"></div>
                               </div>     
                               </div>
@@ -257,6 +264,7 @@ if(select_status == 'Quit')
 
                             <select class="custom-select" name="job_status_name" id="messagetype" onchange="fun_showtextbox()" required>
                             <option value="" selected disabled hidden> Please select</option>
+                            <option value="Update">Update</option>   
                             <option value="Inspected">Inspect</option>     
                              <option value="Quit">Quit Job</option>
                             <option value="Outside">Outside Service</option>                                   
