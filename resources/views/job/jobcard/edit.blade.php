@@ -205,7 +205,8 @@ if(select_status == 'Quit')
                         <label class = "col-lg-2" for="">Serial Number</label>
                         <div class = "col-lg-3">    
 
-                        <input type="text" class="form-control" value="{{ $jobcard->job_item_serial}}" id="validationCustom02" name="job_item_serial" placeholder="Enter serial number"> 
+                        <input type="text" class="form-control" value="{{ $jobcard->job_item_serial}}" 
+                        id="validationCustom02" name="job_item_serial" placeholder="Enter serial number"> 
 
                         
                         </div>    
@@ -224,7 +225,7 @@ if(select_status == 'Quit')
                           <label class = "col-lg-2" for="">Job Type</label>
                           <div class = "col-lg-3">    
   
-                          <input type="text" class="form-control" value="{{ $jobcard->job_type}}" id="validationCustom02" name="job_item_serial" placeholder="Enter serial number" readonly>
+                          <input type="text" class="form-control" value="{{ $jobcard->job_type}}" id="validationCustom02" name="job_type" placeholder="Enter serial number" readonly>
                           
                           </div>    
                           </div>
