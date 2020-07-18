@@ -2,10 +2,7 @@
 
 @section('content')
 
-<form action="{{ route('order') }}" method="post">
-    @csrf
-    <button type="submit" class="btn btn-primary">Place Order</button>
-</form>
+
 
 <!-- Content Header (Page header) -->
 <div class="content-header">
@@ -150,12 +147,12 @@
 
             </h3>
 
-            <p>Cash Topup</p>
+            <p>Service</p>
           </div>
           <div class="icon">
             <i class="ion ion-pie-graph"></i>
           </div>
-          <a href="#" class="small-box-footer">More info <i
+          <a href="{{route('job.jobinvtotal.index')}}" class="small-box-footer">More info <i
               class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
