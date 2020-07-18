@@ -21,11 +21,14 @@ class JobinvtotalController extends Controller
      */
     public function index()
     {
+        
         $arr['jobcard'] = Jobcard::where('job_comp_code', auth()->user()->company)
-        ->where('job_status_name', 'Invoiced')
-        ->groupBy('job_invoice_date')
-       ->selectRaw('job_invoice_date, sum(job_invoice_amount) as total')       
-       ->get();
+        ->where('job_status_name', 'Invoiced')                   
+       ->selectRaw('job_invoice_date,sum(job_invoice_amount) as total') 
+       ->groupBy('job_invoice_date')  
+        ->get();
+
+        
        return view('job.jobinvtotal.index')->with($arr);  
     }
 

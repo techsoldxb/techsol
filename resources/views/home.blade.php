@@ -268,11 +268,11 @@
       <!-- /.col -->
       <div class="col-12 col-sm-6 col-md-3">
         <div class="info-box mb-3">
-          <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-users"></i></span>
+          <span class="info-box-icon bg-danger elevation-1"><i class="nav-icon fas fa-wrench"></i></span>
 
           <div class="info-box-content">
-            <span class="info-box-text">Users</span>
-            <span class="info-box-number">{{$users}}</span>
+            <span class="info-box-text">Job Amount</span>
+            <span class="info-box-number">{{ number_format($jobinvamount) }}</span>
           </div>
           <!-- /.info-box-content -->
         </div>

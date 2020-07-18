@@ -57,9 +57,9 @@
               </tbody>
               <tfoot>
               <tr>
+              <th> Invoice Date </th>          
+                <th> Amount </th>   
                                  
-                <th> Invoice Date </th>          
-                <th> Amount </th>  
               </tr>
               </tfoot>
             </table>
