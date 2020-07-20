@@ -17,6 +17,13 @@ return [
     'timezone' => 'UTC',
     'locale' => 'en',
 
+    //This below code is to hide the .env file
+    'debug_blacklist' => [
+        '_COOKIE' => array_keys($_COOKIE),
+        '_SERVER' => array_keys($_SERVER),
+        '_ENV' => array_keys($_ENV), 
+    ],
+
 
     /*
     |--------------------------------------------------------------------------

@@ -56,9 +56,8 @@
             
             <td>{{ date('d-m-Y', strtotime($c->enq_date)) }}</td>  
             
-            <td>{{ $c->enq_time}}</td>  
-            
-            <td>{{ $c->enq_purpose}}</td>  
+            <td>{{ $c->enq_time}}</td>              
+            <td>{{ $c->enq_purpose}}</td> 
           
             <td> {{ $c->enq_item_details }} </td>
             <td> {{ $c->enq_group }} </td>

@@ -51,26 +51,12 @@
           <tr>
             <td>{{ $c->job_enq_number }}</td>
             <td>{{ date('d-m-Y', strtotime($c->created_at)) }}</td>  
-            <td>{{ $c->job_cust_name }}</td>  
+            <td>{{ $c->job_cust_name }}</td>           
+            <td>{{ $c->job_item_details }}</td>          
             
-            
-            
-            
-            
-
-            <td>{{ $c->job_item_details }}</td>  
-            
-            
-            <td>{{ $c->job_fault}}</td>  
-          
+            <td>{{ $c->job_fault}}</td>            
             <td> {{ $c->job_remarks }} </td>
-
-            <td>{{ $c->job_invoice_amount }}</td>  
-            
-        
-
-            
-          
+            <td>{{  $c->job_invoice_amount }}</td>                 
           
           <td>             
             

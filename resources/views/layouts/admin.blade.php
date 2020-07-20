@@ -99,7 +99,7 @@
     <a href=" {{ route('home') }}" class="brand-link">
 
       
-    <img src={{asset('dist/img/tclogo.PNG class=brand-image img-circle elevation-3 style=opacity: .8')}}>
+    <img src={{asset('dist/img/tclogo.PNG class=brand-image img-circle elevation-3 style=opacity:.8')}}>
     
      <span >Techsol Group</span>
     </a>
@@ -135,9 +135,8 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
             <?php
-              $segment = Request::segment(2);     
-                   
-            ?>
+              $segment = Request::segment(2);   
+             ?>
              @can('isAdmin')
               <li class="nav-item">
                 <a href=" {{ route('home') }}" class="nav-link 

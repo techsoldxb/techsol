@@ -64,10 +64,10 @@
         
         </div>
         <div class = "col text-center">
+
           
           
-          
-          <img src={{asset('dist/img/printaqua.png')}}>
+    <img src={{asset('dist/img/printaqua.png')}}>
           
         </div>
       </div>  
