@@ -90,7 +90,7 @@
 </p>
 
 <div class="p-1  text-center">
-    <h3 class="m-0  text-center"> <strong><u>Supply Of Bill</u></strong></h3>
+    <h3 class="m-0  text-center"> <strong><u>Bill of Supply</u></strong></h3>
 </div>
 
 <div class="p-1 bg-transparent text-center">
