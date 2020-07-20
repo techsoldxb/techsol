@@ -198,9 +198,9 @@
                                 <label for=""> . {{ $jobcard->job_invoice_amount }} </label>
                             </div>
                         </div>
-                        <label class="col-2" for="">Warranty</label>
+                        <label class="col-2" for="">Job ID</label>
                         <div class="col-4">
-                            <label for="">: &nbsp; </label>
+                            <label for="">: <label for=""> . {{ $jobcard->job_enq_number }} </label></label>
                         </div>
                     </div>
                 </div>
