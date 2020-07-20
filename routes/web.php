@@ -40,7 +40,7 @@ Route::post('/order', 'OrderController@store')->name('order')->middleware('auth'
 
 Auth::routes([
     'verify' => true,
-    'register' => true,
+    'register' => false,
     
     ]);
     
