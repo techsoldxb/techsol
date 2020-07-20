@@ -23,7 +23,7 @@ class JobcompleteController extends Controller
     {
         
         $arr['jobcard'] = Jobcard::where('job_comp_code', auth()->user()->company)
-        ->where('job_status_name','Completed')
+        ->where('job_status_name','Completed')->orWhere('job_status_name','Outside_Received')
         ->get();
     
         return view('job.jobcomplete.index')->with($arr); 
@@ -117,14 +117,16 @@ class JobcompleteController extends Controller
         {
             $jobcard->job_status_name = $request->job_status_name; 
             $jobcard->job_completed_remark = $request->job_tech_remark; 
+            $today = Carbon::now();        
+            $jobcard->job_completed_date = $today;            
             
         }
         else if (( $request->job_status_name )  == 'Quit') 
         {
             $jobcard->job_status_name = $request->job_status_name; 
-            $jobcard->job_quit_remarks = $request->job_tech_remark; 
-            $jobcard->job_quit_date = $todaymnt;
-            
+            $jobcard->job_quit_remark = $request->job_tech_remark;                 
+            $today = Carbon::now();        
+            $jobcard->job_quit_date = $today;            
         }
 
         

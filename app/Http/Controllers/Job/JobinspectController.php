@@ -69,14 +69,8 @@ class JobinspectController extends Controller
      */
     public function edit($inspected)
     {
-        $jobcard = Jobcard::where('id', $inspected)->firstOrFail();
-
-        
+        $jobcard = Jobcard::where('id', $inspected)->firstOrFail();        
         return view('job.jobinspect.edit')->with(['jobcard' => $jobcard,'inspected' => $inspected]); 
-
-        
-       // $arr['jobcard'] = $jobcard;
-      //  return view('job.jobinspect.edit')->with($arr);
     }
 
     /**
@@ -127,7 +121,7 @@ class JobinspectController extends Controller
             $jobcard->job_status_name = $request->job_status_name; 
 
             $today = Carbon::now()->toDate('Y-m-d h:i');
-        $jobcard->job_completed_date = $today;
+            $jobcard->job_completed_date = $today;
         
             $jobcard->job_completed_remark = $request->job_completed_remark; 
             $jobcard->job_comp_created_user = Auth::user()->name;
@@ -137,7 +131,8 @@ class JobinspectController extends Controller
         {
             $jobcard->job_status_name = $request->job_status_name; 
             $jobcard->job_quit_remarks = $request->job_tech_remark; 
-            $jobcard->job_quit_date = $todaymnt;
+            $today = Carbon::now()->toDate('Y-m-d h:i');
+            $jobcard->job_quit_date = $today;
             $jobcard->job_quit_created_user =  Auth::user()->name;
             
         }
@@ -145,6 +140,15 @@ class JobinspectController extends Controller
         {
             $jobcard->job_status_name = $request->job_status_name;    
             $jobcard->job_tech_remark = $request->job_tech_remark;             
+        }
+        else if (( $request->job_status_name )  == 'Outside') 
+        {
+            $jobcard->job_status_name = $request->job_status_name; 
+            $jobcard->job_os_flag = 1; 
+            $jobcard->job_out_source = $request->job_out_source;   
+            $jobcard->job_os_wq_remark = $request->job_os_wq_remark;             
+            $today = Carbon::now()->toDate('Y-m-d h:i');
+            $jobcard->job_os_wq_date = $today; //Outside service date         
         }
 
         

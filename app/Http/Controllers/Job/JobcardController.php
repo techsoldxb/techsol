@@ -6,13 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use Carbon\Carbon;
-
-
 use App\Jobcard;
-
 Use Auth;
 use App\User;
-
 Use Gate;
 
 
@@ -235,7 +231,9 @@ class JobcardController extends Controller
         else if (( $request->job_status_name )  == 'Outside') 
         {
             $jobcard->job_status_name = $request->job_status_name; 
-            $jobcard->job_out_source = $request->job_out_source;             
+            $jobcard->job_os_flag = 1; 
+            $jobcard->job_out_source = $request->job_out_source;   
+            $jobcard->job_os_wq_remark = $request->job_os_wq_remark;             
             $today = Carbon::now()->toDate('Y-m-d h:i');
             $jobcard->job_os_wq_date = $today; //Outside service date
             

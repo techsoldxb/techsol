@@ -1,11 +1,18 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Job;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Jobcard;
 
-class CalendarController extends Controller
+
+use Carbon\Carbon;
+use App\Jobcard;
+Use Auth;
+use App\User;
+Use Gate;
+
+class JoboutsideestController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +21,11 @@ class CalendarController extends Controller
      */
     public function index()
     {
-    $this->authorize('isAdmin');       
-    $arr['jobcard'] = Jobcard::where('job_comp_code','003')->get();    
-    return view('calander.index', compact('jobcard'));
+        
+        $arr['jobcard'] = Jobcard::where('job_comp_code', auth()->user()->company)
+        ->where('job_status_name','Outside_Estimation')
+        ->get();    
+        return view('job.joboutsideest.index')->with($arr); 
     }
 
     /**
@@ -46,9 +55,9 @@ class CalendarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Booking $booking)
+    public function show($id)
     {
-        return view('foh.booking.show',compact('booking'));
+        //
     }
 
     /**
@@ -57,9 +66,11 @@ class CalendarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($outsideest)
     {
-        //
+        
+        $jobcard = Jobcard::where('id', $outsideest)->firstOrFail();        
+        return view('job.joboutsideest.edit')->with(['jobcard' => $jobcard,'outsideest' => $outsideest]); 
     }
 
     /**
@@ -69,9 +80,22 @@ class CalendarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $outsideest)
     {
-        //
+        $jobcard = Jobcard::where('id', $outsideest)->firstOrFail();
+
+        if (( $request->job_status_name )  == 'Outside_Received') {            
+            
+            $jobcard->job_status_name = $request->job_status_name;         
+                   
+            $today = Carbon::now();
+            $jobcard->job_os_rec_date = $today;
+        }
+
+        $jobcard->save();
+        return redirect()->route('job.joboutsideest.index')->with('info','Transaction updated successfully!');
+
+       
     }
 
     /**

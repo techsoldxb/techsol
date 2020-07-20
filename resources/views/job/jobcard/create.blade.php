@@ -252,13 +252,23 @@
 
                         <select class="custom-select" name="job_type">
                             <option value="" selected disabled hidden>Please select</option>
+                            <option value="Virus">Virus</option>
+                            <option value="UPS_Backup">UPS Back</option>
+                            <option value="Restart">Restart</option>
+                            <option value="Drivers">Drivers</option>
+                            <option value="Keyboard">Keyboard </option>
+                            <option value="Booting"> Booting</option>
+                            <option value="HDD">HDD</option>
+                            <option value="SMPS">SMPS</option>
+                            <option value="Network">Network</option>
+                            <option value="Printer">Printer</option>
 
-                            <option value="Hardware">Hardware</option>
-                            <option value="Software">Software</option>
-                            <option value="Toner_Refill">Toner Refill</option>
-
-
-
+                            <option value="OS">OS Installation</option>
+                            <option value="Software">Software Installation</option>
+                            <option value="Modem">Modem Configuration</option>
+                            <option value="No_Display">No Display</option>
+                            <option value="Password">Password</option>
+                            <option value="Refilling">Toner Refilling</option>
                         </select>
 
 

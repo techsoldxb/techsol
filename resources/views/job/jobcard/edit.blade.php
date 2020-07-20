@@ -269,10 +269,8 @@
                             <option value="" selected disabled hidden> Please select</option>
                             <option value="Update">Update</option>
                             <option value="Inspected">Inspect</option>
-
                             <option value="Outside">Outside Service</option>
                         </select>
-
                         <div class="clear-fix"></div>
                     </div>
                 </div>
@@ -301,12 +299,22 @@
                 </div>
             </div>
 
+
+
             <div class="form-group">
                 <div id="outside_textbox" style="display: none" class="row">
-                    <label class="col-lg-2" for="">Outside Service Person</label>
-                    <div class="col-lg-8">
-                        <input type="text" class="form-control" id="validationCustom02" name="job_out_source"
-                            placeholder="Enter the outside service person name in detail">
+                    <label class="col-lg-2" for="">Contractor</label>
+                    <div class="col-lg-3">
+                        <select class="custom-select" name="job_out_source">
+                            <option value="" selected disabled hidden>Please select</option>
+                            <option value="Mani">Mani</option>
+                            <option value="Others">Others</option>
+                        </select>
+                    </div>
+                    <label class="col-lg-2" for="">Outside Remarks</label>
+                    <div class="col-lg-3">
+                        <input type="text" class="form-control" id="validationCustom02" name="job_os_wq_remark"
+                            placeholder="Enter outside remarks">
                     </div>
                 </div>
             </div>

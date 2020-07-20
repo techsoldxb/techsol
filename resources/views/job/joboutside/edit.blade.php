@@ -14,18 +14,6 @@
     }
 
 </script>
-
-<!-- This script is used to allow only number in the bill amount field -->
-<script>
-    function isNumberKey(evt) {
-        var charCode = (evt.which) ? evt.which : evt.keyCode;
-        if (charCode != 46 && charCode > 31 &&
-            (charCode < 48 || charCode > 57))
-            return false;
-        return true;
-    }
-
-</script>
 <!-- End -->
 
 
@@ -48,33 +36,11 @@
         var select_status = $('#messagetype').val();
         /* if select personal from select box then show my text box */
 
-        if (select_status == 'Estimated') {
-            $('#estimation_textbox').show(); // By using this id you can show your content   
-            $('#complete_textbox').hide(); // By using this id you can show your content   
-            $('#quit_textbox').hide();
-            $('#return_textbox').hide(); // otherwise hide
-        } else if (select_status == 'Completed') {
-            $('#complete_textbox').show(); // otherwise hide   
-            $('#estimation_textbox').hide(); // otherwise hide  
-            $('#return_textbox').hide(); // otherwise hide  
-            $('#quit_textbox').hide();
-        } else if (select_status == 'Return') {
-            $('#complete_textbox').hide(); // otherwise hide   
-            $('#estimation_textbox').hide(); // otherwise hide  
-            $('#quit_textbox').hide();
-            $('#return_textbox').show(); // otherwise hide
-        } else if (select_status == 'Quit') {
-            $('#complete_textbox').hide(); // otherwise hide   
-            $('#estimation_textbox').hide(); // otherwise hide  
-            $('#quit_textbox').show(); // otherwise hide 
-            $('#return_textbox').hide(); // otherwise hide   
-        } else {
-            $('#complete_textbox').hide(); // otherwise hide   
-            $('#estimation_textbox').hide(); // otherwise hide  
-            $('#quit_textbox').hide(); // otherwise hide 
-            $('#return_textbox').hide(); // otherwise hide  
-            $('#outside_textbox').show(); // otherwise hide  
+        if (select_status == 'Outside_Estimation') {
+            $('#os_est_textbox').show(); // By using this id you can show your content   
 
+        } else {
+            $('#complete_textbox').hide(); // otherwise hide 
         }
 
     }
@@ -134,7 +100,7 @@
 
 
         <form class="needs-validation" novalidate method="POST"
-            action="{{ route('job.jobinspect.update', $jobcard->id) }}">
+            action="{{ route('job.joboutside.update', $jobcard->id) }}">
             @method('PUT')
 
 
@@ -268,131 +234,52 @@
                 <div class="row">
                     <label class="col-lg-2" for="">Action</label>
                     <div class="col-lg-8">
-
-
-
                         <select class="custom-select" name="job_status_name" id="messagetype"
                             onchange="fun_showtextbox()" required>
                             <option value="" selected disabled hidden>Please select</option>
-
-                            <option value="Estimated">Estimate</option>
-                            <option value="Completed">Complete</option>
-                            <option value="Quit">Quit Job</option>
-                            <option value="Return">To be return</option>
-                            <option value="Outside">Outside Service</option>
+                            <option value="Outside_Estimation">Outside-Estimation</option>
                         </select>
-
-
                         <div class="clear-fix"></div>
                     </div>
                 </div>
             </div>
 
 
+
+
             <div class="form-group">
-                <div id="estimation_textbox" style="display: none" class="row">
-                    <label class="col-lg-2" for="">Estimation Amount</label>
-                    <div class="col-lg-3">
-
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-
-                                <span class="input-group-text"><i class="fa fa-inr" aria-hidden="true"></i>
-                                </span>
-
-                            </div>
-                            <input type="text" class="form-control" onkeypress="return isNumberKey(event)"
-                                id="validationCustom02" name="job_est_amount" placeholder="Enter estimation amount">
-                        </div>
-
-
-
-
-
-                    </div>
+                <div id="os_est_textbox" style="display: none" class="row">
                     <label class="col-lg-2" for="">Outside Service Cost</label>
-                    <div class="col-lg-3">
+                    <div class="col-lg-2">
                         <div class="input-group">
                             <div class="input-group-prepend">
-
                                 <span class="input-group-text"><i class="fa fa-inr" aria-hidden="true"></i>
                                 </span>
-
                             </div>
-
                             <input type="text" class="form-control" onkeypress="return isNumberKey(event)"
-                                id="validationCustom02" name="job_item_cost"
-                                placeholder="Enter the outside service amount">
-
+                                id="validationCustom02" name="job_service_cost" placeholder="Service cost" required>
                         </div>
                     </div>
-                </div>
-
-
-
-                <div class="form-group">
-                    <div id="complete_textbox" style="display: none" class="row">
-                        <label class="col-lg-2" for="">Complete Remarks</label>
-                        <div class="col-lg-8">
-                            <input type="text" class="form-control" id="validationCustom02" name="job_completed_remark"
-                                placeholder="Enter the action remarks in detail">
-                        </div>
+                    <label class="col-lg-1" for="">Quoted Amount</label>
+                    <div class="col-lg-2">
+                        <input type="text" class="form-control" id="validationCustom02" name="job_est_amount"
+                            placeholder="Customer estimation">
+                    </div>
+                    <label class="col-lg-1" for="">Estimation Remarks</label>
+                    <div class="col-lg-2">
+                        <input type="text" class="form-control" id="validationCustom02" name="job_os_est_remark"
+                            placeholder="outside est remarks">
                     </div>
                 </div>
-
-                <div class="form-group">
-                    <div id="quit_textbox" style="display: none" class="row">
-                        <label class="col-lg-2" for="">Quit Remarks</label>
-                        <div class="col-lg-8">
-                            <input type="text" class="form-control" id="validationCustom02" name="job_quit_remark"
-                                placeholder="Enter the action remarks in detail">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <div id="return_textbox" style="display: none" class="row">
-                        <label class="col-lg-2" for="">Return Remarks</label>
-                        <div class="col-lg-8">
-                            <input type="text" class="form-control" id="validationCustom02" name="job_tech_remark"
-                                placeholder="Enter the action remarks in detail">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <div id="outside_textbox" style="display: none" class="row">
-                        <label class="col-lg-2" for="">Contractor</label>
-                        <div class="col-lg-3">
-                            <select class="custom-select" name="job_out_source">
-                                <option value="" selected disabled hidden>Please select</option>
-                                <option value="Mani">Mani</option>
-                                <option value="Others">Others</option>
-                            </select>
-                        </div>
-                        <label class="col-lg-2" for="">Outside Remarks</label>
-                        <div class="col-lg-3">
-                            <input type="text" class="form-control" id="validationCustom02" name="job_os_wq_remark"
-                                placeholder="Enter outside remarks">
-                        </div>
-                    </div>
-                </div>
+            </div>
 
 
 
 
-
-
-
-
-
-
-
-
-                <div class="form-group">
-                    <input type="submit" class="btn btn-primary" Value="Save">
-                    <a href="{{route('job.jobinspect.index')}}" class="btn btn-warning" role="button">Cancel</a>
-                </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" Value="Save">
+                <a href="{{route('job.joboutside.index')}}" class="btn btn-warning" role="button">Cancel</a>
+            </div>
         </form>
     </div>
 </section>
