@@ -14,9 +14,14 @@ class CalendarController extends Controller
      */
     public function index()
     {
-    $this->authorize('isAdmin');       
-    $arr['jobcard'] = Jobcard::where('job_comp_code','003')->get();    
+        $this->authorize('isAdmin');
+        
+        //$booking = Booking::all();
+        $jobcard = Jobcard::All();
     return view('calander.index', compact('jobcard'));
+
+
+   
     }
 
     /**
