@@ -104,11 +104,11 @@
 
                 <div class="form-group">
                     <div class="row">
-                        <label class="col-2" for="">Invoice Number</label>
+                        <label class="col-2" for="">Number</label>
                         <div class="col-4">
                             <label for=""> : &nbsp; {{ $jobcard->job_invoice_number }} </label>
                         </div>
-                        <label class="col-2" for="">Invoice Date</label>
+                        <label class="col-2" for="">Date</label>
                         <div class="col-4">
                             <label for=""> : &nbsp;{{ date('d-m-Y', strtotime($jobcard->job_invoice_date))}} </label>
                         </div>
