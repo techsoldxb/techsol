@@ -31,6 +31,7 @@
                                 <th>Item Details</th>
                                 <th>Fault</th>
                                 <th>Created User</th>
+                                <th>Job ID</th>
                                 <th>Amount</th>
                                 <th> Action </th>
                             </tr>
@@ -46,6 +47,7 @@
                                 <td>{{ $c->job_item_details }}</td>
                                 <td>{{ $c->job_fault}}</td>
                                 <td> {{ $c->job_inv_created_user }} </td>
+                                <td> {{ $c->job_enq_number }} </td>
                                 <td class="font-weight-bold text-right text-primary">{{ $c->job_invoice_amount }}</td>
                                 <td align='center'>
                                     <a href="{{ route('job.jobinvoice.print',$c) }}">
@@ -69,6 +71,7 @@
                                 <th>Item Details</th>
                                 <th>Fault</th>
                                 <th>Created User</th>
+                                <th>Job ID</th>
                                 <th>Amount</th>
                                 <th> Action </th>
                             </tr>
