@@ -18,6 +18,8 @@ class CalendarController extends Controller
         
         //$booking = Booking::all();
         $jobcard = Jobcard::All();
+
+
     return view('calander.index', compact('jobcard'));
 
 
