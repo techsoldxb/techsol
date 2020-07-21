@@ -36,7 +36,8 @@
 
                                 <th>Item Details</th>
                                 <th>Fault</th>
-                                <th>Remarks</th>
+                                <th>Received Remarks</th>
+                                <th>Inspection Remarks</th>
                                 <th>Created User</th>
 
                                 <th> Action </th>
@@ -63,8 +64,9 @@
 
 
                                 <td>{{ $c->job_fault}}</td>
-
                                 <td> {{ $c->job_remark }} </td>
+
+                                <td> {{ $c->job_ins_remark }} </td>
 
                                 <td> {{ $c->job_enq_created_user }} </td>
 
@@ -118,7 +120,8 @@
 
                                 <th>Item Details</th>
                                 <th>Fault</th>
-                                <th>Remarks</th>
+                                <th>Received Remarks</th>
+                                <th>Inspection Remarks</th>
                                 <th>Created User</th>
 
                                 <th> Action </th>

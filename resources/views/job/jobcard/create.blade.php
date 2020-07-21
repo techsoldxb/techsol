@@ -5,6 +5,9 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+
 
 
 
@@ -19,6 +22,12 @@
             return false;
         return true;
     }
+
+    $(".select2-multiple").select2({
+        theme: "bootstrap",
+        placeholder: "Select a State",
+        containerCssClass: ':all:'
+    });
 
 </script>
 
@@ -194,8 +203,6 @@
                             <option value="Imagestar">Image Star</option>
                             <option value="Assembled">Assembled</option>
                             <option value="Others">Others</option>
-
-
                         </select>
 
 
@@ -270,6 +277,8 @@
                             <option value="Password">Password</option>
                             <option value="Refilling">Toner Refilling</option>
                         </select>
+
+
 
 
 
