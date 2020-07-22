@@ -630,12 +630,12 @@
 
 
                         <li class="nav-item">
-                            <a href="{{route('job.jobestimate.index')}}" class="nav-link
-                            @if($segment=='jobestimate')                
+                            <a href="#" class="nav-link
+                            @if($segment=='jobwork')                
                             active
                             @endif">
                                 <i class="nav-icon far fa-circle text-info"></i>
-                                <p>Estimation</p>
+                                <p>Work In Progress</p>
                             </a>
                         </li>
 
@@ -680,15 +680,6 @@
                         </li>
 
 
-                        <li class="nav-item">
-                            <a href="{{route('job.jobfault.index')}}" class="nav-link
-                            @if($segment=='jobquit')                
-                            active
-                            @endif">
-                                <i class="nav-icon fas fa-circle text-success"></i>
-                                <p>Fault Master</p>
-                            </a>
-                        </li>
 
 
 
@@ -711,6 +702,19 @@
                             @endif">
                                 <i class="nav-icon far fa-circle text-warning"></i>
                                 <p>Estimation</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-header">MASTER</li>
+
+
+                        <li class="nav-item">
+                            <a href="{{route('job.jobfault.index')}}" class="nav-link
+                            @if($segment=='jobquit')                
+                            active
+                            @endif">
+                                <i class="nav-icon fas fa-circle text-success"></i>
+                                <p>Fault Master</p>
                             </a>
                         </li>
 
