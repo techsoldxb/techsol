@@ -658,6 +658,18 @@
                             </a>
                         </li>
 
+                        <hr>
+
+
+                        <li class="nav-item">
+                            <a href="{{route('job.jobreturn.index')}}" class="nav-link
+                            @if($segment=='jobreturn')                
+                            active
+                            @endif">
+                                <i class="nav-icon far fa-circle text-warning"></i>
+                                <p>Waiting for Parts</p>
+                            </a>
+                        </li>
 
                         <li class="nav-item">
                             <a href="{{route('job.jobreturn.index')}}" class="nav-link
