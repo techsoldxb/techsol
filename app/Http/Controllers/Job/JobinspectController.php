@@ -130,7 +130,7 @@ class JobinspectController extends Controller
         else if (( $request->job_status_name )  == 'Quit') 
         {
             $jobcard->job_status_name = $request->job_status_name; 
-            $jobcard->job_quit_remarks = $request->job_tech_remark; 
+            $jobcard->job_quit_remark = $request->job_tech_remark; 
             $today = Carbon::now()->toDate('Y-m-d h:i');
             $jobcard->job_quit_date = $today;
             $jobcard->job_quit_created_user =  Auth::user()->name;

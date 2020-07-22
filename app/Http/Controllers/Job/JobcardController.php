@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Job;
 
+use App\Fault;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -74,7 +75,9 @@ class JobcardController extends Controller
      */
     public function create()
     {
-        return view('job.jobcard.create');
+        $arr['faults'] = Fault::where('job_fault_status',1)->orderBy('job_fault_desc','asc')->get();
+        return view('job.jobcard.create')->with($arr);
+
     }
 
     /**
@@ -86,7 +89,7 @@ class JobcardController extends Controller
 
 
 
-    public function store(Request $request, Jobcard $jobcard, User $user)
+    public function store(Request $request, Jobcard $jobcard,User $user)
     {
 
         $this->validate($request,['job_cust_mobile'=>'required|digits:10']);
@@ -117,6 +120,7 @@ class JobcardController extends Controller
         $jobcard->job_item_type = $request->job_item_type;
         $jobcard->job_type = $request->job_type;
         $jobcard->job_fault = $request->job_fault;
+        $jobcard->job_est_amount = $request->job_fault_price;
         $jobcard->job_desc = $request->job_desc;
         $jobcard->job_remark = $request->job_remark;
 
@@ -173,7 +177,7 @@ class JobcardController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,Jobcard $jobcard)
+    public function update(Request $request,Jobcard $jobcard,User $user)
     
     {
 

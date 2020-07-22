@@ -120,7 +120,9 @@ Route::resource('/job/jobinvtotal', 'Job\JobinvtotalController', ['as'=>'job'])-
 Route::resource('/job/jobreturn', 'Job\JobreturnController', ['as'=>'job'])->middleware('auth');
 Route::resource('/job/joboutside', 'Job\JoboutsideController', ['as'=>'job'])->middleware('auth');
 Route::resource('/job/joboutsideest', 'Job\JoboutsideestController', ['as'=>'job'])->middleware('auth');
+Route::resource('/job/jobfault', 'Job\JobfaultController', ['as'=>'job'])->middleware('auth');
 Route::get('/jobcard/jobquit', 'Job\JobcardController@jobquit')->name('jobcard.quit'); 
+
 Route::get('/job/jobinvoice/{jobcard}/print', 'Job\JobinvoiceController@print')->name('job.jobinvoice.print');
 //Route::get('/jobcard/invoice', 'Job\JobcardController@invoice')->name('jobcard.invoice'); 
 //Route::get('/jobcard/joboutside', 'Job\JobcardController@joboutside')->name('jobcard.outside'); 

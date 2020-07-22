@@ -630,7 +630,10 @@
 
 
                         <li class="nav-item">
-                            <a href="{{route('job.jobestimate.index')}}" class="nav-link">
+                            <a href="{{route('job.jobestimate.index')}}" class="nav-link
+                            @if($segment=='jobestimate')                
+                            active
+                            @endif">
                                 <i class="nav-icon far fa-circle text-info"></i>
                                 <p>Estimation</p>
                             </a>
@@ -657,16 +660,33 @@
 
 
                         <li class="nav-item">
-                            <a href="{{route('job.jobreturn.index')}}" class="nav-link">
+                            <a href="{{route('job.jobreturn.index')}}" class="nav-link
+                            @if($segment=='jobreturn')                
+                            active
+                            @endif">
                                 <i class="nav-icon far fa-circle text-warning"></i>
                                 <p>To Be Return</p>
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="{{route('jobcard.quit')}}" class="nav-link">
+                            <a href="{{route('jobcard.quit')}}" class="nav-link
+                            @if($segment=='jobquit')                
+                            active
+                            @endif">
                                 <i class="nav-icon fas fa-circle text-danger"></i>
                                 <p>Quit</p>
+                            </a>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a href="{{route('job.jobfault.index')}}" class="nav-link
+                            @if($segment=='jobquit')                
+                            active
+                            @endif">
+                                <i class="nav-icon fas fa-circle text-success"></i>
+                                <p>Fault Master</p>
                             </a>
                         </li>
 
@@ -675,15 +695,21 @@
                         <li class="nav-header">OUTSIDE SERVICE</li>
 
                         <li class="nav-item">
-                            <a href="{{route('job.joboutside.index')}}" class="nav-link">
+                            <a href="{{route('job.joboutside.index')}}" class="nav-link
+                            @if($segment=='joboutside')                
+                            active
+                            @endif">
                                 <i class="nav-icon far fa-circle text-info"></i>
                                 <p>Waiting for Quote</p>
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="{{route('job.joboutsideest.index')}}" class="nav-link">
-                                <i class="nav-icon far fa-circle text-info"></i>
+                            <a href="{{route('job.joboutsideest.index')}}" class="nav-link
+                            @if($segment=='joboutsideest')                
+                            active
+                            @endif">
+                                <i class="nav-icon far fa-circle text-warning"></i>
                                 <p>Estimation</p>
                             </a>
                         </li>

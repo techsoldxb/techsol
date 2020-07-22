@@ -236,10 +236,14 @@
                 </div>
             </div>
 
+
+
+
             <div class="form-group">
                 <div class="row">
                     <label class="col-lg-2" for="">Item Type</label>
-                    <div class="col-lg-3">
+                    <div class="col-lg-8">
+
 
                         <select class="custom-select" name="job_item_type" required>
                             <option value="" selected disabled hidden>Please select</option>
@@ -255,42 +259,37 @@
                         </select>
 
                     </div>
-                    <label class="col-lg-2" for="">Fault Type</label>
-                    <div class="col-lg-3">
-
-
-                        <select class="custom-select" name="job_type">
-                            <option value="" selected disabled hidden>Please select</option>
-                            <option value="Virus">Virus</option>
-                            <option value="UPS_Backup">UPS Back</option>
-                            <option value="Restart">Restart</option>
-                            <option value="Drivers">Drivers</option>
-                            <option value="Keyboard">Keyboard </option>
-                            <option value="Booting"> Booting</option>
-                            <option value="HDD">HDD</option>
-                            <option value="SMPS">SMPS</option>
-                            <option value="Network">Network</option>
-                            <option value="Printer">Printer</option>
-                            <option value="OS">OS Installation</option>
-                            <option value="Software">Software Installation</option>
-                            <option value="Modem">Modem Configuration</option>
-                            <option value="No_Display">No Display</option>
-                            <option value="Password">Password</option>
-                            <option value="Refilling">Toner Refilling</option>
-                        </select>
-
-
-
-
-
-
-
-                    </div>
                 </div>
             </div>
 
 
 
+
+            <div class="form-group">
+                <div class="row">
+                    <label class="col-lg-2" for="">Fault Type</label>
+                    <div class="col-lg-8">
+                        <select class="custom-select" name="job_fault_price" id="job_fault_price" required>
+                            <option value="" selected disabled hidden>Please select</option>
+                            @foreach($faults as $f)
+                            <option value="{{ $f->job_fault_price}}">{{ $f->job_fault_desc}}</option>
+                            @endforeach
+
+                        </select>
+
+                        <input type="hidden" id="job_type" name="job_type">
+
+                        <script>
+                            $('#job_fault_price').on('change', function () {
+                                var selectedName = $('#job_fault_price option:selected').text();
+                                $('#job_type').val(selectedName);
+                            })
+
+                        </script>
+
+                    </div>
+                </div>
+            </div>
 
             <div class="form-group">
                 <div class="row">
@@ -302,6 +301,7 @@
                     </div>
                 </div>
             </div>
+
 
 
             <div class="form-group">
