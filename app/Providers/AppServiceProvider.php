@@ -106,6 +106,19 @@ view()->composer('*', function($view)  {
     ->count('ID'));
 });
 
+view()->composer('*', function($view)  {
+    $view->with('outside',\App\Jobcard::where('job_comp_code', 003)
+    ->where('job_status_name', 'Outside')
+    ->count('ID'));
+});
+
+view()->composer('*', function($view)  {
+    $view->with('outside_est',\App\Jobcard::where('job_comp_code', 003)
+    ->where('job_status_name', 'Outside_Estimation')
+    ->count('ID'));
+});
+
+
 
 
 
