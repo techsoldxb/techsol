@@ -63,6 +63,63 @@ view()->composer('home', function($view)  {
     ->sum('job_invoice_amount'));
 });
 
+//this will display the count in the left menu
+
+view()->composer('*', function($view)  {
+    $view->with('received',\App\Jobcard::where('job_comp_code', auth()->user()->company)
+    ->where('job_status_name', 'Received')
+    ->count('ID'));
+});
+
+view()->composer('*', function($view)  {
+    $view->with('inspected',\App\Jobcard::where('job_comp_code', auth()->user()->company)
+    ->where('job_status_name', 'Inspected')
+    ->count('ID'));
+});
+
+view()->composer('*', function($view)  {
+    $view->with('completed',\App\Jobcard::where('job_comp_code', auth()->user()->company)
+    ->where('job_status_name', 'Completed')
+    ->count('ID'));
+});
+
+view()->composer('*', function($view)  {
+    $view->with('invoiced',\App\Jobcard::where('job_comp_code', auth()->user()->company)
+    ->where('job_status_name', 'Invoiced')
+    ->count('ID'));
+});
+
+view()->composer('*', function($view)  {
+    $view->with('return',\App\Jobcard::where('job_comp_code', auth()->user()->company)
+    ->where('job_status_name', 'Return')
+    ->count('ID'));
+});
+
+view()->composer('*', function($view)  {
+    $view->with('quit',\App\Jobcard::where('job_comp_code', auth()->user()->company)
+    ->where('job_status_name', 'Quit')
+    ->count('ID'));
+});
+
+
+view()->composer('*', function($view)  {
+    $view->with('outside',\App\Jobcard::where('job_comp_code', auth()->user()->company)
+    ->where('job_status_name', 'Outside')
+    ->count('ID'));
+});
+
+
+view()->composer('*', function($view)  {
+    $view->with('outside_est',\App\Jobcard::where('job_comp_code', auth()->user()->company)
+    ->where('job_status_name', 'Outside_Estimation')
+    ->count('ID'));
+});
+
+
+
+
+
+
 view()->composer('home', function($view)  {
     $view->with('jobinvamountrmd',\App\Jobcard::where('job_comp_code', 003)->where('job_status_name', 'Invoiced')
     ->sum('job_invoice_amount'));

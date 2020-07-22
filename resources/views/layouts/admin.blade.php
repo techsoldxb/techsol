@@ -607,7 +607,9 @@
                         <li class="nav-item">
                             <a href="{{route('job.jobcard.create')}}" class="nav-link">
                                 <i class="nav-icon far fa-circle text-info"></i>
-                                <p>Job Enquiry</p>
+                                <p>Job Enquiry
+                                    <span class="right badge badge-danger">New</span>
+                                </p>
                             </a>
                         </li>
 
@@ -616,8 +618,10 @@
       @if($segment=='jobcard')                
       active
       @endif">
-                                <i class="nav-icon far fa-circle text-danger"></i>
-                                <p>Received</p>
+                                <i class="nav-icon far fa-circle text-primary"></i>
+                                <p>Received
+                                    <span class="right badge badge-primary">{{$received}}</span>
+                                </p>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -625,8 +629,10 @@
       @if($segment=='jobinspect')                
       active
       @endif">
-                                <i class="nav-icon far fa-circle text-warning"></i>
-                                <p>Inspected</p>
+                                <i class="nav-icon far fa-circle text-success"></i>
+                                <p>Inspected
+                                    <span class="right badge badge-success">{{$inspected}}</span>
+                                </p>
                             </a>
                         </li>
 
@@ -637,7 +643,9 @@
                             active
                             @endif">
                                 <i class="nav-icon far fa-circle text-info"></i>
-                                <p>Work In Progress</p>
+                                <p>Work In Progress
+                                    <span class="right badge badge-info">{{$received}}</span>
+                                </p>
                             </a>
                         </li>
 
@@ -646,8 +654,10 @@
       @if($segment=='jobcomplete')                
       active
       @endif">
-                                <i class="nav-icon far fa-circle text-secondary"></i>
-                                <p>Completed</p>
+                                <i class="nav-icon far fa-circle text-warning"></i>
+                                <p>Completed
+                                    <span class="right badge badge-warning">{{$completed}}</span>
+                                </p>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -655,8 +665,10 @@
       @if($segment=='jobinvoice')                
       active
       @endif">
-                                <i class="nav-icon fas fa-circle text-primary"></i>
-                                <p>Invoiced</p>
+                                <i class="nav-icon far fa-circle text-danger"></i>
+                                <p>Invoiced
+                                    <span class="right badge badge-danger">{{$invoiced}}</span>
+                                </p>
                             </a>
                         </li>
 
@@ -665,11 +677,11 @@
 
                         <li class="nav-item">
                             <a href="{{route('job.jobreturn.index')}}" class="nav-link
-                            @if($segment=='jobreturn')                
-                            active
-                            @endif">
-                                <i class="nav-icon far fa-circle text-warning"></i>
-                                <p>Waiting for Parts</p>
+                           ">
+                                <i class="nav-icon fas fa-circle text-primary"></i>
+                                <p>Waiting for Parts
+                                    <span class="right badge badge-primary">0</span>
+                                </p>
                             </a>
                         </li>
 
@@ -678,8 +690,10 @@
                             @if($segment=='jobreturn')                
                             active
                             @endif">
-                                <i class="nav-icon far fa-circle text-warning"></i>
-                                <p>To Be Return</p>
+                                <i class="nav-icon fas fa-circle text-success"></i>
+                                <p>To Be Return
+                                    <span class="right badge badge-success">{{$return}}</span>
+                                </p>
                             </a>
                         </li>
 
@@ -689,7 +703,9 @@
                             active
                             @endif">
                                 <i class="nav-icon fas fa-circle text-danger"></i>
-                                <p>Quit</p>
+                                <p>Quit
+                                    <span class="right badge badge-danger">{{$quit}}</span>
+                                </p>
                             </a>
                         </li>
 
@@ -705,7 +721,9 @@
                             active
                             @endif">
                                 <i class="nav-icon far fa-circle text-info"></i>
-                                <p>Waiting for Quote</p>
+                                <p>Waiting for Quote
+                                    <span class="right badge badge-info">{{$outside}}</span>
+                                </p>
                             </a>
                         </li>
 
@@ -714,8 +732,10 @@
                             @if($segment=='joboutsideest')                
                             active
                             @endif">
-                                <i class="nav-icon far fa-circle text-warning"></i>
-                                <p>Estimation</p>
+                                <i class="nav-icon far fa-circle text-secondary"></i>
+                                <p>Estimation
+                                    <span class="right badge badge-secondary">{{$outside_est}}</span>
+                                </p>
                             </a>
                         </li>
 
