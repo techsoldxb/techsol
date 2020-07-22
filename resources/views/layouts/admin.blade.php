@@ -600,7 +600,7 @@
                         @endcan
 
                         @can('isService')
-                        <li class="nav-header">JOB CONTRACT</li>
+                        <li class="font-weight-bold nav-header">JOB CONTRACT</li>
 
                         <li class="nav-item">
                             <a href="{{route('job.jobcard.create')}}" class="nav-link">
@@ -695,7 +695,7 @@
 
 
 
-                        <li class="nav-header">OUTSIDE SERVICE</li>
+                        <li class="font-weight-bold nav-header">OUTSIDE SERVICE</li>
 
                         <li class="nav-item">
                             <a href="{{route('job.joboutside.index')}}" class="nav-link
@@ -717,7 +717,7 @@
                             </a>
                         </li>
 
-                        <li class="nav-header">MASTER</li>
+                        <li class="font-weight-bold nav-header">MASTER</li>
 
 
                         <li class="nav-item">
