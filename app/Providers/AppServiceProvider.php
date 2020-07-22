@@ -100,7 +100,7 @@ view()->composer('*', function($view)  {
 view()->composer('*', function($view)  {
     $view->with('return',\App\Jobcard::where('job_comp_code', 003)
     ->where('job_status_name', 'Return')
-    ->where('job_status_name', 'Received_NR')
+    ->orWhere('job_status_name', 'Received_NR')
     ->count('ID'));
 });
 
