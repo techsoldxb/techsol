@@ -20,9 +20,9 @@
                                 <th> Received Date </th>
                                 <th> Name </th>
                                 <th> Mobile </th>
+                                <th>Item Type</th>
                                 <th>Brand</th>
                                 <th>Model</th>
-                                <th>Item Type</th>
                                 <th>Item Details</th>
                                 <th>Fault</th>
 
@@ -37,9 +37,9 @@
                                 <td>{{ date('d-m-Y h:i A', strtotime($c->job_enq_date)) }}</td>
                                 <td>{{ $c->job_cust_name }}</td>
                                 <td>{{ $c->job_cust_mobile }}</td>
+                                <td>{{ $c->job_item_type }}</td>
                                 <td>{{ $c->job_item_brand }}</td>
                                 <td>{{ $c->job_item_model }}</td>
-                                <td>{{ $c->job_item_type }}</td>
                                 <td>{{ $c->job_item_details }}</td>
                                 <td>{{ $c->job_fault}}</td>
 
@@ -70,9 +70,9 @@
                                 <th>Received Date</th>
                                 <th>Name </th>
                                 <th> Mobile </th>
+                                <th>Item Type</th>
                                 <th>Brand</th>
                                 <th>Model</th>
-                                <th>Item Type</th>
                                 <th>Item Details</th>
                                 <th>Fault</th>
 
