@@ -23,7 +23,7 @@ class JobreturnController extends Controller
     {
         
         $arr['jobcard'] = Jobcard::where('job_comp_code', auth()->user()->company)
-        ->where('job_status_name','Return')
+        ->where('job_status_name','Return')->orWhere('job_status_name','Received_NR')
         ->get();
     
         return view('job.jobreturn.index')->with($arr); 

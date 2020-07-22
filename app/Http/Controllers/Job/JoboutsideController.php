@@ -90,6 +90,13 @@ class JoboutsideController extends Controller
             $today = Carbon::now();
             $jobcard->job_os_est_date = $today;
         }
+        else if (( $request->job_status_name )  == 'Received_NR') {            
+            
+            $jobcard->job_status_name = $request->job_status_name;             
+            $today = Carbon::now();
+            $jobcard->job_os_rec_date = $today;
+           
+        }
         
 
         
