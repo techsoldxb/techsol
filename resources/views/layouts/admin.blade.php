@@ -655,6 +655,14 @@
                             </a>
                         </li>
 
+
+                        <li class="nav-item">
+                            <a href="{{route('job.jobreturn.index')}}" class="nav-link">
+                                <i class="nav-icon far fa-circle text-warning"></i>
+                                <p>To Be Return</p>
+                            </a>
+                        </li>
+
                         <li class="nav-item">
                             <a href="{{route('jobcard.quit')}}" class="nav-link">
                                 <i class="nav-icon fas fa-circle text-danger"></i>
@@ -663,12 +671,6 @@
                         </li>
 
 
-                        <li class="nav-item">
-                            <a href="{{route('job.jobreturn.index')}}" class="nav-link">
-                                <i class="nav-icon far fa-circle text-warning"></i>
-                                <p>To Be Return</p>
-                            </a>
-                        </li>
 
                         <li class="nav-header">OUTSIDE SERVICE</li>
 

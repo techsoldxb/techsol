@@ -39,7 +39,7 @@
                         <h3>
 
 
-                            {{ number_format($wob-$expense) }}
+                            {{ number_format($wob+$jobinvamount-$expense) }}
 
 
 
