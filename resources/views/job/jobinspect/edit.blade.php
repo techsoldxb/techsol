@@ -367,6 +367,7 @@
                             <select class="custom-select" name="job_out_source">
                                 <option value="" selected disabled hidden>Please select</option>
                                 <option value="Udaya">Udaya</option>
+                                <option value="Bala">Bala</option>
                                 <option value="Others">Others</option>
                             </select>
                         </div>
