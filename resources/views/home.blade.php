@@ -192,7 +192,7 @@
                             @if($user->user_type =='admin')
 
 
-                            {{ number_format($wobkkd-$expenseskkd) }}
+                            {{ number_format($wobkkd+$jobinvamountkkd-$expenseskkd) }}
 
 
 
@@ -307,7 +307,7 @@
                                 @if($user->user_type =='admin')
 
 
-                                {{ number_format($wobbash-$expensesbash) }}
+                                {{ number_format($wobbash+$jobinvamountrmd-$expensesbash) }}
 
 
 

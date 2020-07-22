@@ -34,10 +34,12 @@
 
 
 
-                                <th>Item Details</th>
+                                <th>Type</th>
+                                <th>Brand</th>
+                                <th>Model</th>
                                 <th>Fault</th>
-                                <th>Remarks</th>
-                                <th>Created User</th>
+
+
                                 <th>Status</th>
 
                                 <th> Action </th>
@@ -60,14 +62,16 @@
 
 
 
-                                <td>{{ $c->job_item_details }}</td>
+                                <td>{{ $c->job_item_type }}</td>
+                                <td>{{ $c->job_item_brand}}</td>
+                                <td>{{ $c->job_item_model}}</td>
 
 
                                 <td>{{ $c->job_fault}}</td>
 
-                                <td> {{ $c->job_remark }} </td>
 
-                                <td> {{ $c->job_enq_created_user }} </td>
+
+
                                 <td> {{ $c->job_status_name }} </td>
 
 
@@ -118,10 +122,13 @@
 
 
 
-                                <th>Item Details</th>
+
+                                <th>Type</th>
+                                <th>Brand</th>
+                                <th>Model</th>
                                 <th>Fault</th>
-                                <th>Remarks</th>
-                                <th>Created User</th>
+
+
                                 <th>Status</th>
 
                                 <th> Action </th>
