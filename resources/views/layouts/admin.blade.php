@@ -644,7 +644,7 @@
                             @endif">
                                 <i class="nav-icon far fa-circle text-info"></i>
                                 <p>Work In Progress
-                                    <span class="right badge badge-info">{{$received}}</span>
+                                    <span class="right badge badge-info">0</span>
                                 </p>
                             </a>
                         </li>
