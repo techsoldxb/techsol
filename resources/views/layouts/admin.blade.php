@@ -20,6 +20,36 @@
 
     </script>
 
+    <style>
+        /* Red border */
+        hr.new1 {
+            border-top: 1px solid red;
+        }
+
+        /* Dashed red border */
+        hr.new2 {
+            border-top: 1px dashed red;
+        }
+
+        /* Dotted red border */
+        hr.new3 {
+            border-top: 1px dotted red;
+        }
+
+        /* Thick red border */
+        hr.new4 {
+            border: 1px solid red;
+        }
+
+        /* Large rounded green border */
+        hr.new5 {
+            border: 10px solid green;
+            border-radius: 5px;
+        }
+
+    </style>
+
+
     <!-- daterangepicker -->
 
 
@@ -658,7 +688,7 @@
                             </a>
                         </li>
 
-                        <hr>
+                        <div class="col-auto font-weight-bold text-primary text-center">-----------</div>
 
 
                         <li class="nav-item">
