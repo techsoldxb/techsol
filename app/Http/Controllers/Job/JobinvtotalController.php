@@ -32,6 +32,21 @@ class JobinvtotalController extends Controller
    return view('job.jobinvtotal.index', compact('jobcard')); 
     }
 
+    public function indexkkd()
+    {
+        
+        $jobcard = Jobcard::selectRaw('date(job_invoice_date) as date, sum(job_invoice_amount) as total,sum(job_service_cost) as cost')
+        ->where('job_comp_code', 004)
+        ->where('job_status_name', 'Invoiced')
+        ->groupBy('date')
+        ->orderBy('date','desc')
+        ->get();
+   
+   return view('job.jobinvtotal.index', compact('jobcard')); 
+    }
+
+    
+
     /**
      * Show the form for creating a new resource.
      *
