@@ -238,6 +238,7 @@
                             onchange="fun_showtextbox()" required>
                             <option value="" selected disabled hidden>Please select</option>
                             <option value="Outside_Estimation">Outside-Estimation</option>
+                            <option value="Received_NR">Received - Not Repaired</option>
                         </select>
                         <div class="clear-fix"></div>
                     </div>
@@ -260,7 +261,7 @@
                                 id="validationCustom02" name="job_service_cost" placeholder="Service cost" required>
                         </div>
                     </div>
-                    <label class="col-lg-1" for="">Quoted Amount</label>
+                    <label class="col-lg-1" for="">Customer Amount</label>
                     <div class="col-lg-2">
                         <input type="text" class="form-control" id="validationCustom02" name="job_est_amount"
                             placeholder="Customer estimation">

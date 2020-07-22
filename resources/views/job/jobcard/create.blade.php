@@ -246,9 +246,11 @@
                             <option value="Laptop">Laptop</option>
                             <option value="Desktop">Desktop - CPU</option>
                             <option value="Printer">Printer</option>
-                            <option value="Toner">Monitor</option>
-                            <option value="Toner">UPS</option>
-                            <option value="Toner">HDD</option>
+                            <option value="Monitor">Monitor</option>
+                            <option value="UPS">UPS</option>
+                            <option value="HDD">HDD</option>
+                            <option value="AIO">AIO</option>
+                            <option value="Toner">Toner</option>
                             <option value="Other">Other</option>
                         </select>
 
@@ -269,7 +271,6 @@
                             <option value="SMPS">SMPS</option>
                             <option value="Network">Network</option>
                             <option value="Printer">Printer</option>
-
                             <option value="OS">OS Installation</option>
                             <option value="Software">Software Installation</option>
                             <option value="Modem">Modem Configuration</option>
