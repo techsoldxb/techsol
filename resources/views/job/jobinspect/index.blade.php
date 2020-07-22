@@ -28,18 +28,14 @@
                                 <th> Job ID </th>
                                 <th> Inspected Date </th>
                                 <th> Name </th>
-
                                 <th> Mobile </th>
+                                <th> Item Type</th>
+                                <th>Brand</th>
+                                <th>Model</th>
 
-
-
-
-                                <th>Item Details</th>
                                 <th>Fault</th>
-                                <th>Received Remarks</th>
-                                <th>Inspection Remarks</th>
-                                <th>Created User</th>
 
+                                <th>Inspection Remarks</th>
                                 <th> Action </th>
                             </tr>
                         </thead>
@@ -56,19 +52,15 @@
                                 <td>{{ $c->job_cust_name }}</td>
 
                                 <td>{{ $c->job_cust_mobile }}</td>
-
-
-
-
-                                <td>{{ $c->job_item_details }}</td>
-
+                                <td>{{ $c->job_item_type }}</td>
+                                <td>{{ $c->job_item_brand }}</td>
+                                <td>{{ $c->job_item_model }}</td>
 
                                 <td>{{ $c->job_fault}}</td>
-                                <td> {{ $c->job_remark }} </td>
 
                                 <td> {{ $c->job_ins_remark }} </td>
 
-                                <td> {{ $c->job_enq_created_user }} </td>
+
 
 
 
@@ -114,15 +106,18 @@
                                 <th> Name </th>
 
                                 <th> Mobile </th>
+                                <th> Item Type</th>
+                                <th>Brand</th>
+                                <th>Model</th>
 
 
 
 
-                                <th>Item Details</th>
+
                                 <th>Fault</th>
-                                <th>Received Remarks</th>
+
                                 <th>Inspection Remarks</th>
-                                <th>Created User</th>
+
 
                                 <th> Action </th>
 

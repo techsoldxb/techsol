@@ -219,10 +219,21 @@
 
             <div class="form-group">
                 <div class="row">
-                    <label class="col-lg-2" for="">Item Detail</label>
+                    <label class="col-lg-2" for="">Item Type</label>
                     <div class="col-lg-3">
-                        <input type="text" class="form-control" id="validationCustom02" name="job_item_details"
-                            placeholder="Enter item details" required>
+                        <select class="custom-select" name="job_item_type" required>
+                            <option value="" selected disabled hidden>Please select</option>
+                            <option value="Laptop">Laptop</option>
+                            <option value="Desktop">Desktop - CPU</option>
+                            <option value="Printer">Printer</option>
+                            <option value="Monitor">Monitor</option>
+                            <option value="UPS">UPS</option>
+                            <option value="HDD">HDD</option>
+                            <option value="AIO">AIO</option>
+                            <option value="Toner">Toner</option>
+                            <option value="Other">Other</option>
+                        </select>
+
 
                     </div>
                     <label class="col-lg-2" for="">Serial Number</label>
@@ -237,30 +248,6 @@
             </div>
 
 
-
-
-            <div class="form-group">
-                <div class="row">
-                    <label class="col-lg-2" for="">Item Type</label>
-                    <div class="col-lg-8">
-
-
-                        <select class="custom-select" name="job_item_type" required>
-                            <option value="" selected disabled hidden>Please select</option>
-                            <option value="Laptop">Laptop</option>
-                            <option value="Desktop">Desktop - CPU</option>
-                            <option value="Printer">Printer</option>
-                            <option value="Monitor">Monitor</option>
-                            <option value="UPS">UPS</option>
-                            <option value="HDD">HDD</option>
-                            <option value="AIO">AIO</option>
-                            <option value="Toner">Toner</option>
-                            <option value="Other">Other</option>
-                        </select>
-
-                    </div>
-                </div>
-            </div>
 
 
 
