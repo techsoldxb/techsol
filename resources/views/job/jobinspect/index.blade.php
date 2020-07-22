@@ -29,7 +29,7 @@
                                 <th> Inspected Date </th>
                                 <th> Name </th>
                                 <th> Mobile </th>
-                                <th> Item Type</th>
+                                <th>Type</th>
                                 <th>Brand</th>
                                 <th>Model</th>
 
@@ -106,7 +106,7 @@
                                 <th> Name </th>
 
                                 <th> Mobile </th>
-                                <th> Item Type</th>
+                                <th>Type</th>
                                 <th>Brand</th>
                                 <th>Model</th>
 

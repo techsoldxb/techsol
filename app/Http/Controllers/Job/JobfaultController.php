@@ -47,6 +47,7 @@ class JobfaultController extends Controller
     {
         $fault->job_fault_desc = $request->job_fault_desc;
         $fault->job_fault_price = $request->job_fault_price;
+        $fault->job_fault_group = $request->job_fault_group;
         $fault->job_fault_status = 1;
         $fault->job_fault_created_uid = Auth::user()->name;
 

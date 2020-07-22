@@ -29,6 +29,7 @@
                                 <th> ID </th>
                                 <th> Fault Name </th>
                                 <th> Amount </th>
+                                <th>Group</th>
                                 <th> Status </th>
                                 <th> Created User </th>
                                 <th> Created Date </th>
@@ -45,6 +46,7 @@
                                 <td>{{ $c->id }}</td>
                                 <td>{{ $c->job_fault_desc }}</td>
                                 <td class="text-right font-weight-bold">{{ $c->job_fault_price }}</td>
+                                <td>{{ $c->job_fault_group }}</td>
                                 <td>
 
                                     @if($c->job_fault_status =='0')
@@ -105,6 +107,7 @@
                                 <th> ID </th>
                                 <th> Fault Name </th>
                                 <th> Amount </th>
+                                <th>Group</th>
                                 <th> Status </th>
                                 <th> Created User </th>
                                 <th> Created Date </th>

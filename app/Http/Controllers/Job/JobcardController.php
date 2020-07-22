@@ -75,7 +75,9 @@ class JobcardController extends Controller
      */
     public function create()
     {
-        $arr['faults'] = Fault::where('job_fault_status',1)->orderBy('job_fault_desc','asc')->get();
+        $arr['faults'] = Fault::where('job_fault_status',1)
+        ->where('job_fault_group','Internal')
+        ->orderBy('job_fault_desc','asc')->get();
         return view('job.jobcard.create')->with($arr);
 
     }

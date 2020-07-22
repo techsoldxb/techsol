@@ -72,6 +72,26 @@
             </div>
 
 
+            <div class="form-group">
+                <div class="row">
+                    <label class="col-md-3" for="">Group</label>
+                    <div class="col-md-6">
+
+
+                        <select class="custom-select" name="job_fault_group" required>
+                            <option value="" selected disabled hidden>Please select</option>
+                            <option value="Internal">Internal</option>
+                            <option value="External">External</option>
+
+                        </select>
+
+
+                        <div class="clear-fix"></div>
+                    </div>
+                </div>
+            </div>
+
+
 
 
 

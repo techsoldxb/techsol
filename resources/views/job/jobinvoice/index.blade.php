@@ -28,9 +28,11 @@
                                 <th> Invoice Date </th>
                                 <th> Name </th>
                                 <th> Mobile </th>
-                                <th>Item Details</th>
+                                <th>Type</th>
+                                <th>Brand</th>
+                                <th>Model</th>
                                 <th>Fault</th>
-                                <th>Created User</th>
+
                                 <th>Job ID</th>
                                 <th>Amount</th>
                                 <th> Action </th>
@@ -44,12 +46,14 @@
                                 <td>{{ date('d-m-Y h:i A', strtotime($c->job_invoice_date)) }}</td>
                                 <td>{{ $c->job_cust_name }}</td>
                                 <td>{{ $c->job_cust_mobile }}</td>
-                                <td>{{ $c->job_item_details }}</td>
+                                <td>{{ $c->job_item_type }}</td>
+                                <td>{{ $c->job_item_brand }}</td>
+                                <td>{{ $c->job_item_model }}</td>
                                 <td>{{ $c->job_fault}}</td>
-                                <td> {{ $c->job_inv_created_user }} </td>
+
                                 <td> {{ $c->job_enq_number }} </td>
                                 <td class="font-weight-bold text-right text-primary">{{ $c->job_invoice_amount }}</td>
-                                <td align='center'>
+                                <td class="text-center">
                                     <a href="{{ route('job.jobinvoice.print',$c) }}">
                                         <i class="fa fa-print text-green"></i>
                                     </a>
@@ -68,9 +72,11 @@
                                 <th> Invoice Date </th>
                                 <th> Name </th>
                                 <th> Mobile </th>
-                                <th>Item Details</th>
+                                <th>Type</th>
+                                <th>Brand</th>
+                                <th>Model</th>
                                 <th>Fault</th>
-                                <th>Created User</th>
+
                                 <th>Job ID</th>
                                 <th>Amount</th>
                                 <th> Action </th>
