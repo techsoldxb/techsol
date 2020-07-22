@@ -88,15 +88,19 @@ view()->composer('*', function($view)  {
     ->count('ID'));
 });
 
+
+
 view()->composer('*', function($view)  {
     $view->with('invoiced',\App\Jobcard::where('job_comp_code', 003)
     ->where('job_status_name', 'Invoiced')
+    ->whereDate('job_invoice_date', Carbon::today()->toDateString())
     ->count('ID'));
 });
 
 view()->composer('*', function($view)  {
     $view->with('return',\App\Jobcard::where('job_comp_code', 003)
     ->where('job_status_name', 'Return')
+    ->where('job_status_name', 'Received_NR')
     ->count('ID'));
 });
 
