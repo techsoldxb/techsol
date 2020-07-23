@@ -92,7 +92,7 @@ view()->composer('*', function($view)  {
 
 
 view()->composer('*', function($view)  {
-    $view->with('invoiced',\App\Jobcard::where('job_comp_code', 003)
+    $view->with('invoiced',\App\Jobcard::where('job_comp_code', optional(auth()->user())->company)
     ->where('job_status_name', 'Invoiced')
     ->whereDate('job_invoice_date', Carbon::today()->toDateString())
     ->count('ID'));
