@@ -71,19 +71,19 @@ view()->composer('home', function($view)  {
 view()->composer('*', function($view)  {
     
     $view->with('received',\App\Jobcard::where('job_status_name', 'Received')
-    ->where('job_comp_code',003)
+    ->where('job_comp_code',optional(auth()->user())->company)
     ->count('ID'));
 });
 
 
 view()->composer('*', function($view)  {
-    $view->with('inspected',\App\Jobcard::where('job_comp_code', 003)
+    $view->with('inspected',\App\Jobcard::where('job_comp_code', optional(auth()->user())->company)
     ->where('job_status_name', 'Inspected')
     ->count('ID'));
 });
 
 view()->composer('*', function($view)  {
-    $view->with('completed',\App\Jobcard::where('job_comp_code', 003)
+    $view->with('completed',\App\Jobcard::where('job_comp_code', optional(auth()->user())->company)
     ->where('job_status_name', 'Completed')
     ->count('ID'));
 });
@@ -99,26 +99,26 @@ view()->composer('*', function($view)  {
 });
 
 view()->composer('*', function($view)  {
-    $view->with('return',\App\Jobcard::where('job_comp_code', 003)
+    $view->with('return',\App\Jobcard::where('job_comp_code', optional(auth()->user())->company)
     ->where('job_status_name', 'Return')
     ->orWhere('job_status_name', 'Received_NR')
     ->count('ID'));
 });
 
 view()->composer('*', function($view)  {
-    $view->with('quit',\App\Jobcard::where('job_comp_code', 003)
+    $view->with('quit',\App\Jobcard::where('job_comp_code', optional(auth()->user())->company)
     ->where('job_status_name', 'Quit')
     ->count('ID'));
 });
 
 view()->composer('*', function($view)  {
-    $view->with('outside',\App\Jobcard::where('job_comp_code', 003)
+    $view->with('outside',\App\Jobcard::where('job_comp_code', optional(auth()->user())->company)
     ->where('job_status_name', 'Outside')
     ->count('ID'));
 });
 
 view()->composer('*', function($view)  {
-    $view->with('outside_est',\App\Jobcard::where('job_comp_code', 003)
+    $view->with('outside_est',\App\Jobcard::where('job_comp_code', optional(auth()->user())->company)
     ->where('job_status_name', 'Outside_Estimation')
     ->count('ID'));
 });
