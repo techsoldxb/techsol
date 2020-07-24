@@ -1,17 +1,27 @@
 <?php
 
-
 namespace App\Channels\Messages;
 
 class WhatsAppMessage
 {
-  public $content;
-  
-  public function content($content)
-  {
-    $this->content = $content;
+    /**
+     * The message content.
+     *
+     * @var string
+     */
+    public $content;
 
-    return $this;
-  }
+    /**
+     * Set the message content.
+     *
+     * @param  string  $content
+     *
+     * @return $this
+     */
+    public function content($content)
+    {
+        $this->content = $content;
+
+        return $this;
+    }
 }
-

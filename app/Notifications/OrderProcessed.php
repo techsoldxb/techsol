@@ -10,32 +10,47 @@ use Illuminate\Notifications\Notification;
 use App\Channels\WhatsAppChannel;
 use App\Order;
 
-
 class OrderProcessed extends Notification
 {
-  use Queueable;
+    use Queueable;
 
+    public $order;
 
-  public $order;
-  
-  public function __construct(Order $order)
-  {
-    $this->order = $order;
-  }
-  
-  public function via($notifiable)
-  {
-    return [WhatsAppChannel::class];
-  }
-  
-  public function toWhatsApp($notifiable)
-  {
-    $orderUrl = url("/orders/{$this->order->id}");
-    $company = 'Acme';
-    $deliveryDate = $this->order->created_at->addDays(4)->toFormattedDateString();
+    /**
+     * Create a new notification instance.
+     *
+     * @return void
+     */
+    public function __construct(Order $order)
+    {
+        $this->order = $order;
+    }
 
+    /**
+     * Get the notification's delivery channel.
+     *
+     * @param  mixed  $notifiable
+     * @return array|string
+     */
+    public function via($notifiable)
+    {
+        return [WhatsAppChannel::class];
+    }
 
-    return (new WhatsAppMessage)
-        ->content("Your {$company} order of {$this->order->name} has shipped and should be delivered on {$deliveryDate}. Details: {$orderUrl}");
-  }
+    /**
+     * Get the WhatsApp representation of the notification.
+     *
+     * @param  mixed  $notifiable
+     * @return WhatsAppMessage
+     */
+    public function toWhatsApp($notifiable)
+    {
+        $orderUrl = url("/orders/{$this->order->id}");
+        $company = 'Techsol';
+        $deliveryDate = $this->order->created_at->addDays(4)->toFormattedDateString();
+
+        return (new WhatsAppMessage)
+            ->content("Your {$company} order of {$this->order->name} 
+            item received for service {$deliveryDate}. Details: {$orderUrl}");
+    }
 }

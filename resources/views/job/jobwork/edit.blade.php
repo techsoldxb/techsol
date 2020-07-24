@@ -68,12 +68,6 @@
             $('#estimation_textbox').hide(); // otherwise hide  
             $('#quit_textbox').show(); // otherwise hide 
             $('#return_textbox').hide(); // otherwise hide   
-        } else if (select_status == 'Work') {
-            $('#complete_textbox').hide(); // otherwise hide   
-            $('#estimation_textbox').hide(); // otherwise hide  
-            $('#quit_textbox').hide(); // otherwise hide 
-            $('#return_textbox').hide(); // otherwise hide   
-            $('#outside_textbox').hide(); // otherwise hide  
         } else {
             $('#complete_textbox').hide(); // otherwise hide   
             $('#estimation_textbox').hide(); // otherwise hide  
@@ -140,7 +134,7 @@
 
 
         <form class="needs-validation" novalidate method="POST"
-            action="{{ route('job.jobinspect.update', $jobcard->id) }}">
+            action="{{ route('job.jobwork.update', $jobcard->id) }}">
             @method('PUT')
 
 
@@ -280,12 +274,12 @@
                         <select class="custom-select" name="job_status_name" id="messagetype"
                             onchange="fun_showtextbox()" required>
                             <option value="" selected disabled hidden>Please select</option>
-                            <option value="Work">Work in Progress</option>
-                            <option value="Estimated">Estimate</option>
+
+
                             <option value="Completed">Complete</option>
-                            <option value="Quit">Quit Job</option>
+                            <option value="Quit">Quit</option>
                             <option value="Return">To be return</option>
-                            <option value="Outside">Outside Service</option>
+
                         </select>
 
 

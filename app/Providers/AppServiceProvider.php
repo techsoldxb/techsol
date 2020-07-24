@@ -68,8 +68,7 @@ view()->composer('home', function($view)  {
 //this will display the count in the left menu
 
 
-view()->composer('*', function($view)  {
-    
+view()->composer('*', function($view)  {    
     $view->with('received',\App\Jobcard::where('job_status_name', 'Received')
     ->where('job_comp_code',optional(auth()->user())->company)
     ->count('ID'));
@@ -83,10 +82,17 @@ view()->composer('*', function($view)  {
 });
 
 view()->composer('*', function($view)  {
+    $view->with('work',\App\Jobcard::where('job_comp_code', optional(auth()->user())->company)
+    ->where('job_status_name', 'Work')
+    ->count('ID'));
+});
+
+view()->composer('*', function($view)  {
     $view->with('completed',\App\Jobcard::where('job_comp_code', optional(auth()->user())->company)
     ->where('job_status_name', 'Completed')
     ->count('ID'));
 });
+
 
 
 

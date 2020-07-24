@@ -638,13 +638,13 @@
 
 
                         <li class="nav-item">
-                            <a href="#" class="nav-link
+                            <a href="{{route('job.jobwork.index')}}" class="nav-link
                             @if($segment=='jobwork')                
                             active
                             @endif">
                                 <i class="nav-icon far fa-circle text-info"></i>
                                 <p>Work In Progress
-                                    <span class="right badge badge-info">0</span>
+                                    <span class="right badge badge-info">{{$work}}</span>
                                 </p>
                             </a>
                         </li>
@@ -744,7 +744,7 @@
 
                         <li class="nav-item">
                             <a href="{{route('job.jobfault.index')}}" class="nav-link
-                            @if($segment=='jobquit')                
+                            @if($segment=='jobfault')                
                             active
                             @endif">
                                 <i class="nav-icon fas fa-circle text-success"></i>

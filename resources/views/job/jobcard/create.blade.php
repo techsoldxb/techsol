@@ -5,8 +5,6 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 
 
 
@@ -23,20 +21,8 @@
         return true;
     }
 
-    $(".select2-multiple").select2({
-        theme: "bootstrap",
-        placeholder: "Select a State",
-        containerCssClass: ':all:'
-    });
-
 </script>
 
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('#multi-select-demo').multiselect();
-    });
-
-</script>
 
 
 <!-- This script is used to allow only number in the bill amount field -->
@@ -122,8 +108,8 @@
                 <div class="row">
                     <label class="col-lg-2" for="">Customer Name</label>
                     <div class="col-lg-8">
-                        <input type="text" class="form-control" id="validationCustom01" name="job_cust_name"
-                            placeholder="Enter customer name" required>
+                        <input type="text" class="form-control text-capitalize" id="validationCustom01"
+                            name="job_cust_name" placeholder="Enter customer name" required>
                         <div class="clear-fix"></div>
                     </div>
                 </div>
@@ -186,6 +172,9 @@
                     <label class="col-lg-2" for="">Brand</label>
                     <div class="col-lg-3">
 
+
+
+
                         <select class="custom-select" name="job_item_brand">
                             <option value="" selected disabled hidden>Please select</option>
                             <option value="HP">HP</option>
@@ -204,7 +193,6 @@
                             <option value="Assembled">Assembled</option>
                             <option value="Others">Others</option>
                         </select>
-
 
 
 
@@ -233,7 +221,6 @@
                             <option value="Toner">Toner</option>
                             <option value="Other">Other</option>
                         </select>
-
 
                     </div>
                     <label class="col-lg-2" for="">Serial Number</label>
@@ -283,7 +270,7 @@
                     <label class="col-lg-2" for="">Fault Details</label>
                     <div class="col-lg-8">
                         <input type="text" class="form-control" id="validationCustom02" name="job_fault"
-                            placeholder="Enter fault details" required>
+                            placeholder="Enter fault details">
                         <div class="clear-fix"></div>
                     </div>
                 </div>
