@@ -122,6 +122,7 @@ Route::resource('/job/joboutside', 'Job\JoboutsideController', ['as'=>'job'])->m
 Route::resource('/job/joboutsideest', 'Job\JoboutsideestController', ['as'=>'job'])->middleware('auth');
 Route::resource('/job/jobfault', 'Job\JobfaultController', ['as'=>'job'])->middleware('auth');
 Route::resource('/job/jobwork', 'Job\JobworkController', ['as'=>'job'])->middleware('auth'); //Work in Progress
+Route::resource('/job/jobwfp', 'Job\JobwfpController', ['as'=>'job'])->middleware('auth'); //Waiting for parts
 Route::get('/jobcard/jobquit', 'Job\JobcardController@jobquit')->name('jobcard.quit'); 
 
 Route::get('/jobinvtotal/indexkkd', 'Job\JobinvtotalController@indexkkd')->name('jobinvtotal.indexkkd'); 

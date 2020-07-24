@@ -94,6 +94,12 @@ view()->composer('*', function($view)  {
     ->count('ID'));
 });
 
+view()->composer('*', function($view)  {
+    $view->with('wfp',\App\Jobcard::where('job_comp_code', optional(auth()->user())->company)
+    ->where('job_status_name', 'WFP')    
+    ->count('ID'));
+});
+
 
 
 

@@ -74,13 +74,6 @@
             $('#quit_textbox').hide(); // otherwise hide 
             $('#return_textbox').hide(); // otherwise hide   
             $('#outside_textbox').hide(); // otherwise hide  
-        } else if (select_status == 'WFP') {
-            $('#complete_textbox').hide(); // otherwise hide   
-            $('#estimation_textbox').hide(); // otherwise hide  
-            $('#quit_textbox').hide(); // otherwise hide 
-            $('#return_textbox').hide(); // otherwise hide   
-            $('#outside_textbox').hide(); // otherwise hide  
-            $('#wfp_textbox').show(); // otherwise hide  
         } else {
             $('#complete_textbox').hide(); // otherwise hide   
             $('#estimation_textbox').hide(); // otherwise hide  
@@ -146,8 +139,7 @@
     <div class="container-fluid">
 
 
-        <form class="needs-validation" novalidate method="POST"
-            action="{{ route('job.jobinspect.update', $jobcard->id) }}">
+        <form class="needs-validation" novalidate method="POST" action="{{ route('job.jobwfp.update', $jobcard->id) }}">
             @method('PUT')
 
 
@@ -288,7 +280,6 @@
                             onchange="fun_showtextbox()" required>
                             <option value="" selected disabled hidden>Please select</option>
                             <option value="Work">Work in Progress</option>
-                            <option value="WFP">Waiting for Parts</option>
                             <option value="Quit">Quit Job</option>
                             <option value="Return">To be return</option>
                             <option value="Outside">Outside Service</option>
@@ -368,17 +359,6 @@
                         <div class="col-lg-8">
                             <input type="text" class="form-control" id="validationCustom02" name="job_return_remark"
                                 placeholder="Enter the action remarks in detail">
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="form-group">
-                    <div id="wfp_textbox" style="display: none" class="row">
-                        <label class="col-lg-2" for="">WFP Remark</label>
-                        <div class="col-lg-8">
-                            <input type="text" class="form-control" id="validationCustom02" name="job_waiting_remark"
-                                placeholder="Enter the waiting for parts remarks">
                         </div>
                     </div>
                 </div>

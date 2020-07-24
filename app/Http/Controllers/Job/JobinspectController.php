@@ -164,6 +164,15 @@ class JobinspectController extends Controller
                     
         }
 
+        else if (( $request->job_status_name )  == 'WFP') 
+        {
+            $jobcard->job_status_name = $request->job_status_name; 
+            $jobcard->job_waiting_remark = $request->job_waiting_remark; 
+            $today = Carbon::now()->toDate('Y-m-d h:i');
+            $jobcard->job_waiting_date = $today; //Outside service date  
+                    
+        }
+
         
         $jobcard->save();
         return redirect()->route('job.jobinspect.index')->with('info','Transaction updated successfully!');

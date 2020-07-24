@@ -676,11 +676,11 @@
 
 
                         <li class="nav-item">
-                            <a href="{{route('job.jobreturn.index')}}" class="nav-link
+                            <a href="{{route('job.jobwfp.index')}}" class="nav-link
                            ">
                                 <i class="nav-icon fas fa-circle text-primary"></i>
                                 <p>Waiting for Parts
-                                    <span class="right badge badge-primary">0</span>
+                                    <span class="right badge badge-primary">{{$wfp}}</span>
                                 </p>
                             </a>
                         </li>
