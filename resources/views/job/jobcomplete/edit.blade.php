@@ -323,11 +323,11 @@
 
             <div class="form-group">
                 <div id="remarks_textbox" style="display: none" class="row">
-                    <label class="col-lg-2" for="">Action Remarks</label>
+                    <label class="col-lg-2" for="">Quit Remarks</label>
                     <div class="col-lg-8">
 
-                        <input type="text" class="form-control" id="validationCustom02" name="job_inv_remark"
-                            placeholder="Enter the action remarks in detail">
+                        <input type="text" class="form-control" id="validationCustom02" name="job_quit_remark"
+                            placeholder="Enter the reason for the quit">
 
 
                     </div>

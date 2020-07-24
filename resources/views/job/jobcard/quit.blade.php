@@ -20,7 +20,9 @@
                                 <th> Job ID </th>
                                 <th> Quit Date </th>
                                 <th> Name </th>
-                                <th>Item Details</th>
+                                <th>Type</th>
+                                <th>Brand</th>
+                                <th>Model</th>
                                 <th>Fault</th>
                                 <th>Reason</th>
                                 <th>Quit By</th>
@@ -33,7 +35,9 @@
                                 <td>{{ $c->job_enq_number }}</td>
                                 <td>{{ date('d-m-Y h:i A', strtotime($c->job_quit_date)) }}</td>
                                 <td>{{ $c->job_cust_name }}</td>
-                                <td>{{ $c->job_item_details }}</td>
+                                <td>{{ $c->job_item_type }}</td>
+                                <td>{{ $c->job_item_brand }}</td>
+                                <td>{{ $c->job_item_model}}</td>
                                 <td>{{ $c->job_fault}}</td>
                                 <td> {{ $c->job_quit_remark }} </td>
                                 <td> {{ $c->job_quit_created_user }} </td>
@@ -51,7 +55,9 @@
                                 <th> Job ID </th>
                                 <th> Quit Date </th>
                                 <th> Name </th>
-                                <th>Item Details</th>
+                                <th>Type</th>
+                                <th>Brand</th>
+                                <th>Model</th>
                                 <th>Fault</th>
                                 <th>Reason</th>
                                 <th>Quit By</th>

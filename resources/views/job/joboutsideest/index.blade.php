@@ -29,7 +29,9 @@
                                 <th> Est Date </th>
                                 <th> Name </th>
                                 <th> Mobile </th>
-                                <th>Item Details</th>
+                                <th>Type</th>
+                                <th>Brand</th>
+                                <th>Model</th>
                                 <th>Fault</th>
                                 <th>Estimation</th>
                                 <th>Quoted</th>
@@ -48,7 +50,9 @@
                                 <td>{{ date('d-m-Y h:i A', strtotime($c->job_os_est_date)) }}</td>
                                 <td>{{ $c->job_cust_name }}</td>
                                 <td>{{ $c->job_cust_mobile }}</td>
-                                <td>{{ $c->job_item_details }}</td>
+                                <td>{{ $c->job_item_type }}</td>
+                                <td>{{ $c->job_item_brand }}</td>
+                                <td>{{ $c->job_item_model }}</td>
                                 <td>{{ $c->job_fault}}</td>
                                 <td class="font-weight-bold text-right text-primary">{{ $c->job_service_cost }}</td>
                                 <td class="font-weight-bold text-right text-primary">{{ $c->job_est_amount }}</td>
@@ -76,7 +80,9 @@
                                 <th> Est Date </th>
                                 <th> Name </th>
                                 <th> Mobile </th>
-                                <th>Item Details</th>
+                                <th>Type</th>
+                                <th>Brand</th>
+                                <th>Model</th>
                                 <th>Fault</th>
                                 <th>Estimation</th>
                                 <th>Quoted</th>

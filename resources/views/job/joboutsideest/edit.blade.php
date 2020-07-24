@@ -222,6 +222,7 @@
                             onchange="fun_showtextbox()" required>
                             <option value="" selected disabled hidden>Please select</option>
                             <option value="Outside_Received">Outside_Received</option>
+                            <option value="Received_NR">Received - Not Repaired</option>
                         </select>
                         <div class="clear-fix"></div>
                     </div>

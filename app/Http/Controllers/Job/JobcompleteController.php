@@ -22,7 +22,10 @@ class JobcompleteController extends Controller
     public function index()
     {
         
-        $arr['jobcard'] = Jobcard::where('job_comp_code', auth()->user()->company)
+        $arr['jobcard'] = Jobcard::select('id','job_enq_number','job_enq_date'
+        ,'job_cust_name','job_cust_mobile','job_item_type','job_item_brand','job_item_model'
+        ,'job_fault','job_status_name','job_completed_date')
+        ->where('job_comp_code', auth()->user()->company)
         ->where('job_status_name','Completed')->orWhere('job_status_name','Outside_Received')
         ->get();
     
@@ -116,7 +119,7 @@ class JobcompleteController extends Controller
         else if (( $request->job_status_name )  == 'Completed') 
         {
             $jobcard->job_status_name = $request->job_status_name; 
-            $jobcard->job_completed_remark = $request->job_tech_remark; 
+            $jobcard->job_completed_remark = $request->job_completed_remark; 
             $today = Carbon::now();        
             $jobcard->job_completed_date = $today;            
             
@@ -124,7 +127,8 @@ class JobcompleteController extends Controller
         else if (( $request->job_status_name )  == 'Quit') 
         {
             $jobcard->job_status_name = $request->job_status_name; 
-            $jobcard->job_quit_remark = $request->job_tech_remark;                 
+            $jobcard->job_quit_remark = $request->job_quit_remark;    
+            $jobcard->job_quit_created_user = Auth::user()->name;             
             $today = Carbon::now();        
             $jobcard->job_quit_date = $today;            
         }

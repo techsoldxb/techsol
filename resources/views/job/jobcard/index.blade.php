@@ -24,7 +24,8 @@
                                 <th>Brand</th>
                                 <th>Model</th>
 
-                                <th>Fault</th>
+                                <th>Job Type</th>
+                                <th>Fault Detail</th>
 
                                 <th> Action </th>
                             </tr>
@@ -41,6 +42,7 @@
                                 <td>{{ $c->job_item_brand }}</td>
                                 <td>{{ $c->job_item_model }}</td>
 
+                                <td>{{ $c->job_type}}</td>
                                 <td>{{ $c->job_fault}}</td>
 
                                 <td>
@@ -74,7 +76,8 @@
                                 <th>Brand</th>
                                 <th>Model</th>
 
-                                <th>Fault</th>
+                                <th>Job Type</th>
+                                <th>Fault Detail</th>
 
                                 <th> Action </th>
                             </tr>

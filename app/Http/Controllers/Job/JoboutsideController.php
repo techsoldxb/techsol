@@ -20,7 +20,10 @@ class JoboutsideController extends Controller
      */
     public function index()
     {        
-        $arr['jobcard'] = Jobcard::where('job_comp_code', auth()->user()->company)
+        $arr['jobcard'] = Jobcard::select('id','job_enq_number','job_enq_date'
+        ,'job_cust_name','job_cust_mobile','job_item_type','job_item_brand','job_item_model'
+        ,'job_fault','job_out_source','job_os_wq_date')
+        ->where('job_comp_code', auth()->user()->company)
         ->where('job_status_name','Outside')
         ->get();    
         return view('job.joboutside.index')->with($arr); 
@@ -95,6 +98,7 @@ class JoboutsideController extends Controller
             $jobcard->job_status_name = $request->job_status_name;             
             $today = Carbon::now();
             $jobcard->job_os_rec_date = $today;
+            $jobcard->job_return_date = $today;
            
         }
         

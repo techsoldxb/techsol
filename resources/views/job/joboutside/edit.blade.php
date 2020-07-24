@@ -258,7 +258,7 @@
                                 </span>
                             </div>
                             <input type="text" class="form-control" onkeypress="return isNumberKey(event)"
-                                id="validationCustom02" name="job_service_cost" placeholder="Service cost" required>
+                                id="validationCustom02" name="job_service_cost" placeholder="Service cost">
                         </div>
                     </div>
                     <label class="col-lg-1" for="">Customer Amount</label>

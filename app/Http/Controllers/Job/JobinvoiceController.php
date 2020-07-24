@@ -25,7 +25,10 @@ class JobinvoiceController extends Controller
     public function index()
     {
         
-        $arr['jobcard'] = Jobcard::where('job_comp_code', auth()->user()->company)
+        $arr['jobcard'] = Jobcard::select('id','job_enq_number','job_enq_date'
+        ,'job_cust_name','job_cust_mobile','job_item_type','job_item_brand','job_item_model'
+        ,'job_fault','job_invoice_number','job_invoice_amount','job_invoice_date')
+        ->where('job_comp_code', auth()->user()->company)
         ->where('job_status_name','Invoiced')
         ->whereDate('job_invoice_date', Carbon::today()->toDateString())
         ->get();

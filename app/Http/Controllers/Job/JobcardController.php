@@ -25,7 +25,10 @@ class JobcardController extends Controller
     public function index()
     {
         
-        $arr['jobcard'] = Jobcard::where('job_comp_code', auth()->user()->company)
+        $arr['jobcard'] = Jobcard::select('id','job_enq_number','job_enq_date'
+        ,'job_cust_name','job_cust_mobile','job_item_type','job_item_brand','job_item_model'
+        ,'job_fault','job_type')
+        ->where('job_comp_code', auth()->user()->company)
         ->where('job_status_name','Received')
         ->get();
     
@@ -47,7 +50,10 @@ class JobcardController extends Controller
     public function jobquit()
     {
         
-        $arr['jobcard'] = Jobcard::where('job_comp_code', auth()->user()->company)
+        $arr['jobcard'] = Jobcard::select('id','job_enq_number','job_quit_date'
+        ,'job_cust_name','job_cust_mobile','job_item_type','job_item_brand','job_item_model',
+        'job_fault','job_quit_remark','job_quit_created_user')
+        ->where('job_comp_code', auth()->user()->company)
         ->where('job_status_name','Quit')
         ->get();
     
