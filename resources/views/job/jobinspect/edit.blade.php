@@ -281,8 +281,6 @@
                             onchange="fun_showtextbox()" required>
                             <option value="" selected disabled hidden>Please select</option>
                             <option value="Work">Work in Progress</option>
-                            <option value="Estimated">Estimate</option>
-                            <option value="Completed">Complete</option>
                             <option value="Quit">Quit Job</option>
                             <option value="Return">To be return</option>
                             <option value="Outside">Outside Service</option>
