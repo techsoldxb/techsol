@@ -26,7 +26,7 @@
                             <tr>
 
                                 <th> Job ID </th>
-                                <th> WFP Date </th>
+                                <th> Order Date </th>
                                 <th> Name </th>
                                 <th> Mobile </th>
                                 <th>Type</th>
@@ -34,6 +34,8 @@
                                 <th>Model</th>
 
                                 <th>Fault</th>
+                                <th>Supplier</th>
+                                <th>Item</th>
 
 
                                 <th> Action </th>
@@ -48,7 +50,7 @@
                             <tr>
                                 <td>{{ $c->job_enq_number }}</td>
 
-                                <td>{{ date('d-m-Y h:i A', strtotime($c->job_ins_date)) }}</td>
+                                <td>{{ date('d-m-Y h:i A', strtotime($c->job_waiting_date)) }}</td>
                                 <td>{{ $c->job_cust_name }}</td>
 
                                 <td>{{ $c->job_cust_mobile }}</td>
@@ -57,6 +59,8 @@
                                 <td>{{ $c->job_item_model }}</td>
 
                                 <td>{{ $c->job_fault}}</td>
+                                <td>{{ $c->job_flex1}}</td>
+                                <td>{{ $c->job_parts}}</td>
 
 
 
@@ -115,6 +119,9 @@
 
 
                                 <th>Fault</th>
+
+                                <th>Supplier</th>
+                                <th>Item</th>
 
 
 

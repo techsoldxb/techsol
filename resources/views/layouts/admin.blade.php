@@ -677,7 +677,9 @@
 
                         <li class="nav-item">
                             <a href="{{route('job.jobwfp.index')}}" class="nav-link
-                           ">
+                            @if($segment=='jobwfp')                
+                            active
+                            @endif">
                                 <i class="nav-icon fas fa-circle text-primary"></i>
                                 <p>Waiting for Parts
                                     <span class="right badge badge-primary">{{$wfp}}</span>

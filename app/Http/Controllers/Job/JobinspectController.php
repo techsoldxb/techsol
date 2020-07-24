@@ -167,7 +167,8 @@ class JobinspectController extends Controller
         else if (( $request->job_status_name )  == 'WFP') 
         {
             $jobcard->job_status_name = $request->job_status_name; 
-            $jobcard->job_waiting_remark = $request->job_waiting_remark; 
+            $jobcard->job_flex1 = $request->job_flex1; 
+            $jobcard->job_parts = $request->job_parts; 
             $today = Carbon::now()->toDate('Y-m-d h:i');
             $jobcard->job_waiting_date = $today; //Outside service date  
                     

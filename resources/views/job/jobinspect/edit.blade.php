@@ -375,10 +375,15 @@
 
                 <div class="form-group">
                     <div id="wfp_textbox" style="display: none" class="row">
-                        <label class="col-lg-2" for="">WFP Remark</label>
-                        <div class="col-lg-8">
-                            <input type="text" class="form-control" id="validationCustom02" name="job_waiting_remark"
-                                placeholder="Enter the waiting for parts remarks">
+                        <label class="col-lg-2" for="">Supplier</label>
+                        <div class="col-lg-3">
+                            <input type="text" class="form-control" id="validationCustom02" name="job_flex1"
+                                placeholder="Enter supplier name">
+                        </div>
+                        <label class="col-lg-2" for="">Item Detail</label>
+                        <div class="col-lg-3">
+                            <input type="text" class="form-control" id="validationCustom02" name="job_parts"
+                                placeholder="Enter item details">
                         </div>
                     </div>
                 </div>
