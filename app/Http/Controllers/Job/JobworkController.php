@@ -110,6 +110,16 @@ class JobworkController extends Controller
             $jobcard->job_quit_created_user =  Auth::user()->name;
             
         }
+        else if (( $request->job_status_name )  == 'WFP') 
+        {
+            $jobcard->job_status_name = $request->job_status_name; 
+            $jobcard->job_flex1 = $request->job_flex1; 
+            $jobcard->job_parts = $request->job_parts; 
+            $today = Carbon::now()->toDate('Y-m-d h:i');
+            $jobcard->job_waiting_date = $today; //Outside service date  
+                    
+        }
+
 
 
         

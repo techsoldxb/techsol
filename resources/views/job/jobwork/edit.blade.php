@@ -68,6 +68,13 @@
             $('#estimation_textbox').hide(); // otherwise hide  
             $('#quit_textbox').show(); // otherwise hide 
             $('#return_textbox').hide(); // otherwise hide   
+            $('#wfp_textbox').hide(); // otherwise hide   
+        } else if (select_status == 'WFP') {
+            $('#complete_textbox').hide(); // otherwise hide   
+            $('#estimation_textbox').hide(); // otherwise hide  
+            $('#quit_textbox').hide(); // otherwise hide 
+            $('#return_textbox').hide(); // otherwise hide   
+            $('#wfp_textbox').show(); // otherwise hide   
         } else {
             $('#complete_textbox').hide(); // otherwise hide   
             $('#estimation_textbox').hide(); // otherwise hide  
@@ -277,6 +284,7 @@
 
 
                             <option value="Completed">Complete</option>
+                            <option value="WFP">Waiting for Parts</option>
                             <option value="Quit">Quit</option>
                             <option value="Return">To be return</option>
 
@@ -356,6 +364,21 @@
                         <div class="col-lg-8">
                             <input type="text" class="form-control" id="validationCustom02" name="job_tech_remark"
                                 placeholder="Enter the action remarks in detail">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div id="wfp_textbox" style="display: none" class="row">
+                        <label class="col-lg-2" for="">Supplier</label>
+                        <div class="col-lg-3">
+                            <input type="text" class="form-control" id="validationCustom02" name="job_flex1"
+                                placeholder="Enter supplier name">
+                        </div>
+                        <label class="col-lg-2" for="">Item Detail</label>
+                        <div class="col-lg-3">
+                            <input type="text" class="form-control" id="validationCustom02" name="job_parts"
+                                placeholder="Enter item details">
                         </div>
                     </div>
                 </div>
