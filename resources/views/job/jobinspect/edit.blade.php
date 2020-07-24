@@ -358,7 +358,7 @@
                     <div id="return_textbox" style="display: none" class="row">
                         <label class="col-lg-2" for="">Return Remarks</label>
                         <div class="col-lg-8">
-                            <input type="text" class="form-control" id="validationCustom02" name="job_tech_remark"
+                            <input type="text" class="form-control" id="validationCustom02" name="job_return_remark"
                                 placeholder="Enter the action remarks in detail">
                         </div>
                     </div>

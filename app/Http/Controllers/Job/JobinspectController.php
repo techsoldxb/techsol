@@ -139,7 +139,9 @@ class JobinspectController extends Controller
         else if (( $request->job_status_name )  == 'Return') 
         {
             $jobcard->job_status_name = $request->job_status_name;    
-            $jobcard->job_tech_remark = $request->job_tech_remark;             
+            $jobcard->job_return_remark = $request->job_return_remark;               
+            $today = Carbon::now()->toDate('Y-m-d h:i');
+            $jobcard->job_return_date = $today; //Outside service date    
         }
         else if (( $request->job_status_name )  == 'Outside') 
         {
@@ -153,6 +155,9 @@ class JobinspectController extends Controller
         else if (( $request->job_status_name )  == 'Work') 
         {
             $jobcard->job_status_name = $request->job_status_name; 
+            $jobcard->job_work_remark = $request->job_work_remark; 
+            $today = Carbon::now()->toDate('Y-m-d h:i');
+            $jobcard->job_work_date = $today; //Outside service date  
                     
         }
 
