@@ -117,7 +117,7 @@ class JobcardController extends Controller
         $jobcard->job_enq_date = $today;
         
 
-        $jobcard->job_cust_name = ucwords($request->job_cust_name);
+        $jobcard->job_cust_name = strtoupper($request->job_cust_name);
         $jobcard->job_cust_mobile = $request->job_cust_mobile;
         $jobcard->job_cust_email = $request->job_cust_email;
 
