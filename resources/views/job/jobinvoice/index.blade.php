@@ -19,7 +19,7 @@
                         </div>
                         <div>/ </div>
 
-                        <div class="font-weight-bold text-left text-primary">
+                        <div class="font-weight-bold text-left text-muted">
                             Cash Invoice:
                         </div>
                         <div class="font-weight-bold text-left" style="font-size:18px;color:blue">
@@ -27,12 +27,12 @@
                             <i class="fa fa-rupee" style="font-size:18px;color:blue"></i>
                         </div>
                         <div>/ </div>
-                        <div class="font-weight-bold text-left text-primary">
+                        <div class="font-weight-bold text-left text-muted">
                             Online Invoice:
                         </div>
-                        <div class="font-weight-bold text-left" style="font-size:18px;color:green">
+                        <div class="font-weight-bold text-left" style="font-size:18px;color:blue">
                             {{ number_format($sc_inv_online) }}
-                            <i class="fa fa-rupee" style="font-size:18px;color:green"></i>
+                            <i class="fa fa-rupee" style="font-size:18px;color:blue"></i>
                         </div>
 
                     </div>
