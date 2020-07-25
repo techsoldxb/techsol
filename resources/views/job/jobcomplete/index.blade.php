@@ -17,6 +17,7 @@
                         <thead>
                             <tr>
                                 <th> Job ID </th>
+                                <th> Received Date </th>
                                 <th> Completed Date </th>
                                 <th> Name </th>
                                 <th> Mobile </th>
@@ -34,6 +35,7 @@
                             @foreach($jobcard as $c)
                             <tr>
                                 <td>{{ $c->job_enq_number }}</td>
+                                <td>{{ date('d-m-Y h:i A', strtotime($c->job_enq_date)) }}</td>
                                 <td>{{ date('d-m-Y h:i A', strtotime($c->job_completed_date)) }}</td>
                                 <td>{{ $c->job_cust_name }}</td>
                                 <td>{{ $c->job_cust_mobile }}</td>
@@ -63,6 +65,7 @@
                         <tfoot>
                             <tr>
                                 <th> Job ID </th>
+                                <th> Received Date </th>
                                 <th> Completed Date </th>
                                 <th> Name </th>
                                 <th> Mobile </th>
