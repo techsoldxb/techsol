@@ -106,7 +106,8 @@ class JobcompleteController extends Controller
             $jobcard->job_status_name = $request->job_status_name; 
             $jobcard->job_invoice_number = $new_id;
             $jobcard->job_invoice_amount = $request->job_invoice_amount;
-            $jobcard->job_invoice_remark = $request->job_invoice_remark;
+            
+            $jobcard->job_flex2 = $request->job_flex2;
 
             $jobcard->job_inv_created_user = Auth::user()->name;
 

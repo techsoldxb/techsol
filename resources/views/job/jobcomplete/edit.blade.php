@@ -310,11 +310,18 @@
 
 
                     </div>
-                    <label class="col-lg-2" for="">Invoice Remarks</label>
+                    <label class="col-lg-2" for="">Payment Term</label>
                     <div class="col-lg-3">
 
-                        <input type="text" class="form-control" id="validationCustom02" name="job_invoice_remark"
-                            placeholder="Enter invoice remarks">
+
+
+                        <select class="custom-select" name="job_flex2">
+
+                            <option value="Cash">Cash</option>
+                            <option value="Online">Online</option>
+
+                        </select>
+
 
                     </div>
                 </div>

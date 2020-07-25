@@ -17,6 +17,24 @@
                             {{ number_format($sc_inv_today) }}
                             <i class="fa fa-rupee" style="font-size:18px;color:red"></i>
                         </div>
+                        <div>/ </div>
+
+                        <div class="font-weight-bold text-left text-primary">
+                            Cash Invoice:
+                        </div>
+                        <div class="font-weight-bold text-left" style="font-size:18px;color:blue">
+                            {{ number_format($sc_inv_cash) }}
+                            <i class="fa fa-rupee" style="font-size:18px;color:blue"></i>
+                        </div>
+                        <div>/ </div>
+                        <div class="font-weight-bold text-left text-primary">
+                            Online Invoice:
+                        </div>
+                        <div class="font-weight-bold text-left" style="font-size:18px;color:green">
+                            {{ number_format($sc_inv_online) }}
+                            <i class="fa fa-rupee" style="font-size:18px;color:green"></i>
+                        </div>
+
                     </div>
                 </div>
                 <!-- /.card-header -->
