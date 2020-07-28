@@ -192,6 +192,7 @@ class AccountsController extends Controller
                 $item->td_qty = $request->td_qty[$key] ;    
                 $item->td_unit_price = $request->td_unit_price[$key] ;
                 $item->td_unit_amt = $item->td_unit_price * $item->td_qty ;
+                $item->td_comp_name = Auth::user()->company;
                 $item->td_tran_no = $new_id; 
                 $item->save();
                 $account->item()->save($item);
@@ -235,7 +236,12 @@ class AccountsController extends Controller
 
         $arr['category'] = Category::where('exp_group_status',1)->orderBy('exp_group_name','asc')->get();
 
-        $items = Item::where('td_tran_no', $account->th_tran_no)->Get();     
+        $items = Item::where('td_tran_no', $account->th_tran_no)
+        ->where('td_comp_name', Auth::user()->company)->Get();   
+        
+        
+        
+
         return view('admin.accounts.edit')->with(['item' => $items, 'account' => $account])->with($arr); 
 
         

@@ -22,6 +22,7 @@ class CreateItemsTable extends Migration
             $table->float('td_unit_amt')->nullable();
             $table->date('td_bill_dt')->nullable();
             $table->date('td_supp_name')->nullable();
+            
             $table->bigInteger('account_id')->unsigned()->nullable();
             $table->foreign('account_id')->references('id')->on('accounts')->onDelete('cascade');
 
