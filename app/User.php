@@ -42,4 +42,10 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function routeNotificationForSlack()
+   {
+       Return 'https://hooks.slack.com/services/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';
+   }
+
 }

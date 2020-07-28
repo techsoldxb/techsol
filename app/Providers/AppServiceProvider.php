@@ -162,7 +162,9 @@ view()->composer('*', function($view)  {
 
 
 view()->composer('home', function($view)  {
-    $view->with('jobinvamountrmd',\App\Jobcard::where('job_comp_code', 003)->where('job_status_name', 'Invoiced')
+    $view->with('jobinvamountrmd',\App\Jobcard::where('job_comp_code', 003)
+    ->where('job_status_name', 'Invoiced')
+    ->where('job_flex2', 'Cash')
     ->sum('job_invoice_amount'));
 });
 

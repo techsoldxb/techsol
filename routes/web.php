@@ -1,7 +1,7 @@
 <?php
 
 use RealRashid\SweetAlert\Facades\Alert;
-
+use App\Notifications\Newslack;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +36,15 @@ Route::post('/order', 'OrderController@store')->name('order')->middleware('auth'
   //  return view('test');
 //});
 
+Route::get('/slack', function () {
+
+    $user = App\User::first();
+    
+    $user->notify(new Newslack());
+    
+       echo "A slack notification has been send";
+    
+    });
 
 
 Auth::routes([
