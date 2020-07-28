@@ -36,8 +36,20 @@ class EnquiryController extends Controller
     {
                 
 
+        if (  ( Auth::user()->id )  == 7) {
+            
+            
+    $arr['enquiry'] = Enquiry::All();
+            }
+            else {
+                
     $arr['enquiry'] = Enquiry::where('enq_comp_code', auth()->user()->company)
     ->orderBy('id','desc')->get();
+            }
+
+            
+
+
     return view('showroom.enquiry.index')->with($arr);    
     
 
