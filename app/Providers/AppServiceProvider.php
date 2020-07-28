@@ -70,12 +70,15 @@ view()->composer('job.jobinvoice.index', function($view)  {
 view()->composer('home', function($view)  {
     $view->with('jobinvamount',\App\Jobcard::where('job_comp_code', auth()->user()->company)
     ->where('job_status_name', 'Invoiced')
+    ->where('job_flex2', 'Cash')
     ->sum('job_invoice_amount'));
 });
 
 
 view()->composer('home', function($view)  {
-    $view->with('jobinvamountkkd',\App\Jobcard::where('job_comp_code', 004)->where('job_status_name', 'Invoiced')
+    $view->with('jobinvamountkkd',\App\Jobcard::where('job_comp_code', 004)
+    ->where('job_status_name', 'Invoiced')
+    ->where('job_flex2', 'Cash')
     ->sum('job_invoice_amount'));
 });
 

@@ -534,6 +534,19 @@
                                 <p>Customer Enquiry</p>
                             </a>
                         </li>
+
+
+                        <li class="nav-item">
+                            <a href="{{route('job.jobwfp.index')}}" class="nav-link
+            @if($segment=='jobwfp')
+            active
+            @endif">
+                                <i class="nav-icon fas fa-hourglass-half"></i>
+
+
+                                <p>Waiting for Parts</p>
+                            </a>
+                        </li>
                         <li class="nav-header">JOB CONTRACT</li>
 
                         <li class="nav-item">

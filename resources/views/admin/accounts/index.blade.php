@@ -68,6 +68,12 @@
 
 
 
+                                    <a href="{{ route('admin.accounts.print',$c) }}">
+                                        <i class="fa fa-print text-green"></i>
+                                    </a>
+
+                                    /
+
 
                                     <a href="{{ route('admin.accounts.edit',$c->th_tran_no) }}">
                                         <i class="fa fa-edit"></i>

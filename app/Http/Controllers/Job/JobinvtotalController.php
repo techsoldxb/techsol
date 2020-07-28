@@ -25,6 +25,7 @@ class JobinvtotalController extends Controller
         $jobcard = Jobcard::selectRaw('date(job_invoice_date) as date, sum(job_invoice_amount) as total,sum(job_service_cost) as cost')
         ->where('job_comp_code', auth()->user()->company)
         ->where('job_status_name', 'Invoiced')
+        ->where('job_flex2', 'Cash')
         ->groupBy('date')
         ->orderBy('date','desc')
         ->get();

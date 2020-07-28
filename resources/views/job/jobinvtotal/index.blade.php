@@ -28,6 +28,7 @@
 
                                 <th> Invoice Date </th>
                                 <th> Invoice Amount </th>
+
                                 <th> Payable </th>
                                 <th> Balance </th>
 
@@ -45,6 +46,7 @@
 
                                 <td>{{ date('d-m-Y', strtotime($c->date)) }}</td>
                                 <td align="right">{{ number_format($c->total,2) }}</td>
+
                                 <td align="right">{{ number_format($c->cost,2) }}</td>
                                 <td align="right">{{ number_format($c->total-$c->cost,2) }}</td>
 
@@ -65,6 +67,7 @@
                             <tr>
                                 <th> Invoice Date </th>
                                 <th> Invoice Amount </th>
+
                                 <th> Payable </th>
                                 <th> Balance </th>
 
