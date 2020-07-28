@@ -36,6 +36,7 @@
                                 <th>Fault</th>
                                 <th>Supplier</th>
                                 <th>Item</th>
+                                <th>User</th>
 
 
                                 <th> Action </th>
@@ -61,6 +62,7 @@
                                 <td>{{ $c->job_fault}}</td>
                                 <td>{{ $c->job_flex1}}</td>
                                 <td>{{ $c->job_parts}}</td>
+                                <td>{{ $c->job_enq_created_user}}</td>
 
 
 
@@ -122,6 +124,7 @@
 
                                 <th>Supplier</th>
                                 <th>Item</th>
+                                <th>User</th>
 
 
 

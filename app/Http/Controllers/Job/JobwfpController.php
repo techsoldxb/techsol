@@ -27,7 +27,7 @@ class JobwfpController extends Controller
             
         $arr['jobcard'] = Jobcard::select('id','job_enq_number','job_waiting_date'
         ,'job_cust_name','job_cust_mobile','job_item_type','job_item_brand','job_item_model',
-        'job_fault','job_ins_remark','job_flex1','job_parts')        
+        'job_fault','job_ins_remark','job_flex1','job_parts','job_enq_created_user')        
         ->where('job_status_name','WFP')
         ->get();
         }
@@ -35,7 +35,7 @@ class JobwfpController extends Controller
             
         $arr['jobcard'] = Jobcard::select('id','job_enq_number','job_waiting_date'
         ,'job_cust_name','job_cust_mobile','job_item_type','job_item_brand','job_item_model',
-        'job_fault','job_ins_remark','job_flex1','job_parts')
+        'job_fault','job_ins_remark','job_flex1','job_parts','job_enq_created_user')
         ->where('job_comp_code', auth()->user()->company)
         ->where('job_status_name','WFP')
         ->get();
