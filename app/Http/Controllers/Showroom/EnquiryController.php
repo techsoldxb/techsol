@@ -117,7 +117,7 @@ class EnquiryController extends Controller
     {
 
         $id = Enquiry::where('enq_comp_code', auth()->user()->company)
-        ->orderByDesc('enq_tran_no')->first()->job_enq_number ?? date('Y') . 00000;
+        ->orderByDesc('enq_tran_no')->first()->enq_tran_no ?? date('Y') . 00000;
         $year = date('Y');
         $id_year = substr($id, 0, 4);
         $seq = $year <> $id_year ? 0 : +substr($id, -5);
