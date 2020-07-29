@@ -845,7 +845,7 @@
                 "searching": true,
                 "ordering": true,
                 "order": [
-                    [1, "desc"]
+                    [0, "desc"]
                 ],
                 "info": true,
                 "autoWidth": true,
