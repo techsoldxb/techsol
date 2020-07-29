@@ -24,9 +24,9 @@
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
                             <tr>
-
-                                <th> Company </th>
                                 <th> Enq No. </th>
+                                <th> Company </th>
+
                                 <th> Name </th>
 
                                 <th> Mobile </th>
@@ -49,8 +49,9 @@
                             @foreach($enquiry as $c)
 
                             <tr>
-                                <td>{{ $c->enq_comp_name }}</td>
                                 <td>{{ $c->enq_tran_no }}</td>
+                                <td>{{ $c->enq_comp_name }}</td>
+
                                 <td>{{ $c->enq_cust_name }}</td>
 
                                 <td>{{ $c->enq_mobile }}</td>
@@ -107,8 +108,9 @@
                         </tbody>
                         <tfoot>
                             <tr>
-                                <th> Company </th>
                                 <th> Enq No. </th>
+                                <th> Company </th>
+
                                 <th> Name </th>
 
                                 <th> Mobile </th>
