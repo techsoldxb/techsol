@@ -147,8 +147,8 @@ class JobcardController extends Controller
         
         $jobcard->job_enq_created_user = Auth::user()->name;
 
-        $user = User::find(1);
-        $user->notify(new AccountApproved());
+       // $user = User::find(1);
+       // $user->notify(new AccountApproved());
         
 
         $jobcard->save();   

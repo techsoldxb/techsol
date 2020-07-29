@@ -116,6 +116,19 @@ class EnquiryController extends Controller
      */
     public function store(Request $request,Enquiry $enquiry)
     {
+
+        $id = Enquiry::where('enq_comp_code', auth()->user()->company)
+        ->orderByDesc('enq_tran_no')->first()->job_enq_number ?? date('Y') . 00000;
+        $year = date('Y');
+        $id_year = substr($id, 0, 4);
+        $seq = $year <> $id_year ? 0 : +substr($id, -5);
+        $new_id = sprintf("%0+4u%0+6u", $year, $seq+1);    
+               
+        $enquiry->enq_tran_no = $new_id;
+
+       
+
+
         $enquiry->enq_cust_name = $request->enq_cust_name;    
         $enquiry->enq_gender = $request->enq_gender;    
         $enquiry->enq_mobile = $request->enq_mobile;    
@@ -139,6 +152,7 @@ class EnquiryController extends Controller
         $enquiry->enq_comments = $request->enq_comments;  
         
         $enquiry->enq_comp_code = Auth::user()->company;
+        $enquiry->enq_comp_name = Auth::user()->flex1;
         
 
        
