@@ -58,11 +58,9 @@ class AccountsController extends Controller
     public function index()
     { 
         
-   
-
            
     $arr['accounts'] = Account::where('th_comp_code', auth()->user()->company)
-    ->where('th_pay_status', 0)->orderBy('id','asc')->get();
+    ->where('th_pay_status', 0)->orderBy('id','desc')->get();
     return view('admin.accounts.index')->with($arr);    
     
     }

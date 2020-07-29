@@ -841,11 +841,14 @@
             $("#example1").DataTable();
             $('#example2').DataTable({
                 "paging": true,
-                "lengthChange": false,
-                "searching": false,
+                "lengthChange": true,
+                "searching": true,
                 "ordering": true,
+                "order": [
+                    [1, "desc"]
+                ],
                 "info": true,
-                "autoWidth": false,
+                "autoWidth": true,
             });
         });
 

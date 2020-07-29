@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Job;
 use App\Fault;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Notifications\AccountApproved;
 
 use Carbon\Carbon;
 use App\Jobcard;
@@ -145,6 +146,9 @@ class JobcardController extends Controller
 
         
         $jobcard->job_enq_created_user = Auth::user()->name;
+
+        $user = User::find(1);
+        $user->notify(new AccountApproved());
         
 
         $jobcard->save();   

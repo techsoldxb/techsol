@@ -45,7 +45,8 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function routeNotificationForSlack()
    {
-       Return 'https://hooks.slack.com/services/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';
+       Return 'https://hooks.slack.com/services/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';
+       
    }
 
 }
