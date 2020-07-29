@@ -95,14 +95,16 @@ class AccountsController extends Controller
     public function store(Request $request, Account $account, Item $item)
     {    
         
-        
+      
+
         
         $id = Account::where('th_comp_code', auth()->user()->company)
         ->orderByDesc('th_tran_no')->first()->th_tran_no ?? date('Y') . 00000;
         $year = date('Y');
         $id_year = substr($id, 0, 4);
         $seq = $year <> $id_year ? 0 : +substr($id, -5);
-        $new_id = sprintf("%0+4u%0+6u", $year, $seq+1);      
+        $new_id = sprintf("%0+4u%0+6u", $year, $seq+1);  
+        $account->th_tran_no = $new_id;    
 
 
 
@@ -135,7 +137,7 @@ class AccountsController extends Controller
         $account->th_bill_no = $request->th_bill_no;
         $account->th_pay_mode = $request->th_pay_mode;
         $account->th_purpose = $request->th_purpose;
-        $account->th_tran_no = $new_id;
+        
         $account->th_emp_id = Auth::user()->id;
         $account->th_emp_name = Auth::user()->name;
         $account->th_dept_code = Auth::user()->dept;

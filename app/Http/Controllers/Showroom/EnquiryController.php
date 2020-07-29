@@ -121,8 +121,7 @@ class EnquiryController extends Controller
         $year = date('Y');
         $id_year = substr($id, 0, 4);
         $seq = $year <> $id_year ? 0 : +substr($id, -5);
-        $new_id = sprintf("%0+4u%0+6u", $year, $seq+1);    
-               
+        $new_id = sprintf("%0+4u%0+6u", $year, $seq+1);                   
         $enquiry->enq_tran_no = $new_id;
 
        
