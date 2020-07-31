@@ -52,7 +52,7 @@ Route::get('/slack', function () {
 
 Auth::routes([
     'verify' => true,
-    'register' => true,
+    'register' => false,
     
     ]);
     
