@@ -850,6 +850,18 @@
                 "info": true,
                 "autoWidth": true,
             });
+
+            $('#example3').DataTable({
+                "paging": true,
+                "lengthChange": true,
+                "searching": true,
+                "ordering": true,
+                "order": [
+                    [1, "desc"]
+                ],
+                "info": true,
+                "autoWidth": true,
+            });
         });
 
     </script>
