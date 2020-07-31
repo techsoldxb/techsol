@@ -23,7 +23,7 @@ class ExpenseController extends Controller
      
 
         $arr['accounts'] = Account::where('th_comp_code', auth()->user()->company)
-        ->where('th_pay_status', 1)
+        ->where('th_pay_status', 0)
         ->groupBy('th_exp_cat_id','th_exp_cat_name')
        ->selectRaw('th_exp_cat_id,th_exp_cat_name, sum(th_bill_amt) as total')       
        ->get();
