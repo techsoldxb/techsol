@@ -147,11 +147,41 @@ class JobcardController extends Controller
         
         $jobcard->job_enq_created_user = Auth::user()->name;
 
-       // $user = User::find(1);
-       // $user->notify(new AccountApproved());
-        
+        $jobcard->save();  
 
-        $jobcard->save();   
+        
+        
+        // The below code to send the SMS
+        // Authorisation details.
+        //$username = "bhhussain@gmail.com";
+        //$hash = "dbe35455acb1be736b354f31be40ccdad84b9140358d269c95f183be1b5ee055";
+    
+        // Config variables. Consult http://api.textlocal.in/docs for more info.
+        //$test = "0";
+    
+        // Data for text message. This is the text message data.
+        //$sender = "TXTLCL"; // This is who the message appears to be from.
+        //$numbers = $request->job_cust_mobile; // A single number or a comma-seperated list of numbers
+        //$todaysms = Carbon::now()->toDate('d-m-Y');
+
+        //$message = "This is a test message from the PHP API script.";
+        //$message = "Dear Customer: Your product $request->job_item_brand-$request->job_item_model-$request->job_item_type is registered for service. Your Job No is $new_id Dt $today Thank you";
+
+        
+        
+        // 612 chars or less
+        // A single number or a comma-seperated list of numbers
+        //$message = urlencode($message);
+        //$data = "username=".$username."&hash=".$hash."&message=".$message."&sender=".$sender."&numbers=".$numbers."&test=".$test;
+        //$ch = curl_init('http://api.textlocal.in/send/?');
+        //curl_setopt($ch, CURLOPT_POST, true);
+        //curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+        //curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        //$result = curl_exec($ch); // This is the result from the API
+        //curl_close($ch);
+      
+
+       
         
         return redirect()->route('job.jobcard.index')->with('success','Transaction created successfully!');
     }

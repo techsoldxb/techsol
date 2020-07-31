@@ -46,6 +46,9 @@ Route::get('/slack', function () {
     
     });
 
+    Route::get('/send-sms',['as'=>'send.sms','uses'=>'SendSMSController@sendSMS']);
+
+
 
 Auth::routes([
     'verify' => true,

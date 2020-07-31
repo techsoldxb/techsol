@@ -93,6 +93,7 @@ class JobworkController extends Controller
             $today = Carbon::now()->toDate('Y-m-d h:i');
             $jobcard->job_completed_date = $today;        
             $jobcard->job_completed_remark = $request->job_completed_remark; 
+            $jobcard->job_engr = $request->job_engr; 
             $jobcard->job_comp_created_user = Auth::user()->name;
     
         }

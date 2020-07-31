@@ -176,6 +176,7 @@ return [
         Maatwebsite\Excel\ExcelServiceProvider::class,
         Riskihajar\Terbilang\TerbilangServiceProvider::class,
         Nexmo\Laravel\NexmoServiceProvider::class,
+        
 
         /*
          * Package Service Providers...
@@ -244,6 +245,7 @@ return [
         'PDF' => Barryvdh\DomPDF\Facade::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
         'Terbilang' => Riskihajar\Terbilang\Facades\Terbilang::class,
+        
 
     ],
 

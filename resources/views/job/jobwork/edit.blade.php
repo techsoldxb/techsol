@@ -58,11 +58,13 @@
             $('#estimation_textbox').hide(); // otherwise hide  
             $('#return_textbox').hide(); // otherwise hide  
             $('#quit_textbox').hide();
+            $('#wfp_textbox').hide(); // otherwise hide
         } else if (select_status == 'Return') {
             $('#complete_textbox').hide(); // otherwise hide   
             $('#estimation_textbox').hide(); // otherwise hide  
             $('#quit_textbox').hide();
             $('#return_textbox').show(); // otherwise hide
+            $('#wfp_textbox').hide(); // otherwise hide
         } else if (select_status == 'Quit') {
             $('#complete_textbox').hide(); // otherwise hide   
             $('#estimation_textbox').hide(); // otherwise hide  
@@ -338,15 +340,49 @@
 
 
 
+
+
+
                 <div class="form-group">
                     <div id="complete_textbox" style="display: none" class="row">
-                        <label class="col-lg-2" for="">Complete Remarks</label>
-                        <div class="col-lg-8">
+                        <label class="col-lg-2" for="">Complete By</label>
+                        <div class="col-lg-3">
+
+
+                            @if ( ( Auth::user()->company ) == 003)
+                            <select class="custom-select" name="job_engr" id="messagetype">
+                                <option value="" selected disabled hidden>Please select</option>
+
+                                <option value="THARIK">THARIK</option>
+                                <option value="SARAVANAN">SARAVANAN</option>
+                                <option value="GUTHUPUDEEN">GUTHUPUDEEN</option>
+                            </select>
+
+                            @elseif ( ( Auth::user()->company ) == 004)
+                            <select class="custom-select" name="job_engr" id="messagetype">
+                                <option value="" selected disabled hidden>Please select</option>
+
+                                <option value="HUSSAIN">HUSSAIN</option>
+                                <option value="ASATHULLAH">ASATHULLAH</option>
+                                <option value="KUMARAN">KUMARAN</option>
+                            </select>
+
+                            @endif
+
+
+
+
+                        </div>
+                        <label class="col-lg-2" for="">Completed Remark</label>
+                        <div class="col-lg-3">
                             <input type="text" class="form-control" id="validationCustom02" name="job_completed_remark"
                                 placeholder="Enter the action remarks in detail">
                         </div>
                     </div>
                 </div>
+
+
+
 
                 <div class="form-group">
                     <div id="quit_textbox" style="display: none" class="row">
