@@ -146,6 +146,25 @@ Route::get('/job/jobinvoice/{jobcard}/print', 'Job\JobinvoiceController@print')-
 
 
 
+//POS - Items / GRN / Sales
+
+Route::resource('/pos/items', 'Pos\ItemsController', ['as'=>'pos'])->middleware('auth');
+Route::resource('/pos/grn', 'Pos\GrnController', ['as'=>'pos'])->middleware('auth');
+
+
+
+//autocomplete
+
+
+
+//Route::get('query', 'AutoCompleteSearchController@index');
+//Route::get('autocomplete', 'AutoCompleteSearchController@autocomplete');
+ Route::get('autocomplete', 'GrnController@autocomplete');
+ Route::get('query', 'GrnController@index1');
+
+
+
+
 
 
 //Export Route

@@ -8,6 +8,7 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -29,8 +30,6 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
     <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
-
-
 
 
 
@@ -147,7 +146,7 @@
 
 
 
-                        @if(Gate::check('isAdmin'))
+                        @if(Gate::check('isAdmin') || Gate::check('isUser'))
 
                         <li class="nav-item">
                             <a href=" {{ route('home') }}" class="nav-link 
@@ -619,9 +618,7 @@
                         </li>
                         @endcan
 
-
-
-                        @if(Gate::check('isAdmin') || Gate::check('isService'))
+                        @can('isService')
                         <li class="font-weight-bold nav-header">JOB CONTRACT</li>
 
                         <li class="nav-item">
@@ -775,7 +772,7 @@
                         </li>
 
 
-                        @endif
+                        @endcan
 
 
 
