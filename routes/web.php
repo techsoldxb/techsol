@@ -137,6 +137,8 @@ Route::resource('/job/jobwork', 'Job\JobworkController', ['as'=>'job'])->middlew
 Route::resource('/job/jobwfp', 'Job\JobwfpController', ['as'=>'job'])->middleware('auth'); //Waiting for parts
 Route::get('/jobcard/jobquit', 'Job\JobcardController@jobquit')->name('jobcard.quit'); 
 
+Route::resource('/job/jobhistory', 'Job\JobhistoryController', ['as'=>'job'])->middleware('auth');
+
 Route::get('/jobinvtotal/indexkkd', 'Job\JobinvtotalController@indexkkd')->name('jobinvtotal.indexkkd'); 
 
 Route::get('/job/jobinvoice/{jobcard}/print', 'Job\JobinvoiceController@print')->name('job.jobinvoice.print');
