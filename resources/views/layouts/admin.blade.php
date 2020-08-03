@@ -776,6 +776,18 @@
 
 
                         @endif
+                        @if(Gate::check('isAdmin'))
+                        <li class="nav-item">
+                            <a href="{{route('job.jobhistory.index')}}" class="nav-link
+                            @if($segment=='jobfault')                
+                            active
+                            @endif">
+                                <i class="nav-icon fas fa-circle text-warning"></i>
+                                <p>Job History</p>
+                            </a>
+                        </li>
+                        @endif
+
 
 
 
