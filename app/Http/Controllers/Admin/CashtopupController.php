@@ -29,10 +29,7 @@ class CashtopupController extends Controller
      */
     public function index()
     {
-        if(!Gate::allows('isAdmin'))
-        {
-            abort(404,"Sorry you are not allowed");
-        }
+       
         
         
         $arr['cashtopups'] = Cashtopup::all();

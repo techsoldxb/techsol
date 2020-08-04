@@ -38,9 +38,11 @@
 
                         <h3>
 
-
+                            @if($user->company =='002')
+                            {{ number_format($topup-$expense) }}
+                            @else
                             {{ number_format($wob+$jobinvamount-$expense) }}
-
+                            @endif
 
 
 
@@ -106,25 +108,34 @@
                 <!-- small box -->
                 <div class="small-box bg-warning">
                     <div class="inner">
+                        @if($user->company =='002')
+                        <h3>
+                            {{ number_format($topup) }}
+                        </h3>
+
+                        <p>Cash Top Up</p>
+                        @else
                         <h3>
                             {{ number_format($wob) }}
-
-
-
-
                         </h3>
 
                         <p>WOB Amount</p>
+                        @endif
                     </div>
                     <div class="icon">
 
                         <i class="ion ion-stats-bars"></i>
                     </div>
 
+                    @if($user->company =='002')
 
-
+                    <a href="{{route('admin.cashtopups.index')}}" class="small-box-footer">More info <i
+                            class="fas fa-arrow-circle-right"></i></a>
+                    @else
                     <a href="{{route('showroom.cash.index')}}" class="small-box-footer">More info <i
                             class="fas fa-arrow-circle-right"></i></a>
+                    @endif
+
 
 
                 </div>
