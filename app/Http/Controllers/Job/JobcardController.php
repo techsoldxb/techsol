@@ -151,7 +151,7 @@ class JobcardController extends Controller
 
         
         
-        // The below code to send the SMS
+        //The below code to send the SMS
         // Authorisation details.
         //$username = "bhhussain@gmail.com";
         //$hash = "dbe35455acb1be736b354f31be40ccdad84b9140358d269c95f183be1b5ee055";

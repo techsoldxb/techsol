@@ -37,6 +37,7 @@
                                 <th>Mobile</th>
                                 <th>Item Type</th>
                                 <th>Brand</th>
+                                <th>Job Type</th>
                                 <th>Received Date</th>
                                 <th>Inspected Date</th>
                                 <th>WIP Date</th>
@@ -93,6 +94,10 @@
                 {
                     data: 'job_item_brand',
                     name: 'job_item_brand'
+                },
+                {
+                    data: 'job_type',
+                    name: 'job_type'
                 },
                 {
                     data: 'job_enq_date',
