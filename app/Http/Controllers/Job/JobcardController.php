@@ -6,12 +6,14 @@ use App\Fault;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Notifications\AccountApproved;
+use App\Notifications\Received;
 
 use Carbon\Carbon;
 use App\Jobcard;
 Use Auth;
 use App\User;
 Use Gate;
+use Illuminate\Notifications\Notifiable;
 
 
 
@@ -149,6 +151,8 @@ class JobcardController extends Controller
 
         $jobcard->save();  
 
+
+        auth()->user()->notify(new Received());
         
         
         //The below code to send the SMS

@@ -25,7 +25,7 @@
                                 <th>Brand</th>
                                 <th>Model</th>
                                 <th>Fault</th>
-                                <th>Status</th>
+
 
                                 <th> Action </th>
                             </tr>
@@ -43,7 +43,7 @@
                                 <td>{{ $c->job_item_brand }}</td>
                                 <td>{{ $c->job_item_model }}</td>
                                 <td>{{ $c->job_fault}}</td>
-                                <td> {{ $c->job_status_name }} </td>
+
 
                                 <td>
                                     <a href="{{ route('job.jobcard.show',$c->id) }}">
@@ -73,7 +73,7 @@
                                 <th>Brand</th>
                                 <th>Model</th>
                                 <th>Fault</th>
-                                <th>Status</th>
+
 
                                 <th> Action </th>
                             </tr>

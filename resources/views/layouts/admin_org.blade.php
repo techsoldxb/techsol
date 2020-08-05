@@ -76,30 +76,6 @@
 
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
-
-                <li class="dropdown">
-
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fas fa-globe" style="color:blue"></i>
-                        {{ __('Notifications') }}
-                        <span class="badge">{{ count(auth()->user()->unreadNotifications)}}</span>
-
-                    </a>
-
-                    <ul class="dropdown-menu" role="menu">
-                        <li>
-
-                            @foreach(auth()->user()->unreadNotifications as $notifications)
-                            <a href="#">{{$notifications->type}}</a>
-                            @endforeach
-                        </li>
-
-                    </ul>
-
-
-
-                </li>
-
                 <li class="nav-item">
 
                     <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
@@ -188,7 +164,8 @@
 
                         <li class="nav-item">
                             <a href=" {{ route('homeicc') }}" class="nav-link
-                @if($segment =='homeicc')                
+                @if($segment =='homeicc')
+                
                 active
                 @endif            
                 ">
@@ -229,10 +206,22 @@
 
 
                         <li class="nav-item has-treeview">
+
                             <ul class="nav nav-treeview">
+
                                 @if(Gate::check('isUser') || Gate::check('isAdmin'))
 
+
+
+
+
+
+
+
                                 @endif
+
+
+
 
                                 @can('isAdmin')
                                 <li class="nav-item">

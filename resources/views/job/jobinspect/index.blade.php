@@ -43,26 +43,44 @@
                         <tbody>
 
                             @if(count($jobcard))
-
                             @foreach($jobcard as $c)
 
                             <tr>
+
+                                @if($c->job_ins_date > now()->subDays(1))
                                 <td>{{ $c->job_enq_number }}</td>
                                 <td>{{ date('d-m-Y h:i A', strtotime($c->job_enq_date)) }}</td>
                                 <td>{{ date('d-m-Y h:i A', strtotime($c->job_ins_date)) }}</td>
                                 <td>{{ $c->job_cust_name }}</td>
-
                                 <td>{{ $c->job_cust_mobile }}</td>
                                 <td>{{ $c->job_item_type }}</td>
                                 <td>{{ $c->job_item_brand }}</td>
                                 <td>{{ $c->job_item_model }}</td>
-
                                 <td>{{ $c->job_fault}}</td>
-
                                 <td> {{ $c->job_ins_remark }} </td>
-
-
-
+                                @elseif($c->job_ins_date > now()->subDays(2))
+                                <td class="text-primary">{{ $c->job_enq_number }}</td>
+                                <td class="text-primary">{{ date('d-m-Y h:i A', strtotime($c->job_enq_date)) }}</td>
+                                <td class="text-primary">{{ date('d-m-Y h:i A', strtotime($c->job_ins_date)) }}</td>
+                                <td class="text-primary">{{ $c->job_cust_name }}</td>
+                                <td class="text-primary">{{ $c->job_cust_mobile }}</td>
+                                <td class="text-primary">{{ $c->job_item_type }}</td>
+                                <td class="text-primary">{{ $c->job_item_brand }}</td>
+                                <td class="text-primary">{{ $c->job_item_model }}</td>
+                                <td class="text-primary">{{ $c->job_fault}}</td>
+                                <td class="text-primary"> {{ $c->job_ins_remark }} </td>
+                                @else
+                                <td class="text-danger">{{ $c->job_enq_number }}</td>
+                                <td class="text-danger">{{ date('d-m-Y h:i A', strtotime($c->job_enq_date)) }}</td>
+                                <td class="text-danger">{{ date('d-m-Y h:i A', strtotime($c->job_ins_date)) }}</td>
+                                <td class="text-danger">{{ $c->job_cust_name }}</td>
+                                <td class="text-danger">{{ $c->job_cust_mobile }}</td>
+                                <td class="text-danger">{{ $c->job_item_type }}</td>
+                                <td class="text-danger">{{ $c->job_item_brand }}</td>
+                                <td class="text-danger">{{ $c->job_item_model }}</td>
+                                <td class="text-danger">{{ $c->job_fault}}</td>
+                                <td class="text-danger"> {{ $c->job_ins_remark }} </td>
+                                @endif
 
 
 

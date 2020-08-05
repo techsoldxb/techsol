@@ -100,10 +100,10 @@
                         </div>
 
 
-                        <label class="col-lg-1" for="">Cheque # *</label>
+                        <label class="col-lg-1" for="">Cheque / TXN </label>
                         <div class="col-lg-2">
                             <input type="text" name="cheque_no" onkeypress="return isNumberKey(event)"
-                                class="form-control" placeholder="Enter cheque number">
+                                class="form-control" placeholder="Enter cheque / TXN number">
                             <div class="clear-fix"></div>
                         </div>
                     </div>
