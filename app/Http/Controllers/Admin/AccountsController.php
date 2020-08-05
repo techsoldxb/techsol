@@ -104,7 +104,17 @@ class AccountsController extends Controller
         $id_year = substr($id, 0, 4);
         $seq = $year <> $id_year ? 0 : +substr($id, -5);
         $new_id = sprintf("%0+4u%0+6u", $year, $seq+1);  
-        $account->th_tran_no = $new_id;    
+        //$account->th_tran_no = $new_id;    
+
+
+        $lastAccountForCurrentYear = Account::where('th_comp_code', auth()->user()->company)
+    ->where('th_tran_no', 'like', date('Y') . '%') // filter for current year numbers
+    ->orderByDesc('th_tran_no', 'desc') // the biggist one first
+    ->first();
+
+    $account->th_tran_no = $lastAccountForCurrentYear
+    ? ($lastAccountForCurrentYear->th_tran_no + 1) // just increase value to 1
+    : (date('Y') . $digitRepresentingASerie . '00001');
 
 
 
@@ -124,6 +134,7 @@ class AccountsController extends Controller
     
 
         $account->th_attach = $filename;
+        $account->th_tran_code = 'EXPJV';
         $account->th_supp_name = $request->th_supp_name;
         $account->th_supp_contact = $request->th_supp_contact;   
 

@@ -59,29 +59,34 @@
             $('#return_textbox').hide(); // otherwise hide  
             $('#quit_textbox').hide();
             $('#wfp_textbox').hide(); // otherwise hide
+            $('#outside_textbox').hide(); // otherwise hide
         } else if (select_status == 'Return') {
             $('#complete_textbox').hide(); // otherwise hide   
             $('#estimation_textbox').hide(); // otherwise hide  
             $('#quit_textbox').hide();
             $('#return_textbox').show(); // otherwise hide
             $('#wfp_textbox').hide(); // otherwise hide
+            $('#outside_textbox').hide(); // otherwise hide
         } else if (select_status == 'Quit') {
             $('#complete_textbox').hide(); // otherwise hide   
             $('#estimation_textbox').hide(); // otherwise hide  
             $('#quit_textbox').show(); // otherwise hide 
             $('#return_textbox').hide(); // otherwise hide   
             $('#wfp_textbox').hide(); // otherwise hide   
+            $('#outside_textbox').hide(); // otherwise hide
         } else if (select_status == 'WFP') {
             $('#complete_textbox').hide(); // otherwise hide   
             $('#estimation_textbox').hide(); // otherwise hide  
             $('#quit_textbox').hide(); // otherwise hide 
             $('#return_textbox').hide(); // otherwise hide   
-            $('#wfp_textbox').show(); // otherwise hide   
+            $('#wfp_textbox').show(); // otherwise hide  
+            $('#outside_textbox').hide(); // otherwise hide 
         } else {
             $('#complete_textbox').hide(); // otherwise hide   
             $('#estimation_textbox').hide(); // otherwise hide  
             $('#quit_textbox').hide(); // otherwise hide 
-            $('#return_textbox').hide(); // otherwise hide  
+            $('#return_textbox').hide(); // otherwise hide 
+            $('#wfp_textbox').hide(); // otherwise hide 
             $('#outside_textbox').show(); // otherwise hide  
 
         }
@@ -287,6 +292,7 @@
 
                             <option value="Completed">Complete</option>
                             <option value="WFP">Waiting for Parts</option>
+                            <option value="Outside">Outside Service</option>
                             <option value="Quit">Quit</option>
                             <option value="Return">To be return</option>
 

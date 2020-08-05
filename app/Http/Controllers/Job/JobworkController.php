@@ -102,6 +102,15 @@ class JobworkController extends Controller
             $jobcard->job_status_name = $request->job_status_name;    
             $jobcard->job_tech_remark = $request->job_tech_remark;             
         }
+        else if (( $request->job_status_name )  == 'Outside') 
+        {
+            $jobcard->job_status_name = $request->job_status_name; 
+            $jobcard->job_os_flag = 1; 
+            $jobcard->job_out_source = $request->job_out_source;   
+            $jobcard->job_os_wq_remark = $request->job_os_wq_remark;             
+            $today = Carbon::now()->toDate('Y-m-d h:i');
+            $jobcard->job_os_wq_date = $today; //Outside service date         
+        }
         else if (( $request->job_status_name )  == 'Quit') 
         {
             $jobcard->job_status_name = $request->job_status_name; 
