@@ -507,7 +507,7 @@
                                     @if($user->user_type =='admin')
 
 
-                                    {{ number_format($cashpayment) }}
+                                    {{ number_format($cashpaymenta) }}
 
 
                                 </span>

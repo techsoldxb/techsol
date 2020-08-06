@@ -45,16 +45,23 @@ class AppServiceProvider extends ServiceProvider
         ->sum('th_bill_amt'));
 });
 
+view()->composer('home', function($view)  {
+    $view->with('cashpaymenta',\App\Account::where('th_pay_status', 0)
+    ->where('th_tran_code','CPV')
+    ->sum('th_bill_amt'));
+});
+
+
     view()->composer('home', function($view)  {
-        $view->with('expenseskkd',\App\Account::where('th_comp_code', '004')->where('th_pay_status', 0)->sum('th_bill_amt'));
+        $view->with('expenseskkd',\App\Account::where('th_comp_code', '004')->where('th_pay_status', 0)->where('th_tran_code','EXPJV')->sum('th_bill_amt'));
 });
 
 view()->composer('home', function($view)  {
-    $view->with('expensesbash',\App\Account::where('th_comp_code', '003')->where('th_pay_status', 0)->sum('th_bill_amt'));
+    $view->with('expensesbash',\App\Account::where('th_comp_code', '003')->where('th_pay_status', 0)->where('th_tran_code','EXPJV')->sum('th_bill_amt'));
 });
 
 view()->composer('home', function($view)  {
-    $view->with('expensesche',\App\Account::where('th_comp_code', '002')->where('th_pay_status', 0)->sum('th_bill_amt'));
+    $view->with('expensesche',\App\Account::where('th_comp_code', '002')->where('th_pay_status', 0)->where('th_tran_code','EXPJV')->sum('th_bill_amt'));
 });
 
 view()->composer('job.jobinvoice.index', function($view)  {
