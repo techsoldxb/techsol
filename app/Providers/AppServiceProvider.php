@@ -122,9 +122,12 @@ view()->composer('*', function($view)  {
 });
 
 view()->composer('*', function($view)  {
-    $view->with('completed',\App\Jobcard::where('job_comp_code', optional(auth()->user())->company)
-    ->where('job_status_name', 'Completed')
-    ->orWhere('job_status_name', 'Outside_Received')
+    $view->with('completed',\App\Jobcard::where('job_comp_code', optional(auth()->user())->company)    
+    ->where(function($query)
+    {
+        $query->where('job_status_name', '=', 'Completed')
+              ->orWhere('job_status_name', '=', 'Outside_Received');
+    })     
     ->count('ID'));
 });
 
