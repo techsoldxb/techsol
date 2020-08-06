@@ -110,10 +110,10 @@
                     <div class="inner">
                         @if($user->company =='002')
                         <h3>
-                            {{ number_format($topup) }}
+                            {{ number_format($cashpayment) }}
                         </h3>
 
-                        <p>Cash Top Up</p>
+                        <p>Cash Payment Amount</p>
                         @else
                         <h3>
                             {{ number_format($wob) }}
@@ -145,28 +145,37 @@
                 <!-- small box -->
                 <div class="small-box bg-danger">
                     <div class="inner">
+
+                        @if($user->company =='002')
                         <h3>
+                            {{ number_format($topup) }}
+                        </h3>
 
-
-
-
-
-
+                        <p>Cash Topup Amount</p>
+                        @else
+                        <h3>
                             {{ number_format($jobinvamount) }}
-
-
-
-
-
                         </h3>
 
                         <p>Job Amount</p>
+                        @endif
+
                     </div>
                     <div class="icon">
                         <i class="ion ion-pie-graph"></i>
                     </div>
+
+
+
+                    @if($user->company =='002')
+
+                    <a href="{{route('admin.cashtopups.index')}}" class="small-box-footer">More info <i
+                            class="fas fa-arrow-circle-right"></i></a>
+                    @else
                     <a href="{{route('job.jobinvtotal.index')}}" class="small-box-footer">More info <i
                             class="fas fa-arrow-circle-right"></i></a>
+
+                    @endif
                 </div>
             </div>
             <!-- ./col -->

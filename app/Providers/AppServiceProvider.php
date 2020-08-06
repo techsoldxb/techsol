@@ -32,8 +32,18 @@ class AppServiceProvider extends ServiceProvider
        
 
             view()->composer('home', function($view)  {
-                $view->with('expense',\App\Account::where('th_comp_code', auth()->user()->company)->where('th_pay_status', 0)->sum('th_bill_amt'));
+                $view->with('expense',\App\Account::where('th_comp_code', auth()->user()->company)
+                ->where('th_pay_status', 0)
+                ->where('th_tran_code','EXPJV')
+                ->sum('th_bill_amt'));
     });
+
+    view()->composer('home', function($view)  {
+        $view->with('cashpayment',\App\Account::where('th_comp_code', auth()->user()->company)
+        ->where('th_pay_status', 0)
+        ->where('th_tran_code','CPV')
+        ->sum('th_bill_amt'));
+});
 
     view()->composer('home', function($view)  {
         $view->with('expenseskkd',\App\Account::where('th_comp_code', '004')->where('th_pay_status', 0)->sum('th_bill_amt'));
