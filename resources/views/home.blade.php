@@ -447,7 +447,7 @@
                                     @if($user->user_type =='admin')
 
 
-                                    {{ number_format($topup-$expensesche-$cashpayment) }}
+                                    {{ number_format($topup-$expensesche-$cashpaymenta) }}
 
 
 
@@ -511,7 +511,7 @@
 
 
                                 </span>
-                                <a href="{{route('showroom.cashkkd.index')}}" class="small-box-footer">More info <i
+                                <a href="{{route('admin.cashpayment.index')}}" class="small-box-footer">More info <i
                                         class="fas fa-arrow-circle-right"></i></a>
                                 @endif
                             </div>

@@ -26,7 +26,11 @@ class JobcompleteController extends Controller
         ,'job_cust_name','job_cust_mobile','job_item_type','job_item_brand','job_item_model'
         ,'job_fault','job_status_name','job_completed_date')
         ->where('job_comp_code', auth()->user()->company)
-        ->where('job_status_name','Completed')->orWhere('job_status_name','Outside_Received')
+        ->where(function($query)
+        {
+            $query->where('job_status_name', '=', 'Completed')
+                  ->orWhere('job_status_name', '=', 'Outside_Received');
+        }) 
         ->get();
     
         return view('job.jobcomplete.index')->with($arr); 

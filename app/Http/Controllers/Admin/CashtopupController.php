@@ -34,6 +34,10 @@ class CashtopupController extends Controller
         
         $arr['cashtopups'] = Cashtopup::all();
         return view('admin.cashtopups.index')->with($arr);
+
+
+
+
     }
 
     /**
