@@ -488,7 +488,7 @@
 
             <div class="form-group">
                 <div class="row">
-                    <label class="col-lg-1" for="">Name *</label>
+                    <label class="col-lg-1" for="">Name</label>
                     <div class="col-lg-5">
                         <input class="form-control" tabindex="1" data-error="Please enter name field." type="text"
                             name="th_supp_name" class="form-control" placeholder="Enter supplier name" required>
@@ -497,12 +497,12 @@
                 </div>
 
 
-
+                <div class="my-3"></div>
 
 
                 <div class="form-group">
                     <div class="row">
-                        <label class="col-lg-1" for="">Amount *</label>
+                        <label class="col-lg-1" for="">Amount</label>
                         <div class="col-lg-2">
 
                             <input type="text" name="th_bill_amt" tabindex="2" onkeypress="return isNumberKey(event)"
@@ -526,6 +526,7 @@
 
                     </div>
 
+                    <div class="my-3"></div>
 
                     <div class="form-group">
                         <div class="row">
@@ -538,7 +539,7 @@
                             </div>
 
 
-                            <label class="col-lg-1" for="">Invoice Date *</label>
+                            <label class="col-lg-1" for="">Invoice Date</label>
                             <div class="col-lg-2">
                                 <input class="form-control datepicker" id="datepicker1" name="th_bill_dt"
                                     value="{{ date('d-m-Y') }}" required>
@@ -557,6 +558,7 @@
 
                         </div>
 
+                        <div class="my-3"></div>
 
 
                         <div class="form-group">
@@ -572,7 +574,7 @@
                          
                         <div class="form-group">
                             <label for="comment">Narration:</label>
-                            <textarea name="th_purpose" tabindex="4" class="form-control" rows="2" id="comment"
+                            <textarea name="th_purpose" tabindex="4" class="form-control col-lg-6" rows="2" id="comment"
                                 placeholder="Enter the narration in detail"></textarea>
                         </div>
 
@@ -582,7 +584,7 @@
 
                     <div class="form-group">
                         <input type="submit" class="btn btn-primary" Value="Save">
-                        <a href="{{route('admin.accounts.index')}}" class="btn btn-warning" role="button">Cancel</a>
+                        <a href="{{route('admin.cashpayment.index')}}" class="btn btn-warning" role="button">Cancel</a>
                     </div>
 
 
