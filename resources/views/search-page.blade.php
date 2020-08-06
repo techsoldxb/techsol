@@ -37,7 +37,7 @@
         </div>
     </div>
     <script type="text/javascript">
-        var route = "{{ url('autocomplete') }}";
+        var route = "{{ url('autocomplete1') }}";
         $('#search').typeahead({
             source: function (term, process) {
                 return $.get(route, {

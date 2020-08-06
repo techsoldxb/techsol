@@ -480,6 +480,25 @@
                         @can('isUser')
 
                         <li class="nav-header">SHOWROOM</li>
+
+                        <li class="nav-item">
+                            <a href="{{route('admin.cashpayment.create')}}" class="nav-link">
+                                <i class="nav-icon fa fa-check text-danger"></i>
+                                <p>Payment</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="{{route('admin.cashpayment.index')}}" class="nav-link
+            @if($segment=='cashpayment')
+            active
+            @endif">
+                                <i class="nav-icon far fa-circle text-danger"></i>
+                                <p>Payment Details</p>
+                            </a>
+                        </li>
+
+
                         <li class="nav-item">
                             <a href="{{route('admin.accounts.create')}}" class="nav-link
             @if($segment=='accounts1')

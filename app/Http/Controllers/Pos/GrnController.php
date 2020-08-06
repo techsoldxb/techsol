@@ -41,10 +41,7 @@ class GrnController extends Controller
            
     } 
     
-    public function index1()
-    {
-        return view('pos.grn.create');
-    }
+  
 
 
     /**
