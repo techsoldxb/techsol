@@ -341,7 +341,7 @@
             @if($segment=='cashpayment')
             active
             @endif">
-                                <i class="nav-icon far fa-circle text-danger"></i>
+                                <i class="nav-icon fab fa-paypal text-success"></i>
                                 <p>Payment Details</p>
                             </a>
                         </li>
@@ -353,7 +353,7 @@
             active
             @endif">
                                 <i class="nav-icon far fa-circle text-info"></i>
-                                <p>Add Expenses</p>
+                                <p>Expenses</p>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -361,7 +361,7 @@
             @if($segment=='accounts')
             active
             @endif">
-                                <i class="nav-icon far fa-circle text-danger"></i>
+                                <i class="nav-icon fab fa-etsy text-danger"></i>
                                 <p>Expense Details</p>
                             </a>
                         </li>
@@ -409,7 +409,7 @@
         @if($segment=='cashtopups')                
         active
         @endif                
-        "> <i class="far fa-dot-circle nav-icon"></i>
+        "> <i class="fa fa-gas-pump nav-icon"></i>
                                 <p>Cash Topup</p>
                             </a>
                         </li>
