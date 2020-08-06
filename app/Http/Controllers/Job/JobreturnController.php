@@ -26,7 +26,11 @@ class JobreturnController extends Controller
         ,'job_cust_name','job_cust_mobile','job_item_type','job_item_brand','job_item_model',
         'job_fault','job_status_name')
         ->where('job_comp_code', auth()->user()->company)
-        ->where('job_status_name','Return')->orWhere('job_status_name','Received_NR')
+        ->where(function($query)
+        {
+            $query->where('job_status_name', '=', 'Return')
+                  ->orWhere('job_status_name', '=', 'Received_NR');
+        })         
         ->get();
     
         return view('job.jobreturn.index')->with($arr); 
