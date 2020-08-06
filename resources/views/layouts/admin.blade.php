@@ -235,66 +235,13 @@
                                 @endif
 
                                 @can('isAdmin')
-                                <li class="nav-item">
-
-                                    <a href="{{route('admin.unpaidbills.index')}}" class="nav-link 
-                
-                @if($segment=='unpaidbills')                
-                active
-                @endif">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Unpaid Bills - All</p>
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="{{route('admin.allpaidbills.index')}}" class="nav-link
-                @if($segment=='allpaidbills')                
-                active
-                @endif                
-                ">
-
-                                        <i class="far fa-dot-circle nav-icon"></i>
-                                        <p>Paid Bills - All</p>
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="{{route('admin.advanceall.index')}}" class="nav-link
-                @if($segment=='advanceall')                
-                active
-                @endif                
-                ">
-
-                                        <i class="far fa-dot-circle nav-icon"></i>
-                                        <p>Advance Request</p>
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="{{route('admin.advancesettlement.index')}}" class="nav-link
-                @if($segment=='advancesettlement')                
-                active
-                @endif                
-                ">
-
-                                        <i class="far fa-dot-circle nav-icon"></i>
-                                        <p>Advance Settlement</p>
-                                    </a>
-                                </li>
 
 
-                                <li class="nav-item">
-                                    <a href="{{route('admin.advancehistory.index')}}" class="nav-link
-                @if($segment=='advancehistory')                
-                active
-                @endif                
-                ">
 
-                                        <i class="far fa-dot-circle nav-icon"></i>
-                                        <p>Advance History</p>
-                                    </a>
-                                </li>
+
+
+
+
 
                                 <li class="nav-item">
                                     <a href="{{route('admin.cashtopups.index')}}" class="nav-link
@@ -374,105 +321,6 @@
                             </ul>
                         </li>
 
-
-                        <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-wrench"></i>
-
-
-                                <p>
-                                    Job Contract
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="{{route('job.jobcard.create')}}" class="nav-link
-                @if($segment=='jobcard')                
-                active
-                @endif">
-                                        <i class="nav-icon far fa-circle text-info"></i>
-                                        <p>Job Enquiry</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{route('job.jobcard.index')}}" class="nav-link">
-                                        <i class="nav-icon far fa-circle text-danger"></i>
-                                        <p>Received</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{route('job.jobinspect.index')}}" class="nav-link">
-                                        <i class="nav-icon far fa-circle text-warning"></i>
-                                        <p>Inspected</p>
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="{{route('job.jobcomplete.index')}}" class="nav-link">
-                                        <i class="nav-icon far fa-circle text-secondary"></i>
-                                        <p>Completed</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{route('job.jobinvoice.index')}}" class="nav-link">
-                                        <i class="nav-icon fas fa-circle text-primary"></i>
-                                        <p>Invoiced</p>
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="{{route('admin.cheque.index')}}" class="nav-link">
-                                        <i class="nav-icon far fa-circle text-primary"></i>
-                                        <p>Waiting for Approval</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{route('admin.cheque.index')}}" class="nav-link">
-                                        <i class="nav-icon far fa-circle text-sucess"></i>
-                                        <p>Approved</p>
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="pages/charts/inline.html" class="nav-link">
-                                        <i class="nav-icon fas fa-circle text-info"></i>
-                                        <p>Returned</p>
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="pages/charts/inline.html" class="nav-link">
-                                        <i class="nav-icon fas fa-circle text-success"></i>
-                                        <p>Not Repaired</p>
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="pages/charts/inline.html" class="nav-link">
-                                        <i class="nav-icon fas fa-circle text-warning"></i>
-                                        <p>Not Approved</p>
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="pages/charts/inline.html" class="nav-link">
-                                        <i class="nav-icon fas fa-circle text-danger"></i>
-                                        <p>Quit Job</p>
-                                    </a>
-                                </li>
-
-
-                                <li class="nav-item">
-                                    <a href="{!! url('/calendar') !!}" class="nav-link">
-
-                                        <i class="nav-icon far fa-calendar-alt"></i>
-                                        <p>Calander</p>
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </li>
 
 
 
@@ -593,6 +441,9 @@
                                 <p>Waiting for Parts</p>
                             </a>
                         </li>
+
+                        @if(Gate::check('isAdmin') || Gate::check('isService'))
+
                         <li class="nav-header">JOB CONTRACT</li>
 
                         <li class="nav-item">
@@ -658,6 +509,8 @@
                                 <p>Users</p>
                             </a>
                         </li>
+
+                        @endif
                         @endcan
 
 
