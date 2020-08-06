@@ -447,7 +447,7 @@
                                     @if($user->user_type =='admin')
 
 
-                                    {{ number_format($wobche-$expensesche) }}
+                                    {{ number_format($topup-$expensesche-$cashpayment) }}
 
 
 
@@ -501,13 +501,13 @@
                             <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-coins"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text">WOB Amount - Chennai</span>
+                                <span class="info-box-text">CPV Amount - Chennai</span>
                                 <span class="info-box-number">
 
                                     @if($user->user_type =='admin')
 
 
-                                    {{ number_format($wobche) }}
+                                    {{ number_format($cashpayment) }}
 
 
                                 </span>
@@ -522,11 +522,13 @@
                     <!-- /.col -->
                     <div class="col-12 col-sm-6 col-md-3">
                         <div class="info-box mb-3">
-                            <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-users"></i></span>
+                            <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-gas-pump"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text">Users</span>
-                                <span class="info-box-number">{{$users}}</span>
+                                <span class="info-box-text">Cash Top Up - Chennai</span>
+                                <span class="info-box-number">{{$topup}}</span>
+                                <a href="{{route('admin.cashtopups.index')}}" class="small-box-footer">More info <i
+                                        class="fas fa-arrow-circle-right"></i></a>
                             </div>
                             <!-- /.info-box-content -->
                         </div>
