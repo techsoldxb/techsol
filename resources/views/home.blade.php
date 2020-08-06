@@ -129,7 +129,7 @@
 
                     @if($user->company =='002')
 
-                    <a href="{{route('admin.cashtopups.index')}}" class="small-box-footer">More info <i
+                    <a href="{{route('admin.cashpayment.index')}}" class="small-box-footer">More info <i
                             class="fas fa-arrow-circle-right"></i></a>
                     @else
                     <a href="{{route('showroom.cash.index')}}" class="small-box-footer">More info <i

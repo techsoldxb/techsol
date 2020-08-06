@@ -60,6 +60,7 @@ class AccountsController extends Controller
         
            
     $arr['accounts'] = Account::where('th_comp_code', auth()->user()->company)
+    ->where('th_tran_code','EXPJV')
     ->orderBy('id','desc')->get();
     return view('admin.accounts.index')->with($arr);    
     
