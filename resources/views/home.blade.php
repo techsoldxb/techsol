@@ -39,7 +39,7 @@
                         <h3>
 
                             @if($user->company =='002')
-                            {{ number_format($topup-$expense) }}
+                            {{ number_format($topup-$expense-$cashpayment) }}
                             @else
                             {{ number_format($wob+$jobinvamount-$expense) }}
                             @endif
