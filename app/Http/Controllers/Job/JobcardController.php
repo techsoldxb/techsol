@@ -152,7 +152,7 @@ class JobcardController extends Controller
         $jobcard->save();  
 
 
-        auth()->user()->notify(new Received());
+       // auth()->user()->notify(new Received());
         
         
         //The below code to send the SMS

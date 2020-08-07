@@ -346,6 +346,18 @@
                             </a>
                         </li>
 
+                        <li class="nav-item">
+                            <a href="{{route('pos.suppliers.index')}}" class="nav-link
+            @if($segment=='suppliers')
+            active
+            @endif">
+                                <i class="nav-icon far fa-building"></i>
+
+
+                                <p>Suppliers</p>
+                            </a>
+                        </li>
+
 
                         <li class="nav-item">
                             <a href="{{route('admin.accounts.create')}}" class="nav-link
@@ -442,17 +454,7 @@
                             </a>
                         </li>
 
-                        <li class="nav-item">
-                            <a href="{{route('pos.suppliers.index')}}" class="nav-link
-            @if($segment=='suppliers')
-            active
-            @endif">
-                                <i class="nav-icon far fa-building"></i>
 
-
-                                <p>Suppliers</p>
-                            </a>
-                        </li>
 
                         @if(Gate::check('isAdmin') || Gate::check('isService'))
 
