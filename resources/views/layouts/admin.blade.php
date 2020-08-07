@@ -19,7 +19,7 @@
 
     </script>
 
-
+    <link rel="icon" href="{{ URL::asset('favicon.ico') }}" type="image/x-icon" />
 
     <!-- daterangepicker -->
 
