@@ -52,7 +52,7 @@ Route::get('/slack', function () {
 
 Auth::routes([
     'verify' => true,
-    'register' => false,
+    'register' => true,
     
     ]);
     
@@ -153,6 +153,7 @@ Route::get('/job/jobinvoice/{jobcard}/print', 'Job\JobinvoiceController@print')-
 
 Route::resource('/pos/items', 'Pos\ItemsController', ['as'=>'pos'])->middleware('auth');
 Route::resource('/pos/grn', 'Pos\GrnController', ['as'=>'pos'])->middleware('auth');
+Route::resource('/pos/suppliers', 'Pos\SupplierController', ['as'=>'pos'])->middleware('auth');
 
 
 

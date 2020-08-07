@@ -11,7 +11,7 @@ use Carbon\Carbon;
 
 use App\Account;
 use App\Item;
-use App\Category;
+use App\Supplier;
 Use Auth;
 Use Gate;
 use App\Mail\NewBill;
@@ -46,7 +46,7 @@ class CashpaymentController extends Controller
     public function create()
     {
         
-        $arr['category'] = Category::where('exp_group_status',1)->orderBy('exp_group_name','asc')->get();
+        $arr['supplier'] = Supplier::where('supp_status',1)->orderBy('supp_name','asc')->get();
         
         return view('admin.cashpayment.create')->with($arr);
     }
@@ -65,8 +65,9 @@ class CashpaymentController extends Controller
         $id_year = substr($id, 0, 4);
         $seq = $year <> $id_year ? 0 : +substr($id, -5);
         $new_id = sprintf("%0+4u%0+6u", $year, $seq+1);  
-        //$account->th_tran_no = $new_id;    
+       // $account->th_tran_no = $new_id;    
 
+        
 
         $lastAccountForCurrentYear = Account::where('th_comp_code', auth()->user()->company)
     ->where('th_tran_no', 'like', date('Y') . '%') // filter for current year numbers
@@ -76,6 +77,7 @@ class CashpaymentController extends Controller
     $account->th_tran_no = $lastAccountForCurrentYear
     ? ($lastAccountForCurrentYear->th_tran_no + 1) // just increase value to 1
     : (date('Y') . $digitRepresentingASerie . '00001');
+
 
 
 
