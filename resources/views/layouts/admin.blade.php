@@ -203,7 +203,13 @@
 
                         @endif
 
-                        @can('isUser')
+
+
+                        @if(Gate::check('isUser') || Gate::check('isSuper_User'))
+
+
+
+
                         <li class="nav-item">
                             <a href=" {{ route('home') }}" class="nav-link
             @if(!$segment)
@@ -218,7 +224,7 @@
 
                         </li>
 
-                        @endcan
+                        @endif
 
 
 
@@ -325,16 +331,22 @@
 
 
 
-                        @can('isUser')
+
+
+                        @if(Gate::check('isUser') || Gate::check('isSuper_User'))
+
+
 
                         <li class="nav-header">SHOWROOM</li>
 
+                        @can('isSuper_User')
                         <li class="nav-item">
                             <a href="{{route('admin.cashpayment.create')}}" class="nav-link">
                                 <i class="nav-icon fa fa-check text-danger"></i>
                                 <p>Payment</p>
                             </a>
                         </li>
+
 
                         <li class="nav-item">
                             <a href="{{route('admin.cashpayment.index')}}" class="nav-link
@@ -345,6 +357,9 @@
                                 <p>Payment Details</p>
                             </a>
                         </li>
+
+
+
 
                         <li class="nav-item">
                             <a href="{{route('pos.suppliers.index')}}" class="nav-link
@@ -357,7 +372,7 @@
                                 <p>Suppliers</p>
                             </a>
                         </li>
-
+                        @endcan
 
                         <li class="nav-item">
                             <a href="{{route('admin.accounts.create')}}" class="nav-link

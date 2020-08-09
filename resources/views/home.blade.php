@@ -23,7 +23,7 @@
 <!-- /.content-header -->
 
 
-@if($user->user_type =='user')
+@if($user->user_type =='user' || $user->user_type =='super_user')
 
 <!-- Main content -->
 <section class="content">

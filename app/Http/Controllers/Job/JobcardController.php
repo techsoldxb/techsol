@@ -103,7 +103,7 @@ class JobcardController extends Controller
     public function store(Request $request, Jobcard $jobcard,User $user)
     {
 
-        $this->validate($request,['job_cust_mobile'=>'required|digits:10']);
+        $this->validate($request,['job_cust_mobile'=>'required|digits:12']);
 
         $id = Jobcard::where('job_comp_code', auth()->user()->company)
         ->orderByDesc('job_enq_number')->first()->job_enq_number ?? date('Y') . 00000;
@@ -154,40 +154,59 @@ class JobcardController extends Controller
 
        // auth()->user()->notify(new Received());
         
-        
         //The below code to send the SMS
         // Authorisation details.
-        //$username = "bhhussain@gmail.com";
-        //$hash = "dbe35455acb1be736b354f31be40ccdad84b9140358d269c95f183be1b5ee055";
+        $username = "bhhussain@gmail.com";
+        $username = urlencode($username);
+        $hash = "dbe35455acb1be736b354f31be40ccdad84b9140358d269c95f183be1b5ee055";
+        $apiKey = urlencode('A7s0+DhGAqs-gK1nBO52AFN9V4KUM1ENStdkMAjBnL');
+
+        
     
         // Config variables. Consult http://api.textlocal.in/docs for more info.
-        //$test = "0";
+       // $test = "0";
     
         // Data for text message. This is the text message data.
-        //$sender = "TXTLCL"; // This is who the message appears to be from.
-        //$numbers = $request->job_cust_mobile; // A single number or a comma-seperated list of numbers
+        $sender = urlencode('TECCOM'); // This is who the message appears to be from.
+        $customer = $request->job_cust_mobile;
+        $numbers = $customer; // A single number or a comma-seperated list of numbers
         //$todaysms = Carbon::now()->toDate('d-m-Y');
+        $todaysms = "2020-08-09";
+        $todaysms = urlencode($todaysms);
+
+       // $jobid = urlencode($new_id);
 
         //$message = "This is a test message from the PHP API script.";
-        //$message = "Dear Customer: Your product $request->job_item_brand-$request->job_item_model-$request->job_item_type is registered for service. Your Job No is $new_id Dt $today Thank you";
+        $brand = $request->job_item_brand;
+        $model = $request->job_item_model;
+        $type = $request->job_item_type;
+        //$message = "Dear Customer: Your product $brand-$model-$type is registered for service. Your Job No is $new_id.Thank you";
+        //$message = "Dear%20Customer%20Your%20product%20HP%20Pro%20Desk%20Laptop%20Job%20No%20%24jobid%20is%20repaired%20and%20ready%20to%20collect%20Thank%20you";
 
+        $message = rawurlencode('Dear Customer Your product HP Pro Desk Laptop Job No 2020100001 is repaired and ready to collect Thank you');
+
+        
+        //$message = rawurlencode($message);
+        //echo $message;
         
         
         // 612 chars or less
         // A single number or a comma-seperated list of numbers
         //$message = urlencode($message);
-        //$data = "username=".$username."&hash=".$hash."&message=".$message."&sender=".$sender."&numbers=".$numbers."&test=".$test;
-        //$ch = curl_init('http://api.textlocal.in/send/?');
+        
+        //$data = "username=".$username."&hash=".$hash."&message=".$message."&sender=".$sender."&numbers=".$numbers;
+        $data = array('apikey' => $apiKey, 'numbers' => $numbers, "sender" => $sender, "message" => $message);
+
+        $ch = curl_init('http://api.textlocal.in/send/?');
         //curl_setopt($ch, CURLOPT_POST, true);
         //curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
         //curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        //$result = curl_exec($ch); // This is the result from the API
-        //curl_close($ch);
-      
+       // $result = curl_exec($ch); // This is the result from the API        
+       // curl_close($ch);
 
-       
+       // echo $result;
         
-        return redirect()->route('job.jobcard.index')->with('success','Transaction created successfully!');
+       // return redirect()->route('job.jobcard.index')->with('success','Transaction created successfully!');
     }
 
     /**
