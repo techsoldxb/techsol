@@ -431,6 +431,8 @@
                             </a>
                         </li>
 
+                        @can('isSuper_User')
+
                         <li class="nav-item">
                             <a href="{{route('admin.cashtopups.index')}}" class="nav-link
         @if($segment=='cashtopups')                
@@ -441,7 +443,7 @@
                             </a>
                         </li>
 
-
+                        @endcan
 
 
                         <li class="nav-item">
