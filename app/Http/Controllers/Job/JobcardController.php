@@ -184,7 +184,35 @@ class JobcardController extends Controller
         //$message = "Dear Customer: Your product $brand-$model-$type is registered for service. Your Job No is $new_id.Thank you";
         //$message = "Dear%20Customer%20Your%20product%20HP%20Pro%20Desk%20Laptop%20Job%20No%20%24jobid%20is%20repaired%20and%20ready%20to%20collect%20Thank%20you";
 
-        $message = rawurlencode('Dear Customer: Your product is registered for service. Please contact 9944942308 to know the status. Thank you');
+        if (  ( Auth::user()->company )  == 003) {
+            
+            $message = rawurlencode('Dear Customer: Your product is registered for service. Please contact 9944942308 to know the status. Thank you');
+            $data = array('apikey' => $apiKey, 'numbers' => $numbers, "sender" => $sender, "message" => $message);
+
+            $ch = curl_init('http://api.textlocal.in/send/?');
+            curl_setopt($ch, CURLOPT_POST, true);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            $result = curl_exec($ch); // This is the result from the API        
+            curl_close($ch);
+    
+        }
+        else if (  ( Auth::user()->company )  == 004) {
+
+            $message = rawurlencode('Dear Customer: Your product is registered for service. Please contact 9600350030 to know the status. Thank you');
+            $data = array('apikey' => $apiKey, 'numbers' => $numbers, "sender" => $sender, "message" => $message);
+
+            $ch = curl_init('http://api.textlocal.in/send/?');
+            curl_setopt($ch, CURLOPT_POST, true);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            $result = curl_exec($ch); // This is the result from the API        
+            curl_close($ch);
+    
+
+        }
+
+        
 
         
         //$message = rawurlencode($message);
@@ -196,15 +224,7 @@ class JobcardController extends Controller
         //$message = urlencode($message);
         
         //$data = "username=".$username."&hash=".$hash."&message=".$message."&sender=".$sender."&numbers=".$numbers;
-        $data = array('apikey' => $apiKey, 'numbers' => $numbers, "sender" => $sender, "message" => $message);
-
-        $ch = curl_init('http://api.textlocal.in/send/?');
-        curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        $result = curl_exec($ch); // This is the result from the API        
-        curl_close($ch);
-
+       
        // echo $result;
         
         return redirect()->route('job.jobcard.index')->with('success','Transaction created successfully!');
