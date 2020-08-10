@@ -103,7 +103,7 @@ class JobcardController extends Controller
     public function store(Request $request, Jobcard $jobcard,User $user)
     {
 
-        $this->validate($request,['job_cust_mobile'=>'required|digits:12']);
+        $this->validate($request,['job_cust_mobile'=>'required|digits:10']);
 
         $id = Jobcard::where('job_comp_code', auth()->user()->company)
         ->orderByDesc('job_enq_number')->first()->job_enq_number ?? date('Y') . 00000;
@@ -162,14 +162,15 @@ class JobcardController extends Controller
         $apiKey = urlencode('A7s0+DhGAqs-gK1nBO52AFN9V4KUM1ENStdkMAjBnL');
 
         
-    
+        $countrycode = 91;
+
         // Config variables. Consult http://api.textlocal.in/docs for more info.
        // $test = "0";
     
         // Data for text message. This is the text message data.
         $sender = urlencode('TECCOM'); // This is who the message appears to be from.
         $customer = $request->job_cust_mobile;
-        $numbers = $customer; // A single number or a comma-seperated list of numbers
+        $numbers = $countrycode.$customer; // A single number or a comma-seperated list of numbers
         //$todaysms = Carbon::now()->toDate('d-m-Y');
         $todaysms = "2020-08-09";
         $todaysms = urlencode($todaysms);
