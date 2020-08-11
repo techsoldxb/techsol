@@ -210,8 +210,8 @@ class JobcardController extends Controller
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             $result = curl_exec($ch); // This is the result from the API        
             curl_close($ch);
-    
-
+            
+            // echo $result;
         }
 
         
