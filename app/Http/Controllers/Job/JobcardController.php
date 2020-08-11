@@ -119,9 +119,12 @@ class JobcardController extends Controller
         $today = Carbon::now()->toDate('Y-m-d h:i');
         $jobcard->job_enq_date = $today;
         
+        $countrycode = 91;
+        $customer = $request->job_cust_mobile;
+        $numbers = $countrycode.$customer; // A single number or a comma-seperated list of numbers
 
         $jobcard->job_cust_name = strtoupper($request->job_cust_name);
-        $jobcard->job_cust_mobile = $request->job_cust_mobile;
+        $jobcard->job_cust_mobile = $numbers;
         $jobcard->job_cust_email = $request->job_cust_email;
 
         $jobcard->job_item_details = $request->job_item_details;  
@@ -162,15 +165,14 @@ class JobcardController extends Controller
         $apiKey = urlencode('A7s0+DhGAqs-gK1nBO52AFN9V4KUM1ENStdkMAjBnL');
 
         
-        $countrycode = 91;
+       
 
         // Config variables. Consult http://api.textlocal.in/docs for more info.
        // $test = "0";
     
         // Data for text message. This is the text message data.
         $sender = urlencode('TECCOM'); // This is who the message appears to be from.
-        $customer = $request->job_cust_mobile;
-        $numbers = $countrycode.$customer; // A single number or a comma-seperated list of numbers
+        
         //$todaysms = Carbon::now()->toDate('d-m-Y');
         $todaysms = "2020-08-09";
         $todaysms = urlencode($todaysms);
