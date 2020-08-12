@@ -110,7 +110,7 @@ class JobcardController extends Controller
         $year = date('Y');
         $id_year = substr($id, 0, 4);
         $seq = $year <> $id_year ? 0 : +substr($id, -5);
-        $new_id = sprintf("%0+4u%0+6u", $year, $seq+1); 
+        //$new_id = sprintf("%0+4u%0+6u", $year, $seq+1); 
         
         $lastAccountForCurrentYear = Jobcard::where('job_comp_code', auth()->user()->company)
         ->where('job_enq_date', '>','11/08/2020')
@@ -122,7 +122,7 @@ class JobcardController extends Controller
         ? ($lastAccountForCurrentYear->job_enq_number + 1) // just increase value to 1
         : (date('Y') . $digitRepresentingASerie . '0001');
 
-        
+        $new_id = $jobcard->job_enq_number; 
 
 
         $jobcard->job_comp_code = Auth::user()->company;
