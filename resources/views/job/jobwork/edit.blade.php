@@ -1,6 +1,10 @@
 @extends('layouts.admin')
 @section('content')
 
+
+
+
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <!-- This script is used to allow only number in the bill amount field -->
@@ -147,11 +151,9 @@
     <div class="container-fluid">
 
 
-        <form class="needs-validation" novalidate method="POST"
+        <form class="needs-validation" novalidate method="POST" id="verifyDocForm"
             action="{{ route('job.jobwork.update', $jobcard->id) }}">
             @method('PUT')
-
-
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 
@@ -456,10 +458,51 @@
 
 
                 <div class="form-group">
-                    <input type="submit" class="btn btn-primary" Value="Save">
+
+
+
+                    <input type="submit" id="verifyDoc" class="btn btn-primary" Value="Save">
+
+
+                    <script>
+                        {
+
+
+                            jQuery(document).on('input', 'form.needs-validation ', function (event) {
+                                var form = jQuery("#verifyDocForm");
+                                event.preventDefault();
+                                swal({
+                                    title: "",
+                                    text: "...",
+                                    type: "info",
+                                    howCancelButton: true,
+                                    buttonsStyling: true,
+                                    confirmButtonText: "ok",
+                                    cancelButtonText: "cancel"
+                                }).then(function (isConfirm) {
+                                    if (isConfirm) {
+                                        swal({
+                                            title: '....',
+                                            text: 'info'
+                                        }).then(function () {
+                                            form.submit();
+                                        });
+                                    } else {
+                                        swal("Cancelled", "", "error");
+                                    }
+                                });
+
+                            });
+
+                    </script>
+
+
+
                     <a href="{{route('job.jobwork.index')}}" class="btn btn-warning" role="button">Cancel</a>
                 </div>
         </form>
+
+
     </div>
 </section>
 @endsection
