@@ -120,7 +120,7 @@ class JobcardController extends Controller
     
         $jobcard->job_enq_number = $lastAccountForCurrentYear
         ? ($lastAccountForCurrentYear->job_enq_number + 1) // just increase value to 1
-        : (date('Y') . $digitRepresentingASerie . '0001');
+        : (date('Y') . $digitRepresentingASerie . '00001');
 
         $new_id = $jobcard->job_enq_number; 
 
