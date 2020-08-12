@@ -206,12 +206,12 @@ class JobcardController extends Controller
             
             $data = array('apikey' => $apiKey, 'numbers' => $numbers, "sender" => $sender, "message" => $message);
 
-          //  $ch = curl_init('http://api.textlocal.in/send/?');
-          //  curl_setopt($ch, CURLOPT_POST, true);
-          //  curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-          //  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-          //  $result = curl_exec($ch); // This is the result from the API        
-          //  curl_close($ch);
+            $ch = curl_init('http://api.textlocal.in/send/?');
+            curl_setopt($ch, CURLOPT_POST, true);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            $result = curl_exec($ch); // This is the result from the API        
+            curl_close($ch);
 
             // echo $result;
     
