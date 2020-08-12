@@ -199,9 +199,26 @@
                     </div>
                     <label class="col-lg-2" for="">Model</label>
                     <div class="col-lg-3">
-                        <input type="text" class="form-control" id="validationCustom02" name="job_item_model"
+                        <input type="text" class="form-control" id="job_item_model" name="job_item_model" maxlength="15"
                             placeholder="Enter model number">
                     </div>
+                    <script>
+                        $("#job_item_model").keypress(function (e) {
+                            $("#error_sp_msg").remove();
+                            var k = e.keyCode,
+                                $return = ((k > 64 && k < 91) || (k > 96 && k < 123) || k == 8 || k == 32 || (
+                                    k >= 48 && k <= 57));
+                            if (!$return) {
+                                $("<span/>", {
+                                    "id": "error_sp_msg",
+                                    "html": "Special characters not allowed !!!!!"
+                                }).insertAfter($(this));
+                                return false;
+                            }
+
+                        })
+
+                    </script>
                 </div>
             </div>
 
@@ -212,7 +229,7 @@
                         <select class="custom-select" name="job_item_type" required>
                             <option value="" selected disabled hidden>Please select</option>
                             <option value="Laptop">Laptop</option>
-                            <option value="Desktop">Desktop - CPU</option>
+                            <option value="Desktop">Desktop</option>
                             <option value="Printer">Printer</option>
                             <option value="Monitor">Monitor</option>
                             <option value="UPS">UPS</option>
