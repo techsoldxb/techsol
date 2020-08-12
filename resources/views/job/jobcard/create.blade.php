@@ -211,7 +211,7 @@
                             if (!$return) {
                                 $("<span/>", {
                                     "id": "error_sp_msg",
-                                    "html": "Special characters not allowed !!!!!"
+                                    "html": "Special characters not allowed"
                                 }).insertAfter($(this));
                                 return false;
                             }
