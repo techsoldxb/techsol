@@ -16,8 +16,9 @@ class CreateGrnuploadsTable extends Migration
     {
         Schema::create('grnuploads', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->date('grn_comp_code')->nullable();
+            $table->string('grn_comp_code')->nullable();
             $table->date('grn_date')->nullable();
+            $table->string('grn_tran_code')->nullable();
             $table->string('grn_number')->nullable();
             $table->string('supp_code')->nullable();
             $table->string('supp_name')->nullable();
@@ -26,6 +27,7 @@ class CreateGrnuploadsTable extends Migration
             $table->string('supp_inv_number')->nullable();
             $table->date('supp_inv_date')->nullable();
             $table->integer('grn_amount')->nullable();
+            $table->string('grn_desc')->nullable();
             $table->integer('paid_amount1')->nullable();
             $table->integer('paid_amount2')->nullable();
             $table->integer('paid_amount3')->nullable();
