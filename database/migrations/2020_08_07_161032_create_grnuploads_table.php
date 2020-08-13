@@ -16,24 +16,27 @@ class CreateGrnuploadsTable extends Migration
     {
         Schema::create('grnuploads', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('grn_comp_code')->nullable();
-            $table->date('grn_date')->nullable();
-            $table->string('grn_tran_code')->nullable();
-            $table->string('grn_number')->nullable();
+
+            $table->string('td_comp_code')->nullable(); 
+            $table->string('td_tran_code')->nullable(); 
+            $table->string('td_doc_no')->nullable(); 
+            $table->date('td_doc_dt')->nullable(); 
+            $table->string('td_doc_ref')->nullable(); 
+            $table->integer('td_doc_amt')->nullable(); 
+            $table->string('td_desc')->nullable(); 
+            $table->string('td_cr_uid')->nullable(); 
+            $table->date('td_cr_dt')->nullable();             
             $table->string('supp_code')->nullable();
             $table->string('supp_name')->nullable();
             $table->string('act_supp_code')->nullable();
-            $table->string('act_supp_name')->nullable();
-            $table->string('supp_inv_number')->nullable();
-            $table->date('supp_inv_date')->nullable();
-            $table->integer('grn_amount')->nullable();
-            $table->string('grn_desc')->nullable();
+            $table->string('act_supp_name')->nullable();            
+            $table->date('supp_inv_date')->nullable();                        
             $table->integer('paid_amount1')->nullable();
             $table->integer('paid_amount2')->nullable();
             $table->integer('paid_amount3')->nullable();
             $table->date('paid_date1')->nullable();
             $table->date('paid_date2')->nullable();
-            $table->date('paid_date3')->nullable();
+            $table->date('paid_date3')->nullable();                        
             $table->string('paid_uid')->nullable();
             $table->integer('balance')->nullable();
             $table->string('payment_status')->nullable();
