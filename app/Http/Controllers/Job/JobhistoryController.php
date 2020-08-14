@@ -20,7 +20,7 @@ class JobhistoryController extends Controller
     Public function index(Request $request)
     {
          if ($request->ajax()) {
-             $data = Jobcard::select('*')->where('job_comp_code', auth()->user()->company);
+             $data = Jobcard::select('*');
              return Datatables::of($data)
                      ->addIndexColumn()
                      ->addColumn('status', function($row){

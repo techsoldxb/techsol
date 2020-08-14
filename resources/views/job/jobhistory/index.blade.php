@@ -32,6 +32,7 @@
                     <table class="table table-bordered data-table">
                         <thead>
                             <tr>
+                                <th>Comp Code</th>
                                 <th>Job ID</th>
                                 <th>Customer</th>
                                 <th>Mobile</th>
@@ -76,6 +77,10 @@
                 }
             },
             columns: [{
+                    data: 'job_comp_code',
+                    name: 'job_comp_code'
+                },
+                {
                     data: 'job_enq_number',
                     name: 'job_enq_number'
                 },
