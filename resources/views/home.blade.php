@@ -447,7 +447,7 @@
                                     @if($user->user_type =='admin')
 
 
-                                    {{ number_format($topup-$expensesche-$cashpaymenta) }}
+                                    {{ number_format($topupche-$expensesche-$cashpaymenta) }}
 
 
 
