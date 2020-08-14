@@ -25,7 +25,7 @@ class CreateCashtopupsTable extends Migration
             $table->date('topup_dt')->nullable(); // Purchase bill date                        
             $table->double('topup_amt')->nullable(); // Purchase bill amount            
             $table->string('bank_name')->nullable(); // Purchase bill amount            
-            $table->integer('cheque_no')->nullable(); // Purchase bill amount            
+            $table->string('cheque_no')->nullable(); // Purchase bill amount            
             $table->string('pay_mode')->nullable(); // Payment mode - cash or card            
             $table->longText('remarks')->nullable();        
             $table->string('source')->nullable();  
