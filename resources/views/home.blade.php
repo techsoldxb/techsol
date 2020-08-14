@@ -526,7 +526,7 @@
 
                             <div class="info-box-content">
                                 <span class="info-box-text">Cash Top Up - Chennai</span>
-                                <span class="info-box-number">{{$topupche}}</span>
+                                <span class="info-box-number">{{number_format($topupche)}}</span>
                                 <a href="{{route('admin.cashtopups.index')}}" class="small-box-footer">More info <i
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
