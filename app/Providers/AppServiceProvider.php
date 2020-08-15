@@ -160,15 +160,13 @@ view()->composer('*', function($view)  {
 
 view()->composer('*', function($view)  {
     $view->with('invoicedrmd',\App\Jobcard::where('job_comp_code', '003')
-    ->where('job_status_name', 'Invoiced')
-    ->whereDate('job_invoice_date', Carbon::today()->toDateString())
+    ->where('job_status_name', 'Invoiced')   
     ->count('ID'));
 });
 
 view()->composer('*', function($view)  {
     $view->with('invoicedkkd',\App\Jobcard::where('job_comp_code', '004')
-    ->where('job_status_name', 'Invoiced')
-    ->whereDate('job_invoice_date', Carbon::today()->toDateString())
+    ->where('job_status_name', 'Invoiced')  
     ->count('ID'));
 });
 
