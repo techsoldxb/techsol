@@ -200,6 +200,20 @@
 
                         </li>
 
+                        <li class="nav-item">
+                            <a href=" {{ route('homejob') }}" class="nav-link
+                @if($segment =='homejob')                
+                active
+                @endif            
+                ">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>
+                                    Dashboard Job Contract
+                                </p>
+                            </a>
+
+                        </li>
+
 
                         @endif
 

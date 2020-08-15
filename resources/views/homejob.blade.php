@@ -39,7 +39,7 @@
                         <h3>
 
 
-                            0
+                            {{$receivedtotalkkd}}
 
 
 
@@ -74,7 +74,7 @@
                         <h3>
 
 
-                            0
+                            {{$invoicedkkd}}
 
 
 
@@ -109,7 +109,7 @@
                 <div class="small-box bg-warning">
                     <div class="inner">
                         <h3>
-                            0
+                            {{$receivedtotalrmd}}
                         </h3>
 
                         <p>Total service Received - RMD</p>
@@ -139,7 +139,7 @@
 
 
 
-                            0
+                            {{$invoicedrmd}}
 
 
 

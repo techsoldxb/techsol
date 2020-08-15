@@ -103,6 +103,16 @@ view()->composer('home', function($view)  {
 
 
 view()->composer('*', function($view)  {    
+    $view->with('receivedtotalrmd',\App\Jobcard::where('job_comp_code','003')
+    ->count('ID'));
+});
+
+view()->composer('*', function($view)  {    
+    $view->with('receivedtotalkkd',\App\Jobcard::where('job_comp_code','004')
+    ->count('ID'));
+});
+
+view()->composer('*', function($view)  {    
     $view->with('received',\App\Jobcard::where('job_status_name', 'Received')
     ->where('job_comp_code',optional(auth()->user())->company)
     ->count('ID'));
@@ -147,6 +157,21 @@ view()->composer('*', function($view)  {
     ->whereDate('job_invoice_date', Carbon::today()->toDateString())
     ->count('ID'));
 });
+
+view()->composer('*', function($view)  {
+    $view->with('invoicedrmd',\App\Jobcard::where('job_comp_code', '003')
+    ->where('job_status_name', 'Invoiced')
+    ->whereDate('job_invoice_date', Carbon::today()->toDateString())
+    ->count('ID'));
+});
+
+view()->composer('*', function($view)  {
+    $view->with('invoicedkkd',\App\Jobcard::where('job_comp_code', '004')
+    ->where('job_status_name', 'Invoiced')
+    ->whereDate('job_invoice_date', Carbon::today()->toDateString())
+    ->count('ID'));
+});
+
 
 view()->composer('*', function($view)  {
     $view->with('return',\App\Jobcard::where('job_comp_code', optional(auth()->user())->company)
