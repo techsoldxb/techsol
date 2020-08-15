@@ -18,7 +18,7 @@
                         <thead>
                             <tr>
                                 <th> Job ID </th>
-                                <th> Quit Date </th>
+                                <th> Delivered Date </th>
                                 <th> Name </th>
                                 <th>Type</th>
                                 <th>Brand</th>
@@ -33,14 +33,14 @@
                             @foreach($jobcard as $c)
                             <tr>
                                 <td>{{ $c->job_enq_number }}</td>
-                                <td>{{ date('d-m-Y h:i A', strtotime($c->job_quit_date)) }}</td>
+                                <td>{{ date('d-m-Y h:i A', strtotime($c->job_delivery_date)) }}</td>
                                 <td>{{ $c->job_cust_name }}</td>
                                 <td>{{ $c->job_item_type }}</td>
                                 <td>{{ $c->job_item_brand }}</td>
                                 <td>{{ $c->job_item_model}}</td>
                                 <td>{{ $c->job_fault}}</td>
-                                <td> {{ $c->job_quit_remark }} </td>
-                                <td> {{ $c->job_quit_created_user }} </td>
+                                <td> {{ $c->job_delivery_remark }} </td>
+                                <td> {{ $c->job_delivery }} </td>
                             </tr>
                             @endforeach
                             @else
@@ -53,7 +53,7 @@
                         <tfoot>
                             <tr>
                                 <th> Job ID </th>
-                                <th> Quit Date </th>
+                                <th> Delivered Date </th>
                                 <th> Name </th>
                                 <th>Type</th>
                                 <th>Brand</th>
