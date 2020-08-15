@@ -109,10 +109,10 @@
                 <div class="small-box bg-warning">
                     <div class="inner">
                         <h3>
-                            {{$receivedtotalrmd}}
+                            {{$quit + $return}}
                         </h3>
 
-                        <p>Total service Received - RMD</p>
+                        <p>Total Quit & Return - KKD</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-person-add"></i>
@@ -146,7 +146,7 @@
 
                         </h3>
 
-                        <p>Total Invoiced - RMD</p>
+                        <p>Pending - KKD</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-pie-graph"></i>
@@ -160,6 +160,141 @@
         <!-- /.row -->
 
     </div><!-- /.container-fluid -->
+
+    <div class="container-fluid">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-info">
+                    <div class="inner">
+
+
+                        <h3>
+
+
+                            {{$receivedtotalrmd}}
+
+
+
+
+                        </h3>
+
+
+
+
+                        <p>Total Service Received - RMD</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-bag"></i>
+                    </div>
+
+
+
+
+                    <a href="{{route('showroom.enqkkdtotal')}}" class="small-box-footer">More info <i
+                            class="fas fa-arrow-circle-right"></i></a>
+
+
+
+
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-success">
+                    <div class="inner">
+                        <h3>
+
+
+                            {{$invoicedrmd}}
+
+
+
+                        </h3>
+
+                        <p>Total Invoiced - RMD</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-stats-bars"></i>
+
+                    </div>
+
+                    @if($user->user_type =='admin')
+
+
+                    <a href="{{route('showroom.enqkkdtoday')}}" class="small-box-footer">More info <i
+                            class="fas fa-arrow-circle-right"></i></a>
+
+
+                    @else
+                    <a href="{{route('foh.pending.index')}}" class="small-box-footer">More info <i
+                            class="fas fa-arrow-circle-right"></i></a>
+                    @endif
+
+
+
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-warning">
+                    <div class="inner">
+                        <h3>
+                            {{$receivedtotalrmd}}
+                        </h3>
+
+                        <p>Total Quit & Return - RMD</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-person-add"></i>
+                    </div>
+                    @if($user->user_type =='admin')
+
+
+                    <a href="{{route('showroom.enqrmdtotal')}}" class="small-box-footer">More info <i
+                            class="fas fa-arrow-circle-right"></i></a>
+
+
+                    @else
+                    <a href="{{route('admin.advances.index')}}" class="small-box-footer">More info <i
+                            class="fas fa-arrow-circle-right"></i></a>
+                    @endif
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-danger">
+                    <div class="inner">
+                        <h3>
+
+
+
+                            {{$invoicedrmd}}
+
+
+
+
+                        </h3>
+
+                        <p>Pending - RMD</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-pie-graph"></i>
+                    </div>
+                    <a href="{{route('showroom.enqrmdtoday')}}" class="small-box-footer">More info <i
+                            class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <!-- ./col -->
+        </div>
+        <!-- /.row -->
+
+    </div><!-- /.container-fluid -->
+
 </section>
 <!-- /.content -->
 
