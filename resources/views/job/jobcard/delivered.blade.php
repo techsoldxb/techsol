@@ -25,7 +25,7 @@
                                 <th>Model</th>
                                 <th>Fault</th>
                                 <th>Reason</th>
-                                <th>Quit By</th>
+                                <th>Delivered By</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -60,7 +60,7 @@
                                 <th>Model</th>
                                 <th>Fault</th>
                                 <th>Reason</th>
-                                <th>Quit By</th>
+                                <th>Delivered By</th>
                             </tr>
                         </tfoot>
                     </table>
