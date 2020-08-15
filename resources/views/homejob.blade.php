@@ -109,10 +109,10 @@
                 <div class="small-box bg-warning">
                     <div class="inner">
                         <h3>
-                            {{$quitkkd + $returnkkd}}
+                            {{$quitkkd + $returnkkd + $deliveredkkd}}
                         </h3>
 
-                        <p>Total Quit & Return - KKD</p>
+                        <p>Total Return, Quit & Delivered - KKD</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-person-add"></i>
@@ -243,10 +243,10 @@
                 <div class="small-box bg-warning">
                     <div class="inner">
                         <h3>
-                            {{$quit + $return}}
+                            {{$quit + $return + $delivered}}
                         </h3>
 
-                        <p>Total Quit & Return - RMD</p>
+                        <p>Total Return, Quit & Delivered - RMD</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-person-add"></i>
@@ -273,7 +273,7 @@
 
 
 
-                            {{$receivedtotalrmd - $invoicedrmd- $quit - $return}}
+                            {{$receivedtotalrmd - $invoicedrmd- $quit - $return - $delivered}}
 
 
 
@@ -362,7 +362,7 @@
 
                                     </tr>
                                     <tr>
-                                        <th><span class="badge badge-warning">CCOMPLETED</span></th>
+                                        <th><span class="badge badge-warning">COMPLETED</span></th>
                                         <th><a href="pages/examples/invoice.html">{{$completed}}</a></th>
                                         <th><a href="pages/examples/invoice.html">{{$completedkkd}}</a></th>
 
@@ -404,9 +404,15 @@
                                     </tr>
 
                                     <tr>
-                                        <th><span class="badge badge-secondary">Estimation</span></th>
+                                        <th><span class="badge badge-secondary">ESTIMATION</span></th>
                                         <th><a href="pages/examples/invoice.html">{{$outside_est}}</a></th>
                                         <th><a href="pages/examples/invoice.html">{{$outside_estkkd}}</a></th>
+                                    </tr>
+
+                                    <tr>
+                                        <th><span class="badge badge-light">DELIVERED</span></th>
+                                        <th><a href="pages/examples/invoice.html">{{$delivered}}</a></th>
+                                        <th><a href="pages/examples/invoice.html">{{$deliveredkkd}}</a></th>
                                     </tr>
                                 </tbody>
                             </table>

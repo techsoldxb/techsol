@@ -671,6 +671,19 @@
                         </li>
 
 
+                        <li class="nav-item">
+                            <a href="{{route('jobcard.delivered')}}" class="nav-link
+                            @if($segment=='jobquit')                
+                            active
+                            @endif">
+                                <i class="nav-icon fas fa-circle text-info"></i>
+                                <p>Delivered
+                                    <span class="right badge badge-info">{{$delivered}}</span>
+                                </p>
+                            </a>
+                        </li>
+
+
 
 
 

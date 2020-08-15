@@ -268,6 +268,18 @@ view()->composer('homejob', function($view)  {
     ->count('ID'));
 });
 
+view()->composer('*', function($view)  {
+    $view->with('delivered',\App\Jobcard::where('job_comp_code', optional(auth()->user())->company)
+    ->where('job_status_name', 'Delivered')
+    ->count('ID'));
+});
+
+view()->composer('homejob', function($view)  {
+    $view->with('deliveredkkd',\App\Jobcard::where('job_comp_code', '004')
+    ->where('job_status_name', 'Delivered')
+    ->count('ID'));
+});
+
 
 
 
