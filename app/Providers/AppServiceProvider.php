@@ -182,7 +182,23 @@ view()->composer('*', function($view)  {
 });
 
 view()->composer('*', function($view)  {
+    $view->with('returnkkd',\App\Jobcard::where('job_comp_code', '004')
+    ->where(function($query)
+    {
+        $query->where('job_status_name', '=', 'Return')
+              ->orWhere('job_status_name', '=', 'Received_NR');
+    })       
+    ->count('ID'));
+});
+
+view()->composer('*', function($view)  {
     $view->with('quit',\App\Jobcard::where('job_comp_code', optional(auth()->user())->company)
+    ->where('job_status_name', 'Quit')
+    ->count('ID'));
+});
+
+view()->composer('*', function($view)  {
+    $view->with('quitkkd',\App\Jobcard::where('job_comp_code', '004')
     ->where('job_status_name', 'Quit')
     ->count('ID'));
 });

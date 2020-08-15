@@ -109,7 +109,7 @@
                 <div class="small-box bg-warning">
                     <div class="inner">
                         <h3>
-                            {{$quit + $return}}
+                            {{$quitkkd + $returnkkd}}
                         </h3>
 
                         <p>Total Quit & Return - KKD</p>
@@ -139,7 +139,7 @@
 
 
 
-                            {{$receivedtotalkkd - $invoicedrmd- $quit - $return}}
+                            {{$receivedtotalkkd - $invoicedkkd- $quitkkd - $returnkkd}}
 
 
 
@@ -243,7 +243,7 @@
                 <div class="small-box bg-warning">
                     <div class="inner">
                         <h3>
-                            {{$receivedtotalrmd}}
+                            {{$quit + $return}}
                         </h3>
 
                         <p>Total Quit & Return - RMD</p>
@@ -273,7 +273,7 @@
 
 
 
-                            {{$invoicedrmd}}
+                            {{$receivedtotalrmd - $invoicedrmd- $quit - $return}}
 
 
 
