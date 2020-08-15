@@ -47,6 +47,12 @@ class HomeController extends Controller
         //Users::where('id', 1)->count();
         return view('homeicc');
     }
+    public function job(Request $request)
+    {
+        //Users::where('id', 1)->count();
+        return view('homejob');
+    }
+
 
 
     

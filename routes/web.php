@@ -61,6 +61,7 @@ Route::get('changeStatus', 'UserController@changeStatus');
 
 Route::get('/admin', 'HomeController@index')->name('home')->middleware('auth');
 Route::get('/foh/homeicc', 'HomeController@icc')->name('homeicc')->middleware('auth');
+Route::get('/foh/homejob', 'HomeController@job')->name('homejob')->middleware('auth');
 Route::get('/coh', 'HomeController@coh')->name('cash')->middleware('auth');
 //Route::get('/admin1', 'HomestaffController@index')->name('homestaff');
 
