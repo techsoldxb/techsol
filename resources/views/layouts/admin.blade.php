@@ -206,7 +206,7 @@
                 active
                 @endif            
                 ">
-                                <i class="nav-icon fas fa-th"></i>
+                                <i class="nav-icon fas fa-chart-line"></i>
                                 <p>
                                     Dashboard Job Contract
                                 </p>

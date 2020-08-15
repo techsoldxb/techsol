@@ -340,7 +340,7 @@
                                     <tr>
                                         <th><span class="badge badge-primary">RECEIVED</span></th>
                                         <th><a href="pages/examples/invoice.html">{{$received}}</a></th>
-                                        <th><a href="pages/examples/invoice.html">OR9842</a></th>
+                                        <th><a href="pages/examples/invoice.html">{{$receivedkkd}}</a></th>
 
 
 
@@ -348,7 +348,7 @@
                                     <tr>
                                         <th><span class="badge badge-success">INSPECTED</span></th>
                                         <th><a href="pages/examples/invoice.html">{{$inspected}}</a></th>
-                                        <th><a href="pages/examples/invoice.html">OR1848</a></th>
+                                        <th><a href="pages/examples/invoice.html">{{$inspectedkkd}}</a></th>
 
 
 
@@ -356,7 +356,7 @@
                                     <tr>
                                         <th><span class="badge badge-info">WORK IN PROGRESS</span></th>
                                         <th><a href="pages/examples/invoice.html">{{$work}}</a></th>
-                                        <th><a href="pages/examples/invoice.html">OR7429</a></th>
+                                        <th><a href="pages/examples/invoice.html">{{$workkkd}}</a></th>
 
 
 
@@ -364,7 +364,7 @@
                                     <tr>
                                         <th><span class="badge badge-warning">CCOMPLETED</span></th>
                                         <th><a href="pages/examples/invoice.html">{{$completed}}</a></th>
-                                        <th><a href="pages/examples/invoice.html">OR7429</a></th>
+                                        <th><a href="pages/examples/invoice.html">{{$completedkkd}}</a></th>
 
 
 
@@ -372,7 +372,7 @@
                                     <tr>
                                         <th><span class="badge badge-danger">INVOICED</span></th>
                                         <th><a href="pages/examples/invoice.html">{{$invoiced}}</a></th>
-                                        <th><a href="pages/examples/invoice.html">OR1848</a></th>
+                                        <th><a href="pages/examples/invoice.html">{{$invoicedkkdtoday}}</a></th>
 
 
 
@@ -380,7 +380,7 @@
                                     <tr>
                                         <th><span class="badge badge-primary">WAITING FOR PARTS</span></th>
                                         <th><a href="pages/examples/invoice.html">{{$wfp}}</a></th>
-                                        <th><a href="pages/examples/invoice.html">OR7429</a></th>
+                                        <th><a href="pages/examples/invoice.html">{{$wfpkkd}}</a></th>
 
 
 
@@ -388,25 +388,25 @@
                                     <tr>
                                         <th><span class="badge badge-success">RETURNED</span></th>
                                         <th><a href="pages/examples/invoice.html">{{$return}}</a></th>
-                                        <th><a href="pages/examples/invoice.html">OR9842</a></th>
+                                        <th><a href="pages/examples/invoice.html">{{$returnkkd}}</a></th>
                                     </tr>
 
                                     <tr>
                                         <th><span class="badge badge-danger">QUIT</span></th>
                                         <th><a href="pages/examples/invoice.html">{{$quit}}</a></th>
-                                        <th><a href="pages/examples/invoice.html">OR9842</a></th>
+                                        <th><a href="pages/examples/invoice.html">{{$quitkkd}}</a></th>
                                     </tr>
 
                                     <tr>
                                         <th><span class="badge badge-info">WAITING FOR QUOTE</span></th>
                                         <th><a href="pages/examples/invoice.html">{{$outside}}</a></th>
-                                        <th><a href="pages/examples/invoice.html">OR9842</a></th>
+                                        <th><a href="pages/examples/invoice.html">{{$outsidekkd}}</a></th>
                                     </tr>
 
                                     <tr>
                                         <th><span class="badge badge-secondary">Estimation</span></th>
                                         <th><a href="pages/examples/invoice.html">{{$outside_est}}</a></th>
-                                        <th><a href="pages/examples/invoice.html">OR9842</a></th>
+                                        <th><a href="pages/examples/invoice.html">{{$outside_estkkd}}</a></th>
                                     </tr>
                                 </tbody>
                             </table>

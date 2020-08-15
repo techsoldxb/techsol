@@ -102,12 +102,12 @@ view()->composer('home', function($view)  {
 //this will display the count in the left menu
 
 
-view()->composer('*', function($view)  {    
+view()->composer('homejob', function($view)  {    
     $view->with('receivedtotalrmd',\App\Jobcard::where('job_comp_code','003')
     ->count('ID'));
 });
 
-view()->composer('*', function($view)  {    
+view()->composer('homejob', function($view)  {    
     $view->with('receivedtotalkkd',\App\Jobcard::where('job_comp_code','004')
     ->count('ID'));
 });
@@ -118,6 +118,11 @@ view()->composer('*', function($view)  {
     ->count('ID'));
 });
 
+view()->composer('homejob', function($view)  {    
+    $view->with('receivedkkd',\App\Jobcard::where('job_status_name', 'Received')
+    ->where('job_comp_code','004')
+    ->count('ID'));
+});
 
 view()->composer('*', function($view)  {
     $view->with('inspected',\App\Jobcard::where('job_comp_code', optional(auth()->user())->company)
@@ -125,8 +130,20 @@ view()->composer('*', function($view)  {
     ->count('ID'));
 });
 
+view()->composer('homejob', function($view)  {
+    $view->with('inspectedkkd',\App\Jobcard::where('job_comp_code', '004')
+    ->where('job_status_name', 'Inspected')
+    ->count('ID'));
+});
+
 view()->composer('*', function($view)  {
     $view->with('work',\App\Jobcard::where('job_comp_code', optional(auth()->user())->company)
+    ->where('job_status_name', 'Work')
+    ->count('ID'));
+});
+
+view()->composer('homejob', function($view)  {
+    $view->with('workkkd',\App\Jobcard::where('job_comp_code', '004')
     ->where('job_status_name', 'Work')
     ->count('ID'));
 });
@@ -141,11 +158,28 @@ view()->composer('*', function($view)  {
     ->count('ID'));
 });
 
+view()->composer('homejob', function($view)  {
+    $view->with('completedkkd',\App\Jobcard::where('job_comp_code', '004')    
+    ->where(function($query)
+    {
+        $query->where('job_status_name', '=', 'Completed')
+              ->orWhere('job_status_name', '=', 'Outside_Received');
+    })     
+    ->count('ID'));
+});
+
 view()->composer('*', function($view)  {
     $view->with('wfp',\App\Jobcard::where('job_comp_code', optional(auth()->user())->company)
     ->where('job_status_name', 'WFP')    
     ->count('ID'));
 });
+
+view()->composer('homejob', function($view)  {
+    $view->with('wfpkkd',\App\Jobcard::where('job_comp_code', '004')
+    ->where('job_status_name', 'WFP')    
+    ->count('ID'));
+});
+
 
 
 
@@ -158,13 +192,20 @@ view()->composer('*', function($view)  {
     ->count('ID'));
 });
 
-view()->composer('*', function($view)  {
+view()->composer('homejob', function($view)  {
+    $view->with('invoicedkkdtoday',\App\Jobcard::where('job_comp_code', '004')
+    ->where('job_status_name', 'Invoiced')
+    ->whereDate('job_invoice_date', Carbon::today()->toDateString())
+    ->count('ID'));
+});
+
+view()->composer('homejob', function($view)  {
     $view->with('invoicedrmd',\App\Jobcard::where('job_comp_code', '003')
     ->where('job_status_name', 'Invoiced')   
     ->count('ID'));
 });
 
-view()->composer('*', function($view)  {
+view()->composer('homejob', function($view)  {
     $view->with('invoicedkkd',\App\Jobcard::where('job_comp_code', '004')
     ->where('job_status_name', 'Invoiced')  
     ->count('ID'));
@@ -181,7 +222,7 @@ view()->composer('*', function($view)  {
     ->count('ID'));
 });
 
-view()->composer('*', function($view)  {
+view()->composer('homejob', function($view)  {
     $view->with('returnkkd',\App\Jobcard::where('job_comp_code', '004')
     ->where(function($query)
     {
@@ -209,11 +250,24 @@ view()->composer('*', function($view)  {
     ->count('ID'));
 });
 
+view()->composer('homejob', function($view)  {
+    $view->with('outsidekkd',\App\Jobcard::where('job_comp_code', '004')
+    ->where('job_status_name', 'Outside')
+    ->count('ID'));
+});
+
 view()->composer('*', function($view)  {
     $view->with('outside_est',\App\Jobcard::where('job_comp_code', optional(auth()->user())->company)
     ->where('job_status_name', 'Outside_Estimation')
     ->count('ID'));
 });
+
+view()->composer('homejob', function($view)  {
+    $view->with('outside_estkkd',\App\Jobcard::where('job_comp_code', '004')
+    ->where('job_status_name', 'Outside_Estimation')
+    ->count('ID'));
+});
+
 
 
 
