@@ -139,7 +139,7 @@
 
 
 
-                            {{$invoicedrmd}}
+                            {{$receivedtotalkkd - $invoicedrmd- $quit - $return}}
 
 
 
