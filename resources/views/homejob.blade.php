@@ -139,7 +139,7 @@
 
 
 
-                            {{$receivedtotalkkd - $invoicedkkd- $quitkkd - $returnkkd}}
+                            {{$receivedtotalkkd - $invoicedkkd- $quitkkd - $returnkkd -$deliveredkkd}}
 
 
 
