@@ -464,8 +464,8 @@
 
                                         July
                                     </td>
-                                    <td>₹ {{$julinvrmd}}</td>
-                                    <td>₹ {{$julinvkkd}}</td>
+                                    <td>₹ {{number_format($julinvrmd)}}</td>
+                                    <td>₹ {{number_format($julinvkkd)}}</td>
 
                                     <td>50</td>
                                     <td>45</td>
@@ -476,8 +476,8 @@
 
                                         August
                                     </td>
-                                    <td>₹ {{$auginvrmd}}</td>
-                                    <td>₹ {{$auginvkkd}}</td>
+                                    <td>₹ {{number_format($auginvrmd)}}</td>
+                                    <td>₹ {{number_format($auginvkkd)}}</td>
                                     <td>50</td>
                                     <td>45</td>
                                 </tr>
