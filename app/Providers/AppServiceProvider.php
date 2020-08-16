@@ -207,7 +207,38 @@ view()->composer('homejob', function($view)  {
 
 view()->composer('homejob', function($view)  {
     $view->with('invoicedkkd',\App\Jobcard::where('job_comp_code', '004')
+    ->where('job_status_name', 'Invoiced')       
+    ->count('ID'));
+});
+
+
+view()->composer('homejob', function($view)  {
+    $view->with('julinvrmd',\App\Jobcard::where('job_comp_code', '003')
+    ->where('job_status_name', 'Invoiced')      
+    ->where('job_invoice_date','>=','2020-07-01')
+    ->where('job_invoice_date','<=','2020-07-31')
+    ->count('ID'));
+});
+
+view()->composer('homejob', function($view)  {
+    $view->with('julinvkkd',\App\Jobcard::where('job_comp_code', '004')
     ->where('job_status_name', 'Invoiced')  
+    ->where('job_invoice_date','>=','2020-07-01')
+    ->where('job_invoice_date','<=','2020-07-31')
+    ->count('ID'));
+});
+
+view()->composer('homejob', function($view)  {
+    $view->with('auginvrmd',\App\Jobcard::where('job_comp_code', '003')
+    ->where('job_status_name', 'Invoiced')  
+    ->where('job_month', '8') 
+    ->count('ID'));
+});
+
+view()->composer('homejob', function($view)  {
+    $view->with('auginvkkd',\App\Jobcard::where('job_comp_code', '004')
+    ->where('job_status_name', 'Invoiced')  
+    ->where('job_month', '8') 
     ->count('ID'));
 });
 

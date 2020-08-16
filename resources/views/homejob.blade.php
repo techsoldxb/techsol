@@ -112,7 +112,7 @@
                             {{$quitkkd + $returnkkd + $deliveredkkd}}
                         </h3>
 
-                        <p>Total Return, Quit & Delivered - KKD</p>
+                        <p>Return, Quit & Delivered - KKD</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-person-add"></i>
@@ -246,7 +246,7 @@
                             {{$quit + $return + $delivered}}
                         </h3>
 
-                        <p>Total Return, Quit & Delivered - RMD</p>
+                        <p>Return, Quit & Delivered - RMD</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-person-add"></i>
@@ -339,7 +339,7 @@
                                 <tbody>
                                     <tr>
                                         <th><span class="badge badge-primary">RECEIVED</span></th>
-                                        <th><a href="pages/examples/invoice.html">{{$received}}</a></th>
+                                        <th><a href="{{route('job.jobcard.index')}}">{{$received}}</a></th>
                                         <th><a href="pages/examples/invoice.html">{{$receivedkkd}}</a></th>
 
 
@@ -347,7 +347,7 @@
                                     </tr>
                                     <tr>
                                         <th><span class="badge badge-success">INSPECTED</span></th>
-                                        <th><a href="pages/examples/invoice.html">{{$inspected}}</a></th>
+                                        <th><a href="{{route('job.jobinspect.index')}}">{{$inspected}}</a></th>
                                         <th><a href="pages/examples/invoice.html">{{$inspectedkkd}}</a></th>
 
 
@@ -355,7 +355,7 @@
                                     </tr>
                                     <tr>
                                         <th><span class="badge badge-info">WORK IN PROGRESS</span></th>
-                                        <th><a href="pages/examples/invoice.html">{{$work}}</a></th>
+                                        <th><a href="{{route('job.jobwork.index')}}">{{$work}}</a></th>
                                         <th><a href="pages/examples/invoice.html">{{$workkkd}}</a></th>
 
 
@@ -363,7 +363,7 @@
                                     </tr>
                                     <tr>
                                         <th><span class="badge badge-warning">COMPLETED</span></th>
-                                        <th><a href="pages/examples/invoice.html">{{$completed}}</a></th>
+                                        <th><a href="{{route('job.jobcomplete.index')}}">{{$completed}}</a></th>
                                         <th><a href="pages/examples/invoice.html">{{$completedkkd}}</a></th>
 
 
@@ -371,7 +371,7 @@
                                     </tr>
                                     <tr>
                                         <th><span class="badge badge-danger">INVOICED</span></th>
-                                        <th><a href="pages/examples/invoice.html">{{$invoiced}}</a></th>
+                                        <th><a href="{{route('job.jobinvoice.index')}}">{{$invoiced}}</a></th>
                                         <th><a href="pages/examples/invoice.html">{{$invoicedkkdtoday}}</a></th>
 
 
@@ -379,7 +379,7 @@
                                     </tr>
                                     <tr>
                                         <th><span class="badge badge-primary">WAITING FOR PARTS</span></th>
-                                        <th><a href="pages/examples/invoice.html">{{$wfp}}</a></th>
+                                        <th><a href="{{route('job.jobwfp.index')}}">{{$wfp}}</a></th>
                                         <th><a href="pages/examples/invoice.html">{{$wfpkkd}}</a></th>
 
 
@@ -437,44 +437,73 @@
             <div class="col-lg-6">
                 <div class="card">
                     <div class="card-header border-0">
-                        <div class="d-flex justify-content-between">
-                            <h3 class="card-title">Sales</h3>
-                            <a href="javascript:void(0);">View Report</a>
+                        <h3 class="card-title">Job Contract Summary</h3>
+                        <div class="card-tools">
+                            <a href="#" class="btn btn-tool btn-sm">
+                                <i class="fas fa-download"></i>
+                            </a>
+                            <a href="#" class="btn btn-tool btn-sm">
+                                <i class="fas fa-bars"></i>
+                            </a>
                         </div>
                     </div>
-                    <div class="card-body">
-                        <div class="d-flex">
-                            <p class="d-flex flex-column">
-                                <span class="text-bold text-lg"> OMR.
-                                    0</span>
+                    <div class="card-body table-responsive p-0">
+                        <table class="table table-striped table-valign-middle">
+                            <thead>
+                                <tr>
+                                    <th>Month</th>
+                                    <th>RMD Amount</th>
+                                    <th>KKD Amount</th>
+                                    <th>RMD Count</th>
+                                    <th>KKD Count</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
 
+                                        July
+                                    </td>
+                                    <td>₹ {{$julinvrmd}}</td>
+                                    <td>₹ {{$julinvkkd}}</td>
 
+                                    <td>50</td>
+                                    <td>45</td>
 
+                                </tr>
+                                <tr>
+                                    <td>
 
-                                <span>Total Sales</span>
-                            </p>
-                            <p class="ml-auto d-flex flex-column text-right">
-                                <span class="text-success">
-                                    <i class="fas fa-arrow-up"></i>
-                                </span>
-                                <span class="text-muted">Since beginning</span>
-                            </p>
-                        </div>
-                        <!-- /.d-flex -->
+                                        August
+                                    </td>
+                                    <td>₹ {{$auginvrmd}}</td>
+                                    <td>₹ {{$auginvkkd}}</td>
+                                    <td>50</td>
+                                    <td>45</td>
+                                </tr>
+                                <tr>
+                                    <td>
 
-                        <div class="position-relative mb-4">
-                            <canvas id="sales-chart" height="200"></canvas>
-                        </div>
+                                        September
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
 
-                        <div class="d-flex flex-row justify-content-end">
-                            <span class="mr-2">
-                                <i class="fas fa-square text-primary"></i> This year
-                            </span>
+                                <tr>
+                                    <td>
 
-                            <span>
-                                <i class="fas fa-square text-gray"></i> Last year
-                            </span>
-                        </div>
+                                        October
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
                 <!-- /.card -->

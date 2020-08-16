@@ -20,6 +20,11 @@
             font-weight: 200;
             height: 100vh;
             margin: 0;
+            background: url('homenew.jpg') no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            background-size: cover;
+            -o-background-size: cover;
         }
 
         .full-height {
@@ -66,12 +71,6 @@
 
     </style>
 </head>
-<style>
-    div {
-        background-image: url('homenew.jpg');
-    }
-
-</style>
 
 <body>
 
