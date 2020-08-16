@@ -231,16 +231,16 @@ view()->composer('homejob', function($view)  {
 view()->composer('homejob', function($view)  {
     $view->with('auginvrmd',\App\Jobcard::where('job_comp_code', '003')
     ->where('job_status_name', 'Invoiced')  
-    ->where('job_invoice_date','>=','2020-07-01')
-    ->where('job_invoice_date','<=','2020-07-31')
+    ->where('job_invoice_date','>=','2020-08-01')
+    ->where('job_invoice_date','<=','2020-08-31')
     ->sum('job_invoice_amount'));
 });
 
 view()->composer('homejob', function($view)  {
     $view->with('auginvkkd',\App\Jobcard::where('job_comp_code', '004')
     ->where('job_status_name', 'Invoiced')  
-    ->where('job_invoice_date','>=','2020-07-01')
-    ->where('job_invoice_date','<=','2020-07-31')
+    ->where('job_invoice_date','>=','2020-08-01')
+    ->where('job_invoice_date','<=','2020-08-31')
     ->sum('job_invoice_amount'));
 });
 
