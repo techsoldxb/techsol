@@ -56,7 +56,31 @@ class HomeController extends Controller
     public function job(Request $request)
     {
         //Users::where('id', 1)->count();
-        return view('homejob');
+        //return view('homejob');
+
+
+        $homejob = [];
+
+$cards = Jobcard::select([
+        'job_comp_code',
+        \DB::raw("DATE_FORMAT(job_enq_date, '%Y-%m') as month"),
+        \DB::raw('COUNT(id) as invoices'),
+        \DB::raw('SUM(job_invoice_amount) as amount')
+    ])
+    ->groupBy('job_comp_code')
+    ->groupBy('month')
+    ->get();
+
+$cards->each(function($item) use (&$homejob) {
+        $homejob[$item->month][$item->job_comp_code] = [
+            'count' => $item->invoices,
+            'amount' => $item->amount
+        ];
+    });
+
+$job_comp_codes = $cards->pluck('job_comp_code')->sortBy('job_comp_code')->unique();
+
+return view('homejob', compact('homejob', 'job_comp_codes'));
 
 
     }
