@@ -15,6 +15,8 @@
 
 </script>
 
+
+
 <!-- This script is used to allow only number in the bill amount field -->
 <script>
     function isNumberKey(evt) {
@@ -327,10 +329,16 @@
 
                     <label class="col-lg-1" for="">Handover</label>
                     <div class="col-lg-2">
-                        <input type="text" class="form-control" name="job_flex3" placeholder="Person name" required>
+                        <input type="text" class="form-control" name="job_flex3" id="job_flex3"
+                            placeholder="Person name" required>
                     </div>
 
+
+
                 </div>
+
+
+
             </div>
 
 

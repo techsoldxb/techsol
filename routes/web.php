@@ -65,6 +65,8 @@ Route::get('/foh/homejob', 'HomeController@job')->name('homejob')->middleware('a
 Route::get('/coh', 'HomeController@coh')->name('cash')->middleware('auth');
 //Route::get('/admin1', 'HomestaffController@index')->name('homestaff');
 
+Route::get('/feedback', 'FeedbackController@feedback')->name('feedback');
+
 //Route::resource('/admin', 'HomeController', ['as'=>'admin']);
 Route::get('/about', 'TestController@about')->name('about');
 
