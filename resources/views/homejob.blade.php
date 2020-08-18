@@ -452,56 +452,35 @@
                             <thead>
                                 <tr>
                                     <th>Month</th>
-                                    <th>RMD Amount</th>
-                                    <th>KKD Amount</th>
-                                    <th>RMD Count</th>
-                                    <th>KKD Count</th>
+                                    @foreach ($job_comp_codes as $job_comp_code)
+                                    <th>Job Amount {{ $job_comp_code }}</th>
+                                    @endforeach
+                                    @foreach ($job_comp_codes as $job_comp_code)
+                                    <th>Job Count {{ $job_comp_code }}</th>
+                                    @endforeach
+
                                 </tr>
                             </thead>
                             <tbody>
+
+
+                                @foreach ($homejob as $month => $values)
                                 <tr>
-                                    <td>
+                                    <td>{{ \Carbon\Carbon::parse($month)->format('F Y') }}</td>
+                                    @foreach ($job_comp_codes as $job_comp_code)
+                                    <td>₹{{ number_format($homejob[$month][$job_comp_code]['amount'] ?? '0') }}</td>
 
-                                        July
-                                    </td>
-                                    <td>₹ {{number_format($julinvrmd)}}</td>
-                                    <td>₹ {{number_format($julinvkkd)}}</td>
 
-                                    <td>50</td>
-                                    <td>45</td>
 
+                                    @endforeach
+                                    @foreach ($job_comp_codes as $job_comp_code)
+                                    <td>{{ $homejob[$month][$job_comp_code]['count'] ?? '0' }}</td>
+                                    @endforeach
                                 </tr>
-                                <tr>
-                                    <td>
+                                @endforeach
 
-                                        August
-                                    </td>
-                                    <td>₹ {{number_format($auginvrmd)}}</td>
-                                    <td>₹ {{number_format($auginvkkd)}}</td>
-                                    <td>50</td>
-                                    <td>45</td>
-                                </tr>
-                                <tr>
-                                    <td>
 
-                                        September
-                                    </td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
 
-                                <tr>
-                                    <td>
-
-                                        October
-                                    </td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>
