@@ -280,6 +280,8 @@
                         <input type="text" class="form-control" id="validationCustom02" name="job_est_amount"
                             placeholder="Enter estimation amount">
                     </div>
+
+
                     <label class="col-lg-2" for="">Estimation Remarks</label>
                     <div class="col-lg-3">
                         <input type="text" class="form-control" id="validationCustom02" name="job_est_remark"
@@ -291,7 +293,7 @@
             <div class="form-group">
                 <div id="invoice_textbox" style="display: none" class="row">
                     <label class="col-lg-2" for="">Invoice Amount</label>
-                    <div class="col-lg-3">
+                    <div class="col-lg-2">
 
                         <div class="input-group">
                             <div class="input-group-prepend">
@@ -310,20 +312,24 @@
 
 
                     </div>
-                    <label class="col-lg-2" for="">Payment Term</label>
-                    <div class="col-lg-3">
+                    <label class="col-lg-1" for="">Payment</label>
+                    <div class="col-lg-2">
 
 
 
                         <select class="custom-select" name="job_flex2">
-
                             <option value="Cash">Cash</option>
                             <option value="Online">Online</option>
-
                         </select>
 
 
                     </div>
+
+                    <label class="col-lg-1" for="">Handover</label>
+                    <div class="col-lg-2">
+                        <input type="text" class="form-control" name="job_flex3" placeholder="Person name" required>
+                    </div>
+
                 </div>
             </div>
 

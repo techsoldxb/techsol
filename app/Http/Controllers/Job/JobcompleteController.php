@@ -103,17 +103,53 @@ class JobcompleteController extends Controller
         $new_id = sprintf("%0+4u%0+6u", $year, $seq+1);  
 
         $todaymnt = Carbon::now();
-        $jobcard->job_invoice_date = $todaymnt;
-        
+        $jobcard->job_invoice_date = $todaymnt;       
         
             
             $jobcard->job_status_name = $request->job_status_name; 
             $jobcard->job_invoice_number = $new_id;
-            $jobcard->job_invoice_amount = $request->job_invoice_amount;
-            
+            $jobcard->job_invoice_amount = $request->job_invoice_amount;            
             $jobcard->job_flex2 = $request->job_flex2;
-
+            $jobcard->job_flex3 = $request->job_flex3;
             $jobcard->job_inv_created_user = Auth::user()->name;
+
+            //The below code to send the SMS
+        // Authorisation details.
+        $username = "bhhussain@gmail.com";
+        $username = urlencode($username);
+        $hash = "dbe35455acb1be736b354f31be40ccdad84b9140358d269c95f183be1b5ee055";
+        $apiKey = urlencode('A7s0+DhGAqs-gK1nBO52AFN9V4KUM1ENStdkMAjBnL');
+
+        
+       
+
+        // Config variables. Consult http://api.textlocal.in/docs for more info.
+       // $test = "0";
+    
+        // Data for text message. This is the text message data.
+        $sender = urlencode('TECCOM'); // This is who the message appears to be from.
+        
+
+        //$message = "This is a test message from the PHP API script.";
+        $brand = $jobcard->job_item_brand;
+        $model = $jobcard->job_item_model;
+        $type = $jobcard->job_item_type;
+        $numbers = $jobcard->job_cust_mobile;
+        $new_id = $jobcard->job_enq_number;
+        $handover = $request->job_flex3;
+                 
+        $message = rawurlencode("Dear Customer: Your $brand - $model - $type (Job No - $new_id) handed over to $handover . Thank you.");    
+            
+             $data = array('apikey' => $apiKey, 'numbers' => $numbers, "sender" => $sender, "message" => $message);
+
+            $ch = curl_init('http://api.textlocal.in/send/?');
+            curl_setopt($ch, CURLOPT_POST, true);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            $result = curl_exec($ch); // This is the result from the API        
+            curl_close($ch);
+           // echo $result;
+
 
         }
         else if (( $request->job_status_name )  == 'Estimated') 

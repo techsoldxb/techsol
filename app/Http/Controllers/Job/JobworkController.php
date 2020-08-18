@@ -95,6 +95,46 @@ class JobworkController extends Controller
             $jobcard->job_completed_remark = $request->job_completed_remark; 
             $jobcard->job_engr = $request->job_engr; 
             $jobcard->job_comp_created_user = Auth::user()->name;
+
+
+              //The below code to send the SMS
+        // Authorisation details.
+        $username = "bhhussain@gmail.com";
+        $username = urlencode($username);
+        $hash = "dbe35455acb1be736b354f31be40ccdad84b9140358d269c95f183be1b5ee055";
+        $apiKey = urlencode('A7s0+DhGAqs-gK1nBO52AFN9V4KUM1ENStdkMAjBnL');
+
+        
+       
+
+        // Config variables. Consult http://api.textlocal.in/docs for more info.
+       // $test = "0";
+    
+        // Data for text message. This is the text message data.
+        $sender = urlencode('TECCOM'); // This is who the message appears to be from.
+        
+
+        //$message = "This is a test message from the PHP API script.";
+        $brand = $jobcard->job_item_brand;
+        $model = $jobcard->job_item_model;
+        $type = $jobcard->job_item_type;
+        $numbers = $jobcard->job_cust_mobile;
+        $new_id = $jobcard->job_enq_number;
+                 
+        $message = rawurlencode("Dear Customer: Your $brand - $model - $type (Job No - $new_id) service completed. Please collect at earliest. Thank you.");    
+            
+             $data = array('apikey' => $apiKey, 'numbers' => $numbers, "sender" => $sender, "message" => $message);
+
+            $ch = curl_init('http://api.textlocal.in/send/?');
+            curl_setopt($ch, CURLOPT_POST, true);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            $result = curl_exec($ch); // This is the result from the API        
+            curl_close($ch);
+
+            // echo $result;
+            // echo $brand;
+    
     
         }
         else if (( $request->job_status_name )  == 'Return') 
