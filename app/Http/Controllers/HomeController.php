@@ -13,6 +13,12 @@ Use Gate;
 use PDF;
 
 
+
+use Carbon\Carbon;
+use App\Jobcard;
+use App\User;
+
+
 class HomeController extends Controller
 {
     /**
@@ -51,6 +57,8 @@ class HomeController extends Controller
     {
         //Users::where('id', 1)->count();
         return view('homejob');
+
+
     }
 
 

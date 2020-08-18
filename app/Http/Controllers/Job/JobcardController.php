@@ -124,7 +124,7 @@ class JobcardController extends Controller
         $year = date('Y');
         $id_year = substr($id, 0, 4);
         $seq = $year <> $id_year ? 0 : +substr($id, -5);
-        //$new_id = sprintf("%0+4u%0+6u", $year, $seq+1); 
+      //  $new_id = sprintf("%0+4u%0+6u", $year, $seq+1); 
         
         $lastAccountForCurrentYear = Jobcard::where('job_comp_code', auth()->user()->company)
         ->where('job_enq_date', '>','11/08/2020')
@@ -137,10 +137,12 @@ class JobcardController extends Controller
         : (date('Y') . $digitRepresentingASerie . '00001');
 
         $new_id = $jobcard->job_enq_number; 
-
+        
+       
 
         $jobcard->job_comp_code = Auth::user()->company;
-        // $jobcard->job_enq_number = $new_id;
+
+        
 
         $today = Carbon::now()->toDate('Y-m-d h:i');
         $jobcard->job_enq_date = $today;
@@ -216,8 +218,25 @@ class JobcardController extends Controller
             //$message = rawurlencode("Dear Customer: Your product $brand - $model - $type is registered for service. Your Job number is $new_id. Thank you"); - THIS CODE IS WORKING
             //$message = rawurlencode('Dear Customer: Your product is registered for service. Please contact 9944942308 to know the status. Thank you');
             //$message = rawurlencode('Dear Customer:Your product $brand- $model- $type is registered for service. Your Job No is $new_id.Thank you');
-            $message = rawurlencode("Dear Customer: Your product $brand - $model - $type is registered for service. Your Job number is $new_id. Thank you");
+           // Working till 18/08/2020 and new templete changed
+            // $message = rawurlencode("Dear Customer: Your product $brand - $model - $type is registered for service. Your Job number is $new_id. Thank you");
+
             
+            
+            
+        if (  ( Auth::user()->company )  == 003) {
+            
+            $message = rawurlencode("Dear Customer: Your $brand - $model - $type received for service at Bash Computers. Your job card no $new_id. Contact 9944942308 for enquiry.");
+        }
+        else if (  ( Auth::user()->company )  == 004) {
+
+            $message = rawurlencode("Dear Customer: Your $brand - $model - $type received for service at Techsol Computers. Your job card no $new_id. Contact 9600350030 for enquiry.");
+
+        }
+
+
+
+
             $data = array('apikey' => $apiKey, 'numbers' => $numbers, "sender" => $sender, "message" => $message);
 
             $ch = curl_init('http://api.textlocal.in/send/?');
