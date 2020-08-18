@@ -489,31 +489,6 @@
 
             </div>
 
-            <table class="table table-bordered">
-                <thead>
-                    <th>Month</th>
-                    @foreach ($job_comp_codes as $job_comp_code)
-                    <th>Amount {{ $job_comp_code }}</th>
-                    @endforeach
-                    @foreach ($job_comp_codes as $job_comp_code)
-                    <th>Count {{ $job_comp_code }}</th>
-                    @endforeach
-                </thead>
-                @foreach ($homejob as $month => $values)
-                <tr>
-                    <td>{{ \Carbon\Carbon::parse($month)->format('F Y') }}</td>
-                    @foreach ($job_comp_codes as $job_comp_code)
-                    <td>₹{{ number_format($homejob[$month][$job_comp_code]['amount'] ?? '0') }}</td>
-
-
-
-                    @endforeach
-                    @foreach ($job_comp_codes as $job_comp_code)
-                    <td>{{ $homejob[$month][$job_comp_code]['count'] ?? '0' }}</td>
-                    @endforeach
-                </tr>
-                @endforeach
-            </table>
 
             <!-- /.col-md-6 -->
         </div>
