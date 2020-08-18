@@ -453,10 +453,10 @@
                                 <tr>
                                     <th>Month</th>
                                     @foreach ($job_comp_codes as $job_comp_code)
-                                    <th>Job Amount {{ $job_comp_code }}</th>
+                                    <th>Amount {{ $job_comp_code }}</th>
                                     @endforeach
                                     @foreach ($job_comp_codes as $job_comp_code)
-                                    <th>Job Count {{ $job_comp_code }}</th>
+                                    <th>Count {{ $job_comp_code }}</th>
                                     @endforeach
 
                                 </tr>
@@ -493,10 +493,10 @@
                 <thead>
                     <th>Month</th>
                     @foreach ($job_comp_codes as $job_comp_code)
-                    <th>Job Amount {{ $job_comp_code }}</th>
+                    <th>Amount {{ $job_comp_code }}</th>
                     @endforeach
                     @foreach ($job_comp_codes as $job_comp_code)
-                    <th>Job Count {{ $job_comp_code }}</th>
+                    <th>Count {{ $job_comp_code }}</th>
                     @endforeach
                 </thead>
                 @foreach ($homejob as $month => $values)
