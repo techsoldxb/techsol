@@ -64,6 +64,25 @@ class JobcardController extends Controller
         
     }
 
+    public function jobpending()
+    {
+        
+        $arr['jobcard'] = Jobcard::select('id','job_enq_number','job_quit_date'
+        ,'job_cust_name','job_cust_mobile','job_item_type','job_item_brand','job_item_model',
+        'job_fault','job_quit_remark','job_quit_created_user')
+        ->where('job_comp_code', auth()->user()->company)
+        ->where('job_status_name','Received')
+        ->where('job_status_name','Inspected')
+        ->where('job_status_name','Work')
+        ->where('job_status_name','Completed')
+        ->where('job_status_name','Outside')
+        ->where('job_status_name','WFP')
+        ->get();
+    
+        return view('job.jobcard.pending')->with($arr); 
+        
+    }
+
     public function jobdelivered()
     {
         
