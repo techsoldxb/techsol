@@ -105,10 +105,15 @@
                     <img src={{asset('dist/img/tclogo1.png class=img-circle elevation-2 alt=Logo')}}>
                 </div>
 
-                <p align="center">Feedback successfully submited</p>
-                <p align="center">You can use the code to redeem</p>
 
-                <h3 align="center">Thank you very much for your feedback</h3>
+                <h4 class="text-center">Feedback successfully submited</h4>
+                <h4 class="text-center">You can use the code to redeem
+                    <span class="badge badge-primary">{{$feedback->fb_coupon}}</span></h4>
+
+
+
+
+                <h3 class="text-center">Thank you very much for your feedback</h3>
 
 
                 <div id="success_message" style="width:100%; height:100%; display:none; ">

@@ -23,12 +23,10 @@ class FeedbackController extends Controller
 
     public function success(Feedback $feedback)
     {
-      //  $feedback = Feedback::firstOrFail();
-        //return view('job.jobfeedback.success')->with(['feedback' => $feedback,'coupon' => $coupon]);
-        //$feedback= feedback::find(session('created_id'));    
-        //return view ('job.jobfeedback.success', compact('feedback'));  
         $feedback= feedback::where('user_id', auth()->id())->find(session('created_id'));
+        //dd($feedback);
         return redirect()->route('job.jobfeedback.success',compact('feedback'));
+
     }
 
 
@@ -58,7 +56,13 @@ class FeedbackController extends Controller
         $feedback->fb_coupon = Str::random(6);
 
         $feedback->save();  
-        return view('job.jobfeedback.success');
+
+        //$feedback= feedback::where('user_id', auth()->id())->find(session('created_id'));
+        //dd($feedback);
+
+        //return view('job.jobfeedback.success');
+       // return redirect()->route('job.jobfeedback.success',compact('feedback'));
+        return view('job.jobfeedback.success',compact('feedback'));
     }
 
     /**
