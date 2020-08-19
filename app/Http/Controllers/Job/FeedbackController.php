@@ -21,10 +21,14 @@ class FeedbackController extends Controller
         return view('job.jobfeedback.index');
     }
 
-    public function success($coupon)
+    public function success(Feedback $feedback)
     {
-        $feedback = Feedback::where('id', $coupon)->firstOrFail();
-        return view('job.jobfeedback.success')->with(['feedback' => $feedback,'coupon' => $coupon]);        
+      //  $feedback = Feedback::firstOrFail();
+        //return view('job.jobfeedback.success')->with(['feedback' => $feedback,'coupon' => $coupon]);
+        //$feedback= feedback::find(session('created_id'));    
+        //return view ('job.jobfeedback.success', compact('feedback'));  
+        $feedback= feedback::where('user_id', auth()->id())->find(session('created_id'));
+        return redirect()->route('job.jobfeedback.success',compact('feedback'));
     }
 
 
