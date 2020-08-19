@@ -143,6 +143,9 @@ Route::resource('/job/jobwork', 'Job\JobworkController', ['as'=>'job'])->middlew
 Route::resource('/job/jobwfp', 'Job\JobwfpController', ['as'=>'job'])->middleware('auth'); //Waiting for parts
 Route::get('/jobcard/jobquit', 'Job\JobcardController@jobquit')->name('jobcard.quit'); 
 Route::get('/jobcard/jobpending', 'Job\JobcardController@jobpending')->name('jobcard.pending'); 
+
+Route::get('/jobcard/jobpendingkkd', 'Job\JobcardController@jobpendingkkd')->name('jobcard.pendingkkd'); 
+
 Route::get('/jobcard/jobdelivered', 'Job\JobcardController@jobdelivered')->name('jobcard.delivered'); 
 
 
