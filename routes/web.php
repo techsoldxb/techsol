@@ -144,6 +144,8 @@ Route::resource('/job/jobwfp', 'Job\JobwfpController', ['as'=>'job'])->middlewar
 Route::get('/jobcard/jobquit', 'Job\JobcardController@jobquit')->name('jobcard.quit'); 
 Route::get('/jobcard/jobdelivered', 'Job\JobcardController@jobdelivered')->name('jobcard.delivered'); 
 
+
+
 Route::resource('/job/jobhistory', 'Job\JobhistoryController', ['as'=>'job'])->middleware('auth');
 
 Route::get('/jobinvtotal/indexkkd', 'Job\JobinvtotalController@indexkkd')->name('jobinvtotal.indexkkd'); 
@@ -152,6 +154,8 @@ Route::get('/job/jobinvoice/{jobcard}/print', 'Job\JobinvoiceController@print')-
 
 Route::resource('/job/jobfeedback', 'Job\FeedbackController', ['as'=>'job']);
 Route::get('/jobfeedback/success', 'Job\FeedbackController@success')->name('jobfeedback.success'); 
+
+
 
 //Route::get('/jobcard/invoice', 'Job\JobcardController@invoice')->name('jobcard.invoice'); 
 //Route::get('/jobcard/joboutside', 'Job\JobcardController@joboutside')->name('jobcard.outside'); 

@@ -57,11 +57,6 @@ class FeedbackController extends Controller
 
         $feedback->save();  
 
-        //$feedback= feedback::where('user_id', auth()->id())->find(session('created_id'));
-        //dd($feedback);
-
-        //return view('job.jobfeedback.success');
-       // return redirect()->route('job.jobfeedback.success',compact('feedback'));
         return view('job.jobfeedback.success',compact('feedback'));
     }
 

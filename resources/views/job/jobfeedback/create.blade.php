@@ -129,14 +129,18 @@
                                 placeholder="Your Comments" maxlength="6000" rows="4"></textarea>
                         </div>
                     </div>
+
+
                     <div class="row">
                         <div class="col-sm-6 form-group">
                             <label for="name"> Your Name:</label>
-                            <input type="text" class="form-control" id="fb_name" name="fb_name" required>
+                            <input type="text" class="form-control" id="fb_name" name="fb_name"
+                                value="{{ app('request')->input('name') }}" required>
                         </div>
                         <div class="col-sm-6 form-group">
                             <label for="mobile"> Mobile:</label>
-                            <input type="text" class="form-control" id="fb_mobile" name="fb_mobile" required>
+                            <input type="text" class="form-control" id="fb_mobile" name="fb_mobile"
+                                value="{{ app('request')->input('mobile') }}" required>
                         </div>
                     </div>
                     <div class="row">
