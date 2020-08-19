@@ -18,7 +18,7 @@
                         <thead>
                             <tr>
                                 <th> Job ID </th>
-                                <th> Quit Date </th>
+                                <th> Received Date </th>
                                 <th> Name </th>
                                 <th>Type</th>
                                 <th>Brand</th>
@@ -53,7 +53,7 @@
                         <tfoot>
                             <tr>
                                 <th> Job ID </th>
-                                <th> Quit Date </th>
+                                <th> Received Date </th>
                                 <th> Name </th>
                                 <th>Type</th>
                                 <th>Brand</th>
