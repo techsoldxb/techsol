@@ -165,6 +165,13 @@
                         value="{{ app('request')->input('j') }}" required>
 
 
+                    @error('fb_job_number')
+                    <span class="invalid-feedback text-danger" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+
+
                     <div class="row">
                         <div class="col-sm-12 form-group">
 
