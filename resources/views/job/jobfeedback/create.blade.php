@@ -125,7 +125,7 @@
                             </p>
 
                             @error('fb_experience')
-                            <span class="invalid-feedback" role="alert">
+                            <span class="invalid-feedback text-danger" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                             @enderror
@@ -139,7 +139,7 @@
                                 placeholder="Your Comments" maxlength="6000" rows="4"></textarea>
 
                             @error('fb_comments')
-                            <span class="invalid-feedback" role="alert">
+                            <span class="invalid-feedback text-danger" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                             @enderror
