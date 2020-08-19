@@ -285,7 +285,7 @@
                     <div class="icon">
                         <i class="ion ion-pie-graph"></i>
                     </div>
-                    <a href="{{route('showroom.enqrmdtoday')}}" class="small-box-footer">More info <i
+                    <a href="{{route('jobcard.pending')}}" class="small-box-footer">More info <i
                             class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
