@@ -67,7 +67,7 @@ class JobcardController extends Controller
     public function jobpending()
     {
         
-        $arr['jobcard'] = Jobcard::select('id','job_enq_number','job_quit_date'
+        $arr['jobcard'] = Jobcard::select('id','job_enq_number','job_enq_date'
         ,'job_cust_name','job_cust_mobile','job_item_type','job_item_brand','job_item_model',
         'job_fault','job_quit_remark','job_quit_created_user','job_status_name')
         ->where('job_comp_code', auth()->user()->company)
