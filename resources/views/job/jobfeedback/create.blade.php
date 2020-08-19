@@ -98,6 +98,9 @@
 
                 <h2>Feedback</h2>
                 <p> Please provide your feedback below: </p>
+
+
+
                 <form class="needs-validation" name="myform" id="myform" novalidate method="post"
                     action="{{ route('job.jobfeedback.store') }}" enctype="multipart/form-data" autocomplete="off"
                     autofill="off">
@@ -120,6 +123,13 @@
                                     Poor
                                 </label>
                             </p>
+
+                            @error('fb_experience')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+
                         </div>
                     </div>
                     <div class="row">
@@ -127,6 +137,13 @@
                             <label for="comments"> Comments:</label>
                             <textarea class="form-control" type="textarea" name="fb_comments" id="fb_comments"
                                 placeholder="Your Comments" maxlength="6000" rows="4"></textarea>
+
+                            @error('fb_comments')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+
                         </div>
                     </div>
 
@@ -135,14 +152,19 @@
                         <div class="col-sm-6 form-group">
                             <label for="name"> Your Name:</label>
                             <input type="text" class="form-control" id="fb_name" name="fb_name"
-                                value="{{ app('request')->input('name') }}" required>
+                                value="{{ app('request')->input('n') }}" required>
                         </div>
                         <div class="col-sm-6 form-group">
                             <label for="mobile"> Mobile:</label>
                             <input type="text" class="form-control" id="fb_mobile" name="fb_mobile"
-                                value="{{ app('request')->input('mobile') }}" required>
+                                value="{{ app('request')->input('m') }}" required>
                         </div>
                     </div>
+
+                    <input type="hidden" class="form-control" id="fb_name" name="fb_job_number"
+                        value="{{ app('request')->input('j') }}" required>
+
+
                     <div class="row">
                         <div class="col-sm-12 form-group">
 

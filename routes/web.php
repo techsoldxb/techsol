@@ -64,7 +64,7 @@ Route::get('/foh/homeicc', 'HomeController@icc')->name('homeicc')->middleware('a
 Route::get('/foh/homejob', 'HomeController@job')->name('homejob')->middleware('auth');
 Route::get('/coh', 'HomeController@coh')->name('cash')->middleware('auth');
 
-Route::get('/feedback', 'HomeController@feedback')->name('feedback');
+//Route::get('/fb', 'HomeController@feedback')->name('fb');
 //Route::get('/admin1', 'HomestaffController@index')->name('homestaff');
 
 //Route::get('/feedback', 'FeedbackController@feedback')->name('feedback');
@@ -158,6 +158,10 @@ Route::get('/job/jobinvoice/{jobcard}/print', 'Job\JobinvoiceController@print')-
 
 Route::resource('/job/jobfeedback', 'Job\FeedbackController', ['as'=>'job']);
 Route::get('/jobfeedback/success', 'Job\FeedbackController@success')->name('jobfeedback.success'); 
+
+//Route::get('/jobcard/jobfeedback', 'Job\FeedbackController@create')->name('fb'); 
+
+Route::get('/fb', 'Job\FeedbackController@create')->name('fb');
 
 
 

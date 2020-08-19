@@ -20,10 +20,12 @@ class CreateFeedbackTable extends Migration
             $table->string('fb_comments')->nullable();
             $table->string('fb_name')->nullable();
             $table->string('fb_mobile')->nullable();
-            $table->string('fb_job_number')->nullable();
+            $table->string('fb_job_number')->unique();
             $table->string('fb_status')->nullable();
-            $table->string('fb_coupon')->nullable();
+            $table->string('fb_coupon')->nullable()->unique();
             $table->string('fb_coupon_status')->nullable();
+            $table->string('fb_invoice_amount')->nullable();
+            $table->string('fb_coupon_amount')->nullable();
             
             $table->string('fb_flex1')->nullable();
             $table->string('fb_flex2')->nullable();

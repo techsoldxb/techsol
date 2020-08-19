@@ -137,13 +137,19 @@ class JobcompleteController extends Controller
         $numbers = $jobcard->job_cust_mobile;
         $new_id = $jobcard->job_enq_number;
         $handover = $request->job_flex3;
-                 
+        $job_cust_name = $jobcard->job_cust_name;
+
+     
+        //$message = rawurlencode("Dear Customer: Your $brand - $model - $type (Job No - $new_id) handed over to $handover.http://erp.techsolme.com/job/jobfeedback/create?j=$new_id&n=$job_cust_name&=$numbers");  
+
+        //echo $message;    
+
         $message = rawurlencode("Dear Customer: Your $brand - $model - $type (Job No - $new_id) handed over to $handover . Thank you.");    
             
              $data = array('apikey' => $apiKey, 'numbers' => $numbers, "sender" => $sender, "message" => $message);
 
             $ch = curl_init('http://api.textlocal.in/send/?');
-            curl_setopt($ch, CURLOPT_POST, true);
+           curl_setopt($ch, CURLOPT_POST, true);
             curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             $result = curl_exec($ch); // This is the result from the API        
@@ -175,7 +181,7 @@ class JobcompleteController extends Controller
         }
 
         
-        $jobcard->save();
+         $jobcard->save();
         return redirect()->route('job.jobcomplete.index')->with('info','Transaction updated successfully!');
 
     }

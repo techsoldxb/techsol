@@ -5,6 +5,13 @@ namespace App\Http\Controllers\Job;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Validator;
+use App\Http\Requests\StoreFeedbackRequest;
+use Illuminate\Validation\Rule;
+
+
+
+
 use Illuminate\Support\Str;
 
 use App\Feedback;
@@ -46,12 +53,24 @@ class FeedbackController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request,Feedback $feedback)
+
+
+
+    public function store(Request $request ,Feedback $feedback)
     {
+
+        
+        $validatedData = $request->validate([
+            'fb_job_number' => 'unique:feedback',  
+            'fb_comments' => 'required',    
+            'fb_experience' => 'required',            
+        ]);
+
         $feedback->fb_name = $request->fb_name;  
         $feedback->fb_experience = $request->fb_experience;  
         $feedback->fb_mobile = $request->fb_mobile;  
         $feedback->fb_comments = $request->fb_comments;    
+        $feedback->fb_job_number = $request->fb_job_number;    
 
         $feedback->fb_coupon = Str::random(6);
 
