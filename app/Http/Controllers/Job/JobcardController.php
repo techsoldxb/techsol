@@ -71,12 +71,15 @@ class JobcardController extends Controller
         ,'job_cust_name','job_cust_mobile','job_item_type','job_item_brand','job_item_model',
         'job_fault','job_quit_remark','job_quit_created_user')
         ->where('job_comp_code', auth()->user()->company)
-        ->where('job_status_name','Received')
-        ->orWhere('job_status_name','Inspected')
-        ->orWhere('job_status_name','Work')
-        ->orWhere('job_status_name','Completed')
-        ->orWhere('job_status_name','Outside')
-        ->orWhere('job_status_name','WFP')
+        ->where(function($query)
+        {
+            $query->where('job_status_name', '=', 'Received')
+            ->orWhere('job_status_name', '=', 'Inspected')
+            ->orWhere('job_status_name', '=', 'Work')
+            ->orWhere('job_status_name', '=', 'Completed')
+            ->orWhere('job_status_name', '=', 'Outside')
+            ->orWhere('job_status_name', '=', 'WFP');
+        })      
         ->get();
     
         return view('job.jobcard.pending')->with($arr); 
