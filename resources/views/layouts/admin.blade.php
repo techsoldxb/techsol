@@ -731,13 +731,23 @@
                         @if(Gate::check('isAdmin'))
                         <li class="nav-item">
                             <a href="{{route('job.jobhistory.index')}}" class="nav-link
-                            @if($segment=='jobfault')                
+                            @if($segment=='jobhistory')                
                             active
                             @endif">
                                 <i class="nav-icon fas fa-circle text-warning"></i>
                                 <p>Job History</p>
                             </a>
                         </li>
+
+                        <li class="nav-item">
+                            <a href=" {{ route('users') }}" class="nav-link">
+                                <i class="nav-icon fas fa-user"></i>
+
+
+                                <p>Users</p>
+                            </a>
+                        </li>
+
                         @endif
 
 
