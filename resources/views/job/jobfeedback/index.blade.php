@@ -1,218 +1,143 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Techsol Feedback</title>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <link rel="stylesheet" href="form.css">
-    <script src="form.js"></script>
+@extends('layouts.admin')
+@section('content')
 
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Free Feedback Form HTML Code For Website - reusable form</title>
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                <!-- /.card-header -->
 
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <style>
-        body {
-            background-color: #000;
-        }
-
-        html,
-        body {
-            height: 100%;
-        }
-
-        .imagebg {
-            background-image: url("/images/mixing-desk-351478_1920.jpg");
-
-
-
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: cover;
-            background-attachment: fixed;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            -webkit-filter: blur(3px);
-            filter: blur(3px);
-            opacity: 0.6;
-            filter: alpha(opacity=60);
-        }
-
-        .form-container {
-            background-color: #fff;
-            box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 20px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3);
-            border-radius: 8px;
-            font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-        }
-
-    </style>
-    <script>
-        $(function () {
-            function after_form_submitted(data) {
-                if (data.result == 'success') {
-                    $('form#reused_form').hide();
-                    $('#success_message').show();
-                    $('#error_message').hide();
-                } else {
-                    $('#error_message').append('<ul></ul>');
-
-                    jQuery.each(data.errors, function (key, val) {
-                        $('#error_message ul').append('<li>' + key + ':' + val + '</li>');
-                    });
-                    $('#success_message').hide();
-                    $('#error_message').show();
-
-                    //reverse the response on the button
-                    $('button[type="button"]', $form).each(function () {
-                        $btn = $(this);
-                        label = $btn.prop('orig_label');
-                        if (label) {
-                            $btn.prop('type', 'submit');
-                            $btn.text(label);
-                            $btn.prop('orig_label', '');
-                        }
-                    });
-
-                } //else
-            }
-
-            $('#reused_form').submit(function (e) {
-                e.preventDefault();
-
-                $form = $(this);
-                //show some response on the button
-                $('button[type="submit"]', $form).each(function () {
-                    $btn = $(this);
-                    $btn.prop('type', 'button');
-                    $btn.prop('orig_label', $btn.text());
-                    $btn.text('Sending ...');
-                });
-
-
-                $.ajax({
-                    type: "POST",
-                    url: 'http://reusableforms.com/handler/d4/feedback-form-html-code-for-website',
-                    data: $form.serialize(),
-                    success: after_form_submitted,
-                    dataType: 'json'
-                });
-
-            });
-        });
-
-    </script>
-    <style>
-        #orig_article_block {
-            position: fixed;
-            left: 0px;
-            bottom: 0px;
-            height: 60px;
-            width: 100%;
-            background: #222;
-            color: #fff;
-            padding: 10px;
-        }
-
-        #orig_article_block a {
-            color: #fff;
-            text-decoration: underline;
-        }
-
-        /* IE 6 */
-        * html #orig_article_block {
-            position: absolute;
-            top: expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe=document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px');
-        }
-
-    </style>
-
-
-</head>
-
-<body>
-    <div class="container">
-        <div class="imagebg"></div>
-        <div class="row " style="margin-top: 50px">
-            <div class="col-md-6 col-md-offset-3 form-container">
-                <div class="login-logo" align="center">
-                    <img src={{asset('dist/img/tclogo1.png class=img-circle elevation-2 alt=Logo')}}>
-                </div>
-
-                <h2>Feedback</h2>
-                <p> Please provide your feedback below: </p>
-                <form role="form" method="post" id="reused_form">
-                    <div class="row">
-                        <div class="col-sm-12 form-group">
-                            <label>How do you rate your overall experience?</label>
-                            <p>
-                                <label class="radio-inline">
-                                    <input type="radio" name="experience" id="radio_experience" value="excellent">
-                                    Excellent
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="experience" id="radio_experience" value="good">
-                                    Good
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="experience" id="radio_experience" value="poor">
-                                    Poor
-                                </label>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12 form-group">
-                            <label for="comments"> Comments:</label>
-                            <textarea class="form-control" type="textarea" name="comments" id="comments"
-                                placeholder="Your Comments" maxlength="6000" rows="4"></textarea>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6 form-group">
-                            <label for="name"> Your Name:</label>
-                            <input type="text" class="form-control" id="name" name="name" required>
-                        </div>
-                        <div class="col-sm-6 form-group">
-                            <label for="email"> Mobile:</label>
-                            <input type="text" class="form-control" id="email" name="mobile" required>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12 form-group">
-                            <button type="submit" class="btn btn-lg btn-warning btn-block">Post </button>
-                        </div>
-                    </div>
-                </form>
-                <div id="success_message" style="width:100%; height:100%; display:none; ">
-                    <h3>Posted your feedback successfully!</h3>
-                </div>
-                <div id="error_message" style="width:100%; height:100%; display:none; ">
-                    <h3>Error</h3> Sorry there was an error sending your form.
-                </div>
+                <!-- /.card-body -->
             </div>
+            <!-- /.card -->
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Feedback Details </h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th> FB ID </th>
+                                <th>Job ID</th>
+                                <th> Name </th>
+                                <th> Mobile </th>
+                                <th>Experience</th>
+                                <th>Comments</th>
+                                <th>Coupon</th>
+                                <th>Expiry Date</th>
+                                <th> Action </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @if(count($feedback))
+                            @foreach($feedback as $c)
+
+                            <tr>
+
+                                <td>{{ date('d-m-Y h:i A', strtotime($c->created_at)) }}</td>
+                                <td>{{ $c->fb_number }}</td>
+                                <td>{{ $c->fb_job_number }}</td>
+                                <td>{{ $c->fb_name }}</td>
+                                <td>{{ $c->fb_mobile }}</td>
+                                <td>{{ $c->fb_experience }}</td>
+                                <td>{{ $c->fb_comments }}</td>
+                                <td class="text-primary">{{ $c->fb_coupon }}</td>
+                                <td>{{ $c->fb_coupon_exp}}</td>
+
+
+
+
+
+
+
+                                <td>
+
+
+
+
+                                    <a href="{{ route('job.jobinspect.edit',$c->id) }}">
+                                        <i class="fa fa-edit"></i>
+
+                                    </a>
+
+
+
+
+
+                                </td>
+
+                            </tr>
+                            @endforeach
+
+                            @else
+                            <tr>
+                                <td colspan="11">No Record Found</td>
+                            </tr>
+                            @endif
+
+                        </tbody>
+                        <tfoot>
+                            <tr>
+
+                                <th>Date</th>
+                                <th> FB ID </th>
+                                <th>Job ID</th>
+                                <th> Name </th>
+                                <th> Mobile </th>
+                                <th>Experience</th>
+                                <th>Comments</th>
+                                <th>Coupon</th>
+                                <th>Expiry Date</th>
+                                <th> Action </th>
+
+                            </tr>
+                        </tfoot>
+                    </table>
+
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
+
+<!-- Modal -->
+<div class="modal modal-danger fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+
+                <h4 class="modal-title text-left" id="myModalLabel">Delete Confirmation</h4>
+            </div>
+            <form action="{{route('job.jobcard.destroy','test')}}" method="post">
+                {{method_field('delete')}}
+                {{csrf_field()}}
+                <div class="modal-body">
+                    <p class="text-left">
+                        Are you sure you want to delete this transaction?
+                    </p>
+                    <input type="hidden" name="category_id" id="cat_id" value="">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-warning">Delete</button>
+                </div>
+            </form>
         </div>
     </div>
-</body>
+</div>
 
-</html>
+
+@endsection

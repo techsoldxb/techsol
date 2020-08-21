@@ -498,10 +498,19 @@
                     </div>
 
 
-                    <label class="col-lg-1" for="">Contact Number</label>
+                    <label class="col-lg-1" for="">Date</label>
                     <div class="col-lg-2">
-                        <input type="text" name="th_supp_contact" class="form-control"
-                            placeholder="Enter contact number">
+                        <input class="form-control datepicker" id="datepicker" name="th_bill_dt"
+                            value="{{ date('d-m-Y') }}" required>
+
+                        <script>
+                            $('#datepicker').datepicker({
+                                format: 'dd-mm-yyyy',
+                                uiLibrary: 'bootstrap4'
+                            });
+
+                        </script>
+
                         <div class="clear-fix"></div>
                     </div>
                 </div>
@@ -512,18 +521,11 @@
 
                 <div class="form-group">
                     <div class="row">
-                        <label class="col-lg-1" for="">Date *</label>
+                        <label class="col-lg-1" for="">Amount</label>
                         <div class="col-lg-2">
-                            <input class="form-control datepicker" id="datepicker" name="th_bill_dt"
-                                value="{{ date('d-m-Y') }}" required>
 
-                            <script>
-                                $('#datepicker').datepicker({
-                                    format: 'dd-mm-yyyy',
-                                    uiLibrary: 'bootstrap4'
-                                });
-
-                            </script>
+                            <input type="text" name="th_bill_amt" onkeypress="return isNumberKey(event)"
+                                class="form-control " placeholder="Enter bill amount" required>
 
                         </div>
 
@@ -537,11 +539,16 @@
 
                     <div class="form-group">
                         <div class="row">
-                            <label class="col-lg-1" for="">Amount *</label>
+                            <label class="col-lg-1" for="">Department</label>
                             <div class="col-lg-2">
+                                <select class="custom-select" name="th_dept_code" required>
+                                    <option value="" selected disabled hidden>Please select</option>
+                                    <option value="Showroom">Showroom</option>
+                                    <option value="Service">Service</option>
 
-                                <input type="text" name="th_bill_amt" onkeypress="return isNumberKey(event)"
-                                    class="form-control " placeholder="Enter bill amount" required> </div>
+                                </select>
+
+                            </div>
 
 
                             <label class="col-lg-1" for="">Category</label>

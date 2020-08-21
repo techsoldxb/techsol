@@ -137,7 +137,7 @@ class AccountsController extends Controller
         $account->th_attach = $filename;
         $account->th_tran_code = 'EXPJV';
         $account->th_supp_name = $request->th_supp_name;
-        $account->th_supp_contact = $request->th_supp_contact;   
+        $account->th_dept_code = $request->th_dept_code;   
 
        // $date  = Carbon::createFromFormat('Y-m-d', $request->th_bill_dt); 
        $date  = Carbon::createFromFormat('d-m-Y', $request->th_bill_dt);        
@@ -152,7 +152,7 @@ class AccountsController extends Controller
         
         $account->th_emp_id = Auth::user()->id;
         $account->th_emp_name = Auth::user()->name;
-        $account->th_dept_code = Auth::user()->dept;
+        
         $account->th_comp_code = Auth::user()->company;
 
         $account->th_exp_cat_name = $request->th_exp_cat_name;

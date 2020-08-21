@@ -171,6 +171,8 @@
                     </span>
                     @enderror
 
+                    <input type="hidden" class="form-control" id="fb_comp_code" name="fb_comp_code"
+                        value="{{ app('request')->input('c') }}" required>
 
                     <div class="row">
                         <div class="col-sm-12 form-group">

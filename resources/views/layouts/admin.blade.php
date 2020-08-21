@@ -726,6 +726,16 @@
                             </a>
                         </li>
 
+                        <li class="nav-item">
+                            <a href="{{route('job.jobfeedback.index')}}" class="nav-link
+                            @if($segment=='jobfeedback')                
+                            active
+                            @endif">
+                                <i class="nav-icon fas fa-circle text-info"></i>
+                                <p>Coupon</p>
+                            </a>
+                        </li>
+
 
                         @endif
                         @if(Gate::check('isAdmin'))

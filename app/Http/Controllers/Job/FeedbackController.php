@@ -15,6 +15,7 @@ use Illuminate\Validation\Rule;
 use Illuminate\Support\Str;
 
 use App\Feedback;
+use Carbon\Carbon;
 
 class FeedbackController extends Controller
 {
@@ -25,7 +26,13 @@ class FeedbackController extends Controller
      */
     public function index()
     {
-        return view('job.jobfeedback.index');
+        $arr['feedback'] = Feedback::select('id','fb_comp_code','fb_experience'
+        ,'fb_comments','fb_name','fb_mobile','fb_job_number','fb_coupon','fb_coupon_exp','fb_number'
+        ,'created_at') 
+        ->where('fb_comp_code', auth()->user()->company)    
+        ->get();
+
+        return view('job.jobfeedback.index')->with($arr); 
     }
 
     public function success(Feedback $feedback)
@@ -66,11 +73,22 @@ class FeedbackController extends Controller
             'fb_experience' => 'required',            
         ]);
 
+        $id = Feedback::orderByDesc('fb_number')->first()->fb_number ?? date('Y') . 00000;
+        $year = date('Y');
+        $id_year = substr($id, 0, 4);
+        $seq = $year <> $id_year ? 0 : +substr($id, -5);
+        $new_id = sprintf("%0+4u%0+6u", $year, $seq+1); 
+        
+        $feedback->fb_number = $new_id;
+        $feedback->fb_comp_code = $request->fb_comp_code;  
         $feedback->fb_name = $request->fb_name;  
         $feedback->fb_experience = $request->fb_experience;  
         $feedback->fb_mobile = $request->fb_mobile;  
         $feedback->fb_comments = $request->fb_comments;    
-        $feedback->fb_job_number = $request->fb_job_number;    
+        $feedback->fb_job_number = $request->fb_job_number;   
+        
+        $coupon_exp = Carbon::now()->addMonth();
+        $feedback->fb_coupon_exp = $coupon_exp;
 
         $feedback->fb_coupon = Str::random(6);
 

@@ -1,6 +1,10 @@
 @extends('layouts.admin')
 @section('content')
 
+<?php
+use Carbon\Carbon;
+?>
+
 
 <!-- Main content -->
 <section class="content">
@@ -31,6 +35,11 @@
                             </tr>
                         </thead>
                         <tbody>
+
+                            <!-- /. {{Carbon::now()->subHours(3)->toDateTimeString()}} -->
+
+
+
                             @if(count($jobcard))
                             @foreach($jobcard as $c)
                             <tr>
