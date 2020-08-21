@@ -93,6 +93,7 @@ class HomeController extends Controller
       \DB::raw("DATE_FORMAT(job_invoice_date, '%Y-%m') as month"),      
       \DB::raw('SUM(job_invoice_amount) as amount')
     ])
+    ->whereNotNull('job_invoice_amount')
     ->groupBy('job_comp_code')
     ->groupBy('month')
     ->get();
