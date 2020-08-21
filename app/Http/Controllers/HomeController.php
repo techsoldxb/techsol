@@ -104,6 +104,17 @@ $cards->each(function($item) use (&$homejob) {
         ];
     });
 
+    
+    $arr['accounts'] = Account::where('th_comp_code', auth()->user()->company)
+    ->where('th_pay_status', 0)
+    ->where('th_dept_code','Service')
+    ->groupBy('th_exp_cat_name')
+   ->selectRaw('th_exp_cat_name, sum(th_bill_amt) as total')     
+   ->orderBy('total')  
+   ->get();
+ 
+
+
   
 
 
@@ -112,7 +123,7 @@ $job_comp_codes = $cards->pluck('job_comp_code')->sortBy('job_comp_code')->uniqu
 
 
 
-return view('homejob', compact('homejob', 'job_comp_codes'));
+return view('homejob', compact('homejob', 'job_comp_codes'))->with($arr);
 
 
     }
