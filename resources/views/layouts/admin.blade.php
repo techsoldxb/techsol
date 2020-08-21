@@ -762,6 +762,20 @@
                             </a>
                         </li>
 
+
+                        <li class="nav-item">
+                            <a href="{{route('admin.expense.index')}}" class="nav-link
+        @if($segment=='expense')                
+        active
+        @endif                
+        ">
+
+                                <i class="far fa-dot-circle nav-icon"></i>
+                                <p>Expanse Analysis</p>
+                            </a>
+                        </li>
+
+
                         @endif
 
 
