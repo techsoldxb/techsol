@@ -455,7 +455,9 @@
                                     @foreach ($job_comp_codes as $job_comp_code)
                                     <th>Amount {{ $job_comp_code }}</th>
                                     @endforeach
-
+                                    @foreach ($job_comp_codes as $job_comp_code)
+                                    <th>Count {{ $job_comp_code }}</th>
+                                    @endforeach
 
                                 </tr>
                             </thead>

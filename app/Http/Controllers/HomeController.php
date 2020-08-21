@@ -90,7 +90,8 @@ class HomeController extends Controller
 
     $cards = Jobcard::select([
        'job_comp_code',
-      \DB::raw("DATE_FORMAT(job_invoice_date, '%Y-%m') as month"),      
+      \DB::raw("DATE_FORMAT(job_invoice_date, '%Y-%m') as month"),
+      \DB::raw('COUNT(id) as invoices'),
       \DB::raw('SUM(job_invoice_amount) as amount')
     ])
     ->groupBy('job_comp_code')
@@ -98,7 +99,8 @@ class HomeController extends Controller
     ->get();
 
 $cards->each(function($item) use (&$homejob) {
-        $homejob[$item->month][$item->job_comp_code] = [            
+        $homejob[$item->month][$item->job_comp_code] = [
+            'count' => $item->invoices,
             'amount' => $item->amount
         ];
     });
