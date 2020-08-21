@@ -104,9 +104,13 @@ $cards->each(function($item) use (&$homejob) {
         ];
     });
 
+  
+
 
 
 $job_comp_codes = $cards->pluck('job_comp_code')->sortBy('job_comp_code')->unique();
+
+
 
 return view('homejob', compact('homejob', 'job_comp_codes'));
 
