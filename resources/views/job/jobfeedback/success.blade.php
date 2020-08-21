@@ -107,12 +107,13 @@
 
 
                 <h4 class="text-center">Feedback successfully submited</h4>
+
+                <!--
                 <h4 class="text-center">You can use the below code to redeem</h4>
                 <h2 class="text-center text-primary">
                     <mark>{{$feedback->fb_coupon}}</mark>
-
-
                 </h2>
+            -->
 
 
 

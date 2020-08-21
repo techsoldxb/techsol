@@ -1025,3 +1025,20 @@ to get the desired effect
 </body>
 
 </html>
+
+
+<!-- WORKING CODE FOR JOB HOME TO FIND THE INVOICE AMOUNT AND COUNT -->
+@foreach ($homejob as $month => $values)
+<tr>
+    <td>{{ \Carbon\Carbon::parse($month)->format('F Y') }}</td>
+    @foreach ($job_comp_codes as $job_comp_code)
+    <td>₹{{ number_format($homejob[$month][$job_comp_code]['amount'] ?? '0') }}</td>
+
+
+
+    @endforeach
+    @foreach ($job_comp_codes as $job_comp_code)
+    <td>{{ $homejob[$month][$job_comp_code]['count'] ?? '0' }}</td>
+    @endforeach
+</tr>
+@endforeach
