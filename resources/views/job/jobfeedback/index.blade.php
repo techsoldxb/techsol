@@ -63,7 +63,7 @@
 
 
 
-                                    <a href="{{ route('job.jobinspect.edit',$c->id) }}">
+                                    <a href="{{ route('job.jobfeedback.edit',$c->id) }}">
                                         <i class="fa fa-edit"></i>
 
                                     </a>
