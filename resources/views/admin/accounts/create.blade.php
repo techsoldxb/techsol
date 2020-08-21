@@ -490,7 +490,7 @@
                 <div class="row">
                     <label class="col-lg-1" for="">Name *</label>
                     <div class="col-lg-2">
-                        <input class="form-control" data-error="Please enter name field." type="text"
+                        <input class="form-control" data-error="Please enter name field." type="text" tabindex="1"
                             name="th_supp_name" class="form-control" placeholder="Enter name" required>
 
 
@@ -524,7 +524,7 @@
                         <label class="col-lg-1" for="">Amount</label>
                         <div class="col-lg-2">
 
-                            <input type="text" name="th_bill_amt" onkeypress="return isNumberKey(event)"
+                            <input type="text" name="th_bill_amt" onkeypress="return isNumberKey(event)" tabindex="2"
                                 class="form-control " placeholder="Enter bill amount" required>
 
                         </div>
@@ -532,7 +532,8 @@
 
                         <label class="col-lg-1" for="">Invoice Number</label>
                         <div class="col-lg-2">
-                            <input type="text" name="th_bill_no" class="form-control" placeholder="Enter bill number">
+                            <input type="text" name="th_bill_no" class="form-control" tabindex="3"
+                                placeholder="Enter bill number">
                             <div class="clear-fix"></div>
                         </div>
                     </div>
@@ -541,7 +542,7 @@
                         <div class="row">
                             <label class="col-lg-1" for="">Department</label>
                             <div class="col-lg-2">
-                                <select class="custom-select" name="th_dept_code" required>
+                                <select class="custom-select" name="th_dept_code" tabindex="4" required>
                                     <option value="" selected disabled hidden>Please select</option>
                                     <option value="Showroom">Showroom</option>
                                     <option value="Service">Service</option>
@@ -554,7 +555,7 @@
                             <label class="col-lg-1" for="">Category</label>
                             <div class="col-lg-2">
 
-                                <select class="custom-select" name="th_exp_cat_name" required>
+                                <select class="custom-select" name="th_exp_cat_name" tabindex="5" required>
                                     <option value="" selected disabled hidden>Please select</option>
 
                                     @foreach($category as $c)
@@ -724,7 +725,7 @@
 
                                 <label class="col-lg-1" for="">Attach Bill</label>
                                 <div class="col-md-6">
-                                    <input type="file" id="validationCustom01" name="th_attach">
+                                    <input type="file" id="validationCustom01" tabindex="6" name="th_attach">
                                     <div class="clear-fix"></div>
                                 </div>
                             </div>
@@ -732,7 +733,7 @@
                          
                         <div class="form-group">
                             <label for="comment">Narration:</label>
-                            <textarea name="th_purpose" class="form-control" rows="2" id="comment"
+                            <textarea name="th_purpose" class="form-control" rows="2" tabindex="7" id="comment"
                                 placeholder="Enter the narration in detail" required></textarea>
                         </div>
 
