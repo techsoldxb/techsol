@@ -90,7 +90,7 @@ class HomeController extends Controller
 
     $cards = Jobcard::select([
        'job_comp_code',
-      \DB::raw("DATE_FORMAT(job_enq_date, '%Y-%m') as month"),
+      \DB::raw("DATE_FORMAT(job_invoice_date, '%Y-%m') as month"),
       \DB::raw('COUNT(id) as invoices'),
       \DB::raw('SUM(job_invoice_amount) as amount')
     ])
