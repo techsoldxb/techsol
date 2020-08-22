@@ -138,6 +138,7 @@ class JobcompleteController extends Controller
         $new_id = $jobcard->job_enq_number;
         $handover = $request->job_flex3;
         $job_cust_name = $jobcard->job_cust_name;
+        $comp = $jobcard->job_comp_code;
 
      
         //$message = rawurlencode("Dear Customer: Your $brand - $model - $type (Job No - $new_id) handed over to $handover.http://erp.techsolme.com/job/jobfeedback/create?j=$new_id&n=$job_cust_name&=$numbers");  
@@ -155,6 +156,18 @@ class JobcompleteController extends Controller
             $result = curl_exec($ch); // This is the result from the API        
             curl_close($ch);
            // echo $result;
+
+           $message1 = rawurlencode("Dear Customer: Thank you for your visit. Help us with your valuable feedback. http://erp.techsolme.com/fb?j=$new_id&m=$numbers&c=$comp"); 
+            
+           $data = array('apikey' => $apiKey, 'numbers' => $numbers, "sender" => $sender, "message" => $message1);
+
+          $ch = curl_init('http://api.textlocal.in/send/?');
+         curl_setopt($ch, CURLOPT_POST, true);
+          curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+          curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+          $result = curl_exec($ch); // This is the result from the API        
+          curl_close($ch);
+         // echo $result;
 
 
         }

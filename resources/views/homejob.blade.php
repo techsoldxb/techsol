@@ -511,7 +511,7 @@
 
 
                                     <td>{{ $c->th_exp_cat_name }}</td>
-                                    <td>{{ number_format($c->total,3) }}</td>
+                                    <td>{{ number_format($c->total) }}</td>
 
 
 

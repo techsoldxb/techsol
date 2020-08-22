@@ -479,6 +479,7 @@
                             @endif">
 
                                 <i class="nav-icon fas fa-tags"></i>
+
                                 <p>Coupon</p>
                             </a>
                         </li>
