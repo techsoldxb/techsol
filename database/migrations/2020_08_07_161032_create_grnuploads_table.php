@@ -25,12 +25,12 @@ class CreateGrnuploadsTable extends Migration
             $table->integer('td_doc_amt')->nullable(); 
             $table->string('td_desc')->nullable(); 
             $table->string('td_cr_uid')->nullable(); 
-            $table->date('td_cr_dt')->nullable();             
+            $table->string('td_cr_dt')->nullable();             
             $table->string('supp_code')->nullable();
             $table->string('supp_name')->nullable();
             $table->string('act_supp_code')->nullable();
             $table->string('act_supp_name')->nullable();            
-            $table->date('supp_inv_date')->nullable();                        
+                                 
             $table->integer('paid_amount1')->nullable();
             $table->integer('paid_amount2')->nullable();
             $table->integer('paid_amount3')->nullable();
