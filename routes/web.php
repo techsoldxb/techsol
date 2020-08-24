@@ -79,6 +79,7 @@ Route::get('/dashboard', 'TestController@dashboard')->name('dashboard');
 
 Route::resource('/admin/categories', 'Admin\CategoriesController', ['as'=>'admin'])->middleware('auth');
 Route::resource('/admin/cashtopups', 'Admin\CashtopupController', ['as'=>'admin'])->middleware('auth');
+Route::resource('/admin/grnpayments', 'Admin\GrnpaymentController', ['as'=>'admin'])->middleware('auth');
 //Route::resource('/admin/advances', 'Admin\AdvanceController', ['as'=>'admin'])->middleware('auth');
 //Route::resource('/admin/advanceall', 'Admin\AdvanceallController', ['as'=>'admin'])->middleware('auth');
 //Route::resource('/admin/advancesettlement', 'Admin\AdvancesettlementController', ['as'=>'admin'])->middleware('auth');
