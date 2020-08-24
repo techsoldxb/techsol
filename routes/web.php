@@ -158,6 +158,8 @@ Route::get('/job/jobinvoice/{jobcard}/print', 'Job\JobinvoiceController@print')-
 
 Route::resource('/job/jobfeedback', 'Job\FeedbackController', ['as'=>'job']);
 Route::get('/jobfeedback/success', 'Job\FeedbackController@success')->name('jobfeedback.success'); 
+Route::get('/jobfeedback/fbmaster', 'Job\FeedbackController@fbmaster')->name('jobfeedback.fbmaster'); 
+
 
 //Route::get('/jobcard/jobfeedback', 'Job\FeedbackController@create')->name('fb'); 
 

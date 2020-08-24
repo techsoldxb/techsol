@@ -200,7 +200,7 @@
                     <label class="col-lg-2" for="">Model</label>
                     <div class="col-lg-3">
                         <input type="text" class="form-control" id="job_item_model" name="job_item_model" maxlength="15"
-                            placeholder="Enter model number">
+                            placeholder="Enter model number" required>
                     </div>
                     <script>
                         $("#job_item_model").keypress(function (e) {

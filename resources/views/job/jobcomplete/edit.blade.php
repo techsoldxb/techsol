@@ -329,7 +329,7 @@
 
                     <label class="col-lg-1" for="">Handover</label>
                     <div class="col-lg-2">
-                        <input type="text" class="form-control" name="job_flex3" id="job_flex3"
+                        <input type="text" class="form-control" name="job_flex3" id="job_flex3" maxlength="20"
                             placeholder="Person name" required>
                     </div>
 

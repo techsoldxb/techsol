@@ -49,6 +49,7 @@ class JobhistoryController extends Controller
                      ->make(true);
          }
          
+        // dd($request);
          
          return view('job.jobhistory.index');
      }

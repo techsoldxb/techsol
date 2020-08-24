@@ -37,11 +37,50 @@ class FeedbackController extends Controller
 
     public function success(Feedback $feedback)
     {
-        $feedback= feedback::where('user_id', auth()->id())->find(session('created_id'));
-        //dd($feedback);
-        return redirect()->route('job.jobfeedback.success',compact('feedback'));
+        
+        
+        return view('job.jobfeedback.success');
 
     }
+
+    Public function fbmaster(Request $request)
+    {
+         if ($request->ajax()) {
+             $data = Feedback::select('*');
+             return Datatables::of($data)
+                     ->addIndexColumn()
+                     ->addColumn('status', function($row){
+                          if($row->fb_comp_code){
+                             return '<span class="badge badge-primary">003</span>';
+                          }else{
+                             return '<span class="badge badge-danger">004</span>';
+                          }
+                     })
+                     ->filter(function ($instance) use ($request) {
+                         if ($request->get('fb_comp_code') == '003' || $request->get('fb_comp_code') == '004')
+                          {
+                             $instance->where('fb_comp_code', $request->get('fb_comp_code'));
+                         }
+                         
+                         if (!empty($request->get('search'))) {
+                              $instance->where(function($w) use($request){
+                                 $search = $request->get('search');
+                                 $w->orWhere('fb_number', 'LIKE', "%$search%")
+                                 ->orWhere('fb_name', 'LIKE', "%$search%");
+                             });
+                         }
+                     })
+                     ->rawColumns(['fb_comp_code'])
+                     ->make(true);
+         }
+
+        // dd($request);
+
+         
+         
+         return view('job.jobfeedback.fbmaster');
+     }
+
 
 
     /**
