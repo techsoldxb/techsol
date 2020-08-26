@@ -110,6 +110,15 @@ class JobwfpController extends Controller
             $today = Carbon::now()->toDate('Y-m-d h:i');
             $jobcard->job_work_date = $today; //Outside service date  
         }
+        else if (( $request->job_status_name )  == 'Quit') 
+        {
+            $jobcard->job_status_name = $request->job_status_name; 
+            $jobcard->job_quit_remark = $request->job_quit_remark; 
+            $today = Carbon::now()->toDate('Y-m-d h:i');
+            $jobcard->job_quit_date = $today;
+            $jobcard->job_quit_created_user =  Auth::user()->name;
+            
+        }
 
          
         $jobcard->save();

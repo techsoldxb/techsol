@@ -140,7 +140,10 @@ class JobworkController extends Controller
         else if (( $request->job_status_name )  == 'Return') 
         {
             $jobcard->job_status_name = $request->job_status_name;    
-            $jobcard->job_tech_remark = $request->job_tech_remark;             
+            $jobcard->job_tech_remark = $request->job_tech_remark;  
+            
+            $today = Carbon::now()->toDate('Y-m-d h:i');
+            $jobcard->job_return_date = $today; //Outside service date  
         }
         else if (( $request->job_status_name )  == 'Outside') 
         {
