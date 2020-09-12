@@ -435,6 +435,10 @@
                                 <option value="" selected disabled hidden>Please select</option>
                                 <option value="Udaya">Udaya</option>
                                 <option value="Bala">Bala</option>
+                                <option value="Techsol_India">Techsol India</option>
+                                <option value="Dhana_Udhayam">Dhana Udhayam</option>
+                                <option value="Lapzone">Lapzone</option>
+                                <option value="GK_Computers">GK Computers</option>
                                 <option value="Others">Others</option>
                             </select>
                         </div>
