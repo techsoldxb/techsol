@@ -176,10 +176,11 @@ class JobcardController extends Controller
         ->orderByDesc('job_enq_number', 'desc') // the biggist one first
         ->first();
 
-        $digitRepresentingASerie = '';
-    
+       // $digitRepresentingASerie = '';
+        // just increase value to 1
+        
         $jobcard->job_enq_number = $lastAccountForCurrentYear
-        ? ($lastAccountForCurrentYear->job_enq_number + 1) // just increase value to 1
+        ? ($lastAccountForCurrentYear->job_enq_number + 1) 
         : (date('Y') . $digitRepresentingASerie . '00001');
 
         $new_id = $jobcard->job_enq_number; 
