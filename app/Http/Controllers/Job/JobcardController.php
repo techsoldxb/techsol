@@ -175,6 +175,8 @@ class JobcardController extends Controller
         ->where('job_enq_number', 'like', date('Y') . '%') // filter for current year numbers
         ->orderByDesc('job_enq_number', 'desc') // the biggist one first
         ->first();
+
+        $digitRepresentingASerie = '0';
     
         $jobcard->job_enq_number = $lastAccountForCurrentYear
         ? ($lastAccountForCurrentYear->job_enq_number + 1) // just increase value to 1
