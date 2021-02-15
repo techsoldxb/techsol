@@ -215,7 +215,7 @@ class AccountsController extends Controller
 
        // return $account;
         // Commented due to email hacked
-      //  Mail::send(new NewBill($account));
+      //Mail::send(new NewBill($account));
 
        // Alert::success('Success Title', 'Success Message');
         

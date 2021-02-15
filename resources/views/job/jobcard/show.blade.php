@@ -93,10 +93,10 @@
         <strong>
 
             @if($jobcard->job_comp_code =='003')
-            Mobile: 9944 942308, Email: bashcomputers@gmail.com, Opp. State Bank Of India, 103 Salai Street,
+            Mobile: 9042886233, Email: bashcomputers@gmail.com, Opp. State Bank Of India, 103 Salai Street,
             Ramanathapuram
             @elseif($jobcard->job_comp_code =='004')
-            Tel: 233990, Mobile: 9600 3500 30, Email: techsolkkd@gmail.com, 315/1, Sekkalai Road, Karaikuddi.
+            Tel: 233990, Mobile: 9042886255, Email: techsolkkd@gmail.com, 315/1, Sekkalai Road, Karaikuddi.
             @endif
 
 
