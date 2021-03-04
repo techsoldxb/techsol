@@ -275,15 +275,6 @@ class JobcardController extends Controller
         if (  ( Auth::user()->company )  == 003) {
             
             $message = rawurlencode("Dear Customer: Your $brand - $model - $type received for service at Bash Computers. Your job card no $new_id. Contact 9944942308 for enquiry.");
-        }
-        else if (  ( Auth::user()->company )  == 004) {
-
-            $message = rawurlencode("Dear Customer: Your $brand - $model - $type received for service at Techsol Computers. Your job card no $new_id. Contact 9600350030 for enquiry.");
-
-        }
-
-
-
 
             $data = array('apikey' => $apiKey, 'numbers' => $numbers, "sender" => $sender, "message" => $message);
 
@@ -293,6 +284,30 @@ class JobcardController extends Controller
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             $result = curl_exec($ch); // This is the result from the API        
             curl_close($ch);
+
+        }
+        else if (  ( Auth::user()->company )  == 004) {
+
+            $message = rawurlencode("Dear Customer: Your $brand - $model - $type received for service at Techsol Computers. Your job card no $new_id. Contact 9600350030 for enquiry.");
+            $data = array('apikey' => $apiKey, 'numbers' => $numbers, "sender" => $sender, "message" => $message);
+
+            $ch = curl_init('http://api.textlocal.in/send/?');
+            curl_setopt($ch, CURLOPT_POST, true);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            $result = curl_exec($ch); // This is the result from the API        
+            curl_close($ch);
+
+        }
+        else
+        {
+
+        }
+
+
+
+
+           
 
             // echo $result;
     
