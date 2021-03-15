@@ -194,8 +194,18 @@ class JobcardController extends Controller
 
         $today = Carbon::now()->toDate('Y-m-d h:i');
         $jobcard->job_enq_date = $today;
+
+        if (  ( Auth::user()->company )  == 001) {
         
-        $countrycode = 91;
+            $countrycode = 971;
+        }
+        else
+        {
+            $countrycode = 91;
+        }
+            
+        
+        
         $customer = $request->job_cust_mobile;
         $numbers = $countrycode.$customer; // A single number or a comma-seperated list of numbers
 
