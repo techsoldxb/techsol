@@ -48,6 +48,7 @@
 
                                 <select class="custom-select" name="company" required>
                                     <option value="" selected disabled hidden>Please select</option>
+                                    <option value="001">Techsol U.A.E</option>
                                     <option value="002">Techsol India</option>
                                     <option value="003">Bash Computer</option>
                                     <option value="004">Techsol KKD</option>
