@@ -32,7 +32,7 @@ class CashtopupController extends Controller
        
         
         
-        $arr['cashtopups'] = Cashtopup::all();
+        $arr['cashtopups'] = Cashtopup::where('comp_code', auth()->user()->company)->get();
         return view('admin.cashtopups.index')->with($arr);
 
 
