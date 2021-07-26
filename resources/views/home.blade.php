@@ -40,6 +40,8 @@
 
                             @if($user->company =='002')
                             {{ number_format($topup-$expense-$cashpayment) }}
+                            @elseif($user->company =='001')
+                            {{ number_format($topup-$expense) }}
                             @else
                             {{ number_format($wob+$jobinvamount-$expense) }}
                             @endif
