@@ -445,7 +445,7 @@
                             </a>
                         </li>
 
-                        @can('isSuper_User')
+
 
                         <li class="nav-item">
                             <a href="{{route('admin.cashtopups.index')}}" class="nav-link
@@ -457,7 +457,7 @@
                             </a>
                         </li>
 
-                        @endcan
+
 
 
                         <li class="nav-item">
