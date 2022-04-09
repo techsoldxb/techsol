@@ -27,7 +27,7 @@
     "dependencies": {
         "gijgo": "^1.9.13",
         "jquery-ui-dist": "^1.12.1",
-        "moment": "^2.27.0",
+        "moment": "^2.29.2",
         "sweetalert2": "^9.15.2",
         "tempusdominus-bootstrap-4": "^5.1.2",
         "vue-route": "^1.5.1",
