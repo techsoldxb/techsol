@@ -201,15 +201,18 @@ class JobcardController extends Controller
         
             $countrycode = 971;
         }
-        elseif(  ( Auth::user()->company )  == 004)
+        else if(  ( Auth::user()->company )  == 004)
         {
             $countrycode = 91;
         }
-        elseif(  ( Auth::user()->company )  == 003)
+        else if(  ( Auth::user()->company )  == 003)
         {
             $countrycode = 91;
         }
-        
+        else if(  ( Auth::user()->company )  == 006)
+        {
+            $countrycode = 968;
+        }
             
         
         
