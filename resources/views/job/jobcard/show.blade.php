@@ -65,7 +65,7 @@
             @elseif($jobcard->job_comp_code =='4')
             <img src={{asset('dist/img/tc_logo_bg50.png')}}>
             @elseif($jobcard->job_comp_code =='6')
-            <img src={{asset('dist/img/tc_logo_bg50.png')}}>
+            <img src={{asset('dist/img/techsol_ruwi_logo.png')}}>
             @else
             <img src={{asset('dist/img/mcclogonew.png')}}>
             @endif
