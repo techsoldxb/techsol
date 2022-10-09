@@ -101,6 +101,8 @@
             Ramanathapuram
             @elseif($jobcard->job_comp_code =='004')
             Tel: 233990, Mobile: 9042886255, Email: techsolkkd@gmail.com, 315/1, Sekkalai Road, Karaikuddi.
+            @else($jobcard->job_comp_code =='006')
+            Tel: +968 24832720, Email: sales@techsolme.com, P.O.Box: 254, Souq Ruwi Street, Ruwi, Sultanat of Oman.
             @endif
 
 
