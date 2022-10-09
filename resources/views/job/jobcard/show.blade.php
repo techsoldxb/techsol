@@ -72,7 +72,7 @@
 
         </div>
         <div class="col text-center">
-            <img src={{asset('dist/img/tclogo12.png')}}>
+            <h3 class="m-0  text-center"> <strong><u>Job Card</u></strong></h3>
             <P></P>
 
         </div>
@@ -109,7 +109,7 @@
 
     <div class="p-1 text-center">
 
-        <h3 class="m-0  text-center"> <strong><u>Job Card</u></strong></h3>
+
 
     </div>
 </div>
