@@ -262,6 +262,11 @@
 
 
 
+                <div class="form-group">
+
+                    <p align="left">I agree the Terms and Conditions printed overleaf.</p>
+
+                </div>
 
 
 
@@ -270,9 +275,10 @@
 
                 <div class="form-group">
                     <div class="row">
+                        <label class="col" for="">Signature of customer: _____________________________</label>
                         <label class="col" for="">Received by: {{ $jobcard->job_enq_created_user }}</label>
 
-                        <label class="col" for="">Signature of customer: _____________________________</label>
+
 
                     </div>
                 </div>
