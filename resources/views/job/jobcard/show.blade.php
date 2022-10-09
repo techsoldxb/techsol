@@ -64,6 +64,8 @@
             <img src={{asset('dist/img/bashlogo12.png')}}>
             @elseif($jobcard->job_comp_code =='4')
             <img src={{asset('dist/img/tc_logo_bg50.png')}}>
+            @elseif($jobcard->job_comp_code =='6')
+            <img src={{asset('dist/img/tc_logo_bg50.png')}}>
             @else
             <img src={{asset('dist/img/mcclogonew.png')}}>
             @endif
@@ -80,6 +82,8 @@
             <img src={{asset('dist/img/bashlogotamil12.png')}}>
             @elseif($jobcard->job_comp_code =='4')
             <img src={{asset('dist/img/techsolkkd_tamil11.png')}}>
+            @elseif($jobcard->job_comp_code =='6')
+            <img src={{asset('dist/img/TECHSOL_ARA1.png')}}>
             @else
             <img src={{asset('dist/img/mcclogonew.png')}}>
             @endif

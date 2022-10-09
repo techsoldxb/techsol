@@ -132,8 +132,8 @@
 
                             </div>
                             <input type="text" class="form-control" onkeypress="return isNumberKey(event)"
-                                id="validationCustom02" name="job_cust_mobile" maxlength="10"
-                                placeholder="Enter mobile number" required>
+                                id="validationCustom02" name="job_cust_mobile" placeholder="Enter mobile number"
+                                required>
                             <span class="text-danger"> {{$errors->first('job_cust_mobile')}} </span>
                         </div>
 
