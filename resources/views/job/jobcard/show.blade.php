@@ -270,7 +270,7 @@
 
                 <div class="form-group">
                     <div class="row">
-                        <label class="col" for="">Prepared by: {{ $jobcard->job_enq_created_user }}</label>
+                        <label class="col" for="">Received by: {{ $jobcard->job_enq_created_user }}</label>
 
                         <label class="col" for="">Signature of customer: _____________________________</label>
 
