@@ -14,7 +14,7 @@
                             Today Invoice:
                         </div>
                         <div class="font-weight-bold text-left" style="font-size:18px;color:red">
-                            {{ number_format($sc_inv_today) }}
+                            {{ number_format($sc_inv_today,3) }}
                             <i class="fa fa-rupee" style="font-size:18px;color:red"></i>
                         </div>
                         <div>/ </div>
@@ -23,7 +23,7 @@
                             Cash Invoice:
                         </div>
                         <div class="font-weight-bold text-left" style="font-size:18px;color:blue">
-                            {{ number_format($sc_inv_cash) }}
+                            {{ number_format($sc_inv_cash,3) }}
                             <i class="fa fa-rupee" style="font-size:18px;color:blue"></i>
                         </div>
                         <div>/ </div>
@@ -31,7 +31,7 @@
                             Online Invoice:
                         </div>
                         <div class="font-weight-bold text-left" style="font-size:18px;color:blue">
-                            {{ number_format($sc_inv_online) }}
+                            {{ number_format($sc_inv_online,3) }}
                             <i class="fa fa-rupee" style="font-size:18px;color:blue"></i>
                         </div>
 
@@ -70,7 +70,8 @@
                                 <td>{{ $c->job_fault}}</td>
 
                                 <td> {{ $c->job_enq_number }} </td>
-                                <td class="font-weight-bold text-right text-primary">{{ $c->job_invoice_amount }}</td>
+                                <td class="font-weight-bold text-right text-primary">
+                                    {{ number_format($c->job_invoice_amount,3) }}</td>
                                 <td class="text-center">
                                     <a href="{{ route('job.jobinvoice.print',$c) }}">
                                         <i class="fa fa-print text-green"></i>
