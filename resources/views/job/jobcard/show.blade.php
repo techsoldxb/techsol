@@ -64,6 +64,8 @@
             <img src={{asset('dist/img/bashlogo12.png')}}>
             @elseif($jobcard->job_comp_code =='4')
             <img src={{asset('dist/img/tc_logo_bg50.png')}}>
+            @elseif($jobcard->job_comp_code =='5')
+            <img src={{asset('dist/img/techsol_ruwi_logo.png')}}>
             @elseif($jobcard->job_comp_code =='6')
             <img src={{asset('dist/img/techsol_ruwi_logo.png')}}>
             @else
@@ -82,6 +84,8 @@
             <img src={{asset('dist/img/bashlogotamil12.png')}}>
             @elseif($jobcard->job_comp_code =='4')
             <img src={{asset('dist/img/techsolkkd_tamil11.png')}}>
+            @elseif($jobcard->job_comp_code =='5')
+            <img src={{asset('dist/img/TECHSOL_ARA1.png')}}>
             @elseif($jobcard->job_comp_code =='6')
             <img src={{asset('dist/img/TECHSOL_ARA1.png')}}>
             @else
@@ -101,6 +105,9 @@
             Ramanathapuram
             @elseif($jobcard->job_comp_code =='004')
             Tel: 233990, Mobile: 9042886255, Email: techsolkkd@gmail.com, 315/1, Sekkalai Road, Karaikuddi.
+            @elseif($jobcard->job_comp_code =='005')
+            Tel: +968 98295550, Email: sales@techsolme.com, P.O.Box: 254, Opp Al Maha Super Market, Al Buraimi, Sultanat
+            of Oman.
             @elseif($jobcard->job_comp_code =='006')
             Tel: +968 24832720, Email: sales@techsolme.com, P.O.Box: 254, Souq Ruwi Street, Ruwi, Sultanat of Oman.
             @endif
