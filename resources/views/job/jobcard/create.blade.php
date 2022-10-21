@@ -190,6 +190,23 @@
                             <option value="Zebronic">Zebronic</option>
                             <option value="Microtek">Microtek</option>
                             <option value="Imagestar">Image Star</option>
+                            <option value="Samsung">Samsung</option>
+                            <option value="Iphone">Iphone</option>
+                            <option value="Oppo">Oppo</option>
+                            <option value="MI">MI</option>
+                            <option value="Poco">Poco</option>
+                            <option value="Redmi">Redmi</option>
+                            <option value="Realme">Realme</option>
+                            <option value="One Plus">One Plus</option>
+                            <option value="Itel">Itel</option>
+                            <option value="Huawei">Huawei</option>
+                            <option value="Vivo">Vivo</option>
+                            <option value="Nokia">Nokia</option>
+                            <option value="Micromax">Micromax</option>
+                            <option value="Alcatel">Alcatel</option>
+                            <option value="ZTE">ZTE</option>
+                            <option value="Lava">Lava</option>
+
                             <option value="Assembled">Assembled</option>
                             <option value="Others">Others</option>
                         </select>
