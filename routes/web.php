@@ -145,6 +145,8 @@ Route::resource('/job/jobwfp', 'Job\JobwfpController', ['as'=>'job'])->middlewar
 Route::get('/jobcard/jobquit', 'Job\JobcardController@jobquit')->name('jobcard.quit'); 
 Route::get('/jobcard/jobpending', 'Job\JobcardController@jobpending')->name('jobcard.pending'); 
 
+Route::resource('/job/joball', 'Job\JoballController', ['as'=>'job'])->middleware('auth');
+
 Route::get('/jobcard/jobpendingkkd', 'Job\JobcardController@jobpendingkkd')->name('jobcard.pendingkkd'); 
 
 Route::get('/jobcard/jobdelivered', 'Job\JobcardController@jobdelivered')->name('jobcard.delivered'); 
