@@ -74,7 +74,7 @@
 
         </div>
         <div class="col text-center">
-            <h3 class="m-0  text-center"> <strong><u>Job Card / خدمة</u></strong></h3>
+            <h3 class="m-0  text-center"> <strong><u>Job Card / إيصال الصيانة</u></strong></h3>
             <P></P>
 
         </div>
