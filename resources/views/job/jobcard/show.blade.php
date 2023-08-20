@@ -204,9 +204,9 @@
 
                 <div class="form-group">
                     <div class="row">
-                        <label class="col-2" for="">Item Details</label>
+                        <label class="col-2" for="">Item Type</label>
                         <div class="col-4">
-                            <label for=""> : &nbsp; {{ $jobcard->job_item_details }} </label>
+                            <label for=""> : &nbsp; {{ $jobcard->job_item_type }} </label>
 
                         </div>
                         <label class="col-2" for="">Serial Number</label>
@@ -221,9 +221,9 @@
 
                 <div class="form-group">
                     <div class="row">
-                        <label class="col-2" for="">Item Type</label>
+                        <label class="col-2" for="">Fault Details</label>
                         <div class="col-4">
-                            <label for="">: &nbsp; {{ $jobcard->job_item_type }} </label>
+                            <label for="">: &nbsp; {{ $jobcard->job_fault  }} </label>
 
 
 
@@ -240,20 +240,15 @@
 
                 <div class="form-group">
                     <div class="row">
-                        <label class="col-2" for="">Fault Details</label>
-                        <div class="col-4">
-
-                            <label for=""> : &nbsp; {{ $jobcard->job_fault }} </label>
-
-
-
-                        </div>
                         <label class="col-2" for="">Remarks</label>
                         <div class="col-4">
-                            <label for="">: &nbsp; {{ $jobcard->job_remark }} </label>
+
+                            <label for=""> : &nbsp; {{ $jobcard->job_remark }} </label>
+
 
 
                         </div>
+
                     </div>
                 </div>
 
