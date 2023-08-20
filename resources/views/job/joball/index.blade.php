@@ -14,7 +14,7 @@
                             Today Invoice:
                         </div>
                         <div class="font-weight-bold text-left" style="font-size:18px;color:red">
-                            {{ number_format($sc_inv_today,3) }}
+
                             <i class="fa fa-rupee" style="font-size:18px;color:red"></i>
                         </div>
                         <div>/ </div>
@@ -23,7 +23,7 @@
                             Cash Invoice:
                         </div>
                         <div class="font-weight-bold text-left" style="font-size:18px;color:blue">
-                            {{ number_format($sc_inv_cash,3) }}
+
                             <i class="fa fa-rupee" style="font-size:18px;color:blue"></i>
                         </div>
                         <div>/ </div>
@@ -31,7 +31,7 @@
                             Online Invoice:
                         </div>
                         <div class="font-weight-bold text-left" style="font-size:18px;color:blue">
-                            {{ number_format($sc_inv_online,3) }}
+
                             <i class="fa fa-rupee" style="font-size:18px;color:blue"></i>
                         </div>
 

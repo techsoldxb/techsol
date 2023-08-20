@@ -109,7 +109,7 @@
             Tel: +968 98295550, Email: sales@techsolme.com, P.O.Box: 254, Opp Al Maha Super Market, Al Buraimi, Sultanat
             of Oman.
             @elseif($jobcard->job_comp_code =='006')
-            Tel: +968 24832720, Email: sales@techsolme.com, Souq Ruwi Street, Ruwi, Sultanat of Oman.
+            Tel: +968 24832720, Mobile: +968 91775078, Ruwi High Street, Ruwi, Sultanat of Oman.
             @endif
 
 
