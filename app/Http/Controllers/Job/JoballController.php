@@ -31,7 +31,7 @@ class JoballController extends Controller
         ->where('job_comp_code', auth()->user()->company)
         ->get();
     
-        return view('job.jobinvoice.index')->with($arr); 
+        return view('job.joball.index')->with($arr); 
     }
 
     /**

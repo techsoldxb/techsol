@@ -698,7 +698,7 @@
 
                         <li class="nav-item">
                             <a href="{{route('job.jobinvoices.index')}}" class="nav-link
-                @if($segment=='joball')                
+                @if($segment=='jobinvoices')                
                 active
                 @endif">
                                 <i class="nav-icon fas fa-circle text-primary"></i>

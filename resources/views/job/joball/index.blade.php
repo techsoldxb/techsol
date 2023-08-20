@@ -73,7 +73,7 @@
                                 <td class="font-weight-bold text-right text-primary">
                                     {{ number_format($c->job_invoice_amount,3) }}</td>
                                 <td class="text-center">
-                                    <a href="{{ route('job.jobinvoice.print',$c) }}">
+                                    <a href="{{ route('job.jobcard.show',$c->id) }}">
                                         <i class="fa fa-print text-green"></i>
                                     </a>
                                 </td>
