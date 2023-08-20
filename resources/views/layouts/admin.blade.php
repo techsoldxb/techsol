@@ -697,12 +697,24 @@
                         </li>
 
                         <li class="nav-item">
+                            <a href="{{route('job.jobinvoices.index')}}" class="nav-link
+                @if($segment=='joball')                
+                active
+                @endif">
+                                <i class="nav-icon fas fa-circle text-primary"></i>
+                                <p>Invoices</p>
+                            </a>
+                        </li>
+
+
+
+                        <li class="nav-item">
                             <a href="{{route('job.joball.index')}}" class="nav-link
                 @if($segment=='joball')                
                 active
                 @endif">
                                 <i class="nav-icon fas fa-circle text-primary"></i>
-                                <p>All</p>
+                                <p>Job Card</p>
                             </a>
                         </li>
 
