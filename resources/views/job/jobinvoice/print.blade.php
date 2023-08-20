@@ -57,6 +57,9 @@
         <img src={{asset('dist/img/bashlogo12.png')}}>
         @elseif($jobcard->job_comp_code =='4')
         <img src={{asset('dist/img/tc_logo_bg50.png')}}>
+        @elseif($jobcard->job_comp_code =='6')
+
+        <img src={{asset('dist/img/techsol_ruwi_logo.png')}}>
         @else
         <img src={{asset('dist/img/printjarwani.png')}}>
         @endif
@@ -76,6 +79,8 @@
         <img src={{asset('dist/img/bashlogotamil12.png')}}>
         @elseif($jobcard->job_comp_code =='4')
         <img src={{asset('dist/img/techsolkkd_tamil11.png')}}>
+        @elseif($jobcard->job_comp_code =='6')
+        <img src={{asset('dist/img/TECHSOL_ARA1.png')}}>
         @else
         <img src={{asset('dist/img/printjarwani.png')}}>
         @endif
@@ -84,8 +89,25 @@
 
 <p class="text-center">
     <strong>
+
+        @if($jobcard->job_comp_code =='3')
+
         Mobile: 9944 942308, Email: bashcomputers@gmail.com, Opp. State Bank Of India, 103 Salai Street,
         Ramanathapuram
+        @elseif($jobcard->job_comp_code =='4')
+
+        Mobile: 9944 942308, Email: bashcomputers@gmail.com, Opp. State Bank Of India, 103 Salai Street,
+        Ramanathapuram
+        @elseif($jobcard->job_comp_code =='6')
+
+        Tel: +968 24832720, Mobile: +968 91775078, Ruwi High Street, Ruwi, Sultanat of Oman.
+        @else
+
+        Mobile: 9944 942308, Email: bashcomputers@gmail.com, Opp. State Bank Of India, 103 Salai Street,
+        Ramanathapuram
+        @endif
+
+
     </strong>
 </p>
 

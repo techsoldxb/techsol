@@ -64,7 +64,7 @@ class JobinvoicesController extends Controller
      */
     public function show(Jobcard $jobcard)
     {
-        return view('job.jobinvoice.show',compact('jobcard'));
+        return view('job.jobinvoices.show',compact('jobcard'));
      }
 
      
