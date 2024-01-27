@@ -206,6 +206,13 @@
                             <option value="Alcatel">Alcatel</option>
                             <option value="ZTE">ZTE</option>
                             <option value="Lava">Lava</option>
+                            <option value="JBL">JBL</option>
+                            <option value="Tplink">TP-Link</option>
+                            <option value="Sony">Sony</option>
+                            <option value="Infinity">Infinity</option>
+                            <option value="Onsor">Onsor</option>
+                            <option value="APC">APC</option>
+                            <option value="Phlips">Phlips</option>
 
                             <option value="Assembled">Assembled</option>
                             <option value="Others">Others</option>
@@ -245,10 +252,10 @@
                     <div class="col-lg-3">
                         <select class="custom-select" name="job_item_type" required>
                             <option value="" selected disabled hidden>Please select</option>
-                            <option value="Laptop">Mobile</option>
-                            <option value="Laptop">Tablet</option>
-                            <option value="Laptop">Play Station</option>
-                            <option value="Laptop">Router</option>
+                            <option value="Mobile">Mobile</option>
+                            <option value="Tablet">Tablet</option>
+                            <option value="Play Station">Play Station</option>
+                            <option value="Router">Router</option>
 
                             <option value="Laptop">Laptop</option>
                             <option value="Desktop">Desktop</option>
@@ -256,8 +263,8 @@
                             <option value="Monitor">Monitor</option>
 
                             <option value="Toner">Toner</option>
-                            <option value="Laptop">Camera</option>
-                            <option value="Laptop">Speaker</option>
+                            <option value="Camera">Camera</option>
+                            <option value="Speaker">Speaker</option>
                             <option value="UPS">UPS</option>
                             <option value="HDD">HDD</option>
                             <option value="AIO">AIO</option>

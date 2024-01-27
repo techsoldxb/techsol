@@ -160,8 +160,8 @@ class JobcardController extends Controller
 
     public function store(Request $request, Jobcard $jobcard,User $user)
     {
-
-        $this->validate($request,['job_cust_mobile'=>'required|digits:10']);
+        // mobile number validation
+        //$this->validate($request,['job_cust_mobile'=>'required|digits:10']);
 
         $id = Jobcard::where('job_comp_code', auth()->user()->company)
         ->orderByDesc('job_enq_number')->first()->job_enq_number ?? date('Y') . 00000;
@@ -169,6 +169,9 @@ class JobcardController extends Controller
         $id_year = substr($id, 0, 4);
         $seq = $year <> $id_year ? 0 : +substr($id, -5);
       //  $new_id = sprintf("%0+4u%0+6u", $year, $seq+1); 
+
+
+      
         //
 
         $lastAccountForCurrentYear = Jobcard::where('job_comp_code', auth()->user()->company)  
